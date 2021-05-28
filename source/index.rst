@@ -7,6 +7,12 @@ Welcome to All-My-Notes's documentation!
 
     tutorial/python/index.rst
 
+.. toctree::
+    :maxdepth: 2
+    :caption: How-To
+
+    howto/index.rst
+
 
 
 

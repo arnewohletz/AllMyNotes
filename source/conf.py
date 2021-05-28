@@ -37,7 +37,8 @@ extensions = [
     'sphinxcontrib.mermaid',
     'sphinxcontrib.images',
     'sphinx_git',
-    'sphinx-prompt'
+    'sphinx-prompt',
+    'sphinxemoji.sphinxemoji'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

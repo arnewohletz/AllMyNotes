@@ -17,15 +17,13 @@ create the following files and directories:
     log
         |--- uwsgi
                 |--- uswgi.log
-    main.py (or app-runner.py)
-    uwsgi.ini
+    runner.py (or dev-runner.py)
     requirements.txt
     MANIFEST.ini
 
 Open ``requirements.txt`` and add the following content::
 
     flask
-    uWSGI
 
 Install the packages::
 
@@ -116,8 +114,8 @@ this content:
 Inside *mywebapp/static* create a new file ``mywebapp.css``. Here you can define
 all your style rules.
 
-Switch to a WSGI server
------------------------
+Set up a WSGI server
+--------------------
 Install and setup nginx
 ```````````````````````
 Flask comes with a built-in webserver, but which is only supposed to be used during development.
@@ -128,11 +126,24 @@ use a production WSGI server. Here, we will use `uwsgi`_ as the WSGI server runn
 .. _uwsgi: https://uwsgi-docs.readthedocs.io/en/latest/
 .. _nginx: https://nginx.org/
 
-First, we need to install nginx:
+At this point, your app should be deployed onto a dedicated machine (preferably Linux) as the
+configuration must match its setup. Execute these steps on the server machine before proceeding:
+
+* Deploy your application project onto the server machine (e.g. git clone)
+* Create a virtual environment for your application
+
+This enables you to set up the configuration of your web server.
 
 .. hint::
     For actual production use, it is recommended to host from a Linux machine. For installation and
     usage on Windows, please follow the instructions on http://nginx.org/en/docs/windows.html
+
+Let's start by adding the uWSGI package to our ``requirements.txt`` file::
+
+    flask
+    uwsgi
+
+Then we need to install and configure nginx on the server machine.
 
 **Linux**
     .. prompt:: bash
@@ -167,13 +178,13 @@ defined in a separate config file:
         sudo rm /etc/nginx/sites-enabled/default
 
 This ``default`` configuration extends the base configuration found at ``/etc/nginx/nginx.conf``.
-If you open it, you will find the line::
+If you open it, you should find the line::
 
     include /etc/nginx/sites-enabled/*;
 
 which tells nginx to add all configurations files found within this directory. Don't change it.
 
-In case you cannot find the line, add it, save the file and restart nginx:
+In case that line is not present, add it, save the file and restart nginx:
 
     .. prompt:: bash
 
@@ -208,10 +219,38 @@ Restart the nginx server to apply your changes:
 
         nginx -c /usr/local/etc/nginx/nginx.conf
 
+    .. prompt:: bash
+
+        brew services start nginx
+
+.. hint::
+
+    On macOS, Nginx uses the port 8080 as default. This might conflict with applications already running on
+    that same port (e.g. some Java application). In order to change the default port, you need to
+    adapt the default config.
+
+    .. prompt:: bash
+
+        nano /usr/local/etc/nginx/nginx.conf
+
+    Find the uncommented line
+
+    .. code-block::
+
+        server {
+            listen       8080;
+
+    and change the port to your desired default port, then save and exit the file.
+    Now, restart the nginx server with
+
+    .. prompt:: bash
+
+        brew services start nginx
+
 Add a configuration to your application
 ```````````````````````````````````````
 Now create a nginx config file within your application's root directory e.g. ``nginx.conf``.
-Add the following content:
+Insert the following content:
 
     .. code-block:: none
         :linenos:
@@ -228,11 +267,12 @@ Add the following content:
             }
         }
 
-Adapt the application name (here: mywebapp) in line 6 and 7. Also put in the path where your socket file should reside (e.g.
-put it to your project root directory).
+Adapt the application name (here: mywebapp) in line 6 and 7 with a descriptive name.
+Also put in the path where your socket file should reside (e.g. put it to your project root directory).
 
 The socket (line 9) is a service file that acts as the server's endpoint for the network traffic of your Python application
-and is created when your application is launched on the server machine (i.e. when nginx is launched).
+and is created when your application is launched on the server machine (i.e. when nginx is launched). Please note, that
+you need a valid path from your server machine.
 
 The *listen* parameter (line 2) defines the port your application will use. It is recommended to use a free
 port anywhere within the range between 1024 and 32767. You can check all used ports by running these commands:
@@ -244,34 +284,8 @@ port anywhere within the range between 1024 and 32767. You can check all used po
 
 You can also check this list of `common default ports`_.
 
-Next up, open the ``uwsgi.ini`` file and put in the following content:
-
-.. code-block:: none
-    :linenos:
-
-    [uwsgi]
-    # application's base folder
-    base = /Users/arnewohletz/MyDevelopmentTutorials/flask_tutorial
-    # python's module to import
-    app = main_wsgi
-    module = %(app)
-    # python interpreter root path (outside of bin/)
-    home = /Users/arnewohletz/MyDevelopmentTutorials/flask_tutorial/venv
-    pythonpath = %(base)
-    # socket file's location
-    socket = %(base)/%n.sock
-    # permissions to socket file
-    chmod-socket = 666
-    # the variable that holds a flask application inside the module imported at line 6
-    callable = application
-    # location of log files
-    logto = %(base)/log/uwsgi/%n.log
-
-Adapt the *base* (line 3) and *home* (line 7) variables to your application.
-
-Create the log directory structure defined in line 17 including the ``uwsgi.log`` file.
-
-Open ``main_wsgi.py`` and add the following content:
+It is recommended to use a separate launcher to run the app over the WSGI server. Create a new Python file
+in the project's root directory e.g. ``wsgi-runner.py`` and insert this content:
 
 .. code-block::
 
@@ -282,51 +296,70 @@ Open ``main_wsgi.py`` and add the following content:
 
 Adapt the module path where your Flask app instance is created (here: mywebapp.mywebapp).
 
-Now, you are ready to launch the uWSGI server for your application. First make sure, you
+Next up, create a uwsgi config file within your application's root directory e.g. ``uwsgi.ini``
+and put in the following content:
+
+.. code-block:: none
+    :linenos:
+
+    [uwsgi]
+    # application's base folder
+    base = /path/to/my/application/root/directory
+    # change current directory to application base
+    chdir = %(base)
+    # python's module to import
+    app = wsgi-runner
+    module = %(app)
+    # python interpreter root path (outside of bin/)
+    home = /path/to/my/python/interpreter/or/venv
+    pythonpath = %(base)
+    # socket file's location
+    socket = %(base)/%n.sock
+    # permissions to socket file
+    chmod-socket = 666
+    # the variable that holds a flask application inside the module imported at line 6
+    callable = application
+    # location of log files
+    logto = %(base)/log/uwsgi/%n.log
+
+Adapt the *base* (line 3) and *home* (line 10) variables to your deployed application.
+Also adapt *app* runner script (line 7) to your launcher.
+
+Now, once again deploy your current project state onto the server machine.
+
+On the server machine, create the log directory structure defined in *logto* (line 22) including an empty ``uwsgi.log`` file.
+
+To make nginx host our application, we need to supply the ``nginx.conf`` to your nginx configuration directory.
+Since the config file is part of the project (hence, it might be changed in the future) the server machine should
+stay within the project structure, we create a symlink for it:
+
+**macOS**:
+
+.. prompt::
+
+    ln -s /path/to/my/application/nginx.conf /usr/local/etc/nginx/init.d./mywebapp.conf
+
+**Linux**:
+
+.. prompt::
+
+    ln -s /path/to/my/application/nginx.conf /etc/nginx/sites-enabled/mywebapp.conf
+
+Now, you are ready to launch the uWSGI server for your application on the server machine. First make sure, you
 activate your project's virtual environment, then type:
 
 .. prompt:: bash (venv)
 
     uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
 
-This launches the uWSGI server using your project's configuration. Now open a browser and
-type ``127.0.0.1:1050`` into the address bar, which will open the index page of your application.
-
-.. note::
-
-    Nginx uses the port 8080 as default. This might conflict with applications already running on
-    that same port (e.g. some Java application). In order to change the default port, you need to
-    adapt the default config.
-
-        .. prompt:: bash
-
-            nano /usr/local/etc/nginx/nginx.conf
-
-    Find the uncommented line
-
-    .. code-block::
-
-        server {
-            listen       8080;
-
-    and change the port to your desired default port, then save and exit the file.
-    Now, restart the nginx server with
-
-    **Linux**
-    .. prompt:: bash
-
-        nginx /etc/init.d/nginx restart
-
-    **macOS**
-
-    .. prompt:: bash
-
-        brew services start nginx
+This launches the uWSGI server using your project's configuration. Now open a browser on your local
+machine and type your server machines IP, colon and the port specified in ``nginx.conf`` (e.g. ``10.180.2.75:1050``)
+into the address bar, which will open the index page of your application.
 
 .. _common default ports: https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
 
-Manually start application on remote server
-```````````````````````````````````````````
+Manually start application on remote server (Linux)
+```````````````````````````````````````````````````
 Starting the uWSGI process commonly needs the command window to remain open. If it is closed,
 the application is also terminated.
 
@@ -361,9 +394,17 @@ A new screen is opened. Now you can start the uWSGI server (first activate the v
         uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
 
 To switch back to the original window, type ``Ctrl + A`` followed by ``Ctrl + D`` (for detach). This does not close
-the session, which continues in the background, even after closing your terminal window.
+the screen, which continues in the background, even after closing your terminal window.
 
-To go back to the screen type ``Ctrl + A`` followed by ``Ctrl + A``.... not working, try again
+Running ``screen -ls`` will list you all available screens. Each screen name starts with session ID (e.g. 32196).
+To enter a specific screen (let's say 32196.pts-10) , type
+
+    .. prompt:: bash
+
+        screen -r 32196
+
+to resume a detached session. To kill a window, enter it, then type ``Ctrl + A`` followed by ``k``, then confirm
+with ``y``.
 
 Automatically start application on system startup
 `````````````````````````````````````````````````
