@@ -11,7 +11,10 @@ Welcome to All-My-Notes's documentation!
     :maxdepth: 2
     :caption: How-To
 
-    howto/index.rst
+    howto/git/index.rst
+    howto/sphinx/index.rst
+    howto/sqlite/index.rst
+
 
 
 
