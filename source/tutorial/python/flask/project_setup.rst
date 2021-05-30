@@ -408,4 +408,3 @@ with ``y``.
 
 Automatically start application on system startup
 `````````````````````````````````````````````````
-
