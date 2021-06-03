@@ -1,5 +1,5 @@
-Welcome to All-My-Notes's documentation!
-========================================
+Welcome to All-My-Notes!
+========================
 
 .. toctree::
     :maxdepth: 2
@@ -14,10 +14,6 @@ Welcome to All-My-Notes's documentation!
     howto/git/index.rst
     howto/sphinx/index.rst
     howto/sqlite/index.rst
-
-
-
-
 
 Indices and tables
 ==================

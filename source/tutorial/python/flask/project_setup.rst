@@ -116,6 +116,9 @@ all your style rules.
 
 Set up a WSGI server
 --------------------
+
+.. _install_setup_nginx:
+
 Install and setup nginx
 ```````````````````````
 Flask comes with a built-in webserver, but which is only supposed to be used during development.
@@ -218,6 +221,8 @@ Restart the nginx server to apply your changes:
     .. prompt:: bash
 
         nginx -c /usr/local/etc/nginx/nginx.conf
+
+    or restart as brew service via
 
     .. prompt:: bash
 
@@ -337,7 +342,7 @@ stay within the project structure, we create a symlink for it:
 
 .. prompt::
 
-    ln -s /path/to/my/application/nginx.conf /usr/local/etc/nginx/init.d./mywebapp.conf
+    ln -s /path/to/my/application/nginx.conf /usr/local/etc/nginx/init.d/mywebapp.conf
 
 **Linux**:
 
