@@ -1,5 +1,5 @@
-Welcome to All-My-Notes!
-========================
+.. image:: _static/img/logo_large.png
+    :align: center
 
 .. toctree::
     :maxdepth: 2
@@ -14,6 +14,7 @@ Welcome to All-My-Notes!
     howto/git/index.rst
     howto/sphinx/index.rst
     howto/sqlite/index.rst
+    howto/nginx.rst
 
 Indices and tables
 ==================
