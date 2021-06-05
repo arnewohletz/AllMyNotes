@@ -363,53 +363,9 @@ into the address bar, which will open the index page of your application.
 
 .. _common default ports: https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
 
-Manually start application on remote server (Linux)
-```````````````````````````````````````````````````
-Starting the uWSGI process commonly needs the command window to remain open. If it is closed,
-the application is also terminated.
+Further resources
+`````````````````
+.. toctree::
+    :maxdepth: 2
 
-To prevent that, the process must be detached from the shell instance. On Linux, you can
-achieve this by creating separate session via `screen`_, which is not terminated when the
-console is closed.
-
-.. _screen: https://www.gnu.org/software/screen/
-
-Check, if your server already features ``screen`` by typing
-
-    .. prompt:: bash
-
-        screen -h
-
-If that command is not available, install *screen* via
-
-    .. prompt:: bash
-
-        sudo apt-get install screen
-
-Now open a new screen via
-
-    .. prompt:: bash
-
-        screen
-
-A new screen is opened. Now you can start the uWSGI server (first activate the virtual environment):
-
-    .. prompt:: bash (venv)
-
-        uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
-
-To switch back to the original window, type ``Ctrl + A`` followed by ``Ctrl + D`` (for detach). This does not close
-the screen, which continues in the background, even after closing your terminal window.
-
-Running ``screen -ls`` will list you all available screens. Each screen name starts with session ID (e.g. 32196).
-To enter a specific screen (let's say 32196.pts-10) , type
-
-    .. prompt:: bash
-
-        screen -r 32196
-
-to resume a detached session. To kill a window, enter it, then type ``Ctrl + A`` followed by ``k``, then confirm
-with ``y``.
-
-Automatically start application on system startup
-`````````````````````````````````````````````````
+    /howto/nginx.rst

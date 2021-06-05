@@ -2,6 +2,6 @@ Flask
 =====
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     project_setup.rst

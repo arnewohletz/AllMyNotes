@@ -52,4 +52,4 @@ Hosting a Sphinx documentation (using nginx)
 
         nginx /etc/init.d/nginx restart
 
-#. Open https://127.0.0.1:<PORT> in your browser.
+#. Open ``https://127.0.0.1:<PORT>``, using the port specified in your configuration, in your browser.
