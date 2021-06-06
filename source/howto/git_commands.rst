@@ -1,6 +1,5 @@
 Git Commands
 ============
-
 Create a local repository
 -------------------------
 #. Create a new directory
@@ -21,7 +20,7 @@ Add user information in order to allow commits
 
 Add remote repository
 ---------------------
-Add new remote repository (here named ``origin``.) Remote repository must have been created in advance.
+Add new remote repository (here named ``origin``). Remote repository must have been created in advance.
 
 .. prompt:: bash
 

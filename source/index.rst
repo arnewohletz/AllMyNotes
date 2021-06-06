@@ -11,10 +11,7 @@
     :maxdepth: 2
     :caption: How-To
 
-    howto/git/index.rst
-    howto/sphinx/index.rst
-    howto/sqlite/index.rst
-    howto/nginx.rst
+    howto/index.rst
 
 Indices and tables
 ==================
