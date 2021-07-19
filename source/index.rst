@@ -6,6 +6,7 @@
     :caption: Tutorials
 
     tutorial/python/index.rst
+    tutorial/cpp/index.rst
 
 .. toctree::
     :maxdepth: 2

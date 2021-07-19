@@ -1,0 +1,6 @@
+C++
+===
+
+.. toctree::
+
+    clang.rst
