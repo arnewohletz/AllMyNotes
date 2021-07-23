@@ -44,7 +44,7 @@ Hosting a Sphinx documentation (using nginx)
 
     .. prompt:: bash
 
-        brew services start nginx
+        brew services restart nginx
 
     **Linux**:
 
