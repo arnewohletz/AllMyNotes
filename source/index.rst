@@ -7,6 +7,7 @@
 
     tutorial/python/index.rst
     tutorial/cpp/index.rst
+    tutorial/java/index.rst
 
 .. toctree::
     :maxdepth: 2
