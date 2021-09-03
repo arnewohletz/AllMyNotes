@@ -29,7 +29,7 @@ Pure subclassing approach:
                 +fly()
             }
 
-    * Each sub-class of parent class (*Duck*) potentially implements any method
+    * Each sub-class of the parent class (*Duck*) potentially implements any method
       differently than the parent class (no code reuse)
     * Multiple sub-classes might share common implementations of the same method but
       not the one from the parent class (e.g. *fly()*) -> code duplication
@@ -104,4 +104,57 @@ Appliance
                 +fly()
             }
 
-    *
+    * Here, the various *fly()* method implementation are moved from the duck sub-classes
+      and put into proper classes, that implement the *FlyBehavior* interface
+    * Same can be done with the *quack()* or the *display()* method, if required
+    * That way, each sub-class of Duck has the desired behavior without implementing any
+      of it themselves
+
+:Context:
+    Parent class for all *Client* classes
+
+:Client:
+    Subclass of the *Context* class
+
+:Strategy:
+    Interface class for all Strategy implementations
+
+Find a template example for Python at https://refactoring.guru/design-patterns/strategy/python/example
+
+Taking it one step further, it is also possible to refrain from using actual *Clients*, but
+instead instantiate the *Context* class (here: Duck) **with** passing the wanted behavior into
+the constructor (*dependency injection*):
+
+.. code-block:: python
+
+    from abc import ABC, abstractmethod
+
+    class Duck:
+        def __init__(fly_behavior: FlyBehavior,
+                     quack_behavior: QuackBehavior):
+            self.fly_behavior = fly_behavior
+            self.quack_behavior = quack_behavior
+
+        def fly():
+            self.fly_behavior.fly()
+
+        def quack():
+            self.quack_behavior.quack()
+
+    class FlyBehavior(ABC):
+        @abstractmethod
+        def fly():
+            pass
+
+    class QuackBehavior(ABC):
+        @abstractmethod
+        def quack():
+            pass
+
+    # some classes implementing FlyBehavior & QuackBehavior
+    # e.g. FlyNoWay, QuackNoWay
+
+    if __name__ == "__main__":
+        no_use_duck = Duck(fly_behavior=FlyNoWay(), quack_behavior=QuackNoWay())
+        no_use_duck.fly()
+        no_use_duck.quack()
