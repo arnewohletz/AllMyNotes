@@ -66,7 +66,7 @@ Uninstall a Python version
 --------------------------
 Prerequisites
 `````````````
-* Python has to be installed according to `upper description <linux_install_python_from_source>`
+* Python has to be installed according to :ref:`upper description <linux_install_python_from_source>`
 * Python installation files reside on system (may need to re-download and configure)
 
 Steps
@@ -120,13 +120,13 @@ to be used for it can be achieved by using the `updates-alternatives`_ command.
 
 Install and manage Python version with pyenv
 --------------------------------------------
-As a alternative, the tool `pyenv<https://github.com/pyenv/pyenv>` is able to install and manage multiple Python versions.
-It also features an extension called `pyenv-virtualenv<https://github.com/pyenv/pyenv-virtualenv>` which is able to manage
+As a alternative, the tool `pyenv <https://github.com/pyenv/pyenv>`_ is able to install and manage multiple Python versions.
+It also features an extension called `pyenv-virtualenv <https://github.com/pyenv/pyenv-virtualenv>`_ which is able to manage
 virtual environments deriving from any Python installation of pyenv.
 
-Install pyenv
--------------
-The easiest way to install is by using the `pyenv-installer<https://github.com/pyenv/pyenv-installer>` script,
+Install pyenv on Linux
+----------------------
+The easiest way to install is by using the `pyenv-installer <https://github.com/pyenv/pyenv-installer>`_ script,
 which also installs the *pyenv-virtualenv* extension.
 
 #. Run the command
@@ -166,3 +166,50 @@ which also installs the *pyenv-virtualenv* extension.
         sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
         libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
         libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+Install pyenv on macOS
+----------------------
+The recommended way to install pyenv on macOS is via `Homebrew`_:
+
+.. prompt:: bash
+
+    brew install pyenv
+
+Also, install the extension *pyenv-virtualenv*:
+
+.. prompt:: bash
+
+    brew install pyenv-virtualenv
+
+.. TODO: Add missing bash profile setting and similar stuff
+
+Before installing any `CPython <https://en.wikipedia.org/wiki/CPython>`_ version, you will need
+to install a newer version of Tcl/Tk on your system. As `mentioned on python.org`_, macOS as of now
+does not provide a safe and recent version of the GUI framework. Since *pyenv* builds Python distributions
+from source and does not include a later version of Tcl/Tk with it, as the regular installers from python.org do,
+it uses the preinstalled version from the OS.
+
+First install the latest Tcl/Tk version:
+
+.. prompt:: bash
+
+    brew install tcl-tk
+
+Open the python-build script of pyenv and point it towards the newly installed Tcl/Tk installation.
+
+.. prompt:: bash
+
+    nano /usr/local/Cellar/pyenv/<version>/plugins/python-build/bin/python-build
+
+Find the line::
+
+    $CONFIGURE_OPTS ${!PACKAGE_CONFIGURE_OPTS} "${!PACKAGE_CONFIGURE_OPTS_ARRAY}" || return 1
+
+and replace it with::
+
+    $CONFIGURE_OPTS --with-tcltk-includes='-I/usr/local/opt/tcl-tk/include' --with-tcltk-libs='-L/usr/local/opt/tcl-tk/lib -ltcl8.6 -ltk8.6' ${!PACKAGE_CONFIGURE_OPTS} "${!PACKAGE_CONFIGURE_OPTS_ARRAY}" || return 1
+
+Any new CPython version installed via ``pyenv install`` should now utilize your Tcl/Tk installation.
+
+.. _Homebrew: https://brew.sh/
+.. _mentioned on python.org: https://www.python.org/download/mac/tcltk/

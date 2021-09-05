@@ -69,3 +69,7 @@ html_css_files = [
 ]
 html_favicon = "_static/img/favicon.png"
 html_logo = "_static/img/logo.png"
+
+linkcheck_ignore = [
+    "https://mkyong.com",
+]
