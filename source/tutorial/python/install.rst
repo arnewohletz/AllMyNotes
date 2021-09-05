@@ -125,7 +125,7 @@ It also features an extension called `pyenv-virtualenv <https://github.com/pyenv
 virtual environments deriving from any Python installation of pyenv.
 
 Install pyenv on Linux
-----------------------
+``````````````````````
 The easiest way to install is by using the `pyenv-installer <https://github.com/pyenv/pyenv-installer>`_ script,
 which also installs the *pyenv-virtualenv* extension.
 
@@ -168,7 +168,7 @@ which also installs the *pyenv-virtualenv* extension.
         libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 Install pyenv on macOS
-----------------------
+``````````````````````
 The recommended way to install pyenv on macOS is via `Homebrew`_:
 
 .. prompt:: bash
