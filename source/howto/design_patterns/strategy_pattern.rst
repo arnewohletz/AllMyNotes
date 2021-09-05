@@ -38,8 +38,8 @@ Pure subclassing approach:
       it might lead to conflicts. Moreover, there are combinations of implementations
       which cannot be established over pure inheritance
 
-Design Principles
-`````````````````
+Design Principles & Definition
+``````````````````````````````
 .. admonition:: Principle 1
     :class: design_principle
 
@@ -63,6 +63,13 @@ Design Principles
       implementation during runtime
     * Defining behaviours during runtime occurs when the sub-class instantiates an interface
       implementation and assigns it to the inherited class variable of the interface type
+
+.. admonition:: Definition
+    :class: pattern_definition
+
+    The **Strategy Patter** defines a family of algorithms, encapsulate each one, and
+    makes them interchangeable. Strategy lets the algorithm vary independently from
+    clients that use it.
 
 Appliance
 `````````
@@ -130,7 +137,8 @@ the constructor (*dependency injection*):
     from abc import ABC, abstractmethod
 
     class Duck:
-        def __init__(fly_behavior: FlyBehavior,
+        def __init__(self,
+                     fly_behavior: FlyBehavior,
                      quack_behavior: QuackBehavior):
             self.fly_behavior = fly_behavior
             self.quack_behavior = quack_behavior
