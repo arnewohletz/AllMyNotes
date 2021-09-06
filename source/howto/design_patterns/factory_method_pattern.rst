@@ -1,3 +1,5 @@
+.. _factory_method_pattern:
+
 Factory Method Pattern
 ----------------------
 Issue
@@ -13,6 +15,34 @@ Issue
 To summarize, we should use the *Factory Method Pattern* where there is logic involved in the
 creation of an object and when this logic repeats itself
 
+Design Principles & Definition
+``````````````````````````````
+.. admonition:: Definition
+    :class: pattern_definition
+
+    The **Factory Method Pattern** defines an interface for creating an object, but lets
+    subclasses decide which class to instantiate. Factory Method lets a class defer
+    instantiation to subclasses.
+
+.. admonition:: Principle 1
+    :class: design_principle
+
+    **Depend upon abstraction. Do not depend upon concrete classes.**
+
+    This is known as the *Dependency Inversion Principle*. It appears similar to
+    the principle, to program against an interface, not an implementation, but goes
+    one step further: It defines, that even the high level classes (e.g. a Zoo class),
+    should depend on an abstraction (e.g. an Animal class), as well a low level
+    classes (e.g. Rabbit), which implements the abstraction.
+
+    Some guidelines which help to follow the *Dependency Inversion Principle*:
+
+        * No variable should hold a variable to a concrete class
+        * No class should derive from a concrete class
+        * No method should overwrite an implemented method of any of its base classes
+
+    Naturally, these rules must often be broken, but it is a guideline to strive for.
+
 Solution
 ````````
 * Object instantiation is moved into separate classes
@@ -23,7 +53,26 @@ Solution
 * Multiple factories should implement the same *Factory interface*, which thereby defines a
   blueprint for these *Factory classes*
 
-
 .. mermaid::
 
     classDiagram
+        Product <|-- ConcreteProduct : implement
+        ConcreteProduct <|-- ConcreteCreator : creates
+        Creator <|-- ConcreteCreator : implement
+        class Creator {
+            +factory_method()
+        }
+        class ConcreteCreator {
+            +factory_method()
+        }
+
+* The *ConcreateCreator* creates objects of type *Product*, in which the internal logic
+  of its *factory_method()* decides which *ConcreteProduct* is eventually returned
+* The *Creator* also assigns *Product* as the return type of *factory_method()*
+
+Example
+```````
+Find a template example for Python at https://refactoring.guru/design-patterns/factory-method/python/example
+
+    .. literalinclude:: _code/factory_method.py
+        :language: python

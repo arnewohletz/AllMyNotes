@@ -35,7 +35,7 @@ A new screen is opened. Now you can start the uWSGI server (first activate the v
 
         uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
 
-To switch back to the original window, type ``Ctrl + A`` followed by ``Ctrl + D`` (for detach). This does not close
+To switch back to the original window, type ``Ctrl + A`` followed by a simple ``d`` (for detach). This does not close
 the screen, which continues in the background, even after closing your terminal window.
 
 Running ``screen -ls`` will list you all available screens. Each screen name starts with session ID (e.g. 32196).
@@ -45,8 +45,12 @@ To enter a specific screen (let's say 32196.pts-10) , type
 
         screen -r 32196
 
-to resume a detached session. To kill a window, enter it, then type ``Ctrl + a`` followed by ``Ctrl + k``, then confirm
-with ``y``.
+to resume a detached session. To kill a window, enter it, then type ``Ctrl + a`` followed by simple ``k``, then confirm
+with ``y``. Alternatively, you may send a quit command while outside the screen (let's say 32196.pts-10 again):
+
+    .. prompt:: bash
+
+           screen -XS 32196 quit
 
 Automatically start application on system startup
 -------------------------------------------------
