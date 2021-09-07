@@ -54,6 +54,7 @@ Solution
   blueprint for these *Factory classes*
 
 .. mermaid::
+    :align: center
 
     classDiagram
         Product <|-- ConcreteProduct : implement
@@ -76,3 +77,20 @@ Find a template example for Python at https://refactoring.guru/design-patterns/f
 
     .. literalinclude:: _code/factory_method.py
         :language: python
+
+.. hint::
+
+    There might be scenarios where the *Adaptee* is external and out of our control and not
+    instantiatable (e.g. only using static methods). In that case, *Adaptee* cannot be passed
+    into the constructor of *Adapter*, but needs to be directly called in the *Adapter*'s methods
+    (e.g. *requests()*):
+
+        .. code-block:: python
+
+            class Adapter:
+
+                def __init__(self):
+                    pass
+
+                def request():
+                    Adaptee.specific_request()

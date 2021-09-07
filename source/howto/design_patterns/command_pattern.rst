@@ -42,6 +42,7 @@ Solution
     undoable operations.
 
 .. mermaid::
+    :align: center
 
     classDiagram
         Command "0..*" <-- Invoker : HAS-A
