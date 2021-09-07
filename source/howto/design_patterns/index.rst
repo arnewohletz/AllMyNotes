@@ -10,3 +10,4 @@ Design Patterns
     abstract_factory_pattern.rst
     command_pattern.rst
     adapter_pattern.rst
+    facade_pattern.rst

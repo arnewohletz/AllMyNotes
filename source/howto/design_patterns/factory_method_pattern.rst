@@ -73,7 +73,7 @@ Solution
 
 Example
 ```````
-Find a template example for Python at https://refactoring.guru/design-patterns/factory-method/python/example
+Find a template example for Python at https://refactoring.guru/design-patterns/factory-method/python/example.
 
     .. literalinclude:: _code/factory_method.py
         :language: python
