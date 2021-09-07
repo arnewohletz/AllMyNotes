@@ -8,3 +8,5 @@ Design Patterns
     decorator_pattern.rst
     factory_method_pattern.rst
     abstract_factory_pattern.rst
+    command_pattern.rst
+    adapter_pattern.rst
