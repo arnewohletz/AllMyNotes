@@ -11,3 +11,4 @@ Design Patterns
     command_pattern.rst
     adapter_pattern.rst
     facade_pattern.rst
+    proxy_pattern.rst
