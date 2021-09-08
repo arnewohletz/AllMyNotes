@@ -7,8 +7,9 @@ which means that the object's code is not supposed to be changed, but merely ada
 
 Design Principles & Definition
 ``````````````````````````````
+.. _open_closed_principle:
 
-.. admonition:: Principle 1
+.. admonition:: Open-Closed Principle
     :class: design_principle
 
     **Classes should be open for extension, but closed for modification**

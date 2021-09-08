@@ -12,3 +12,4 @@ Design Patterns
     adapter_pattern.rst
     facade_pattern.rst
     proxy_pattern.rst
+    template_method_pattern.rst
