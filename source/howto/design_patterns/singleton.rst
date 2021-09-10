@@ -9,7 +9,9 @@ COPIED FROM EVERNOTE
 
 People warn from using the Singleton Pattern:
 * It forces the Singleton instance to be available from the global namespace -> Globals are supposed to be avoided, but scope variables and functions:
+
     * globally accessible parts could be changed from anywhere without realizing it
+
 * Using a Singleton is an assumption: "In the future I will only need one instance of that class" - but that isn't necessarily true for growing applications -> you have to be 100% sure, but that's unlikely you can
 * for testing purposes it is often required to have at least two instances:
     * the one the application actually will use

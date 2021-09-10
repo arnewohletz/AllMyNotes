@@ -13,3 +13,4 @@ Design Patterns
     facade_pattern.rst
     proxy_pattern.rst
     template_method_pattern.rst
+    composite_pattern.rst

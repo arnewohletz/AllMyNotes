@@ -82,7 +82,7 @@ Solution
     * it instantiates a *Receiver* ("You are the one I actually want to do something!") -> HAS-A
 
 Routine:
-    * The *Client* instantiates the *Invoker*, thereby passing the *ConcreteCommand*s as arguments,
+    * The *Client* instantiates the *Invoker*, thereby passing the *ConcreteCommand* 's as arguments,
       which themselves take a receiver as an argument
     * The *Client* calls the *Invoker*'s method, that executes the corresponding command's
       *execute()* method
