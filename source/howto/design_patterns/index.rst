@@ -15,3 +15,4 @@ Design Patterns
     template_method_pattern.rst
     composite_pattern.rst
     iterator_pattern.rst
+    state_pattern.rst
