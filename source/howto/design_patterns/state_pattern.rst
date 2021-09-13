@@ -3,10 +3,10 @@ State Pattern
 * Object change their behavior depending on the status they are currently in
 * It does not matter, how the object got into a particular state, only the state itself
 
-**Example**: Flywheel at subway station which requires card swipe to open
+**Example**: Turnstile at subway station which requires card swipe to open
 
 .. mermaid::
-    :caption: Flywheel (e.g. subway example)
+    :caption: Turnstile (e.g. subway example)
 
     stateDiagram
         Closed --> Process : pay
@@ -53,4 +53,64 @@ Solution
 .. admonition:: Definition
     :class: pattern_definition
 
-continue at 37:54
+    The **State Pattern** allows an object to alter its behavior when its internal state changes.
+    The object will appear to change its class.
+
+As seen from the diagram above, if the state of the object changes, the implementation of its
+action methods may change.
+
+.. mermaid::
+    :align: center
+    :caption: General class diagram
+
+    classDiagram
+        State "1..*" <-- Context : HAS-A
+        State <|-- ConcreteStateA
+        State <|-- ConcreteStateB
+        class Context {
+            +request()
+        }
+        class State {
+            <<interface>>
+            +handle()
+        }
+        class ConcreteStateA {
+            +handle()
+        }
+        class ConcreteStateB {
+            +handle()
+        }
+
+* When calling *request()* method from the *Context* class, it will delegate to *state.handle()*
+  to handle the state.
+* THe *Context* class does not know, which state it currently has, but calls the *handle()* method
+  of the *State* class (actually, it's implementation in the currently active *ConcreteState* class)
+  to handle the state
+
+.. mermaid::
+    :align: center
+    :caption: Applied to upper example
+
+    classDiagram
+        GateState "1..*" <-- Gate : HAS-A
+        GateState <|-- OpenGateState
+        GateState <|-- ClosedGateState
+        GateState <|-- ProcessingPaymentGateState
+        class Gate {
+            +request()
+        }
+        class GateState {
+            <<interface>>
+            +handle()
+        }
+        class OpenGateState {
+            +handle()
+        }
+        class ClosedGateState {
+            +handle()
+        }
+        class ProcessingPaymentGateState {
+            +handle()
+        }
+
+continue at 45:06
