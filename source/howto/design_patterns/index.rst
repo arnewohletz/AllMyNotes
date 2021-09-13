@@ -14,3 +14,4 @@ Design Patterns
     proxy_pattern.rst
     template_method_pattern.rst
     composite_pattern.rst
+    iterator_pattern.rst
