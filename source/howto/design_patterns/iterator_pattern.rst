@@ -104,5 +104,3 @@ Find a template example for Python at https://refactoring.guru/design-patterns/i
 
 .. literalinclude:: _code/iterator.py
     :language: python
-
-continue at 1:26:59 https://www.youtube.com/watch?v=uNTNEfwYXhI
