@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Item(ABC):
-    pass
+    name = None
 
 
 class Sword(Item):
@@ -102,7 +102,7 @@ class HandHeldInventoryIterator(InventoryIterator):
             IndexError(f"HandHeldInventory cannot have index of {self.index}")
 
     def is_done(self) -> bool:
-        return self.index > 2
+        return self.index > 1
 
 
 if __name__ == "__main__":
@@ -110,8 +110,9 @@ if __name__ == "__main__":
     sword = Sword()
     shield = Shield()
     inventory = HandHeldInventory(right=sword, left=shield)
-    iterator = HandHeldInventoryIterator(inventory)
+    iterator = inventory.get_iterator()
 
     while not iterator.is_done():
         print(iterator.current().name)
-        # TODO: fix this
+        # do other cool stuff with current item
+        iterator.next()
