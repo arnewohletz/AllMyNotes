@@ -20,6 +20,8 @@ State Pattern
         Open --> Open : pay_ok
         Open --> Open : pay_failed
 
+.. _transitioning_table:
+
 .. table:: Transitioning table (current state + action -> new state)
 
     +------------+-----------------------------------+---------+
@@ -82,7 +84,7 @@ action methods may change.
         }
 
 * When calling *request()* method from the *Context* class, it will delegate to *state.handle()*
-  to handle the state.
+  to handle the *State*.
 * THe *Context* class does not know, which state it currently has, but calls the *handle()* method
   of the *State* class (actually, it's implementation in the currently active *ConcreteState* class)
   to handle the state
@@ -96,21 +98,60 @@ action methods may change.
         GateState <|-- OpenGateState
         GateState <|-- ClosedGateState
         GateState <|-- ProcessingPaymentGateState
+        Gate <-- OpenGateState : HAS-A
+        Gate <-- ClosedGateState : HAS-A
+        Gate <-- ProcessingPaymentGateState : HAS-A
         class Gate {
-            +request()
+            +enter()
+            +pay()
+            +pay_OK()
+            +pay_failed()
+            +transition_to(state: State)
         }
         class GateState {
             <<interface>>
-            +handle()
+            +enter()
+            +pay()
+            +pay_OK()
+            +pay_failed()
         }
         class OpenGateState {
-            +handle()
+            +enter()
+            +pay()
+            +pay_OK()
+            +pay_failed()
         }
         class ClosedGateState {
-            +handle()
+            +enter()
+            +pay()
+            +pay_OK()
+            +pay_failed()
         }
         class ProcessingPaymentGateState {
-            +handle()
+            +enter()
+            +pay()
+            +pay_OK()
+            +pay_failed()
         }
 
-continue at 45:06
+* the methods of *Gate* blindly delegate to the *GateState*, which the logic about the gate's state
+  (here, the *Gate* class doesn't do anything but calling the respective method on the *GateState*
+  implementing class, though it also could do something before or after calling it)
+* each concrete State class implements all Context methods to have all combinations from the
+  :ref:`transitioning table <transitioning_table>` and implements the behavior expected from that state
+* there are various ways of changing the state of the *Gate* class:
+
+    * The simplest way is to give then *ConcreteState* classes a reference to the *Gate* class in
+      order to call a *Gate*'s *transition_to(state: State)* method which changes the *Gate*
+      classes state. This is the approach **used in the Gate example**
+
+        .. warning::
+            This approach violates the :ref:`Open-Closed Principle <open_closed_principle>`
+            since the original *Gate* class is mutated
+
+    * To **avoid mutation** make the *ConcreteState* classes changing-state methods return a
+      *ConcreteState* object, which the *Gate* class will use the return a new *Gate* class to
+      the *Client* (original caller) with the proper state set
+
+.. literalinclude:: _code/state.py
+    :language: python
