@@ -16,3 +16,4 @@ Design Patterns
     composite_pattern.rst
     iterator_pattern.rst
     state_pattern.rst
+    observer_pattern.rst
