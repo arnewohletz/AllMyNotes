@@ -1,3 +1,5 @@
+.. _decorator_pattern:
+
 Decorator Pattern
 -----------------
 Issue
