@@ -39,8 +39,12 @@ extensions = [
     'sphinx_git',
     'sphinx-prompt',
     'sphinxemoji.sphinxemoji',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinxcontrib.bibtex'
 ]
+
+# Bibtex Bibfiles
+bibtex_bibfiles = ['refs.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

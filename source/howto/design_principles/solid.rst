@@ -1,5 +1,5 @@
-SOLID Principles
-================
+SOLID
+=====
 Single-Responsibility Principle (SRP)
 -------------------------------------
 .. admonition:: Definition
@@ -54,11 +54,15 @@ A common code smell is, if you need to check the type of an object (not always, 
 since you cannot trust, that the object will behave the way it is expected.
 
 An example of the Liskov's substitution principle is to substitute a ``Square`` for a
- ``Rectangle`` (Square is a subclass of Rectangle), because a rectangle can have two
+``Rectangle`` (Square is a subclass of Rectangle), because a rectangle can have two
 different sized sides, whereas the square always has two equally sized sides.
 
 Interface segregation principle
 -------------------------------
+.. admonition:: Definition
+    :class: design_principle
+
+    **dsfdsf**
 
 
 Dependency inversion principle
