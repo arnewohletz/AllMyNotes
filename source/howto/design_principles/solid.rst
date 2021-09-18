@@ -62,10 +62,110 @@ Interface segregation principle
 .. admonition:: Definition
     :class: design_principle
 
-    **dsfdsf**
+    **It is better to have many small interfaces, rather than a few large interfaces.**
 
+    or
+
+    **Clients should not be forced to depend upon interfaces that they do not use.**
+
+As an example, stating all methods which need to be implemented by a concrete subclass
+inside one single interface may lead to the subclass having to implemented methods it does
+not need or must not have.
+
+.. mermaid::
+    :align: center
+    :caption: All concrete animal behavior is defined in one interface (Animal)
+
+    classDiagram
+        IAnimal <|-- Animal
+        class IAnimal {
+            <<interface>>
+            +eat()
+            +move()
+            +sleep()
+        }
+
+Instead, smaller *Roles* for a concrete classes behavior should be defined and passed to
+the concrete class during instantiation.
+
+.. mermaid::
+    :align: center
+    :caption: Animal behavior is defined in separate interfaces
+
+    classDiagram
+        ICanEat <-- Animal
+        ICanMove <-- Animal
+        ICanSleep <-- Animal
+        class ICanEat {
+            <<interface>>
+            +eat()
+        }
+        class ICanMove {
+            <<interface>>
+            +move()
+        }
+        class ICanSleep {
+            <<inteface>>
+            +sleep()
+        }
+
+Each concrete Animal then may implement all three interfaces. This favors composition over
+inheritance and decoupling over coupling, as behavior for concrete Animal classes is more
+flexibel. There might be Animals, that cannot move, so those won't be forced to implement
+a method they don't use.
+
+Moreover, other concrete classes like *Plant* could implement some of these interfaces
+(e.g. only the *ICanEat*), so an interface originally defined for one type of concrete class
+can also be used by other classes.
+
+.. _dependency_inversion_principle:
 
 Dependency inversion principle
 ------------------------------
+.. admonition:: Definition
+    :class: design_principle
 
+    **Depend upon abstraction. Do not depend upon concrete classes.**
 
+This principle takes the principle to program against an interface one step further.
+It defines, that even the high level classes (e.g. a Zoo class), should depend on an
+abstraction (e.g. an Animal class), as well a low level classes (e.g. Rabbit), which
+implements the abstraction.
+
+The *inversion* means, that the lower level classes derive from a higher level abstraction,
+and high level classes referencing these abstraction instead of the lower level implementations
+(instead of high level classes directly depending on these lower level concretions).
+
+.. mermaid::
+    :align: center
+    :caption: High level class (Zoo) depends on lower level implementations (animal types) -> Bad!
+
+    classDiagram
+        Rabbit <-- Zoo
+        Zebra <-- Zoo
+        Monkey <-- Zoo
+
+.. mermaid::
+    :align: center
+    :caption: High level & low level classes both depend on abstraction (Animal) -> Good!
+
+    classDiagram
+        Zoo <-- Animal
+        Animal <|-- Rabbit
+        Animal <|-- Zebra
+        Animal <|-- Monkey
+        class Animal {
+            <<interface>>
+        }
+
+As an example, the :ref:`Factory Method Pattern <factory_method_pattern>` follows the principle
+by providing an abstract factory class which implementations eventually create an instance
+of a concrete class (based on its internal logic), which also depend on an abstract class.
+
+Some guidelines which help to follow the *Dependency Inversion Principle*:
+
+    * No variable should hold reference to a concrete class
+    * No class should derive from a concrete class
+    * No method should overwrite an implemented method of any of its base classes
+
+Naturally, these rules must often be broken, but it is a guideline to strive for.

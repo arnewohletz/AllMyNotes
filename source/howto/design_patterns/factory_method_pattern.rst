@@ -24,25 +24,6 @@ Design Principles & Definition
     subclasses decide which class to instantiate. Factory Method lets a class defer
     instantiation to subclasses.
 
-.. admonition:: Principle 1
-    :class: design_principle
-
-    **Depend upon abstraction. Do not depend upon concrete classes.**
-
-    This is known as the *Dependency Inversion Principle*. It appears similar to
-    the principle, to program against an interface, not an implementation, but goes
-    one step further: It defines, that even the high level classes (e.g. a Zoo class),
-    should depend on an abstraction (e.g. an Animal class), as well a low level
-    classes (e.g. Rabbit), which implements the abstraction.
-
-    Some guidelines which help to follow the *Dependency Inversion Principle*:
-
-        * No variable should hold a variable to a concrete class
-        * No class should derive from a concrete class
-        * No method should overwrite an implemented method of any of its base classes
-
-    Naturally, these rules must often be broken, but it is a guideline to strive for.
-
 Solution
 ````````
 * Object instantiation is moved into separate classes

@@ -20,7 +20,7 @@ of code must not duplicate *knowledge* or *intent*, even if done in two very dif
 To test, if your code complies with the principle, see if a single facet of your code need
 to be changed, does this change require changes at different places in the code as well.
 
-Example :footcite:p:`dry_python_2`
+Example :footcite:p:`dry_python`
 ``````````````````````````````````
 We want to calculate the BMI of five subjects:
 
@@ -53,7 +53,7 @@ it is duplicated for each subject:
 
 .. literalinclude:: _code/dry_improved_2.py
     :language: python
-    :lineos:
+    :linenos:
 
 To improve it even more let's remove calling each subject individually and move them
 all to a list and iterate over it:
