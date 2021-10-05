@@ -10,4 +10,5 @@ How-To
     design_principles/index.rst
     git_commands.rst
     nginx.rst
+    firefox.rst
     scp.rst

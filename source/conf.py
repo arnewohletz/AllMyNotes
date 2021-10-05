@@ -40,7 +40,8 @@ extensions = [
     'sphinx-prompt',
     'sphinxemoji.sphinxemoji',
     'sphinx_copybutton',
-    'sphinxcontrib.bibtex'
+    'sphinxcontrib.bibtex',
+    'sphinxemoji.sphinxemoji'
 ]
 
 # Bibtex Bibfiles
