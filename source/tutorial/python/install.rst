@@ -211,5 +211,10 @@ and replace it with::
 
 Any new CPython version installed via ``pyenv install`` should now utilize your Tcl/Tk installation.
 
+.. important::
+
+    If *pyenv* is updated to a newer version, the ``python-build`` script needs to be edited again,
+    while navigating to the new <version> directory.
+
 .. _Homebrew: https://brew.sh/
 .. _mentioned on python.org: https://www.python.org/download/mac/tcltk/
