@@ -1,8 +1,8 @@
-Firefox UserChrome.css
-----------------------
+Custom style with UserChrome.css
+--------------------------------
 .. hint::
 
-    Steps must be executed for each profiles.
+    Steps must be executed for each profile.
 
 Prerequisites
 `````````````

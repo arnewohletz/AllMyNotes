@@ -8,5 +8,5 @@
     design_principles/index.rst
     git_commands.rst
     nginx.rst
-    firefox.rst
+    firefox/index.rst
     scp.rst
