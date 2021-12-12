@@ -183,6 +183,36 @@ Also, install the extension *pyenv-virtualenv*:
 
 .. TODO: Add missing bash profile setting and similar stuff
 
+Before installing any Python interpreters
+'''''''''''''''''''''''''''''''''''''''''
+xz
+**
+Some Python modules, like `pandas`_, require the data compression package which
+supports the `lzma`_ compression algorithm. If this isn't preinstalled on your system
+(not preinstalled on macOS), it will not be built into Python when building it.
+
+Pandas for instance will prompt such error message, when using the module in environments without
+the module:
+
+.. code-block:: none
+
+    UserWarning: Could not import the lzma module. Your installed Python is incomplete.
+    Attempting to use lzma compression will result in a RuntimeError.
+
+Install the `xz`_ formulaee via Homebrew, which contains these dependencies:
+
+.. prompt:: bash
+
+    brew install xz
+
+Now go ahead and install your desired Python interpreter.
+
+.. _pandas: https://pandas.pydata.org/
+.. _lzma: https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm
+.. _xz: https://formulae.brew.sh/formula/xz
+
+Tcl/Tk
+******
 Before installing any `CPython <https://en.wikipedia.org/wiki/CPython>`_ version, you will need
 to install a newer version of Tcl/Tk on your system. As `mentioned on python.org`_, macOS as of now
 does not provide a safe and recent version of the GUI framework. Since *pyenv* builds Python distributions

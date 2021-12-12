@@ -9,4 +9,5 @@
     git_commands.rst
     nginx.rst
     firefox/index.rst
+    windows/index.rst
     scp.rst
