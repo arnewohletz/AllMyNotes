@@ -26,7 +26,7 @@ sphinx.util.osutil.ENOENT = errno.ENOENT
 project = 'All-My-Notes'
 copyright = '2021, Arne Wohletz'
 author = 'Arne Wohletz'
-
+version = 'stable'
 
 # -- General configuration ---------------------------------------------------
 
@@ -64,6 +64,8 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'navigation_depth': 5,
+    'logo_only': True,
+    'display_version': False,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

@@ -1,5 +1,5 @@
-Copy files from or to remote with SCP
--------------------------------------
+SCP
+===
 .. rubric:: Prerequisites
 
 * SSH Client is installed on local machine

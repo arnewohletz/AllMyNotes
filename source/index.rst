@@ -16,6 +16,10 @@
 
     howto/index.rst
 
+Git Changelog
+=============
+.. git_changelog::
+
 Indices and tables
 ==================
 

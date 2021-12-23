@@ -4,15 +4,15 @@ How to use custom private key for authentication
 ------------------------------------------------
 Preconditions
 `````````````
-    * A key pair has been created (e.g. via ``ssh-keygen``)
-    * Key pair either has a different name as ``ìd_rsa``, ``id_dsa``, ``id_ecdsa``,
-      ``id_ed25519`` or ``id_xmss`` (default names for different encryption methods) or
-      is located at a different location as ``C:\<Username>\.ssh`` or ``/home/<username>/.ssh``
+* A key pair has been created (e.g. via ``ssh-keygen``)
+* Key pair either has a different name as ``ìd_rsa``, ``id_dsa``, ``id_ecdsa``,
+  ``id_ed25519`` or ``id_xmss`` (default names for different encryption methods) or
+  is located at a different location as ``C:\<Username>\.ssh`` or ``/home/<username>/.ssh``
 
 Steps
 `````
 #. On the *Client* machine go to ``C:\<Username>\.ssh`` or ``/home/<username>/.ssh``.
-#. Create a new file called ``config`` and only give creator read and write access:
+#. Create a new file called ``config`` and only give the creator read and write access:
 
     .. prompt:: bash
 
@@ -27,9 +27,9 @@ Steps
 
     .. attention::
 
-        The path should point to the private key file, not the public key file.
+        The path must point to the private key file, not the public key file.
 
-#. Try to establish a connection via as usual:
+#. Try to establish a connection as usual:
 
     .. prompt:: bash
 
@@ -38,14 +38,9 @@ Steps
 Install and setup OpenSSH
 -------------------------
 Both the *Client* (the machine from which you want to connect) as well as the *Server* (the machine
-you want to connect to, need to have OpenSSH installed.
+you want to connect to, need to have OpenSSH installed (preinstalled on macOS and Linux).
 
-#. Windows only:
-
-    * Download the latest OpenSSH for Windows from https://github.com/PowerShell/Win32-OpenSSH/tags.
-    * Follow installation instructions on https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH.
-
-    .. hint::
+.. hint::
 
         OpenSSH should be preinstalled on macOS and Linux. Check via ``ssh -V``to see the version.
         Consider upgrading, if version is old.
@@ -62,6 +57,11 @@ you want to connect to, need to have OpenSSH installed.
             .. prompt:: bash
 
                 sudo apt-get upgrade ssh
+
+#. Windows only:
+
+    * Download the latest OpenSSH for Windows from https://github.com/PowerShell/Win32-OpenSSH/tags.
+    * Follow installation instructions on https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH.
 
 #. Create a new directory ``C:\Users\<username>\.shh`` (Windows) or ``/home/<username>/.ssh`` if not existing.
 #. Within it, create a new file ``authorized_keys`` (if not existing).

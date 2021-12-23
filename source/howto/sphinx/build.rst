@@ -1,6 +1,5 @@
 Building
 ========
-
 How to re-build all sources
 ---------------------------
 By default, sphinx only builds the sources that have changed since the last build
@@ -9,7 +8,7 @@ in order to make builds faster.
 Some changes, like in static files (e.g. css), that have an effect on a doc file
 are not rebuild unless the content of that doc files itself changes.
 
-In order to force sphinx to rebuild all sources call sphinx-build directly using this
+In order to force sphinx to rebuild all sources, call sphinx-build directly using this
 command in the documentations root folder:
 
 .. prompt:: bash

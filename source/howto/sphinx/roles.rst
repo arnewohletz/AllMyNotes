@@ -1,6 +1,5 @@
-Roles
-=====
-
+Custom Roles
+============
 How to apply a special inline font style
 ----------------------------------------
 .. role:: rbg
