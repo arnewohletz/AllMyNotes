@@ -16,6 +16,12 @@
 
     howto/index.rst
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Reference
+
+    reference/python/index.rst
+
 Git Changelog
 =============
 .. git_changelog::

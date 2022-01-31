@@ -69,6 +69,16 @@ Also, install the extension *pyenv-virtualenv*:
 
 .. TODO: Add missing bash profile setting and similar stuff
 
+Same as on Linux, add the auto-initializing commands to your ``~/.zshrc`` file:
+
+.. code-block:: none
+
+    # pyenv
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+
+Afterwards, start a new shell.
+
 Before installing any Python interpreters
 '''''''''''''''''''''''''''''''''''''''''
 xz

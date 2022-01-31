@@ -1,5 +1,6 @@
 Singleton Pattern
 -----------------
+.. todo: Write Singleton Pattern
 
 COPIED FROM EVERNOTE
 

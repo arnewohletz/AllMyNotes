@@ -18,13 +18,41 @@ Steps
 #. Type `about:profiles` into search bar and confirm.
 #. For each profile open the *Root directory*.
 #. Within there, create a new directory called **chrome**.
-#. Within ./chrome, create a new file called **UserChrome.css** and open it
-#. Copy the content of :ref:`UserChrome.css <user_chrome_css>`.
+#. Within *./chrome*, create a new file called **UserChrome.css** and open it.
+#. Add or change the content of :ref:`UserChrome.css <user_chrome_css>`.
 #. Save the file and restart Firefox to apply changes.
 
+Getting Firefox style settings
+``````````````````````````````
+.. important::
+
+    Use a **clean profile** without extensions as those (e.g. uBlock) may break
+    functions of the browser toolbox.
+
+#. `Enable Browser Toolbox`_.
+#. `Open the Browser Toolbox`_.
+#. In case you need to inspect elements from pop-up elements (e.g. app menu),
+   open the setting (three dots button in the top right) and check
+   **Disable Popup Auto-Hide**.
+#. Get your browser into the state in which you have access your desired element.
+#. Select the element picker (top left button) and select the browser element.
+#. On the right side, select the *Rules* tab to the see all CSS rules applicable
+   to your element.
+#. Edit the rules freely to your needs.
+#. Save the changed or new rules to your ``userChrome.css`` file. Make sure to
+   mark them all as ``!important`` to prevent the rules from being overwritten
+   by the browser.
+#. Restart the browser using the respective profile to check the result.
+
+.. _Enable Browser Toolbox: https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox#enabling_the_browser_toolbox
+.. _Open the Browser Toolbox: https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox#opening_the_browser_toolbox
+
 .. _user_chrome_css:
-UserChrome.css
-``````````````
+
+UserChrome.css Snippets
+```````````````````````
+Save Bookmarks menu
+'''''''''''''''''''
 Windows (1920 x 1080):
 
 .. code-block:: css
@@ -122,3 +150,19 @@ MacBook Air (1440 × 900):
       padding-block: 2px !important;
       min-height: unset !important; /* v92.0 - for padding below 4px */
     }
+
+Application Menu
+''''''''''''''''
+
+.. code-block:: css
+
+    /*Decrease app menu size*/
+    :root {
+        --arrowpanel-menuitem-padding-block: 2px !important;
+        --arrowpanel-menutiem-padding-inline: 2px !important;
+    }
+
+
+Links
+`````
+https://www.userchrome.org
