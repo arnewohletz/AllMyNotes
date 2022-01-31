@@ -1,98 +1,274 @@
 SSH
 ===
-How to use custom private key for authentication
-------------------------------------------------
-Preconditions
-`````````````
-* A key pair has been created (e.g. via ``ssh-keygen``)
-* Key pair either has a different name as ``ìd_rsa``, ``id_dsa``, ``id_ecdsa``,
-  ``id_ed25519`` or ``id_xmss`` (default names for different encryption methods) or
-  is located at a different location as ``C:\<Username>\.ssh`` or ``/home/<username>/.ssh``
+.. important::
 
-Steps
+    SSH directories are commonly hidden. Make sure to enable visibility on hidden folders in your file explorer.
+
+    Windows: In Explorer, select the *View* pane and check *Hidden items*
+    Linux (Ubuntu): In File Manager, select *View / Show Hidden Files*
+    macOS: In Finder, hit :kbd:`Shift+Cmd+.` to show/hide hidden directories and files.
+
+Installation
+------------
+Windows
+```````
+There is no SSH connection tool preinstalled on Windows, but a Windows binary for the OpenSSH tool,
+the popular SSH tool on many Linux distributions is also available (although it might be one or two
+versions behind the Linux build).
+
+#. Download the latest OpenSSH for Windows from https://github.com/PowerShell/Win32-OpenSSH/tags.
+#. Follow installation instructions on
+   https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH.
+
+Linux
 `````
-#. On the *Client* machine go to ``C:\<Username>\.ssh`` or ``/home/<username>/.ssh``.
-#. Create a new file called ``config`` and only give the creator read and write access:
+OpenSSH is pre-installed on many Linux distributions. To check that, open a shell windows
+and run
+
+.. prompt:: bash
+
+    ssh -V
+
+which prints the version of OpenSSH, if installed. If the command is not recognized, you probably
+need to install an SSH tool. To install OpenSSH, use the package manager (e.g. apt on Ubuntu based Linux):
+
+.. prompt:: bash
+
+    sudo apt install openssh-client
+    sudo apt install openssh-server
+
+.. note::
+
+    OpenSSH provides two installations, one for the Client, one for the server.
+    If you only need to onto another PC, the ``openssh-client`` suffices. But if
+    you also want other systems to connect onto your machine, you will also need
+    the ``openssh-server``.
+
+As always, consider upgrading your OpenSSH version:
+
+.. prompt:: bash
+
+    sudo apt upgrade openssh-client
+    sudo apt upgrade openssh-server
+
+macOS
+`````
+As on Linux, macOS comes with a preinstalled version of OpenSSH, although it might
+not be the latest version of it (check via ``ssh -V``).
+
+In case, you want to update to a later versions (or, for some reasons, don't have OpenSSH
+installed), best use `homebrew`_:
+
+#. Install Homebrew.
+#. Install OpenSSH (also installs OpenSSL, which is a precondition):
 
     .. prompt:: bash
 
+        brew install openssh
+
+To update your OpenSSH version, simply run:
+
+.. prompt:: bash
+
+    brew upgrade openssh
+
+.. _homebrew: https://brew.sh/index_de
+
+How to use keys for authentication
+----------------------------------
+It is recommended to handle authentication of SSH connections via keys, instead of a password.
+Most of the steps only need to be executed on the server machine.
+
+Server & Client: Create key pair
+````````````````````````````````
+Execute these steps **on both the client and the server**.
+
+#. Create a new directory ``C:\Users\%USERNAME%\.ssh`` (Windows) or ``~/.ssh`` (Linux/macOS,
+   where it should already exist).
+#. Within it, create two new empty file named ``authorized_keys`` and ``config``.
+#. Start the Key Generator via the command line (Windows) or shell (Linux/macOS)
+
+    .. prompt:: bash
+
+        ssh-keygen
+
+#. Set the path and filename of the keys (default: ~/.ssh/id_rsa).
+   In case, you don't need separate keys pairs for different connections, you don't need to
+   specify a custom path or filename.
+#. Enter a passphrase to encrypt the private key, if needed (more secure, but might conflict with
+   applications using the key).
+#. Check if the .ssh directory contains both the private and the public key file (\*.pub).
+
+Server: Set permissions
+```````````````````````
+To prevent the authentication keys from being manipulated, only the respective user must
+be able to interact with them.
+
+.. hint::
+
+    The commands are used on Linux/macOS only. See here, how to permissions on Windows:
+    https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/
+
+#. **Linux/macOS only**: Make sure, your home directory is only writable by the respective user:
+
+    .. prompt:: bash
+
+        ls -l /home
+        ls -l /Users
+
+    should output ``drwxr-xr-x`` for the user's directory.
+
+    If not, execute:
+
+        .. prompt:: bash
+
+            chmod 755 ~/
+
+#. It is important that ``$HOME/.ssh`` (``%USERPROFILE%\.ssh`` on Windows) and the ``authorized_keys``
+   file have the correct permissions and owner:
+
+       * ``$USERPROFILE$\.ssh`` must be owned by the user
+       * ``$USERPROFILE$\.ssh`` must only be writable, readable and executable by the owner
+       * ``authorized_keys`` must be owned by the user
+       * ``authorized_keys`` must only be writable and readable by the owner
+
+    .. prompt:: bash
+
+        chown $USER ~/.ssh
+        chown $USER ~/.ssh/authorized_keys
+        chown $USER ~/.ssh/config
+
+    .. prompt:: bash
+
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/authorized_keys
         chmod 600 ~/.ssh/config
 
-#. Inside the file add the following content:
+#. The private key must also be protected (here: id_rsa):
+
+    .. prompt:: bash
+
+        chmod 700 ~/.ssh/id_rsa
+
+Server: Set-up key authentication
+`````````````````````````````````
+#. Add your private key to the authentication agent (it will handle the authorizations via keys):
+
+    .. prompt:: bash
+
+        ssh-add
+
+    .. hint::
+
+        In case you are using a private key using a different name and/or path, you must pass it:
+
+        .. prompt:: bash
+
+            ssh-add /path/to/custom_private_key_file
+
+#. On the **client**, open the public key file (e.g. id_rsa.pub) and copy the entire content into the
+   ``authorized_keys`` file on the **server** (should be a single line starting with *ssh-rsa* and ending
+   with *<username>@<hostname>*). Save and close both files.
+
+    .. important::
+
+        The public key of **each** client, that wants to authorize itself, needs to be added into a
+        separate line within the server's ``authorized_keys`` file. Each time, this file is edited,
+        the SSH server must be restarted.
+
+#. Open the OpenSSH config file in a text editor:
+
+    * Windows: ``C:\ProgramData\ssh\sshd_config``
+    * Linux: ``/etc/ssh/ssh_config``
+    * macOS: ``/private/etc/ssh/sshd_config``
+
+#. Change the following content:
+
+    .. code-block:: none
+
+        RSAAuthentication yes
+        PubkeyAuthentication yes
+        AuthorizedKeysFile .ssh\authorized_keys
+
+    .. important::
+
+        Don't disable the password authentication (``PasswordAuthentication``) until the
+        key authentication has been proven to work.
+
+#. **Windows only**: Make sure, the following content is commented out (starts with #):
+
+    .. code-block:: none
+
+        # Match Group administrators
+        # AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+
+#. Save and close the file.
+#. Restart the SSH Server.
+
+    Windows:
+
+        #. Type :kbd:`Windows+R`, type ``services.msc`` and confirm to open the service manager.
+        #. Right-click the service and select *Restart*.
+        #. Ensure that the ``OpenSSH SSH Server`` service's startup type is set to *Automatic*
+           (right click service and choose ``Properties`` to edit).
+
+    Linux:
+
+        .. prompt:: bash
+
+            service ssh restart
+
+    macOS:
+
+        If using Homebrew installation:
+
+        .. prompt:: bash
+
+            brew services start ssh
+
+        If using preinstalled SSH:
+
+        .. prompt:: bash
+
+            sudo launchctl stop com.openssh.sshd
+            sudo launchctl start com.openssh.sshd
+
+Client: Set-up key authentication
+`````````````````````````````````
+#. Open the ``config`` file inside the ``.ssh`` directory.
+#. Insert the following content (adapt path to private key file a.k.a. Identity file, if necessary):
+
+    On Windows (adapt USERNAME):
 
     .. code-block:: none
 
         Host *
-          IdentityFile </path/to/my/id_rsa_file>
+          IdentityFile C:\Users\<USERNAME>\.ssh/id_rsa
 
-    .. attention::
+    On Linux/macOS:
 
-        The path must point to the private key file, not the public key file.
+    .. code-block:: none
 
-#. Try to establish a connection as usual:
+        Host *
+          IdentityFile ~/.ssh/id_rsa
+
+    This enables the client to use its private key file as an identity to authenticate
+    towards the server.
+
+Test key authentication
+```````````````````````
+Connect to the server (using the server username):
 
     .. prompt:: bash
 
-        ssh <user>@<host>
+        ssh <HOST_USERNAME>@<HOST>
 
-Install and setup OpenSSH
--------------------------
-Both the *Client* (the machine from which you want to connect) as well as the *Server* (the machine
-you want to connect to, need to have OpenSSH installed (preinstalled on macOS and Linux).
+The connection should be established without asking for the password, stating that
+the public key was used for authentication.
 
-.. hint::
+If the connection is not successful, check the log output, by running the connection in
+verbose mode:
 
-        OpenSSH should be preinstalled on macOS and Linux. Check via ``ssh -V``to see the version.
-        Consider upgrading, if version is old.
+    .. prompt:: bash
 
-        On macOS, it is recommended to use Homebrew for updating ssh (requires OpenSSL):
-
-            .. prompt:: bash
-
-                brew install openssl
-                brew install openssh --with-brewed-openssl
-
-        On Linux, OpenSSH should be upgradable via you package manager (e.g. ``apt``), for example:
-
-            .. prompt:: bash
-
-                sudo apt-get upgrade ssh
-
-#. Windows only:
-
-    * Download the latest OpenSSH for Windows from https://github.com/PowerShell/Win32-OpenSSH/tags.
-    * Follow installation instructions on https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH.
-
-#. Create a new directory ``C:\Users\<username>\.shh`` (Windows) or ``/home/<username>/.ssh`` if not existing.
-#. Within it, create a new file ``authorized_keys`` (if not existing).
-#. Open ``authorized_keys`` and insert the following content (all in one line):
-   ```
-   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDnLaeMV3tqiF0IKq3HbdzI4tgMUEmtGpb0fKNCU0LSOGzIrM8vq72pymcl29Lob6vxjqw6/UdeQWZXby+5OVAQzaOS2ptmpxVHssfMducXXmf4pNkIV2VvVYoz4NSsU/BGXahSuFkZGAUxkn3zu3bSDKkYs39PGxSjLgyzuLa1029dY+Atw7rLcwwuwDM/6fUEadrFoh382ElRkdZjue+ioAX6GBTlBDqyyv55QA/vpZyHCJhBGc4CNZnQDFAx3fZ/AMuPNV/PzVT11HzviBsm1bkjw/jVI3gF9B7JadaA7ED9YeO73c1b213mK+aul/TvWiOugXkhGpu0MtauNP4rYU2Qx6EgpyIYrnBFkFiF0kUQcpm8CnkDdS66pEjft9TtEkzXl9SdtyvP5jRe/z9VvJZTP9xohYo4vrSaDdXc24we0nhaZzP9a8nPnUMwX2DW4VCmnLVgVQhCQ5vWbR5iDdzxoOKvNFAKP+iR6MbNVxonlMEu1HAdxxH8TFtRVgWxOBSyo27NTMn7e84FExDJIZ1l0V7c+JghNpdL7aMZvNZabyHSpIm5UDf532JfVnpeI7gE2Dvfo92ymdR7fFD9hyr0N3YlgxE3Qd33Hk/PXtfEOL2yVP20E8R9/gRWtt4N3IkzTI7f08e96LqKRO/LBCwnGGytMIO3F7toeJkD5w== nuance@ulm-ntg7-lbui08
-   ```
-6. Save and close the file.
-7. It is important that ``$USERPROFILE$\.ssh`` and ``authorized_keys`` have the correct permissions and owner
-   * ``$USERPROFILE$\.ssh`` must be owned by you (%USERNAME%)
-   * ``$USERPROFILE$\.ssh`` must only be writable, readable, executable by the owner (``700`` in Linux)
-   * ``authorized_keys`` must be owned by you /%USERNAME%)
-   * ``authorized_keys`` must only be writable and readable by the owner (``600`` in Linux)
-   * See here, how to adapt these in Windows: https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/
-8. Run ``Windows+R``, type ``services.msc`` and confirm to open the service manager.
-9. Ensure that the ``OpenSSH SSH Server`` service is executed and startup type is set to automatic
-   (right click service and choose ``Properties`` to edit).
-10. Open ``C:\ProgramData\ssh\sshd_config`` in a text editor (ProgramData is a hidden folder.
-    Enable it by opening the *View* pane in File Explorer and check *Hidden items*).
-11. To enable authorization via ``authorized_keys``, comment out (put ``#`` in front) these lines:
-    ````
-    # Match Group administrators
-    # AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
-    ````
-12. To allow access via RSA keys, adapt the line (and uncomment, if needed):
-    ````
-    PubKeyAuthentication yes
-    ````
-13. Additionally, you may disable the authentication via password. Beware, that this enforces
-    any computer to have a valid key pair to connect to the ET-Framework laptop:
-    ````
-    PasswordAuthentication no
-    ````
-14. Save and close the file, then restart OpenSSH via the service manager.
+        ssh <HOST_USERNAME>@<HOST> -v
