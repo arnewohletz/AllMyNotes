@@ -1,5 +1,5 @@
-How to create a Flask web application
-=====================================
+Flask - Set up a web application
+================================
 
 .. toctree::
     :maxdepth: 2

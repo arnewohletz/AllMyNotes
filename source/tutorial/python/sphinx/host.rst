@@ -1,5 +1,5 @@
-Hosting a Sphinx documentation (using nginx)
---------------------------------------------
+Hosting a Sphinx documentation (with nginx)
+-------------------------------------------
 #. :ref:`Install and setup nginx <install_setup_nginx>`.
 #. Create config file (e.g. *nginx.conf*) in your project root directory.
 #. Add the following content:

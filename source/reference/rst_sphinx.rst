@@ -15,7 +15,7 @@ Extensions by Sphinx
 ````````````````````
 * `reStructuredTest Primer`_: Short reference for most the basic syntax (similar to docutils description)
 * `Directives`_: Guide on directives (special sections)
-+ `Roles`_: Special inline text markups
+* `Roles`_: Special inline text markups
 
 .. _reStructuredTest Primer: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 .. _Directives: https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html

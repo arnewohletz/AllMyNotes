@@ -8,19 +8,26 @@
     tutorial/python/index.rst
     tutorial/cpp/index.rst
     tutorial/java/index.rst
-    tutorial/testing/index.rst
 
 .. toctree::
     :maxdepth: 2
     :caption: How-To
 
-    howto/index.rst
+    howto/python/index.rst
+    howto/sqlite/index.rst
+    howto/software_design/index.rst
+    howto/testing/index.rst
+    howto/network/index.rst
+    howto/firefox/index.rst
+    howto/windows/index.rst
 
 .. toctree::
     :maxdepth: 2
     :caption: Reference
 
-    reference/index.rst
+    reference/python/index.rst
+    reference/rst_sphinx.rst
+    reference/git_commands.rst
 
 Git Changelog
 =============
