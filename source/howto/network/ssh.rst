@@ -4,9 +4,9 @@ SSH
 
     SSH directories are commonly hidden. Make sure to enable visibility on hidden folders in your file explorer.
 
-    Windows: In Explorer, select the *View* pane and check *Hidden items*
-    Linux (Ubuntu): In File Manager, select *View / Show Hidden Files*
-    macOS: In Finder, hit :kbd:`Shift+Cmd+.` to show/hide hidden directories and files.
+    * Windows: In Explorer, select the *View* pane and check *Hidden items*
+    * Linux (Ubuntu): In File Manager, select *View / Show Hidden Files*
+    * macOS: In Finder, hit :kbd:`Shift-Cmd-.` to show/hide hidden directories and files.
 
 Installation
 ------------
@@ -66,11 +66,13 @@ installed), best use `homebrew`_:
 
         brew install openssh
 
-To update your OpenSSH version, simply run:
+.. hint::
 
-.. prompt:: bash
+    To update your OpenSSH version, simply run:
 
-    brew upgrade openssh
+    .. prompt:: bash
+
+        brew upgrade openssh
 
 .. _homebrew: https://brew.sh/index_de
 
@@ -79,13 +81,19 @@ How to use keys for authentication
 It is recommended to handle authentication of SSH connections via keys, instead of a password.
 Most of the steps only need to be executed on the server machine.
 
-Server & Client: Create key pair
-````````````````````````````````
-Execute these steps **on both the client and the server**.
+Prerequisites
+`````````````
+**Client & Server**:
 
 #. Create a new directory ``C:\Users\%USERNAME%\.ssh`` (Windows) or ``~/.ssh`` (Linux/macOS,
    where it should already exist).
-#. Within it, create two new empty file named ``authorized_keys`` and ``config``.
+#. Within it, create these empty files (no suffix):
+
+    * ``config``
+    * **Server only**: ``authorized_keys``
+
+Server & Client: Create key pair
+````````````````````````````````
 #. Start the Key Generator via the command line (Windows) or shell (Linux/macOS)
 
     .. prompt:: bash
@@ -97,7 +105,7 @@ Execute these steps **on both the client and the server**.
    specify a custom path or filename.
 #. Enter a passphrase to encrypt the private key, if needed (more secure, but might conflict with
    applications using the key).
-#. Check if the .ssh directory contains both the private and the public key file (\*.pub).
+#. Check if the ``.ssh`` directory contains both the private and the public key file (\*.pub).
 
 Server: Set permissions
 ```````````````````````
@@ -205,20 +213,20 @@ Server: Set-up key authentication
 #. Save and close the file.
 #. Restart the SSH Server.
 
-    Windows:
+    **Windows:**
 
         #. Type :kbd:`Windows+R`, type ``services.msc`` and confirm to open the service manager.
         #. Right-click the service and select *Restart*.
         #. Ensure that the ``OpenSSH SSH Server`` service's startup type is set to *Automatic*
            (right click service and choose ``Properties`` to edit).
 
-    Linux:
+    **Linux:**
 
         .. prompt:: bash
 
             service ssh restart
 
-    macOS:
+    **macOS:**
 
         If using Homebrew installation:
 

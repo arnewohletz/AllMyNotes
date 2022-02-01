@@ -9,17 +9,19 @@ all code examples using this import statement:
 
 Arrays
 ------
-
+.. rubric:: Reshape
 .. code-block:: python
 
-    new _array = some_array.reshape(rows, columns)
+    rows = 10
+    columns = 5
+    new_array = np.reshape((rows, columns))
 
 Creates ``new_array`` from ``some_array``, setting ``rows`` as new amount of rows and
 ``columns`` as new amount of columns. If -1 is used for either ``rows`` or ``columns``,
 the amount is calculated, depending on the amount of a values of ``some_array`` and the
 specified rows or columns.
 
-
+.. rubric:: Insert element
 .. code-block:: python
 
     np.insert(my_array, 0, 1, axis=1)
@@ -30,7 +32,7 @@ is done as new row (here: at position 0, a ``axis=1`` means the insert is done a
 If ``axis`` is not defined (or None), the array is flattened first (-> 1D) and the insert value is inserted
 at the defined position.
 
-
+.. rubric:: Convert element type
 .. code-block:: python
 
     new_array = (my_array == 10).astype(int)
@@ -38,10 +40,10 @@ at the defined position.
 Creates ``new_array`` out of ``my_array``, while checking each value in ``my_array`` if it
 matches 5, replacing the value with 0 if false or 1 if true for ``new_array``.
 
-
+.. rubric:: Multiply elements of two arrays
 .. code-block:: python
 
-    my_array = np.arange(9.0).shape((3,3))  # 3x3 row-wise filled from 1.0 to 9.0
+    my_array = np.arrange(9.0).shape((3,3))  # 3x3 row-wise filled from 1.0 to 9.0
     squared = np.multiply(my_array, my_array)  # 3x3 matrix, row-wise with square values
 
 Multiplies two compatible arrays, which means either
@@ -56,6 +58,7 @@ of the bigger array's column with the respective value at the same column of the
 smaller. Case c) is like b) but multiplying each value of the bigger arrays row
 with the respective value in the smaller array.
 
+.. rubric:: Find maximum value
 .. code-block:: python
 
     max_index = np.argmax(some_array, axis=1)
@@ -72,7 +75,7 @@ of the highest number within the
 
 Files
 -----
-
+.. rubric:: Read file into 1D array
 .. code-block:: python
 
     with gzip.open(filename, 'rb') as f:
@@ -83,10 +86,10 @@ Read data values (here: unsigned 8-bit integers) from file and put them into an 
 
 Others
 ------
-
+.. rubric:: Get exponential (e to the power of all input elements)
 .. code-block:: python
 
-    np.exp(10)
+    e_power_ten = np.exp(10)
 
 Calculates the value of a given exponent using *e* as base (exponential function)
 (here: e^10). Can also process arrays.

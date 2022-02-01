@@ -22,8 +22,8 @@ Steps
 #. Add or change the content of :ref:`UserChrome.css <user_chrome_css>`.
 #. Save the file and restart Firefox to apply changes.
 
-Getting Firefox style settings
-``````````````````````````````
+Get Firefox style elements
+``````````````````````````
 .. important::
 
     Use a **clean profile** without extensions as those (e.g. uBlock) may break

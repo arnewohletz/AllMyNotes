@@ -20,7 +20,7 @@
     :maxdepth: 2
     :caption: Reference
 
-    reference/python/index.rst
+    reference/index.rst
 
 Git Changelog
 =============
