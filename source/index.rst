@@ -8,6 +8,7 @@
     tutorial/python/index.rst
     tutorial/cpp/index.rst
     tutorial/java/index.rst
+    tutorial/docker/index.rst
 
 .. toctree::
     :maxdepth: 2
@@ -28,6 +29,8 @@
     reference/python/index.rst
     reference/rst_sphinx.rst
     reference/git_commands.rst
+    reference/network/index.rst
+    reference/others/index.rst
 
 Git Changelog
 =============
