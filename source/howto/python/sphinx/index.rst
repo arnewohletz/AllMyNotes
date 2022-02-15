@@ -6,3 +6,4 @@ Sphinx
 
     build.rst
     roles.rst
+    inline_code_highlight.rst

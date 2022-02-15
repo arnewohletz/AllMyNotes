@@ -84,3 +84,5 @@ html_logo = "_static/img/logo.png"
 linkcheck_ignore = [
     "https://mkyong.com",
 ]
+
+pygments_style = "default"
