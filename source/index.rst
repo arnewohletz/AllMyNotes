@@ -8,6 +8,7 @@
     tutorial/python/index.rst
     tutorial/cpp/index.rst
     tutorial/java/index.rst
+    tutorial/linux/index.rst
     tutorial/docker/index.rst
 
 .. toctree::
