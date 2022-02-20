@@ -1,0 +1,14 @@
+,Wheel (\*.whl),PEX (and others),"System package ( e.g. rpm, deb, brew)",Conda,Self contained executable (e.g. PyInstaller),Container image (e.g. Docker)
+:raw-html:`<p style="font-weight: bold;">Description</p>`,Bundles code into single file which can be installed with pip,"Bundles code + Python dependencies into a single, executable file",System library package which includes code and references to other system packages,Combines Python and system packages (except OS’ standard C library) into one package system,Self-contained executable that includes all dependencies except external C libraries,"Complete, isolated filesystem which includes everything to run the application"
+:raw-html:`<p style="font-weight: bold;">Suited for</p>`,,,,,,
+Libraries,yes,no,no,no,no,no
+Development Tools,yes,yes,yes,yes,(yes),no
+End-User Applications (Non-Devs),no,no,no,no,yes,yes
+:raw-html:`<p style="font-weight: bold;">Includes</p>`,,,,,,
+Source Code,yes,yes,yes,yes,yes,yes
+Compiled Files,yes,yes,yes,yes,yes,yes
+:raw-html:`<p style="font-weight: bold;">Contained Dependencies</p>`,,,,,
+Third party Python libraries,"Can be specified, but not included",yes,yes,yes,yes,yes
+Python interpreter,no,no,"Can be specified, but not included","Can be specified, but not included",yes,yes
+System packages (e.g. libc),no,no,"Can be specified, but not included",yes,no,yes
+OS (e.g. a Linux distribution),no,no,no,no,no,yes

@@ -36,6 +36,22 @@ But sometimes, you need more options, such as a colored font or background or un
 
     Your styles can now be applied just like the built-in cross references.
 
+    .. important::
+
+        If you like to have your role(s) available in every \*.rst file without
+        the need for an declaration in all files, you can add the respective roles
+        to the `rst_prolog`_ variable in your ``conf.py`` file, like this:
+
+        .. code-block:: python
+
+            rst_prolog = """
+            .. role:: rbg
+            .. role:: gfg
+            .. role:: ulined
+            """
+
+    .. _rst_prolog: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-rst_prolog
+
 #. Apply a style to a certain piece of text like this:
 
     .. code-block:: RST

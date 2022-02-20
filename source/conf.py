@@ -86,3 +86,20 @@ linkcheck_ignore = [
 ]
 
 pygments_style = "default"
+
+rst_prolog = """
+.. role:: python(code)
+    :language: python
+    :class: highlight
+
+.. role:: java(code)
+    :language: java
+    :class: highlight
+
+.. role:: raw-html(raw)
+   :format: html
+
+.. role:: rbg
+.. role:: gfg
+.. role:: ulined
+"""

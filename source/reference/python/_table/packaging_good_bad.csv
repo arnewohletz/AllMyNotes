@@ -1,0 +1,10 @@
+,GOOD if - Solution,BAD if - Downsides
+Wheel,"Your system libraries and Python version are standardized across applications, so you just preinstall all the necessary ones on your server farm.
+Or, you are packaging a simple Python application that doesn’t need much beyond what’s available on PyPI or your private PyPI-equivalent server.","You have a heterogeneous collection of applications requiring different versions of Python.
+Your application requires custom C/C++/etc. libraries that can’t be installed via pip, and that you can’t assume are pre-installed."
+PEX,\-,\-
+System package,\-,"The specific packages you need are the wrong version on the particular OS version you’re using.
+You want to run multiple applications with multiple dependencies on the same machine or virtual machine. This is possible in theory, but can end up being difficult due to conflicts or unavailable packages."
+Conda,"Good at supporting multiple applications with different dependencies (including Python version, and C library version) on the same machine or virtual machine.",\-
+Self contained executable,Good option if you don’t use you any special C shared libraries beyond the minimum you’d expect on any Linux distribution,\-
+Container image,"Great solution if you need to run lots of different combinations and variants, and you need some level of isolation.",You have multiple layers of packaging: you are likely going to have to do both Docker packaging and rely on one of the previously covered mechanisms.

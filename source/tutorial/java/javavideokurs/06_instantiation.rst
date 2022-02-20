@@ -1,5 +1,5 @@
-6. Instanz-Initialisierung
-==========================
+06. Instanz-Initialisierung
+===========================
 
 #. Die Vater-Klasse(n) werden initialisiert, d.h. deren Methoden und
    Instanzvariablen werden an die jeweiligen Kind-Klassen übergeben.

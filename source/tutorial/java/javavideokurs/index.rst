@@ -9,7 +9,7 @@ Not every chapter of the course is covered in these notes, as some are so simple
 that no future reference is required.
 
 My personal code written during this tutorial is located at
-https://github.com/horsewithnoname1985/JavaVideoKurs
+https://github.com/horsewithnoname1985/JavaVideoKurs.
 
 .. toctree::
     :maxdepth: 1
@@ -32,3 +32,18 @@ https://github.com/horsewithnoname1985/JavaVideoKurs
     49_casting.rst
     50_inheritance_scope.rst
     51_super.rst
+    52_overriding.rst
+    53_abstract.rst
+    54_interfaces.rst
+    55_error_handling.rst
+    56_exception_handling.rst
+    57_try_catch.rst
+    58_throw_exceptions.rst
+    59_exc_design_guide.rst
+    60_copy_objects.rst
+    61_compare_objects.rst
+    62_object_id.rst
+    63_string_constant_pool.rst
+    64_regex.rst
+    65_enums.rst
+    66_generics.rst
