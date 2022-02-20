@@ -150,9 +150,9 @@ Enums sind Klassen, die jedoch folgende Unterschiede aufweisen:
     }
 
 
-    | Überladen des Konstrukteurs mit Wochentag().
-    | Hier werden die Variablen der Reihe nach definiert:
-      this(Wert Variable 1, Wert Variable 2 ,…).
+| Überladen des Konstrukteurs mit Wochentag().
+| Hier werden die Variablen der Reihe nach definiert:
+  this(Wert Variable 1, Wert Variable 2 ,…).
 
 Bei Enums gibt es **keine Vererbung**.
 
