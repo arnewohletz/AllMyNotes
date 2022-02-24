@@ -7,3 +7,4 @@ Python
     install/index.rst
     flask/index.rst
     sphinx/index.rst
+    machine_learning.rst

@@ -22,6 +22,7 @@
     howto/network/index.rst
     howto/firefox/index.rst
     howto/windows/index.rst
+    howto/others/index.rst
 
 .. toctree::
     :maxdepth: 2

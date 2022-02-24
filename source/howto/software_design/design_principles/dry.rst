@@ -21,7 +21,7 @@ To test, if your code complies with the principle, see if a single facet of your
 to be changed, does this change require changes at different places in the code as well.
 
 Example :footcite:p:`dry_python`
-``````````````````````````````````
+````````````````````````````````
 We want to calculate the BMI of five subjects:
 
 .. literalinclude:: _code/dry_bad.py
