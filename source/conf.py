@@ -41,7 +41,7 @@ extensions = [
     'sphinxemoji.sphinxemoji',
     'sphinx_copybutton',
     'sphinxcontrib.bibtex',
-    'sphinxemoji.sphinxemoji'
+    'jupyter_sphinx'
 ]
 
 # Bibtex Bibfiles
@@ -55,6 +55,18 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+jupyter_sphinx_thebelab_config = {
+    'requestKernel': True,
+    'binderOptions': {
+        'repo': "binder-examples/requirements",
+    },
+}
+
+linkcheck_ignore = [
+    "https://mkyong.com",
+]
+
+pygments_style = "default"
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -81,12 +93,7 @@ html_css_files = [
 html_favicon = "_static/img/favicon.png"
 html_logo = "_static/img/logo.png"
 
-linkcheck_ignore = [
-    "https://mkyong.com",
-]
-
-pygments_style = "default"
-
+# Add custom role directives globally
 rst_prolog = """
 .. role:: python(code)
     :language: python

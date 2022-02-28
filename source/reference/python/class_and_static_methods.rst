@@ -1,5 +1,7 @@
 Class and static methods :footcite:p:`programiz_classmethod`
 ============================================================
+.. thebe-button:: Enable live code execution
+
 Class methods
 -------------
 Method is bound to a class, not an object of a class, hence does not require the
@@ -9,7 +11,7 @@ creation of a class instance.
 
 Convert a method into a class method (via :python:`classmethod()`)
 ``````````````````````````````````````````````````````````````````
-.. code-block:: python
+.. jupyter-execute::
 
     class Person:
         age = 25
@@ -20,18 +22,12 @@ Convert a method into a class method (via :python:`classmethod()`)
     Person.print_age = classmethod(Person.print_age)
     Person.print_age()
 
-The output will be
-
-.. code-block:: none
-
-    The age is: 25
-
 Use class method for 'overloading' a constructor
 ````````````````````````````````````````````````
 Since overloading a method is not available in Python, classmethods are used to
 return a class object
 
-.. code-block:: python
+.. jupyter-execute::
 
     from datetime import date
 
@@ -54,13 +50,6 @@ return a class object
     person1 = Person.from_birth_year('John',  1985)
     person1.display()
 
-The output will be:
-
-.. code-block:: none
-
-    Adam's age is: 19
-    John's age is: 37
-
 Here an additional constructor was created by declaring the from_birth_year()
 function a class method via the :python:`@classmethod` decorator.
 
@@ -70,7 +59,7 @@ When you derive a new class from a class, which contains a class method returnin
 a class object (cls), the correct class is instantiated, whereas a similar static
 method will always return the :ulined:`hardcoded` base class object.
 
-.. code-block:: python
+.. jupyter-execute::
 
     from datetime import date
 
@@ -100,13 +89,6 @@ method will always return the :ulined:`hardcoded` base class object.
     man1 = Man.from_fathers_age('John', 1965, 20)
     print(isinstance(man1, Man))
 
-The output is
-
-.. code-block:: none
-
-    True
-    False
-
 Here, the static method returns a 'Person' object, since the return value is
 hardcoded as Person(), whereas the class method returns a Man() object, since it
 was executed from within the Man class and 'cls' is defined as returning class.
@@ -124,7 +106,7 @@ don't require the creation of an object of a class in order to use it.
 
 Convert a method into a static method (via :python:`staticmethod()`)
 ````````````````````````````````````````````````````````````````````
-.. code-block:: python
+.. jupyter-execute::
 
     class Mathematics:
 
@@ -135,12 +117,6 @@ Convert a method into a static method (via :python:`staticmethod()`)
     Mathematics.add_numbers = staticmethod(Mathematics.add_numbers)
 
     print('The sum is:', Mathematics.add_numbers(5, 10))
-
-The output is
-
-.. code-block:: none
-
-    The sum is: 15
 
 So far, the same as with classmethod(), except that the class method requires
 the 'cls' class parameter as function parameter.

@@ -33,9 +33,16 @@ Data
 
 #. One-Hot Encode the labels: 2D tensor (sample, label):
 
-    * Label tensore shape must be (amount_of_data_samples, amount_of_classes)
+    * Label tensor shape must be (amount_of_data_samples, amount_of_classes)
 
-#.
+#. Make sure the data range of all values is similar. Having one feature ranging from
+   0 to 1 and another from 100 to 10000 is problematic. A best practice is
+   `normalization <https://en.wikipedia.org/wiki/Normalization_(statistics)>`__:
+
+    .. math::  val_{new} = \frac{val - \mu}{\sigma}
+
+   Subtract the mean value of a feature and divide by its standard deviation.
+   This result into all values ranging around zero.
 
 
 
@@ -57,8 +64,8 @@ performing bad on new data.
 
 **Rule of thumb**
 
-* As a starting point, the amount of nodes in a hidden layer should be the **average
-between the nodes of the previous layer and the proceeding layer**.
+* As a starting point, the amount of nodes in a hidden layer should be the
+  **average between the nodes of the previous layer and the proceeding layer**.
 * Start with two hidden layers, working your way up to see if it improves on accuracy
 
 More information:
@@ -73,3 +80,29 @@ Selection of the loss functions
 
     **Suitable for**: Good choice for categorical data ("Does this dataset belong
     to a certain category?")
+
+:mse (mean squared error):
+
+    Measures the square of the difference between the predictions and the targets.
+
+    **Suitable for**: This is a widely used loss function for regression problems.
+    (Regression means, prediction of a value)
+
+Selection of the observed metrics
+---------------------------------
+See all available models: `tf.keras.metrics`_.
+
+:accuracy:
+
+    Calculates how often predictions equals labels.
+
+    **Used for**: classification
+
+:mae (Mean absolute error):
+
+    It’s the absolute value of the difference between the predictions and the targets.
+
+    **Used for**: Scalar regression (single value prediction)
+
+
+.. _tf.keras.metrics: https://www.tensorflow.org/api_docs/python/tf/keras/metrics?hl=de
