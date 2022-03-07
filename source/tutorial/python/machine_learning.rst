@@ -24,6 +24,24 @@ Data
         * test data
         * test labels
 
+    .. hint::
+
+        To tune your model based on the validation set leads to overfitting
+        towards it, especially when having little data. Validation data
+        should change during training. Two ways:
+
+        * k-fold validation: Divide training & validation into same sized batches,
+          assign one to validation and the rest to training. Train as many
+          times as there are batches, each time using a different batch as
+          validation set. Lastly, calculate the mean of all iterations.
+
+            .. figure:: _file/machine_learning/three-fold_validation.png
+
+                Three-fold validation (three data batches)
+
+        * k-fold validation, done multiple times (same batch sizes), while
+          shuffling all data before creating batches.
+
 #. Transform data into tensors (1D, 2D, 3D, or more):
 
     * 2D: Vector data (samples, data_values)
@@ -44,8 +62,8 @@ Data
    Subtract the mean value of a feature and divide by its standard deviation.
    This result into all values ranging around zero.
 
-
-
+#. Add missing data (if applicable): Missing data fields can be assigned to 0
+   (if that is not a meaningful value)
 
 Amount and size of hidden layers
 --------------------------------
@@ -54,7 +72,7 @@ Selecting the amount and the size of hidden layers within a model is crucial:
 * too few layers or too few nodes -> information loss, resulting in bad accuracy (underfitting)
 * too many layers or too many nodes -> slow training, overfitting
 
-The goal is to create a model, which has a good accuracy on test data
+The goal is to create a model, which has a good accuracy on test data.
 
 If the model is too smart, in other words, is too much tailored onto the training data,
 it will not perform well on test data, but perfect on the training data -> overfitting.
@@ -71,8 +89,34 @@ performing bad on new data.
 More information:
 https://www.heatonresearch.com/2017/06/01/hidden-layers.html
 
+Weight regularization
+---------------------
+The goal is to have as small weights as needed to sufficiently describe the data (even
+though larger weights might do this just as good), in order to reduce the chance
+of overfitting.
+
+The most common ones are **L1 regularization** and **L2 regularization**.
+
+.. code-block:: python
+
+    from keras import regularizers
+    model = models.Sequential()
+    model.add(layers.Dense(16, kernel_regularizer=regularizers.l2(0.001),
+                           activation='relu')
+    model.add(layers.Dense(16, kernel_regularizer=regularizers.l2(0.001),
+                           activation='relu'))
+    model.add(layers.Dense(1, activation='sigmoid'))
+
+There is no rule, which one to choose: try both and see which performs better.
+
 Selection of the loss functions
 -------------------------------
+Take this table as a starting point of choosing your loss function:
+
+.. figure:: _file/machine_learning/selection_activation_and_loss_function.png
+
+    Choosing the last-layer activation function and loss function
+
 :categorical_crossentropy:
 
     Measures the distance between the classifier’s predictions and the labels.

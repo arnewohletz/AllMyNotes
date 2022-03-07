@@ -5,7 +5,7 @@ Python
     :maxdepth: 1
 
     machine_learning/index.rst
-    cheat_sheets.rst
+    cheat_sheets/index.rst
     pep8.rst
     packaging.rst
     class_and_static_methods.rst

@@ -29,6 +29,7 @@ Docs for used plugins
 * `sphinx-rtd-theme`_: Theme used for the web page of this documentation
 * `sphinxcontrib-images`_: Directive for thumbnail images which can be magnified
 * `sphinxcontrib-mermaid`_: Directive for `mermaid graphs`_
+* `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
 
 
 .. _`sphinx-copybutton`: https://sphinx-copybutton.readthedocs.io/en/latest/
@@ -38,3 +39,4 @@ Docs for used plugins
 .. _`sphinxcontrib-images`: https://sphinxcontrib-images.readthedocs.io/en/latest/
 .. _`sphinxcontrib-mermaid`: https://github.com/mgaitan/sphinxcontrib-mermaid
 .. _`mermaid graphs`: https://mermaid-js.github.io/mermaid/
+.. _jupyter_sphinx: https://jupyter-sphinx.readthedocs.io/en/latest/
