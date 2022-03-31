@@ -1,6 +1,9 @@
 .. image:: _static/img/logo_large.png
     :align: center
 
+Table of Contents
+=================
+
 .. toctree::
     :maxdepth: 2
     :caption: Tutorials
