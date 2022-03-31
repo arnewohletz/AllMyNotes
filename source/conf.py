@@ -18,6 +18,8 @@ sphinx.util.osutil.ENOENT = errno.ENOENT
 #
 import os
 import sys
+import locale
+
 sys.path.insert(0, os.path.abspath('.') + '/_ext')
 
 
@@ -42,7 +44,8 @@ extensions = [
     'sphinx_copybutton',
     'sphinxcontrib.bibtex',
     'jupyter_sphinx',
-    'unicode_guilabel'
+    'unicode_guilabel',
+    'sphinx_gitstamp'
 ]
 
 # Bibtex Bibfiles
@@ -93,6 +96,10 @@ html_css_files = [
 ]
 html_favicon = "_static/img/favicon.png"
 html_logo = "_static/img/logo.png"
+
+# Date format for git timestamps
+locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
+gitstamp_fmt = "%b %d, %Y"
 
 # Add custom role directives globally
 rst_prolog = """

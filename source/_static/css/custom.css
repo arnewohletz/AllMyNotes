@@ -16,7 +16,7 @@ dt.field-odd, dt.field-even {
 
 code,
 .rst-content tt,
-.rst-content code  {
+.rst-content code {
     white-space: normal !important;
 }
 
@@ -24,7 +24,7 @@ code.code.highlight span.p {
     color: black;
 }
 
-th.head p{
+th.head p {
     margin-bottom: 0px;
 }
 
@@ -35,6 +35,7 @@ h4 {
 table.docutils.align-center {
     text-align: center;
 }
+
 /*.rst-content div.wy-table-responsive table thead {*/
 /*    position: absolute;*/
 /*}*/
@@ -47,7 +48,7 @@ table.docutils.align-center {
     margin-top: 25px;
 }
 
-dt.field-odd, dt.field-even, dt.label{
+dt.field-odd, dt.field-even, dt.label {
     padding-top: 2px;
 }
 
@@ -56,34 +57,48 @@ html.writer-html5 .rst-content dl.footnote {
     grid-template-columns: max-content inherit;
 }*/
 
+.rst-content .line-block {
+    margin-bottom: 0;
+}
+
+.rst-content .toctree-wrapper > p.caption,
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    margin: 25px 0 20px 0;
+}
+
 .wy-plain-list-disc li p:last-child,
 .rst-content .section ul li p:last-child,
 .rst-content .toctree-wrapper ul li p:last-child,
 article ul li p:last-child {
- margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .wy-plain-list-decimal li p:last-child,
 .rst-content .section ol li p:last-child,
 .rst-content ol.arabic li p:last-child,
 article ol li p:last-child {
- margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .rst-content .section ul,
 .rst-content .toctree-wrapper ul,
 .wy-plain-list-disc,
 article ul {
- margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
-.rst-content .section ol li>*,
-.rst-content .section ul li>* {
- margin-top:4px;
+.rst-content .section ol li > *,
+.rst-content .section ul li > * {
+    margin-top: 4px;
 }
 
-.rst-content .toctree-wrapper>p {
- margin:0 0 12px;
+.rst-content .toctree-wrapper > p {
+    margin: 0 0 12px;
 }
 
 .rst-content .section ul li p:last-child,
@@ -93,37 +108,19 @@ article ul {
 .wy-plain-list-disc li p:last-child,
 .wy-plain-list-disc li ul,
 article ul li p:last-child, article ul li ul {
- margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .rst-content div[class^=highlight],
 .rst-content pre.literal-block {
- border:1px solid #e1e4e5;
- overflow-x:auto;
- margin:1px 0 12px;
+    border: 1px solid #e1e4e5;
+    overflow-x: auto;
+    margin: 1px 0 12px;
 }
 
 .toctree-wrapper.compound ul li.toctree-l1 ul {
     margin-top: 0;
     margin-bottom: 0;
-}
-
-/* Custom inline text formats */
-
-.rbg {
-    background-color: #ff9999;
-}
-
-.gfg {
-    color: #2eb82e;
-}
-
-.rfg {
-    color: #e60000;
-}
-
-.ulined {
-    text-decoration: underline;
 }
 
 .rst-content .design-principle .admonition-title {
@@ -141,6 +138,40 @@ article ul li p:last-child, article ul li ul {
 
 .rst-content td .line-block {
     margin-bottom: 0;
+}
+
+.update_date {
+  font-weight: bold;
+}
+
+.lastupdate {
+  color: #d9d9d9;
+  background: #343131;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 0 5px 0;
+  margin: auto auto 15px auto;
+  border-width: 1px;
+}
+
+/*** Custom inline text formats ***/
+/* Background colors */
+.rbg {
+    background-color: #ff9999;
+}
+
+/*Foreground colors*/
+
+.gfg {
+    color: #2eb82e;
+}
+
+.rfg {
+    color: #e60000;
+}
+
+.ulined {
+    text-decoration: underline;
 }
 
 /*.rst-content table th.stub {*/

@@ -1,0 +1,11 @@
+{% extends "!footer.html" %}
+
+{% block contentinfo %}
+    {%- if gitstamp %}
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">{{ gitstamp }}</span>.
+      </div>
+    {%- endif %}
+    {{ super() }}
+{% endblock %}
