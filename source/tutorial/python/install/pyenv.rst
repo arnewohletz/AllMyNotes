@@ -1,4 +1,4 @@
-.. install_pyenv:
+.. _install_pyenv:
 
 Install and manage Python versions with pyenv
 ---------------------------------------------

@@ -3,7 +3,7 @@ New Project Setup
 This guideline shows how to set up a standard Python project. It features, how
 to structure the project and installing helping packages.
 
-.. _project_dev_packages_overview::
+.. _project_dev_packages_overview:
 
 Package Overview :footcite:p:`popular_python_project_tools`
 -----------------------------------------------------------
