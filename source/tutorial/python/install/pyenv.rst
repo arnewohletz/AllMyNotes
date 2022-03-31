@@ -1,3 +1,5 @@
+.. install_pyenv:
+
 Install and manage Python versions with pyenv
 ---------------------------------------------
 As a alternative, the tool `pyenv <https://github.com/pyenv/pyenv>`_ is able to install and manage multiple Python versions.
