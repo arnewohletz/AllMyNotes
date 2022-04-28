@@ -535,7 +535,7 @@ using **pull requests**.
 Cloning in comparison, does not unhook you from the original repository and you are not
 able to contribute, unless you are authorized as a collaborator.
 
-**Contribute to repository**
+**Contribute to a repository**
 
 #. Create a fork of the original repository. The steps depend on the used Git Host (e.g. Github, Bitbucket).
 #. Clone the fork:
@@ -547,3 +547,43 @@ able to contribute, unless you are authorized as a collaborator.
 #. Make changes, commit and push to remote.
 #. Create a pull request towards the target branch of the original repository.
    The steps depend on the used Git Host (e.g. Github, Bitbucket).
+
+**Keep your fork up-to-date**
+
+As other contributors push and merge changes onto the original repository, your fork does not
+receives these changes automatically. Having your fork up-to-date when starting your
+changes makes merges back to the original much simpler.
+
+#. Add the original repository as additional remote:
+
+    .. prompt:: bash
+
+        git remote add upstream <url_to_original_repository>
+
+#. **Before you start making changes inside your fork**, get the latest changes from
+   the original repository (upstream). First, fetch all branches from upstream:
+
+    .. prompt:: bash
+
+        git fetch upstream
+
+#. Make sure you're on *master*:
+
+    .. prompt:: bash
+
+        git checkout master
+
+#. Now rewrite your master branch so that any commits of yours that aren't already
+   in upstream/master are replayed on top of that other branch:
+
+    .. prompt:: bash
+
+        git rebase upstream/master
+
+#. Lastly, push the changes to your forked remote:
+
+    .. prompt:: bash
+
+        git push -f origin master
+
+Now you go ahead creating a feature branch.
