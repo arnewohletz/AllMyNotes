@@ -113,9 +113,10 @@ Tcl/Tk
 ******
 Before installing any `CPython <https://en.wikipedia.org/wiki/CPython>`_ version, you will need
 to install a newer version of Tcl/Tk on your system. As `mentioned on python.org`_, macOS as of now
-does not provide a safe and recent version of the GUI framework. Since *pyenv* builds Python distributions
-from source and does not include a later version of Tcl/Tk with it, as the regular installers from python.org do,
-it uses the preinstalled version from the OS.
+does not provide a safe and recent version of the GUI framework (as of now macOS 12 still uses
+version 8.5.9). Since *pyenv* builds Python distributions
+from source and does not include a recent version of Tcl/Tk with it, as the regular installers from python.org do,
+it uses the preinstalled version from the OS by default.
 
 First install the latest Tcl/Tk version:
 
@@ -136,6 +137,15 @@ Find the line::
 and replace it with::
 
     $CONFIGURE_OPTS --with-tcltk-includes='-I/usr/local/opt/tcl-tk/include' --with-tcltk-libs='-L/usr/local/opt/tcl-tk/lib -ltcl8.6 -ltk8.6' ${!PACKAGE_CONFIGURE_OPTS} "${!PACKAGE_CONFIGURE_OPTS_ARRAY}" || return 1
+
+.. hint::
+
+    The replacement string expects a Tcl/Tk version 8.6. Version 8.7 will be released in the future,
+    so check your current installed version via:
+
+    .. prompt:: bash
+
+        echo "puts [info tclversion]" | tclsh
 
 Any new CPython version installed via ``pyenv install`` should now utilize your Tcl/Tk installation.
 
