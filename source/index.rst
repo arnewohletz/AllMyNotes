@@ -13,6 +13,7 @@ Table of Contents
     tutorial/java/index.rst
     tutorial/linux/index.rst
     tutorial/docker/index.rst
+    tutorial/shell_scripting/index.rst
 
 .. toctree::
     :maxdepth: 2
