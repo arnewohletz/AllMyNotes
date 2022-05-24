@@ -172,5 +172,10 @@ To remove the script from the launcher run
 
     launchctl unload </path/to/my_first_script.plist.sh>
 
+.. hint::
+
+    Changes to the shell script are adapted and used at the next execution, but changes
+    to the \*.plist require a reload (*unload* then again *load*) to the launch controller.
+
 .. _launchd: https://www.launchd.info/
 .. _LaunchControl: https://www.soma-zone.com/LaunchControl/
