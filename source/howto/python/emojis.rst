@@ -7,7 +7,7 @@ For instance
 
 .. code-block:: python
 
-    >>> 'U\0001F600'
+    >>> '\U0001F600'
 
 will print the emoji character 1F600 (GRINNING FACE).
 To get the unicode encoding for a specific emoji, refer to the `emoji list`_.
