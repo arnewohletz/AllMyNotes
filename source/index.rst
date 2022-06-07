@@ -36,6 +36,7 @@ Table of Contents
     reference/rst_sphinx.rst
     reference/git_commands.rst
     reference/network/index.rst
+    reference/linux/index.rst
     reference/others/index.rst
 
 Git Changelog

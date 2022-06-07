@@ -43,7 +43,7 @@ extensions = [
     'sphinxemoji.sphinxemoji',
     'sphinx_copybutton',
     'sphinxcontrib.bibtex',
-    'jupyter_sphinx',
+    # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid & sphinxcontrib.images
     'unicode_guilabel',
     'sphinx_gitstamp'
 ]
@@ -111,6 +111,10 @@ rst_prolog = """
     :language: java
     :class: highlight
 
+.. role:: rst(code)
+    :language: rst
+    :class: highlight
+    
 .. role:: raw-html(raw)
    :format: html
 
