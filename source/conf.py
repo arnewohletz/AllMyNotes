@@ -39,6 +39,7 @@ extensions = [
     'sphinxcontrib.mermaid',
     'sphinxcontrib.images',
     'sphinx_git',
+    'sphinx_design',
     'sphinx-prompt',
     'sphinxemoji.sphinxemoji',
     'sphinx_copybutton',
@@ -117,6 +118,10 @@ rst_prolog = """
     
 .. role:: html(code)
     :language: html
+    :class: highlight
+    
+.. role:: bash(code)
+    :language: bash
     :class: highlight
     
 .. role:: raw-html(raw)
