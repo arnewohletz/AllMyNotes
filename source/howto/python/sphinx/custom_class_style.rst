@@ -21,16 +21,18 @@ the `class`_ option can be used:
             * - Geordi La Forge
               - Deck 4, Cabin 12
 
-#. Add the class option to the directive, here :rst:`:class: read_bg_header`:
+#. Add the class option to the directive, here :rst:`:class: red_header`:
 
     .. code-block:: rst
 
         .. list-table:: USS Enterprise, Private Quarters Location
             :header-rows: 1
-            :class: red_bg_header
+            :class: red_header
 
-#. You may build the HTML doc to easier extract the CSS path.
-#. Define the style in your `custom.css` file:
+#. You may build the HTML doc to easier extract the CSS path. You will see that
+   the element has the specified name among its class attributes (e.g.
+   :html:`class="red-header docutils align-default"`).
+#. Define the style in your `custom.css` file, for example:
 
     .. code-block:: css
 
@@ -38,7 +40,31 @@ the `class`_ option can be used:
             background-color: #e60000;
         }
 
-#. Build the HTML doc again. The style is now applied.
+#. Build the HTML doc again. The style is now applied. In our example, the styled
+   variant will render as
+
+    .. list-table:: USS Enterprise, Private Quarters Location
+        :header-rows: 1
+        :class: red-header
+
+        * - Name
+          - Quarter Location
+        * - Jean-Luc Picard
+          - Deck 5, Cabin 1
+        * - Geordi La Forge
+          - Deck 4, Cabin 12
+
+    whereas the un-styled tables renders as
+
+    .. list-table:: USS Enterprise, Private Quarters Location
+        :header-rows: 1
+
+        * - Name
+          - Quarter Location
+        * - Jean-Luc Picard
+          - Deck 5, Cabin 1
+        * - Geordi La Forge
+          - Deck 4, Cabin 12
 
 .. hint::
 

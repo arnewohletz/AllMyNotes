@@ -115,6 +115,10 @@ rst_prolog = """
     :language: rst
     :class: highlight
     
+.. role:: html(code)
+    :language: html
+    :class: highlight
+    
 .. role:: raw-html(raw)
    :format: html
 
