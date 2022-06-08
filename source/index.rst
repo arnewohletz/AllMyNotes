@@ -20,6 +20,7 @@ Table of Contents
     :caption: How-To
 
     howto/python/index.rst
+    howto/sphinx/index.rst
     howto/sqlite/index.rst
     howto/software_design/index.rst
     howto/testing/index.rst
