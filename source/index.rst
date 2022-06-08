@@ -26,6 +26,7 @@ Table of Contents
     howto/testing/index.rst
     howto/network/index.rst
     howto/firefox/index.rst
+    howto/macos/index.rst
     howto/windows/index.rst
     howto/others/index.rst
 
