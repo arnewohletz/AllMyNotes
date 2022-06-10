@@ -158,7 +158,7 @@ Demonstration:
               exit "$?"
             }
 
-which outputs ($USER = "arnewohletz"):
+which outputs (for $USER="arnewohletz"):
 
 .. code-block:: none
 
@@ -185,7 +185,7 @@ but don't have names. When a method uses more than five or more arguments, it is
 to keep track of the position for each of them.
 
 To overcome this issue, declare all positional parameter as local variable at the
-beginnning of each function:
+beginning of each function:
 
 .. code-block:: bash
 
