@@ -94,7 +94,7 @@ Functions have the advantage of being able to declare local variables.
 .. important::
 
     All variables that are not declared via :bash:`local` or :bash:`declare`
-    (without :option:`-g` option) function as global variables.
+    (without :bash:`-g` option) function as global variables.
 
 * Variables passed into functions inherit the scope of the callee
 * Global variables can be replaced by equally named local variable
@@ -176,7 +176,7 @@ Always declare your variables with :bash:`local` and :bash:`declare` (see
 `built-in commands`_).
 
 To enable warning messages for undeclared variables, run your script via the
-:option:`-u` option. You may also check your script using the `ShellCheck`_.
+:bash:`-u` option. You may also check your script using the `ShellCheck`_.
 
 Properly name function arguments
 --------------------------------
@@ -202,7 +202,7 @@ executed sequentially and not in a defined order. For direct assignments, this i
 not critical, but it is when the assigned value comes from a subshell:
 
 .. code-block:: bash
-    :lineos:
+    :linenos:
 
     file_contains() {
       local file="$1"

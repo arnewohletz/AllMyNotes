@@ -15,5 +15,4 @@ Shell Scripting
     :maxdepth: 1
 
     macos_zsh_basic.rst
-    best_practices.rst
-    02_reusability.rst
+    distributed_systems/index.rst
