@@ -35,12 +35,12 @@ Installing OpenJDK on macOS
 
 #. Install the latest OpenJDK by running ``brew install java``.
 
-.. note::
+    .. note::
 
-    Homebrew does install OpenJDK as a *keg*, which means the default Java installation
-    at ``/usr/bin/java`` is **not** overwritten, but installed into ``/usr/local/Cellar/``.
-    As mentioned in the ``brew info java`` output, it is not recommended to to do,
-    as it might create lots of issues.
+        Homebrew does install OpenJDK as a *keg*, which means the default Java installation
+        at ``/usr/bin/java`` is **not** overwritten, but installed into ``/usr/local/Cellar/``.
+        As mentioned in the ``brew info java`` output, it is not recommended to do
+        overwrite the default Java, as it might create lots of issues.
 
 #. Add installation to ``/Library/Java/JavaVirtualMachines/`` create a symbolic link:
 
