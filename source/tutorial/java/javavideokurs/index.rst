@@ -47,3 +47,8 @@ https://github.com/horsewithnoname1985/JavaVideoKurs.
     64_regex.rst
     65_enums.rst
     66_generics.rst
+    67_bounds_wildcards.rst
+    68_wrapper.rst
+    69_collections.rst
+    70_threading.rst
+    71_thread_runnable.rst
