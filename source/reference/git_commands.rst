@@ -418,6 +418,13 @@ Download changes from a specific remote. If not <remote_name> is given, **origin
 
     git fetch <remote_name>
 
+Remove all local references to no more existing branches on the remote (not including tags, here the
+option ``--prune-tags`` must be used).
+
+.. prompt:: bash
+
+    git fetch --prune
+
 ``git pull`` also fetches missing commits from the remote, but also merges them into new commits
 
 .. prompt:: bash
