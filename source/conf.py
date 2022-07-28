@@ -91,6 +91,7 @@ html_theme_options = {
 html_static_path = ['_static',
                     'reference/python/cheat_sheets/_file',
                     'reference/others/_file',
+                    'howto/others/_file'
                     ]
 html_css_files = [
     'css/custom.css',
