@@ -30,7 +30,7 @@ Die main() Methode ist lediglich ein Thread.
         MyTask t = new MyTask();
         t.start();
 
-* Ein Thread kann in einer Instanz nur ein Mal gestartet werden
+* Ein Thread kann in einer Instanz **nur ein Mal** gestartet werden
 * Zum erneuten Aufrufen der run() Methode muss eine neue Instanz erzeugt werden
 
 .. hint::

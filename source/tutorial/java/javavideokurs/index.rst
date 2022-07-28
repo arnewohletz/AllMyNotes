@@ -52,3 +52,7 @@ https://github.com/horsewithnoname1985/JavaVideoKurs.
     69_collections.rst
     70_threading.rst
     71_thread_runnable.rst
+    72_threading_anomalies_examples.rst
+    73_threading_anomalies_solution.rst
+    74_synchronization.rst
+    75_deadlocks.rst
