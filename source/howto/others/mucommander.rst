@@ -1,12 +1,20 @@
 Set up muCommander
 ==================
 `muCommander`_ is a cross-platform file manager. These steps show how to configure and
-alter the tool to make it a better experience on macOS. At the end, the program will look
-like this:
+alter the tool to make it a better experience on macOS. The following steps will change
+the UI similar to the following:
 
-.. thumbnail:: _img/mucommander_improved.png
+.. list-table:: muCommander UI
 
-    muCommander (Improved UI)
+    * - .. thumbnail:: _img/mucommander_vanilla.png
+            :group: ui_change
+
+            muCommander (Vanilla UI)
+
+      - .. thumbnail:: _img/mucommander_improved.png
+            :group: ui_change
+
+            muCommander (Improved UI)
 
 Add high-res icons
 ------------------

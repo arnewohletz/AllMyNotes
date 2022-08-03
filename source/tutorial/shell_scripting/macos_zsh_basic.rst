@@ -148,7 +148,7 @@ After you finished configuration file, add it to the *launchd* controller:
 
 .. prompt:: bash
 
-    launchctl load </path/to/my_first_script.plist.sh>
+    launchctl load ~/Library/LaunchAgents/my_first_script.plist
 
 To check the status of the last execution run (replace MY_SCRIPT_NAME with the label
 you defined in your \*.plist file)
@@ -170,7 +170,7 @@ To remove the script from the launcher run
 
 .. prompt:: bash
 
-    launchctl unload </path/to/my_first_script.plist.sh>
+    launchctl unload ~/Library/LaunchAgents/my_first_script.plist
 
 .. hint::
 
