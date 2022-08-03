@@ -60,5 +60,22 @@ muCommander is launched.
 
 #. Save and close the file, then restart muCommander.
 
+Change default text editor
+--------------------------
+muCommander comes with its own internal text editor, which offers little to none features,
+but is only useful for simplest text editing. You might want to set a different editor
+as default. Here, `Visual Studio Code`_ is set as the default, but any other editor can be
+used (just make sure it can be launched over the command line).
+
+#. Open ``~/Library/Preferences/muCommander/commands.xml``.
+#. Change the value of the ``edit`` alias to
+
+    .. code-block::
+
+        <command alias="edit" value="/usr/local/bin/code $f" type="system"/>
+
+#. Save and close the file, then restart muCommander. Try editing a text file (:kbd:`F4`).
+
 .. _muCommander: https://www.mucommander.com/
 .. _fork: https://github.com/trol73/mucommander
+.. _Visual Studio Code: https://code.visualstudio.com/
