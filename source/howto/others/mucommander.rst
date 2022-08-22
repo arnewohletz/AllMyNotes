@@ -25,9 +25,21 @@ can replace the low-res icons:
 #. Extract :download:`highres_icons.zip <_file/highres_icons.zip>` into ``~/Downloads``.
 #. Execute this command (adapt the version number, here 1.0.1):
 
+    **macOS**
+
     .. prompt:: bash
 
         jar -uf /Applications/muCommander.app/Contents/app/app/mucommander-core-1.0.1.jar -C ~/Downloads/highres_icons images/action
+
+    **Windows**
+
+    .. prompt:: bash
+
+        jar -uf "%USERPROFILE%\Program Files\muCommander\app\app\mucommander-cor-1.0.1.jar -C %USERPROFILE%\Downloads\highres_icons images\action"
+
+    .. hint::
+
+        The jar executable (jar.exe on Windows) is only available in Oracle JDK installations.
 
 #. (Re)start muCommander.
 
@@ -56,6 +68,11 @@ These steps apply a custom settings file via import which sets it to a dark tone
 
 Switch to dark window bar
 -------------------------
+
+.. note::
+
+    These steps are not required on Windows.
+
 To get a window bar, which matches the system theme, a new option must be passed when
 muCommander is launched.
 
@@ -75,12 +92,56 @@ but is only useful for simplest text editing. You might want to set a different 
 as default. Here, `Visual Studio Code`_ is set as the default, but any other editor can be
 used (just make sure it can be launched over the command line).
 
-#. Open ``~/Library/Preferences/muCommander/commands.xml``.
-#. Change the value of the ``edit`` alias to
+#. Open ``~/Library/Preferences/muCommander/commands.xml`` (or ``%USERPROFILE%\.mucommander\.commands.xml).
 
-    .. code-block::
+    .. hint::
+
+        If the file is not available (is only created, when first deviation from default is set), create it,
+        pasting in this content:
+
+        .. code-block::
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <commands>
+
+            </commands>
+
+#. Change the value of the ``edit`` alias to or add it between the *commands* tags
+
+    **macOS**
+
+    .. code-block:: xml
 
         <command alias="edit" value="/usr/local/bin/code $f" type="system"/>
+
+    **Windows**
+
+    .. code-block:: xml
+
+        <command alias="edit" value="C:\\Program Files\\Microsoft VS Code\\Code.exe $f" type="system"/>
+
+    .. important::
+
+        It is mandatory to use double backslashes for Windows paths.
+
+    .. hint::
+
+        **Add custom Open-With options**
+
+        In case you like to open a file in different editors, you may specify those as
+        *Open With* options.
+
+        #. Add them to the ``commands.xml`` file as well. Example:
+
+        .. code-block:: xml
+
+            <command alias="Notepad++" value="notepad++ $f"/>
+            <command alias="Notepad" value="C:\\Windows\\notepad.exe $f"/>
+
+        #. Reopen muCommander
+        #. Select a file, right click and choose *Open with...* and your desired option.
+
+        If muCommander reports an error, try stating the full path to the editor executable.
 
 #. Save and close the file, then restart muCommander. Try editing a text file (:kbd:`F4`).
 
