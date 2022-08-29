@@ -1,0 +1,10 @@
+Path,Description
+**/var/log/**,"collective directory for various log and protocol data (system log, samba, apt, Apache, FTP). Partial summary available via UI tolls like *gnome-logs*"
+**/var/log/apache2/access.log**,"logs of all accesses to web server services including access IP, access target, browser"
+**/var/log/auth.log**,chronological log of all login attempts via graphical shell or via SSH or the web server configuration UI
+**/var/log/dmesg**,chronological log of the kernel containing all recent hardware events. Older logs are kept in ``/var/log/kern.log``
+**/var/log/dpkg.log**,chronological log of updates and installations
+**/var/log/faillog**,protocol about failed login attempts. This binary file must be opened via `faillog -a`. The column 'Failures' shows the amount of failed attempts for each user account
+**/var/log/nginx/access.log**,"chronological logs of all accesses to web server services including access IP, access target, browser"
+**/var/log/samba**,all accessing network devices including their IP address and hostname (at least 'log level=1' in ``/etc/samba/smb.conf``)
+**/var/log/syslog**,"chronological log of all system events: network, services, cronjobs, hard drive"

@@ -1,0 +1,25 @@
+Path,Description
+"
+| **/etc/crontab**
+| **/var/spool/cron/crontabs/[user]**","| global configuration file
+| user specific files for crone (also for `root`)"
+**/etc/fstab**,"file system table: devices to be auto-loaded on system start (Entry format: UUID, mount point, file system, options)"
+**/etc/group**,list of all user groups
+**/etc/hdpharm.conf**,optional settings for devices (for example 'spindown' commands upon inactivity)
+**/etc/hostname**,Hostname of the Linux system
+**/etc/passwd**,"List of all internal, explicitly created user accounts"
+**/etc/rc.local**,global autostart during system start (before user login). Only terminal commands possible.
+**/etc/shadow**,password file for all user accounts. Plain text file but passwords are encrypted
+**/etc/sudoers**,list of all user accounts eligible for sudo commands
+**/etc/sysctl.conf**,"settings for Linux kernel, like swapping behavior, magic-key rescue combinations, network parameters. Only for experts"
+"
+| **/etc/apt/sources.list**
+| **/etc/apt/sources.list.d/*.list**","| Main package sources for package manager apt (Debian, Ubuntu, Mint)
+| PPAs and external package sources (Debian, Ubuntu, Mint)"
+**/etc/default/grub**,default settings for the boot manager Grub2
+**/etc/network/interface**,"classical network settings for example 'auto eth0' or 'iface eth0 inet dhcp'. On UI systems the network manager manages these, hence those settings are ignored."
+**/etc/xgd/autostart/*.desktop**,contains all files which are launched during user login
+"
+| **/usr/share/applications/*.desktop**
+| **/home/[user]/.local/share/applications**","| system-wide application shortcuts for desktop and launch menu
+| user specific application shortcuts (have priority)"

@@ -1,0 +1,12 @@
+Path,Description
+**/etc/inputrc**,global input standard for the terminal (key-bindings)
+**/etc/bash.bashrc**,"global bash shell launch script for system-wide aliases, functions, variables"
+**/etc/profile***,"global launch script for log-in bash shell. Only executed for new log-in (SSH or virtual console)"
+**/etc/skel/.bashrc**,the file among others in the same directory define the basic configuration when adding a new user account
+**/home/[user]/.bash_history**,user specific command history (commonly last 500 - defined via `$HISTFILESIZE` variable)
+**/home/[user]/.bash_login**,optional user specific start script
+**/home/[user]/.bash_logout**,optional user specific closing script
+**/home/[user]/.bash_profile**,optional user specific start script
+**/home/[user]/.bashrc**,"optional user specific start script for aliases, functions, variables"
+**/home/[user]/.inputrc**,user specific input standards for bash shell (dominates over ``/etc/inputrc``)
+**/home/[user]/.profile**,user specific start script for log-in shells. Only executed during new log-in like SSH or virtual console
