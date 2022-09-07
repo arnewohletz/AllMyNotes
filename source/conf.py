@@ -91,7 +91,8 @@ html_theme_options = {
 html_static_path = ['_static',
                     'reference/python/cheat_sheets/_file',
                     'reference/others/_file',
-                    'howto/others/_file'
+                    'howto/others/_file',
+                    'tutorial/python/_file'
                     ]
 html_css_files = [
     'css/custom.css',
@@ -111,6 +112,10 @@ rst_prolog = """
 
 .. role:: java(code)
     :language: java
+    :class: highlight
+    
+.. role:: javascript(code)
+    :language: javascript
     :class: highlight
 
 .. role:: rst(code)

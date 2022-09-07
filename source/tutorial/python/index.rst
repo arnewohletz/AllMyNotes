@@ -9,3 +9,4 @@ Python
     sphinx/index.rst
     project_setup.rst
     machine_learning.rst
+    pyscript.rst
