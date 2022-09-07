@@ -111,7 +111,7 @@ line using specific options, which are
 
         For internet games, you may have to enable port forwarding for your machine in your
         router configuration. GZDoom uses port 5029 as default (you may define a different
-        port via the :option:`-port` option) for which it needs forwarding on **UDP**
+        port via the ``-port`` option) for which it needs forwarding on **UDP**
         traffic. For security reasons, you should disable the forward again after the game session.
 
 .. option:: -netmode <num>
@@ -140,7 +140,7 @@ Additional options may be:
     Directly launch a specific map. Depending on the launched game the style is ``ExMx``
     (e.g. E1M1 for first map of episode 1) or simply ``xx`` (e.g. 24 for map 24). See more
     at https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options. Alternatively,
-    you may use the :option:`+map` option.
+    you may use the ``+map`` option.
 
 Documentation on all multiplayer command line options: https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options
 
@@ -155,8 +155,8 @@ you are in the same LAN or the global IP address for internet connection:
 .. important::
 
     For both creating and joining a multiplayer game, the used WAD and IPK3 files must be
-    specified in addition to the network option via :option:`-file` (for \*.ipk3 files) and
-    :option:`-iwad` (for \*.wad files).
+    specified in addition to the network option via ``-file`` (for \*.ipk3 files) and
+    ``-iwad`` (for \*.wad files).
 
 .. _Blade of Agony: https://boa.realm667.com/
 .. _network_modes: https://zdoom.org/wiki/Multiplayer#Network_modes

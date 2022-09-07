@@ -92,7 +92,7 @@ but is only useful for simplest text editing. You might want to set a different 
 as default. Here, `Visual Studio Code`_ is set as the default, but any other editor can be
 used (just make sure it can be launched over the command line).
 
-#. Open ``~/Library/Preferences/muCommander/commands.xml`` (or ``%USERPROFILE%\.mucommander\.commands.xml).
+#. Open ``~/Library/Preferences/muCommander/commands.xml`` (or ``%USERPROFILE%\.mucommander\.commands.xml``).
 
     .. hint::
 
