@@ -25,7 +25,7 @@ Prerequisites
 
     #. Find out your network device name:
 
-       .. prompt:: bash
+        .. prompt:: bash
 
             ioreg -r -n ARPT
 
@@ -95,6 +95,9 @@ Steps
             .. prompt:: bash
 
                 sudo apt install ./bcmwl-kernel-source*.deb
+
+           **Important**: If the installation requires downloading additional dependencies,
+           establish a bluetooth tethering connection to a smartphone before the installation.
 
         #. Load the Broadcom Wi-Fi driver (here: Broadcom Model 43xx):
 
