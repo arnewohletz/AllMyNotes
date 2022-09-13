@@ -29,4 +29,105 @@ Regel:
 
 :ulined:`Lösung`:
 
-.. continue
+:java:`Object.wait()`
+
+    * gibt das Lock dieses Objekts wieder frei
+    * Thread wird in einen Ruhezustand versetzt (undefinierte Länge)
+
+:java:`Object.wait(long timeout)`
+
+    * wie :java:`Object.wait()` aber mit definierter Zeitspanne für Ruhezustand des Threads
+
+statt
+
+.. code-block:: java
+
+    while (data != null){
+        ;  //busy waiting
+    }
+
+schreiben wir
+
+.. code-block:: java
+
+    while (data != null){
+        try
+        {
+            wait();
+        }
+        catch (InterruptedException e )
+        {
+            e.printStackTrace();
+        }
+    }
+
+Allerdings muss ein Thread wieder aufgeweckt werden, sobald dies Sinn macht
+
+:java:`Object.notify()`
+
+    * weckt einen einzelnen Thread auf, der zuvor ein wait() erhalten hat -> es
+      kann nie explizit gesagt werden welcher
+    * wird nur dann eingesetzt wenn es keine Rolle spielt welcher Thread als Erstes
+      aufgeweckt wird (weil sie Ähnliches machen)
+
+:java:`Object.notifyAll()`
+
+    * weckt alle Threads auf, die zuvor ein wait() erhalten haben
+
+Wichtig ist, dass zugeordnet wird, die Threads von welchem Lock aufgeweckt werden
+sollen (Die Methoden wait() und notify() sind lock-spezifisch). Dafür muss zunächst
+definiert werden für welches Lock ein wait() gelten soll:
+
+.. code-block:: java
+
+    while (data != null){
+        try
+        {
+            this .wait();
+        }
+        catch (InterruptedException e )
+        {
+            e.printStackTrace();
+        }
+    }
+
+Hier wird auf das aktuelle Pipeline Objekt selbst gelockt, also :java:`this.wait()`
+Ansonsten muss auf das Lock eines bestimmten Objekt angegeben werden (z.B. :java:`lock.wait()`)
+
+Die :java:`notifyAll()` Methode wird dann nach dem Abschluss (aber vor dem return)
+eines synchronisierten Threads aufgerufen: :java:`this.notifyAll();`
+
+.. admonition:: Faustregel
+
+    Wo ein :java:`wait()` ist muss auch ein :java:`notify()` sein.
+
+.. attention::
+
+    Da man nie weiß, welcher Thread den anderen wieder aufweckt kann man in Endlosschleifen
+    nicht mit if-else Bedingungen arbeiten:
+
+    .. code-block:: java
+
+        if(data != null){
+            try
+            {
+                this .wait();
+            }
+            catch (InterruptedException e )
+            {
+                e.printStackTrace();
+            }
+        }
+
+    Hier kann es sein, dass die Bedingung zum Zeitpunkt des Aufweckens nicht mehr gilt und
+    die Aktionen zu unrecht durchgeführt werden z.B. ein Producer weckt einen anderen
+    Producer -> diese überschreibt die Daten wieder
+
+.. admonition:: Faustregel
+
+    Eine :java:`wait()` Anweisung muss in eine while-Schleifen sein
+
+.. figure:: _file/75_deadlocks/summary.png
+    :align: center
+
+    Zusammenfassende Grafik

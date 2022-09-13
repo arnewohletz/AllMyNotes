@@ -56,3 +56,4 @@ https://github.com/horsewithnoname1985/JavaVideoKurs.
     73_threading_anomalies_solution.rst
     74_synchronization.rst
     75_deadlocks.rst
+    76_keyword_volatile.rst
