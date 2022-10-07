@@ -99,14 +99,32 @@ Server & Client: Create key pair
 
     .. prompt:: bash
 
-        ssh-keygen
+        ssh-keygen -t ed25519
 
-#. Set the path and filename of the keys (default: ~/.ssh/id_rsa).
+#. Set the path and filename of the keys (default: ~/.ssh/id_ed25519).
    In case, you don't need separate keys pairs for different connections, you don't need to
    specify a custom path or filename.
+
+    .. warning::
+
+        I experienced errors from the server upon connection, stating the clients private key
+        contains an invalid format::
+
+            Load key "/Users/arnewohletz/.ssh/imac_ed25519.pub": invalid format
+
+        This issue was resolved by not defining a custom named key pair (like ``imac_ed25519``
+        in the example above), but using the default name (here: ``id_ed25519``).
+
 #. Enter a passphrase to encrypt the private key, if needed (more secure, but might conflict with
    applications using the key).
 #. Check if the ``.ssh`` directory contains both the private and the public key file (\*.pub).
+#. If you used a custom name for the key pair or stored the files at a separate location, add the
+   private key to the authentication agent (otherwise you'd need to state your public key when
+   attempting an SSH connection, like ``ssh -i /path/to/my/key.pub USER@HOST``):
+
+    .. prompt:: bash
+
+        ssh-add /path/to/private_key
 
 Server: Set permissions
 ```````````````````````
@@ -153,11 +171,15 @@ be able to interact with them.
         chmod 600 ~/.ssh/authorized_keys
         chmod 600 ~/.ssh/config
 
-#. The private key must also be protected (here: id_rsa):
+Client: Set permissions
+```````````````````````
+OpenSSH does not allow the key pair files to be editable by anyone except the owner:
+#. The private key must also be protected (here: id_ed25519):
 
     .. prompt:: bash
 
-        chmod 700 ~/.ssh/id_rsa
+        chmod 700 ~/.ssh/id_ed25519
+        chmod 700 ~/.ssh/id_ed25519.pub
 
 Server: Set-up key authentication
 `````````````````````````````````
@@ -175,7 +197,7 @@ Server: Set-up key authentication
 
             ssh-add /path/to/custom_private_key_file
 
-#. On the **client**, open the public key file (e.g. id_rsa.pub) and copy the entire content into the
+#. On the **client**, open the public key file (e.g. id_ed25519.pub) and copy the entire content into the
    ``authorized_keys`` file on the **server** (should be a single line starting with *ssh-rsa* and ending
    with *<username>@<hostname>*). Save and close both files.
 
@@ -184,6 +206,12 @@ Server: Set-up key authentication
         The public key of **each** client, that wants to authorize itself, needs to be added into a
         separate line within the server's ``authorized_keys`` file. Each time, this file is edited,
         the SSH server must be restarted.
+
+        This can also be done from the client via:
+
+        .. prompt:: bash
+
+            ssh-copy-id -i ~/.ssh/id_ed25519.pub <HOST_USERNAME>@<HOST>
 
 #. Open the OpenSSH config file in a text editor:
 
@@ -197,7 +225,7 @@ Server: Set-up key authentication
 
         RSAAuthentication yes
         PubkeyAuthentication yes
-        AuthorizedKeysFile .ssh\authorized_keys
+        AuthorizedKeysFile .ssh/authorized_keys
 
     .. important::
 
@@ -252,14 +280,14 @@ Client: Set-up key authentication
     .. code-block:: none
 
         Host *
-          IdentityFile C:\Users\<USERNAME>\.ssh/id_rsa
+          IdentityFile C:\Users\<USERNAME>\.ssh/id_ed25519
 
     On Linux/macOS:
 
     .. code-block:: none
 
         Host *
-          IdentityFile ~/.ssh/id_rsa
+          IdentityFile ~/.ssh/id_ed25519
 
     This enables the client to use its private key file as an identity to authenticate
     towards the server.
@@ -281,6 +309,49 @@ verbose mode:
     .. prompt:: bash
 
         ssh <HOST_USERNAME>@<HOST> -v
+
+SSH connection config
+---------------------
+This is a convenience feature. Right now, connecting to a host system is done, for example,
+like this:
+
+.. prompt:: bash
+
+    ssh -i ~/.ssh/all_my_keys/imac.ed25519.pub someuser@some.host.system
+
+To shorten this you may create a config file to store all these parameters.
+
+#. Create the config file in your .ssh directory:
+
+    touch ~/.ssh/config
+
+#. Open the file and add your config, for example, like this:
+
+    .. code-block:: none
+
+        Host imac
+            HostName imac.fritz.box
+            User arnewohletz
+            IdentityFile ~/.ssh/id_ed25519
+
+        Host someotherhost
+            HostName some.other.host
+            User some.user
+            IdentityFile ~/.ssh/id_ed25519
+
+    You may specify settings for any number of host systems. Check out all
+    possible settings via:
+
+        .. prompt:: bash
+
+            man ssh_config
+
+#. Save and close the file.
+#. You may connect to a specified host system by only stating its name:
+
+    .. prompt::
+
+        ssh imac
 
 Set up Proxy Jump
 -----------------
