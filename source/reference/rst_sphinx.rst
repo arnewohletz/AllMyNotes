@@ -1,8 +1,7 @@
 reStructuredText & Sphinx
--------------------------
-
+=========================
 Basics (docutils)
-`````````````````
+-----------------
 * `Quick reStructuredText`_: Short reference for most the basic syntax
 * `reStructuredText Markup Specification`_: Comprehensive syntax guide
 * `reStructuredText Directives`_: Guide on directives (special sections)
@@ -12,7 +11,7 @@ Basics (docutils)
 .. _reStructuredText Directives: https://docutils.sourceforge.io/docs/ref/rst/directives.html
 
 Extensions by Sphinx
-````````````````````
+--------------------
 * `reStructuredTest Primer`_: Short reference for most the basic syntax (similar to docutils description)
 * `Directives`_: Guide on directives (special sections)
 * `Roles`_: Special inline text markups
@@ -22,21 +21,31 @@ Extensions by Sphinx
 .. _Roles: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 
 Docs for used plugins
-`````````````````````
+---------------------
+* `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
 * `sphinx-copybutton`_: Adds a copy button to all code and command line blocks
+* `sphinx-design`_: Designing beautiful, screen-size responsive web-components
 * `sphinx-git`_: Directive for adding latest git commits information to docs
+* `sphinx-gitstamp`_: Directive for inserting a git datestamp into the context
 * `sphinx-prompt`_: Directive for unselectable prompts (nice for bash sections)
 * `sphinx-rtd-theme`_: Theme used for the web page of this documentation
+* `sphinxcontrib-bibtex`_: Allows `BibTeX`_ citations into the documentation
 * `sphinxcontrib-images`_: Directive for thumbnail images which can be magnified
 * `sphinxcontrib-mermaid`_: Directive for `mermaid graphs`_
-* `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
+* `sphinxemoji`_: Roles for adding emojis
 
 
-.. _`sphinx-copybutton`: https://sphinx-copybutton.readthedocs.io/en/latest/
-.. _`sphinx-git`: https://github.com/OddBloke/sphinx-git
-.. _`sphinx-prompt`: http://sbrunner.github.io/sphinx-prompt/
-.. _`sphinx-rtd-theme`: https://sphinx-rtd-theme.readthedocs.io/en/latest/
-.. _`sphinxcontrib-images`: https://sphinxcontrib-images.readthedocs.io/en/latest/
-.. _`sphinxcontrib-mermaid`: https://github.com/mgaitan/sphinxcontrib-mermaid
-.. _`mermaid graphs`: https://mermaid-js.github.io/mermaid/
 .. _jupyter_sphinx: https://jupyter-sphinx.readthedocs.io/en/latest/
+.. _sphinx-copybutton: https://sphinx-copybutton.readthedocs.io/en/latest/
+.. _sphinx-design: https://sphinx-design.readthedocs.io/en/latest/index.html
+.. _sphinx-git: https://github.com/OddBloke/sphinx-git
+.. _sphinx-gitstamp: https://github.com/jdillard/sphinx-gitstamp
+.. _sphinx-prompt: http://sbrunner.github.io/sphinx-prompt/
+.. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/
+.. _sphinxcontrib-bibtex: https://github.com/mcmtroffaes/sphinxcontrib-bibtex
+.. _sphinxcontrib-images: https://sphinxcontrib-images.readthedocs.io/en/latest/
+.. _sphinxcontrib-mermaid: https://github.com/mgaitan/sphinxcontrib-mermaid
+.. _sphinxemoji: https://github.com/sphinx-contrib/emojicodes
+
+.. _BibTeX: https://www.bibtex.org/
+.. _mermaid graphs: https://mermaid-js.github.io/mermaid/
