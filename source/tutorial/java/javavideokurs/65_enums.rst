@@ -60,7 +60,7 @@ Enums sind Klassen, die jedoch folgende Unterschiede aufweisen:
         * Enums sind komplexe Datentypen (Objekte) und erben von der Klasse Object
         * Eine Konstante in einem Enum, welche ein Objekt referenziert weist
           diesem Objekt stets die finale Variable name vom Typ String zu, die
-          gleichzeitig ihr eigener Name ist (hier: MONTAG, …): :java:`MONTAG.name = “MONTAG"`
+          gleichzeitig ihr eigener Name ist (hier: MONTAG, …): :java:`MONTAG.name = "MONTAG"`
         * Die toString() Methode wird in einem Enum stets automatisch so
           überschrieben, dass sie den Namen einer Instanz als String zurückgibt:
 
