@@ -12,6 +12,7 @@ Table of Contents
     tutorial/cpp/index.rst
     tutorial/java/index.rst
     tutorial/linux/index.rst
+    tutorial/windows/index.rst
     tutorial/docker/index.rst
     tutorial/shell_scripting/index.rst
 
