@@ -36,8 +36,6 @@ Setup
         from outside of your project's virtual environment, as vale expects it inside
         your Python environment.
 
-#. Download a `style`_ (you may adapt it to your needs later) for example the
-   `Microsoft Writing Style Guide`_.
 #. In your project documentation directory create these additional directory and file:
 
     .. code-block:: none
@@ -46,24 +44,62 @@ Setup
         ├── styles/
         └── .vale.ini
 
-#. Extract your downloaded style into the ``style``directory (e.g. ``style/microsoft``).
-#. Open the ``.vale.ini`` file and enter this content:
+#. Define one or multiple styles to check your input texts against. Check the `Package Hub`_
+   for available styles.
+
+    .. hint::
+
+        You may adapt existing styles to your liking or define a custom style from scratch.
+        Check https://vale.sh/docs/topics/styles/ for guidance.
+
+        It happens that styles have conflicting rules. In that case either adapt the rule of
+        any style or reduce the amount of styles in the configuration.
+
+#. Open the ``.vale.ini`` file and define the config (here: `Microsoft Writing Style Guide`_):
 
     .. code-block:: ini
 
-        StylesPath = ./vale
+        StylesPath = ./.vale_styles
         MinAlertLevel = suggestion
         [*.{rst}]
-        BasedOnStyles = Microsoft
+        BasedOnStyles = Vale, Microsoft
 
     .. hint::
 
         Exchange the *BasedOnStyles* parameter value with your downloaded style.
 
+#. Download and install external configuration sources via
+
+    .. prompt:: bash
+
+        vale sync
+
+    .. warning::
+
+        Executing ``sync`` re-downloads **all** specified styles . Any adjustments to the
+        original styles have been done are overwritten. It is highly advised to save a
+        backup of your adjustments in a separate location before running ``sync`` or
+        adding the styles folder to version control to revert files, if needed.
+
+.. hint::
+
+    **Additional styles**
+
+    Other styles, not present on `Package Hub`_ may also be installed manually,
+    but **not** via ``vale sync``. To activate the style, add the style's directory
+    name to the *BasedOnStyles* option in ``.vale.ini``.
+
+    ======      ====
+    Name        URL
+    ======      ====
+    gitlab      https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab
+    ======      ====
+
 .. _release page: https://github.com/errata-ai/vale/releases/
 .. _rst2hmtl: https://docutils.sourceforge.io/docs/user/tools.html#rst2html-py
 .. _pipx: https://github.com/pypa/pipx
 .. _style: https://github.com/errata-ai/packages#available-styles
+.. _Package Hub: https://vale.sh/hub/
 .. _Microsoft Writing Style Guide: https://github.com/errata-ai/Microsoft/releases
 
 Usage
