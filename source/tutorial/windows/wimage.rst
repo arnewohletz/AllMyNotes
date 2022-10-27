@@ -1,163 +1,184 @@
 Set up Windows image backup with c't-WIMage :footcite:p:`vahldiek21_ersatzrad`
 ==============================================================================
-`WIMage`_ is a backup solution provided by c't, which is a script, that saves a
-Windows image of the system volume (usually ``C:\``). The backup media, an external USB
-device, can be booted from and restore the complete drive using the Windows Setup Tool
-(used for Windows installations). It supports Windows 8.1, 10 (from 1703) and 11 in
-both 32 and 64 Bit variants.
+`WIMage`_ is a backup solution provided by c't for the main disk partition (``C:\``).
+The Windows Setup Tool, which installs Windows operating system images, accepts
+such a backup and transfers them onto hard disk partitions. WIMage supports
+Windows 8.1, 10 (from 1703) and 11 in both 32 and 64 Bit variants.
 
 Prerequisites
 -------------
-* An empty, external USB drive having a minimum size of the internal hard disk. FAT32
-  format is recommended. WIMage makes use of up to 2 TB storage. Larger drives are supported,
-  but only 2 TB can be used: **Saving backups of more than 2 TB might fail**.
-* Latest version of WIMage, downloadable from https://www.heise.de/ct/artikel/c-t-WIMage-3863074.html#nav_download_von__3
-* Latest version of the Media Creation Tool (not available for Windows 8.1, only ISO) for
-  the Windows version that is used (see under *Create <VERSION> installation media*
-  entry):
+* An empty, external USB drive having the size of the main disk partition or more.
+  WIMage makes use of up to 2 TB of available storage (limitation of the `MBR-Partitioning`_).
+  It supports larger drives, though doesn't use the extra space: **Saving partitions larger than 2 TB might fail**.
+* The latest version of WIMage, downloadable from https://www.heise.de/ct/artikel/c-t-WIMage-3863074.html#nav_download_von__3
+* The latest version of the Media Creation Tool (not available for Windows 8.1, which requires
+  downloading the ISO image):
 
     * Windows 8.1: https://www.microsoft.com/en-us/software-download/windows8ISO
     * Windows 10: https://www.microsoft.com/en-us/software-download/windows10
     * Windows 11: https://www.microsoft.com/en-us/software-download/windows11
 
-* No WSL-1 distribution is installed (`migrate to WSL-2`_)
+* Migrate any installed WSL-1 distributions to WSL-2 (`Migrate to WSL-2`_)
+
+.. _MBR-Partitioning: https://en.wikipedia.org/wiki/Master_boot_record
 
 Procedure
 ---------
 Setup
 `````
 #. Connect the USB storage device.
-#. Start the Media Creation Tool and step through the wizard to create a installation media
-   for the specific Windows version, that is used (Home, Pro, 32/64-Bit). Don't select a
-   re-installation of Windows. Select the USB storage device as target. The device
-   is named ``ESD-USB``.
+#. Start the Media Creation Tool and step through the wizard to create an installation media.
+#. Select the exact version, which the backup installation uses (for example, Windows 10 Pro 64-Bit).
+#. Select the USB storage device as target and launch the creation. The wizard assigns
+   ``ESD-USB`` as name for the installation media.
 
     .. warning::
 
-        For Windows 8.1 the installation media must be created via `Rufus`_.
+        For Windows 8.1, use `Rufus`_ to create the installation media.
 
 #. Unzip ``ct-WIMage.zip`` and copy both the ``ct-WIMage`` directory and ``ct-WIMage-maker.bat``
-   to the storage device's root directory (which already contains the Windows install files).
-#. On the storage device, execute ``ct-WIMage-maker.bat`` as administrator.
-#. Answer the security question with **J** for *Yes* (*Ja* in German).
-#. As the script executes a new partition is created on the storage device. If the
-   explorer appears in the forefront, ignore it. Do not abort the script.
-#. After the setup is complete, the previous ``ESD-USB`` device is now named
-   ``CT-BOOT`` (drive letter D:\ is not occupied) and an additional drive should
-   be listed in the explorer, named ``CT-IMAGE`` (drive letter E:\ if not occupied).
+   to ``ESD-USB``'s root directory (which already contains the Windows install files).
+#. On the storage device, run ``ct-WIMage-maker.bat`` as administrator.
+#. Confirm the security question with "J" (*Ja/Yes*).
+#. The script creates a new partition on the storage device. If the
+   explorer appears in the forefront, ignore it. Don't abort the script.
+
+After the setup is complete, the ``ESD-USB`` device name changed to
+``CT-BOOT`` (keeping the same assigned to drive letter D, if not already occupied)
+and created an additional drive, named ``CT-IMAGE`` (assigned to drive letter E, if
+not already occupied).
 
 Create backup
 `````````````
-#. Open the ``CT-IMAGE`` device and execute the ``ct-WIMage-x64.bat`` (*x86*, in case
-   a 32-Bit system was created for ``CT-BOOT``) as administrator.
+.. important::
+
+    The initial backup can take 5 hours and longer, though parallel work is
+    still possible. Choose a suitable time slot for it.
+
+#. Open the ``CT-IMAGE`` device and execute the ``ct-WIMage-x64.bat`` as administrator.
+
+    .. hint::
+
+        In case ``CT-BOOT`` uses a 32-Bit operating system the file is named ``ct-WIMage-x86.bat``.
+
 #. The explorer might open a new window in the foreground, selecting another new partition
-   (letter P:\ if not preoccupied), which contains a shadow copy of your system drive,
-   which is then saved onto ``CT-IMAGE``.
-#. Wait until the backup is complete (might take several hours on first execution,
+   (drive letter P, if not already occupied), which is a shadow copy of your system drive.
+   Its content which is then saved onto ``CT-IMAGE``.
+#. Wait until the backup is complete (might take several hours on first run,
    depending on the disk size and transfer speed).
 
     .. hint::
 
-        In case of errors, check out the subsequent troubleshooting section.
+        In case of errors, check out the :ref:`troubleshooting <wimage_troubleshooting>` section.
 
     .. hint::
 
-        Subsequent backups are a lot faster, depending on the amount of changes
-        after the last backup.
+        Future backups are faster, depending on the amount of changes
+        after the last backup, but may still take 3 hours or longer.
 
 Restore from backup
 ```````````````````
-Follow these steps to restore the hard disk from the backup might be necessary in case of
+Follow these steps to restore the hard disk from the backup. This may become necessary in case of
 
-    * a hard disk defect,
+    * a hard disk defect
     * a serious error in your Windows installation (for example
       due to updates or some other erroneous actions)
     * transferring the present state to a new hard disk
 
-#. Boot your PC from the external USB storage device (how to do so depends on the
-   hardware provider's BIOS. Also, you might have to disable secure boot to enable
-   booting from external devices).
-#. After the Windows setup has been initialized, select your preferred keyboard layout
+#. Boot your PC from the external USB storage device.
+
+    .. hint::
+
+        How to do so depends on the hardware provider's BIOS. You might have to
+        disable secure boot to enable booting from external devices).
+
+#. After the Windows setup initialized, select your preferred keyboard layout
    and location.
 #. Next up, select :guilabel:`Install now`.
 #. After the setup has started (might take a minute to complete), accept the license
    terms and select :guilabel:`Next`.
-#. As installation type, select *Customized:...*.
-#. Choose the location, where the backup shall be installed to. Select a partition
-   on the internal hard disk of sufficient size for example the one containing the
-   existing Windows system drive ``C:\`` (the ``CT-BOOT`` and
-   ``CT-IMAGE`` partitions should also be listed, but are not to be used). Partitions
-   may need be formatted to an adequate format first (recommended: FAT32).
+#. Select the customized installation type.
+#. Choose the install location. If you want to restore your broken Windows partition,
+   select the one containing the existing main disk partition ``C:\``.
+   If you are using a different hard disk, select a partition which has a size of
+   not less than the original backed up drive.
 
     .. warning::
 
-        If a partition which already contains a Windows installation is selected,
-        that content is saved to sub-directory named ``Windows.old``. From there
-        you may access previous files. The backup is saved next to it. Beware,
-        that this may double the required size of that partition. If old files
-        are not needed or the partition was has less than 50 % of free space, better
+        The ``CT-BOOT`` and ``CT-IMAGE`` partitions should also be listed, but are
+        not to be used!
+
+    .. warning::
+
+        When selecting a partition which already holds a Windows installation,
+        WIMage moves that content to a sub-directory named ``Windows.old``.
+        From there you may access earlier files. In this case, the hard disk requires
+        space to store another instance. Logically, if the old files aren't needed
+        or the backup partition uses more than 50 % of its available space,
         format the drive first.
 
 #. Choose :guilabel:`Next` and wait until the installation is complete.
-#. Restart the PC (in case, external disks are prioritized by default, detach
-   the hard disk after the shutdown).
+#. Restart the PC (in case, external disks have boot priority according to your BIOS
+   settings, detach the hard disk after the shutdown).
+
+.. _wimage_troubleshooting:
 
 Troubleshooting
 ---------------
-WIMage exits due to missing wimre.wim (cannot find Windows RE)
-``````````````````````````````````````````````````````````````
-WIMage requires a copy of the Windows RE (Recovery Environment) partition, which usually
-resides in a separate partition. The RE partition is commonly used to repair a corrupted
+WIMage exits due to missing wimre.wim
+`````````````````````````````````````
+WIMage requires a copy of the Windows RE (Recovery Environment), which resides
+on a separate partition. The RE partition is commonly used to repair a corrupted
 Windows installation.
-In case it is not found, it exits with a note ``Operation fehlgeschlagen`` after the
+In case it isn't found, the script exits with a note ``Operation fehlgeschlagen`` after the
 message ``Windows RE auf Windows-Partition verschieben``.
 
 #. Check, if the recovery environment is active:
 
-    .. prompt:: bash C:\\>
+    .. prompt:: text C:\\>
 
         reagentc /info
 
-    If it shows *enabled* under *Status*, it is active
+    If it shows *enabled* under *Status*, it's already active. In this case,
+    deactivate it temporarily by entering:
 
-#. In case it is active, deactivate it temporarily by entering:
-
-    .. prompt:: bash C:\\>
+    .. prompt:: text C:\\>
 
         reagentc /deactivate
 
     You may check the status via ``/info`` again to verify.
 
-#. Go to ``C:\Windows\System32\Recovery``, in which a file named
-   ``winre.wim`` should reside. In case, it does, leave the rescue environment
+#. Go to ``C:\Windows\System32\Recovery`` and check whether it contains a file
+   named ``winre.wim``. In case it does, leave the rescue environment
    status as is and start another WIMage backup.
-#. In case it does not, the rescue system is indeed missing and must be
-   retrieved by a different but identical Windows installation. For instance, when
-   using Windows 10 Pro, the file must come from the same edition, though
-   the version may differ for example 21H2 or 22H2.
-#. Download the Media Creation Tool (not available for Windows 8.1, only ISO) for
-   the respective Windows version (*Create <VERSION> installation media* entry):
+#. In case it doesn't, the rescue system is missing and must be
+   retrieved by another Windows installation using the same Windows version. For instance,
+   when using Windows 10 Pro, the file must come from the same edition, though
+   the version may differ for example 21H2 also accepts the rescue system from 22H2.
+#. Download the Media Creation Tool (in case of Windows 8.1, download the ISO image)
+   for the respective Windows version (*Create <VERSION> installation media* entry):
 
     * Windows 8.1: https://www.microsoft.com/en-us/software-download/windows8ISO
     * Windows 10: https://www.microsoft.com/en-us/software-download/windows10
     * Windows 11: https://www.microsoft.com/en-us/software-download/windows11
 
 #. Connect a USB storage device with at least 16 GB of disk space.
-   **Careful**: The device is cleared, so save data from the device first, if needed.
+   **Careful**: Creating the startup disk formats the device, so save any important data
+   from the device first, if needed.
 
     .. important::
 
-        **Windows 8.1 only**
+        **For Windows 8.1**
 
         Download `Rufus`_ to create an installation media using the downloaded ISO.
         Ignore the next step.
 
-#. Launch the Media Creation Tool, follow the wizard and create the installation media.
-#. Go to the ``sources``directory on the installation media device and locate
+#. Launch the Media Creation Tool / Rufus, follow the wizard and create the installation media.
+#. Go to the ``sources`` directory on the installation media device and locate
    a file called ``install.esd`` and copy it to ``C:\``.
-#. Open a command prompt as administrator, go to ``C:\`` and execute
+#. Open a command prompt as administrator, go to ``C:\`` and run
 
-    .. prompt:: bash C:\\>
+    .. prompt:: text C:\\>
 
         dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity
 
@@ -165,29 +186,28 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
 #. Mount the file by running
 
-    .. prompt:: bash C:\\>
+    .. prompt:: text C:\\>
 
         mkdir C:\wintemp
         dism /Mount-Wim /WimFile:"C:\install.wim" /index:1 /MountDir:"C:\wintemp"
 
 #. Go to ``C:\wintemp\Windows\System32\Recovery`` and copy the ``Winre.wim``
    file to ``C:\Windows\System32\Recovery``.
-#. Restart the WIMage script. If the error is resolved, delete ``C:\wintemp``,
+#. Restart the WIMage script. If the error doesn't reoccur, delete ``C:\wintemp``,
    ``install.wim`` and ``install.esd``.
 
-OneDrive syncs crash WIMage
-```````````````````````````
-It was experienced that synced directories or files in OneDrive (from which you
-are not the owner) are crashing WIMage. To prevent that, stop the sync on all
-directories or files and delete them from the hard disk (resync them after the
-backup, if needed).
+OneDrive syncs crashes WIMage
+`````````````````````````````
+Experiences show that synced directories or files in OneDrive from which you
+aren't the owner are crashing WIMage. To prevent that, stop the sync on all
+these directories or files and delete them from the hard disk. You may resync
+them after the backup, if needed.
 
 .. hint::
 
-    Generally, we recommended to quit OneDrive during backup creation.
+    Better quit OneDrive before creating the backup.
 
-Early after starting the backup script, the following error occurs and the
-script exits:
+The scripts reports the following error at the first stage and exits:
 
 .. code-block:: none
 
@@ -206,11 +226,11 @@ and replace it with:
 
     for /f "tokens=2" %%a in ('wmic volume get DriveLetter^,FreeSpace ^| findstr /i "%systemdrive%"') do set frei=%%a
 
-Save and close the file and start a new execution.
+Save and close the file and start a new run.
 
 Damaged hard disk junctions due to OneDrive
 ```````````````````````````````````````````
-Somewhere during the script execution, the script abort showing this error:
+Somewhere during the script operation, the script abort showing this error:
 
 .. code-block:: none
 
@@ -218,18 +238,18 @@ Somewhere during the script execution, the script abort showing this error:
 
     The tag present in the reparse point buffer is invalid
 
-It means, some of the mentioned junction files might be in a damaged state.
-This may occur if OneDrive has crashed or has been terminated improperly at some point.
+It means, some mentioned junction files might be in a damaged state.
+This may occur if OneDrive has crashed or terminated improperly at some point.
 
 #. Open a command prompt as administrator
 #. Enter (in case the system drive uses a different letter, replace ``c`` below):
 
-    .. prompt:: bash C:\\>
+    .. prompt:: text C:\\>
 
         chkdsk c: /r /f
 
-#. Confirm with 'Y' when asked.
-#. Restart the PC and allow disk check to run (it may take two hours or longer).
+#. Confirm with :kbd:`Y` when asked.
+#. Restart the PC and wait for the disk check to complete (it may take two hours or longer).
 #. Retry running the WIMage script.
 
 .. footbibliography::
