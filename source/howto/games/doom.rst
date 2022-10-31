@@ -84,7 +84,33 @@ Installation
 
 Set up a multiplayer game
 `````````````````````````
-coming later
+#. In Doomseeker, select :menuselection:`File --> Create Game`.
+#. In the *General* tab
+
+    * select *Zandronum* as game and make sure its executable is set correctly
+    * a *Server name* is stated (for example ``Test Game``)
+    * a `forwarded`_ port number is defined in *Port* (default: 10666)
+    * the *Game mode* and *Difficulty* is set
+    * select the proper *IWAD* for example DOOM2.wad
+    * Under *Additional WADs and files* add additional \*wad or \*.pk3 files for the game
+
+#. Set the rules in the other tabs.
+#. Select :guilabel:`Host server` when ready. Leave the appearing *Server Console*
+   window open (closing it ends hosting), but you may close the host window.
+
+    .. important::
+
+        Many addons are not compatible with Zandronum. If the *Server Console* window
+        closes without output, you used an incompatible file. In this case, try using
+        :ref:`GZDoom to host a multiplayer game <gzdoom_mutliplayer>`.
+
+#. In the *Doomseeker* main window, refresh the server list, then search for the
+   hosted game's name.
+#. Join the game (right click the game and *Join Game*).
+
+.. _forwarded: https://en.wikipedia.org/wiki/Port_forwarding
+
+.. _gzdoom_mutliplayer::
 
 GZDoom: Create and join a multiplayer game :footcite:p:`gzdoom_multiplayer`
 ```````````````````````````````````````````````````````````````````````````
@@ -92,6 +118,11 @@ GZDoom also features multiplayer capabilities, but is limited to certain game mo
 which is Deathmatch, Team Deathmatch and Cooperative. On the other hand, there are
 some Doom mods, which are specifically built with the GZDoom engine (e.g. `Blade of Agony`_)
 and fail to load using a different Source Port such as Zandronum.
+
+.. important::
+
+    The host machine needs to open a port for GZDoom, which is **5029** by default. Clients,
+    connecting to a game, do not need to open that port.
 
 To **create** aka host a multiplayer game using GZDoom, you need to launch it via the command
 line using specific options, which are
