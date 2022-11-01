@@ -102,7 +102,7 @@ Set up a multiplayer game
 
         Many addons are not compatible with Zandronum. If the *Server Console* window
         closes without output, you used an incompatible file. In this case, try using
-        :ref:`GZDoom to host a multiplayer game <gzdoom_mutliplayer>`.
+        :ref:`GZDoom to host a multiplayer game <gzdoom_multiplayer>`.
 
 #. In the *Doomseeker* main window, refresh the server list, then search for the
    hosted game's name.
@@ -129,8 +129,8 @@ line using specific options, which are
 
 .. option:: -host <min_players>
 
-    ``<min_players>`` the minimum amount of participants (including the host) before the
-    game is started
+    ``<min_players>`` the minimum amount of participants needed to join  (including the host)
+    before the game is started.
 
 .. option:: -useip <IP_ADDRESS>
 
@@ -145,6 +145,11 @@ line using specific options, which are
         port via the ``-port`` option) for which it needs forwarding on **UDP**
         traffic. For security reasons, you should disable the forward again after the game session.
 
+.. option:: -port <num>
+
+    Specifies an alternate IP port for this machine to use during a network game.
+    By default, port 5029 is used.
+
 .. option:: -netmode <num>
 
     Defines the network mode: ``0`` for *Peer-to-Peer*, which is recommended when having
@@ -157,7 +162,7 @@ A basic host command might be:
 
 .. prompt:: bash
 
-    gzdoom -host 2 -useip 192.168.178.50 -netmode 0
+    gzdoom -host 2 -useip 192.168.178.50 -port 5029 -netmode 0
 
 Additional options may be:
 
@@ -172,6 +177,32 @@ Additional options may be:
     (e.g. E1M1 for first map of episode 1) or simply ``xx`` (e.g. 24 for map 24). See more
     at https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options. Alternatively,
     you may use the ``+map`` option.
+
+    .. important::
+
+        When using ``+map``, always preceed the map name with ``MAP``, for example ``+map MAP04``.
+        These two options are treated as equal:
+
+        .. code-block:: none
+
+            +map MAP04
+            -warp 04
+
+    There is no constant map naming between one \*.wad/, \*.pk3 or \*.ipk3 and another. Some examples:
+
+    * DOOM.WAD (Ultimate Doom): E<A>M<B> where ``<A>`` is the episode number (1 to 4) and ``<B>``
+      is the map number (1 to 9), for example: E1M9, E3M3
+    * DOOM2.WAD (Doom 2): MAP<AA> where ``AA`` is the map number (01 to 32)
+    * PLUTONIA.WAD (Final Doom: Plutonia): 01 to 32
+    * TNT.WAD (Final Doom: TNT/Evilution): 01 to 32
+    * Brutal Wolfenstein 3D: 01 to 60 (ten for each episode). Bonus maps: 62, AntoLeve, Sleepy
+    * Blade of Agony: C<A>M<B> where ``<A>`` is the campaign number (1 to 3) and ``<B>`` is
+      the map number (1 to 6 for regular maps, 0 for bonus map), for example: C3M3. Some maps
+      are divided in sections in which case the pattern C<A>M<B>_<C> where ``C`` is the section
+      number (can range from A to C), for example C3M1_A. "Commander Keen" bonus maps are
+      accessed via SM01, SM02 and SM03.
+
+    Check the ``mapinfo.txt`` in the respective \*.wad/, \*.pk3 or \*.ipk3 file to get map names.
 
 Documentation on all multiplayer command line options: https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options
 
