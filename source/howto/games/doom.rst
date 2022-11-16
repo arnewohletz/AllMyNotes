@@ -110,7 +110,7 @@ Set up a multiplayer game
 
 .. _forwarded: https://en.wikipedia.org/wiki/Port_forwarding
 
-.. _gzdoom_mutliplayer::
+.. _gzdoom_multiplayer:
 
 GZDoom: Create and join a multiplayer game :footcite:p:`gzdoom_multiplayer`
 ```````````````````````````````````````````````````````````````````````````
