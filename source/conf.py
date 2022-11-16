@@ -68,7 +68,15 @@ jupyter_sphinx_thebelab_config = {
 }
 
 linkcheck_ignore = [
+    ".*/_static/",
+    "https://computingforgeeks.com",
+    "https://derickbailey.com",
+    "https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox",
+    "https://github.com/shellspec/shellspec#installation",
+    "http://www.javavideokurs.de/",
     "https://mkyong.com",
+    "https://treyhunner.com/2019/06/loop-better-a-deeper-look-at-iteration-in-python",
+    "https://zdoom.org/"
 ]
 
 pygments_style = "default"

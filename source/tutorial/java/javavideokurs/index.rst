@@ -2,8 +2,8 @@ JavaVideoKurs
 =============
 The JavaVideoKurs is a video-based tutorial for Java Beginners.
 
-The videos are published at http://www.javavideokurs.de/ where you must create
-an account and purchase the JavaVideoKurs first.
+The videos are originally published at http://www.javavideokurs.de/ (website not available
+any longer) for a moderate fee.
 
 Not every chapter of the course is covered in these notes, as some are so simple,
 that no future reference is required.

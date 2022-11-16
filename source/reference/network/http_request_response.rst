@@ -135,7 +135,7 @@ Content Type
     has a valid public key certificate or not)
 
     | -> https://tools.ietf.org/html/rfc2616#section-14.17
-    | -> http://www.mime-type.net/mime-types.php
+    | -> https://www.iana.org/assignments/media-types/media-types.xhtml
 
 Date
     Represents the date and time at which the message was originated.

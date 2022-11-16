@@ -19,7 +19,7 @@ Installation
 #. Create a new directory ``~/Library/Application Support/zandronum`` and put in your
    ``doom.wad`` and ``doom2.wad`` file (from an existing Doom or Doom2 installation).
 #. Try launching Zandronum selecting either of the WAD files.
-#. Go to https://doomseeker.drdteam.org/download.php#.
+#. Go to https://doomseeker.drdteam.org/download.php.
 #. Select the *Operating System* :guilabel:`Other (Source Code)` and click on the
    download link under *Doomseeker Source* (not the Bitbucket Snapshot). Extract the
    archive at a suitable location (e.g. ``~/Downloads/``)
@@ -152,11 +152,11 @@ line using specific options, which are
 
 .. option:: -netmode <num>
 
-    Defines the network mode: ``0`` for *Peer-to-Peer*, which is recommended when having
-    a slower internet connection or when only two people are playing, and ``1`` which should
+    Defines the network mode: :literal:`0` for *Peer-to-Peer*, which is recommended when having
+    a slower internet connection or when only two people are playing, and :literal:`1` which should
     only be used when having a faster internet connection (10 Gb/s or more) or when
     creating a game with three or more people (people other than the host may leave the
-    session without aborting it). Find more info `here <network_modes>`_.
+    session without aborting it). Find more info `here <https://zdoom.org/wiki/Multiplayer#Network_modes>`_.
 
 A basic host command might be:
 
@@ -221,6 +221,5 @@ you are in the same LAN or the global IP address for internet connection:
     ``-iwad`` (for \*.wad files).
 
 .. _Blade of Agony: https://boa.realm667.com/
-.. _network_modes: https://zdoom.org/wiki/Multiplayer#Network_modes
 
 .. footbibliography::
