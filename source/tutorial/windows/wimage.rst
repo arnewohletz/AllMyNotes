@@ -45,7 +45,7 @@ Setup
 
 After the setup is complete, the ``ESD-USB`` device name changed to
 ``CT-BOOT`` (keeping the same assigned to drive letter D, if not already occupied)
-and created an additional drive, named ``CT-IMAGE`` (assigned to drive letter E, if
+and created an additional drive, named ``CT-WIMAGE`` (assigned to drive letter E, if
 not already occupied).
 
 Create backup
@@ -55,6 +55,11 @@ Create backup
     The initial backup can take 5 hours and longer, though parallel work is
     still possible. Choose a suitable time slot for it.
 
+.. important::
+
+    It is recommended to **quit OneDrive during the initial backup**, as it tends
+    the crash WImage. This was not observed for subsequent backups.
+
 #. Open the ``CT-IMAGE`` device and execute the ``ct-WIMage-x64.bat`` as administrator.
 
     .. hint::
@@ -63,7 +68,7 @@ Create backup
 
 #. The explorer might open a new window in the foreground, selecting another new partition
    (drive letter P, if not already occupied), which is a shadow copy of your system drive.
-   Its content which is then saved onto ``CT-IMAGE``.
+   Its content which is then saved onto ``CT-WIMAGE``.
 #. Wait until the backup is complete (might take several hours on first run,
    depending on the disk size and transfer speed).
 
@@ -144,7 +149,7 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
     .. prompt:: text C:\\>
 
-        reagentc /deactivate
+        reagentc /disable
 
     You may check the status via ``/info`` again to verify.
 
@@ -178,7 +183,7 @@ message ``Windows RE auf Windows-Partition verschieben``.
    a file called ``install.esd`` and copy it to ``C:\``.
 #. Open a command prompt as administrator, go to ``C:\`` and run
 
-    .. prompt:: text C:\\>
+    .. prompt:: batch
 
         dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity
 
@@ -186,7 +191,7 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
 #. Mount the file by running
 
-    .. prompt:: text C:\\>
+    .. prompt:: batch
 
         mkdir C:\wintemp
         dism /Mount-Wim /WimFile:"C:\install.wim" /index:1 /MountDir:"C:\wintemp"
@@ -194,7 +199,11 @@ message ``Windows RE auf Windows-Partition verschieben``.
 #. Go to ``C:\wintemp\Windows\System32\Recovery`` and copy the ``Winre.wim``
    file to ``C:\Windows\System32\Recovery``.
 #. Restart the WIMage script. If the error doesn't reoccur, delete ``C:\wintemp``,
-   ``install.wim`` and ``install.esd``.
+   ``install.wim`` and ``install.esd``. First unmount ``C:\wintemp`` via:
+
+    .. prompt:: batch
+
+        dism /Umount-Image /mountdir:C:\wintemp /discard
 
 OneDrive syncs crashes WIMage
 `````````````````````````````
@@ -244,7 +253,7 @@ This may occur if OneDrive has crashed or terminated improperly at some point.
 #. Open a command prompt as administrator
 #. Enter (in case the system drive uses a different letter, replace ``c`` below):
 
-    .. prompt:: text C:\\>
+    .. prompt:: batch
 
         chkdsk c: /r /f
 
