@@ -18,8 +18,19 @@ the popular SSH tool on many Linux distributions is also available (although it 
 versions behind the Linux build).
 
 #. Download the latest OpenSSH for Windows from https://github.com/PowerShell/Win32-OpenSSH/tags.
+   (either as \*.msi or zip-archive).
 #. Follow installation instructions on
    https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH.
+
+    .. hint::
+
+        Alternatively, you may install OpenSSH via `winget`_:
+
+        .. prompt:: batch
+
+            winget install "openssh beta"
+
+.. _winget: https://learn.microsoft.com/en-us/windows/package-manager/winget/
 
 Linux
 `````
@@ -136,6 +147,14 @@ be able to interact with them.
     The commands are used on Linux/macOS only. See here, how to permissions on Windows:
     https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/
 
+    On Windows, it is highly recommended to use the included PowerShell scripts to check or
+    set the proper access rights. Open a PowerShell instance as administrator, navigate
+    to the OpenSSH directory and run:
+
+    .. prompt:: powershell
+
+        powershell.exe -ExecutionPolicy Bypass -File .\FixHostFilePermissions.ps1
+
 #. **Linux/macOS only**: Make sure, your home directory is only writable by the respective user:
 
     .. prompt:: bash
@@ -173,8 +192,25 @@ be able to interact with them.
 
 Client: Set permissions
 ```````````````````````
-OpenSSH does not allow the key pair files to be editable by anyone except the owner:
-#. The private key must also be protected (here: id_ed25519):
+Same as for the server, each connecting client needs to set the correct permissions for
+the key pair. OpenSSH is very sensitive here and does not hint you to wrong permissions,
+when trying to establish a connection, so always make sure, those are set correctly.
+
+.. hint::
+
+    The commands are used on Linux/macOS only. See here, how to permissions on Windows:
+    https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/
+
+    On Windows, it is highly recommended to use the included PowerShell scripts to check or
+    set the proper access rights. Open a PowerShell instance as administrator, navigate
+    to the OpenSSH directory and run:
+
+    .. prompt:: powershell
+
+        powershell.exe -ExecutionPolicy Bypass -File .\FixUserFilePermissions.ps1
+
+OpenSSH does not allow the key pair files to be editable by anyone except the owner.
+The private key must also be protected (here: id_ed25519):
 
     .. prompt:: bash
 

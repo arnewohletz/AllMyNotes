@@ -204,6 +204,6 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
 **Sources**:
 
-https://docs.docker.com/install/linux/docker-ce/ubuntu/
-https://computingforgeeks.com/install-docker-and-docker-compose-on-linux-mint-19/
+https://docs.docker.com/engine/install/ubuntu
+https://computingforgeeks.com/install-docker-docker-compose-on-linux-mint
 https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo

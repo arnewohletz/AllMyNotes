@@ -84,7 +84,7 @@ it offers the possibility to schedule executions of shell scripts.
     need to do some manual tweaking afterwards), such as:
 
     * `LaunchControl`_ (proprietary, needs license)
-    * https://zerolaunched.herokuapp.com/ (web form -> save as \*.plist, not \*.xml)
+    * https://launched.zerowidth.com/ (web form -> save as \*.plist, not \*.xml)
 
 Launchd tasks (agents and daemons) are defined in \*.plist config files, which follows the
 XML syntax. For our script we create a new file in ``~/Library/LaunchAgents`` (the user

@@ -47,5 +47,5 @@ Docs for used plugins
 .. _sphinxcontrib-mermaid: https://github.com/mgaitan/sphinxcontrib-mermaid
 .. _sphinxemoji: https://github.com/sphinx-contrib/emojicodes
 
-.. _BibTeX: https://www.bibtex.org/
+.. _BibTeX: http://www.bibtex.org/
 .. _mermaid graphs: https://mermaid-js.github.io/mermaid/
