@@ -55,12 +55,15 @@ Create backup
     The initial backup can take 5 hours and longer, though parallel work is
     still possible. Choose a suitable time slot for it.
 
+    If the initial backup is aborted in the process, the :ref:`Setup steps <wimage_setup>`
+    need to be repeated as the backup script reports errors.
+
 .. important::
 
     It is recommended to **quit OneDrive during the initial backup**, as it tends
     the crash WImage. This was not observed for subsequent backups.
 
-#. Open the ``CT-IMAGE`` device and execute the ``ct-WIMage-x64.bat`` as administrator.
+#. Open the ``CT-WIMAGE`` device and execute the ``ct-WIMage-x64.bat`` as administrator.
 
     .. hint::
 
@@ -75,6 +78,24 @@ Create backup
     .. hint::
 
         In case of errors, check out the :ref:`troubleshooting <wimage_troubleshooting>` section.
+
+    .. hint::
+
+        It might happen that the process gets stuck. The output
+
+        .. code-block:: none
+
+            Deployment Image Servicing and Management tool
+            Version: 10.0.19041.844
+
+        is showing and the copy process does not start for over an hour.
+        Hit :kbd:`Enter` to proceed, which prints the message
+
+        .. code-block:: none
+
+            Saving image
+
+        After a short while, the progress bar should appear.
 
     .. hint::
 
@@ -110,7 +131,7 @@ Follow these steps to restore the hard disk from the backup. This may become nec
 
     .. warning::
 
-        The ``CT-BOOT`` and ``CT-IMAGE`` partitions should also be listed, but are
+        The ``CT-BOOT`` and ``CT-WIMAGE`` partitions should also be listed, but are
         not to be used!
 
     .. warning::
@@ -203,7 +224,7 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
     .. prompt:: batch
 
-        dism /Umount-Image /mountdir:C:\wintemp /discard
+        dism /Unmount-Wim /mountdir:C:\wintemp /discard
 
 OneDrive syncs crashes WIMage
 `````````````````````````````
