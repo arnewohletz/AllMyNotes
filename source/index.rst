@@ -15,6 +15,7 @@ Table of Contents
     tutorial/windows/index.rst
     tutorial/docker/index.rst
     tutorial/shell_scripting/index.rst
+    tutorial/robocorp.rst
 
 .. toctree::
     :maxdepth: 2

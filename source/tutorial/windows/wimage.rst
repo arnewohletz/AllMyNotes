@@ -56,7 +56,12 @@ Create backup
     still possible. Choose a suitable time slot for it.
 
     If the initial backup is aborted in the process, the :ref:`Setup steps <wimage_setup>`
-    need to be repeated as the backup script reports errors.
+    need to be repeated as the backup script reports errors, like:
+
+    .. code-block:: none
+
+        Error: 13
+        The data is invalid
 
 .. important::
 
