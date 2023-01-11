@@ -1,7 +1,7 @@
 Windows Terminal
 ================
-Colorful for text output
-------------------------
+Colorful for text output :footcite:p:`schulz23_terminal_colors`
+---------------------------------------------------------------
 `ANSI-Escape-Sequences`_ can be used to tell the Windows Terminal to print text
 in various colors. It is possible to define a text color and a background color.
 The *Windows Terminal* application supports the 8-Bit colors, although standard
@@ -126,3 +126,5 @@ is another valid way to write the escape codes.
 
 .. _ANSI-Escape-Sequences: https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 .. _ColorTool: https://github.com/microsoft/terminal/releases/tag/1904.29002
+
+.. footbibliography::
