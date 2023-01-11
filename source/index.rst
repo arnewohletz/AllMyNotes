@@ -29,6 +29,7 @@ Table of Contents
     howto/network/index.rst
     howto/firefox/index.rst
     howto/windows/index.rst
+    howto/shell_scripting/index.rst
     howto/games/index.rst
     howto/others/index.rst
 

@@ -142,6 +142,7 @@ rst_prolog = """
    :format: html
 
 .. role:: rbg
+.. role:: rfg
 .. role:: gfg
 .. role:: ulined
 """
