@@ -6,3 +6,4 @@ Others
 
     working_healthy.rst
     head_massage.rst
+    happiness.rst
