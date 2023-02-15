@@ -152,6 +152,12 @@ Delete an existing branch
 
     git branch -D <branch_name>
 
+Rename currently checked out branch
+
+.. prompt:: bash
+
+    git branch -m "New branch name"
+
 Merging & Rebase
 ----------------
 **Merge the active branch with the branch <branch_name>**
