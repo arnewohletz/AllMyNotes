@@ -17,20 +17,16 @@ which also installs the *pyenv-virtualenv* extension.
 
         curl https://pyenv.run | bash
 
-#. To make ``pyenv`` available append this content to ``~/.profile``::
+#. To make ``pyenv`` available append this content to ``~/.profile`` and ``~/.bashrc``
+   (also ``~/.bash_login`` if available)::
 
     # pyenv
     export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
+    eval "$(pyenv-virtualenv-init -)"
 
-#. Also add these lines to to the bottom of ``~/.bashrc``::
-
-    # pyenv
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-
-#. Apply both files by typing:
+#. Apply both files by typing (or restart your shell via ``exec "$SHELL"``):
 
     .. prompt:: bash
 
