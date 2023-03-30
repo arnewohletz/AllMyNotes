@@ -28,6 +28,7 @@ Table of Contents
     howto/testing/index.rst
     howto/network/index.rst
     howto/firefox/index.rst
+    howto/linux/index.rst
     howto/windows/index.rst
     howto/shell_scripting/index.rst
     howto/games/index.rst
@@ -40,6 +41,7 @@ Table of Contents
     reference/python/index.rst
     reference/rst_sphinx.rst
     reference/git_commands.rst
+    reference/conda_commands.rst
     reference/network/index.rst
     reference/linux/index.rst
     reference/others/index.rst

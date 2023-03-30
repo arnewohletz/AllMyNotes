@@ -152,6 +152,12 @@ Delete an existing branch
 
     git branch -D <branch_name>
 
+Delete all branches except *master*:
+
+.. prompt:: bash
+
+    git branch | grep -v master | xargs git branch -D
+
 Rename currently checked out branch
 
 .. prompt:: bash

@@ -7,3 +7,4 @@ Linux
     terminal_programs.rst
     file_system.rst
     config_files.rst
+    commands.rst
