@@ -87,6 +87,14 @@ Stage and commit all modified or deleted file (new files are excluded)
 
     git commit -a -m "Important changes
 
+Change message on most recent commit
+
+.. prompt:: bash
+
+    git commit --amend
+
+    An editor opens, edit message and close to confirm.
+
 Stashing
 --------
 Not to be mistaken with 'staging', a stash is a temporary storage of any recent changes made
@@ -146,7 +154,13 @@ Create and switch to a new branch
 
     git checkout -b <branch_name>
 
-Delete an existing branch
+Delete an existing branch (only if merged)
+
+.. prompt:: bash
+
+    git branch -d <branch_name>
+
+Force delete an existing branch
 
 .. prompt:: bash
 
@@ -157,6 +171,12 @@ Delete all branches except *master*:
 .. prompt:: bash
 
     git branch | grep -v master | xargs git branch -D
+
+Delete branch on remote
+
+.. prompt:: bash
+
+    git push <remote_name> --delete <branch_name>
 
 Rename currently checked out branch
 

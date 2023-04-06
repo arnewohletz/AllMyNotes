@@ -24,6 +24,9 @@ Prerequisites
 
 Procedure
 ---------
+
+.. _wimage_setup:
+
 Setup
 `````
 #. Connect the USB storage device.

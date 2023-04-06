@@ -8,6 +8,7 @@ Python
     cheat_sheets/index.rst
     pep8.rst
     packaging.rst
+    pip_commands.rst
     class_and_static_methods.rst
     iterators.rst
 
