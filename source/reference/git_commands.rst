@@ -172,6 +172,38 @@ Delete all branches except *master*:
 
     git branch | grep -v master | xargs git branch -D
 
+.. hint::
+
+    **Delete "useless" branches locally**
+
+    *Useless* branches are considered those who are merged, not currently
+    checked out and not *master* (the main branch).
+
+    Copy those lines into ``~/.gitconfig``:
+
+    .. code-block:: ini
+
+        [alias]
+            # Delete all local branches but master and the current one, but only if they are fully merged with master
+            br-delete-useless = "!f(){\
+                git branch | grep -v "master" | grep -v ^* | xargs git branch -d:\
+            }; f"
+            # Delete all local branches but master and the current one
+            br-delete-useless-force = "!f(){\
+                git branch | grep -v "master" | grep -v ^* | xargs git branch -D:\
+            }; f"
+
+    This enables those two git aliases:
+
+    .. prompt:: bash
+
+        git br-delete-useless
+        git br-delete-useless-force
+
+    which deletes all *useless* local branches. Be careful, using
+    ``git br-delete-useless-force`` also deletes them if they haven't
+    yet been merged to master.
+
 Delete branch on remote
 
 .. prompt:: bash
