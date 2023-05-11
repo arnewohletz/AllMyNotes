@@ -186,11 +186,11 @@ Delete all branches except *master*:
         [alias]
             # Delete all local branches but master and the current one, but only if they are fully merged with master
             br-delete-useless = "!f(){\
-                git branch | grep -v "master" | grep -v ^* | xargs git branch -d:\
+                git branch | grep -v "master" | grep -v ^* | xargs git branch -d;\
             }; f"
             # Delete all local branches but master and the current one
             br-delete-useless-force = "!f(){\
-                git branch | grep -v "master" | grep -v ^* | xargs git branch -D:\
+                git branch | grep -v "master" | grep -v ^* | xargs git branch -D;\
             }; f"
 
     This enables those two git aliases:
