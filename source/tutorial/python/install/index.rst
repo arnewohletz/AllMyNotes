@@ -6,3 +6,4 @@ Installation
 
     linux.rst
     pyenv.rst
+    venv.rst
