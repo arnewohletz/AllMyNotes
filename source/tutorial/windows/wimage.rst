@@ -3,7 +3,7 @@ Set up Windows image backup with c't-WIMage :footcite:p:`vahldiek21_ersatzrad`
 `WIMage`_ is a backup solution provided by c't for the main disk partition (``C:\``).
 The Windows Setup Tool, which installs Windows operating system images, accepts
 such a backup and transfers them onto hard disk partitions. WIMage supports
-Windows 8.1, 10 (from 1703) and 11 in both 32 and 64 Bit variants.
+Windows 8.1, 10 (from 1703) and 11 in both 32 and 64-Bit variants.
 
 Prerequisites
 -------------
@@ -234,8 +234,8 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
         dism /Unmount-Wim /mountdir:C:\wintemp /discard
 
-OneDrive syncs crashes WIMage
-`````````````````````````````
+OneDrive sync crashes WIMage
+````````````````````````````
 Experiences show that synced directories or files in OneDrive from which you
 aren't the owner are crashing WIMage. To prevent that, stop the sync on all
 these directories or files and delete them from the hard disk. You may resync
@@ -313,7 +313,7 @@ overwrite the existing image bundle file (``install.wim``). Follow these steps:
 
 #. Make sure you have enough free disk space on your internal hard disk (or an
    additional external hard disk) to save the latest image (highest index), which
-   is approximately half the size of the currently occupied space on the Windows partition.
+   is approximately half the size of the currently occupied space on the main disk partition (C:\).
 #. Change into the directory, where you like to temporarily save the new image into.
 #. Export the latest image into a new Windows image file (here again, disk letter *E*),
    replacing the <HIGHEST_INDEX> with the proper number:
@@ -322,7 +322,7 @@ overwrite the existing image bundle file (``install.wim``). Follow these steps:
 
         Dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:<HIGHEST_INDEX> /DestinationImageFile:install.wim
 
-   The export may take around 15 minutes, depending on the size and the PC hardware.
+   The export may take around 15 minutes, depending on the image size and your hardware.
    The filesize should be less than the corresponding file on the external hard disk.
 
 #. You may check the resulting image file for its content:
@@ -331,9 +331,9 @@ overwrite the existing image bundle file (``install.wim``). Follow these steps:
 
         Dism /Get-ImageInfo /ImageFile:install.wim
 
-#. Replace ``install.wim`` on the external hard disk with the newly created one.
-   Make sure to delete it from its original destination.
-#. Start a new backup cycle, which should now finish successfully.
+#. Replace ``E:\sources\install.wim`` on the external hard disk with the newly
+   created one. Make sure to delete it from its original destination afterwards.
+#. Start a new backup cycle, which should finish successfully.
 
 .. footbibliography::
 
