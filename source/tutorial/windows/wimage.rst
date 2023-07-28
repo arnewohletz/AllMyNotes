@@ -279,7 +279,7 @@ Somewhere during the script operation, the script abort showing this error:
 It means, some mentioned junction files might be in a damaged state.
 This may occur if OneDrive has crashed or terminated improperly at some point.
 
-#. Open a command prompt as administrator
+#. Open a command prompt as administrator.
 #. Enter (in case the system drive uses a different letter, replace ``c`` below):
 
     .. prompt:: batch
@@ -294,10 +294,7 @@ Backup fails due to insufficient free disk space
 ````````````````````````````````````````````````
 During the execution of a backup, the following error message appears on the command line:
 
-.. code-block:: none
-
-    Error: 112
-    There is not enough disk space on the disk.
+.. image:: _img/wimage_no_space_error.png
 
 The external hard disk ran out of space to save the new backup image. ct-WIMage
 originally is supposed to automatically remove the oldest images to make space
