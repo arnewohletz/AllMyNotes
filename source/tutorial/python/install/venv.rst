@@ -25,7 +25,7 @@ Create a virtual environment
     ``python`` but something like ``python3.9``, the command fails. In that case,
     use the absolute path to your interpreter, for example:
 
-    .. prompt:: cmd, C:\>
+    .. prompt:: batch
 
         C:\Users\my_username\AppData\Local\Programs\Python\Python39\python.exe -m venv </path/to/target/env>
 
@@ -42,7 +42,7 @@ Activate the virtual environment
 
 **On Windows:**
 
-.. prompt:: batch, C:\>
+.. prompt:: batch
 
     </path/to/target/env>/Scripts/activate.bat
 
@@ -87,7 +87,7 @@ Make the script executable via ``chmod u+x activate``. To call the script, run:
 Create the file ``activate.bat`` inside the project's root directory. Open it and
 add the following content:
 
-.. code-block:: batch, C:\>
+.. code-block:: batch
 
     @echo off
 
