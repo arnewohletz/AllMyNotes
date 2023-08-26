@@ -77,6 +77,50 @@ Same as on Linux, add the auto-initializing commands to your ``~/.zshrc`` file:
 
 Afterwards, start a new shell.
 
+.. important::
+
+    Upon activating a virtualenv using ``pyenv activate ...``, the following prompt
+    may appear:
+
+    .. code-block:: none
+
+        pyenv-virtualenv: prompt changing will be removed from future release.
+        configure 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior.
+
+    *pyenv-virtualenv* had plans to remove the prompts (e.g. ``(venv) $ ...`` from
+    the shell, if a virtual environment is active, leaving the user to add such a
+    prompt.
+
+    Sadly, once ``export PYENV_VIRTUALENV_DISABLE_PROMPT=1`` has been set in the
+    shell profile page (``~/.zshrc``), the prompt does not come back, even is the
+    value is set to ``0`` or removed.
+
+    To recover the prompt, add this to your ``~/.zshrc`` file:
+
+    .. code-block:: shell
+
+        export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+        export BASE_PROMPT=$PS1
+        function updatePrompt {
+          PYENV_VER=$(pyenv version-name)
+          if [[ "${PYENV_VER}" != "$(pyenv global | paste -sd ':' -)" ]]; then
+            export PS1="(${PYENV_VER%%:*}) "$BASE_PROMPT
+          else
+            export PS1=$BASE_PROMPT
+          fi
+        }
+        export PROMPT_COMMAND='updatePrompt'
+
+    This answer comes from https://github.com/pyenv/pyenv-virtualenv/issues/135#issuecomment-754414842
+    and may only work on *zsh* shells.
+
+    Apparently, meanwhile the project owners decides to hold onto the prompts,
+    removing the deprecation warning in `#447`_, which will come in a future
+    release (either 1.2.2 or 1.3).
+
+.. _#447: https://github.com/pyenv/pyenv-virtualenv/pull/447/commits/2867b226a0d408c53b6b2001de3e207af9f73192
+
+
 Before installing any Python interpreters
 '''''''''''''''''''''''''''''''''''''''''
 xz
