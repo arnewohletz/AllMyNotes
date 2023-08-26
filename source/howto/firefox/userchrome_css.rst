@@ -162,6 +162,16 @@ Application Menu
         --arrowpanel-menutiem-padding-inline: 2px !important;
     }
 
+Toolbar bookmark popup menu
+```````````````````````````
+
+.. code-block:: css
+
+    /* Increase bookmark popup window max-width (default: 41em)*/
+    menupopup > menuitem {
+        max-width: 100em !important;
+    }
+
 
 Links
 `````

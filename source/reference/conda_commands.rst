@@ -19,3 +19,9 @@ Clone an existing environment
 .. prompt:: bash
 
     conda create -n <NEW_ENV_NAME> --clone <EXISTING_ENV_NAME>
+
+Rename a environment
+--------------------
+.. prompt:: bash
+
+    conda rename -n <CURRENT_NAME> <NEW_NAME>

@@ -38,6 +38,34 @@ Check remote URLs
 
     git remote -v
 
+Log into remote repository account
+----------------------------------
+In case your IDE isn't managing your remote login (e.g. Github), you may use
+the `git-credential-manager` (already included in `Git for Windows`_ if checked
+during installation, see
+`here <https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md>`
+for installation instruction on Linux & macOS)
+
+From inside your git repository, execute
+
+.. prompt:: bash
+
+    git config --global credential.helper wincred
+
+to set the *git-credential-manager* as your global credential helper tool.
+
+Next, execute a git command involving the remote repository, for example ``git pull``.
+In case, the git config does not have your login credentials, it launches the
+credential manager, which asks for it.
+
+To see your set credential manager, run:
+
+.. prompt:: bash
+
+    git config credential.helper
+
+.. _Git for Windows: https://git-scm.com/download/win
+
 Add files to source control
 ---------------------------
 #. Create files within local repository

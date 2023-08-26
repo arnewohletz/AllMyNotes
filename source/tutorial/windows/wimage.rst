@@ -3,7 +3,7 @@ Set up Windows image backup with c't-WIMage :footcite:p:`vahldiek21_ersatzrad`
 `WIMage`_ is a backup solution provided by c't for the main disk partition (``C:\``).
 The Windows Setup Tool, which installs Windows operating system images, accepts
 such a backup and transfers them onto hard disk partitions. WIMage supports
-Windows 8.1, 10 (from 1703) and 11 in both 32 and 64 Bit variants.
+Windows 8.1, 10 (from 1703) and 11 in both 32 and 64-Bit variants.
 
 Prerequisites
 -------------
@@ -234,8 +234,8 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
         dism /Unmount-Wim /mountdir:C:\wintemp /discard
 
-OneDrive syncs crashes WIMage
-`````````````````````````````
+OneDrive sync crashes WIMage
+````````````````````````````
 Experiences show that synced directories or files in OneDrive from which you
 aren't the owner are crashing WIMage. To prevent that, stop the sync on all
 these directories or files and delete them from the hard disk. You may resync
@@ -279,7 +279,7 @@ Somewhere during the script operation, the script abort showing this error:
 It means, some mentioned junction files might be in a damaged state.
 This may occur if OneDrive has crashed or terminated improperly at some point.
 
-#. Open a command prompt as administrator
+#. Open a command prompt as administrator.
 #. Enter (in case the system drive uses a different letter, replace ``c`` below):
 
     .. prompt:: batch
@@ -289,6 +289,51 @@ This may occur if OneDrive has crashed or terminated improperly at some point.
 #. Confirm with :kbd:`Y` when asked.
 #. Restart the PC and wait for the disk check to complete (it may take two hours or longer).
 #. Retry running the WIMage script.
+
+Backup fails due to insufficient free disk space
+````````````````````````````````````````````````
+During the execution of a backup, the following error message appears on the command line:
+
+.. image:: _img/wimage_no_space_error.png
+
+The external hard disk ran out of space to save the new backup image. ct-WIMage
+originally is supposed to automatically remove the oldest images to make space
+for the new ones, but this mechanism may not work in any case.
+
+In such a case, the latest image needs to be exported into a new image file and
+overwrite the existing image bundle file (``install.wim``). Follow these steps:
+
+#. Connect the external hard disk (which contains the WIMage backups).
+#. Open a command line as administrator.
+#. Analyze the image bundle file (``install.wim``) on the external disk (here: disk letter *E*):
+
+    .. prompt:: batch
+
+        Dism /Get-ImageInfo /ImageFile:E:\sources\install.wim
+
+#. Make sure you have enough free disk space on your internal hard disk (or an
+   additional external hard disk) to save the latest image (highest index), which
+   is approximately half the size of the currently occupied space on the main disk partition (C:\).
+#. Change into the directory, where you like to temporarily save the new image into.
+#. Export the latest image into a new Windows image file (here again, disk letter *E*),
+   replacing the <HIGHEST_INDEX> with the proper number:
+
+    .. prompt:: batch
+
+        Dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:<HIGHEST_INDEX> /DestinationImageFile:install.wim
+
+   The export may take around 15 minutes, depending on the image size and your hardware.
+   The filesize should be less than the corresponding file on the external hard disk.
+
+#. You may check the resulting image file for its content:
+
+    .. prompt:: batch
+
+        Dism /Get-ImageInfo /ImageFile:install.wim
+
+#. Replace ``E:\sources\install.wim`` on the external hard disk with the newly
+   created one. Make sure to delete it from its original destination afterwards.
+#. Start a new backup cycle, which should finish successfully.
 
 .. footbibliography::
 
