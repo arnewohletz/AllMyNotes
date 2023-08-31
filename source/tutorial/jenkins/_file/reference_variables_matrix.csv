@@ -1,0 +1,4 @@
+Access (Y) \\ Definition (X),"global env, defined outside of Jenkinsfile","local env, defined in environment section","local env, define in script section (using ``env.VAR_NAME = ...`` syntax)","local variable, defined at file’s top"
+within ``script`` (but not in ``sh`` section) ,\-,\-,"""${env.VAR_NAME}""","""${VAR_NAME}"""
+within ``sh`` section ,“${VAR_NAME}”,“${VAR_NAME}” ${VAR_NAME},${VAR_NAME},${VAR_NAME}
+outside of ``sh`` or ``script`` ,\-,“${VAR_NAME}”,“${env.VAR_NAME}”,"String: ""${VAR_NAME}""; def: VAR_NAME"
