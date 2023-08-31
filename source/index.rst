@@ -11,6 +11,7 @@ Table of Contents
     tutorial/python/index.rst
     tutorial/cpp/index.rst
     tutorial/java/index.rst
+    tutorial/jenkins/index.rst
     tutorial/linux/index.rst
     tutorial/windows/index.rst
     tutorial/docker/index.rst
