@@ -100,19 +100,22 @@ Afterwards, start a new shell.
 
     .. code-block:: shell
 
+        # turn off deprecated pyenv prompt
         export PYENV_VIRTUALENV_DISABLE_PROMPT=1
         export BASE_PROMPT=$PS1
         function updatePrompt {
-          PYENV_VER=$(pyenv version-name)
-          if [[ "${PYENV_VER}" != "$(pyenv global | paste -sd ':' -)" ]]; then
-            export PS1="(${PYENV_VER%%:*}) "$BASE_PROMPT
-          else
-            export PS1=$BASE_PROMPT
-          fi
+            if [[ "$(pyenv version-name)" != $(pyenv global) ]]; then
+                # the next line should be double quote; single quote would not work for me
+                export PS1="($(pyenv version-name)) "$BASE_PROMPT
+            else
+                export PS1=$BASE_PROMPT
+            fi
         }
         export PROMPT_COMMAND='updatePrompt'
+        precmd() { eval '$PROMPT_COMMAND' }
 
-    This answer comes from https://github.com/pyenv/pyenv-virtualenv/issues/135#issuecomment-754414842
+    This answer is a slightly modified version of
+    https://github.com/pyenv/pyenv-virtualenv/issues/135#issuecomment-754414842
     and may only work on *zsh* shells.
 
     Apparently, meanwhile the project owners decides to hold onto the prompts,
