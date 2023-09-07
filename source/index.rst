@@ -31,6 +31,7 @@ Table of Contents
     howto/linux/index.rst
     howto/windows/index.rst
     howto/shell_scripting/index.rst
+    howto/jenkins/index.rst
     howto/games/index.rst
     howto/others/index.rst
 
@@ -44,6 +45,7 @@ Table of Contents
     reference/conda_commands.rst
     reference/network/index.rst
     reference/linux/index.rst
+    reference/coding_fonts.rst
     reference/others/index.rst
 
 Git Changelog
