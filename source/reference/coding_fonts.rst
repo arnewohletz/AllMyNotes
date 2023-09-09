@@ -29,6 +29,7 @@ Coding fonts
     brew install --cask font-sudo
 
 
+.. _Homebrew: https://brew.sh/
 
 Sources
 =======

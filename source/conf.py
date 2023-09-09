@@ -46,7 +46,8 @@ extensions = [
     'sphinxcontrib.bibtex',
     # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid & sphinxcontrib.images
     'unicode_guilabel',
-    'sphinx_gitstamp'
+    'sphinx_gitstamp',
+    'nbsphinx'
 ]
 
 # Bibtex Bibfiles
@@ -111,6 +112,11 @@ html_logo = "_static/img/logo.png"
 # Date format for git timestamps
 locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
 gitstamp_fmt = "%b %d, %Y"
+
+# nbsphinx
+nbsphinx_epilog = r"""
+.. footbibliography::
+"""
 
 # Add custom role directives globally
 rst_prolog = """

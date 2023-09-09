@@ -8,7 +8,7 @@ more advanced ways of mocking behavior to be used in your unit tests.
 .. toctree::
     :maxdepth: 1
 
-    mock.rst
+    mock.ipynb
 
 .. _unittest.mock: https://docs.python.org/3/library/unittest.mock.html
 

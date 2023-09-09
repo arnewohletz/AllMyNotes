@@ -9,7 +9,7 @@ Python
     pep8.rst
     packaging.rst
     pip_commands.rst
-    class_and_static_methods.rst
+    class_and_static_methods.ipynb
     iterators.rst
 
 .. code-block:: none
