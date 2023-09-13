@@ -1,0 +1,45 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "sphinx quick make html",
+            "type": "shell",
+            "command": "sphinx-build",
+            "args": [
+                "-b",
+                "html",
+                "./source",
+                "./_build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "sphinx make html",
+            "type": "shell",
+            "command": "sphinx-build",
+            "args": [
+                "-b",
+                "html",
+                "-a",
+                "-E",
+                "./source",
+                "./_build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        }
+    ]
+}
