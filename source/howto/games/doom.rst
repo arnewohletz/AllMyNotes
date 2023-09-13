@@ -106,7 +106,7 @@ Set up a multiplayer game
 
 #. In the *Doomseeker* main window, refresh the server list, then search for the
    hosted game's name.
-#. Join the game (right click the game and *Join Game*).
+#. Join the game (right-click the game and *Join Game*).
 
 .. _forwarded: https://en.wikipedia.org/wiki/Port_forwarding
 
