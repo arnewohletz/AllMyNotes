@@ -6,9 +6,10 @@
 
 # -- Fix Sphinx 4.0+ deprecation of sphinx.util.osutil.ENOENT ----------------
 # from: https://github.com/mgaitan/sphinxcontrib-mermaid/issues/72#issuecomment-835822975
-import errno
-import sphinx.util.osutil
-sphinx.util.osutil.ENOENT = errno.ENOENT
+
+# import errno
+# import sphinx.util.osutil
+# sphinx.util.osutil.ENOENT = errno.ENOENT
 
 # -- Path setup --------------------------------------------------------------
 
@@ -43,8 +44,10 @@ extensions = [
     'sphinx-prompt',
     'sphinxemoji.sphinxemoji',
     'sphinx_copybutton',
+    'sphinx_tabs.tabs',
     'sphinxcontrib.bibtex',
-    # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid & sphinxcontrib.images
+    # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid
+    #                     & sphinxcontrib.images
     'unicode_guilabel',
     'sphinx_gitstamp',
     'nbsphinx'
@@ -59,7 +62,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+# exclude_patterns = []
 
 jupyter_sphinx_thebelab_config = {
     'requestKernel': True,
@@ -127,7 +130,7 @@ rst_prolog = """
 .. role:: java(code)
     :language: java
     :class: highlight
-    
+
 .. role:: javascript(code)
     :language: javascript
     :class: highlight
@@ -135,15 +138,15 @@ rst_prolog = """
 .. role:: rst(code)
     :language: rst
     :class: highlight
-    
+
 .. role:: html(code)
     :language: html
     :class: highlight
-    
+
 .. role:: bash(code)
     :language: bash
     :class: highlight
-    
+
 .. role:: raw-html(raw)
    :format: html
 

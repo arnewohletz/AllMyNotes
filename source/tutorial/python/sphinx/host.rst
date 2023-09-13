@@ -1,7 +1,7 @@
 Hosting a Sphinx documentation (with nginx)
 -------------------------------------------
 #. :ref:`Install and setup nginx <install_setup_nginx>`.
-#. Create config file (e.g. *nginx.conf*) in your project root directory.
+#. Create a configuration file (for example *nginx.conf*) in your project root directory.
 #. Add the following content:
 
     .. code-block:: none
@@ -18,38 +18,40 @@ Hosting a Sphinx documentation (with nginx)
 
 #. Adjust the port (line 2), the root path (line 6; which is where the index.html of your
    build output resides).
-#. Create a symlink of your config to your nginx config directory:
+#. Create a symlink of your configuration to your nginx configuration directory:
 
-    **macOS**:
+    .. tabs::
+        .. group-tab:: macOS
 
-    .. prompt:: bash
+            .. prompt:: bash
 
-        ln -s </path/to/my/application>/nginx.conf /usr/local/etc/nginx/init.d/<doc_project_name>.conf
+                ln -s </path/to/my/application>/nginx.conf /usr/local/etc/nginx/init.d/<doc_project_name>.conf
 
-    **Linux**:
+        .. group-tab:: Linux
 
-    .. prompt:: bash
+            .. prompt:: bash
 
-        ln -s </path/to/my/application>/nginx.conf /etc/nginx/sites-enabled/<doc_project_name>.conf
+                ln -s </path/to/my/application>/nginx.conf /etc/nginx/sites-enabled/<doc_project_name>.conf
 
 #. Restart nginx
 
-    **macOS**:
+    .. tabs::
+        .. group-tab:: macOS
 
-    .. prompt:: bash
+            .. prompt:: bash
 
-        nginx -c /usr/local/etc/nginx/nginx.conf
+                nginx -c /usr/local/etc/nginx/nginx.conf
 
-    or restart as brew service via
+            or restart as brew service via
 
-    .. prompt:: bash
+            .. prompt:: bash
 
-        brew services restart nginx
+                brew services restart nginx
 
-    **Linux**:
+        .. group-tab:: Linux
 
-    .. prompt:: bash
+            .. prompt:: bash
 
-        nginx /etc/init.d/nginx restart
+                nginx /etc/init.d/nginx restart
 
 #. Open ``https://127.0.0.1:<PORT>``, using the port specified in your configuration, in your browser.

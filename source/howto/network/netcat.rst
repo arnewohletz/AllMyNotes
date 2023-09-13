@@ -30,8 +30,8 @@ to receive the first unused port within the specified range.
 
 .. hint::
 
-    Don't assign port numbers 1 to 1024 for your services, as these are reserved
-    for `well-known services`_.
+    Don't assign port numbers 1 to 1024 for your services, as `well-known services`_
+    reserve those.
 
 .. _netcat: https://nc110.sourceforge.io/
 .. _well-known services: https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports
