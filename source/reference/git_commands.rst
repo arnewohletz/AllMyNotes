@@ -3,15 +3,15 @@ Git Commands
 Create a local repository
 -------------------------
 #. Create a new directory
-#. Open a terminal window and navigate to new directory, then type
+#. Open a terminal window and go to the new directory, then type
 
 .. prompt:: bash
 
     git init
 
-Add user config to repository
------------------------------
-Add user information in order to allow commits
+Add user configuration to repository
+------------------------------------
+Add user information to allow commits
 
 .. prompt:: bash
 
@@ -20,7 +20,7 @@ Add user information in order to allow commits
 
 Add remote repository
 ---------------------
-Add new remote repository (here named ``origin``). Remote repository must have been created in advance.
+Add new remote repository (here named ``origin``). Remote repository must already exist.
 
 .. prompt:: bash
 
@@ -40,13 +40,13 @@ Check remote URLs
 
 Log into remote repository account
 ----------------------------------
-In case your IDE isn't managing your remote login (e.g. Github), you may use
+In case your IDE isn't managing your remote login (for example Github), you may use
 the `git-credential-manager` (already included in `Git for Windows`_ if checked
 during installation, see
 `here <https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md>`
 for installation instruction on Linux & macOS)
 
-From inside your git repository, execute
+From inside your git repository, run
 
 .. prompt:: bash
 
@@ -54,8 +54,8 @@ From inside your git repository, execute
 
 to set the *git-credential-manager* as your global credential helper tool.
 
-Next, execute a git command involving the remote repository, for example ``git pull``.
-In case, the git config does not have your login credentials, it launches the
+Next, run a git command involving the remote repository, for example ``git pull``.
+In case, the git config doesn't have your login credentials, it launches the
 credential manager, which asks for it.
 
 To see your set credential manager, run:
@@ -94,7 +94,7 @@ Revoke staged files from git index:
 
     git reset HEAD </path/to/fileA> </path/to/fileB>
 
-Remove files from repo that have already been committed before (does not remove them
+Remove files from repo that have already been committed before (doesn't remove them
 from the local file system |:slight_smile:|)
 
 .. prompt:: bash
@@ -109,7 +109,7 @@ Commit to current branch with a message
 
     git commit -m "Important changes"
 
-Stage and commit all modified or deleted file (new files are excluded)
+Stage and commit all modified or deleted file (excluding new files)
 
 .. prompt:: bash
 
@@ -125,7 +125,7 @@ Change message on most recent commit
 
 Stashing
 --------
-Not to be mistaken with 'staging', a stash is a temporary storage of any recent changes made
+In contrast to 'staging', a stash is a temporary storage of any recent changes made
 inside a directory and thereby cleaning it from those changes
 
 .. prompt:: bash
@@ -182,7 +182,7 @@ Create and switch to a new branch
 
     git checkout -b <branch_name>
 
-Delete an existing branch (only if merged)
+Delete an existing branch (if it's merged)
 
 .. prompt:: bash
 
@@ -329,6 +329,60 @@ Delete commits from the list you want to omit:
     ...
 
 The commit order can be changed by changing the pick order. Close the file to execute.
+
+Tagging
+-------
+A lightweight tag is a pointer to a specific commit in a branch.
+
+**Create a tag for the current commit**
+
+.. prompt:: bash
+
+    git tag <TAG_NAME>
+
+**Push the tag to the remote (here: origin)**
+
+.. prompt:: bash
+
+    git push origin <TAG_NAME>
+
+**Push all local tabs to the remote**
+
+.. prompt:: bash
+
+    git push --tags
+
+**List all available tags (in current branch)**
+
+.. prompt:: bash
+
+    git tag -l
+
+**Checkout a tag**
+
+While having checked out the same branch as tag is applied onto, run:
+
+.. prompt:: bash
+
+    git checkout <TAG_NAME>
+
+.. warning::
+
+    Checking out a tag puts the repo into *detached HEAD* state
+
+**Delete a tag**
+
+Delete a local tab:
+
+.. prompt:: bash
+
+    git tag -d <TAG_NAME>
+
+Delete a remote tab:
+
+.. prompt:: bash
+
+    git push --delete origin <TAG_NAME>
 
 Moving along the tree
 ---------------------
