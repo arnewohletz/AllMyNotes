@@ -155,6 +155,30 @@ The steps are explained via an example, which demonstrates the creation of admon
             and enters a simple square (for example |replacement_character_A| or |replacement_character_B|)
             as a replacement character. That does **not** mean, the browser won't be able to display it.
 
+    .. important::
+
+        **Apply Unicode symbol (for other sphinx themes)**
+
+        Not every theme supports FontAwesome symbols, but can still display any Unicode
+        symbol.
+
+        #. Visit https://symbl.cc/en/ and search for a suitable symbol.
+        #. Copy the *CSS Code* of the symbol (for example ``\2615``).
+        #. Add a new CSS rule to ``custom.css``, in this example:
+
+            .. code-block:: css
+
+                .rst-content .problem .admonition-title::before {
+                    content: "";
+                }
+
+          and add the copied CSS code between the quotes, for example:
+
+            .. code-block:: css
+
+                content: "\2625"
+
+
 #. Build the HTML documentation. The admonition defined in step 1 should render to
 
     .. admonition:: Problem
