@@ -23,12 +23,16 @@ Extensions by Sphinx
 Docs for used plugins
 ---------------------
 * `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
+  (Warning: as of Oct 2023, conflicts with `sphinxcontrib-mermaid`_ &
+  `sphinxcontrib-images`_ - use `nbsphinx`_ as an alternative)
+* `nbsphinx`_: Extension that provides a source parser for *.ipynb files
 * `sphinx-copybutton`_: Adds a copy button to all code and command line blocks
 * `sphinx-design`_: Designing beautiful, screen-size responsive web-components
 * `sphinx-git`_: Directive for adding latest git commits information to docs
 * `sphinx-gitstamp`_: Directive for inserting a git datestamp into the context
 * `sphinx-prompt`_: Directive for unselectable prompts (nice for bash sections)
 * `sphinx-rtd-theme`_: Theme used for the web page of this documentation
+* `sphinx-tabs`_: Directive to add tabbed content for output HTML
 * `sphinxcontrib-bibtex`_: Allows `BibTeX`_ citations into the documentation
 * `sphinxcontrib-images`_: Directive for thumbnail images which can be magnified
 * `sphinxcontrib-mermaid`_: Directive for `mermaid graphs`_
@@ -36,12 +40,14 @@ Docs for used plugins
 
 
 .. _jupyter_sphinx: https://jupyter-sphinx.readthedocs.io/en/latest/
+.. _nbsphinx: https://nbsphinx.readthedocs.io/
 .. _sphinx-copybutton: https://sphinx-copybutton.readthedocs.io/en/latest/
 .. _sphinx-design: https://sphinx-design.readthedocs.io/en/latest/index.html
 .. _sphinx-git: https://github.com/OddBloke/sphinx-git
 .. _sphinx-gitstamp: https://github.com/jdillard/sphinx-gitstamp
 .. _sphinx-prompt: http://sbrunner.github.io/sphinx-prompt/
 .. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/
+.. _sphinx-tabs: https://sphinx-tabs.readthedocs.io/en/latest/
 .. _sphinxcontrib-bibtex: https://github.com/mcmtroffaes/sphinxcontrib-bibtex
 .. _sphinxcontrib-images: https://sphinxcontrib-images.readthedocs.io/en/latest/
 .. _sphinxcontrib-mermaid: https://github.com/mgaitan/sphinxcontrib-mermaid
@@ -49,3 +55,8 @@ Docs for used plugins
 
 .. _BibTeX: http://www.bibtex.org/
 .. _mermaid graphs: https://mermaid-js.github.io/mermaid/
+
+
+Custom extensions
+-----------------
+.. TODO: Add usage of 'unicode_guilabel' extension (copy from NTG7 docs)
