@@ -2,7 +2,7 @@ Extending
 =========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     extension.rst
     roles.rst
