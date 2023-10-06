@@ -252,7 +252,7 @@ Server: Set-up key authentication
 #. Open the OpenSSH config file in a text editor:
 
     * Windows: ``C:\ProgramData\ssh\sshd_config``
-    * Linux: ``/etc/ssh/ssh_config``
+    * Linux: ``/etc/ssh/sshd_config``
     * macOS: ``/private/etc/ssh/sshd_config``
 
 #. Change the following content:
