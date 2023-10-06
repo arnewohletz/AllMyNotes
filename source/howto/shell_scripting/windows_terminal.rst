@@ -1,5 +1,8 @@
 Windows Terminal
 ================
+
+.. _windows_terminal_colorful_text:
+
 Colorful for text output :footcite:p:`schulz23_terminal_colors`
 ---------------------------------------------------------------
 `ANSI-Escape-Sequences`_ can be used to tell the Windows Terminal to print text
