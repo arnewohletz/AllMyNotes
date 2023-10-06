@@ -25,7 +25,7 @@ Docs for used plugins
 * `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
   (Warning: as of Oct 2023, conflicts with `sphinxcontrib-mermaid`_ &
   `sphinxcontrib-images`_ - use `nbsphinx`_ as an alternative)
-* `nbsphinx`_: Extension that provides a source parser for *.ipynb files
+* `nbsphinx`_: Extension that provides a source parser for \*.ipynb files
 * `sphinx-copybutton`_: Adds a copy button to all code and command line blocks
 * `sphinx-design`_: Designing beautiful, screen-size responsive web-components
 * `sphinx-git`_: Directive for adding latest git commits information to docs
