@@ -129,8 +129,8 @@ Take this table as a starting point of choosing your loss function:
 
     Measures the square of the difference between the predictions and the targets.
 
-    **Suitable for**: This is a widely used loss function for regression problems.
-    (Regression means, prediction of a value)
+    **Suitable for**: The mean squared error is a widely used loss function for
+    regression problems (Regression means, prediction of a value).
 
 Selection of the observed metrics
 ---------------------------------
@@ -144,7 +144,7 @@ See all available models: `tf.keras.metrics`_.
 
 :mae (Mean absolute error):
 
-    It’s the absolute value of the difference between the predictions and the targets.
+    It's the absolute value of the difference between the predictions and the targets.
 
     **Used for**: Scalar regression (single value prediction)
 

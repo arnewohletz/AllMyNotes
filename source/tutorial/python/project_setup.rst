@@ -1,4 +1,4 @@
-New project setup
+New Project Setup
 =================
 This guideline shows how to set up a standard Python project. It features, how
 to structure the project and installing helping packages.
@@ -20,17 +20,17 @@ Create project structure
 project structure based on predefined templates. This saves you the effort of
 manually adding various files and folder structures.
 
-Because you need *cookiecutter* merely once, at the beginning of your project,
-install it outside of your :ref:`project's virtual environment <setup_virtual_environment>`.
+Because you need *cookiecutter* only once, at the beginning of your project, it
+is recommended to install it outside of your :ref:`project's virtual environment <setup_virtual_environment>`.
 
 Cookiecutter installation
 `````````````````````````
 A recommendation is to make both tools globally available using
 `pipx <https://github.com/pypa/pipx>`_.
-It's a one-time installation after which the ``cookiecutter`` is globally
-available.
+The installation only must be done once (afterwards you can use *cookiecutter*
+command from anywhere).
 
-First, create a virtual environment for *pipx* (for example via ``pyenv``):
+First, let's create a virtual environment for *pipx* (here: via *pyenv*):
 
 .. note::
 
@@ -50,21 +50,20 @@ Activate the environment:
 
     pyenv activate pipx
 
-Next, install pipx:
+Next, let's install pipx:
 
 .. prompt:: bash (pipx)
 
     pip install pipx
 
-Pipx puts an executable binary of all installed packages inside a designated directory.
-To make sure that this directly is callable from anywhere, add it to your PATH variable
-(one-time step) via:
+Now, we have to ensure that the packages installed via pipx are added to our PATH
+variable. This ensures that those are executable from anywhere (only must to be done once):
 
 .. prompt:: bash (pipx)
 
     pipx ensurepath
 
-Now pipx is ready to install cookiecutter & pip-tools in it:
+Now we're ready to install cookiecutter & pip-tools in it:
 
 .. prompt:: bash (pipx)
 
@@ -84,24 +83,25 @@ https://github.com/audreyfeldroy/cookiecutter-pypackage. Follow the instructions
 https://cookiecutter.readthedocs.io/en/1.7.2/usage.html#usage to clone the template and
 make adaptions on ``cookiecutter.json``.
 
-An adapted version of the template, used in this tutorial, is available at
-https://github.com/horsewithnoname1985/my-cookiecutter-pypackage.
+There is already an adapted version of this template available at
+https://github.com/horsewithnoname1985/my-cookiecutter-pypackage, which we use in
+this tutorial.
 
-The template sets up a `makefile <https://en.wikipedia.org/wiki/Make_(software)>`_,
-which features commands for
+The template sets up a `makefile <https://en.wikipedia.org/wiki/Make_(software)>`_, which
+features commands for
 
 * building distribution & documentation (as well as link checks)
 * executing tests (regular & code coverage)
 * linting code
 * static type check
 * installing the package (into your active Python environment)
-* cleaning, build, test, calculate test coverage of Python artifacts
+* cleaning, build, test, determine test coverage of Python artifacts
 
 and more.
 
 Create project
 ``````````````
-Now you're ready to create the project based on the slightly adapted template:
+Now we're ready to create the project based on our slightly adapted template:
 
 .. prompt:: bash
 
@@ -122,7 +122,7 @@ Define your project parameters in the wizard.
 
 Create your project's virtual environment
 -----------------------------------------
-A recommended method is to create a virtual environment using ``pyenv <install_pyenv>``
+We recommended to create a virtual environment using ``pyenv <install_pyenv>``
 (with the pyenv-virtualenv extensions).
 
 Create virtual environment via:
@@ -131,7 +131,7 @@ Create virtual environment via:
 
     pyenv virtualenv <PYTHON-VERSION> <VENV_NAME>
 
-You may also use Python's built-in `venv <https://docs.python.org/3/library/venv.html>`_
+Alternatively, use may use Python's built-in `venv <https://docs.python.org/3/library/venv.html>`_
 via
 
 .. prompt:: bash
@@ -141,8 +141,8 @@ via
 It uses the venv module and creates a virtual environment named <VENV_NAME> inside
 your current directory (you may also specify an absolute path).
 
-As a second alternative, use the module `virtualenv <https://pypi.org/project/virtualenv/>`_.
-Install it into the Python environment (from which to
+As a second alternative, the module `virtualenv <https://pypi.org/project/virtualenv/>`_ can
+also be used. Although, it has to be installed into the Python environment (from which to
 create the virtual environment from) first:
 
 .. prompt:: bash
@@ -155,12 +155,12 @@ current directory.
 
 A major difference of *virtualenv* is that its created environment is autonomous of its
 originating interpreter. The virtual environment from *venv* and *pyenv* require
-resources from the original interpreter (Pro: they're smaller).
+resources from the original interpreter (Pro: they are smaller).
 
 Install dependencies
 ````````````````````
-First, install `pip-tools <https://github.com/jazzband/pip-tools>`_, which manage
-the project's dependencies (activate your project's virtual environment first):
+First, install `pip-tools <https://github.com/jazzband/pip-tools>`_, which we use
+to manage our dependencies (activate your project's virtual environment first):
 
 .. prompt:: bash, (project_venv)
 
@@ -168,8 +168,8 @@ the project's dependencies (activate your project's virtual environment first):
 
 .. important::
 
-    You must install *pip-tools* into the project's virtual environment. You must
-    not use a pip-tools installation from a different environment (for example from a
+    *pip-tools* must be installed into the project's virtual environment. You must
+    not use a pip-tools installation from a different environment (e.g. from a
     *pipx* installation), because ``pip-sync`` installs into the environment it
     is called from.
 
@@ -182,9 +182,9 @@ execute:
 
     pip-compile requirements-dev.in -o requirements-dev.txt
 
-This produces the \*.txt file containing the dependencies plus all required
+This produces the \*.txt file containing our dependencies plus all required
 packages for those dependencies (all using pinned versions). To install all these
-dependencies, run:
+dependencies, execute:
 
 .. prompt:: bash, (project_venv)
 
@@ -192,8 +192,8 @@ dependencies, run:
 
 .. hint::
 
-    ``requirements.in`` defines all direct dependencies, that is, dependencies
-    the project directly uses. The same workflow applies:
+    All dependencies which are required to **execute** our project are gathered
+    in ``requirements.in``. Same workflow here:
 
     .. prompt:: bash, (project_venv)
 
