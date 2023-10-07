@@ -45,6 +45,8 @@ Table of Contents
     reference/conda_commands.rst
     reference/network/index.rst
     reference/linux/index.rst
+    reference/pycharm_plugins.rst
+    reference/vscode_extensions.rst
     reference/coding_fonts.rst
     reference/others/index.rst
 
