@@ -104,7 +104,7 @@ Here, the named volumed must be specified in a 'volumes' properties (outside 'se
     </pre>
     </div>
 
-The {} can accept arguments (e.g. read-only) -> see `Docker documentation
+The {} can accept arguments (for example read-only) -> see `Docker documentation
 <https://docs.docker.com/compose/compose-file/#volumes>`__
 
 .. raw:: html
@@ -154,7 +154,7 @@ is better to manage different sets of variables e.g.
 
 in which case, that ladder file overrides present key-values of the first file
 
-Env files can contain `compose CLI environmental variables <https://docs.docker.com/compose/reference/envvars/>`__
+Env files can contain `compose CLI environmental variables <https://docs.docker.com/compose/environment-variables/envvars/>`__
 
 **COMPOSE_PROJECT_NAME** should always be set, otherwise the current directory name is
 used as project name and prefixes images and containers names with it (e.g. web2)

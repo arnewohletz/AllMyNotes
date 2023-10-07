@@ -80,13 +80,13 @@ installed), best use `homebrew`_:
 
 .. hint::
 
-    To update your OpenSSH version, simply run:
+    To update your OpenSSH version, run:
 
     .. prompt:: bash
 
         brew upgrade openssh
 
-.. _homebrew: https://brew.sh/index_de
+.. _homebrew: https://brew.sh/
 
 How to use keys for authentication
 ----------------------------------
