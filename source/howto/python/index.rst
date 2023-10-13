@@ -7,3 +7,4 @@ Python
     mocking.rst
     emojis.rst
     small_scripts.rst
+    http_server.rst
