@@ -8,3 +8,4 @@ Linux
     file_system.rst
     config_files.rst
     commands.rst
+    cli_tools/index.rst
