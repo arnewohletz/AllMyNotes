@@ -113,7 +113,11 @@ html_favicon = "_static/img/favicon.png"
 html_logo = "_static/img/logo.png"
 
 # Date format for git timestamps
-locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
+try:
+    locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
+except locale.Error:
+    locale.setlocale(locale.LC_TIME, 'C.utf8')
+
 gitstamp_fmt = "%b %d, %Y"
 
 # nbsphinx
