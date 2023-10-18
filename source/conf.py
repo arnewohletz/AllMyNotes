@@ -116,7 +116,7 @@ html_logo = "_static/img/logo.png"
 try:
     locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
 except locale.Error:
-    locale.setlocale(locale.LC_TIME, 'C.utf8')
+    locale.setlocale(locale.LC_TIME, '')
 
 gitstamp_fmt = "%b %d, %Y"
 
