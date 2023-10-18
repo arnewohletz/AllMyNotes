@@ -18,3 +18,17 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+
+# Docker
+build-allmynotes:
+	docker build --tag allmynotes .
+
+build-allmynotes-no-cache:
+	docker build --tag allmynotes . --no-cache
+
+start-allmynotes:
+	docker-compose up
+
+start-allmynotes-detached:
+	docker-compose up -d
