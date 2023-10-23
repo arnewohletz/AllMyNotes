@@ -129,13 +129,6 @@ Server & Client: Create key pair
 #. Enter a passphrase to encrypt the private key, if needed (more secure, but might conflict with
    applications using the key).
 #. Check if the ``.ssh`` directory contains both the private and the public key file (\*.pub).
-#. If you used a custom name for the key pair or stored the files at a separate location, add the
-   private key to the authentication agent (otherwise you'd need to state your public key when
-   attempting an SSH connection, like ``ssh -i /path/to/my/key.pub USER@HOST``):
-
-    .. prompt:: bash
-
-        ssh-add /path/to/private_key
 
 Server: Set permissions
 ```````````````````````
@@ -227,6 +220,32 @@ Server: Set-up key authentication
 
     .. hint::
 
+        * In case you received the message
+
+            .. code-block:: none
+
+                Could not open a connection to your authentication agent.
+
+            start the *ssh-agent* via
+
+            .. prompt:: bash
+
+                eval `ssh-agent -s`
+
+          To autostart the ssh-agent add this content to your ``~/.bashrc`` or
+          ``~/.zshrc`` file:
+
+            .. code-block:: none
+
+                # auto-start ssh-agent
+                if [ ! -S ~/.ssh/ssh_auth_dock ]; then
+                    eval `ssh-agent` >/dev/null
+                    ln -sf "$SSH_AUTH_DOCK" ~/.ssh/ssh_auth_sock
+                fi
+                export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+                ssh-add -l >/dev/null || ssh-add
+
+
         In case you are using a private key using a different name and/or path, you must pass it:
 
         .. prompt:: bash
@@ -259,7 +278,6 @@ Server: Set-up key authentication
 
     .. code-block:: none
 
-        RSAAuthentication yes
         PubkeyAuthentication yes
         AuthorizedKeysFile .ssh/authorized_keys
 
@@ -357,9 +375,12 @@ like this:
 
 To shorten this you may create a config file to store all these parameters.
 
-#. Create the config file in your .ssh directory:
+#. On the client machine, create the config file in your ``.ssh`` directory
+   (if not already present):
 
-    touch ~/.ssh/config
+    .. prompt:: bash
+
+        touch ~/.ssh/config
 
 #. Open the file and add your config, for example, like this:
 
@@ -389,6 +410,25 @@ To shorten this you may create a config file to store all these parameters.
 
         ssh imac
 
+.. hint::
+
+    To list all configured hosts, specify this command under an alias in your
+    ``~/.bashrc``or ``~/.zshrc`` file:
+
+    .. code-block:: none
+
+        alias ssh-hosts="cat ~/.ssh/config | grep -E '^\s*Host\s' | awk '{print $2}'"
+
+    When running ``ssh-hosts`` in a new shell, it will print all configured hosts.
+
+    On Windows create a Batch script in a folder defined in your PATH variable,
+    for example ``ssh-hosts.bat`` and insert the following content:
+
+    .. code-block:: none
+
+        @echo off
+        type %USERPROFILE%\.ssh\config | findstr /R "^Host "
+
 Set up Proxy Jump
 -----------------
 The Proxy Jump is a feature introduced in OpenSSH 7.3 and allows connecting to a remote machine
@@ -397,7 +437,7 @@ the intermediate machine.
 
 .. hint::
 
-    It is recommended to use key authentication to authenticate on the
+    It's recommended to use key authentication to authenticate on the
     machines to save yourself from entering passwords for the connection.
 
 ..  rubric:: Prerequisites
