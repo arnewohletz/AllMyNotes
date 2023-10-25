@@ -7,4 +7,5 @@ Network
     ssh.rst
     scp.rst
     ssl.rst
+    gpg.rst
     netcat.rst
