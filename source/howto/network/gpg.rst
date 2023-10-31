@@ -15,6 +15,14 @@ Using Homebrew:
 
     brew install gnupg
 
+Add this to your ``~/.zshrc``:
+
+    .. code-block:: none
+
+        # Fixing "gpg: signing failed: Inappropriate ioctl for device"
+        GPG_TTY=$(tty)
+        export GPG_TTY
+
 Make sure the ``gpg`` command is available on the command line.
 
 Generate a key pair

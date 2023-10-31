@@ -112,6 +112,31 @@ Server & Client: Create key pair
 
         ssh-keygen -t ed25519
 
+    .. hint::
+
+        To customize the key pair even further you may also run
+
+        .. tabs::
+            .. group-tab:: macOS
+
+                .. prompt:: bash
+
+                    ssh-keygen -t ed25519 -C "$USER@$(scutil --get LocalHostName) - `date +%Y%m%d`"
+
+            .. group-tab:: Linux
+
+                .. prompt:: bash
+
+                    ssh-keygen -t ed25519 -C "$USER@$HOSTNAME - `date +%Y%m%d`"
+
+            .. group-tab:: Windows
+
+                Run in git bash (comes with `Git for Windows`_):
+
+                .. prompt:: bash
+
+                    ssh-keygen -t ed25519 -C "$USERNAME@$COMPUTERNAME - `date +%Y%m%d`"
+
 #. Set the path and filename of the keys (default: ~/.ssh/id_ed25519).
    In case, you don't need separate keys pairs for different connections, you don't need to
    specify a custom path or filename.
@@ -129,6 +154,8 @@ Server & Client: Create key pair
 #. Enter a passphrase to encrypt the private key, if needed (more secure, but might conflict with
    applications using the key).
 #. Check if the ``.ssh`` directory contains both the private and the public key file (\*.pub).
+
+.. _Git for Windows: https://gitforwindows.org/
 
 Server: Set permissions
 ```````````````````````
