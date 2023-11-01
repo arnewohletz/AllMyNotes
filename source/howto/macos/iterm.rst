@@ -23,25 +23,25 @@ iTerm does not feature shortcuts for moving word-by-word or to the end or beginn
 #. Go to :menuselection:`Settings --> Profiles --> Keys --> Key Mapping`.
 #. Add four new key mapping, for each selection `Send Escape Sequence` as Action:
 
-    +--------------------+----------------------+-----------+--------------------------------+
-    | Key Mapping        | Action               | Value     | Does what?                     |
-    +====================+======================+===========+================================+
-    | :kbd:`Alt + Left`  | Send Escape Sequence | b         | Jump one word to the left      |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Alt + Right` | Send Escape Sequence | f         | Jump one word to the right     |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Alt + Del<-` | Send Hex Code        | 0x17      | Delete left standing word      |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Alt + Del->` | Send Hex Code        | d         | Delete right standing word     |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Left`  | Send Escape Sequence | OH        | Move to beginning of the row   |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Right` | Send Escape Sequence | OF        | Move to end of the row         |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Del<-` | Send Hex Code        | 0x18 0x7f | Delete current row             |
-    +--------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Del->` | Send Hex Code        | 0x0b      | Delete everything after cursor |
-    +--------------------+----------------------+-----------+--------------------------------+
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | Key Mapping           | Action               | Value     | Does what?                     |
+    +=======================+======================+===========+================================+
+    | :kbd:`Alt + Left`     | Send Escape Sequence | b         | Jump one word to the left      |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Alt + Right`    | Send Escape Sequence | f         | Jump one word to the right     |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Alt + Del<-`    | Send Hex Code        | 0x17      | Delete left standing word      |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Alt + Del->`    | Send Escape Sequence | d         | Delete right standing word     |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Cmd + Left`     | Send Escape Sequence | OH        | Move to beginning of the row   |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Cmd + Right`    | Send Escape Sequence | OF        | Move to end of the row         |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Cmd + Del<-` \* | Send Hex Code        | 0x18 0x7f | Delete current row             |
+    +-----------------------+----------------------+-----------+--------------------------------+
+    | :kbd:`Cmd + Del->`    | Send Hex Code        | 0x0b      | Delete everything after cursor |
+    +-----------------------+----------------------+-----------+--------------------------------+
 
     \* need to add this to your `~/.zshrc` or `~/.zprofile` to make it work:
 
@@ -61,7 +61,7 @@ There `a lot of color themes`_ to choose from.
 
 #. Open the XML files for the respective theme and save it as *\*.itermcolors* file.
 #. In iTerm go to :menuselection:`Settings --> Profiles --> Colors`.
-#. Select :menuselection:`Color Preset... -> Import...` and select the *\itermcolors file.
+#. Select :menuselection:`Color Preset... -> Import...` and select the *\*.itermcolors* file.
 #. Again chose :guilabel:`Color Presets...`, and select the imported theme. They are
    immediately applied to the current shell.
 
