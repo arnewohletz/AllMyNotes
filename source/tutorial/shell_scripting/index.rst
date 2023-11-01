@@ -2,7 +2,7 @@ Shell Scripting
 ---------------
 .. hint::
 
-    Some GNU utilities are not available natively on macOS. Install `coreutils`_
+    Some GNU utilities aren't available natively on macOS. Install `coreutils`_
     via homebrew:
 
     .. prompt:: bash
@@ -15,4 +15,5 @@ Shell Scripting
     :maxdepth: 1
 
     macos_zsh_basic.rst
+    cronjobs.rst
     distributed_systems/index.rst

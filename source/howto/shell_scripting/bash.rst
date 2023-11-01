@@ -17,8 +17,8 @@ respective text. For convenience, you may want to define it as a variable:
     RED="\e[31m"
     DEFAULT="\e[39m"
 
-    echo "${RED}This is in red${DEFAULT}"
-    echo "This uses the default color"
+    echo -e "${RED}This is in red${DEFAULT}"
+    echo -e "This uses the default color"
 
 which prints out the following:
 
