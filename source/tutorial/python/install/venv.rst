@@ -93,14 +93,10 @@ add the following content:
 
     call %USERPROFILE%\.venv\<ENV_NAME>\Scripts\activate
 
-Activate your environments from anywhere
-----------------------------------------
-It might be useful to easily activate an environment from anywhere and also
-to quickly get an overview over your virtual environments.
-
-**On Linux:**
-
-*coming later*
+Windows: Activate your environments from anywhere
+-------------------------------------------------
+It may be useful to activate an environment from anywhere and also
+to get an overview over your virtual environments.
 
 **On Windows:**
 
@@ -148,7 +144,7 @@ variable (for example, create a directory ``C:\bin``):
     The script expects all virtual environments to be available in
     ``C:\Users\<YOUR_USERNAME>\.venv``. If not, adapt the script accordingly.
 
-To run the script, simple execute ``activate <ENV_NAME>`` from anywhere. To see
+To run the script, run ``activate <ENV_NAME>`` from anywhere. To see
 all available environments only run ``activate``.
 
 .. _venv: https://docs.python.org/3/library/venv.html

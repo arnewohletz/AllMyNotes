@@ -248,6 +248,7 @@ into the address bar, which will open the index page of your application.
 
 Manually start application on remote server (Linux)
 ---------------------------------------------------
+
 Starting the uWSGI process commonly needs the command window to remain open. If it is closed,
 the application is also terminated.
 

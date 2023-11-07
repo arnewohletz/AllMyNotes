@@ -5,4 +5,3 @@ Linux
     :maxdepth: 1
 
     drivers.rst
-    zscaler.rst

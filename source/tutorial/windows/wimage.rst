@@ -1,5 +1,5 @@
-Set up Windows image backup with c't-WIMage :footcite:p:`vahldiek21_ersatzrad`
-==============================================================================
+Set up image backup with c't-WIMage :footcite:p:`vahldiek21_ersatzrad`
+======================================================================
 `WIMage`_ is a backup solution provided by c't for the main disk partition (``C:\``).
 The Windows Setup Tool, which installs Windows operating system images, accepts
 such a backup and transfers them onto hard disk partitions. WIMage supports

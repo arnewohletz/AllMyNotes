@@ -1,5 +1,5 @@
-macOS: using zsh and launchd
-============================
+macOS: zsh and launchd
+======================
 As of version 10.15 (Catalina) macOS changed the default shell to zsh_ (Z Shell), prior
 using bash_ (Bourne again Shell). While *bash* is still available in macOS as of now, it
 is recommended to zsh, including for shell scripts.
@@ -7,8 +7,8 @@ is recommended to zsh, including for shell scripts.
 .. _zsh: https://www.zsh.org/
 .. _bash: https://www.gnu.org/software/bash/
 
-Write a basic shell script
---------------------------
+A basic shell script
+--------------------
 Shell scripts use the \*.sh suffix. In order to execute shell scripts directly, like
 
 .. prompt:: bash
@@ -71,8 +71,8 @@ Make sure to make your script executable (for security reasons this is not done 
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 .. _more info: https://scriptingosx.com/2019/06/moving-to-zsh-part-2-configuration-files/
 
-Run shell script in background using launchd
---------------------------------------------
+launchd: Script management
+--------------------------
 If you created a script and wish to execute regularly or on specific occasion (e.g.
 after each log-in), macOS provides the `launchd`_ tool, which manages services and daemons,
 similar to Linux' *systemd*. Similar to *cron* on Linux (or the *Task Scheduler* on Windows)

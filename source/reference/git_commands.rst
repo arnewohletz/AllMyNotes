@@ -1,5 +1,5 @@
-Git Commands
-============
+Git - Commands
+==============
 Create a local repository
 -------------------------
 #. Create a new directory

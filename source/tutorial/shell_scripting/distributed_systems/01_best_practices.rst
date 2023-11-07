@@ -24,7 +24,7 @@ a resulting problem:
 
 :line 4:
 
-    Output of padded content (line 3) is overwrites the script file
+    Output of padded content (line 3) overwrites the script file
 
 Bash scripts are read character by character, bash remembers the current position via
 an index. When everything is pushed to a higher index position because of the

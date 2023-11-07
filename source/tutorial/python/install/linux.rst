@@ -1,5 +1,5 @@
-Install Python on Ubuntu Linux
-==============================
+Linux: Install Python on Ubuntu
+===============================
 .. note::
 
     There is no installer for Python on Linux, but the source code must be compiled locally.
@@ -8,8 +8,8 @@ Install Python on Ubuntu Linux
 
 .. _linux_install_python_from_source:
 
-Install from sources at python.org
-----------------------------------
+Manual install from sources
+---------------------------
 #. Run these commands to make sure, all packages required for building Python from sources
    is available on the local system:
 

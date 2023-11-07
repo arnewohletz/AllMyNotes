@@ -1,6 +1,6 @@
-Run multiple different profile instances
-----------------------------------------
-Commonly, only one firefox instance can be executed at a time. Opening two or more
+Run multiple instances with separate profile
+--------------------------------------------
+Commonly, only one Firefox instance can run at a time. Opening two or more
 instances, each instance featuring a different profile can be done using a trick.
 
 macOS
@@ -38,7 +38,7 @@ macOS
 
         Please note, that profile names are case-sensitive. If the profile name is entered
         incorrectly, the profile selection screen appears and the profile must be selected
-        manually. It is still possible to open multiple instances with different profiles, though.
+        manually. It's still possible to open multiple instances with different profiles, though.
 
 Linux
 `````

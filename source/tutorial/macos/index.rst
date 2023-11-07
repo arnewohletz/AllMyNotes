@@ -5,3 +5,4 @@ macOS
     :maxdepth: 1
 
     iterm.rst
+    mucommander.rst

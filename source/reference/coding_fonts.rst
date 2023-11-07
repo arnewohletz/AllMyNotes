@@ -1,5 +1,5 @@
-Coding fonts
-============
+Coding fonts :footcite:p:`coding_font`
+======================================
 .. important::
 
     To install these fonts via `Homebrew`_, first run:
@@ -31,6 +31,4 @@ Coding fonts
 
 .. _Homebrew: https://brew.sh/
 
-Sources
-=======
-https://realpython.com/coding-font/
+.. footbibliography::

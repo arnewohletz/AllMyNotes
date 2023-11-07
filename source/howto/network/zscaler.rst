@@ -1,5 +1,5 @@
-Resolve Zscaler SSL issues
-==========================
+Zscaler
+=======
 To resolve any of those issue, you need to first download the Zscaler CA Root
 certificate. Ask you IT department to provide it. It should be in either \*.pem or
 \*.crt format - opening it should show content similar to this:

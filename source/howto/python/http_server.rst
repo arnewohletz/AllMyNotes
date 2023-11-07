@@ -1,5 +1,5 @@
-How to start a local HTTP server
---------------------------------
+Use built-in HTTP server
+------------------------
 Python comes with a `http server module`_, allowing to host web applications or
 a sphinx documentation for development purposes.
 

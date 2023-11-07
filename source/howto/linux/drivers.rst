@@ -1,5 +1,5 @@
-Drivers for Linux :footcite:p:`eggeling_linux_hardware`
-=======================================================
+Get missing drivers :footcite:p:`eggeling_linux_hardware`
+=========================================================
 Linux operating system include lots of drivers for present hardware, though it might
 occur that certain (proprietary) drivers need to be installed manually. This guide
 shows how to do so.

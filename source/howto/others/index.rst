@@ -6,4 +6,3 @@ Others
 
     unicode_html.rst
     controller_fix_bigsur.rst
-    mucommander.rst

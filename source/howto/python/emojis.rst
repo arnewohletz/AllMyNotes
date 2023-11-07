@@ -1,5 +1,5 @@
-How to print emojis natively
-----------------------------
+Print emojis natively
+---------------------
 As all emoji characters are defined within the UTF-8 standard, you can print emojis
 or any other UTF-8 character in Python natively.
 

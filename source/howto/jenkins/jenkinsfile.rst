@@ -1,3 +1,5 @@
+Jenkinsfile
+===========
 Disable trace messages ("+ some_command") on console output
 -----------------------------------------------------------
 :Issue:
@@ -28,7 +30,7 @@ Disable trace messages ("+ some_command") on console output
     `here <set_builtin_>`_ for more info), which causes all commands to be echoed.
     For most commands defined inside the Jenkinsfile, that selection makes sense
     in order to know which command triggered the proceeding console output, but
-    for echo it is merely a repetition.
+    for echo it's merely a repetition.
 
 :Solution:
 

@@ -1,5 +1,5 @@
-How to set-up iTerm2
-====================
+Set up iTerm2
+=============
 iTerm2 is a Terminal alternative for macOS.
 
 Installation

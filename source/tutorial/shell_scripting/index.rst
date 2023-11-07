@@ -14,6 +14,6 @@ Shell Scripting
 .. toctree::
     :maxdepth: 1
 
-    macos_zsh_basic.rst
-    cronjobs.rst
     distributed_systems/index.rst
+    cronjobs.rst
+    macos_zsh_basic.rst

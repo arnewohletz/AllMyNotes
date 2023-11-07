@@ -1,8 +1,8 @@
-Custom style with UserChrome.css
---------------------------------
+Customize style with userChrome.css
+-----------------------------------
 .. hint::
 
-    Steps must be executed for each profile.
+    Each profile requires a separate userChrome.css copy.
 
 Prerequisites
 `````````````

@@ -1,5 +1,5 @@
-Execute Python scripts from anywhere
-------------------------------------
+Run Python scripts from anywhere
+--------------------------------
 Python scripts (single \*.py file programs) are especially handy, when those can
 be executed
 
