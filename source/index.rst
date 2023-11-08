@@ -24,6 +24,7 @@ Table of Contents
     :maxdepth: 2
     :caption: How-To
 
+    howto/docker/index.rst
     howto/firefox/index.rst
     howto/jenkins/index.rst
     howto/linux/index.rst

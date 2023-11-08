@@ -1,4 +1,4 @@
-Git - Commands
+git
 ==============
 Create a local repository
 -------------------------

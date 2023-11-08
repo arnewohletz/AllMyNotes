@@ -1,5 +1,5 @@
-Conda - Commands
-================
+conda
+=====
 Create new environment
 ----------------------
 .. prompt:: bash

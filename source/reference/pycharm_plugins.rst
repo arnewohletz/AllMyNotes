@@ -8,7 +8,7 @@ Third-party plugins
 * `Git Toolbox`_: Extends Git Integration with additional features
 * `Grazie Pro`_: Enhances the bundled Grazie Lite plugin with advanced natural
   language writing assistance in your IDE
-* `Key Promotrer X`_: The Key Promoter X helps you to learn essential shortcuts
+* `Key Promoter X`_: The Key Promoter X helps you to learn essential shortcuts
   while you are working
 * `Makefile Language`_: This plugin provides GNU Make language support
 * `One Dark Theme`_: One Dark theme for JetBrains.
@@ -22,7 +22,7 @@ Third-party plugins
 .. _CSV Editor: https://plugins.jetbrains.com/plugin/10037-csv-editor
 .. _Git Toolbox: https://plugins.jetbrains.com/plugin/7499-gittoolbox
 .. _Grazie Pro: https://plugins.jetbrains.com/plugin/16136-grazie-pro
-.. _Key Promotrer X: https://plugins.jetbrains.com/plugin/9792-key-promoter-x
+.. _Key Promoter X: https://plugins.jetbrains.com/plugin/9792-key-promoter-x
 .. _Makefile Language: https://plugins.jetbrains.com/plugin/9333-makefile-language
 .. _One Dark Theme: https://plugins.jetbrains.com/plugin/11938-one-dark-theme
 .. _Robot Framework Language Server: https://plugins.jetbrains.com/plugin/16086-robot-framework-language-server

@@ -1,5 +1,5 @@
-Options for packaging code - Comparison
-=======================================
+Package code - Comparing options
+================================
 There are multiple ways to package and distribute a Python program.
 
 .. csv-table:: Comparison chart (--> increase in content from left to right)

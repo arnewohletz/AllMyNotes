@@ -1,13 +1,23 @@
-Useful pip commands
-===================
+pip
+===
 
-Check available package versions (not possible for PyPI)
+List available package versions (not possible for PyPI)
 --------------------------------------------------------
 
 .. prompt:: bash
 
     pip index versions <package_name>
 
-    .. note::
+.. note::
 
-        Package index URL must be added to ``pip.ini`` or ``pip.conf`` first.
+    Package index URL must be added to ``pip.ini`` or ``pip.conf`` first,
+    for example:
+
+    .. code-block:: ini
+
+        [global]
+        ...
+        extra-index-url = <python.package.index.url>
+        ...
+        trusted-host = <python.package.index.domain>
+        ...
