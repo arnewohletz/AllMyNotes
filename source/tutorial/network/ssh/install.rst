@@ -75,4 +75,14 @@ installed), best use `homebrew`_:
 
         brew upgrade openssh
 
+.. hint::
+
+    It may be, that remote login via SSH or SFTP is deactivated in the system
+    settings. Make sure it is activated.
+
+    #. Go to :menuselection:`System Settings --> General --> Sharing --> Advanced`
+    #. Make sure the :guilabel:`Remote Login` option is active.
+    #. Also select the :unicode-guilabel:`&#128712;` icon and see if the remote login is
+       not limited to certain users.
+
 .. _homebrew: https://brew.sh/
