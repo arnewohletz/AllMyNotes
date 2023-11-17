@@ -43,7 +43,7 @@ Table of Contents
 
     reference/coding_fonts.rst
     reference/conda_commands.rst
-    reference/git_commands.rst
+    reference/git/index.rst
     reference/linux/index.rst
     reference/network/index.rst
     reference/others/index.rst

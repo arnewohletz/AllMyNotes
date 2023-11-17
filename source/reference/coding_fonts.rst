@@ -19,7 +19,7 @@ Coding fonts :footcite:p:`coding_font`
 
 .. prompt:: bash
 
-    brew install font-iosevska
+    brew install --cask font-iosevska
 
 
 |:+1:| **Sudo** (https://github.com/jenskutilek/sudo-font):
