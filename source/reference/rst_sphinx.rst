@@ -59,4 +59,26 @@ Docs for used plugins
 
 Custom extensions
 -----------------
+Plug-ins
+''''''''
+* unicode-guilabel: Support single unicode character (e.g. emoji) inside `guilabel`_ role.
+
+    Usage Example:
+
+    .. code-block:: rst
+
+        You can click the :unicode-guilabel:`&#5130;` and :unicode-guilabel:`&#5125;`
+        buttons to navigate.
+
+    renders into
+
+    You can click the :unicode-guilabel:`&#5130;` and :unicode-guilabel:`&#5125;`
+    buttons to navigate.
+
+    .. hint::
+
+        You can get Unicode HTML Codes at https://symbl.cc/en/.
+
+.. _guilabel: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel
+
 .. TODO: Add usage of 'unicode_guilabel' extension (copy from NTG7 docs)
