@@ -105,7 +105,7 @@ Here, the named volumed must be specified in a 'volumes' properties (outside 'se
     </div>
 
 The {} can accept arguments (for example read-only) -> see `Docker documentation
-<https://docs.docker.com/compose/compose-file/#volumes>`__
+<https://docs.docker.com/compose/compose-file/07-volumes/>`__
 
 .. raw:: html
 

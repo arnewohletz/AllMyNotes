@@ -40,7 +40,7 @@ Docs for used plugins
 
 
 .. _jupyter_sphinx: https://jupyter-sphinx.readthedocs.io/en/latest/
-.. _nbsphinx: https://nbsphinx.readthedocs.io/
+.. _nbsphinx: https://nbsphinx.readthedocs.io/en/latest/
 .. _sphinx-copybutton: https://sphinx-copybutton.readthedocs.io/en/latest/
 .. _sphinx-design: https://sphinx-design.readthedocs.io/en/latest/index.html
 .. _sphinx-git: https://github.com/OddBloke/sphinx-git
@@ -54,7 +54,7 @@ Docs for used plugins
 .. _sphinxemoji: https://github.com/sphinx-contrib/emojicodes
 
 .. _BibTeX: https://www.bibtex.org/
-.. _mermaid graphs: https://mermaid-js.github.io/mermaid/
+.. _mermaid graphs: https://mermaid.js.org/
 
 
 Custom extensions

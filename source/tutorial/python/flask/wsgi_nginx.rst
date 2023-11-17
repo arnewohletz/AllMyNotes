@@ -45,7 +45,7 @@ Then we need to install and configure nginx on the server machine.
 
         brew install nginx
 
-.. _Homebrew: https://brew.sh/index_de
+.. _Homebrew: https://brew.sh/
 
 An nginx server is able to host multiple applications while each must use a different port.
 In order to define the port an applications uses (among other settings), your application

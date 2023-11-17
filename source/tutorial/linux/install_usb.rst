@@ -13,7 +13,7 @@ Prerequisites
   (128 GB or more recommended)
 * Download the Linux distribution as \*.iso (check their official website). Stick to the
   latest LTS version, if available.
-* `Etcher <https://www.balena.io/etcher/>`__ is installed
+* `Etcher <https://etcher.balena.io/>`__ is installed
 
 .. admonition:: MacBook Air Only
 

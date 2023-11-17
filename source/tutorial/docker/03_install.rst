@@ -71,8 +71,8 @@ Which one to install?
     - docker daemon runs on localhost (as if run natively)
     - any terminal works for running docker commands
 
-    | https://hub.docker.com/editions/community/docker-ce-desktop-mac
-    | https://hub.docker.com/editions/community/docker-ce-desktop-windows
+    | https://docs.docker.com/desktop/install/mac-install/
+    | https://docs.docker.com/desktop/install/windows-install/
 
     Maybe follow this for OSX:
     https://pilsniak.com/how-to-install-docker-on-mac-os-using-brew/

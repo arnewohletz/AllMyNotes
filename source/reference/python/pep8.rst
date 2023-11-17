@@ -1,6 +1,6 @@
 PEP 8 - Python code style guide
 ===============================
-`PEP 8 <https://www.python.org/dev/peps/pep-0008/>`__ is the official style guide
+`PEP 8 <https://peps.python.org/pep-0008/>`__ is the official style guide
 for Python code.
 
 This is a summary of the document.

@@ -78,6 +78,7 @@ linkcheck_ignore = [
     "https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox",
     "https://github.com/shellspec/shellspec#installation",
     "http://www.javavideokurs.de/",
+    "https://linux.die.net/man/8/update-alternatives",
     "https://mkyong.com",
     "https://treyhunner.com/2019/06/loop-better-a-deeper-look-at-iteration-in-python",
     "https://zdoom.org/"
@@ -89,7 +90,6 @@ pygments_style = "default"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'navigation_depth': 5,

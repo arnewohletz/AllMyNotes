@@ -18,7 +18,7 @@ be overwritten by the global and repository config. It is located at
     * Linux: ``/etc/gitconfig``
     * Windows (for `Git for Windows`_): ``C:\Program Files\Git\etc\gitconfig``
 
-The full reference for git config value is `provided here <git_config_values>`_.
+The full reference for git config value is `provided here <git_config_values_>`_.
 This reference contains a selection.
 
 To edit the respective files, run

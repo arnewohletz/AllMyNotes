@@ -149,4 +149,4 @@ See all available models: `tf.keras.metrics`_.
     **Used for**: Scalar regression (single value prediction)
 
 
-.. _tf.keras.metrics: https://www.tensorflow.org/api_docs/python/tf/keras/metrics?hl=de
+.. _tf.keras.metrics: https://www.tensorflow.org/api_docs/python/tf/keras/metrics

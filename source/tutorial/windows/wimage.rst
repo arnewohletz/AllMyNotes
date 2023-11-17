@@ -10,7 +10,7 @@ Prerequisites
 * An empty, external USB drive having the size of the main disk partition or more.
   WIMage makes use of up to 2 TB of available storage (limitation of the `MBR-Partitioning`_).
   It supports larger drives, though doesn't use the extra space: **Saving partitions larger than 2 TB might fail**.
-* The latest version of WIMage, downloadable from https://www.heise.de/ct/artikel/c-t-WIMage-3863074.html#nav_download_von__3
+* The latest version of WIMage, downloadable from https://www.heise.de/hintergrund/c-t-WIMage-Stand-16-10-2017-3863074.html
 * The latest version of the Media Creation Tool (not available for Windows 8.1, which requires
   downloading the ISO image):
 
@@ -337,6 +337,6 @@ overwrite the existing image bundle file (``install.wim``). Follow these steps:
 
 .. footbibliography::
 
-.. _WIMage: https://www.ct.de/wimage
+.. _WIMage: https://www.heise.de/hintergrund/c-t-WIMage-Stand-16-10-2017-3863074.html
 .. _migrate to WSL-2: https://dev.to/adityakanekar/upgrading-from-wsl1-to-wsl2-1fl9
 .. _Rufus: https://rufus.ie/en/

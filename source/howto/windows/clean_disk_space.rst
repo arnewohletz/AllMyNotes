@@ -28,7 +28,7 @@ Specific directories:
     This will prevent the directory from saving more than 10 GB of shadow copies.
 
 
-.. _PC Manager: https://pcmanager-en.microsoft.com/
+.. _PC Manager: https://pcmanager.microsoft.com/en-us
 .. _CCleaner: https://www.ccleaner.com/ccleaner
 .. _TreeSize Free: https://www.jam-software.com/treesize_free
 .. _Volume Shadow Copy: https://learn.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service

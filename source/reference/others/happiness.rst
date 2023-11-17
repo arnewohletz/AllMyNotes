@@ -32,7 +32,7 @@ Practical ways:
 If you catastrophize, you will likely suffer from bad events, and if you have an optimistic mindset,
 you will likely be more resilient.
 
-Breathing is an important source of energy -> **SKY breathing** (https://youtu.be/flL5orF1lYw):
+Breathing is an important source of energy -> **SKY breathing** (https://www.youtube.com/watch?v=flL5orF1lYw):
 
     - **Alternate Nostril Breathing (ANB)**: Abwechseln mit linken/rechten Nasenloch aus
       und einatmen, anderes zugeben -> 25 x jede Seite

@@ -1,6 +1,6 @@
 Magic Tricks on Testing (Sandy Metz)
 ------------------------------------
-Based on https://youtu.be/URSWYvyc42M.
+Based on https://www.youtube.com/watch?v=URSWYvyc42M
 
 The talk gives a clear recommendation on which methods of an object are subject to
 unit tests, and which should be omitted.

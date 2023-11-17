@@ -26,7 +26,7 @@ The example shows a HTTP request header grabbed via Wireshark:
 GET
     Describes the method which is performed.
 
-    -> https://tools.ietf.org/html/rfc2616#section-5.1.1
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-5.1.1
 
 <REQUEST_URI>
     Identifies the resource upon which to apply the request (here:
@@ -36,7 +36,7 @@ GET
     trusted. The requester attaches a certificate serial number and asks, if that certificate
     is still valid.
 
-    -> https://tools.ietf.org/html/rfc2616#section-5.1.2
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-5.1.2
 
 HTTP/1.1
     HTTP protocol version (here: 1.1).
@@ -50,7 +50,7 @@ Cache Control
     is younger as 174728 seconds (approx. 48 hours, otherwise the response isn't
     accepted).
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.9
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.9
 
 Connection
     Specifies what happens to the connection after the request is successfully sent.
@@ -58,30 +58,30 @@ Connection
     stay alive even after the response is returned -> future HTTP to the same receiver
     request are then transferred over the same connection).
 
-    -> https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.10
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.10
 
 Accept
     Specifies media types that are acceptable as response (here: all media types, */*).
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.1
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.1
 
 If-Modified-Since
     Specifies, that the request variant must not be returned unless being modified
     since the time specified.
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.25
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.25
 
 User-Agent
     Contains information about the user agent from where the request originates, used
     for tailoring responses (here: Microsoft-CryptoAPI).
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.43
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.43
 
 Host
     Specifies the Internet host and port number of the resource being requested
     (here: www.microsoft.com).
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.23
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.23
 
 The other parameters are information added by Wireshark and are not part of the request
 message.
@@ -113,12 +113,12 @@ HTTP response header received for the upper HTTP request:
     Status Code (here: 200 means 'OK', which says that the response is dependent
     on the request method).
 
-    -> https://tools.ietf.org/html/rfc2616#section-10.2.1
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-10.2.1
 
 OK
     Reason-Phrase: Short textual description of the status code (here: OK)
 
-    -> https://tools.ietf.org/html/rfc2616#section-6.1.1
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-6.1.1
 
 Cache-Control
     Specifies directives that MUST be obeyed by all caching mechanisms along the
@@ -127,20 +127,20 @@ Cache-Control
     and ignored). This is only important when the response is not immediately used,
     but cached.
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.9
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.9
 
 Content Type
     Indicates the media type of the entity-body sent to the recipient. Here an OSCP
     response is given, which contains the information whether a third-party recipient
     has a valid public key certificate or not)
 
-    | -> https://tools.ietf.org/html/rfc2616#section-14.17
+    | -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.17
     | -> https://www.iana.org/assignments/media-types/media-types.xhtml
 
 Date
     Represents the date and time at which the message was originated.
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.18
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.18
 
 ETag
     Provides current value of the entity tag for the requested variant. It is used
@@ -148,35 +148,36 @@ ETag
     etags are equal) not the full response must be sent again.
 
     -> https://en.wikipedia.org/wiki/HTTP_ETag
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.19
 
 Expires
     Defines the time when a response is considered as stale. A stale cache entry is
     usually not forwarded (either proxy cache or user agent cache) before origin server
     isn't checked for a new copy of the data.
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.21
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.21
 
 Last Modifies
     Defines the time at which the origin server believes the variant to be last modified.
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.29
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.29
 
 Server
     Contains information about the software used by the origin server to handle the
     request (here: Enterprise Communication Server).
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.38
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.38
 
 Content-Length
     Defines the size of the entity-body that would be required to send for a GET
     request in octets (8 bits, used for telecommunications).
 
-    -> https://tools.ietf.org/html/rfc2616#section-14.13
+    -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.13
 
 Keep Alive
     Indicates that the corresponding connection token must be transmitted (here: 60).
 
-    -> https://tools.ietf.org/html/rfc2068#section-19.7.1.1
+    -> https://datatracker.ietf.org/doc/html/rfc2068#section-19.7.1.1
 
 Via
     Must be used by gateways and proxies to indicate the intermediate protocols and
@@ -184,8 +185,7 @@ Via
     server and the client on responses (here: HTTP 1.1 protocol used and response is
     received by proxy no 10509, which is in Georgia).
 
-    | -> https://tools.ietf.org/html/rfc2616#section-14.45
-    | -> https://proxy.am/en/list/page/105
+    | -> https://datatracker.ietf.org/doc/html/rfc2616#section-14.45
     | -> https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
 
 The other parameters are information added by Wireshark and are not part of the response

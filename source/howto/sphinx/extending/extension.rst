@@ -53,7 +53,7 @@ taking arguments describing the marked-up text:
 
 The arguments are expected in a certain order (see more under
 `Creating reStructuredText Interpreted Text Roles`_). The return value is a tuple
-containing two lists. The first contains any new nodes to be added to the parse tree,
+containing two lists. The first list contains any new nodes to be added to the parse tree,
 the second list contains error or warning messages to show the user (processors
 are defined to return errors instead of raising exceptions because the error messages
 can be inserted into the output instead of halting all processing.
@@ -165,7 +165,7 @@ Full ``unicode_guilabel.py``:
 
 .. _guilabel: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel
 .. _Creating reStructuredText Interpreted Text Roles: https://docutils.sourceforge.io/docs/howto/rst-roles.html
-.. _raw data node: http://code.nabla.net/doc/docutils/api/docutils/nodes/docutils.nodes.raw.html#raw-class
+.. _raw data node: https://pydoc.dev/docutils/latest/docutils.nodes.raw.html
 .. _sphinx-rtd-theme: https://github.com/readthedocs/sphinx_rtd_theme
 .. _Symbola: https://dn-works.com/wp-content/uploads/2023/UFAS010223/Symbola.pdf
 .. _Font Library: https://fontlibrary.org/en/font/symbola
