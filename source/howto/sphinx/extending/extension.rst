@@ -93,8 +93,80 @@ Full ``unicode_guilabel.py``:
 
 .. literalinclude:: _file/unicode_guilabel.py
 
+.. warning::
+
+    It depends on the font, the used Sphinx theme (for example `sphinx-rtd-theme`_)
+    uses, whether a symbols can be displayed. If the font does not include the
+    symbol for a certain unicode character, it will be displayed as :raw-html:`&#128712;`.
+
+    To overcome this limitation, the theme must use a backup font, that features
+    most or all defined Unicode symbols. A possible candidate is the `Symbola`_
+    font.
+
+    An older version (v9.00) is provided by the `Font Library`_ as a web font.
+    To add it follow these steps:
+
+    .. hint::
+
+        These steps proved to work for the *sphinx-rtd-theme*. If using a different
+        theme, the ``layout.html`` or used Jinja blocks may be named differently.
+
+    #. Inside the sphinx sources directory (for example ``source``) create a new
+       directory for HTML templates (here: ``_templates``) and an empty template
+       file (here: ``layout.html``):
+
+        .. prompt:: bash
+
+            cd source
+            mkdir _templates
+            touch _templates/layout.html
+
+       If the directory is new, also add the templates to your ``conf.py`` to be
+       considered when building the HTML:
+
+        .. code-block:: python
+
+            # Add any paths that contain templates here, relative to this directory.
+            templates_path = ['_templates']
+
+    #. Copy the include HTML code (from the website's *Use this font* section)
+       into ``layout.html`` and mark it as the block extension (here: *extrabody*),
+       so it looks like this:
+
+        .. code-block:: html
+
+            {% extends "!layout.html" %}
+
+            {% block extrabody %}
+                <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+            {% endblock %}
+
+    #. Open the `custom.css`_ and add the following content:
+
+        .. hint::
+
+            If using a different theme, check the originally used ``font-family``
+            setting for the *guilabel* role first and attach ``SymbolaRegular``
+            as the last option.
+
+        .. code-block:: css
+
+            .guilabel {
+                font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif,SymbolaRegular
+            }
+
+    #. Rebuild the documentation to see the new font being applied.
+
+    .. hint::
+
+        A download for Symbola (v7.21) is available at https://fonts2u.com/symbola.font.
+
 .. footbibliography::
 
 .. _guilabel: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel
 .. _Creating reStructuredText Interpreted Text Roles: https://docutils.sourceforge.io/docs/howto/rst-roles.html
 .. _raw data node: http://code.nabla.net/doc/docutils/api/docutils/nodes/docutils.nodes.raw.html#raw-class
+.. _sphinx-rtd-theme: https://github.com/readthedocs/sphinx_rtd_theme
+.. _Symbola: https://dn-works.com/wp-content/uploads/2023/UFAS010223/Symbola.pdf
+.. _Font Library: https://fontlibrary.org/en/font/symbola
+.. _custom.css: https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html#how-to-add-custom-css-or-javascript-to-sphinx-documentation
