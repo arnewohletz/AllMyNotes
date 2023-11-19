@@ -37,20 +37,19 @@ version = 'stable'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinxcontrib.mermaid',
-    'sphinxcontrib.images',
-    'sphinx_git',
-    'sphinx_design',
+    # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid & sphinxcontrib.images
+    'nbsphinx',
     'sphinx-prompt',
-    'sphinxemoji.sphinxemoji',
     'sphinx_copybutton',
+    'sphinx_design',
+    'sphinx_git',
+    'sphinx_gitstamp',
     'sphinx_tabs.tabs',
     'sphinxcontrib.bibtex',
-    # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid
-    #                     & sphinxcontrib.images
+    'sphinxcontrib.images',
+    'sphinxcontrib.mermaid',
+    'sphinxemoji.sphinxemoji',
     'unicode_guilabel',
-    'sphinx_gitstamp',
-    'nbsphinx'
 ]
 
 # Bibtex Bibfiles
@@ -73,11 +72,11 @@ jupyter_sphinx_thebelab_config = {
 
 linkcheck_ignore = [
     ".*/_static/",
+    "http://www.javavideokurs.de/",
     "https://computingforgeeks.com",
     "https://derickbailey.com",
     "https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox",
     "https://github.com/shellspec/shellspec#installation",
-    "http://www.javavideokurs.de/",
     "https://linux.die.net/man/8/update-alternatives",
     "https://mkyong.com",
     "https://treyhunner.com/2019/06/loop-better-a-deeper-look-at-iteration-in-python",
@@ -92,18 +91,18 @@ pygments_style = "default"
 # a list of builtin themes.
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-    'navigation_depth': 5,
-    'logo_only': True,
     'display_version': False,
+    'logo_only': True,
+    'navigation_depth': 5,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static',
-                    'reference/python/cheat_sheets/_file',
-                    'reference/others/_file',
                     'howto/others/_file',
+                    'reference/others/_file',
+                    'reference/python/cheat_sheets/_file',
                     'tutorial/python/_file'
                     ]
 html_css_files = [
