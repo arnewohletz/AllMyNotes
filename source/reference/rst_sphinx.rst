@@ -81,4 +81,67 @@ Plug-ins
 
 .. _guilabel: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel
 
-.. TODO: Add usage of 'unicode_guilabel' extension (copy from NTG7 docs)
+
+Roles
+'''''
+The following custom roles are available in this documentation:
+
+**Inline Code Highlighting**
+
+Syntax highlighting for inline code for various languages:
+
+.. code-block:: rst
+
+    * **Python**: Use the command :python:`print "Hello World"` to say hi.
+    * **Java**: Use the command :java:`System.out.println("Hello World");` to say hi.
+    * **JavaScript**: Use command :javascript:`console.log("Hello World");` to say hi.
+    * **HTML**: Use line :html:`<p>Hello World</p>` to say hi.
+    * **RST**: Use line :rst:`**Hello World**` to boldly say hi.
+    * **Bash**: Use line :bash:`echo "Hello World"` to say hi.
+
+
+renders into
+
+    * **Python**: Use the command :python:`print "Hello World"` to say hi.
+    * **Java**: Use the command :java:`System.out.println("Hello World");` to say hi.
+    * **JavaScript**: Use command :javascript:`console.log("Hello World");` to say hi.
+    * **HTML**: Use line :html:`<p>Hello World</p>` to say hi.
+    * **RST**: Use line :rst:`**Hello World**` to boldly say hi.
+    * **Bash**: Use line :bash:`echo "Hello World"` to say hi.
+
+**Raw HTML**
+
+Sometimes reStructureText does not offer a proper symbol or styling capabilities
+for a desired HTML output, in which case a *raw HTML* string can be used:
+
+.. code-block:: rst
+
+    This is my phone number: :raw-html:`&#9742;` 0170-123456789.
+    This is called a :raw-html:`<span style="font-family: Courier">description</span>`.
+
+renders into
+
+    | This is my phone number: :raw-html:`&#9742;` 0170-123456789.
+    | :raw-html:`This is called a <span style="font-family: Courier">description</span>.`
+
+**Colors**
+
+.. code-block:: rst
+
+    Background colors in :rbg:`red` and :gbg:`green`, as well as foreground color in
+    :rfg:`red` and :gfg:`green`.
+
+renders into
+
+Background colors in :rbg:`red` and :gbg:`green`, as well as foreground color in
+:rfg:`red` and :gfg:`green`.
+
+**Other formatting**
+
+.. code-block:: rst
+
+    :ulined:`Underlined` text parts
+
+renders into
+
+:ulined:`Underlined` text parts
