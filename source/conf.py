@@ -156,5 +156,6 @@ rst_prolog = """
 .. role:: rbg
 .. role:: rfg
 .. role:: gfg
+.. role:: gbg
 .. role:: ulined
 """
