@@ -82,6 +82,53 @@ Plug-ins
 .. _guilabel: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel
 
 
+Directives
+''''''''''
+The following custom directives are available in this documentation:
+
+.. rubric:: Admonitions
+
+.. code-block:: rst
+
+    .. admonition:: Design Principle
+        :class: design_principle
+
+        Functions should either be **queries** or **commands**. Queries are for getting
+        data, but must not change the state. Commands are supposed to change the state,
+        but must not return any data. Functions must not do both.
+
+    .. admonition:: Pattern Definition
+        :class: pattern_definition
+
+        The **Abstract Factory Pattern** provides an interface for creating families
+        of related or dependent objects without specifying their concrete classes.
+
+    .. admonition:: Problem
+        :class: problem
+
+        Some content for the custom problem admonition which is not important here.
+
+renders into
+
+    .. admonition:: Design Principle
+        :class: design_principle
+
+        Functions should either be **queries** or **commands**. Queries are for getting
+        data, but must not change the state. Commands are supposed to change the state,
+        but must not return any data. Functions must not do both.
+
+    .. admonition:: Pattern Definition
+        :class: pattern_definition
+
+        The **Abstract Factory Pattern** provides an interface for creating families
+        of related or dependent objects without specifying their concrete classes.
+
+    .. admonition:: Problem
+        :class: problem
+
+        Some content for the custom problem admonition which is not important here.
+
+
 Roles
 '''''
 The following custom roles are available in this documentation:
