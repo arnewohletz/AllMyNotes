@@ -50,6 +50,7 @@ Table of Contents
     reference/pycharm_plugins.rst
     reference/python/index.rst
     reference/rst_sphinx.rst
+    reference/shell_scripting.rst
     reference/sqlite/index.rst
     reference/vscode_extensions.rst
 
