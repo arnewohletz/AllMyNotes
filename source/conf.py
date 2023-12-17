@@ -101,9 +101,10 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static',
                     'howto/others/_file',
+                    'tutorial/python/_file',
                     'reference/others/_file',
+                    'reference/python/_file',
                     'reference/python/cheat_sheets/_file',
-                    'tutorial/python/_file'
                     ]
 html_css_files = [
     'css/custom.css',
