@@ -12,4 +12,6 @@ Python
     packaging.rst
     pep8.rst
     pip_commands.rst
+    pytest_extensions.rst
+    sql_alchemy.rst
 
