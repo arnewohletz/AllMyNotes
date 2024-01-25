@@ -8,3 +8,4 @@ Python
     small_scripts.rst
     http_server.rst
     pycharm.rst
+    snippets/index.rst

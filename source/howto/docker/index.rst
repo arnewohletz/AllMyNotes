@@ -5,3 +5,4 @@ Docker
     :maxdepth: 2
 
     tricks.rst
+    troubleshoot.rst

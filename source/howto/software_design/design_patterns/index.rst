@@ -17,3 +17,4 @@ Design Patterns
     iterator_pattern.rst
     state_pattern.rst
     observer_pattern.rst
+    singleton.rst

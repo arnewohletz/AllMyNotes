@@ -43,8 +43,11 @@ Table of Contents
 
     reference/coding_fonts.rst
     reference/conda_commands.rst
+    reference/docker/index.rst
     reference/git/index.rst
+    reference/kubernetes.rst
     reference/linux/index.rst
+    reference/logitech_k860.rst
     reference/network/index.rst
     reference/others/index.rst
     reference/pycharm_plugins.rst
