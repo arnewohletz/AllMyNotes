@@ -52,7 +52,7 @@ Get Firefox style elements
 UserChrome.css Snippets
 ```````````````````````
 Save Bookmarks menu
-'''''''''''''''''''
+```````````````````
 Windows (1920 x 1080):
 
 .. code-block:: css
@@ -152,7 +152,7 @@ MacBook Air (1440 × 900):
     }
 
 Application Menu
-''''''''''''''''
+````````````````
 
 .. code-block:: css
 
@@ -163,13 +163,23 @@ Application Menu
     }
 
 Toolbar bookmark popup menu
-```````````````````````````
+'''''''''''''''''''''''''''
 
 .. code-block:: css
 
     /* Increase bookmark popup window max-width (default: 41em)*/
     menupopup > menuitem {
         max-width: 100em !important;
+    }
+
+All open tabs popup menu
+''''''''''''''''''''''''
+
+.. code-block:: css
+
+    /*Set "all open tabs" popup menu width to fit content*/
+    :root {
+        --menu-panel-width: max-content !important;
     }
 
 
