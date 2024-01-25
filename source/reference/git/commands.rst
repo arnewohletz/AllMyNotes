@@ -170,6 +170,12 @@ Create a new branch
 
     git branch <branch_name>
 
+Create a new branch from existing branch on remote
+
+.. prompt:: bash
+
+    git checkout -b <local_branch_name> <remote_name>/<remote_branch_name>
+
 Switch to another branch
 
 .. prompt:: bash
@@ -238,11 +244,25 @@ Delete branch on remote
 
     git push <remote_name> --delete <branch_name>
 
-Rename currently checked out branch
+Rename currently checked out branch (local)
 
 .. prompt:: bash
 
     git branch -m "New branch name"
+
+Rename remote branch
+
+.. prompt:: bash
+
+    # Rename branch locally
+    git branch -m <old_name> <new_name>
+
+    # Delete old branch on remote
+    git push <remote> --delete <old_name>
+
+    # Push the new branch to remote
+    git push <remote> <new_name>
+
 
 Merging & Rebase
 ----------------
@@ -334,7 +354,7 @@ Tagging
 -------
 A lightweight tag is a pointer to a specific commit in a branch.
 
-**Create a tag for the current commit**
+**Create a tag for the current commit (to which HEAD points to)**
 
 .. prompt:: bash
 
