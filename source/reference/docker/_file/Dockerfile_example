@@ -1,0 +1,20 @@
+# syntax=docker/dockerfile:1
+
+ARG NVIDIA_TRITON_IMAGE_FQN
+FROM ${NVIDIA_TRITON_IMAGE_FQN}
+
+ARG ARTIFACTORY_HOST=aac-srv-artifactory.coretech.cerence.net
+ARG BUILD_BACKENDS=${BUILD_BACKENDS:-ALL}
+
+USER root
+
+RUN <<EOF
+    apt-get update
+    apt-get install -y --no-install-recommends gnupg2 curl ca-certificates
+EOF
+
+ARG TRITON_SERVER_USER=triton-server
+ARG TRITON_SERVER_CHMOD=${TRITON_SERVER_USER}:${TRITON_SERVER_USER}
+COPY --chown=${TRITON_SERVER_CHMOD} 3rd_party/tensorrt-7.2.3.4-cp38-none-linux_x86_64.whl /pkgs/tensorrt-7.2.3.4-cp38-none-linux_x86_64.whl
+
+ENV LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/usr/local/cuda-10.2/lib64
