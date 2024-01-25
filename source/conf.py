@@ -159,4 +159,8 @@ rst_prolog = """
 .. role:: gfg
 .. role:: gbg
 .. role:: ulined
+
+.. |br| raw:: html
+
+    <br />
 """
