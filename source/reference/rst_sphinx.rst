@@ -35,6 +35,8 @@ Docs for used plugins
 * `sphinx-tabs`_: Directive to add tabbed content for output HTML
 * `sphinxcontrib-bibtex`_: Allows `BibTeX`_ citations into the documentation
 * `sphinxcontrib-images`_: Directive for thumbnail images which can be magnified
+  (as of early 2024, apply `this change <sphinxcontrib_images_use_non_deprecation_>`_
+  to remove deprecation warning during building HTML)
 * `sphinxcontrib-mermaid`_: Directive for `mermaid graphs`_
 * `sphinxemoji`_: Roles for adding emojis
 
@@ -55,6 +57,8 @@ Docs for used plugins
 
 .. _BibTeX: https://www.bibtex.org/
 .. _mermaid graphs: https://mermaid.js.org/
+
+.. _sphinxcontrib_images_use_non_deprecation: https://github.com/sphinx-contrib/images/compare/master...j9ac9k:images:use-non-deprecated-sphinx-api
 
 
 Custom extensions
