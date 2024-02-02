@@ -284,7 +284,7 @@ all stages are executed in the specified order.
 :line 70-82:
 
     Definition of a `stage <jenkinsfile_stage>`_. It contains a `steps <jenkinsfile_steps>`_
-    section, which contains additional step directives defined in the `Jenkins Steps Reference`_.
+    section, which contains additional step directives defined in the `Jenkins Steps Reference <jenkinsfile_steps>`_.
     It may also contain a `script <jenkinsfile_script>`_ section, which contains a block
     of `scripted pipeline <jenkins_scripted_pipelines>`_, which allows for execution
     of a more complex series of steps.
@@ -299,7 +299,7 @@ all stages are executed in the specified order.
 .. _jenkinsfile_parallel: https://www.jenkins.io/doc/book/pipeline/syntax/#parallel
 .. _jenkinsfile_stages: https://www.jenkins.io/doc/book/pipeline/syntax/#stages
 .. _jenkinsfile_stage: https://www.jenkins.io/doc/book/pipeline/syntax/#stage
-.. _Jenkins Steps Reference: https://www.jenkins.io/doc/pipeline/steps/
+.. _jenkinsfile_steps: https://www.jenkins.io/doc/pipeline/steps/
 .. _jenkinsfile_script: https://www.jenkins.io/doc/book/pipeline/syntax/#script
 .. _jenkinsfile_sh: https://www.jenkins.io/doc/pipeline/steps/workflow-durable-task-step/#sh-shell-script
 .. _jenkinsfile_checkout: https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#checkout-check-out-from-version-control
@@ -451,6 +451,12 @@ must be added to the `env <jenkinsfile_env>` object. Variables defined in the
     The ``replaceFirst`` method replaces the first match of a given target (here:
     ``'origin/'`` with a substitute (here: ``""`` (empty)) within a string.
 
+.. _jenkins_error_signal: https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#error-error-signal
+.. _jenkins_global_variable_reference: https://www.jenkins.io/doc/book/pipeline/getting-started/#global-variable-reference
+.. _jenkinsfile_environment: https://www.jenkins.io/doc/book/pipeline/syntax/#environment
+.. _jenkinsfile_env: https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
+.. _java_map_get: https://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Map.html#get(java.lang.Object,%20java.lang.Object)
+
 
 Stage - Execute Makefile target
 -------------------------------
@@ -477,8 +483,172 @@ shell script can be executed via a Makefile target.
             }
         }
 
-.. _jenkins_error_signal: https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#error-error-signal
-.. _jenkins_global_variable_reference: https://www.jenkins.io/doc/book/pipeline/getting-started/#global-variable-reference
-.. _jenkinsfile_environment: https://www.jenkins.io/doc/book/pipeline/syntax/#environment
-.. _jenkinsfile_env: https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
-.. _java_map_get: https://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Map.html#get(java.lang.Object,%20java.lang.Object)
+:line 130:
+
+    The `dir <jenkinsfile_dir>`_ block defines the working directory of all processes
+    within the block (so from line 131 until line 139).
+
+:line 131 - 139:
+
+    A `script <jenkinsfile_script>`_ section, which includes a `sh <jenkinsfile_sh>`_
+    command. As mentioned above, the *script* block contains a block of
+    `scripted pipeline <jenkins_scripted_pipelines>`_. In this case, this includes
+    the *sh* command, which opens executes the shell script. As the script opens with
+    triple double-quotes (``"""``) it is a multi-line shell script, which supports
+    variable interpolation. As this multi-line script is actually a single line command,
+    just broken into several lines for better readability, each line but the last
+    requires the `line continuation`_ character ``\``.
+
+
+.. _jenkinsfile_dir: https://www.jenkins.io/doc/pipeline/steps/workflow-durable-task-step/#dir-change-current-directory
+.. _line continuation: https://www.gnu.org/software/bash/manual/bash.html#Escape-Character
+
+Stage - Run inline groovy script
+--------------------------------
+Jenkins recommends to `outsource more complex logic into separate Groovy script files <outsource_scripts>`_,
+to keep a Jenkinsfile simpler and to allow reuse but other pipeline. Simpler scripts
+can still be defined within the Jenkinsfile itself.
+
+It follows the `Groovy syntax`_, while also supporting `additional steps <jenkinsfile_steps>`_
+provided by Jenkins.
+
+.. code-block:: groovy
+    :linenos:
+    :lineno-start: 183
+
+        stage("Push promotion changes to remote and create pull request") {
+            steps {
+                dir("${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}") {
+                    script {
+                        withCredentials([gitUsernamePassword(credentialsId: "${CREDENTIAL_KEY}")]) {
+                            def create_pull_request_log = sh(script: """
+                                PROMOTED_METAPACKAGE_VERSION=${PROMOTED_METAPACKAGE_VERSION} \
+                                NTTS_PRODUCT_PREFIX_SUFFIX=${NTTS_PRODUCT_PREFIX_SUFFIX} \
+                                PROMOTION_PULL_REQUEST_BRANCH_LOCAL=${PROMOTION_PULL_REQUEST_BRANCH_LOCAL} \
+                                PROMOTION_RELEASE_BRANCH_LOCAL=${PROMOTION_RELEASE_BRANCH_LOCAL} \
+                                PRODUCT_METAPACKAGE_PULL_REQUEST_URL=${PRODUCT_METAPACKAGE_PULL_REQUEST_URL} \
+                                SUBTASK_ID=${params.SUBTASK_ID} \
+                                CURRENT_BUILD_URL=${currentBuild.getAbsoluteUrl()} \
+                                MAKEFILE_DIR=${MAKEFILE_DIR} \
+                                make -f ${MAKEFILE_DIR}/Makefile push-promotion-changes-to-remote-and-create-pull-request
+                                """, returnStdout: true)
+
+                            /* Determine pull request URL and use as job description
+                            Note: an already existing PR is updated, if pipeline runs successfully
+                            another time against the same product release branch */
+                            def pull_request_url
+                            def new_pull_request_url_regex = /NEW_PULL_REQUEST_URL ((?!.*null).*) EOL/
+                            def existing_pull_request_url_regex = /EXISTING_PULL_REQUEST_URL ((?!.*null).*) EOL/
+
+                            def new_match = create_pull_request_log =~ new_pull_request_url_regex
+                            def existing_match = create_pull_request_log =~ existing_pull_request_url_regex
+
+                            if (new_match) {
+                                pull_request_url = new_match[0][1]
+                                currentBuild.description =
+                                """Pull request created: <a href="${pull_request_url}">${pull_request_url}</a>"""
+                            } else if (existing_match) {
+                                pull_request_url = existing_match[0][1]
+                                currentBuild.description =
+                                """Pull request updated: <a href="${pull_request_url}">${pull_request_url}</a>"""
+                            } else {
+                                currentBuild.description = "Cannot determine pull request URL - check logs"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+:line 187:
+
+    Opens a `withCredentials <jenkinsfile_withcredentials>`_ block, which binds credentials,
+    stored as a credentials set in Jenkins, to variables within this block. In this case,
+    it calls the ``gitUsernamePassword(...)`` method, passing in the ``"${CREDENTIAL_KEY}"``
+    (defined in line 9) as *credentialsID*, referencing the credentials set predefined on
+    the Jenkins instance under that same ID. Effectively, this sets the variables
+
+    * $GIT_USERNAME
+    * $GIT_PASSWORD
+    * $GIT_ASKPASS
+
+    for the duration of the block.
+
+:line 188 - 198:
+
+    Assigns the variables *create_pull_request_log* as the stdout (standard output)
+    of the shells script in line 189 - 197. The ``returnStdout: true`` option is
+    an optional option of the `sh <jenkinsfile_sh>`_ command. If set to ``true``,
+    the standard output of the command is returned as string (in this case, whatever
+    the Makefile target returns).
+
+:line 204 - 205:
+
+    These two lines each define a regular expression. The regex's `syntax <groovy_regex>`_
+    follows the one for Java. They must start and end with a ``\``. For line 204,
+    a match must start with the string ``NEW_PULL_REQUEST_URL``, followed with the
+    matching group which must not contain *null*, the followed by the string ``EOL``.
+
+:line 207 - 208:
+
+    Here the pattern is applied to the output of the command in line 188 -198.
+    The syntax is: ``def match_object = input_text =~ regex_pattern``.
+
+:line 211 + 215:
+
+    The match object contains the matching string, which accessed via
+    ``match_string = match_object[0][1]`` in this case, as the entire matching
+    text is accessed via ``match_object[0]`` and the ``[1]`` defines the match
+    of the first capturing group, which is the wanted text.
+
+
+.. _outsource_scripts: https://www.jenkins.io/doc/book/pipeline/syntax/#post
+.. _jenkinsfile_withcredentials: https://www.jenkins.io/doc/pipeline/steps/credentials-binding/#withcredentials-bind-credentials-to-variables
+.. _Groovy syntax: https://groovy-lang.org/syntax.html
+.. _groovy_regex: https://docs.groovy-lang.org/latest/html/documentation/index.html#_regular_expression_operators
+
+Post section
+------------
+The `post <jenkins_post>`_ section contains all steps, which are executed after the
+pipeline or it's steps are completed.
+
+.. code-block:: groovy
+    :linenos:
+    :lineno-start: 228
+
+    post {
+        success {
+            script {
+                nttsMonitorEmail nttsMonitorEmail.SUCCESS()
+            }
+        }
+        failure {
+            script {
+                nttsMonitorEmail nttsMonitorEmail.FAILURE()
+            }
+        }
+    }
+
+:line 229:
+
+    This opens a *success* condition block, which is only executed, if the pipeline
+    is marked as success.
+
+:line 231 + 236:
+
+    The *nttsMonitorEmail* is the name of an imported Groovy script (line 1).
+    The ``nttsMonitorEmail.groovy`` file defines a *call()* method, which accepts
+    a custom type ``MonitorTypes`` (an enum, which is either ``MonitorTypes.SUCCESS``
+    or ``MonitorTypes.FAILURE``) which executes differently depending on the given
+    argument. In this case, different recipients are contacted in case of a
+    successful (none, as it uses the empty ``NOTIFY_ON_SUCCESS`` string defined in line 29)
+    and a failing pipeline (uses ``NOTIFY_ON_FAILURE`` defined in line 28).
+
+    More on shared libraries: https://www.jenkins.io/doc/book/pipeline/shared-libraries/
+
+:line 234:
+
+    This opens a *failure* condition block, which is only executed, if the pipeline
+    is marked as failure.
+
+.. _jenkins_post: https://www.jenkins.io/doc/book/pipeline/syntax/#post
