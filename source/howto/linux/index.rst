@@ -5,3 +5,4 @@ Linux
     :maxdepth: 1
 
     drivers.rst
+    tree.rst
