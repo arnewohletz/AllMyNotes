@@ -7,6 +7,8 @@ without a active terminal.
 
 For instance, it's' useful when hosting applications or services.
 
+Additional reference: https://astrobiomike.github.io/unix/screen-intro
+
 .. _screen: https://www.gnu.org/software/screen/
 
 
