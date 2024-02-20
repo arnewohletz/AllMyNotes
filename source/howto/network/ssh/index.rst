@@ -15,3 +15,4 @@ SSH
 
     install.rst
     key_authentication.rst
+    proxy_jump_tunnelling.rst

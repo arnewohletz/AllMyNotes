@@ -7,3 +7,4 @@ Windows
     tweaks.rst
     clean_disk_space.rst
     power_shell_processes.rst
+    wimage.rst

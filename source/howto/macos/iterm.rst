@@ -21,7 +21,7 @@ Set up movement & delete shortcuts
 iTerm does not feature shortcuts for moving word-by-word or to the end or beginning of a line.
 
 #. Go to :menuselection:`Settings --> Profiles --> Keys --> Key Mapping`.
-#. Add four new key mapping, for each selection `Send Escape Sequence` as Action:
+#. Add these new key mapping, for each selection `Send Escape Sequence` as Action:
 
     +-----------------------+----------------------+-----------+--------------------------------+
     | Key Mapping           | Action               | Value     | Does what?                     |
@@ -47,6 +47,7 @@ iTerm does not feature shortcuts for moving word-by-word or to the end or beginn
 
         .. code-block:: none
 
+            # iTerm2 support for 'Delete current row' keymap
             bindkey "^X\\x7f" backward-kill-line
 
 A quicker solution, but which does not feature all above key mappings is to change the presets to

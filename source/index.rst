@@ -10,15 +10,10 @@ Table of Contents
 
     tutorial/cpp/index.rst
     tutorial/docker/index.rst
-    tutorial/games/index.rst
     tutorial/java/index.rst
     tutorial/jenkins/index.rst
-    tutorial/linux/index.rst
-    tutorial/macos/index.rst
-    tutorial/network/index.rst
     tutorial/python/index.rst
     tutorial/shell_scripting/index.rst
-    tutorial/windows/index.rst
 
 .. toctree::
     :maxdepth: 2
@@ -26,8 +21,10 @@ Table of Contents
 
     howto/docker/index.rst
     howto/firefox/index.rst
+    howto/games/index.rst
     howto/jenkins/index.rst
     howto/linux/index.rst
+    howto/macos/index.rst
     howto/network/index.rst
     howto/others/index.rst
     howto/python/index.rst
