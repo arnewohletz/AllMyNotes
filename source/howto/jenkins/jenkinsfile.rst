@@ -135,3 +135,14 @@ Each of these variables can be accessed via ${ENVIRONMENT_NAME}, for example:
     script {
         echo $GIT_COMMITTER_NAME
     }
+
+Use time trigger as conditional
+-------------------------------
+In case a certain step is only supposed to happen if a build was started via a
+time trigger, there is a conditional step, you can use:
+
+.. code-block:: groovy
+
+    if (env.BUILD_USER == "Timer Trigger") {
+        // do something
+    }
