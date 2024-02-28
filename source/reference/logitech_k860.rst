@@ -1,5 +1,5 @@
-Logitech K860 - Special key combinations :footcite:p:`logitech_special_keys`
-----------------------------------------------------------------------------
+Logitech K860 - Special keys :footcite:p:`logitech_special_keys`
+----------------------------------------------------------------
 The Logitech K860 allows to be switch between Windows and macOS layout using special
 key combinations. Hold these combinations for three seconds.
 
