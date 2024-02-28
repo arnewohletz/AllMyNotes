@@ -20,54 +20,89 @@ Extensions by Sphinx
 .. _Directives: https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
 .. _Roles: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 
-Docs for used plugins
----------------------
-* `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
-  (Warning: as of Oct 2023, conflicts with `sphinxcontrib-mermaid`_ &
-  `sphinxcontrib-images`_ - use `nbsphinx`_ as an alternative)
-* `nbsphinx`_: Extension that provides a source parser for \*.ipynb files
+Third-party extensions
+----------------------
+Code blocks & prompts
+`````````````````````
 * `sphinx-copybutton`_: Adds a copy button to all code and command line blocks
-* `sphinx-design`_: Designing beautiful, screen-size responsive web-components
-* `sphinx-git`_: Directive for adding latest git commits information to docs
-* `sphinx-gitstamp`_: Directive for inserting a git datestamp into the context
 * `sphinx-prompt`_: Directive for unselectable prompts (nice for bash sections)
-* `sphinx-rtd-theme`_: Theme used for the web page of this documentation
+
+Design elements
+```````````````
+* `sphinx-datatables`_: Add data tables, which allow sorting entries
+* `sphinx-design`_: Designing beautiful, screen-size responsive web-components
 * `sphinx-tabs`_: Directive to add tabbed content for output HTML
-* `sphinxcontrib-bibtex`_: Allows `BibTeX`_ citations into the documentation
 * `sphinxcontrib-images`_: Directive for thumbnail images which can be magnified
   (as of early 2024, apply `this change <sphinxcontrib_images_use_non_deprecation_>`_
   to remove deprecation warning during building HTML)
-* `sphinxcontrib-mermaid`_: Directive for `mermaid graphs`_
 * `sphinxemoji`_: Roles for adding emojis
+
+Jupyter Notebooks
+`````````````````
+* `nbsphinx`_: Extension that provides a source parser for \*.ipynb files
+* `jupyter_sphinx`_: Directive to define Jupyter-like code cells, embedding its output
+
+Git
+```
+* `sphinx-git`_: Directive for adding latest git commits information to docs
+* `sphinx-gitstamp`_: Directive for inserting a git datestamp into the context
+
+Graphs
+``````
+* `plantuml <sphinx_plantuml_>`_: Directives for `PlantUML`_ graphs
+* `sphinxcontrib-mermaid`_: Directive for `mermaid graphs`_ (as of early 2024, conflicts
+  with `nbsphinx`_ and `jupyter_sphinx`_; if used together with either of these, apply
+  `this workaround <mermaid_jupyter_fix_>`_ to load ``mermaid.min.js`` after the Jupyter notebook JavaScript)
+
+Quoting
+```````
+* `sphinxcontrib-bibtex`_: Allows `BibTeX`_ citations into the documentation
+
+Substitution
+````````````
+* `sphinx-substitution-extensions`_: Allow substitutions within code blocks, prompts and inline.
+
+Themes
+``````
+* `sphinx-rtd-theme`_: Theme used for the web page of this documentation
+
+Tweaks
+``````
+* `sphinxnotes-comboroles`_: Sphinx extension for composing multiple roles
 
 
 .. _jupyter_sphinx: https://jupyter-sphinx.readthedocs.io/en/latest/
 .. _nbsphinx: https://nbsphinx.readthedocs.io/en/latest/
 .. _sphinx-copybutton: https://sphinx-copybutton.readthedocs.io/en/latest/
+.. _sphinx-datatables: https://sharm294.github.io/sphinx-datatables/
 .. _sphinx-design: https://sphinx-design.readthedocs.io/en/latest/index.html
 .. _sphinx-git: https://github.com/OddBloke/sphinx-git
 .. _sphinx-gitstamp: https://github.com/jdillard/sphinx-gitstamp
 .. _sphinx-prompt: http://sbrunner.github.io/sphinx-prompt/
 .. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/
+.. _sphinx-substitution-extensions: https://github.com/adamtheturtle/sphinx-substitution-extensions
 .. _sphinx-tabs: https://sphinx-tabs.readthedocs.io/en/latest/
+.. _sphinx_plantuml: https://github.com/sphinx-contrib/plantuml/
 .. _sphinxcontrib-bibtex: https://github.com/mcmtroffaes/sphinxcontrib-bibtex
 .. _sphinxcontrib-images: https://sphinxcontrib-images.readthedocs.io/en/latest/
 .. _sphinxcontrib-mermaid: https://github.com/mgaitan/sphinxcontrib-mermaid
 .. _sphinxemoji: https://github.com/sphinx-contrib/emojicodes
+.. _sphinxnotes-comboroles: https://sphinx.silverrainz.me/comboroles/index.html
+
 
 .. _BibTeX: https://www.bibtex.org/
 .. _mermaid graphs: https://mermaid.js.org/
-
+.. _mermaid_jupyter_fix: https://github.com/mgaitan/sphinxcontrib-mermaid/issues/74#issuecomment-1937184257
+.. _PlantUML: https://plantuml.com/
 .. _sphinxcontrib_images_use_non_deprecation: https://github.com/sphinx-contrib/images/compare/master...j9ac9k:images:use-non-deprecated-sphinx-api
-
 
 Custom extensions
 -----------------
 Plug-ins
-''''''''
+````````
 * unicode-guilabel: Support single unicode character (e.g. emoji) inside `guilabel`_ role.
 
-    Usage Example:
+  Usage Example:
 
     .. code-block:: rst
 
@@ -87,7 +122,7 @@ Plug-ins
 
 
 Directives
-''''''''''
+``````````
 The following custom directives are available in this documentation:
 
 .. rubric:: Admonitions
@@ -134,7 +169,7 @@ renders into
 
 
 Roles
-'''''
+`````
 The following custom roles are available in this documentation:
 
 **Inline Code Highlighting**
