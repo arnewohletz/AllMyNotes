@@ -37,7 +37,8 @@ version = 'stable'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # 'jupyter_sphinx', # conflicts with sphinxcontrib.mermaid & sphinxcontrib.images
+    'fix_mermaid_jupyter_conflict',
+    'jupyter_sphinx', # combined with sphinxcontrib.mermaid requires 'fix_mermaid_jupyter_conflict'
     'nbsphinx',
     'sphinx-prompt',
     'sphinx_copybutton',

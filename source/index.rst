@@ -52,6 +52,8 @@ Table of Contents
     reference/rst_sphinx.rst
     reference/shell_scripting.rst
     reference/sqlite/index.rst
+    reference/test_jupyter_sphinx.rst
+    reference/test_mermaid.rst
     reference/vscode_extensions.rst
 
 Git Changelog
