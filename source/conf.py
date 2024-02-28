@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.abspath('.') + '/_ext')
 # -- Project information -----------------------------------------------------
 
 project = 'All-My-Notes'
-copyright = '2021-2023, Arne Wohletz'
+copyright = '2021-2024, Arne Wohletz'
 author = 'Arne Wohletz'
 version = 'stable'
 
