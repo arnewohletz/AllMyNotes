@@ -8,3 +8,4 @@ Extending
     roles.rst
     custom_class_style.rst
     inline_code_highlight.rst
+    algolia.rst
