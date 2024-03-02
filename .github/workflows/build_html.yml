@@ -25,7 +25,7 @@ jobs:
     - name: Commit HTML output to gh-pages
       run: |
           ls -a .
-          cp -r ./build/html/* gh-pages/
+          cp -r ./build/* gh-pages/
           git commit -m "Update documentation" -a || true
     - name: Push changes
       uses: ad-m/github-push-action@master
