@@ -15,7 +15,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y pandoc
         python -m sphinx build -b html source build
-        ls -a .
+        pwd
+        ls -a build
+        ls -a build/html
+        realpath ./build/html
     - uses: actions/upload-artifact@v1
       with:
         name: Create artifacts for HTML output
