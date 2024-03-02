@@ -10,6 +10,9 @@ jobs:
       with:
         python-version: '3.11'
     - name: Install dependenciees
-      run: pip install -r requirements.txt
+      run: | 
+        pip install -r requirements.txt
+        sudo apt-get update
+        apt apt-get install -y pandoc
     - name: Build documentation
       run: python -m sphinx build -b html source build
