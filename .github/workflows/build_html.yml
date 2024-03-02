@@ -22,11 +22,15 @@ jobs:
       with:
         name: github-pages
         path: /home/runner/work/AllMyNotes/AllMyNotes/build/
+    - name: Commit HTML output to gh-pages
+      run: |
+          cp -r ./build/html/* gh-pages/
+          git commit -m "Update documentation" -a || true
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         branch: gh-pages
-        directory: gh-pages
+        directory: github-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
     # - name: Deploy
     #   uses: peaceiris/actions-gh-pages@v3
