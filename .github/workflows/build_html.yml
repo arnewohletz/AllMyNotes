@@ -17,9 +17,9 @@ jobs:
         python -m sphinx build -b html source build
         pwd
         ls -a .
-        ls -a ../build
-        ls -a ../build/html
-        realpath ../build/html
+        ls -a ./build
+        ls -a ./build/html
+        realpath ./build/html
     - uses: actions/upload-artifact@v1
       with:
         name: Create artifacts for HTML output
