@@ -15,16 +15,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y pandoc
         python -m sphinx build -b html source build
-        pwd
-        ls -a .
-        ls -a ./build
     - uses: actions/upload-artifact@v1
       with:
         name: github-pages
         path: /home/runner/work/AllMyNotes/AllMyNotes/build/
     - name: Commit HTML output to gh-pages
       run: |
-          ls -a .
           git clone https://github.com/horsewithnoname1985/AllMyNotes.git --branch gh-pages --single-branch gh-pages
           cp -r ./build/* gh-pages/
           cd gh-pages
