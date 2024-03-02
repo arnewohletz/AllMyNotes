@@ -16,3 +16,6 @@ jobs:
         sudo apt-get install -y pandoc
     - name: Build documentation
       run: python -m sphinx build -b html source build
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
