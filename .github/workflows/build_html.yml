@@ -24,6 +24,7 @@ jobs:
         path: /home/runner/work/AllMyNotes/AllMyNotes/build/
     - name: Commit HTML output to gh-pages
       run: |
+          ls -a .
           cp -r ./build/html/* gh-pages/
           git commit -m "Update documentation" -a || true
     - name: Push changes
