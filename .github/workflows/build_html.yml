@@ -9,4 +9,5 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "."
-        python-version: '3.11' 
+        python-version: '3.11'
+        build-command: "python -m sphinx build -b html source build"
