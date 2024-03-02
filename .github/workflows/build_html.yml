@@ -1,6 +1,5 @@
 name: "Pull Request Docs Build"
-on: 
-- pull_request
+on: [pull_request, push]
 
 jobs:
   docs:
@@ -9,4 +8,4 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
-        docs-folder: "docs/"
+        docs-folder: "src/"
