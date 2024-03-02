@@ -14,10 +14,7 @@ jobs:
         pip install -r requirements.txt
         sudo apt-get update
         sudo apt-get install -y pandoc
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        build-command: python -m sphinx build -b html source build
-        docs-folder: "source/"
+        python -m sphinx build -b html source build
     - uses: actions/upload-artifact@v1
       with:
         name: Create artifacts for HTML output
