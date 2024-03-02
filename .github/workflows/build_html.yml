@@ -16,7 +16,7 @@ jobs:
         sudo apt-get install -y pandoc
     - uses: ammaraskar/sphinx-action@master
       with:
-        build-command: python -m sphinx build -b html . ../build
+        build-command: sphinx-build -b html . ../build
         docs-folder: "source/"
     - uses: actions/upload-artifact@v1
       with:
