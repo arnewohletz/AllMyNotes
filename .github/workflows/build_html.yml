@@ -9,6 +9,7 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - run:
-        pip install -r requirements.txt
-        python -m sphinx build -b html source build
+    - name: Install dependenciees
+      run: pip install -r requirements.txt
+    - name: Build documentation
+      run: python -m sphinx build -b html source build
