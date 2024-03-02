@@ -20,7 +20,7 @@ jobs:
         ls -a ./build
     - uses: actions/upload-artifact@v1
       with:
-        name: Create artifacts for HTML output
+        name: github-pages
         path: /home/runner/work/AllMyNotes/AllMyNotes/build/
   deploy:
     needs: docs
@@ -39,4 +39,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        uses: actions/deploy-pages@v3 # or specific "vX.X.X" version tag for this action
