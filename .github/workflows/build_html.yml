@@ -9,8 +9,6 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - uses: actions/checkout@v1
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "."
-        build-command: "/opt/hostedtoolcache/Python/3.11.8/x64/python -m sphinx build -b html source build"
+    - run:
+        python -m pip install -r requirements.txt
+        python -m sphinx build -b html source build
