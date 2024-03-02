@@ -16,6 +16,10 @@ jobs:
         sudo apt-get install -y pandoc
     - name: Build documentation
       run: python -m sphinx build -b html source build
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Create artifacts for HTML output
+        path: docs/build/html/
   deploy:
     needs: docs
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
