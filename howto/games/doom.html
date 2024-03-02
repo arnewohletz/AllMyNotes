@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play multiplayer Doom on macOS &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jenkins" href="../jenkins/index.html" />
+    <link rel="prev" title="Games" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Games</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Play multiplayer Doom on macOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-a-multiplayer-game">Set up a multiplayer game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gzdoom-create-and-join-a-multiplayer-game">GZDoom: Create and join a multiplayer game </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Games</a></li>
+      <li class="breadcrumb-item active">Play multiplayer Doom on macOS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/games/doom.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="play-multiplayer-doom-on-macos">
+<h1>Play multiplayer Doom on macOS<a class="headerlink" href="#play-multiplayer-doom-on-macos" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://www.pcgamingwiki.com/wiki/Doom_(1993)">Doom</a> and other games running on the Doom engine also run on macOS using one
+of the various source ports like <a class="reference external" href="https://zdoom.org/downloads">gzdoom</a>. Some of these ports also support
+multiplayer and are available on macOS. For online multiplayer you also need
+a server browser to find and join Doom sessions. This How-To shows how to install
+and set up such an environment using the source port <a class="reference external" href="https://zandronum.com/">Zandronum</a> and the server
+browser <a class="reference external" href="https://doomseeker.drdteam.org/">Doomseeker</a>. The latter comes packed with <a class="reference external" href="https://doomseeker.drdteam.org/wadseeker.php">Wadseeker</a>, a tool which
+automatically downloads missing resources required to join a particular session.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Install Zandronum via Homebrew:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>zandronum</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Create a new directory <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/zandronum</span></code> and put in your
+<code class="docutils literal notranslate"><span class="pre">doom.wad</span></code> and <code class="docutils literal notranslate"><span class="pre">doom2.wad</span></code> file (from an existing Doom or Doom2 installation).</p></li>
+<li><p>Try launching Zandronum selecting either of the WAD files.</p></li>
+<li><p>Go to <a class="reference external" href="https://doomseeker.drdteam.org/download.php">https://doomseeker.drdteam.org/download.php</a>.</p></li>
+<li><p>Select the <em>Operating System</em> <span class="guilabel">Other (Source Code)</span> and select the
+download link under <em>Doomseeker Source</em> (not the Bitbucket Snapshot). Extract the
+archive at a suitable location (for example <code class="docutils literal notranslate"><span class="pre">~/Downloads/</span></code>)</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>A binary download for macOS is available, though that installation
+can’t finish due to a <a class="reference external" href="https://zandronum.com/tracker/view.php?id=4018">signature error</a>. This occurs on any macOS version
+10.14 (Mojave) or newer, preventing libraries to load due to failures in
+verifying the application’s signature. The current way of overcoming this
+issue is to build the binaries locally.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Install the required dependencies to build Doomseeker (Qt5 and CMake):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>qt5</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Set the variable Qt5_DIR in order for CMake to find your Qt5 installation:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">Qt5_DIR</span><span class="o">=</span><span class="s2">&quot;/usr/local/opt/qt@5/&quot;</span></span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Enter the extracted <em>doomseeker</em> directory and run the build:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>build</span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>build</span>
+<span class="prompt1">cmake<span class="w"> </span>..</span>
+<span class="prompt1">make</span>
+<span class="prompt1">sudo<span class="w"> </span>make<span class="w"> </span>install</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>After the installation finished you may copy the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory to a
+more suitable location (you may also want to rename it to <code class="docutils literal notranslate"><span class="pre">doomseeker</span></code> or
+something like that).</p></li>
+<li><p>Create a link to your <code class="docutils literal notranslate"><span class="pre">doomseeker</span></code> executable:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my/doomseeker/dir/doomseeker<span class="w"> </span>/usr/local/bin/doomseeker</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Launch Doomseeker via:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">doomseeker</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Doomseeker automatically downloads resources (often in *.ipk3 format)
+to <code class="docutils literal notranslate"><span class="pre">~/Library/Preferences/doomseeker/</span></code> by default. You may change the
+target destination under <span class="menuselection">Settings ‣ File paths</span>.</p>
+</div>
+</section>
+<section id="set-up-a-multiplayer-game">
+<h2>Set up a multiplayer game<a class="headerlink" href="#set-up-a-multiplayer-game" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>In Doomseeker, select <span class="menuselection">File ‣ Create Game</span>.</p></li>
+<li><p>In the <em>General</em> tab</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>select <em>Zandronum</em> as game and set its executable</p></li>
+<li><p>define a <em>Server name</em> (for example <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Game</span></code>)</p></li>
+<li><p>define a <a class="reference external" href="https://en.wikipedia.org/wiki/Port_forwarding">forwarded</a> port number in <em>Port</em> (default: 10666)</p></li>
+<li><p>set a <em>Game mode</em> and <em>Difficulty</em></p></li>
+<li><p>select the proper <em>IWAD</em> for example DOOM2.wad</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Additional</span> <span class="pre">WADs</span> <span class="pre">and</span> <span class="pre">files</span></code> add extra *wad or *.pk3 files for the game</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Set the rules in the other tabs.</p></li>
+<li><p>Select <span class="guilabel">Host server</span> when ready. Leave the appearing <em>Server Console</em>
+window open (closing it ends hosting), but you may close the host window.</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>A lot of add-ons aren’t compatible with Zandronum. If the <em>Server Console</em> window
+closes without output, you used an incompatible file. In this case, try using
+<a class="reference internal" href="#gzdoom-multiplayer"><span class="std std-ref">GZDoom to host a multiplayer game</span></a>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>In the <em>Doomseeker</em> main window, refresh the server list, then search for the
+hosted game’s name.</p></li>
+<li><p>Join the game (right-click the game and <em>Join Game</em>).</p></li>
+</ol>
+</section>
+<section id="gzdoom-create-and-join-a-multiplayer-game">
+<span id="gzdoom-multiplayer"></span><h2>GZDoom: Create and join a multiplayer game <a class="footnote-reference brackets" href="#footcite-gzdoom-multiplayer" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#gzdoom-create-and-join-a-multiplayer-game" title="Link to this heading"></a></h2>
+<p>GZDoom also features multiplayer capabilities, though this limits to certain game modes,
+which is Deathmatch, Team Deathmatch and Cooperative. Nonetheless, there are
+some Doom mods, which are specifically built with the GZDoom engine (for example <a class="reference external" href="https://boa.realm667.com/">Blade of Agony</a>).
+Those fail to load using a different Source Port such as Zandronum.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The host machine must open a port for GZDoom, which is <strong>5029</strong> by default. Clients,
+connecting to a game, don’t have to open that port.</p>
+</div>
+<p>To <strong>create</strong> aka host a multiplayer game using GZDoom, you must launch it via the
+command line using specific options, which are</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-host">
+<span class="sig-name descname"><span class="pre">-host</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;min_players&gt;</span></span><a class="headerlink" href="#cmdoption-host" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">&lt;min_players&gt;</span></code> the minimum amount of participants needed to join  (including the host)
+before the game is started.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-useip">
+<span class="sig-name descname"><span class="pre">-useip</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;IP_ADDRESS&gt;</span></span><a class="headerlink" href="#cmdoption-useip" title="Link to this definition"></a></dt>
+<dd><p>This defines the IP address, which other players can connect to in order to join the
+game session. For LAN matches, use your local IP address (e.g. 192.168.178.50) and for
+Internet games, specify your global IP address (e.g. determine it on <a class="reference external" href="https://www.ipchicken.com/">https://www.ipchicken.com/</a>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For internet games, you may have to enable port forwarding for your machine in your
+router configuration. GZDoom uses port 5029 as default (you may define a different
+port via the <code class="docutils literal notranslate"><span class="pre">-port</span></code> option) for which it needs forwarding on <strong>UDP</strong>
+traffic. For security reasons, you should disable the forward again after the game session.</p>
+</div>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-port">
+<span class="sig-name descname"><span class="pre">-port</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;num&gt;</span></span><a class="headerlink" href="#cmdoption-port" title="Link to this definition"></a></dt>
+<dd><p>Specifies an alternate IP port for this machine to use during a network game.
+By default, port 5029 is used.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-netmode">
+<span class="sig-name descname"><span class="pre">-netmode</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;num&gt;</span></span><a class="headerlink" href="#cmdoption-netmode" title="Link to this definition"></a></dt>
+<dd><p>Defines the network mode: <code class="docutils literal notranslate"><span class="pre">0</span></code> for <em>Peer-to-Peer</em>, which is recommended when having
+a slower internet connection or when only two people are playing, and <code class="docutils literal notranslate"><span class="pre">1</span></code> which should
+only be used when having a faster internet connection (10 Gb/s or more) or when
+creating a game with three or more people (people other than the host may leave the
+session without aborting it). For more info check the <a class="reference external" href="https://zdoom.org/wiki/Multiplayer#Network_modes">network modes</a>.</p>
+</dd></dl>
+
+<p>A basic host command might be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gzdoom<span class="w"> </span>-host<span class="w"> </span><span class="m">2</span><span class="w"> </span>-useip<span class="w"> </span><span class="m">192</span>.168.178.50<span class="w"> </span>-port<span class="w"> </span><span class="m">5029</span><span class="w"> </span>-netmode<span class="w"> </span><span class="m">0</span></span>
+</pre></div></div><p>Extra options may be:</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-deathmatch">
+<span class="sig-name descname"><span class="pre">-deathmatch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-deathmatch" title="Link to this definition"></a></dt>
+<dd><p>Defines that this game session is of type <strong>Deathmatch</strong>. If this option is not passed, the game mode
+will be <em>Cooperative</em>.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-warp">
+<span class="sig-name descname"><span class="pre">-warp</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;m&gt;</span></span><a class="headerlink" href="#cmdoption-warp" title="Link to this definition"></a></dt>
+<dd><p>Directly launch a specific map. Depending on the launched game the style is <code class="docutils literal notranslate"><span class="pre">ExMx</span></code>
+(e.g. E1M1 for first map of episode 1) or simply <code class="docutils literal notranslate"><span class="pre">xx</span></code> (e.g. 24 for map 24). See more
+at <a class="reference external" href="https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options">https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options</a>. Alternatively,
+you may use the <code class="docutils literal notranslate"><span class="pre">+map</span></code> option.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">+map</span></code>, always preceed the map name with <code class="docutils literal notranslate"><span class="pre">MAP</span></code>, for example <code class="docutils literal notranslate"><span class="pre">+map</span> <span class="pre">MAP04</span></code>.
+These two options are treated as equal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+map MAP04
+-warp 04
+</pre></div>
+</div>
+</div>
+<p>There is no constant map naming between one *.wad/, *.pk3 or *.ipk3 and another. Some examples:</p>
+<ul class="simple">
+<li><p>DOOM.WAD (Ultimate Doom): E&lt;A&gt;M&lt;B&gt; where <code class="docutils literal notranslate"><span class="pre">&lt;A&gt;</span></code> is the episode number (1 to 4) and <code class="docutils literal notranslate"><span class="pre">&lt;B&gt;</span></code>
+is the map number (1 to 9), for example: E1M9, E3M3</p></li>
+<li><p>DOOM2.WAD (Doom 2): MAP&lt;AA&gt; where <code class="docutils literal notranslate"><span class="pre">AA</span></code> is the map number (01 to 32)</p></li>
+<li><p>PLUTONIA.WAD (Final Doom: Plutonia): 01 to 32</p></li>
+<li><p>TNT.WAD (Final Doom: TNT/Evilution): 01 to 32</p></li>
+<li><p>Brutal Wolfenstein 3D: 01 to 60 (ten for each episode). Bonus maps: 62, AntoLeve, Sleepy</p></li>
+<li><p>Blade of Agony: C&lt;A&gt;M&lt;B&gt; where <code class="docutils literal notranslate"><span class="pre">&lt;A&gt;</span></code> is the campaign number (1 to 3) and <code class="docutils literal notranslate"><span class="pre">&lt;B&gt;</span></code> is
+the map number (1 to 6 for regular maps, 0 for bonus map), for example: C3M3. Some maps
+are divided in sections in which case the pattern C&lt;A&gt;M&lt;B&gt;_&lt;C&gt; where <code class="docutils literal notranslate"><span class="pre">C</span></code> is the section
+number (can range from A to C), for example C3M1_A. “Commander Keen” bonus maps are
+accessed via SM01, SM02 and SM03.</p></li>
+</ul>
+<p>Check the <code class="docutils literal notranslate"><span class="pre">mapinfo.txt</span></code> in the respective *.wad/, *.pk3 or *.ipk3 file to get map names.</p>
+</dd></dl>
+
+<p>Documentation on all multiplayer command line options: <a class="reference external" href="https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options">https://zdoom.org/wiki/Command_line_parameters#Multiplayer_options</a></p>
+<p>To <strong>join</strong> a running multiplayer game, launch GZDoom also over the command line, stating
+the IP address (and port, if it differs from the default).
+If you are in the same network as the host, use the local IP address, otherwise
+use the global IP address:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: " ";
+}
+</style><span class="prompt2">gzdoom -join &lt;HOST_IP_ADDRESS&gt;</span>
+</pre></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For both creating and joining a multiplayer game, also specify the used WAD and IPK3
+files via the <code class="docutils literal notranslate"><span class="pre">-file</span></code> (for *.ipk3 files) and <code class="docutils literal notranslate"><span class="pre">-iwad</span></code> (for *.wad files) options.</p>
+</div>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-gzdoom-multiplayer" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Various. Zdoom wiki - multiplayer. 2019. URL: <a class="reference external" href="https://zdoom.org/wiki/Multiplayer">https://zdoom.org/wiki/Multiplayer</a> (visited on 2022-08-03).</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Games" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../jenkins/index.html" class="btn btn-neutral float-right" title="Jenkins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

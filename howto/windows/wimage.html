@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set up image backup with c’t-WIMage &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coding fonts" href="../../reference/coding_fonts.html" />
+    <link rel="prev" title="Control processes with PowerShell" href="power_shell_processes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Windows</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tweaks.html">Overwrite domain enforced background image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clean_disk_space.html">Measures to clean up hard disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_shell_processes.html">Control processes with PowerShell</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Set up image backup with c’t-WIMage </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure">Procedure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-backup">Create backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restore-from-backup">Restore from backup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wimage-exits-due-to-missing-wimre-wim">WIMage exits due to missing wimre.wim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onedrive-sync-crashes-wimage">OneDrive sync crashes WIMage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#damaged-hard-disk-junctions-due-to-onedrive">Damaged hard disk junctions due to OneDrive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#backup-fails-due-to-insufficient-free-disk-space">Backup fails due to insufficient free disk space</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Windows</a></li>
+      <li class="breadcrumb-item active">Set up image backup with c’t-WIMage </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/windows/wimage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="set-up-image-backup-with-c-t-wimage">
+<h1>Set up image backup with c’t-WIMage <a class="footnote-reference brackets" href="#footcite-vahldiek21-ersatzrad" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#set-up-image-backup-with-c-t-wimage" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://www.heise.de/hintergrund/c-t-WIMage-Stand-16-10-2017-3863074.html">WIMage</a> is a backup solution provided by c’t for the main disk partition (<code class="docutils literal notranslate"><span class="pre">C:\</span></code>).
+The Windows Setup Tool, which installs Windows operating system images, accepts
+such a backup and transfers them onto hard disk partitions. WIMage supports
+Windows 8.1, 10 (from 1703) and 11 in both 32 and 64-Bit variants.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<ul>
+<li><p>An empty, external USB drive having the size of the main disk partition or more.
+WIMage makes use of up to 2 TB of available storage (limitation of the <a class="reference external" href="https://en.wikipedia.org/wiki/Master_boot_record">MBR-Partitioning</a>).
+It supports larger drives, though doesn’t use the extra space: <strong>Saving partitions larger than 2 TB might fail</strong>.</p></li>
+<li><p>The latest version of WIMage, downloadable from <a class="reference external" href="https://www.heise.de/hintergrund/c-t-WIMage-Stand-16-10-2017-3863074.html">https://www.heise.de/hintergrund/c-t-WIMage-Stand-16-10-2017-3863074.html</a></p></li>
+<li><p>The latest version of the Media Creation Tool (not available for Windows 8.1, which requires
+downloading the ISO image):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows 8.1: <a class="reference external" href="https://www.microsoft.com/en-us/software-download/windows8ISO">https://www.microsoft.com/en-us/software-download/windows8ISO</a></p></li>
+<li><p>Windows 10: <a class="reference external" href="https://www.microsoft.com/en-us/software-download/windows10">https://www.microsoft.com/en-us/software-download/windows10</a></p></li>
+<li><p>Windows 11: <a class="reference external" href="https://www.microsoft.com/en-us/software-download/windows11">https://www.microsoft.com/en-us/software-download/windows11</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Migrate any installed WSL-1 distributions to WSL-2 (<a class="reference external" href="https://dev.to/adityakanekar/upgrading-from-wsl1-to-wsl2-1fl9">Migrate to WSL-2</a>)</p></li>
+</ul>
+</section>
+<section id="procedure">
+<h2>Procedure<a class="headerlink" href="#procedure" title="Link to this heading"></a></h2>
+<section id="setup">
+<span id="wimage-setup"></span><h3>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Connect the USB storage device.</p></li>
+<li><p>Start the Media Creation Tool and step through the wizard to create an installation media.</p></li>
+<li><p>Select the exact version, which the backup installation uses (for example, Windows 10 Pro 64-Bit).</p></li>
+<li><p>Select the USB storage device as target and launch the creation. The wizard assigns
+<code class="docutils literal notranslate"><span class="pre">ESD-USB</span></code> as name for the installation media.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For Windows 8.1, use <a class="reference external" href="https://rufus.ie/en/">Rufus</a> to create the installation media.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Unzip <code class="docutils literal notranslate"><span class="pre">ct-WIMage.zip</span></code> and copy both the <code class="docutils literal notranslate"><span class="pre">ct-WIMage</span></code> directory and <code class="docutils literal notranslate"><span class="pre">ct-WIMage-maker.bat</span></code>
+to <code class="docutils literal notranslate"><span class="pre">ESD-USB</span></code>’s root directory (which already contains the Windows install files).</p></li>
+<li><p>On the storage device, run <code class="docutils literal notranslate"><span class="pre">ct-WIMage-maker.bat</span></code> as administrator.</p></li>
+<li><p>Confirm the security question with “J” (<em>Ja/Yes</em>).</p></li>
+<li><p>The script creates a new partition on the storage device. If the
+explorer appears in the forefront, ignore it. Don’t abort the script.</p></li>
+</ol>
+<p>After the setup is complete, the <code class="docutils literal notranslate"><span class="pre">ESD-USB</span></code> device name changed to
+<code class="docutils literal notranslate"><span class="pre">CT-BOOT</span></code> (keeping the same assigned to drive letter D, if not already occupied)
+and created an additional drive, named <code class="docutils literal notranslate"><span class="pre">CT-WIMAGE</span></code> (assigned to drive letter E, if
+not already occupied).</p>
+</section>
+<section id="create-backup">
+<h3>Create backup<a class="headerlink" href="#create-backup" title="Link to this heading"></a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The initial backup can take 5 hours and longer, though parallel work is
+still possible. Choose a suitable time slot for it.</p>
+<p>If the initial backup is aborted in the process, the <a class="reference internal" href="#wimage-setup"><span class="std std-ref">Setup steps</span></a>
+need to be repeated as the backup script reports errors, like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error: 13
+The data is invalid
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is recommended to <strong>quit OneDrive during the initial backup</strong>, as it tends
+the crash WImage. This was not observed for subsequent backups.</p>
+</div>
+<ol class="arabic">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">CT-WIMAGE</span></code> device and execute the <code class="docutils literal notranslate"><span class="pre">ct-WIMage-x64.bat</span></code> as administrator.</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>In case <code class="docutils literal notranslate"><span class="pre">CT-BOOT</span></code> uses a 32-Bit operating system the file is named <code class="docutils literal notranslate"><span class="pre">ct-WIMage-x86.bat</span></code>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>The explorer might open a new window in the foreground, selecting another new partition
+(drive letter P, if not already occupied), which is a shadow copy of your system drive.
+Its content which is then saved onto <code class="docutils literal notranslate"><span class="pre">CT-WIMAGE</span></code>.</p></li>
+<li><p>Wait until the backup is complete (might take several hours on first run,
+depending on the disk size and transfer speed).</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>In case of errors, check out the <a class="reference internal" href="#wimage-troubleshooting"><span class="std std-ref">troubleshooting</span></a> section.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It might happen that the process gets stuck. The output</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Deployment Image Servicing and Management tool
+Version: 10.0.19041.844
+</pre></div>
+</div>
+<p>is showing and the copy process does not start for over an hour.
+Hit <kbd class="kbd docutils literal notranslate">Enter</kbd> to proceed, which prints the message</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Saving image
+</pre></div>
+</div>
+<p>After a short while, the progress bar should appear.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Future backups are faster, depending on the amount of changes
+after the last backup, but may still take 3 hours or longer.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="restore-from-backup">
+<h3>Restore from backup<a class="headerlink" href="#restore-from-backup" title="Link to this heading"></a></h3>
+<p>Follow these steps to restore the hard disk from the backup. This may become necessary in case of</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a hard disk defect</p></li>
+<li><p>a serious error in your Windows installation (for example
+due to updates or some other erroneous actions)</p></li>
+<li><p>transferring the present state to a new hard disk</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Boot your PC from the external USB storage device.</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>How to do so depends on the hardware provider’s BIOS. You might have to
+disable secure boot to enable booting from external devices).</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>After the Windows setup initialized, select your preferred keyboard layout
+and location.</p></li>
+<li><p>Next up, select <span class="guilabel">Install now</span>.</p></li>
+<li><p>After the setup has started (might take a minute to complete), accept the license
+terms and select <span class="guilabel">Next</span>.</p></li>
+<li><p>Select the customized installation type.</p></li>
+<li><p>Choose the install location. If you want to restore your broken Windows partition,
+select the one containing the existing main disk partition <code class="docutils literal notranslate"><span class="pre">C:\</span></code>.
+If you are using a different hard disk, select a partition which has a size of
+not less than the original backed up drive.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CT-BOOT</span></code> and <code class="docutils literal notranslate"><span class="pre">CT-WIMAGE</span></code> partitions should also be listed, but are
+not to be used!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When selecting a partition which already holds a Windows installation,
+WIMage moves that content to a sub-directory named <code class="docutils literal notranslate"><span class="pre">Windows.old</span></code>.
+From there you may access earlier files. In this case, the hard disk requires
+space to store another instance. Logically, if the old files aren’t needed
+or the backup partition uses more than 50 % of its available space,
+format the drive first.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Choose <span class="guilabel">Next</span> and wait until the installation is complete.</p></li>
+<li><p>Restart the PC (in case, external disks have boot priority according to your BIOS
+settings, detach the hard disk after the shutdown).</p></li>
+</ol>
+</section>
+</section>
+<section id="troubleshooting">
+<span id="wimage-troubleshooting"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="wimage-exits-due-to-missing-wimre-wim">
+<h3>WIMage exits due to missing wimre.wim<a class="headerlink" href="#wimage-exits-due-to-missing-wimre-wim" title="Link to this heading"></a></h3>
+<p>WIMage requires a copy of the Windows RE (Recovery Environment), which resides
+on a separate partition. The RE partition is commonly used to repair a corrupted
+Windows installation.
+In case it isn’t found, the script exits with a note <code class="docutils literal notranslate"><span class="pre">Operation</span> <span class="pre">fehlgeschlagen</span></code> after the
+message <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">RE</span> <span class="pre">auf</span> <span class="pre">Windows-Partition</span> <span class="pre">verschieben</span></code>.</p>
+<ol class="arabic">
+<li><p>Check, if the recovery environment is active:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "C:\\> ";
+}
+</style><span class="prompt1">reagentc /info</span>
+</pre></div></div><p>If it shows <em>enabled</em> under <em>Status</em>, it’s already active. In this case,
+deactivate it temporarily by entering:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">reagentc /disable</span>
+</pre></div></div><p>You may check the status via <code class="docutils literal notranslate"><span class="pre">/info</span></code> again to verify.</p>
+</div></blockquote>
+</li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\Recovery</span></code> and check whether it contains a file
+named <code class="docutils literal notranslate"><span class="pre">winre.wim</span></code>. In case it does, leave the rescue environment
+status as is and start another WIMage backup.</p></li>
+<li><p>In case it doesn’t, the rescue system is missing and must be
+retrieved by another Windows installation using the same Windows version. For instance,
+when using Windows 10 Pro, the file must come from the same edition, though
+the version may differ for example 21H2 also accepts the rescue system from 22H2.</p></li>
+<li><p>Download the Media Creation Tool (in case of Windows 8.1, download the ISO image)
+for the respective Windows version (<em>Create &lt;VERSION&gt; installation media</em> entry):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows 8.1: <a class="reference external" href="https://www.microsoft.com/en-us/software-download/windows8ISO">https://www.microsoft.com/en-us/software-download/windows8ISO</a></p></li>
+<li><p>Windows 10: <a class="reference external" href="https://www.microsoft.com/en-us/software-download/windows10">https://www.microsoft.com/en-us/software-download/windows10</a></p></li>
+<li><p>Windows 11: <a class="reference external" href="https://www.microsoft.com/en-us/software-download/windows11">https://www.microsoft.com/en-us/software-download/windows11</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Connect a USB storage device with at least 16 GB of disk space.
+<strong>Careful</strong>: Creating the startup disk formats the device, so save any important data
+from the device first, if needed.</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>For Windows 8.1</strong></p>
+<p>Download <a class="reference external" href="https://rufus.ie/en/">Rufus</a> to create an installation media using the downloaded ISO.
+Ignore the next step.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Launch the Media Creation Tool / Rufus, follow the wizard and create the installation media.</p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">sources</span></code> directory on the installation media device and locate
+a file called <code class="docutils literal notranslate"><span class="pre">install.esd</span></code> and copy it to <code class="docutils literal notranslate"><span class="pre">C:\</span></code>.</p></li>
+<li><p>Open a command prompt as administrator, go to <code class="docutils literal notranslate"><span class="pre">C:\</span></code> and run</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity</span>
+</pre></div></div></div></blockquote>
+<p>which converts the file to <code class="docutils literal notranslate"><span class="pre">install.wim</span></code> located at the same directory.</p>
+</li>
+<li><p>Mount the file by running</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="k">mkdir</span> C:\wintemp</span>
+<span class="prompt1">dism /Mount-Wim /WimFile:<span class="s2">&quot;C:\install.wim&quot;</span> /index:1 /MountDir:<span class="s2">&quot;C:\wintemp&quot;</span></span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">C:\wintemp\Windows\System32\Recovery</span></code> and copy the <code class="docutils literal notranslate"><span class="pre">Winre.wim</span></code>
+file to <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\Recovery</span></code>.</p></li>
+<li><p>Restart the WIMage script. If the error doesn’t reoccur, delete <code class="docutils literal notranslate"><span class="pre">C:\wintemp</span></code>,
+<code class="docutils literal notranslate"><span class="pre">install.wim</span></code> and <code class="docutils literal notranslate"><span class="pre">install.esd</span></code>. First unmount <code class="docutils literal notranslate"><span class="pre">C:\wintemp</span></code> via:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dism /Unmount-Wim /mountdir:C:\wintemp /discard</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+</section>
+<section id="onedrive-sync-crashes-wimage">
+<h3>OneDrive sync crashes WIMage<a class="headerlink" href="#onedrive-sync-crashes-wimage" title="Link to this heading"></a></h3>
+<p>Experiences show that synced directories or files in OneDrive from which you
+aren’t the owner are crashing WIMage. To prevent that, stop the sync on all
+these directories or files and delete them from the hard disk. You may resync
+them after the backup, if needed.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Better quit OneDrive before creating the backup.</p>
+</div>
+<p>The scripts reports the following error at the first stage and exits:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-9 was unexpected at this time
+</pre></div>
+</div>
+<p>To resolve it open <code class="docutils literal notranslate"><span class="pre">ct-WIMage-x64.bat</span></code> on the root of your <code class="docutils literal notranslate"><span class="pre">CT-WIMAGE</span></code>
+partition and find the following line (at around line 234):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for /f &quot;tokens=3&quot; %%a in (&#39;dir %systemdrive% /-c ^| findstr /i &quot;Verzeichnis(se)&quot;&#39;) do set frei=%%a
+</pre></div>
+</div>
+<p>and replace it with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for /f &quot;tokens=2&quot; %%a in (&#39;wmic volume get DriveLetter^,FreeSpace ^| findstr /i &quot;%systemdrive%&quot;&#39;) do set frei=%%a
+</pre></div>
+</div>
+<p>Save and close the file and start a new run.</p>
+</section>
+<section id="damaged-hard-disk-junctions-due-to-onedrive">
+<h3>Damaged hard disk junctions due to OneDrive<a class="headerlink" href="#damaged-hard-disk-junctions-due-to-onedrive" title="Link to this heading"></a></h3>
+<p>Somewhere during the script operation, the script abort showing this error:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ERROR 4393
+
+The tag present in the reparse point buffer is invalid
+</pre></div>
+</div>
+<p>It means, some mentioned junction files might be in a damaged state.
+This may occur if OneDrive has crashed or terminated improperly at some point.</p>
+<ol class="arabic">
+<li><p>Open a command prompt as administrator.</p></li>
+<li><p>Enter (in case the system drive uses a different letter, replace <code class="docutils literal notranslate"><span class="pre">c</span></code> below):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chkdsk c: /r /f</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Confirm with <kbd class="kbd docutils literal notranslate">Y</kbd> when asked.</p></li>
+<li><p>Restart the PC and wait for the disk check to complete (it may take two hours or longer).</p></li>
+<li><p>Retry running the WIMage script.</p></li>
+</ol>
+</section>
+<section id="backup-fails-due-to-insufficient-free-disk-space">
+<h3>Backup fails due to insufficient free disk space<a class="headerlink" href="#backup-fails-due-to-insufficient-free-disk-space" title="Link to this heading"></a></h3>
+<p>During the execution of a backup, the following error message appears on the command line:</p>
+<img alt="../../_images/wimage_no_space_error.png" src="../../_images/wimage_no_space_error.png" />
+<p>The external hard disk ran out of space to save the new backup image. ct-WIMage
+originally is supposed to automatically remove the oldest images to make space
+for the new ones, but this mechanism may not work in any case.</p>
+<p>In such a case, the latest image needs to be exported into a new image file and
+overwrite the existing image bundle file (<code class="docutils literal notranslate"><span class="pre">install.wim</span></code>). Follow these steps:</p>
+<ol class="arabic">
+<li><p>Connect the external hard disk (which contains the WIMage backups).</p></li>
+<li><p>Open a command line as administrator.</p></li>
+<li><p>Analyze the image bundle file (<code class="docutils literal notranslate"><span class="pre">install.wim</span></code>) on the external disk (here: disk letter <em>E</em>):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">Dism /Get-ImageInfo /ImageFile:E:\sources\install.wim</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Make sure you have enough free disk space on your internal hard disk (or an
+additional external hard disk) to save the latest image (highest index), which
+is approximately half the size of the currently occupied space on the main disk partition (C:).</p></li>
+<li><p>Change into the directory, where you like to temporarily save the new image into.</p></li>
+<li><p>Export the latest image into a new Windows image file (here again, disk letter <em>E</em>),
+replacing the &lt;HIGHEST_INDEX&gt; with the proper number:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">Dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:<span class="p">&lt;</span>HIGHEST_INDEX<span class="p">&gt;</span> /DestinationImageFile:install.wim</span>
+</pre></div></div></div></blockquote>
+<p>The export may take around 15 minutes, depending on the image size and your hardware.
+The filesize should be less than the corresponding file on the external hard disk.</p>
+</li>
+<li><p>You may check the resulting image file for its content:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">Dism /Get-ImageInfo /ImageFile:install.wim</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">E:\sources\install.wim</span></code> on the external hard disk with the newly
+created one. Make sure to delete it from its original destination afterwards.</p></li>
+<li><p>Start a new backup cycle, which should finish successfully.</p></li>
+</ol>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-vahldiek21-ersatzrad" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Axel Vahldiek. Ersatzrad. <em>ct</em>, 10/2021:18–23, 2021.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="power_shell_processes.html" class="btn btn-neutral float-left" title="Control processes with PowerShell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../reference/coding_fonts.html" class="btn btn-neutral float-right" title="Coding fonts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File System Structure &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="System and configuration files" href="config_files.html" />
+    <link rel="prev" title="Important Terminal Programs" href="terminal_programs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="terminal_programs.html">Important Terminal Programs  </a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File System Structure </a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_files.html">System and configuration files </a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli_tools/index.html">CLI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">File System Structure </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/linux/file_system.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-system-structure">
+<h1>File System Structure <a class="footnote-reference brackets" href="#footcite-apfelboeck22-linux-tabellen" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#file-system-structure" title="Link to this heading"></a></h1>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Linux file system structure</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>/</strong></p></td>
+<td><p>Root directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/boot</strong></p></td>
+<td><p>System critical directory which contains files required for booting: kernel, boot manager and ramdisk <cite>initramrd</cite> with drivers</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/boot/grub</strong></p></td>
+<td><p>System critical directory which contains config data for the grub boot manager; optional changes to <code class="docutils literal notranslate"><span class="pre">rub.cfg</span></code> only by advanced users</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/bin</strong></p></td>
+<td><p>System critical directory which contains main executables, which are required for system operations (like bash, chmod, mount). Also see <code class="docutils literal notranslate"><span class="pre">/sbin</span></code> and <code class="docutils literal notranslate"><span class="pre">/usr/sbin</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/cdrom</strong></p></td>
+<td><p>Former mount directory for optical drives (same as <code class="docutils literal notranslate"><span class="pre">/floppy</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/dev</strong></p></td>
+<td><p>System directory for device files: all recognized devices are displayed as files here</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc</strong></p></td>
+<td><p>Central directory for all system-wide configuration data, partially directly in its root like sudo-rights, fstab, mime-types (file types),shadow (accounts and passwords), but most in extra directories like <code class="docutils literal notranslate"><span class="pre">/etc/ssh</span></code> (OpenSSH configuration), <code class="docutils literal notranslate"><span class="pre">/etc/X11</span></code> (GUI configurations), <code class="docutils literal notranslate"><span class="pre">/etc/apt</span></code> (list of all loaded package lists)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home</strong></p></td>
+<td><p>Collective directory for all user accounts (except <em>root</em>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]</strong></p></td>
+<td><p>Home directory of a user which contains typical sub-directories for images or documents. Besides the temporary mount directories <code class="docutils literal notranslate"><span class="pre">/media/[user]</span></code> and <code class="docutils literal notranslate"><span class="pre">/run/user/[account_id]</span></code> it is the only directory where the user has all rights, including ownership</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.cache</strong></p></td>
+<td><p>User specific temporary storage, mostly for fonts, thumbnails or system icons</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]/.config</strong></p></td>
+<td><p>Important hidden collective directory for user specific software settings (desktop, language, auto-launch, webbrowser, email, mime-types and others)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.local</strong></p></td>
+<td><p>Collective directory for desktop user settings, which are prioritized over common settings, like desktop links (<code class="docutils literal notranslate"><span class="pre">.desktop</span></code> files) at <code class="docutils literal notranslate"><span class="pre">~/.local/share/applications</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/lost+found</strong></p></td>
+<td><p>Contains rescued file fragments from a file system analysis via <cite>fsck</cite> (usually only used by forensic scientist)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/media</strong></p></td>
+<td><p>Mount directory for removable media like USB or DVD devices. Commonly used by automount when inserting the device. The content is loaded under <code class="docutils literal notranslate"><span class="pre">/media/[user]/[device]</span></code> with all access rights for the current user</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/mnt</strong></p></td>
+<td><p>Optional directory for temporary and static mount of external devices like USB or DVD (is not used by automount, which uses <code class="docutils literal notranslate"><span class="pre">/mnt</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>/lib</strong></div>
+<div class="line"><strong>/lib64</strong></div>
+</div>
+</td>
+<td><p>System critical directories contains essential libraries (32 and 64 Bit). Additional lib-directories (like <code class="docutils literal notranslate"><span class="pre">/usr/lib</span></code>, <code class="docutils literal notranslate"><span class="pre">/var/lib</span></code>) are required for applications, but are not system-critical</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/opt</strong></p></td>
+<td><p>Optional collective directory for additionally installed applications, which are not part of the Linux distribution</p></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>/proc</strong></div>
+<div class="line"><strong>/sys</strong></div>
+</div>
+</td>
+<td><p>Collective directory for dynamically requested system and hardware data of all kind, especially CPU, RAM, kernel, devices and processes. <code class="docutils literal notranslate"><span class="pre">/proc</span></code> provides information to many system tools, like CPU and RAM queries (for example <cite>cpuinfo</cite>, <cite>meminfo</cite>, <cite>modules</cite>, <cite>mounts</cite>, <cite>partitions</cite>, <cite>uptime</cite>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/tmp</strong></p></td>
+<td><p>Collective directory for temporarily needed files by software executions or installations. It’s the only directory in which all system accounts have unlimited writing access</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/root</strong></p></td>
+<td><p>Home directory for the pseudo-account root; if root is actively used, the same sub-directories for account data and configuration files like in <code class="docutils literal notranslate"><span class="pre">/home/[user]</span></code> are created</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/run</strong></p></td>
+<td><p>Dynamic information shelf for all applications (tmp-directory during runtime)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/run/[user]/[user-id]/gvfs/</strong></p></td>
+<td><p>Mount directory for automatically hooked network resources for Gnome-like desktops (Gnome, Budgie, Cinnamon, XFCE)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/usr</strong></p></td>
+<td><p>Collective directory for non-system related applications (User System Resources), so most application used on the desktop</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/usr/bin</strong></p></td>
+<td><p>Contains most applications featuring a graphical user interface (as opposed to <code class="docutils literal notranslate"><span class="pre">/bin</span></code> and <code class="docutils literal notranslate"><span class="pre">/sbin</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/usr/lib</strong></p></td>
+<td><p>Contains libraries required by non-system related applications</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/usr/local</strong></p></td>
+<td><p>Complementary software directory; executable programs under <code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> are prioritized over <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/usr/share/applications</strong></p></td>
+<td><p>Collective directory for program launcher, which are shown in menus and the desktop</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/sbin</strong></p></td>
+<td><p>System critical directory which contain main executables for system maintenance, which can only be executed with root rights (for example <cite>fdisk</cite>, <cite>fsck</cite>, <cite>hdparm</cite>, <cite>mkfs</cite>, <cite>parted</cite>). Also see <code class="docutils literal notranslate"><span class="pre">/bin</span></code> and <code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/srv</strong></p></td>
+<td><p>The default mount point for devices on server systems compliant with FSH (File System Hierarchy), although some servers still use <code class="docutils literal notranslate"><span class="pre">/mount</span></code> or <code class="docutils literal notranslate"><span class="pre">/media</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/var/log</strong></p></td>
+<td><p>Collective directory for system logs</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/var/spool</strong></p></td>
+<td><p>Directory for pending queue jobs, foremost print orders</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/var/www/html</strong></p></td>
+<td><p>Default directory for Apache and nginx web services</p></td>
+</tr>
+</tbody>
+</table>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-apfelboeck22-linux-tabellen" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Herrmann Apfelböck. Linux in tabellen. <em>Linuxwelt Sonderheft</em>, 3/2022:84–97, 2022.</p>
+</aside>
+</aside>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="terminal_programs.html" class="btn btn-neutral float-left" title="Important Terminal Programs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config_files.html" class="btn btn-neutral float-right" title="System and configuration files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

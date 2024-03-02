@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to use Docsearch + Algolia for searching Spinx documentation &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Testing" href="../../testing/index.html" />
+    <link rel="prev" title="Inline Code Highlighting" href="inline_code_highlight.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sphinx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../host.html">Host documentation on localhost (with nginx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vale.html">Documentation linting with vale</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Extending</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="extension.html">Create extension (custom role)  </a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Custom Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How to use Docsearch + Algolia for searching Spinx documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-algolia-docsearch">Set up Algolia DocSearch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-the-sphinx-documentation">Set up the Sphinx documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-docsearch-scraper">Set up DocSearch Scraper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-the-crawler">Execute the crawler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#further-documentation">Further documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sphinx</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Extending</a></li>
+      <li class="breadcrumb-item active">How to use Docsearch + Algolia for searching Spinx documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/sphinx/extending/algolia.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-use-docsearch-algolia-for-searching-spinx-documentation">
+<h1>How to use Docsearch + Algolia for searching Spinx documentation<a class="headerlink" href="#how-to-use-docsearch-algolia-for-searching-spinx-documentation" title="Link to this heading"></a></h1>
+<section id="set-up-algolia-docsearch">
+<h2>Set up Algolia DocSearch<a class="headerlink" href="#set-up-algolia-docsearch" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Create an free <a class="reference external" href="https://www.algolia.com/">Algolia</a> account at <a class="reference external" href="https://dashboard.algolia.com/users/sign_up">https://dashboard.algolia.com/users/sign_up</a>.</p></li>
+<li><p>Log into the created account and create a new application.</p></li>
+<li><p>For this new application (which has a unique ID, like <code class="docutils literal notranslate"><span class="pre">XDNC7OV40H</span></code>), which
+must be selected,</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>create an new API key (select the <em>API Keys</em> link), which will be used by
+crawler (needs writing access). Go to <span class="menuselection">All API Keys ‣ New API Key</span>,
+give it a description (like: <em>for scraping, has writing access</em>), add the <em>ACL</em>
+(Access Control List) <code class="docutils literal notranslate"><span class="pre">addObject</span></code>, <code class="docutils literal notranslate"><span class="pre">editSettings</span></code> and <code class="docutils literal notranslate"><span class="pre">deleteIndex</span></code> rights
+and save the key.</p></li>
+<li><p>create a new index (e.g. ‘documentation_search’), which will be used to store
+the documenation page’s records, which will be used for searching. Got to
+<span class="menuselection">Search ‣ Configure ‣ Index ‣ New… ‣ Index</span>. Give
+it an expressive name (like: <em>documentation_search</em>).</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="set-up-the-sphinx-documentation">
+<h2>Set up the Sphinx documentation<a class="headerlink" href="#set-up-the-sphinx-documentation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Install both the extensions <a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a> and <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/">sphinx-docsearch</a>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>sphinx-sitemap<span class="w"> </span>sphinx-docsearch</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Add both extensions to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span>
+    <span class="s1">&#39;sphinx_sitemap&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx_docsearch&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>For <em>sphinx-sitemap</em>. also add these variables to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_baseurl</span> <span class="o">=</span> <span class="s1">&#39;&lt;HOST_ADDRESS_AND_PORT&gt;&#39;</span>
+<span class="n">sitemap_filename</span> <span class="o">=</span> <span class="s2">&quot;sitemap.xml&quot;</span>
+<span class="n">sitemap_url_scheme</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{link}</span><span class="s2">&quot;</span>
+<span class="n">sitemap_locales</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;HOST_ADDRESS_AND_PORT&gt;</span></code> is the URL under which your documentation
+is hosted (zt is also possible to host it locally (e.g. via nginx,
+here serving the documentation at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:xxxxx/</span></code>, where <code class="docutils literal notranslate"><span class="pre">xxxxx</span></code>
+is the used port).</p>
+</div></blockquote>
+</li>
+<li><p>For <em>sphinx-docsearch</em>, also add these variables to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docsearch_app_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_APP_ID&gt;&quot;</span>
+<span class="n">docsearch_api_key</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_SEARCH_API_KEY&gt;&quot;</span>
+<span class="n">docsearch_index_name</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_INDEX_NAME&gt;&quot;</span>
+</pre></div>
+</div>
+<p>where</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_APP_ID&gt;</span></code> is the ID of your application, created in the last section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_SEARCH_API_KEY&gt;</span></code> is the API key used for searching only (not the one,
+we created, as only reading rights are required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_INDEX_NAME&gt;</span></code> is the name of the index of the application, we created</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="set-up-docsearch-scraper">
+<h2>Set up DocSearch Scraper<a class="headerlink" href="#set-up-docsearch-scraper" title="Link to this heading"></a></h2>
+<p>First, the documentation needs needs to be scraped and the results published to the index
+in your Algolia application. As the current v3 of DocSearch only allows to be used for
+publicly available web pages, the legacy v2 must be used. It must be self-hosted, which is
+best done via the Docker image, provided on <a class="reference external" href="https://hub.docker.com/r/algolia/docsearch-scraper">https://hub.docker.com/r/algolia/docsearch-scraper</a>.</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Install Docker</a>.</p></li>
+<li><p>Install <a class="reference external" href="https://github.com/jqlang/jq">jq</a>.</p></li>
+<li><p>Inside the documentation project’s root, create an <code class="docutils literal notranslate"><span class="pre">.env</span></code> file, which contains the
+Algolia application ID and the API key which has writing rights (which we previously created).
+An example:</p>
+<blockquote>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">APPLICATION_ID</span><span class="o">=</span><span class="s">XDNC7OV40H</span>
+<span class="na">API_KEY</span><span class="o">=</span><span class="s">e68cf0191685750ebe30574473b0016e</span>
+<span class="na">MAX_API_KEY_LENGTH</span><span class="o">=</span><span class="s">32</span>
+</pre></div>
+</div>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">MAX_API_KEY_LENGTH</span></code> variable value to the length of your <code class="docutils literal notranslate"><span class="pre">API_KEY</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p>Also create a <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/config-file/">DocSearch config</a> JSON file in the documentation’s root directory,
+for instance <code class="docutils literal notranslate"><span class="pre">docsearch_crawler_settings.json</span></code>. It will contains the configuration
+for the crawler, for example:</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;index_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;documentation_search&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sitemap_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;http://trn-srvtts-gpu03.cerence.net:8321/sitemap.xml&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;sitemap_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;stop_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;selectors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;lvl0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lvl1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h2, .document li&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;lvl2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lvl3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h4&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document p, .document li, .document pre, .document li&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;selectors_exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;.search-exclude&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It it important to align the configuration values to your specific documentation in
+order to successfully crawl the data.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index_name</span></code>: the name of the application’s index (here: <code class="docutils literal notranslate"><span class="pre">documentation_search</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sitemap_urls</span></code>: the URL of the documentation’s <code class="docutils literal notranslate"><span class="pre">sitemap.xml</span></code> (we will create it
+later during building the documentation, placing it at the root URLs, here:
+<code class="docutils literal notranslate"><span class="pre">[&quot;http://trn-srvtts-gpu03.cerence.net:8321/sitemap.xml&quot;]</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sitemap_enabled</span></code>: define that the sitemap.xml is supposed to be used by the
+crawler to retrieve all individual URLs of the documentation (here: <code class="docutils literal notranslate"><span class="pre">true</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop_urls</span></code>: list of all URLs which are not supposed to be crawled (here: empty)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selectors</span></code>: lists all CSS selectors whose matching elements are crawled and
+assigned to the associated targets. There are seven targets, <code class="docutils literal notranslate"><span class="pre">lvl0</span></code>, <code class="docutils literal notranslate"><span class="pre">lvl1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">lvl2</span></code>, <code class="docutils literal notranslate"><span class="pre">lvl3</span></code>, <code class="docutils literal notranslate"><span class="pre">lvl4</span></code>, <code class="docutils literal notranslate"><span class="pre">lvl5</span></code> and <code class="docutils literal notranslate"><span class="pre">text</span></code>. The first six refer to the
+different titles, where <code class="docutils literal notranslate"><span class="pre">lvl0</span></code> is the highest in hierarchy and <code class="docutils literal notranslate"><span class="pre">lvl5</span></code> is the
+lowest. Though only <code class="docutils literal notranslate"><span class="pre">lvl0</span></code> is required, it is recommended to define at least the
+first three. The <code class="docutils literal notranslate"><span class="pre">text</span></code> target contains all CSS selectors matching text elements
+which are supposed to be considered for the search. The selectors are depending
+on the documentation’s HTML structure and should be inspected in a running instance
+of it. If the crawler reveals incorrect or missing records, it mostly comes from
+incorrectly defined selectors, in which case those need to be adapted and the
+crawler to be executed again
+More info under <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/config-file#selectors">https://docsearch.algolia.com/docs/legacy/config-file#selectors</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selectors_exclude</span></code>: list of all element selectors, which should be excluded
+from the crawling records (here: <code class="docutils literal notranslate"><span class="pre">.search-exclude</span></code>, any element of class=”search-exclude”,
+which must be done in the Sphinx documentation, using a <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html#class-option">class</a> name)</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Don’t use <code class="docutils literal notranslate"><span class="pre">start_urls</span></code> option, if your want all your pages inside <code class="docutils literal notranslate"><span class="pre">sitemap.xml</span></code>
+to be searched. In this case, it was observed, that the sitemap is ignored.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="execute-the-crawler">
+<h2>Execute the crawler<a class="headerlink" href="#execute-the-crawler" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Rebuild the documentation to create or update the <code class="docutils literal notranslate"><span class="pre">sitemap.xml</span></code>.</p></li>
+<li><p>Make sure, the documentation is hosted under the specified address (you may also
+check that the <code class="docutils literal notranslate"><span class="pre">sitemap.xml</span></code> is available under &lt;HOST_ADDRESS_AND_PORT&gt;/sitemap.xml)</p></li>
+<li><p>From the documentations sources root directory (where <code class="docutils literal notranslate"><span class="pre">.env</span></code> and
+<code class="docutils literal notranslate"><span class="pre">docsearch_crawler_settings.json</span></code> are located), run the Docker image like this:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--env-file<span class="o">=</span>.env<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;CONFIG=</span><span class="k">$(</span>cat<span class="w"> </span>docsearch_crawler_settings.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>tostring<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>algolia/docsearch-scraper</span>
+</pre></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It has been observed, that ZScaler is blocking the connection from the Docker
+container towards the hosted documentation. If you see <em>Host unreachable</em> errors
+reported, switch off ZScaler while the container is running.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It has been observed, that the version <code class="docutils literal notranslate"><span class="pre">v1.13.0</span></code> of <em>algolia/docsearch-scraper</em>
+shows more log output. In case, you want to debug a failing execution, you may
+defer to this image via <code class="docutils literal notranslate"><span class="pre">algolia/docsearch-scraper:v1.13.0</span></code>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>After the documentation has been crawled, you may visit the <em>index</em> of your Algolia
+application, to check, if the amount of records, reported by DocSearch at the end of
+the run, are all available.</p></li>
+<li><p>Visit the hosted documentation and try using the search bar. The displayed results
+should now display the information according the previously extracted records.</p></li>
+</ol>
+</section>
+<section id="further-documentation">
+<h2>Further documentation<a class="headerlink" href="#further-documentation" title="Link to this heading"></a></h2>
+<p>Aloglia DocSearch GitHub: <a class="reference external" href="https://github.com/algolia/docsearch">https://github.com/algolia/docsearch</a>
+Algolia DocSearch for Sphinx: <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/index">https://sphinx-docsearch.readthedocs.io/en/latest/index</a>.html#
+Algolia Dashboard: <a class="reference external" href="https://dashboard.algolia.com/">https://dashboard.algolia.com/</a>
+Algolia Config File: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/config-file/">https://docsearch.algolia.com/docs/legacy/config-file/</a>
+Algolia self run DocSearch: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/run-your-own/">https://docsearch.algolia.com/docs/legacy/run-your-own/</a></p>
+<p>Use a sitemap.xml: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/tips/">https://docsearch.algolia.com/docs/legacy/tips/</a>
+Tutorial: <a class="reference external" href="https://brunoscheufler.com/blog/2021-08-08-setting-up-algolia-docsearch-with-nextjs">https://brunoscheufler.com/blog/2021-08-08-setting-up-algolia-docsearch-with-nextjs</a>
+Tutorial 2: <a class="reference external" href="https://www.howtocode.io/posts/algolia/how-to-setup-algolia-doc-search">https://www.howtocode.io/posts/algolia/how-to-setup-algolia-doc-search</a></p>
+<p>Maybe switch to v3: <a class="reference external" href="https://docsearch.algolia.com/docs/what-is-docsearch/">https://docsearch.algolia.com/docs/what-is-docsearch/</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="inline_code_highlight.html" class="btn btn-neutral float-left" title="Inline Code Highlighting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../testing/index.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Studio Code extensions &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Basic Queries" href="sqlite/queries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visual Studio Code extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c">C++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphs">Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-sphinx">Python + sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#robot-framework">Robot Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rust">Rust</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Visual Studio Code extensions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reference/vscode_extensions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="visual-studio-code-extensions">
+<h1>Visual Studio Code extensions<a class="headerlink" href="#visual-studio-code-extensions" title="Link to this heading"></a></h1>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">Better Comments</a>: Allows to annotate code comments with alert, TODOs, and more</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser">Open in Browser</a>: Add an option to open the current file in your default browser</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Rainbow CSV</a>: Highlight CSV and TSV files, Run SQL-like queries</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH</a>: Open any folder on a remote machine using SSH for remote development</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer">Remote Explorer</a>: View remote machines for SSH and Tunnels.</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.test-adapter-converter">Test Adapter Converter</a>: Converter extension from the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer">Test Explorer UI</a> to native VS Code testing</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer">Test Explorer UI</a>: Run your tests in the Sidebar of Visual Studio Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight">TODO Highlight</a>: Highlight TODOs, FIXMEs, and any keywords, annotations</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf">vscode-pdf</a>: Display pdf file in VSCode</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">WSL</a>: Open any folder in the Windows Subsystem for Linux (WSL) for development</p></li>
+</ul>
+</section>
+<section id="c">
+<h2>C++<a class="headerlink" href="#c" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">Better C++ Syntax</a>: Syntax highlighting for C++</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++</a>: C/C++ IntelliSense, debugging, and code browsing</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack">C/C++ Extension Packs</a>: Popular extensions for C++ development in Visual Studio Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes">C/C++ Themes</a>: UI Themes for C/C++ extension</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">CMake</a>: CMake language support for Visual Studio Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">CMake Tools</a>: Extended CMake support in Visual Studio Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb">CodeLLDB</a>: A native debugger powered by LLDB. Debug C++, Rust and other compiled languages</p></li>
+</ul>
+</section>
+<section id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a>: Open any folder or repository inside a Docker container
+and take advantage of Visual Studio Code’s full feature set</p></li>
+</ul>
+</section>
+<section id="graphs">
+<h2>Graphs<a class="headerlink" href="#graphs" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview">Mermaid Preview</a>: Enables live editing and visualization of mermaid supported diagrams</p></li>
+</ul>
+</section>
+<section id="python-sphinx">
+<h2>Python + sphinx<a class="headerlink" href="#python-sphinx" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring">autoDocStrings</a>: Generates python docstrings automatically</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.isort">isort</a>: Import Organization support for Python files using isort</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter</a>: Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-cell-tags">Jupyter Cell Tags</a>: Jupyter Cell Tags support for VS Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap">Jupyter Keymap</a>: Jupyter keymaps for notebooks</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers">Jupyter Notebook Renderers</a>: Renderers for Jupyter Notebooks (with plotly, vega, gif, png, svg, jpeg and other such outputs)</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-slideshow">Jupyter Slide Show</a>: Jupyter Slide Show support for VS Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker">Mypy Type Checker</a>: Linting support for Python files using mypy</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Pylance</a>: A performant, feature-rich language server for Python in VS Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a>: Python support (linting, highlighting, debugging and more)</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-environment-manager">Python Environment Manager</a>: View and manage Python environments &amp; packages</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent">Python Indent</a>: Correct Python indentation</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter">Python Test Explorer for Visual Studio Code</a>: Run your Python tests in the Sidebar of Visual Studio Code</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=njqdev.vscode-python-typehint">Python Type Hint</a>: Type hint completion for Python</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext">restructuredText</a>: reStructuredText language support (RST/ReST linter, preview, IntelliSense and more)</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=trond-snekvik.simple-rst">restructuredText Syntax Highlighting</a>: Syntax highlighting and document symbols for reStructuredText</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ChrisChinchilla.vale-vscode">Vale VSCode</a>: The Visual Studio Code extension for Vale</p></li>
+</ul>
+</section>
+<section id="robot-framework">
+<h2>Robot Framework<a class="headerlink" href="#robot-framework" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp">RobotFramework Language Server</a>: VSCode extension support for Robot Framework</p></li>
+</ul>
+</section>
+<section id="rust">
+<h2>Rust<a class="headerlink" href="#rust" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb">CodeLLDB</a>: A native debugger powered by LLDB. Debug C++, Rust and other compiled languages</p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer">rust-analyzer</a>: Rust language support for Visual Studio Code</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sqlite/queries.html" class="btn btn-neutral float-left" title="Basic Queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

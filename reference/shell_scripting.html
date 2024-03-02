@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shell Scripting &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/thebelab-helper.js"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SQLite" href="sqlite/index.html" />
+    <link rel="prev" title="reStructuredText &amp; Sphinx" href="rst_sphinx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Shell Scripting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#script-arguments">Script arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-operators">String Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#patterns">Patterns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#command-substitution">Command substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#directory-stack">Directory stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-controls">Flow controls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#if-else">if/else</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#condition-tests">Condition Tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#string-comparisons">String Comparisons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-attribute-checking">File attribute checking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integer-conditionals">Integer Conditionals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#for">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case">case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while-until">While &amp; until</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-options-typed-variables">Command Line Options &amp; Typed Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-options">Command Line Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shift">shift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getopts">getopts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#typed-variables">Typed Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integer-variables-and-arithmetic">Integer Variables and Arithmetic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arithmetic-conditional">Arithmetic Conditional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arithmetic-variables-and-assignment">Arithmetic Variables and Assignment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Shell Scripting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reference/shell_scripting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="shell-scripting">
+<h1>Shell Scripting<a class="headerlink" href="#shell-scripting" title="Link to this heading"></a></h1>
+<section id="script-arguments">
+<h2>Script arguments<a class="headerlink" href="#script-arguments" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">$0</span></code></p>
+<blockquote>
+<div><p>The shell script name.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">$1</span> <span class="pre">$2</span> <span class="pre">...</span></code></p>
+<blockquote>
+<div><p>The positional arguments passed into the shell script.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">$*</span></code></p>
+<blockquote>
+<div><p>Prints all arguments passed into the script (except <code class="docutils literal notranslate"><span class="pre">$0</span></code>), space separated.</p>
+<p>To change the separator (here: comma), define the <code class="docutils literal notranslate"><span class="pre">IFS</span></code> (Internal Field Separator):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">IFS</span><span class="o">=</span>,
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">$#</span></code></p>
+<blockquote>
+<div><p>The amount of arguments passed into a shell script (without <code class="docutils literal notranslate"><span class="pre">$0</span></code>).</p>
+</div></blockquote>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">local</span></code></p>
+<blockquote>
+<div><p>Define a variable as local. This will overwrite any equally named global variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span>
+
+<span class="k">function</span><span class="w"> </span>hi<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">local</span><span class="w"> </span>var1
+<span class="w">    </span><span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;hi&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$var1</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+hi<span class="o">()</span>
+</pre></div>
+</div>
+<p>will print <code class="docutils literal notranslate"><span class="pre">hi</span></code>, not <code class="docutils literal notranslate"><span class="pre">hello</span></code>.</p>
+</div></blockquote>
+</section>
+<section id="string-operators">
+<h2>String Operators<a class="headerlink" href="#string-operators" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">${varname:-word}</span></code></p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">${varname}</span></code> exists and isn’t <code class="docutils literal notranslate"><span class="pre">null</span></code> it returns its value, otherwise
+returns <code class="docutils literal notranslate"><span class="pre">word</span></code>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${varname:=word}</span></code></p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">${varname}</span></code> exists and isn’t <code class="docutils literal notranslate"><span class="pre">null</span></code> it returns its value, otherwise
+it is set to <code class="docutils literal notranslate"><span class="pre">word</span></code> and then returned.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${varname:?message}</span></code></p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">${varname}</span></code> exists and isn’t <code class="docutils literal notranslate"><span class="pre">null</span></code> it returns its value, otherwise
+print <code class="docutils literal notranslate"><span class="pre">varname</span></code> followed by <code class="docutils literal notranslate"><span class="pre">message</span></code> and abort the current command or
+script (non-interactive shells only).</p>
+<p>Used to catch errors from undefined variables.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${varname:+word}</span></code></p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">${varname}</span></code> exists and isn’t <code class="docutils literal notranslate"><span class="pre">null</span></code> it returns its <code class="docutils literal notranslate"><span class="pre">word</span></code>, otherwise
+return null.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${varname:offset:</span> <span class="pre">length}</span></code></p>
+<blockquote>
+<div><p>It returns the substring of $varname starting at offset and up to length characters.
+First character is at position 0. If length is omitted, string is returned until
+the end. If offset is less than 0, offset is taken from end of varname.</p>
+</div></blockquote>
+<section id="patterns">
+<h3>Patterns<a class="headerlink" href="#patterns" title="Link to this heading"></a></h3>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">some_path=/home/cam/book/long.file.name</span></code></p>
+<p>Pattern matching operator:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">#</span></code> matches the front (“number signs precede numbers”)</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">%</span></code> matches the rear (“percent signs follow numbers”)</div>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${variable#pattern}</span></code></p>
+<blockquote>
+<div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the beginning of the variable’s value, delete the shortest
+path that matches and return the rest.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">#/*/</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># cam/book/long.file.name</span></span>
+</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">/*/</span></code> matches everything between two slashes. The <em>shortest</em> pattern match
+on the front is <code class="docutils literal notranslate"><span class="pre">/home/</span></code>, which is deleted.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${variable##pattern}</span></code></p>
+<blockquote>
+<div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the beginning of the variable’s value, delete the longest
+part that matches and return the rest.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">##/*/</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># long.file.name</span></span>
+</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">/*/</span></code> matches everything between two slashes. The <em>longest</em> pattern match
+on the front is <code class="docutils literal notranslate"><span class="pre">/home/cam/book</span></code>, which is deleted.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${variable%pattern}</span></code></p>
+<blockquote>
+<div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the end of the variable’s value, delete the shortest
+part that matches and return the rest.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">%.*</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># /home/cam/book/long.file</span></span>
+</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">.*</span></code> matches a dot and everything that follows it. The shortest pattern match
+on the rear is <code class="docutils literal notranslate"><span class="pre">.name</span></code>, which is deleted.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${variable%%pattern}</span></code></p>
+<blockquote>
+<div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the end of the variable’s value, delete the longest
+part that matches and return the rest.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">%%.*</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># /home/cam/book/long</span></span>
+</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">.*</span></code> matches a dot and everything that follows it. The longest pattern match
+on the rear is <code class="docutils literal notranslate"><span class="pre">long.file.name</span></code>, which is deleted.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If <em>exact</em> matches are found, only the <em>first</em> match is deleted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>alicece</span>
+<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="p">%%ce</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># alice</span></span>
+</pre></div></div><p>But if using the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code>, then the longest occurrence will contain
+everything that follows it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>alicece</span>
+<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="p">%%ce*</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># ali</span></span>
+</pre></div></div></div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${variable/pattern/string}</span></code></p>
+<blockquote>
+<div><p>The longest match to <code class="docutils literal notranslate"><span class="pre">pattern</span></code> in variable is replaced by <code class="docutils literal notranslate"><span class="pre">string</span></code>.
+Only the first match is replaced.</p>
+<div class="line-block">
+<div class="line">If <code class="docutils literal notranslate"><span class="pre">pattern</span></code> starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code> it must match with the start of the variable.</div>
+<div class="line">If <code class="docutils literal notranslate"><span class="pre">pattern</span></code> starts with a <code class="docutils literal notranslate"><span class="pre">%</span></code> it must match with the end of the variable.</div>
+<div class="line">If <code class="docutils literal notranslate"><span class="pre">string</span></code> is null, the matches are deleted.</div>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${variable//pattern/string}</span></code></p>
+<blockquote>
+<div><p>The longest match to <code class="docutils literal notranslate"><span class="pre">pattern</span></code> in variable is replaced by <code class="docutils literal notranslate"><span class="pre">string</span></code>.
+All matches are replaced.</p>
+<p><strong>Example:</strong> Replace all colons with LINEFEED in PATH variable (print each
+entry in new line)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="si">${</span><span class="nv">PATH</span><span class="p">//:/</span><span class="s1">&#39;\n&#39;</span><span class="si">}</span></span>
+</pre></div></div></div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">${#varname}</span></code></p>
+<blockquote>
+<div><p>Returns the length of the value of the variable as a character string</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">SOME_VAR</span><span class="o">=</span><span class="m">123456789</span></span>
+<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">SOME_VAR</span><span class="si">}</span></span>
+<span class="prompt1"><span class="c1"># 9</span></span>
+</pre></div></div></div></blockquote>
+</section>
+</section>
+<section id="command-substitution">
+<h2>Command substitution<a class="headerlink" href="#command-substitution" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">command_A</span> <span class="pre">$(command_B)</span></code> means, to use the return value of a <code class="docutils literal notranslate"><span class="pre">command_B</span></code>
+as a variable for <code class="docutils literal notranslate"><span class="pre">command_A</span></code>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># open all txt files in the current directory which contain &#39;hello&#39;</span></span>
+<span class="prompt1">vi<span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-l<span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span>*.txt<span class="k">)</span></span>
+</pre></div></div></section>
+<section id="directory-stack">
+<h2>Directory stack<a class="headerlink" href="#directory-stack" title="Link to this heading"></a></h2>
+<p>The directory stack is known as a “last-in, first-out” or LIFO structure. Putting
+something on the stack is referred to as <em>pushing</em>, taking something off the stack
+is called <em>popping</em>.</p>
+<p><em>Pushing</em> and <em>popping</em> allows to move back to previous directories along the
+directory stack.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pushd</span> <span class="pre">&lt;some/path&gt;</span></code></p>
+<blockquote>
+<div><p>Puts the current directory onto the directory stack and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the directory.
+The first time, <code class="docutils literal notranslate"><span class="pre">pushd</span></code> is called in a script or shell session, the current
+directory is pushed onto the directory stack first.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">pushd</span><span class="w"> </span>/some/path<span class="w">       </span><span class="c1"># cd into /some/path</span></span>
+</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Directory stack
+/some/path   # top of the stack
+$(pwd)      # directory where pushd was initially called from
+</pre></div>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">popd</span></code></p>
+<blockquote>
+<div><p>Remove the directory at the top of the directory stack, which then reveals
+a new top, then <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">popd</span><span class="w">                </span><span class="c1"># cd into $(pwd)</span></span>
+</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Directory stack
+$(pwd)      # directory where pushd was initially called from
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="flow-controls">
+<h2>Flow controls<a class="headerlink" href="#flow-controls" title="Link to this heading"></a></h2>
+<section id="if-else">
+<h3>if/else<a class="headerlink" href="#if-else" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span>condition
+<span class="k">then</span>
+<span class="w">    </span>statements
+<span class="o">[</span><span class="k">elif</span><span class="w"> </span>condition
+<span class="w">    </span><span class="k">then</span><span class="w"> </span>statements...<span class="o">]</span>
+<span class="o">[</span><span class="k">else</span>
+<span class="w"> </span>statements<span class="o">]</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</section>
+<section id="condition-tests">
+<h3>Condition Tests<a class="headerlink" href="#condition-tests" title="Link to this heading"></a></h3>
+<p>Square brackets ([]) surround expressions that include various types of operators:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition_a<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>...
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition_b<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>...
+<span class="k">else</span>
+<span class="w">    </span>...
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p><strong>Multiple conditions</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># all conditions must be True (AND)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="w"> </span>...<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+...
+<span class="c1"># using the -a operator (AND)</span>
+<span class="k">if</span><span class="w">  </span><span class="o">[</span><span class="w"> </span>condition_a<span class="w"> </span>-a<span class="w"> </span>condition_b<span class="w"> </span>...<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+...
+
+<span class="c1"># at least one codition must be True (OR)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span>condition<span class="w"> </span><span class="o">]</span><span class="w"> </span>...<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+...
+<span class="c1"># using the -o operator (OR)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition_a<span class="w"> </span>-o<span class="w"> </span>condition_b<span class="w"> </span>...<span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+...
+</pre></div>
+</div>
+<p><strong>Combine condition and command</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine command and condition (command must exit with 0)</span>
+<span class="k">if</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</pre></div>
+</div>
+<p><strong>Negate condition</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># condition is not True</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+...
+</pre></div>
+</div>
+<p>All conditions must be matches</p>
+<section id="string-comparisons">
+<span id="bash-string-comparisons"></span><h4>String Comparisons<a class="headerlink" href="#string-comparisons" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>True if …</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>str1 = str2</p></td>
+<td><p>str1 matches str2</p></td>
+</tr>
+<tr class="row-odd"><td><p>str1 != str2</p></td>
+<td><p>str1 does not match str2</p></td>
+</tr>
+<tr class="row-even"><td><p>str1 &lt; str2</p></td>
+<td><p>str1 is less than str2</p></td>
+</tr>
+<tr class="row-odd"><td><p>str1 &gt; str2</p></td>
+<td><p>str1 is greater than str2</p></td>
+</tr>
+<tr class="row-even"><td><p>-n str1</p></td>
+<td><p>str1 is not null (has length greater than 0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>-z str1</p></td>
+<td><p>str1 is not null (has length 0)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="file-attribute-checking">
+<h4>File attribute checking<a class="headerlink" href="#file-attribute-checking" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>True if …</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-a <em>file</em></p></td>
+<td><p><em>file</em> exists</p></td>
+</tr>
+<tr class="row-odd"><td><p>-d <em>file</em></p></td>
+<td><p><em>file</em> exists and is a directory</p></td>
+</tr>
+<tr class="row-even"><td><p>-e <em>file</em></p></td>
+<td><p><em>file</em> exists; same as -a</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f <em>file</em></p></td>
+<td><p><em>file</em> exists and is a regular <em>file</em> *</p></td>
+</tr>
+<tr class="row-even"><td><p>-r <em>file</em></p></td>
+<td><p>you have read permission on <em>file</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>-s <em>file</em></p></td>
+<td><p><em>file</em> exists and is not empty</p></td>
+</tr>
+<tr class="row-even"><td><p>-w <em>file</em></p></td>
+<td><p>you have write permissions on <em>file</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>-x <em>file</em></p></td>
+<td><p>you have execution permission on <em>file</em></p></td>
+</tr>
+<tr class="row-even"><td><p>-N <em>file</em></p></td>
+<td><p><em>file</em> was modified since it was last read</p></td>
+</tr>
+<tr class="row-odd"><td><p>-O <em>file</em></p></td>
+<td><p>you own <em>file</em></p></td>
+</tr>
+<tr class="row-even"><td><p>-G <em>file</em></p></td>
+<td><p><em>file</em>’s group IP matches yours **</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>file1</em> -nt <em>file2</em></p></td>
+<td><p><em>file1</em> is newer than <em>file2</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>file1</em> -ot <em>file2</em></p></td>
+<td><p><em>file1</em> is older than <em>file2</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">* no directory or other special type of file</div>
+<div class="line">** or one of yours, if you are in multiple groups</div>
+</div>
+</section>
+<section id="integer-conditionals">
+<h4>Integer Conditionals<a class="headerlink" href="#integer-conditionals" title="Link to this heading"></a></h4>
+<p>Comparison of two integer values</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Test</p></th>
+<th class="head"><p>Comparison</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-lt</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-odd"><td><p>-le</p></td>
+<td><p>Less than or equal</p></td>
+</tr>
+<tr class="row-even"><td><p>-eq</p></td>
+<td><p>Equal</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ge</p></td>
+<td><p>Greater than or equal</p></td>
+</tr>
+<tr class="row-even"><td><p>-gt</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ne</p></td>
+<td><p>Not equal</p></td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># greater_10.sh</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-gt<span class="w">  </span><span class="m">10</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Your input is greater than 10&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Your input is smaller than or equals 10&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Running...</span>
+./greater_10.sh<span class="w"> </span><span class="m">20</span>
+<span class="c1"># Your input is greater than 10</span>
+./greater_10.sh<span class="w"> </span><span class="m">2</span>
+<span class="c1"># Your input is smaller than or equals 10</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="for">
+<h3>for<a class="headerlink" href="#for" title="Link to this heading"></a></h3>
+<p>The <em>for</em> loop is <strong>not</strong> suited to execute a command for a fixed amount of times,
+but rather execute over a list a arguments (like a set of files):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute for each member of list -&gt; $name</span>
+<span class="k">for</span><span class="w"> </span>name<span class="w"> </span><span class="o">[</span><span class="k">in</span><span class="w"> </span>list<span class="o">]</span>
+<span class="k">do</span>
+<span class="w">    </span>statements<span class="w"> </span>tha<span class="w"> </span>can<span class="w"> </span>use<span class="w"> </span><span class="nv">$name</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">[in</span> <span class="pre">list]</span></code> is omitted, the list defaults to <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> (all command line arguments),
+but for readability, it should always be provided.</p>
+<p><strong>Example:</strong> Print info of all directories in the <em>PATH</em> variable</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the IFS (Internal Field Separator) to colon (as used by PATH)</span>
+<span class="nv">IFS</span><span class="o">=</span>:
+
+<span class="k">for</span><span class="w"> </span>dir<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$PATH</span>
+<span class="k">do</span>
+<span class="w">    </span>ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$dir</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p><strong>Example</strong>: Print all positional arguments</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</section>
+<section id="case">
+<h3>case<a class="headerlink" href="#case" title="Link to this heading"></a></h3>
+<p>Used to test a variable’s value and execute specific statements depending on the value.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="w"> </span>expression<span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>pattern1<span class="w"> </span><span class="o">)</span>
+<span class="w">        </span>statements<span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>pattern2<span class="w"> </span><span class="o">)</span>
+<span class="w">        </span>statements<span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span>...
+<span class="w">    </span><span class="k">esac</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">esac</span></code> statement end a <em>case</em> block (it actually <em>case</em> backwards).</p>
+<p><strong>Example:</strong> Case differentiates file suffix</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">pnmfile</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%.*</span><span class="si">}</span>.ppm
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$filename</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span>*.jpg<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>*.tga<span class="w"> </span><span class="o">)</span><span class="w"> </span>tgatoppm<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$pnmfile</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>*.gif<span class="w"> </span><span class="o">)</span><span class="w"> </span>giftopnm<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$pnmfile</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">            </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;procfile: </span><span class="nv">$filename</span><span class="s2"> is an unknown graphic file.&quot;</span>
+<span class="w">                </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="nv">outfile</span><span class="o">=</span><span class="si">${</span><span class="nv">pnmfile</span><span class="p">%.ppm</span><span class="si">}</span>.new.jpg
+<span class="w">    </span>pnmtojpeg<span class="w"> </span><span class="nv">$pnmfile</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$outfile</span>
+<span class="w">    </span>rm<span class="w"> </span><span class="nv">$pnmfile</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">)</span></code> case matches everything, but is only executed, if no other case
+matched before.</p>
+<p><strong>Example:</strong> Checking the amount of arguments</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Zero or one argument ;;</span>
+<span class="s2">    2    )  echo &quot;</span>Two<span class="w"> </span>arguments<span class="s2">&quot; ;;</span>
+<span class="s2">    *    )  echo &quot;</span>More<span class="w"> </span>than<span class="w"> </span>two<span class="w"> </span>arguments<span class="s2">&quot; ;;</span>
+<span class="s2">esac</span>
+</pre></div>
+</div>
+<p>Multiple values can be combined via <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+</section>
+<section id="while-until">
+<h3>While &amp; until<a class="headerlink" href="#while-until" title="Link to this heading"></a></h3>
+<p>Allow code to run repetitively until a condition becomes True.</p>
+<p>The <em>while</em> syntax:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>statements
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">condition</span></code> is actually a <em>list of statements</em> of which the last statement’s
+return value is used as the value of the condition.</p>
+<p>These are the same:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># loop while condition is True</span>
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+
+<span class="c1"># loop until condition becomes False, behavior as with upper while example</span>
+<span class="k">until</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>condition<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</pre></div>
+</div>
+<p>So <code class="docutils literal notranslate"><span class="pre">until</span></code> is not used a lot. A use case for <code class="docutils literal notranslate"><span class="pre">until</span></code> can be to execute a
+failing command until it succeeds:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">until</span><span class="w"> </span>commmand<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>statements
+<span class="k">done</span>
+</pre></div>
+</div>
+<p><strong>Example</strong>: Loop through all <em>PATH</em> variable entries</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">path</span><span class="o">=</span><span class="nv">$PATH</span><span class="w">  </span><span class="c1"># make copy of PATH and append colon at the end</span>
+<span class="w">            </span><span class="c1"># all entries are separated by colon</span>
+
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$path</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">        </span><span class="c1"># loop until path is empty (&quot;&quot;)</span>
+<span class="w">    </span>ls<span class="w"> </span>-ld<span class="w"> </span><span class="si">${</span><span class="nv">path</span><span class="p">%%:*</span><span class="si">}</span><span class="w">     </span><span class="c1"># remove colon at the end of $path</span>
+<span class="w">    </span><span class="nv">path</span><span class="o">=</span><span class="si">${</span><span class="nv">path</span><span class="p">#*:</span><span class="si">}</span><span class="w">        </span><span class="c1"># remove current $path from path (colon-separated)</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p><strong>Example</strong>: Copy file until succeeds</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">until</span><span class="w"> </span>cp<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nv">$2</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Attempt to copy failed. waiting...&#39;</span>
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">5</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="command-line-options-typed-variables">
+<h2>Command Line Options &amp; Typed Variables<a class="headerlink" href="#command-line-options-typed-variables" title="Link to this heading"></a></h2>
+</section>
+<section id="command-line-options">
+<h2>Command Line Options<a class="headerlink" href="#command-line-options" title="Link to this heading"></a></h2>
+<section id="shift">
+<h3>shift<a class="headerlink" href="#shift" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">shift</span></code> command shifts the argument index by as many times as defined.
+For example, <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">3</span></code> leads to <code class="docutils literal notranslate"><span class="pre">1=$4,</span> <span class="pre">2=$5,</span> <span class="pre">...</span></code>, meaning $1 references the
+fourth positional argument, $2 the fifth and so on. The original first three
+arguments are shifted out of scope.</p>
+<p>This allows for putting command line options <strong>before</strong> the positional arguments.
+It only allows for separate, uniform arguments (e.g. single dash).</p>
+<p><strong>Example:</strong> Single option (-o) script</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_script.sh</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-o<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">shift</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have an option: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="c1"># process the -o option</span>
+<span class="k">fi</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;First positional argument: </span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="c1"># normal processing of arguments</span>
+
+<span class="c1"># ./my_script.sh -o &quot;foo&quot; &quot;bar&quot;</span>
+<span class="c1"># We have an option: foo</span>
+<span class="c1"># First positional argument: bar</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">shift</span></code> without any integer number is a shift of 1 index position.</p>
+<p><strong>Example:</strong> Multiple options</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span>-a<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-a<span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>-b<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-b<span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>-c<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-c<span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Usage: alice [-a] [-b] [-c] args...&#39;</span>
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="nb">shift</span>
+<span class="k">done</span>
+<span class="c1"># normal processing of arguments</span>
+</pre></div>
+</div>
+<p><strong>Example</strong>: Multiple options + options with arguments</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
+<span class="w">        </span>-a<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-a<span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>-b<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-b<span class="w"> </span><span class="p">;;</span>
+<span class="w">            </span><span class="c1"># $2 is the option&#39;s argument</span>
+<span class="w">            </span><span class="nb">shift</span><span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>-c<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-c<span class="w"> </span><span class="p">;;</span>
+<span class="w">        </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Usage: alice [-a] [-b] [-c] args...&#39;</span>
+<span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">esac</span>
+<span class="w">    </span><span class="nb">shift</span>
+<span class="k">done</span>
+<span class="c1"># normal processing of arguments</span>
+</pre></div>
+</div>
+<p>As the <code class="docutils literal notranslate"><span class="pre">-b</span></code> option has a argument, like <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">debug</span></code>, before proceeding to the
+next option (-c), another shift must happen.</p>
+</section>
+<section id="getopts">
+<h3>getopts<a class="headerlink" href="#getopts" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">getopts</span></code> command allows for</p>
+<ul class="simple">
+<li><p>combined options (e.g. <code class="docutils literal notranslate"><span class="pre">-abc</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">-a</span> <span class="pre">-b</span> <span class="pre">-c</span></code>)</p></li>
+<li><p>option without space in between its argument (e.g. <code class="docutils literal notranslate"><span class="pre">-barg</span></code> instead of <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">arg</span></code>)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">getopts</span></code> takes two arguments:</p>
+<ul class="simple">
+<li><p>the first is a string which can contain letters and colon. A letter is a valid option,
+a colon means, the preceding option requires an argument.</p></li>
+<li><p>the second is a variable name to which each option letter is assigned to (without the dash)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">    </span><span class="c1"># getopts_simple.sh</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s2">&quot;:ab:c&quot;</span><span class="w"> </span>opt<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos"> 3</span><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nv">$opt</span><span class="w"> </span><span class="k">in</span>
+<span class="linenos"> 4</span><span class="w">            </span>a<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;processing -a&quot;</span><span class="w"> </span><span class="p">;;</span>
+<span class="linenos"> 5</span><span class="w">            </span>b<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;processing -b&quot;</span>
+<span class="linenos"> 6</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPTIND</span><span class="s2"> is the option index&quot;</span>
+<span class="linenos"> 7</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$opt</span><span class="s2"> is the option&quot;</span>
+<span class="linenos"> 8</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPTARG</span><span class="s2"> is the option&#39;s argument&quot;</span><span class="w"> </span><span class="p">;;</span>
+<span class="linenos"> 9</span><span class="w">            </span>c<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;processing -c&quot;</span><span class="w"> </span><span class="p">;;</span>
+<span class="linenos">10</span><span class="w">            </span><span class="se">\?</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;usage: getopts_simple.sh [-a] [-b barg] [-c] args...&quot;</span>
+<span class="linenos">11</span><span class="w">                 </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">12</span><span class="w">        </span><span class="k">esac</span>
+<span class="linenos">13</span><span class="w">    </span><span class="k">done</span>
+<span class="linenos">14</span><span class="w">    </span><span class="nb">shift</span><span class="w"> </span><span class="k">$((</span><span class="nv">$OPTIND</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
+<span class="linenos">15</span><span class="w">    </span><span class="c1"># normal processing of arguments...</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">    </span><span class="c1"># ./getopts_simple.sh -a -b &quot;foo&quot; -c</span>
+<span class="linenos">18</span><span class="w">    </span><span class="c1"># 2: processing -a</span>
+<span class="linenos">19</span><span class="w">    </span><span class="c1"># 4: processing -b</span>
+<span class="linenos">20</span><span class="w">    </span><span class="c1"># 4 is the option index</span>
+<span class="linenos">21</span><span class="w">    </span><span class="c1"># b is the option</span>
+<span class="linenos">22</span><span class="w">    </span><span class="c1"># foo is the option&#39;s argument</span>
+<span class="linenos">23</span><span class="w">    </span><span class="c1"># 5: processing -c</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Line 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The first colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) in <code class="docutils literal notranslate"><span class="pre">&quot;:ab:c&quot;</span></code> prevents getopts to print errors
+in case an illegal option is provided. The <code class="docutils literal notranslate"><span class="pre">-a</span></code>, <code class="docutils literal notranslate"><span class="pre">-b</span></code> and <code class="docutils literal notranslate"><span class="pre">-c</span></code>
+options are accepted, while <code class="docutils literal notranslate"><span class="pre">-b</span></code> takes an argument (<code class="docutils literal notranslate"><span class="pre">b:</span></code>)</p>
+</dd>
+<dt class="field-even">Line 8<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">$OPTARG</span></code> … The argument value of the currently selected option</p>
+</dd>
+<dt class="field-odd">Line 14<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">$OPTIND</span></code> … The index of the <strong>next</strong> command-line argument to be
+processed. After <code class="docutils literal notranslate"><span class="pre">getopts</span></code> is done, it equals the number of the first
+“real” argument. It is initialized with <strong>1</strong> and <em>getopts</em> increments
+it by 1 at the start of processing the next option.</p>
+</dd>
+<dt class="field-even">Line 15<span class="colon">:</span></dt>
+<dd class="field-even"><p>The expression <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">$(($OPTIND</span> <span class="pre">-</span> <span class="pre">1))</span></code> shifts the index to the
+regular arguments (like <code class="docutils literal notranslate"><span class="pre">$1</span></code> or <code class="docutils literal notranslate"><span class="pre">$2</span></code>) -&gt;
+<a class="reference internal" href="#bash-arithmetic-operations"><span class="std std-ref">arithmetic operations</span></a></p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">getopts</span></code> does not rely on <code class="docutils literal notranslate"><span class="pre">shift</span></code> statements to know where it is</p></li>
+</ul>
+</section>
+</section>
+<section id="typed-variables">
+<h2>Typed Variables<a class="headerlink" href="#typed-variables" title="Link to this heading"></a></h2>
+<p>The built-in <code class="docutils literal notranslate"><span class="pre">declare</span></code> command defines variables for this session or script.
+It features the following options:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-a</p></td>
+<td><p>The variables are treated as arrays</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f</p></td>
+<td><p>Use function names only</p></td>
+</tr>
+<tr class="row-even"><td><p>-F</p></td>
+<td><p>Display function names without definitions</p></td>
+</tr>
+<tr class="row-odd"><td><p>-i</p></td>
+<td><p>The variables are treated as integers</p></td>
+</tr>
+<tr class="row-even"><td><p>-f</p></td>
+<td><p>Make the variables as read-only</p></td>
+</tr>
+<tr class="row-odd"><td><p>-x</p></td>
+<td><p>Mark the variables for export via the environment</p></td>
+</tr>
+</tbody>
+</table>
+<p>Running <code class="docutils literal notranslate"><span class="pre">declare</span></code> without any options prints all variables within this environment.
+The command syntax:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">declare</span><span class="w"> </span>&lt;option&gt;<span class="w"> </span>&lt;<span class="nv">variableA</span><span class="o">=</span>valueA&gt;<span class="w"> </span>&lt;<span class="nv">variableB</span><span class="o">=</span>valueB&gt;<span class="w"> </span>...
+</pre></div>
+</div>
+</section>
+<section id="integer-variables-and-arithmetic">
+<span id="bash-arithmetic-operations"></span><h2>Integer Variables and Arithmetic<a class="headerlink" href="#integer-variables-and-arithmetic" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Arithmetic operations are enclosed in <code class="docutils literal notranslate"><span class="pre">$((...))</span></code></p></li>
+<li><p>Variables within arithmetic operations don’t require but can have a preceding dollar sign</p></li>
+<li><p>Inside double-quotes arithmetic operations are evaluated</p></li>
+</ul>
+<p>Arithmetic operators:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>++</p></td>
+<td><p>Increment by one (prefix and postfix)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–</p></td>
+<td><p>Decrement by one (prefix and postfix)</p></td>
+</tr>
+<tr class="row-even"><td><p>+</p></td>
+<td><p>Plus</p></td>
+</tr>
+<tr class="row-odd"><td><p>-</p></td>
+<td><p>Minus</p></td>
+</tr>
+<tr class="row-even"><td><p>*</p></td>
+<td><p>Multiplication</p></td>
+</tr>
+<tr class="row-odd"><td><p>/</p></td>
+<td><p>Division (with truncation)</p></td>
+</tr>
+<tr class="row-even"><td><p>%</p></td>
+<td><p>Remainder</p></td>
+</tr>
+<tr class="row-odd"><td><p>**</p></td>
+<td><p>Exponentiation</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;&lt;</p></td>
+<td><p>Bit-shift left</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;&gt;</p></td>
+<td><p>Bit-shift right</p></td>
+</tr>
+<tr class="row-even"><td><p>&amp;</p></td>
+<td><p>Bitwise and</p></td>
+</tr>
+<tr class="row-odd"><td><p>|</p></td>
+<td><p>Bitwise or</p></td>
+</tr>
+<tr class="row-even"><td><p>~</p></td>
+<td><p>Bitwise not</p></td>
+</tr>
+<tr class="row-odd"><td><p>!</p></td>
+<td><p>Logical not</p></td>
+</tr>
+<tr class="row-even"><td><p>^</p></td>
+<td><p>Bitwise exclusive or</p></td>
+</tr>
+<tr class="row-odd"><td><p>,</p></td>
+<td><p>Sequential evaluation</p></td>
+</tr>
+</tbody>
+</table>
+<p>Relational operators:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;=</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;=</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>==</p></td>
+<td><p>Equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>!=</p></td>
+<td><p>Not equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>&amp;&amp;</p></td>
+<td><p>Logical and</p></td>
+</tr>
+<tr class="row-odd"><td><p>||</p></td>
+<td><p>Logical or</p></td>
+</tr>
+</tbody>
+</table>
+<section id="arithmetic-conditional">
+<h3>Arithmetic Conditional<a class="headerlink" href="#arithmetic-conditional" title="Link to this heading"></a></h3>
+<p>Testing of numerical values via operators (similar to
+<a class="reference internal" href="#bash-string-comparisons"><span class="std std-ref">string comparisons</span></a>):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-lt</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-odd"><td><p>-gt</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-even"><td><p>-le</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ge</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>-eq</p></td>
+<td><p>Equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>-ne</p></td>
+<td><p>Not equal to</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>...
+<span class="o">[</span><span class="w"> </span><span class="se">\(</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\(</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>-le<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\)</span><span class="w"> </span><span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="arithmetic-variables-and-assignment">
+<h3>Arithmetic Variables and Assignment<a class="headerlink" href="#arithmetic-variables-and-assignment" title="Link to this heading"></a></h3>
+<p>continue learning the bash shell page 150</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rst_sphinx.html" class="btn btn-neutral float-left" title="reStructuredText &amp; Sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sqlite/index.html" class="btn btn-neutral float-right" title="SQLite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

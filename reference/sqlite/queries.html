@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Queries &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visual Studio Code extensions" href="../vscode_extensions.html" />
+    <link rel="prev" title="SQLite" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SQLite</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Queries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#query-data-from-tables">Query data from tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-order">General order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basic">Basic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rename-resulting-column-names">Rename resulting column names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-value-for-additional-columns">Define value for additional columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#no-duplicates">No duplicates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filter-results">Filter results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limit-results">Limit results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-data-from-multiple-tables">Join data from multiple tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#split-result-into-group">Split result into group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filter-groups">Filter groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combine-multiple-queries-into-single-results">Combine multiple queries into single results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#return-rows-that-are-output-of-two-queries">Return rows that are output of two queries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subqueries">Subqueries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-when-then-else-end">CASE … WHEN … THEN … ELSE … END</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#add-update-data">Add &amp; Update data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#insert-new-data-values-to-table">Insert new data values to table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#change-column-data">Change column data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-data">Delete data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replace-rows-delete-add">Replace rows (Delete + Add)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transaction">Transaction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">SQLite</a></li>
+      <li class="breadcrumb-item active">Basic Queries</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/sqlite/queries.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basic-queries">
+<h1>Basic Queries<a class="headerlink" href="#basic-queries" title="Link to this heading"></a></h1>
+<p>Source: <a class="reference external" href="https://www.sqlitetutorial.net">https://www.sqlitetutorial.net</a></p>
+<section id="query-data-from-tables">
+<h2>Query data from tables<a class="headerlink" href="#query-data-from-tables" title="Link to this heading"></a></h2>
+<section id="general-order">
+<h3>General order<a class="headerlink" href="#general-order" title="Link to this heading"></a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="n">table_list</span>
+<span class="w">  </span><span class="k">JOIN</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">join_condition</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">row_filter</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">column</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="k">offset</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">column</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="n">group_filter</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="basic">
+<h3>Basic<a class="headerlink" href="#basic" title="Link to this heading"></a></h3>
+<p>Select all items from a table</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">SELECT</span> * <span style="color:red;">FROM</span> tableA;
+</pre>
+</div><p>Select all items from a table column</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Select all items from several table columns</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="rename-resulting-column-names">
+<h3>Rename resulting column names<a class="headerlink" href="#rename-resulting-column-names" title="Link to this heading"></a></h3>
+<p>Renaming column names of resulting matches</p>
+<div class="highlight">
+<pre>
+SELECT columnA <span style="color:red;">AS</span> foo, columnB AS bar FROM tableA;
+</pre>
+</div></section>
+<section id="define-value-for-additional-columns">
+<h3>Define value for additional columns<a class="headerlink" href="#define-value-for-additional-columns" title="Link to this heading"></a></h3>
+<p>Each row will receive the value ‘MyValue’ in column ’Type’</p>
+<div class="highlight">
+<pre>
+SELECT columnA, <span style="color:red;">'</span>MyValue<span style="color:red;">'</span> AS Type FROM tableA;
+</pre>
+</div></section>
+<section id="no-duplicates">
+<h3>No duplicates<a class="headerlink" href="#no-duplicates" title="Link to this heading"></a></h3>
+<p>Select items without duplicate values (single column) or combination (multiple columns)</p>
+<div class="highlight">
+<pre>
+SELECT <span style="color:red;">DISTINCT</span> columnA FROM tableA;
+</pre>
+</div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">DISCTINCT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Order results by columnA primarily, secondarily by columnB</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">ASC</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Order results by column ID (here: columnB = 2, columnC = 3)</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="p">,</span><span class="w"> </span><span class="n">columnC</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">ASC</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="filter-results">
+<h3>Filter results<a class="headerlink" href="#filter-results" title="Link to this heading"></a></h3>
+<p>Basic syntax</p>
+<div class="highlight">
+<pre>
+SELECT column_list FROM table <span style="color:red;">WHERE</span> search_condition;
+</pre>
+</div><p>Comparison operators</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>=</p></td>
+<td><p>Equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;&gt; or !=</p></td>
+<td><p>Not equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;=</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;=</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+</tbody>
+</table>
+<p>Logical operators</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AND</p></td>
+<td><p>returns 1 if both expressions are 1, and 0 if one of the expressions is 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BETWEEN</p></td>
+<td><p>returns 1 if a value is within a range.</p></td>
+</tr>
+<tr class="row-even"><td><p>EXISTS</p></td>
+<td><p>returns 1 if a subquery contains any rows.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IN</p></td>
+<td><p>returns 1 if a value is in a list of values.</p></td>
+</tr>
+<tr class="row-even"><td><p>LIKE</p></td>
+<td><p>returns 1 if a value matches a pattern</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOT</p></td>
+<td><p>reverses the value of other operators such as NOT EXISTS, NOT IN, NOT BETWEEN, etc.</p></td>
+</tr>
+<tr class="row-even"><td><p>OR</p></td>
+<td><p>returns true if either expression is 1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Single condition (value from column)</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Multiple conditions</p>
+<div class="highlight">
+<pre>
+# must all be true
+SELECT columnA, columnB FROM table WHERE columnA > 5000 <span style="color:red;">AND</span> columnB = 10;
+
+# at least one must be true
+SELECT columnA, columnB FROM table WHERE <span style="color:red;">ANY</span> columnA > 5000 AND columnB = 10;
+</pre>
+</div>
+
+Search value containing a substring (LIKE) -> case-insensitive<div class="highlight">
+<pre>
+# must all be true
+SELECT columnA FROM table WHERE columnA <span style="color:red;">LIKE</span> ‘%foobar_’;
+</pre>
+</div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>%</p></td>
+<td><p>matches zero or more characters</p></td>
+</tr>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>matches a single character</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Search value that contains any of the wildcard characters (<code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">_</span></code>)
+(here: ‘' is used as escape character)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table WHERE columnA LIKE ’%50\%%’ <span style="color:red;">ESCAPE</span> ‘\’;
+</pre>
+</div><p>Search value containing a substring (GLOB) -&gt; case-sensitive</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table where columnA <span style="color:red;">GLOB</span> ‘?Man*’;
+</pre>
+</div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>*</p></td>
+<td><p>matches zero or more characters</p></td>
+</tr>
+<tr class="row-even"><td><p>?</p></td>
+<td><p>matches a single character</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Search if value within a range of allowed values</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table WHERE columnA <span style="color:red;">IN</span> (10,20,30);
+</pre>
+</div><p>Search if value is between two values (value itself are included)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table WHERE columnA <span style="color:red;">BETWEEN</span> 1 <span style="color:red;">AND</span> 10;
+</pre>
+</div><p>Search if value is not between two values (values itself are not included</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table WHERE columnA <span style="color:red;">NOT</span> BETWEEN 100 and 199;
+</pre>
+</div></section>
+<section id="limit-results">
+<h3>Limit results<a class="headerlink" href="#limit-results" title="Link to this heading"></a></h3>
+<p>Limit the amount of rows to return (here: 10)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table <span style="color:red;">LIMIT</span> 10;
+</pre>
+</div><p>Limit with an offset (start at nth row of the results, here: 30)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM table LIMIT 10 <span style="color:red;">OFFSET</span> 30;
+</pre>
+</div></section>
+<section id="join-data-from-multiple-tables">
+<h3>Join data from multiple tables<a class="headerlink" href="#join-data-from-multiple-tables" title="Link to this heading"></a></h3>
+<p>Usually foreign keys are used in these conditions (here: someID), which exists in all joined tables.</p>
+<p>Returns row only if condition matches (here: someID value exists for both a row in tableA and tableB)
+-&gt; INNER JOIN</p>
+<div class="highlight">
+<pre>
+# regular
+SELECT columnA, columnB FROM tableA <span style="color:red;">INNER JOIN</span> tableB <span style="color:red;">ON</span> tableB.sameID = tableA.someID;
+
+# shortened via aliases
+SELECT A.columnA, B.ColumnB FROM tableA A INNER JOIN tableB B ON A.someID = B.someID;
+
+# shortened using USING
+SELECT columnA, columnB FROM tableA INNER JOIN tableB <span style="color:red;">USING</span>(tableA.someID);
+
+# 2+ tables
+SELECT someID, tableA.columnA, tableB.columnB, tableC.columnC
+FROM tableA
+INNER JOIN tableB ON tableB.someID = tableA.someID
+INNER JOIN tableC ON tableC.someID = tableB.someID;
+</pre>
+</div><figure class="align-center" id="id1">
+<img alt="../../_images/inner_join.png" src="../../_images/inner_join.png" />
+<figcaption>
+<p><span class="caption-text">Inner Join</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Adding additional condition(s)</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">tableB</span><span class="w"> </span><span class="k">USING</span><span class="p">(</span><span class="n">tableA</span><span class="p">.</span><span class="n">someID</span><span class="p">)</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Returns any row, but uses NULL (here: for columnB value) if “right” table does not have a
+matching row -&gt; LEFT JOIN</p>
+<div class="highlight">
+<pre>
+# regular
+SELECT columnA, columnB FROM tableA <span style="color:red;">LEFT JOIN</span> tableB ON tableA.someID = tableB.someID;
+
+# using USING
+SELECT columnA, columnB FROM tableA LEFT JOIN tableB USING (tableA.someID);
+</pre>
+</div><figure class="align-center" id="id2">
+<img alt="../../_images/left_join.png" src="../../_images/left_join.png" />
+<figcaption>
+<p><span class="caption-text">Left Join</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Creates a Cartesian product of tables (i.e. all possible column combinations)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA <span style="color:red;">CROSS JOIN</span> tableB;
+</pre>
+</div><p>Join various columns of a table with itself</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA1</span><span class="p">,</span><span class="w"> </span><span class="n">colummA2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="n">someID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a2</span><span class="p">.</span><span class="n">anotherID</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="split-result-into-group">
+<h3>Split result into group<a class="headerlink" href="#split-result-into-group" title="Link to this heading"></a></h3>
+<p>Display count results as groups (one row per resulting group) while using an
+aggregate function (e.g. COUNT)</p>
+<div class="highlight">
+<pre>
+SELECT columnA, <span style="color:red;">COUNT</span>(someID) FROM tableA <span style="color:red;">GROUP BY</span> columnA;
+
+# more real example (returns number of tracks per album)
+SELECT albumid, COUNT(trackid) FROM tracks GROUP BY albumid;
+</pre>
+</div><p>Without the group by statement, all values for “notuniqueID” are just counted (which returns
+number of not NULL values for this column). The GROUP BY statement splits up this count to
+the various values in columnA</p>
+<p>Combine with INNER JOIN</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">tableA</span><span class="p">.</span><span class="n">columnA1</span><span class="p">,</span><span class="w"> </span><span class="n">columnA2</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">someID</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">tableB</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">tableB</span><span class="p">.</span><span class="n">columnA1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tableA</span><span class="p">.</span><span class="n">columnA1</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">tableA</span><span class="p">.</span><span class="n">columnA1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Returns only results that have match on tableB.
+Please note that <em>tableA.columnA1</em> must be specified after SELECT, since both <em>tableA</em> and <em>tableB</em> have this column.</p>
+<p>MAX, MIN and AVG functions</p>
+<div class="highlight">
+<pre>
+SELECT tableA.columnA1, <span style="color:red;">min</span>(columnA2), <span style="color:red;">max</span>(columnA2), <span style="color:red;">round</span>(<span style="color:red;">avg</span>(columnA2),2)
+FROM tableA
+INNER JOIN tableB ON tableB.columnA1 = tableA.columnA1
+GROUP BY tableA.columnA1;
+</pre>
+</div><p>Grouping by multiple columns (will create all combination values of columnA1 and columnA2 as groups)</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA1</span><span class="p">,</span><span class="w"> </span><span class="n">columnA2</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">someID</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columnA1</span><span class="p">,</span><span class="w"> </span><span class="n">columnA2</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="filter-groups">
+<h3>Filter groups<a class="headerlink" href="#filter-groups" title="Link to this heading"></a></h3>
+<p>The HAVING clause can only be applied to group results</p>
+<p>Direct value</p>
+<div class="highlight">
+<pre>
+SELECT columnA, COUNT(someID) FROM tableA GROUP BY columnA <span style="color:red;">HAVING</span> columnA = 1;
+</pre>
+</div><p>Value range</p>
+<div class="highlight">
+<pre>
+SELECT columnA, COUNT(someID) FROM tableA GROUP BY columnA HAVING count(someID) <span style="color:red;">BETWEEN</span> 18 <span style="color:red;">AND</span> 20;
+</pre>
+</div></section>
+<section id="combine-multiple-queries-into-single-results">
+<h3>Combine multiple queries into single results<a class="headerlink" href="#combine-multiple-queries-into-single-results" title="Link to this heading"></a></h3>
+<p>Combine two queries into one result (eliminating duplicates)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA <span style="color:red;">UNION</span> 18 <span style="color:red;">AND</span> SELECT columnB from tableB;
+</pre>
+</div><p>-&gt; results from columnB are merged into columnA results (no duplicates)</p>
+<p>Combine two queries into one result (including duplicates)</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA <span style="color:red;">UNION ALL</span> 18 <span style="color:red;">AND</span> SELECT columnB from tableB;
+</pre>
+</div><p>-&gt; results from columnB are merged into columnA results (including duplicates)</p>
+<figure class="align-center" id="id3">
+<img alt="../../_images/union.png" src="../../_images/union.png" />
+<figcaption>
+<p><span class="caption-text">Union</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="../../_images/union_all.png" src="../../_images/union_all.png" />
+<figcaption>
+<p><span class="caption-text">Union All</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Filter out results from left query that has a match in right query</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA <span style="color:red;">EXCEPT</span> SELECT columnA FROM tableB;
+</pre>
+</div></section>
+<section id="return-rows-that-are-output-of-two-queries">
+<h3>Return rows that are output of two queries<a class="headerlink" href="#return-rows-that-are-output-of-two-queries" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both data value and data type must be equal.</p>
+</div>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA <span style="color:red;">INTERSECT</span> SELECT columnB FROM tableB;
+</pre>
+</div><figure class="align-center" id="id5">
+<img alt="../../_images/intersect.png" src="../../_images/intersect.png" />
+<figcaption>
+<p><span class="caption-text">Intersect</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="subqueries">
+<h3>Subqueries<a class="headerlink" href="#subqueries" title="Link to this heading"></a></h3>
+<p>Nest a SELECT statement into another …</p>
+<p>… within WHERE</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnB</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableB</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">columnC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>… within FROM</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span>
+<span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">columnB</span><span class="p">)</span><span class="w"> </span><span class="k">SIZE</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableB</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">some_id</span>
+<span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">columnB_subset</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Check if subquery returns any result:</p>
+<ul class="simple">
+<li><p>Zero -&gt; False</p></li>
+<li><p>One or more -&gt; True</p></li>
+</ul>
+<p>Only return row if tableB has same value in its columnA</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA A WHERE <span style="color:red;">EXISTS</span> ( SELECT columnA from tableB WHERE columnA = A.columnA );
+</pre>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some EXISTS operations can also be done with IN, but EXISTS in faster.</p>
+</div>
+<p>Only return row if tableB does <span class="ulined">not</span> have that value in its columnA</p>
+<div class="highlight">
+<pre>
+SELECT columnA FROM tableA A WHERE <span style="color:red;">NOT EXISTS</span> ( SELECT columnA from tableB WHERE columnA = A.columnA );
+</pre>
+</div></section>
+<section id="case-when-then-else-end">
+<h3>CASE … WHEN … THEN … ELSE … END<a class="headerlink" href="#case-when-then-else-end" title="Link to this heading"></a></h3>
+<p>Set value ‘foo’ for columnB value, if column contains the value 1 otherwise set ‘bar’</p>
+<div class="highlight">
+<pre>
+SELECT columnA, <span style="color:red;">CASE</span> columnB <span style="color:red;">WHEN</span> '1' <span style="color:red;">THEN</span> 'foo' <span style="color:red;">ELSE</span> 'bar' FROM tableA;
+</pre>
+</div><p>Can also be used with other comparisons (set columnB to ‘little’, ‘medium’ or ‘large’ depending on its integer value)</p>
+<div class="highlight">
+<pre>
+SELECT columnA,
+    <span style="color:red;">CASE</span>
+        WHEN columnB < 1000 THEN ‘little’
+        WHEN columnB >= 1000 AND columnB < 10000 THEN ‘medium’
+        ELSE ‘large’
+    <span style="color:red;">END</span> columnB
+FROM tableA;
+</pre>
+</div></section>
+</section>
+<section id="add-update-data">
+<h2>Add &amp; Update data<a class="headerlink" href="#add-update-data" title="Link to this heading"></a></h2>
+<section id="insert-new-data-values-to-table">
+<h3>Insert new data values to table<a class="headerlink" href="#insert-new-data-values-to-table" title="Link to this heading"></a></h3>
+<p>Insert single row to table</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">INSERT INTO</span> tableA (columnA,columnB) <span style="color:red;">VALUES</span>(‘hello’,1);
+</div><p>Insert multiple rows</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="p">(</span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="p">)</span>
+<span class="k">VALUES</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Here&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Am&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Insert default values (increment ID columns, add NULL to others)</p>
+<div class="highlight">
+<pre>
+INSERT INTO tableA <span style="color:red;">DEFAULT</span> VALUES;
+</div><p>Insert values provided by SELECT statement</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tableA_backup</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="change-column-data">
+<h3>Change column data<a class="headerlink" href="#change-column-data" title="Link to this heading"></a></h3>
+<p>Update single column under condition</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">UPDATE</span> tableA <span style="color:red;">SET</span> columnA = 'some value' WHERE columnB = 10;
+</div><p>Update multiple columns</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;some value&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">columnX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">columnY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;valueA&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Update using other column’s values</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">columnB</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ss">&quot;.&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">columnC</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ss">&quot;@example.com&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-data">
+<h3>Delete data<a class="headerlink" href="#delete-data" title="Link to this heading"></a></h3>
+<p>Delete entire rows</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">DELETE</span> FROM tableA WHERE columnB = 10;
+</div><p>Delete all rows from table</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tableA</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="replace-rows-delete-add">
+<h3>Replace rows (Delete + Add)<a class="headerlink" href="#replace-rows-delete-add" title="Link to this heading"></a></h3>
+<p>If <strong>no</strong> unique index column is defined for a table, a REPLACE statement will simply add the values (same as INSERT).</p>
+<p>Define a unique index (here: columnA) -&gt; two rows cannot have the same value for columnA</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">CREATE UNIQUE INDEX</span> columnA <span style="color:red;">ON</span> tableA (columnA);
+</div><p>Replace single column</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">REPLACE INTO</span> tableA (columnA, columnB) VALUES ('some value', 10);
+</div><p>REPLACE deletes the old row and inserts a new one. A primary identifier column will receive the next available id, but not the one from
+the deleted row.</p>
+</section>
+<section id="transaction">
+<h3>Transaction<a class="headerlink" href="#transaction" title="Link to this heading"></a></h3>
+<p><em>coming later</em></p>
+<p><a class="reference external" href="https://www.sqlitetutorial.net/sqlite-transaction/">https://www.sqlitetutorial.net/sqlite-transaction/</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="SQLite" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../vscode_extensions.html" class="btn btn-neutral float-right" title="Visual Studio Code extensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

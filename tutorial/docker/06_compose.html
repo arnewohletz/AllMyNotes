@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>06 - Docker Compose Workshop &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="07 - Dockerizing your web applications" href="07_dockerize_webapp.html" />
+    <link rel="prev" title="05 - Docker Workshop" href="05_workshop.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_introduction.html">01 - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_understand.html">02 - Understanding Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_install.html">03 - Installing Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_discover.html">04 - Discovering Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_workshop.html">05 - Docker Workshop</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">06 - Docker Compose Workshop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-docker-compose-support">Adding docker compose support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-the-application-web-with-compose">Managing the application (web) with compose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-compose-api-v1-v2-v3">Docker Compose API v1/v2/v3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-microservices-with-docker-compose">Managing Microservices with Docker Compose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="07_dockerize_webapp.html">07 - Dockerizing your web applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_linux.html">Install Docker (CE) on Linux Mint (Ubuntu)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Docker</a></li>
+      <li class="breadcrumb-item active">06 - Docker Compose Workshop</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorial/docker/06_compose.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="docker-compose-workshop">
+<h1>06 - Docker Compose Workshop<a class="headerlink" href="#docker-compose-workshop" title="Link to this heading"></a></h1>
+<section id="adding-docker-compose-support">
+<h2>Adding docker compose support<a class="headerlink" href="#adding-docker-compose-support" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Docker compose uses a *.yml file to define all containers settings (previously
+passed as arguments to the ‘docker’ CLI commands)</p></li>
+<li><p>The docker compose file doesn’t have to be in the same directory as the dockerfile(s)
+but can reference them relatively to its own location (e.g. ./projectA)</p></li>
+</ul>
+<p>Define docker compose API version</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">version</span>: '3'
+</pre>
+</div><p>Define services (image + containers)</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">services</span>:
+  redis
+    # redis properties here
+  web:
+    # web application properties here
+</pre>
+</div><ul class="simple">
+<li><p>services lists all available images</p></li>
+<li><p>here ‘redis’ and ‘web’ will be the name of the image and the container</p></li>
+</ul>
+<p><strong>Inside the services:</strong></p>
+<div class="highlight">
+<pre>
+<span style="color:red;">image</span>: 'redis:5.0-alpine'
+image: 'nickjj/web:1.0' # from public docker hub
+</pre>
+</div><p>defines the docker image to be used (pulled down if not already existing)</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">build</span>: '.'
+</pre>
+</div><p>defines the image is to be built (not pulled) -&gt; location must point to the dockerfile
+location</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the docker-compose.yml file does not have to be in the same directory as the
+docker file (but might be one level higher)</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight">
+<pre>
+<span style="color:red;">ports</span>:
+  - '5000:5000'
+</pre>
+</div><p>defines ports to be opened for this service (multiple ports are possible)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>list entries start with a ‘-‘ (ports excepts values in form of a list)</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight">
+<pre>
+<span style="color:red;">volumes</span>:
+  - '.:/app'
+</pre>
+</div><p>defines a volume to be exposed (here the current directory ‘.’ is exposed in ‘/app’.
+Note that ‘.’ can be used instead of $PWD as in the docker CLI command, even on Windows)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>volumes:
+  - &#39;redis:/data&#39;
+</pre></div>
+</div>
+<p>exposes a named volume ‘redis’ inside ‘/data’</p>
+<p>Here, the named volumed must be specified in a ‘volumes’ properties (outside ‘services’):</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">volumes</span>:
+  redis:  {}
+</pre>
+</div><p>The {} can accept arguments (for example read-only) -&gt; see <a class="reference external" href="https://docs.docker.com/compose/compose-file/07-volumes/">Docker documentation</a></p>
+<div class="highlight">
+<pre>
+<span style="color:red;">depends_on</span>:
+  - 'redis'
+</pre>
+</div><p>tells docker, that that service <em>depends</em> on ‘redis’ (other service) to make sure,
+that ‘redis’ is launched before the services that contains this property (multiple
+dependencies can be added)</p>
+<p><strong>Adding environmental variables</strong> -&gt; two ways</p>
+<p>First one (explicit):</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">environment</span>:
+  FLASK_DEBUG: 'true'
+</pre>
+</div><p>Second one (referencing file):</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">env_file</span>:
+  - '.env'
+</pre>
+</div><p>is better to manage different sets of variables e.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>env_file:
+  - &#39;.env&#39;
+  - &#39;.env_production&#39;
+</pre></div>
+</div>
+<p>in which case, that ladder file overrides present key-values of the first file</p>
+<p>Env files can contain <a class="reference external" href="https://docs.docker.com/compose/environment-variables/envvars/">compose CLI environmental variables</a></p>
+<p><strong>COMPOSE_PROJECT_NAME</strong> should always be set, otherwise the current directory name is
+used as project name and prefixes images and containers names with it (e.g. web2)</p>
+<p>-&gt; the ‘web’ image will now be named ‘&lt;COMPOSE_PROJECT_NAME&gt;_&lt;services_name&gt;:&lt;version&gt;
+so in our case <em>web2_web:latest</em></p>
+<p>PYTHONBUFFERED=true must be set to see the applications output (Python) in the terminal
+when running docker compose</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Python there is only the PYTHONUNBUFFERED env var
+(see <a class="reference external" href="https://docs.python.org/3.7/using/cmdline.html#environment-variables">here</a>)</p>
+</div>
+</section>
+<section id="managing-the-application-web-with-compose">
+<h2>Managing the application (web) with compose<a class="headerlink" href="#managing-the-application-web-with-compose" title="Link to this heading"></a></h2>
+<p>Get docker compose help</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">--help</span>
+</pre>
+</div><ul class="simple">
+<li><p>docker-compose expects a <em>docker-compose.yml</em> file to be in the current directory</p></li>
+<li><p>if not, the <strong>-f</strong> flag allows to specify the location a one or multiple docker-compose.yml files</p></li>
+</ul>
+<p>Build an image</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">build</span>
+</pre>
+</div><ul class="simple">
+<li><p>the build image has the name ‘web2_web’</p></li>
+<li><p>‘web2’ is the name we defined in &lt;COMPOSE_PROJECT_NAME&gt;</p></li>
+<li><p>‘web’ is the service name defines in docker-compose.yml</p></li>
+</ul>
+<p>Get required images for the application</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">pull</span>
+</pre>
+</div><p>-&gt; here this downloads the redis image</p>
+<p>Run the application (all services specified in *.yml)</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">up</span>
+</pre>
+</div><ul class="simple">
+<li><p>creates a default network for the application (here ‘web2_default’)</p></li>
+<li><p>creates a container for dependencies docker image (here redis, so ‘web2_redis_1)</p></li>
+<li><p>creates a container for web application image (here ‘web2_web_1’)</p></li>
+<li><p>executes dockerfile (including entrypoint script) which launches the app</p></li>
+</ul>
+<p>Run single service (and possible dependency services)</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">up &lt;service_name&gt;</span>
+</pre>
+</div><p>When running several instances of the application, those will get incrementing index
+numbers (e.g. web2_web_1, web2_web_2, web2_web_3) -&gt; requires random application ports,
+though</p>
+<p>Combining build + pull + up in one command:</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">up --build -d</span>
+</pre>
+</div><p>(<strong>-d</strong> makes the process run in the background)</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">ps</span>
+</pre>
+</div><p>lists all container of the current project (even stopped ones)</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">logs -f</span>
+</pre>
+</div><p>prints out recent logs from all containers associated with the docker-compose project
+(here: ‘web’ and ‘redis’). The <strong>-f</strong> flag defines to follow along with new logs
+appearing</p>
+<p>Restart all containers</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">restart</span>
+</pre>
+</div><p>Restart particular container (service)</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">restart &lt;service_name&gt;</span>
+</pre>
+</div><p>e.g. <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">restart</span> <span class="pre">redis</span></code></p>
+<p>Execute a command on a running service</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">exec &lt;service_name&gt; &lt;command&gt;</span>
+</pre>
+</div><p>e.g. <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">web</span> <span class="pre">ls</span> <span class="pre">-la</span></code></p>
+<p>Notice, that the -it flags are <strong>not</strong> needed here (are automatically added by
+docker-compose)</p>
+<p>Start a service &amp; execute a command on it &amp; remove that container again</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">run &lt;service_name&gt; &lt;command&gt;</span>
+</pre>
+</div><p>e.g. <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">run</span> <span class="pre">redis</span> <span class="pre">redis-server</span> <span class="pre">--version</span></code></p>
+<ul class="simple">
+<li><p>this starts a new container, but doesn’t bind a port</p></li>
+<li><p>container is removed after command is executed</p></li>
+</ul>
+<p>Stop all running containers</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">stop</span>
+</pre>
+</div><p>Stop a single container</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">stop &lt;service_name&gt;</span>
+</pre>
+</div><p>Remove all stopped containers</p>
+<div class="highlight">
+<pre>
+docker-compose <span style="color:red;">rm</span>
+</pre>
+</div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Override application commands:</p>
+<p>Add command to your docker-compose.yml service:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
+  some_service:
+    command: flask run --host=0.0.0.0 --port=5001
+</pre></div>
+</div>
+<p>Here, we changed the application port 5000 -&gt; 50001</p>
+<p>-&gt; a docker-compose.yml command always overrides a Dockerfile command (CMD)</p>
+</div>
+<p><strong>Building an image + creating a tagged version of it</strong></p>
+<p>Add <em>both</em> a <strong>build</strong> and a <strong>image</strong> property to a service:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
+  some_service:
+    build: &#39;.&#39;
+    image: &#39;wohletzar/some_service:1.0&#39;
+</pre></div>
+</div>
+<p>When running docker-compose build, both images are created (build version is created
+first, tagged one (here: wohletzar/some_service:1.0) after that).</p>
+</section>
+<section id="docker-compose-api-v1-v2-v3">
+<h2>Docker Compose API v1/v2/v3<a class="headerlink" href="#docker-compose-api-v1-v2-v3" title="Link to this heading"></a></h2>
+<img alt="../../_images/compose_deamon_version.png" src="../../_images/compose_deamon_version.png" />
+<ul class="simple">
+<li><p>all versions are backwards compatible, so v2 and v3 can be chosen with the lastest
+docker daemon</p></li>
+<li><p>v1 is legacy and should be avoided (no version property)</p></li>
+<li><p>each API versions require a minimum docker daemon version</p></li>
+<li><p>latest version recommended</p></li>
+<li><p>Docker Compose offer regular updates independent from the docker daemon
+-&gt; upgrade regularly</p></li>
+</ul>
+</section>
+<section id="managing-microservices-with-docker-compose">
+<h2>Managing Microservices with Docker Compose<a class="headerlink" href="#managing-microservices-with-docker-compose" title="Link to this heading"></a></h2>
+<p>Example: Voting Web-App</p>
+<img alt="../../_images/voting_app_microservices.png" src="../../_images/voting_app_microservices.png" />
+<ul class="simple">
+<li><p>Microservices-based architecture</p></li>
+<li><p>for example, the flask app has no idea there is anything beyond redis</p></li>
+<li><p>flask app can be exchanged by, for instance, Ruby on Rails, without changing any
+other service</p></li>
+</ul>
+<p>A big advantage is, that you don’t have to understand the single services internals
+to make the application work</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install the docker application from src folder (docker-compose run –build)</p></li>
+<li><p>0.0.0.0:5000 and :5001 show proper content</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Changes made to the services src files are handled differently from language to
+language:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Interpreted languages</strong> (Python, HTML, …) can be changed and applied to
+running services without rebuilding the image. The new files are directly
+copied into the images when they are saved.</p></li>
+<li><p><strong>Compiled languages</strong> (C#, C++, …) require that the changed images is rebuild,
+since the compiled files are needed for execution</p></li>
+</ul>
+</div></blockquote>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_programming_languages_by_type#Interpreted_languages">https://en.wikipedia.org/wiki/List_of_programming_languages_by_type</a></p>
+</div>
+<p>docker-compose.yml:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>using back-tier and front-tier networks</p></li>
+<li><p>backend services (redis, worker, db) are connected with each other via the
+back-tier network</p></li>
+<li><p>frontend services (voting-app, result-app) are connected with each other via the
+front-tier network to talk to each other and also to the back-tier network to
+communicate with the backend services</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
+  vote:
+    networks:
+      - front-tier
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>all services contain a reference to where they are located, e.g.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
+  vote:
+    build: -/vote
+    volumes:
+      - ./vote:/app
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the worker service (C#) does not contain a volume, because it must be compiled.
+Accessing the files via a volume property does not work</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="05_workshop.html" class="btn btn-neutral float-left" title="05 - Docker Workshop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="07_dockerize_webapp.html" class="btn btn-neutral float-right" title="07 - Dockerizing your web applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

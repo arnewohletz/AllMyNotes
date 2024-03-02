@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System and configuration files &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Commands" href="commands.html" />
+    <link rel="prev" title="File System Structure" href="file_system.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="terminal_programs.html">Important Terminal Programs  </a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_system.html">File System Structure </a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">System and configuration files </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-and-web-services">Network and Web Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bash-shell">Bash-Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diverse-software">Diverse Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logs">Logs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli_tools/index.html">CLI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">System and configuration files </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/linux/config_files.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="system-and-configuration-files">
+<h1>System and configuration files <a class="footnote-reference brackets" href="#footcite-apfelboeck22-linux-tabellen" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#system-and-configuration-files" title="Link to this heading"></a></h1>
+<section id="system">
+<h2>System<a class="headerlink" href="#system" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">System configuration</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>/etc/crontab</strong></div>
+<div class="line"><strong>/var/spool/cron/crontabs/[user]</strong></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">global configuration file</div>
+<div class="line">user specific files for crone (also for <cite>root</cite>)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/fstab</strong></p></td>
+<td><p>file system table: devices to be auto-loaded on system start (Entry format: UUID, mount point, file system, options)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/group</strong></p></td>
+<td><p>list of all user groups</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/hdparm.conf</strong></p></td>
+<td><p>optional settings for devices (for example ‘spindown’ commands upon inactivity)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/hostname</strong></p></td>
+<td><p>Hostname of the Linux system</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/load.d</strong></p></td>
+<td><p>Defines which kernel modules are loaded on system start</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/mime.types</strong></p></td>
+<td><p>Assignment of file type and file extensions</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/motd</strong></p></td>
+<td><p>Custom message upon logging in via SSH</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/passwd</strong></p></td>
+<td><p>List of all internal, explicitly created user accounts</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/rc.local</strong></p></td>
+<td><p>global autostart during system start (before user login). Only terminal commands possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/shadow</strong></p></td>
+<td><p>password file for all user accounts. Plain text file but passwords are encrypted</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/sudoers</strong></p></td>
+<td><p>list of all user accounts eligible for sudo commands</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/sysctl.conf</strong></p></td>
+<td><p>settings for Linux kernel, like swapping behavior, magic-key rescue combinations, network parameters. Only for experts</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/systemd/system.conf</strong></p></td>
+<td><p>Basic configuration for the initialization services initd</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>/etc/apt/sources.list</strong></div>
+<div class="line"><strong>/etc/apt/sources.list.d/*.list</strong></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Main package sources for package manager apt (Debian, Ubuntu, Mint)</div>
+<div class="line">PPAs and external package sources (Debian, Ubuntu, Mint)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/default/grub</strong></p></td>
+<td><p>default settings for the boot manager Grub2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/network/interface</strong></p></td>
+<td><p>classical network settings for example ‘auto eth0’ or ‘iface eth0 inet dhcp’. On UI systems the network manager manages these, hence those settings are ignored.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/xgd/autostart/*.desktop</strong></p></td>
+<td><p>contains all files which are launched during user login</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>/usr/share/applications/*.desktop</strong></div>
+<div class="line"><strong>/home/[user]/.local/share/applications</strong></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">system-wide application shortcuts for desktop and launch menu</div>
+<div class="line">user specific application shortcuts (have priority)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="network-and-web-services">
+<h2>Network and Web Services<a class="headerlink" href="#network-and-web-services" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Network and Web Services</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>/etc/apache2/apache2.conf</strong></p></td>
+<td><p>main configuration file for Apache webserver</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/apache2/sites-available/000-default.conf</strong></p></td>
+<td><p>configuration for active Apache services</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/host.allow</strong></p></td>
+<td><p>allow certain computers access to hosted services</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/host.deny</strong></p></td>
+<td><p>deny certain computers access to hosted services</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/nginx/nginx.conf</strong></p></td>
+<td><p>main configuration of nginx webserver</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/nginx/sites-available/default</strong></p></td>
+<td><p>configuration of active nginx services</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/openvpn/server.conf</strong></p></td>
+<td><p>main configuration of Open-VPN server</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/php/[x.x]/apache2/php.ini</strong></p></td>
+<td><p>PHP configuration under Apache2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/samba/smb.conf</strong></p></td>
+<td><p>samba configuration including access definitions</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/ssh/ssh_config</strong></p></td>
+<td><p>configuration of OpenSSH client, commonly no changes needed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/ssh/sshd_config</strong></p></td>
+<td><p>configuration of OpenSSH server</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.ssh/rc</strong></p></td>
+<td><p>user specific commands script, which are executed by SSH session when logging in as [user]</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bash-shell">
+<h2>Bash-Shell<a class="headerlink" href="#bash-shell" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Bash-Shell</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>/etc/inputrc</strong></p></td>
+<td><p>global input standard for the terminal (key-bindings)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/bash.bashrc</strong></p></td>
+<td><p>global bash shell launch script for system-wide aliases, functions, variables</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/etc/profile*</strong></p></td>
+<td><p>global launch script for log-in bash shell. Only executed for new log-in (SSH or virtual console)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/etc/skel/.bashrc</strong></p></td>
+<td><p>the file among others in the same directory define the basic configuration when adding a new user account</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]/.bash_history</strong></p></td>
+<td><p>user specific command history (commonly last 500 - defined via <cite>$HISTFILESIZE</cite> variable)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.bash_login</strong></p></td>
+<td><p>optional user specific start script</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]/.bash_logout</strong></p></td>
+<td><p>optional user specific closing script</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.bash_profile</strong></p></td>
+<td><p>optional user specific start script</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]/.bashrc</strong></p></td>
+<td><p>optional user specific start script for aliases, functions, variables</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.inputrc</strong></p></td>
+<td><p>user specific input standards for bash shell (dominates over <code class="docutils literal notranslate"><span class="pre">/etc/inputrc</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]/.profile</strong></p></td>
+<td><p>user specific start script for log-in shells. Only executed during new log-in like SSH or virtual console</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diverse-software">
+<h2>Diverse Software<a class="headerlink" href="#diverse-software" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Diverse Software</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>/etc/[Software]/[File(s)]</strong></p></td>
+<td><p>global configuration for [Software] under /etc</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.[File]</strong></p></td>
+<td><p>user specific configuration</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/home/[user]/.[Software]</strong></p></td>
+<td><p>user specific configuration for application</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/home/[user]/.config/[Software]</strong></p></td>
+<td><p>collective directory for user specific configurations</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="logs">
+<h2>Logs<a class="headerlink" href="#logs" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Logs</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>/var/log/</strong></p></td>
+<td><p>collective directory for various log and protocol data (system log, samba, apt, Apache, FTP). Partial summary available via UI tolls like <em>gnome-logs</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/var/log/apache2/access.log</strong></p></td>
+<td><p>logs of all accesses to web server services including access IP, access target, browser</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/var/log/auth.log</strong></p></td>
+<td><p>chronological log of all login attempts via graphical shell or via SSH or the web server configuration UI</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/var/log/dmesg</strong></p></td>
+<td><p>chronological log of the kernel containing all recent hardware events. Older logs are kept in <code class="docutils literal notranslate"><span class="pre">/var/log/kern.log</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/var/log/dpkg.log</strong></p></td>
+<td><p>chronological log of updates and installations</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/var/log/faillog</strong></p></td>
+<td><p>protocol about failed login attempts. This binary file must be opened via <cite>faillog -a</cite>. The column ‘Failures’ shows the amount of failed attempts for each user account</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/var/log/nginx/access.log</strong></p></td>
+<td><p>chronological logs of all accesses to web server services including access IP, access target, browser</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>/var/log/samba</strong></p></td>
+<td><p>all accessing network devices including their IP address and hostname (at least ‘log level=1’ in <code class="docutils literal notranslate"><span class="pre">/etc/samba/smb.conf</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>/var/log/syslog</strong></p></td>
+<td><p>chronological log of all system events: network, services, cronjobs, hard drive</p></td>
+</tr>
+</tbody>
+</table>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-apfelboeck22-linux-tabellen" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Herrmann Apfelböck. Linux in tabellen. <em>Linuxwelt Sonderheft</em>, 3/2022:84–97, 2022.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="file_system.html" class="btn btn-neutral float-left" title="File System Structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="commands.html" class="btn btn-neutral float-right" title="Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

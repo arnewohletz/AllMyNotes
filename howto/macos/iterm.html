@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set up iTerm2 &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Set up muCommander" href="mucommander.html" />
+    <link rel="prev" title="macOS" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">macOS</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Set up iTerm2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-movement-delete-shortcuts">Set up movement &amp; delete shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-custom-color-theme">Set custom color theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-custom-oh-my-zsh-theme">Set custom oh-my-zsh theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-custom-plugins">Add custom plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-tweaks">Other tweaks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mucommander.html">Set up muCommander</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">macOS</a></li>
+      <li class="breadcrumb-item active">Set up iTerm2</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/macos/iterm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="set-up-iterm2">
+<h1>Set up iTerm2<a class="headerlink" href="#set-up-iterm2" title="Link to this heading"></a></h1>
+<p>iTerm2 is a Terminal alternative for macOS.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Install <a class="reference external" href="https://iterm2.com/index.html">iTerm2</a> via Homebrew:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>iterm2</span>
+</pre></div></div><p>Install <a class="reference external" href="https://ohmyz.sh/">oh-my-zsh</a> via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span></span>
+</pre></div></div></section>
+<section id="set-up-movement-delete-shortcuts">
+<h2>Set up movement &amp; delete shortcuts<a class="headerlink" href="#set-up-movement-delete-shortcuts" title="Link to this heading"></a></h2>
+<p>iTerm does not feature shortcuts for moving word-by-word or to the end or beginning of a line.</p>
+<ol class="arabic">
+<li><p>Go to <span class="menuselection">Settings ‣ Profiles ‣ Keys ‣ Key Mapping</span>.</p></li>
+<li><p>Add these new key mapping, for each selection <cite>Send Escape Sequence</cite> as Action:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key Mapping</p></th>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Does what?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Left</kbd></kbd></p></td>
+<td><p>Send Escape Sequence</p></td>
+<td><p>b</p></td>
+<td><p>Jump one word to the left</p></td>
+</tr>
+<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Right</kbd></kbd></p></td>
+<td><p>Send Escape Sequence</p></td>
+<td><p>f</p></td>
+<td><p>Jump one word to the right</p></td>
+</tr>
+<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Del&lt;-</kbd></kbd></p></td>
+<td><p>Send Hex Code</p></td>
+<td><p>0x17</p></td>
+<td><p>Delete left standing word</p></td>
+</tr>
+<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Del</kbd>-<kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd></p></td>
+<td><p>Send Escape Sequence</p></td>
+<td><p>d</p></td>
+<td><p>Delete right standing word</p></td>
+</tr>
+<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cmd</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Left</kbd></kbd></p></td>
+<td><p>Send Escape Sequence</p></td>
+<td><p>OH</p></td>
+<td><p>Move to beginning of the row</p></td>
+</tr>
+<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cmd</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Right</kbd></kbd></p></td>
+<td><p>Send Escape Sequence</p></td>
+<td><p>OF</p></td>
+<td><p>Move to end of the row</p></td>
+</tr>
+<tr class="row-even"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cmd</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Del&lt;-</kbd></kbd> *</p></td>
+<td><p>Send Hex Code</p></td>
+<td><p>0x18 0x7f</p></td>
+<td><p>Delete current row</p></td>
+</tr>
+<tr class="row-odd"><td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cmd</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Del</kbd>-<kbd class="kbd docutils literal notranslate">&gt;</kbd></kbd></p></td>
+<td><p>Send Hex Code</p></td>
+<td><p>0x0b</p></td>
+<td><p>Delete everything after cursor</p></td>
+</tr>
+</tbody>
+</table>
+<p>* need to add this to your <cite>~/.zshrc</cite> or <cite>~/.zprofile</cite> to make it work:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># iTerm2 support for &#39;Delete current row&#39; keymap
+bindkey &quot;^X\\x7f&quot; backward-kill-line
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+<p>A quicker solution, but which does not feature all above key mappings is to change the presets to
+<em>Natural Text Editing</em>.</p>
+</section>
+<section id="set-custom-color-theme">
+<h2>Set custom color theme<a class="headerlink" href="#set-custom-color-theme" title="Link to this heading"></a></h2>
+<p>There <a class="reference external" href="https://iterm2colorschemes.com/">a lot of color themes</a> to choose from.</p>
+<ol class="arabic simple">
+<li><p>Open the XML files for the respective theme and save it as <em>*.itermcolors</em> file.</p></li>
+<li><p>In iTerm go to <span class="menuselection">Settings ‣ Profiles ‣ Colors</span>.</p></li>
+<li><p>Select <span class="menuselection">Color Preset… -&gt; Import…</span> and select the <em>*.itermcolors</em> file.</p></li>
+<li><p>Again chose <span class="guilabel">Color Presets…</span>, and select the imported theme. They are
+immediately applied to the current shell.</p></li>
+</ol>
+</section>
+<section id="set-custom-oh-my-zsh-theme">
+<h2>Set custom oh-my-zsh theme<a class="headerlink" href="#set-custom-oh-my-zsh-theme" title="Link to this heading"></a></h2>
+<p>There are a <a class="reference external" href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes">variety of themes</a> available for iTerm (all compatible with oh-my-zsh).</p>
+<p>In this guide, the <a class="reference external" href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a> theme is used for demonstration.</p>
+<ol class="arabic">
+<li><p>Install the theme via homebrew:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>powerlevel10k</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Add it to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file to be launched for each new shell window:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/powerlevel10k/powerlevel10k.zsh-theme&quot;</span><span class="w"> </span>&gt;&gt;~/.zshrc</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Open a new shell window to start the setup wizard.</p></li>
+<li><p>Confirm installing the new font, afterwards restart iTerm2.</p></li>
+<li><p>The setup resumes. Follow the instructions and make your choices</p></li>
+</ol>
+</section>
+<section id="add-custom-plugins">
+<h2>Add custom plugins<a class="headerlink" href="#add-custom-plugins" title="Link to this heading"></a></h2>
+<p>Oh-my-zsh features a lot of optional plugins for various purposes. A list is available in the
+<a class="reference external" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">Plugins wiki page</a>. The only plugin already pre-enabled is the <a class="reference external" href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git">git plugin</a>.</p>
+<p>To add a plugin, open the <code class="docutils literal notranslate"><span class="pre">~.zshrc</span></code> file and add the plugin name to the <em>plugins</em> variable,
+for example:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plugins=(git pyenv)
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="other-tweaks">
+<h2>Other tweaks<a class="headerlink" href="#other-tweaks" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Change cursor to blinking, vertical bar:</p>
+<blockquote>
+<div><p><span class="menuselection">Settings ‣ Profiles ‣ Text ‣ Cursor</span>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>select <em>Vertical bar</em></p></li>
+<li><p>check <em>Blinking cursor</em></p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Add command syntax highlighting:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Install <a class="reference external" href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>zsh-syntax-highlighting</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Enable it by adding a source line to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="si">}</span>/.zshrc</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="macOS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mucommander.html" class="btn btn-neutral float-right" title="Set up muCommander" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

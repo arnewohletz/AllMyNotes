@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proxy Pattern &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Template Method Pattern" href="template_method_pattern.html" />
+    <link rel="prev" title="Facade Pattern" href="facade_pattern.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Design</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Design Patterns</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="strategy_pattern.html">Strategy Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorator_pattern.html">Decorator Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="factory_method_pattern.html">Factory Method Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_factory_pattern.html">Abstract Factory Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command_pattern.html">Command Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adapter_pattern.html">Adapter Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="facade_pattern.html">Facade Pattern</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Proxy Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#issue">Issue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solution">Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id1">Issue</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id2">Solution</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#code-example">Code Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="template_method_pattern.html">Template Method Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composite_pattern.html">Composite Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iterator_pattern.html">Iterator Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="state_pattern.html">State Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observer_pattern.html">Observer Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="singleton.html">Singleton Pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../design_principles/index.html">Design Principles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Software Design</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Design Patterns</a></li>
+      <li class="breadcrumb-item active">Proxy Pattern</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/software_design/design_patterns/proxy_pattern.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="proxy-pattern">
+<h1>Proxy Pattern<a class="headerlink" href="#proxy-pattern" title="Link to this heading"></a></h1>
+<section id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>You want to hide certain access points of a class to <em>Clients</em>, in other words, control the
+access of a particular class or system</p></li>
+</ul>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>There are three types of proxies:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Remote proxy</dt><dd><ul>
+<li><p>Used when accessing a remote system or project</p></li>
+<li><p>The proxy is then used to access this remote interface</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Virtual proxy</dt><dd><ul>
+<li><p>Controls access to a resource that is expensive to create (in terms of CPU time)</p></li>
+<li><p>The proxy then controls whether it is actually needed to interact with
+the resource it controls the access for</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Protection proxy</dt><dd><ul>
+<li><p>Defines whether the caller its method is actually allowed to interact with
+the resource it controls (access management)</p></li>
+<li><p>Controls access to resources based on access rights</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>A proxy adds additional behavior to the resource it controls, but in terms of access control</p></li>
+</ul>
+<div class="pattern-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>Proxy Pattern</strong> provides a surrogate or placeholder for another object to
+control access to it.</p>
+</div>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<p>Illustration of a <em>Virtual Proxy</em>.</p>
+<section id="id1">
+<h3>Issue<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>instantiating a <strong>BookParser</strong> will parse the entire <em>book</em> string (which contains
+the entire content of a book) and does some computations while doing it (like count verbs,
+words, chapters, pages, …) -&gt; it is expensive</p></li>
+<li><p>calling any of its methods (like number_of_pages(), which returns the amount of pages) is very
+cheap, because no further computation is required to get it</p></li>
+<li><p>the computation of these attributes during parsing is, on the other hand, only necessary, if
+any of the attribute-returning methods is actually called (which might not be the case for each
+instantiated <em>BookParser</em>)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="n">book</span> <span class="o">=</span> <span class="s2">&quot;....&lt;entire book&gt;...&quot;</span>
+<span class="n">book_parser</span> <span class="o">=</span> <span class="n">BookParser</span><span class="p">(</span><span class="n">book</span><span class="p">)</span> <span class="c1"># expensive instantiation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_parser</span><span class="o">.</span><span class="n">number_of_pages</span><span class="p">())</span> <span class="c1"># cheap call</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Solution<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>in order to increase performance, we only want to parse a string in the <em>BookParser</em> when
+any of its method (which require that computation) is called (make it lazy)</p></li>
+<li><p>we achieve this by not directly interacting with the <em>BookParser</em> but with a <em>BookParserProxy</em>,
+which interacts with the <em>BookParser</em></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Subject<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An interface class, which is implemented by both <em>RealSubject</em> and <em>Proxy</em>
+to ensure that both have the same interface</p>
+</dd>
+<dt class="field-even">RealSubject<span class="colon">:</span></dt>
+<dd class="field-even"><p>The class that is the actual class we want to call</p>
+</dd>
+<dt class="field-odd">Proxy<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The class which is called by a <em>Client</em> instead of <em>RealSubject</em>. Since both implement
+the same interface, the <em>Client</em> can treat the <em>Proxy</em> equally to <em>RealSubject</em>.</p>
+</dd>
+</dl>
+<div align="center" class="mermaid align-center">
+            classDiagram
+    Subject&lt;|--RealSubject : implements
+    Subject&lt;|--Proxy : implements
+    RealSubject&lt;--Proxy : HAS-A
+    class Subject {
+        &lt;&lt;interface&gt;&gt;
+        +request()
+    }
+    class RealSubject {
+        +request()
+    }
+    class Proxy {
+        +request()
+    }
+        </div>
+        <ul class="simple">
+<li><p>the <em>Proxy</em> controls the access to <em>RealSubject</em></p></li>
+<li><p>the <em>Proxy</em> follows the same interface as the thing it is proxying</p></li>
+<li><p>the <em>Proxy</em> does not have to instantiate <em>RealSubject</em> during its own creation,
+but may instantiate it in its method</p></li>
+</ul>
+</section>
+<section id="code-example">
+<h3>Code Example<a class="headerlink" href="#code-example" title="Link to this heading"></a></h3>
+<p>Find a template example for Python at <a class="reference external" href="https://refactoring.guru/design-patterns/proxy/python/example">https://refactoring.guru/design-patterns/proxy/python/example</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span>
+
+
+<span class="c1"># Subject</span>
+<span class="k">class</span> <span class="nc">BookParser</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get_number_of_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="c1"># RealSubject</span>
+<span class="k">class</span> <span class="nc">RealBookParser</span><span class="p">(</span><span class="n">BookParser</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="c1"># some expensive computation</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puuh, I&#39;m finally done with book ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_number_of_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s quickly done ...&quot;</span><span class="p">)</span>
+        <span class="c1"># returning pages</span>
+
+
+<span class="c1"># Proxy</span>
+<span class="k">class</span> <span class="nc">LazyBookParserProxy</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">book</span> <span class="o">=</span> <span class="n">book</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">book_parser</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">get_number_of_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">book_parser</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">book_parser</span> <span class="o">=</span> <span class="n">RealBookParser</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">book</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">book_parser</span><span class="o">.</span><span class="n">get_number_of_pages</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="facade_pattern.html" class="btn btn-neutral float-left" title="Facade Pattern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="template_method_pattern.html" class="btn btn-neutral float-right" title="Template Method Pattern" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

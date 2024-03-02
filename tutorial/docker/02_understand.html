@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02 - Understanding Docker &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="03 - Installing Docker" href="03_install.html" />
+    <link rel="prev" title="01 - Introduction" href="01_introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_introduction.html">01 - Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">02 - Understanding Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker-vs-vms">Docker vs. VMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-does-a-docker-installation-consist-of">What does a Docker installation consist of?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_install.html">03 - Installing Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_discover.html">04 - Discovering Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_workshop.html">05 - Docker Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_compose.html">06 - Docker Compose Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_dockerize_webapp.html">07 - Dockerizing your web applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_linux.html">Install Docker (CE) on Linux Mint (Ubuntu)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Docker</a></li>
+      <li class="breadcrumb-item active">02 - Understanding Docker</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorial/docker/02_understand.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="understanding-docker">
+<h1>02 - Understanding Docker<a class="headerlink" href="#understanding-docker" title="Link to this heading"></a></h1>
+<section id="docker-vs-vms">
+<h2>Docker vs. VMs<a class="headerlink" href="#docker-vs-vms" title="Link to this heading"></a></h2>
+<img alt="../../_images/vm_vs_docker.png" src="../../_images/vm_vs_docker.png" />
+<ul class="simple">
+<li><p>VMs run on a host system</p></li>
+<li><p>Each VM has its own Guest OS, which are independent from other VMs running on the same host OS</p></li>
+<li><p>Docker runs on a host system and controls multiple docker images via the docker daemon</p></li>
+<li><p>Compared to VMs, Docker images are loaded within milliseconds (as compared to minutes for a VM),
+but all docker images share the same host operating system, they are interacting with</p></li>
+</ul>
+<p><strong>When to use VMs, when docker?</strong></p>
+<ul class="simple">
+<li><p>When each application requires different host OSs or different host OSs settings, then
+VMs are the choice</p></li>
+<li><p>When multiple application can rely on the same OS and OS settings, then docker is the choice</p></li>
+<li><p>A VM can have Docker installed, providing a different host OS, that the docker images require</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/development.png"><img alt="../../_images/development.png" src="../../_images/development.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li><p>Docker is suitable for running and testing process or services in isolation (e.g. each
+component of a web application)</p></li>
+<li><p>Docker is not limited to web apps (but can be like a package manager for applications,
+for example applications that were not even designed to work on your OS)</p></li>
+</ul>
+<p>-&gt; Use VMs to run and test entire system
+-&gt; Use Docker to run and test single applications</p>
+<ul class="simple">
+<li><p>Docker applications can be deployed on many cloud server (e.g. AWS, Azure, DigitalOcean)</p></li>
+<li><p>There, they are running on VMs, that are set up for you</p></li>
+<li><p>Docker can run on almost any host OS</p></li>
+</ul>
+</section>
+<section id="what-does-a-docker-installation-consist-of">
+<h2>What does a Docker installation consist of?<a class="headerlink" href="#what-does-a-docker-installation-consist-of" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Docker daemon</p></li>
+<li><p>CLI (command line interface)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Docker daemon is a service that runs on the host OS (only runs on Linux as it depends on
+various Linux kernel features)</p></li>
+<li><p>Docker daemon exposes a REST API. A number of tools can talk to the daemon through it,
+most known is the docker CLI</p></li>
+<li><p>Daemon is like the server and the CLI the client</p></li>
+<li><p>There are other third party clients able to interact the daemon (for various programming
+languages)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/components.png"><img alt="../../_images/components.png" src="../../_images/components.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li><p>The docker client is installed on your local OS (Linux, OSX, Windows)</p></li>
+<li><p>The docker daemon is installed on the docker host (a Linux machine or VM)</p></li>
+<li><p>The registry is a part of the docker ecosystem (explained later)</p></li>
+</ul>
+<img alt="../../_images/architecture.png" src="../../_images/architecture.png" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_introduction.html" class="btn btn-neutral float-left" title="01 - Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_install.html" class="btn btn-neutral float-right" title="03 - Installing Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

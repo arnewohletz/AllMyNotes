@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>.gitconfig &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Kubectl" href="../kubernetes.html" />
+    <link rel="prev" title="git" href="commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="commands.html">git</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">.gitconfig</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alias">[alias]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#core">[core]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#credential">[credential]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pull">[pull]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user">[user]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">git</a></li>
+      <li class="breadcrumb-item active">.gitconfig</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/git/config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gitconfig">
+<h1>.gitconfig<a class="headerlink" href="#gitconfig" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> contains the user configuration for git. It applies to any
+local repository of the current user. It can be overwritten for individual local
+repositories by defining it in the repository’s <code class="docutils literal notranslate"><span class="pre">.git/config</span></code> file.</p>
+<p>The global <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> is located at</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>macOS/Linux: <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code></p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%/.gitconfig</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>whereas a repositories git config is located at <code class="docutils literal notranslate"><span class="pre">.git/config</span></code>.</p>
+<p>The system-wide <code class="docutils literal notranslate"><span class="pre">gitconfig</span></code> defines config variable at a system level, but may
+be overwritten by the global and repository config. It is located at</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>macOS (git installed via <em>homebrew</em>): <code class="docutils literal notranslate"><span class="pre">/opt/homebrew/etc/gitconfig</span></code></p></li>
+<li><p>Linux: <code class="docutils literal notranslate"><span class="pre">/etc/gitconfig</span></code></p></li>
+<li><p>Windows (for <a class="reference external" href="https://git-scm.com/download/win">Git for Windows</a>): <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Git\etc\gitconfig</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>The full reference for git config value is <a class="reference external" href="https://git-scm.com/docs/git-config#_variables">provided here</a>.
+This reference contains a selection.</p>
+<p>To edit the respective files, run</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git config --system --edit
+git config --global --edit
+git config --local --edit
+</pre></div>
+</div>
+<p>which opens the file with the default editor (set as <code class="docutils literal notranslate"><span class="pre">EDITOR</span></code> environment variable).</p>
+<section id="alias">
+<h2>[alias]<a class="headerlink" href="#alias" title="Link to this heading"></a></h2>
+<p>Contains custom git alias commands in this form:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">my-simple-alias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">!echo &quot;Hello there!&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> is needed upfront to run an external (non-git) command. It is called via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: " ";
+}
+</style><span class="prompt1">git my-simple-alias</span>
+</pre></div></div><p>To create a more complex, multiline script, the script is put into a function
+(here: <code class="docutils literal notranslate"><span class="pre">f()</span></code>), which is eventually called. Inside the function, lines have to
+end with a <code class="docutils literal notranslate"><span class="pre">\</span></code> to be continued in the next line. Commands are separated with <code class="docutils literal notranslate"><span class="pre">;</span></code>:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">my-more-complex-alias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){</span>
+<span class="w">    </span><span class="na">echo &#39;Hello there&#39;;\</span>
+<span class="w">    </span><span class="na">echo &#39;Have a nice day&#39;;\</span>
+<span class="na">}; f&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="core">
+<h2>[core]<a class="headerlink" href="#core" title="Link to this heading"></a></h2>
+<p><strong>autocrlf</strong></p>
+<p>For Windows users, the variable should be set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, which changes the line
+endings to <em>CRLF</em> for all files of a repository. If users using macOS or Linux
+also contribute to the repository, they submit <em>LF</em> line endings, which need to
+be transformed.</p>
+<p>For macOS/Linux users, the variable should be set to <code class="docutils literal notranslate"><span class="pre">input</span></code> which omits any
+line ending conversions.</p>
+<p><strong>editor</strong></p>
+<p>Defines the editor to be used to edit messages on <code class="docutils literal notranslate"><span class="pre">commit</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span></code>.</p>
+</section>
+<section id="credential">
+<h2>[credential]<a class="headerlink" href="#credential" title="Link to this heading"></a></h2>
+<p><strong>helper</strong></p>
+<p>Defines the credential management helper tool, which is called if username and
+password is needed.</p>
+<p>Common values:</p>
+<ul class="simple">
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">osxkeychain</span></code> (macOS internal Keychain)</p></li>
+<li><p>Linux: <em>not sure</em></p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">manager</span></code> (the cross-platform <a class="reference external" href="https://github.com/git-ecosystem/git-credential-manager">git-credential-manager</a>, included in
+<a class="reference external" href="https://git-scm.com/download/win">Git for Windows</a>)</p></li>
+</ul>
+</section>
+<section id="pull">
+<h2>[pull]<a class="headerlink" href="#pull" title="Link to this heading"></a></h2>
+<p><strong>rebase</strong></p>
+<p>When set <code class="docutils literal notranslate"><span class="pre">true</span></code>, rebase branches on top of the fetched branch, instead of
+merging the default branch from the default remote when “git pull” is run.</p>
+</section>
+<section id="user">
+<h2>[user]<a class="headerlink" href="#user" title="Link to this heading"></a></h2>
+<p><strong>name</strong>
+The name of the author set to the <code class="docutils literal notranslate"><span class="pre">author</span></code> and <code class="docutils literal notranslate"><span class="pre">committer</span></code> field of
+commit objects.</p>
+<p><strong>email</strong>
+The email of the author set to the <code class="docutils literal notranslate"><span class="pre">author</span></code> and <code class="docutils literal notranslate"><span class="pre">committer</span></code> field of
+commit objects.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="commands.html" class="btn btn-neutral float-left" title="git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../kubernetes.html" class="btn btn-neutral float-right" title="Kubectl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

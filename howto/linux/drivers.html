@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get missing drivers &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Install Linux on USB flash drive" href="install_usb.html" />
+    <link rel="prev" title="Linux" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Get missing drivers </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#screen-stays-black">Screen stays black</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determine-the-hardware-specifics-get-driver">Determine the hardware specifics &amp; get driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-driver-install">Compile driver &amp; install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsigned-driver">Unsigned driver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install_usb.html">Install Linux on USB flash drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tree.html">tree - Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Get missing drivers </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/linux/drivers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="get-missing-drivers">
+<h1>Get missing drivers <a class="footnote-reference brackets" href="#footcite-eggeling-linux-hardware" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#get-missing-drivers" title="Link to this heading"></a></h1>
+<p>Linux operating system include lots of drivers for present hardware, though it might
+occur that certain (proprietary) drivers need to be installed manually. This guide
+shows how to do so.</p>
+<section id="screen-stays-black">
+<h2>Screen stays black<a class="headerlink" href="#screen-stays-black" title="Link to this heading"></a></h2>
+<p>After an installation of Linux on a system that previously ran Windows, it might happen
+that the screen stays black on the start of the Linux installer. On Ubuntu-like
+distribution the GRUB boot menu first shows after starting from an installer media device.</p>
+<p>When continuing with the normal start and the screen stays black try:</p>
+<ol class="upperalpha">
+<li><p>Start Linux in safe-mode / compatibility-mode</p></li>
+<li><p>Start with additional boot parameters</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Select a boot option in the GRUB boot menu, then hit <kbd class="kbd docutils literal notranslate">E</kbd>.</p></li>
+<li><p>In the opened text list, navigate with the cursor buttons and add one
+or more option into the line starting with <code class="docutils literal notranslate"><span class="pre">linux</span></code> (add them <strong>before</strong> the
+<code class="docutils literal notranslate"><span class="pre">--</span></code>). These options might help:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>xforcevesa</strong>: kernel will only use the VESA-mode for display which runs
+on most graphic chips</p></li>
+<li><p><strong>nomodeset</strong>: prevents the system to switch into graphical mode (stays
+in text mode). Some Nvidia cards have troubles here.</p></li>
+</ul>
+</div></blockquote>
+<p>Linux Mint only (compatibility-mode)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>acpi=off</strong> or <strong>noacpi</strong>: ACPI is ignored which causes the GPU &amp; CPU to
+launch without power saving, hyperthreading or fan control.</p></li>
+<li><p><strong>acpi=ht</strong>: only hyperthreading and CPU are working, rest is ignored</p></li>
+<li><p><strong>acpi=strict</strong>: forces ACPI-support of the kernel to only consider ACPI
+attributes of hardware that follows the exact standard</p></li>
+<li><p><strong>acpi_osi=linux</strong>: skips the validation if ACPI of the computer is compatible</p></li>
+<li><p><strong>noapic</strong>: prevents APIC is used for the interrupt layer</p></li>
+</ul>
+<p>A useful combination is found to be: <strong>acpi=off noapic nolapic</strong></p>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<p>After Linux has been successfully installed, in case of video errors persist,
+try to boot with the same options as in the last step, then make the parameters
+permanent (until a proper driver is installed).</p>
+<p>Open</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">sudo<span class="w"> </span>-H<span class="w"> </span>gedit<span class="w"> </span>/etc/default/grub</span>
+</pre></div></div><p>and edit this line with your parameters:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LINUX=&quot;[parameter_1]=[value_1] [parameter_2]=[value_2]&quot;
+</pre></div>
+</div>
+<p>To persist those in the GRUB, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>update-grub</span>
+</pre></div></div><p>After a restart, the changes are set.</p>
+</section>
+<section id="determine-the-hardware-specifics-get-driver">
+<h2>Determine the hardware specifics &amp; get driver<a class="headerlink" href="#determine-the-hardware-specifics-get-driver" title="Link to this heading"></a></h2>
+<p>Before getting the proper driver, the exact specifics of the hardware piece must
+be determined. Each device owns a unique ID, which determines the device and its
+manufacturer. Save all your hardware IDs into files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>lshw<span class="w"> </span>-numeric<span class="w"> </span>-html<span class="w"> </span>&gt;<span class="w"> </span>lshw.html</span>
+<span class="prompt1">sudo<span class="w"> </span>lspci<span class="w"> </span>-nn<span class="w"> </span>&gt;<span class="w"> </span>lspci.txt</span>
+<span class="prompt1">sudo<span class="w"> </span>lsusb<span class="w"> </span>-v<span class="w"> </span>&gt;<span class="w"> </span>lsusb.txt</span>
+</pre></div></div><p>The <code class="docutils literal notranslate"><span class="pre">lshw.html</span></code> shows general machine information, while the <code class="docutils literal notranslate"><span class="pre">lspci.txt</span></code> and
+<code class="docutils literal notranslate"><span class="pre">lsusb.txt</span></code> list information about PCI and USB devices.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>An example ID for a PCI device might be <cite>0bda:b812`</cite>, in which the <code class="docutils literal notranslate"><span class="pre">0bda</span></code>
+determines the manufacturer and <code class="docutils literal notranslate"><span class="pre">b812</span></code> determines the device.</p>
+</div>
+<p>After determining the devices ID go to <a class="reference external" href="https://linux-hardware.org/?view=search">https://linux-hardware.org/?view=search</a>
+and enter the manufacturer ID (Vendor ID) and device ID into the respective fields.
+The result entry should list the respective driver.
+Another way is to probe your device</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>get<span class="w"> </span>hw-probe</span>
+<span class="prompt1">sudo<span class="w"> </span>-E<span class="w"> </span>hw-probe<span class="w"> </span>-all<span class="w"> </span>-upload</span>
+</pre></div></div><p>which reveals a URL to open in the browser.</p>
+<p>In any way, the listed driver should state <em>works</em> or <em>detected</em> to work and must
+be compatible with the kernel version your distribution uses. To determine that run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">uname<span class="w"> </span>-a</span>
+</pre></div></div><p>If there is no match, it’s best to switch to matching Linux distribution.</p>
+</section>
+<section id="compile-driver-install">
+<h2>Compile driver &amp; install<a class="headerlink" href="#compile-driver-install" title="Link to this heading"></a></h2>
+<p>If the driver’s source code is available, it can be compiled locally. It is crucial
+that it is compatible with the kernel. The steps differ from driver to driver,
+so an attached manual should be read carefully.</p>
+<p>Example for a <em>Wifi stick RT88x2bu</em>:</p>
+<ol class="arabic">
+<li><p>Install binary packages needed:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>get<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>dkms<span class="w"> </span>linux-headers-<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span></span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Go to the drivers repository (here: <a class="reference external" href="https://github.com/morrownr/88x2bu-20210702">https://github.com/morrownr/88x2bu-20210702</a>)</p></li>
+<li><p>Sync the repository</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>-p<span class="w"> </span>~/src</span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~/src</span>
+<span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>URL<span class="o">]</span></span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>88x2bu-20210702</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Execute these commands:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make<span class="w"> </span>clean</span>
+<span class="prompt1">make</span>
+<span class="prompt1">sudo<span class="w"> </span>insmod<span class="w"> </span>88x2bu.ko</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Check the kernel output on the loading of the driver for issues:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dmesg</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>For most driver, this command needs to be executed next:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>make<span class="w"> </span>install</span>
+</pre></div></div></div></blockquote>
+<p>This puts the driver into <code class="docutils literal notranslate"><span class="pre">/lib/modules/[kernel_version]</span></code>, which is loaded
+upon the next Linux build</p>
+</li>
+</ol>
+</section>
+<section id="unsigned-driver">
+<h2>Unsigned driver<a class="headerlink" href="#unsigned-driver" title="Link to this heading"></a></h2>
+<p>For some drivers, they might not be loaded on startup due to secure boot,
+which forbid loading of unsigned drivers. Either secure boot needs to be
+deactivated or the driver must be signed.</p>
+<p>To find out if the driver is signed run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">modinfo<span class="w"> </span><span class="o">[</span>module_name<span class="o">]</span></span>
+</pre></div></div><p>If the module cannot be installed via DKMS, execute these lines to sign it
+manually (execute from directory where [MODULE] resides and adapt name):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">KERNEL_BUILD</span><span class="o">=</span>/lib/modules/<span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span>/build</span>
+<span class="prompt1">sudo<span class="w"> </span>-E<span class="w"> </span><span class="nv">$KERNEL_BUILD</span>/scripts/sign-file<span class="w"> </span>sha256<span class="w"> </span>/var/lib/shim-signed/mok/MOK.priv<span class="w"> </span>/var/lib/shim-signed/mok/MOK.der<span class="w"> </span><span class="o">[</span>Modul<span class="o">]</span>.ko</span>
+</pre></div></div><p>For more info visit <a class="reference external" href="https://github.com/Myria-de/kernel-modules">https://github.com/Myria-de/kernel-modules</a>.</p>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-eggeling-linux-hardware" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Thorsten Eggeling. Hardware &amp; treiber für linux. <em>Linuxwelt</em>, 1/2023:24–27, 2023.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install_usb.html" class="btn btn-neutral float-right" title="Install Linux on USB flash drive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

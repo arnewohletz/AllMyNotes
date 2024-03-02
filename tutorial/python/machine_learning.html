@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PyScript" href="pyscript.html" />
+    <link rel="prev" title="Set up a WSGI server" href="flask/wsgi_nginx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_setup.html">New Project Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flask/index.html">Flask - Set up a web application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Machine Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-do-i-need-to-start">What do I need to start?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#amount-and-size-of-hidden-layers">Amount and size of hidden layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#weight-regularization">Weight regularization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selection-of-the-loss-functions">Selection of the loss functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selection-of-the-observed-metrics">Selection of the observed metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyscript.html">PyScript </a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python</a></li>
+      <li class="breadcrumb-item active">Machine Learning</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorial/python/machine_learning.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="machine-learning">
+<h1>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading"></a></h1>
+<p>This page is supposed to gather all the “wisdom” I have so far in Machine Learning.</p>
+<section id="what-do-i-need-to-start">
+<h2>What do I need to start?<a class="headerlink" href="#what-do-i-need-to-start" title="Link to this heading"></a></h2>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>A representative set of data (the more complex the problem, the more data)</p></li>
+<li><p>A label for each dataset, that describes the data</p></li>
+</ul>
+<ol class="arabic">
+<li><p>Data &amp; labels must be divided into</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>training data</p></li>
+<li><p>training labels</p></li>
+<li><p>validation data</p></li>
+<li><p>validation labels</p></li>
+</ul>
+<p>where the training data is usually about 75% of the data, 25 % for validation</p>
+<p>Additionally you might reserve some for testing (60 % training, 20 % validation,
+20 % testing)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>test data</p></li>
+<li><p>test labels</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To tune your model based on the validation set leads to overfitting
+towards it, especially when having little data. Validation data
+should change during training. Two ways:</p>
+<ul>
+<li><p>k-fold validation: Divide training &amp; validation into same sized batches,
+assign one to validation and the rest to training. Train as many
+times as there are batches, each time using a different batch as
+validation set. Lastly, calculate the mean of all iterations.</p>
+<blockquote>
+<div><figure class="align-default" id="id1">
+<img alt="../../_images/three-fold_validation.png" src="../../_images/three-fold_validation.png" />
+<figcaption>
+<p><span class="caption-text">Three-fold validation (three data batches)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>k-fold validation, done multiple times (same batch sizes), while
+shuffling all data before creating batches.</p></li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+<li><p>Transform data into tensors (1D, 2D, 3D, or more):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>2D: Vector data (samples, data_values)</p></li>
+<li><p>3D: Timeseries data or sequence data (samples, time_or_sequence, data_values)</p></li>
+<li><p>4D: Image data (samples, height_index, width_index, color_channel_values)</p></li>
+<li><p>5D: Video data (samples, frame, height_index, width_index, color_channel_values)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>One-Hot Encode the labels: 2D tensor (sample, label):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Label tensor shape must be (amount_of_data_samples, amount_of_classes)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Make sure the data range of all values is similar. Having one feature ranging from
+0 to 1 and another from 100 to 10000 is problematic. A best practice is
+<a class="reference external" href="https://en.wikipedia.org/wiki/Normalization_(statistics)">normalization</a>:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[val_{new} = \frac{val - \mu}{\sigma}\]</div>
+</div></blockquote>
+<p>Subtract the mean value of a feature and divide by its standard deviation.
+This result into all values ranging around zero.</p>
+</li>
+<li><p>Add missing data (if applicable): Missing data fields can be assigned to 0
+(if that is not a meaningful value)</p></li>
+</ol>
+</section>
+</section>
+<section id="amount-and-size-of-hidden-layers">
+<h2>Amount and size of hidden layers<a class="headerlink" href="#amount-and-size-of-hidden-layers" title="Link to this heading"></a></h2>
+<p>Selecting the amount and the size of hidden layers within a model is crucial:</p>
+<ul class="simple">
+<li><p>too few layers or too few nodes -&gt; information loss, resulting in bad accuracy (underfitting)</p></li>
+<li><p>too many layers or too many nodes -&gt; slow training, overfitting</p></li>
+</ul>
+<p>The goal is to create a model, which has a good accuracy on test data.</p>
+<p>If the model is too smart, in other words, is too much tailored onto the training data,
+it will not perform well on test data, but perfect on the training data -&gt; overfitting.</p>
+<p>A model must be smart enough to deal with typical data, but not “too smart”, consequently
+performing bad on new data.</p>
+<p><strong>Rule of thumb</strong></p>
+<ul class="simple">
+<li><p>As a starting point, the amount of nodes in a hidden layer should be the
+<strong>average between the nodes of the previous layer and the proceeding layer</strong>.</p></li>
+<li><p>Start with two hidden layers, working your way up to see if it improves on accuracy</p></li>
+</ul>
+<p>More information:
+<a class="reference external" href="https://www.heatonresearch.com/2017/06/01/hidden-layers.html">https://www.heatonresearch.com/2017/06/01/hidden-layers.html</a></p>
+</section>
+<section id="weight-regularization">
+<h2>Weight regularization<a class="headerlink" href="#weight-regularization" title="Link to this heading"></a></h2>
+<p>The goal is to have as small weights as needed to sufficiently describe the data (even
+though larger weights might do this just as good), in order to reduce the chance
+of overfitting.</p>
+<p>The most common ones are <strong>L1 regularization</strong> and <strong>L2 regularization</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">regularizers</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span>
+                       <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span>
+                       <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>There is no rule, which one to choose: try both and see which performs better.</p>
+</section>
+<section id="selection-of-the-loss-functions">
+<h2>Selection of the loss functions<a class="headerlink" href="#selection-of-the-loss-functions" title="Link to this heading"></a></h2>
+<p>Take this table as a starting point of choosing your loss function:</p>
+<figure class="align-default" id="id2">
+<img alt="../../_images/selection_activation_and_loss_function.png" src="../../_images/selection_activation_and_loss_function.png" />
+<figcaption>
+<p><span class="caption-text">Choosing the last-layer activation function and loss function</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl class="field-list">
+<dt class="field-odd">categorical_crossentropy<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Measures the distance between the classifier’s predictions and the labels.
+The lower the loss, the better the classifier. Also referred to as <em>Cross-Entropy</em>.</p>
+<p><strong>Suitable for</strong>: Good choice for categorical data (“Does this dataset belong
+to a certain category?”)</p>
+</dd>
+<dt class="field-even">mse (mean squared error)<span class="colon">:</span></dt>
+<dd class="field-even"><p>Measures the square of the difference between the predictions and the targets.</p>
+<p><strong>Suitable for</strong>: The mean squared error is a widely used loss function for
+regression problems (Regression means, prediction of a value).</p>
+</dd>
+</dl>
+</section>
+<section id="selection-of-the-observed-metrics">
+<h2>Selection of the observed metrics<a class="headerlink" href="#selection-of-the-observed-metrics" title="Link to this heading"></a></h2>
+<p>See all available models: <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics">tf.keras.metrics</a>.</p>
+<dl class="field-list">
+<dt class="field-odd">accuracy<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Calculates how often predictions equals labels.</p>
+<p><strong>Used for</strong>: classification</p>
+</dd>
+<dt class="field-even">mae (Mean absolute error)<span class="colon">:</span></dt>
+<dd class="field-even"><p>It’s the absolute value of the difference between the predictions and the targets.</p>
+<p><strong>Used for</strong>: Scalar regression (single value prediction)</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="flask/wsgi_nginx.html" class="btn btn-neutral float-left" title="Set up a WSGI server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pyscript.html" class="btn btn-neutral float-right" title="PyScript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

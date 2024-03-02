@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>73. Threading Anomalies (Explanation) &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="74. Synchronisation" href="74_synchronization.html" />
+    <link rel="prev" title="73. Threading Anomalien (Beispiele)" href="72_threading_anomalies_examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">JavaVideoKurs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="06_instantiation.html">06. Instanz-Initialisierung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09_access_modifier.html">09. Access Modifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20_packages.html">20. Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="21_primitive_types.html">21. Primitive Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="27_call_by_value.html">27. Call by Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="28_call_by_reference.html">28. Referenzen (Call by Reference)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="29_garbage_collector.html">29. Garbage Collector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31_conditional_command.html">31 Bedingte Anweisung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="36_arrays.html">36. Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="38_recursion.html">38. Rekursion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="44_break_continue.html">44. Break &amp; Continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45_code_labels.html">45. Code Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="46_inheritance.html">46. Vererbung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="47_inheritance_hierarchy.html">47. Vererbungshierarchie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="48_polymorphism.html">48. Polymorphism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="49_casting.html">49. Casting von komplexen Dateitypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50_inheritance_scope.html">50. Scopes bei der Vererbung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="51_super.html">51. Keyword super</a></li>
+<li class="toctree-l3"><a class="reference internal" href="52_overriding.html">52. Overriding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="53_abstract.html">53. Keyword abstract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="54_interfaces.html">54. Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="55_error_handling.html">55. Error Handling (Theorie)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="56_exception_handling.html">56. Ausnahmebehandlung (exceptions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="57_try_catch.html">57. Exceptions behandeln (try-catch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="58_throw_exceptions.html">58. Exceptions werfen (throw)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="59_exc_design_guide.html">59. Ausnahmebehandlung: Design Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60_copy_objects.html">60. Objekte kopieren (clone)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="61_compare_objects.html">61. Objekte vergleichen (equals)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="62_object_id.html">62. Objekt-ID (hashCode)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="63_string_constant_pool.html">63. String Constant Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64_regex.html">64. Reguläre Ausdrücke (RegEx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="65_enums.html">65. Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="66_generics.html">66. Generics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="67_bounds_wildcards.html">67. Bounds &amp; Wildcards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="68_wrapper.html">68. Wrapper &amp; Auto-(Un) Boxing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="69_collections.html">69. Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="70_threading.html">70. (Multi-) Threading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="71_thread_runnable.html">71. Thread &amp; Runnable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="72_threading_anomalies_examples.html">73. Threading Anomalien (Beispiele)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">73. Threading Anomalies (Explanation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="74_synchronization.html">74. Synchronisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="75_deadlocks.html">75. Deadlocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="76_keyword_volatile.html">76. Keyword volatile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Java</a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaVideoKurs</a></li>
+      <li class="breadcrumb-item active">73. Threading Anomalies (Explanation)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java/javavideokurs/73_threading_anomalies_solution.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="threading-anomalies-explanation">
+<h1>73. Threading Anomalies (Explanation)<a class="headerlink" href="#threading-anomalies-explanation" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Problem<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Alle drei (fehlerhaften) Programme verwenden teilweise die gleichen Daten
+(shared data). Bei Daten, die nur ein Thread nutzt (z.B lokale Variablen)
+gibt es keine Probleme.</p>
+</dd>
+<dt class="field-even">CrazyThread1.java<span class="colon">:</span></dt>
+<dd class="field-even"><p>Beide Threads nutzen die Instanzvariablen alive und i (main + c (Namen der Threads))</p>
+</dd>
+<dt class="field-odd">CrazyThread2.java<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Alle drei Threads nutzen die Instanzvariable x  (main + c + c)</p>
+</dd>
+<dt class="field-even">CrazyThread3.java<span class="colon">:</span></dt>
+<dd class="field-even"><p>Alle drei Threads nutzen die Instanzvariable x  (main + a + a)</p>
+</dd>
+</dl>
+<p><span class="ulined">Zwei Arten von Anomalien:</span></p>
+<ul class="simple">
+<li><p>Race conditions (Wettlaufsituation)</p></li>
+<li><p>Sequential consistency</p></li>
+</ul>
+<p><span class="ulined">Sequential consistency</span></p>
+<ul>
+<li><p>Regel: Eine Änderung, welche zum Zeitpunkt 0 stattgefunden hat (z.B.
+Inkrementierung eines Wertes) ist zu einem Zeitpunkt 1, welcher zeitlich
+hinter dem Zeitpunkt 0 liegt, erfolgt.</p></li>
+<li><p>Problem: Dies ist in Java nur innerhalb eines Threads garantiert</p></li>
+<li><p>Ursache: Speichermodell in Java</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>einen globalen Speicher</p></li>
+<li><p>je einen lokalen Speicher je Thread</p></li>
+<li><p>beim ersten Zugriff eines Threads einer im globalen Speicher vorhandenen
+Variable kopiert sich der Thread diese vom globalen in seinen lokalen Speicher</p></li>
+<li><p>fortan arbeitet der Thread mit der Kopie (schottet sich quasi vom Rest
+des Programms ab): ändert er die Variable nicht, so geht er davon aus,
+dass diese sich nicht verändert</p></li>
+<li><p>Sequential consistency gilt nicht für den globalen Speicher</p></li>
+<li><p>jeder Thread kann selbst entscheiden, ob und wann er seine lokalen Daten
+mit dem globalen Speicher erneut abgleicht (refresh) oder den globalen
+mit seinem lokalen Wert überschreibt (flush)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Wenn jeder Thread vor jeder Veränderung ‘refreshed’ und nach der Veränderung
+‘flusht’ arbeiten die Prozessen nicht miteinander (Zeitpunkt des Refresh +
+Flush ist vollkommen willkürlich)</p></li>
+<li><p>Ein Flush am Ende des Threads ist sicher</p></li>
+</ul>
+<dl class="field-list">
+<dt class="field-odd">CrazyThread1.java<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>beide Threads nutzen die Instanzvariablen alive und i (main + c)</p></li>
+<li><p>Entweder der Thread gleicht seine Daten (alive) nicht mit dem main()-Thread
+ab (macht kein refresh) oder der main()-Thread behandelt seine Daten lokal und verändert ihn nicht im globalen Speicher (macht kein flush) oder beides</p></li>
+<li><p>Resultat: das Programm endet nie, da alive stets true ist (der thread
+kriegt das false des anderen nicht mit)</p></li>
+</ul>
+</dd>
+<dt class="field-even">CrazyThread3.java<span class="colon">:</span></dt>
+<dd class="field-even"><ul>
+<li><p>alle drei Threads nutzen die Instanzvariable x  (main + a + a)</p></li>
+<li><p>Gleich wie bei CrazyThread1.java:  Die Threads schreiben ihre lokalen
+Daten nicht stetig in den globalen Speicher und oder refreshen nicht. Bsp:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Thread 1 refreshed + flushed: x = 0 -&gt; x = 4000 (+4000)</p></li>
+<li><p>Thread 2 refreshed + flushed: x = 4000 -&gt; x = 7000 (+3000)</p></li>
+<li><p>Thread 1 refreshed + flushed: x = 7000 -&gt; x = 11000 (+4000) -&gt; Bedingung ist erfüllt, Thread 1 beendet (total loops = 8000)</p></li>
+<li><p>Thread 2 refreshed: x = 11000 -&gt; Bedingung ist erfüllt, Thread 2 beendet (total loops = 3000)</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Resultat: Thread 1 und 2 ergeben zusammen nicht 10000 (wie gefordert)</p></li>
+</ul>
+</dd>
+</dl>
+<p><span class="ulined">Anderes Problem</span></p>
+<dl class="field-list simple">
+<dt class="field-odd">CrazyThread2.java<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>die Variable x wird erst abgefragt nachdem beide Threads beendet (und
+damit sicherlich geflusht haben)</p></li>
+<li><p>es kann nicht die lokale Variable des main() Threads sein, da diese 0
+sein müsste</p></li>
+</ul>
+</dd>
+<dt class="field-even">CrazyThread3.java<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Ausgabe von 10001 kann nicht mit einem Refresh-Flush Problem zusammenhängen,
+da dieser erst nach Abschluss der Threads abgerufen wird</p></li>
+</ul>
+</dd>
+</dl>
+<p>-&gt; <span class="ulined">Race conditions</span></p>
+<ul class="simple">
+<li><p>durch Scheduling verursacht: ungünstiges Wechseln von einem Thread zum nächsten</p></li>
+<li><p>es wird davon ausgegangen, dass bei jedem Aufruf einer Variablen diese refreshed
+und bei jeder Veränderung direkt geflusht wird</p></li>
+<li><p>So kommt die 10001 (CrazyThread3.java) zustande:</p></li>
+</ul>
+<a class=""
+               data-lightbox="group-bbbd7267-539c-4a81-8ac0-e9979e004a46"
+               href="../../../_images/race_condition1.png"
+               title="Race Condition"
+               data-title="Race Condition"
+               
+               ><img src="../../../_images/race_condition1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><ul>
+<li><p><span class="ulined">Wichtig</span>: Auch bei Mehrkernprozessoren ist ein echtes paralleles
+Auslesen und Speichern von Variablen nicht möglich (nur echt parallele
+Verarbeitung) da nicht parallel auf die gleiche Adresse im Hauptspeicher
+zugegriffen werden kann</p></li>
+<li><p>Non-repeatable-read’ (Race condition Typ): Zweimaliges Auslesen (hier:
+if-Bedingung + if-Methode), wobei die Variable beim zweiten Lesen nicht mehr
+den gleichen Wert hat</p></li>
+<li><p>Race condition Typ: ‘Lost update’ (CrazyThread2.java): Zuweisung einer
+Variablen wird von einem anderen Thread überschrieben:</p>
+<blockquote>
+<div><ul>
+<li><p>Thread wird während einer Zuweisung gewechselt - Bsp:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Thread 1: Zuweisung x = x + 1; Ein x = 1 wird also x = 1+1 -&gt;
+Bevor x = 2 tatsächlich Zugeweiung erfolgt, wechselt der Thread</p></li>
+<li><p>Thread 2: Liest aktuellen Wert x = 1 (immer noch) Zuweisung
+x = x + 1 = 1 + 1 = 2 -&gt; Flusht in den Hauptspeicher</p></li>
+<li><p>Thread 1: Refreshed x nicht erneut, da er sich bereits bei ‘=’
+befindet, also weist zu: x = 1 + 1 = 2 -&gt; x = 2 wird in den
+Hauptspeicher geflusht, das bereits vorhanden x = 2 wird überschrieben</p></li>
+<li><p>-&gt; bei zwei x++ Zuweisungen wurde x nur ein Mal erhöht</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Viele Inkrementierung gehen verloren daher ist x nie 4000, sondern immer weniger</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Lost update’ kann auf im CrazyThread3.java passieren: Inkremente müssen wiederholt werden,
+da sie x nicht erhöht haben</p></li>
+</ul>
+<p><span class="ulined">Faustregel</span> beim Multi-Threading:</p>
+<p>Arbeiten mehrere Threads auf den selben Daten? Nein -&gt; Kein Problem; Ja -&gt; Anomalien
+treten unregelmäßig auf, sind schwer auszumachen (Kollege testet gleichen Code und
+bekommt das Problem nicht)</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="72_threading_anomalies_examples.html" class="btn btn-neutral float-left" title="73. Threading Anomalien (Beispiele)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="74_synchronization.html" class="btn btn-neutral float-right" title="74. Synchronisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

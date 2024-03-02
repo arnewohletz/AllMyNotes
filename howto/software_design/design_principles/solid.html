@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLID &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DRY" href="dry.html" />
+    <link rel="prev" title="Design Principles" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Design</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../design_patterns/index.html">Design Patterns</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Design Principles</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SOLID</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#single-responsibility-principle-srp">Single-Responsibility Principle (SRP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-closed-principle-ocp">Open-Closed Principle (OCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#liskov-substitution-principle">Liskov substitution principle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interface-segregation-principle">Interface segregation principle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dependency-inversion-principle">Dependency inversion principle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dry.html">DRY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="others.html">Others</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Software Design</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Design Principles</a></li>
+      <li class="breadcrumb-item active">SOLID</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/software_design/design_principles/solid.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solid">
+<h1>SOLID<a class="headerlink" href="#solid" title="Link to this heading"></a></h1>
+<section id="single-responsibility-principle-srp">
+<h2>Single-Responsibility Principle (SRP)<a class="headerlink" href="#single-responsibility-principle-srp" title="Link to this heading"></a></h2>
+<div class="design-principle admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>“There should never be more than one reason for a class to change.”</strong></p>
+</div>
+<p>If a class has only one responsibility, it only had to be changed because that responsibility
+has to be changed.</p>
+<p>Having a single responsibility does not mean, this class should be only one method, but that everything
+it contains is there for only one purpose, which the class is fulfilling within a program.</p>
+<p>A responsibility of a class might be to print a set of data. Following the
+principle, it should not also be responsible for getting the data from a file or database, but
+only to print it, maybe in hundreds of ways, each implemented in a different method,
+but each only does print the data.</p>
+<p>For two different change request, never should the same class be changed for both these requests.</p>
+</section>
+<section id="open-closed-principle-ocp">
+<h2>Open-Closed Principle (OCP)<a class="headerlink" href="#open-closed-principle-ocp" title="Link to this heading"></a></h2>
+<div class="design-principle admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>Modules should be open for extension, but closed for modification.</strong></p>
+</div>
+<p>It means, you should be able to change <strong>what</strong> the module (or class) does, without changing the module.</p>
+<p>Adding a new feature to an application should be possible without changing the existing code, but only
+by adding new one.</p>
+<p>A code smell for violating the Open-Closed principle is, that introducing a change in one module will
+require a lot of other modules to recompile, because they depend on it.</p>
+<p>The <a class="reference internal" href="../design_patterns/decorator_pattern.html#decorator-pattern"><span class="std std-ref">decorator pattern</span></a> addresses this issue by wrapping object,
+that are not supposed to be modified with a another object, that adds to the functionality
+of the wrapped class by having a logic that makes use of the methods of the wrapped class.</p>
+</section>
+<section id="liskov-substitution-principle">
+<h2>Liskov substitution principle<a class="headerlink" href="#liskov-substitution-principle" title="Link to this heading"></a></h2>
+<div class="design-principle admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>Derived subclasses must be usable through the base interface, without the need
+for users to know the difference.</strong></p>
+</div>
+<p>It means, that every subclass of an interface must be compatible to inherit the behaviour
+of its superclass.</p>
+<p>A common code smell is, if you need to check the type of an object (not always, but often),
+since you cannot trust, that the object will behave the way it is expected.</p>
+<p>An example of the Liskov’s substitution principle is to substitute a <code class="docutils literal notranslate"><span class="pre">Square</span></code> for a
+<code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> (Square is a subclass of Rectangle), because a rectangle can have two
+different sized sides, whereas the square always has two equally sized sides.</p>
+</section>
+<section id="interface-segregation-principle">
+<h2>Interface segregation principle<a class="headerlink" href="#interface-segregation-principle" title="Link to this heading"></a></h2>
+<div class="design-principle admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>It is better to have many small interfaces, rather than a few large interfaces.</strong></p>
+<p>or</p>
+<p><strong>Clients should not be forced to depend upon interfaces that they do not use.</strong></p>
+</div>
+<p>As an example, stating all methods which need to be implemented by a concrete subclass
+inside one single interface may lead to the subclass having to implemented methods it does
+not need or must not have.</p>
+<figure class="align-center" id="id2">
+<div class="mermaid">
+            classDiagram
+    IAnimal &lt;|-- Animal
+    class IAnimal {
+        &lt;&lt;interface&gt;&gt;
+        +eat()
+        +move()
+        +sleep()
+    }
+        </div><figcaption>
+<p><span class="caption-text">All concrete animal behavior is defined in one interface (Animal)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Instead, smaller <em>Roles</em> for a concrete classes behavior should be defined and passed to
+the concrete class during instantiation.</p>
+<figure class="align-center" id="id3">
+<div class="mermaid">
+            classDiagram
+    ICanEat &lt;-- Animal
+    ICanMove &lt;-- Animal
+    ICanSleep &lt;-- Animal
+    class ICanEat {
+        &lt;&lt;interface&gt;&gt;
+        +eat()
+    }
+    class ICanMove {
+        &lt;&lt;interface&gt;&gt;
+        +move()
+    }
+    class ICanSleep {
+        &lt;&lt;inteface&gt;&gt;
+        +sleep()
+    }
+        </div><figcaption>
+<p><span class="caption-text">Animal behavior is defined in separate interfaces</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Each concrete Animal then may implement all three interfaces. This favors composition over
+inheritance and decoupling over coupling, as behavior for concrete Animal classes is more
+flexibel. There might be Animals, that cannot move, so those won’t be forced to implement
+a method they don’t use.</p>
+<p>Moreover, other concrete classes like <em>Plant</em> could implement some of these interfaces
+(e.g. only the <em>ICanEat</em>), so an interface originally defined for one type of concrete class
+can also be used by other classes.</p>
+</section>
+<section id="dependency-inversion-principle">
+<span id="id1"></span><h2>Dependency inversion principle<a class="headerlink" href="#dependency-inversion-principle" title="Link to this heading"></a></h2>
+<div class="design-principle admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>Depend upon abstraction. Do not depend upon concrete classes.</strong></p>
+</div>
+<p>This principle takes the principle to program against an interface one step further.
+It defines, that even the high level classes (e.g. a Zoo class), should depend on an
+abstraction (e.g. an Animal class), as well a low level classes (e.g. Rabbit), which
+implements the abstraction.</p>
+<p>The <em>inversion</em> means, that the lower level classes derive from a higher level abstraction,
+and high level classes referencing these abstraction instead of the lower level implementations
+(instead of high level classes directly depending on these lower level concretions).</p>
+<figure class="align-center" id="id4">
+<div class="mermaid">
+            classDiagram
+    Rabbit &lt;-- Zoo
+    Zebra &lt;-- Zoo
+    Monkey &lt;-- Zoo
+        </div><figcaption>
+<p><span class="caption-text">High level class (Zoo) depends on lower level implementations (animal types) -&gt; Bad!</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<div class="mermaid">
+            classDiagram
+    Zoo &lt;-- Animal
+    Animal &lt;|-- Rabbit
+    Animal &lt;|-- Zebra
+    Animal &lt;|-- Monkey
+    class Animal {
+        &lt;&lt;interface&gt;&gt;
+    }
+        </div><figcaption>
+<p><span class="caption-text">High level &amp; low level classes both depend on abstraction (Animal) -&gt; Good!</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As an example, the <a class="reference internal" href="../design_patterns/factory_method_pattern.html#factory-method-pattern"><span class="std std-ref">Factory Method Pattern</span></a> follows the principle
+by providing an abstract factory class which implementations eventually create an instance
+of a concrete class (based on its internal logic), which also depend on an abstract class.</p>
+<p>Some guidelines which help to follow the <em>Dependency Inversion Principle</em>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No variable should hold reference to a concrete class</p></li>
+<li><p>No class should derive from a concrete class</p></li>
+<li><p>No method should overwrite an implemented method of any of its base classes</p></li>
+</ul>
+</div></blockquote>
+<p>Naturally, these rules must often be broken, but it is a guideline to strive for.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Design Principles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dry.html" class="btn btn-neutral float-right" title="DRY" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

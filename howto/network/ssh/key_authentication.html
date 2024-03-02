@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set up key authentication &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../_static/tabs.js?v=3030b3cb"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Set up Proxy Jump" href="proxy_jump_tunnelling.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Network</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gpg.html">GPG - GNU Privacy Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netcat.html">Netcat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scp.html">SCP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SSH</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Set up key authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-client-create-key-pair">Server &amp; Client: Create key pair</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-set-permissions">Server: Set permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#client-set-permissions">Client: Set permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-set-up-key-authentication">Server: Set-up key authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#client-set-up-key-authentication">Client: Set-up key authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-key-authentication">Test key authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-connections">Configure connections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proxy_jump_tunnelling.html">Set up Proxy Jump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proxy_jump_tunnelling.html#set-up-ssh-tunneling">Set up SSH Tunneling </a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zscaler.html">Zscaler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Network</a></li>
+          <li class="breadcrumb-item"><a href="index.html">SSH</a></li>
+      <li class="breadcrumb-item active">Set up key authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/network/ssh/key_authentication.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="set-up-key-authentication">
+<h1>Set up key authentication<a class="headerlink" href="#set-up-key-authentication" title="Link to this heading"></a></h1>
+<p>It’s recommended to handle authentication of SSH connections via keys, instead of a password.
+Most of the steps only need to be executed on the server machine.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p><strong>Client &amp; Server</strong>:</p>
+<ol class="arabic">
+<li><p>Create a new directory <code class="docutils literal notranslate"><span class="pre">C:\Users\%USERNAME%\.ssh</span></code> (Windows) or <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> (Linux/macOS,
+where it should already exist).</p></li>
+<li><p>Within it, create these empty files (no suffix):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code></p></li>
+<li><p><strong>Server only</strong>: <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="server-client-create-key-pair">
+<h2>Server &amp; Client: Create key pair<a class="headerlink" href="#server-client-create-key-pair" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Start the Key Generator via the command line (Windows) or shell (Linux/macOS)</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519</span>
+</pre></div></div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To customize the key pair even further you may also run</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="k">$(</span>scutil<span class="w"> </span>--get<span class="w"> </span>LocalHostName<span class="k">)</span><span class="s2"> - `date +%Y%m%d`&quot;</span></span>
+</pre></div></div></div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="nv">$HOSTNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span></span>
+</pre></div></div></div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Run in git bash (comes with <a class="reference external" href="https://gitforwindows.org/">Git for Windows</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USERNAME</span><span class="s2">@</span><span class="nv">$COMPUTERNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span></span>
+</pre></div></div></div></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Set the path and filename of the keys (default: ~/.ssh/id_ed25519).
+In case, you don’t need separate keys pairs for different connections, you don’t need to
+specify a custom path or filename.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I experienced errors from the server upon connection, stating the clients private key
+contains an invalid format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">key</span> <span class="s2">&quot;/Users/arnewohletz/.ssh/imac_ed25519.pub&quot;</span><span class="p">:</span> <span class="n">invalid</span> <span class="nb">format</span>
+</pre></div>
+</div>
+<p>This issue was resolved by not defining a custom named key pair (like <code class="docutils literal notranslate"><span class="pre">imac_ed25519</span></code>
+in the example above), but using the default name (here: <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code>).</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Enter a passphrase to encrypt the private key, if needed (more secure, but might conflict with
+applications using the key).</p></li>
+<li><p>Check if the <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory contains both the private and the public key file (*.pub).</p></li>
+</ol>
+</section>
+<section id="server-set-permissions">
+<h2>Server: Set permissions<a class="headerlink" href="#server-set-permissions" title="Link to this heading"></a></h2>
+<p>To prevent the authentication keys from being manipulated, only the respective user must
+be able to interact with them.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The commands are used on Linux/macOS only. See here, how to permissions on Windows:
+<a class="reference external" href="https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/">https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/</a></p>
+<p>On Windows, it is highly recommended to use the included PowerShell scripts to check or
+set the proper access rights. Open a PowerShell instance as administrator, navigate
+to the OpenSSH directory and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "PS C:\\> ";
+}
+</style><span class="prompt2"><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">FixHostFilePermissions</span><span class="p">.</span><span class="n">ps1</span></span>
+</pre></div></div></div>
+<ol class="arabic">
+<li><p><strong>Linux/macOS only</strong>: Make sure, your home directory is only writable by the respective user:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>/home</span>
+<span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>/Users</span>
+</pre></div></div><p>should output <code class="docutils literal notranslate"><span class="pre">drwxr-xr-x</span></code> for the user’s directory.</p>
+<p>If not, execute:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>~/</span>
+</pre></div></div></div></blockquote>
+</div></blockquote>
+</li>
+<li><p>It is important that <code class="docutils literal notranslate"><span class="pre">$HOME/.ssh</span></code> (<code class="docutils literal notranslate"><span class="pre">%USERPROFILE%\.ssh</span></code> on Windows) and the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code>
+file have the correct permissions and owner:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$USERPROFILE$\.ssh</span></code> must be owned by the user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$USERPROFILE$\.ssh</span></code> must only be writable, readable and executable by the owner</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> must be owned by the user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> must only be writable and readable by the owner</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh</span>
+<span class="prompt1">chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh/authorized_keys</span>
+<span class="prompt1">chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh/config</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh</span>
+<span class="prompt1">chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys</span>
+<span class="prompt1">chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+</section>
+<section id="client-set-permissions">
+<h2>Client: Set permissions<a class="headerlink" href="#client-set-permissions" title="Link to this heading"></a></h2>
+<p>Same as for the server, each connecting client needs to set the correct permissions for
+the key pair. OpenSSH is very sensitive here and does not hint you to wrong permissions,
+when trying to establish a connection, so always make sure, those are set correctly.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The commands are used on Linux/macOS only. See here, how to permissions on Windows:
+<a class="reference external" href="https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/">https://www.howtogeek.com/301768/how-to-take-ownership-of-files-and-folders-in-windows/</a></p>
+<p>On Windows, it is highly recommended to use the included PowerShell scripts to check or
+set the proper access rights. Open a PowerShell instance as administrator, navigate
+to the OpenSSH directory and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2"><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">FixUserFilePermissions</span><span class="p">.</span><span class="n">ps1</span></span>
+</pre></div></div></div>
+<p>OpenSSH does not allow the key pair files to be editable by anyone except the owner.
+The private key must also be protected (here: id_ed25519):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh/id_ed25519</span>
+<span class="prompt1">chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh/id_ed25519.pub</span>
+</pre></div></div></div></blockquote>
+</section>
+<section id="server-set-up-key-authentication">
+<h2>Server: Set-up key authentication<a class="headerlink" href="#server-set-up-key-authentication" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Add your private key to the authentication agent (it will handle the authorizations via keys):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-add</span>
+</pre></div></div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul>
+<li><p>In case you received the message</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Could not open a connection to your authentication agent.
+</pre></div>
+</div>
+<p>start the <em>ssh-agent</em> via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">eval</span><span class="w"> </span><span class="sb">`</span>ssh-agent<span class="w"> </span>-s<span class="sb">`</span></span>
+</pre></div></div></div></blockquote>
+<p>To autostart the ssh-agent add this content to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or
+<code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># auto-start ssh-agent
+if [ ! -S ~/.ssh/ssh_auth_dock ]; then
+    eval `ssh-agent` &gt;/dev/null
+    ln -sf &quot;$SSH_AUTH_DOCK&quot; ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l &gt;/dev/null || ssh-add
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>In case you are using a private key using a different name and/or path, you must pass it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-add<span class="w"> </span>/path/to/custom_private_key_file</span>
+</pre></div></div></div>
+</div></blockquote>
+</li>
+<li><p>On the <strong>client</strong>, open the public key file (e.g. id_ed25519.pub) and copy the entire content into the
+<code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file on the <strong>server</strong> (should be a single line starting with <em>ssh-rsa</em> and ending
+with <em>&lt;username&gt;&#64;&lt;hostname&gt;</em>). Save and close both files.</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The public key of <strong>each</strong> client, that wants to authorize itself, needs to be added into a
+separate line within the server’s <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file. Each time, this file is edited,
+the SSH server must be restarted.</p>
+<p>This can also be done from the client via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_ed25519.pub<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;</span>
+</pre></div></div></div>
+</div></blockquote>
+</li>
+<li><p>Open the OpenSSH config file in a text editor:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\ssh\sshd_config</span></code></p></li>
+<li><p>Linux: <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code></p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">/private/etc/ssh/sshd_config</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Change the following content:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Don’t disable the password authentication (<code class="docutils literal notranslate"><span class="pre">PasswordAuthentication</span></code>) until the
+key authentication has been proven to work.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Windows only</strong>: Make sure, the following content is commented out (starts with #):</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Match Group administrators
+# AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Save and close the file.</p></li>
+<li><p>Restart the SSH Server.</p>
+<blockquote>
+<div><p><strong>Windows:</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Type <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Windows</kbd>+<kbd class="kbd docutils literal notranslate">R</kbd></kbd>, type <code class="docutils literal notranslate"><span class="pre">services.msc</span></code> and confirm to open the service manager.</p></li>
+<li><p>Right-click the service and select <em>Restart</em>.</p></li>
+<li><p>Ensure that the <code class="docutils literal notranslate"><span class="pre">OpenSSH</span> <span class="pre">SSH</span> <span class="pre">Server</span></code> service’s startup type is set to <em>Automatic</em>
+(right click service and choose <code class="docutils literal notranslate"><span class="pre">Properties</span></code> to edit).</p></li>
+</ol>
+</div></blockquote>
+<p><strong>Linux:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">service<span class="w"> </span>ssh<span class="w"> </span>restart</span>
+</pre></div></div></div></blockquote>
+<p><strong>macOS:</strong></p>
+<blockquote>
+<div><p>If using Homebrew installation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>ssh</span>
+</pre></div></div><p>If using preinstalled SSH:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>launchctl<span class="w"> </span>stop<span class="w"> </span>com.openssh.sshd</span>
+<span class="prompt1">sudo<span class="w"> </span>launchctl<span class="w"> </span>start<span class="w"> </span>com.openssh.sshd</span>
+</pre></div></div></div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="client-set-up-key-authentication">
+<h2>Client: Set-up key authentication<a class="headerlink" href="#client-set-up-key-authentication" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">config</span></code> file inside the <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory.</p></li>
+<li><p>Insert the following content (adapt path to private key file a.k.a. Identity file, if necessary):</p>
+<blockquote>
+<div><p>On Windows (adapt USERNAME):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Host *
+  IdentityFile C:\Users\&lt;USERNAME&gt;\.ssh/id_ed25519
+</pre></div>
+</div>
+<p>On Linux/macOS:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Host *
+  IdentityFile ~/.ssh/id_ed25519
+</pre></div>
+</div>
+<p>This enables the client to use its private key file as an identity to authenticate
+towards the server.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="test-key-authentication">
+<h2>Test key authentication<a class="headerlink" href="#test-key-authentication" title="Link to this heading"></a></h2>
+<p>Connect to the server (using the server username):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;</span>
+</pre></div></div></div></blockquote>
+<p>The connection should be established without asking for the password, stating that
+the public key was used for authentication.</p>
+<p>If the connection is not successful, check the log output, by running the connection in
+verbose mode:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;<span class="w"> </span>-v</span>
+</pre></div></div></div></blockquote>
+</section>
+</section>
+<section id="configure-connections">
+<h1>Configure connections<a class="headerlink" href="#configure-connections" title="Link to this heading"></a></h1>
+<p>This is a convenience feature. Right now, connecting to a host system is done, for example,
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/all_my_keys/imac.ed25519.pub<span class="w"> </span>someuser@some.host.system</span>
+</pre></div></div><p>To shorten this you may create a config file to store all these parameters.</p>
+<ol class="arabic">
+<li><p>On the client machine, create the config file in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory
+(if not already present):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">touch<span class="w"> </span>~/.ssh/config</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Open the file and add your config, for example, like this:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Host imac
+    HostName imac.fritz.box
+    User arnewohletz
+    IdentityFile ~/.ssh/id_ed25519
+
+Host someotherhost
+    HostName some.other.host
+    User some.user
+    IdentityFile ~/.ssh/id_ed25519
+</pre></div>
+</div>
+<p>You may specify settings for any number of host systems. Check out all
+possible settings via:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">man<span class="w"> </span>ssh_config</span>
+</pre></div></div></div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Save and close the file.</p></li>
+<li><p>You may connect to a specified host system by only stating its name:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt3:before {
+  content: " ";
+}
+</style><span class="prompt3">ssh imac</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To list all configured hosts, specify this command under an alias in your
+<code class="docutils literal notranslate"><span class="pre">~/.bashrc``or</span> <span class="pre">``~/.zshrc</span></code> file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alias ssh-hosts=&quot;cat ~/.ssh/config | grep -E &#39;^\s*Host\s&#39; | awk &#39;{print $2}&#39;&quot;
+</pre></div>
+</div>
+<p>When running <code class="docutils literal notranslate"><span class="pre">ssh-hosts</span></code> in a new shell, it will print all configured hosts.</p>
+<p>On Windows create a Batch script in a folder defined in your PATH variable,
+for example <code class="docutils literal notranslate"><span class="pre">ssh-hosts.bat</span></code> and insert the following content:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@echo off
+type %USERPROFILE%\.ssh\config | findstr /R &quot;^Host &quot;
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="proxy_jump_tunnelling.html" class="btn btn-neutral float-right" title="Set up Proxy Jump" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

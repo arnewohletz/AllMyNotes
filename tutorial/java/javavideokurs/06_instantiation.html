@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>06. Instanz-Initialisierung &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="09. Access Modifiers" href="09_access_modifier.html" />
+    <link rel="prev" title="JavaVideoKurs" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">JavaVideoKurs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">06. Instanz-Initialisierung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09_access_modifier.html">09. Access Modifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20_packages.html">20. Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="21_primitive_types.html">21. Primitive Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="27_call_by_value.html">27. Call by Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="28_call_by_reference.html">28. Referenzen (Call by Reference)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="29_garbage_collector.html">29. Garbage Collector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31_conditional_command.html">31 Bedingte Anweisung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="36_arrays.html">36. Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="38_recursion.html">38. Rekursion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="44_break_continue.html">44. Break &amp; Continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45_code_labels.html">45. Code Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="46_inheritance.html">46. Vererbung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="47_inheritance_hierarchy.html">47. Vererbungshierarchie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="48_polymorphism.html">48. Polymorphism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="49_casting.html">49. Casting von komplexen Dateitypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50_inheritance_scope.html">50. Scopes bei der Vererbung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="51_super.html">51. Keyword super</a></li>
+<li class="toctree-l3"><a class="reference internal" href="52_overriding.html">52. Overriding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="53_abstract.html">53. Keyword abstract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="54_interfaces.html">54. Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="55_error_handling.html">55. Error Handling (Theorie)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="56_exception_handling.html">56. Ausnahmebehandlung (exceptions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="57_try_catch.html">57. Exceptions behandeln (try-catch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="58_throw_exceptions.html">58. Exceptions werfen (throw)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="59_exc_design_guide.html">59. Ausnahmebehandlung: Design Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60_copy_objects.html">60. Objekte kopieren (clone)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="61_compare_objects.html">61. Objekte vergleichen (equals)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="62_object_id.html">62. Objekt-ID (hashCode)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="63_string_constant_pool.html">63. String Constant Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64_regex.html">64. Reguläre Ausdrücke (RegEx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="65_enums.html">65. Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="66_generics.html">66. Generics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="67_bounds_wildcards.html">67. Bounds &amp; Wildcards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="68_wrapper.html">68. Wrapper &amp; Auto-(Un) Boxing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="69_collections.html">69. Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="70_threading.html">70. (Multi-) Threading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="71_thread_runnable.html">71. Thread &amp; Runnable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="72_threading_anomalies_examples.html">73. Threading Anomalien (Beispiele)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="73_threading_anomalies_solution.html">73. Threading Anomalies (Explanation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="74_synchronization.html">74. Synchronisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="75_deadlocks.html">75. Deadlocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="76_keyword_volatile.html">76. Keyword volatile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Java</a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaVideoKurs</a></li>
+      <li class="breadcrumb-item active">06. Instanz-Initialisierung</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java/javavideokurs/06_instantiation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="instanz-initialisierung">
+<h1>06. Instanz-Initialisierung<a class="headerlink" href="#instanz-initialisierung" title="Link to this heading"></a></h1>
+<ol class="arabic simple">
+<li><p>Die Vater-Klasse(n) werden initialisiert, d.h. deren Methoden und
+Instanzvariablen werden an die jeweiligen Kind-Klassen übergeben.</p></li>
+<li><p>durchsucht Klasse zeilenweise nach Instanzvariablen initialisiert diese
+(legt sie im Speicher an), weißt aber noch keinen Wert zu.</p></li>
+<li><p>Instanzvariablen werden Werte zugewiesen.</p></li>
+<li><p>Konstruktor-Rumpf wird durchgeführt.</p></li>
+</ol>
+<div class="admonition-design-tips admonition">
+<p class="admonition-title">Design Tips</p>
+<ul class="simple">
+<li><p>Instanzvariablen, die für alle Objekte dieser Klasse gelten sollen, nicht
+in den Konstruktor-Parametern sondern in der Klasse zuweisen (ginge zwar
+auch im Konstruktor-Rumpf, allerdings ist die Zuweisung zu Beginn der
+Klasse leichter für andere ersichtlich)</p></li>
+<li><p>Auch wenn Default-Werte benötigt werden sollten Variablen trotzdem explizit
+deklariert werden (auch mit default-Werten)</p></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="JavaVideoKurs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="09_access_modifier.html" class="btn btn-neutral float-right" title="09. Access Modifiers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

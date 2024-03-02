@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>State Pattern &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Observer Pattern" href="observer_pattern.html" />
+    <link rel="prev" title="Iterator Pattern" href="iterator_pattern.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Design</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Design Patterns</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="strategy_pattern.html">Strategy Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorator_pattern.html">Decorator Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="factory_method_pattern.html">Factory Method Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_factory_pattern.html">Abstract Factory Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command_pattern.html">Command Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adapter_pattern.html">Adapter Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="facade_pattern.html">Facade Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proxy_pattern.html">Proxy Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="template_method_pattern.html">Template Method Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composite_pattern.html">Composite Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iterator_pattern.html">Iterator Pattern</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">State Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#issue">Issue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="observer_pattern.html">Observer Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="singleton.html">Singleton Pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../design_principles/index.html">Design Principles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Software Design</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Design Patterns</a></li>
+      <li class="breadcrumb-item active">State Pattern</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/software_design/design_patterns/state_pattern.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="state-pattern">
+<h1>State Pattern<a class="headerlink" href="#state-pattern" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Object change their behavior depending on the status they are currently in</p></li>
+<li><p>It does not matter, how the object got into a particular state, only the state itself</p></li>
+</ul>
+<p><strong>Example</strong>: Turnstile at subway station which requires card swipe to open</p>
+<figure class="align-default" id="id1">
+<div class="mermaid">
+            stateDiagram
+    Closed --&gt; Process : pay
+    Closed --&gt; Closed : pay_failed
+    Closed --&gt; Closed : pay_ok (Timeout)
+    Closed --&gt; Closed : enter
+    Process --&gt; Open : pay_ok
+    Process --&gt; Closed : pay_failed
+    Process --&gt; Process : enter
+    Open --&gt; Closed : enter
+    Open --&gt; Open : pay_ok
+    Open --&gt; Open : pay_failed
+        </div><figcaption>
+<p><span class="caption-text">Turnstile (e.g. subway example)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<span id="transitioning-table"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Transitioning table (current state + action -&gt; new state)</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td rowspan="2"><p><strong>States</strong></p></td>
+<td colspan="4"><p><strong>Actions</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><em>enter</em></p></td>
+<td><p><em>pay_ok</em></p></td>
+<td><p><em>pay_failed</em></p></td>
+<td><p><em>pay</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>closed</em></p></td>
+<td><p>closed</p></td>
+<td><p>closed</p></td>
+<td><p>closed</p></td>
+<td><p>process</p></td>
+</tr>
+<tr class="row-even"><td><p><em>open</em></p></td>
+<td><p>closed</p></td>
+<td><p>open</p></td>
+<td><p>open</p></td>
+<td><p>open</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>process</em></p></td>
+<td><p>process</p></td>
+<td><p>open</p></td>
+<td><p>closed</p></td>
+<td><p>process</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>An object must have a state variable, which contains a <em>state object</em> (conditionals are
+replaced by polymorphism)</p></li>
+<li><p>The state object will implements all action methods</p></li>
+</ul>
+<section id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Each action method has to be implemented for each current state</p></li>
+<li><p>Having more states and actions increases number of implementation significantly (each is a
+combination of a state and an action, so <em>implementations = amount of states x amount of actions</em>)</p></li>
+<li><p>Keeping track of state-action combinations hard for complex scenarios</p></li>
+<li><p>Each action method had to check the current status (is_closed(), is_processing(), …)</p></li>
+<li><p>Solving it using a lot of <em>if</em>-statements or <em>switch</em>-cases is possible, but probably
+much harder as using the <em>State Pattern</em></p></li>
+</ul>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
+<div class="pattern-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>State Pattern</strong> allows an object to alter its behavior when its internal state changes.
+The object will appear to change its class.</p>
+</div>
+<p>As seen from the diagram above, if the state of the object changes, the implementation of its
+action methods may change.</p>
+<figure class="align-center" id="id3">
+<div class="mermaid">
+            classDiagram
+    State &quot;1..*&quot; &lt;-- Context : HAS-A
+    State &lt;|-- ConcreteStateA
+    State &lt;|-- ConcreteStateB
+    class Context {
+        +request()
+    }
+    class State {
+        &lt;&lt;interface&gt;&gt;
+        +handle()
+    }
+    class ConcreteStateA {
+        +handle()
+    }
+    class ConcreteStateB {
+        +handle()
+    }
+        </div><figcaption>
+<p><span class="caption-text">General class diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>When calling <em>request()</em> method from the <em>Context</em> class, it will delegate to <em>state.handle()</em>
+to handle the <em>State</em>.</p></li>
+<li><p>THe <em>Context</em> class does not know, which state it currently has, but calls the <em>handle()</em> method
+of the <em>State</em> class (actually, it’s implementation in the currently active <em>ConcreteState</em> class)
+to handle the state</p></li>
+</ul>
+<figure class="align-center" id="id4">
+<div class="mermaid">
+            classDiagram
+    GateState &quot;1..*&quot; &lt;-- Gate : HAS-A
+    GateState &lt;|-- OpenGateState
+    GateState &lt;|-- ClosedGateState
+    GateState &lt;|-- ProcessingPaymentGateState
+    Gate &lt;-- OpenGateState : HAS-A
+    Gate &lt;-- ClosedGateState : HAS-A
+    Gate &lt;-- ProcessingPaymentGateState : HAS-A
+    class Gate {
+        +enter()
+        +pay()
+        +pay_OK()
+        +pay_failed()
+        +transition_to(state: State)
+    }
+    class GateState {
+        &lt;&lt;interface&gt;&gt;
+        +enter()
+        +pay()
+        +pay_OK()
+        +pay_failed()
+    }
+    class OpenGateState {
+        +enter()
+        +pay()
+        +pay_OK()
+        +pay_failed()
+    }
+    class ClosedGateState {
+        +enter()
+        +pay()
+        +pay_OK()
+        +pay_failed()
+    }
+    class ProcessingPaymentGateState {
+        +enter()
+        +pay()
+        +pay_OK()
+        +pay_failed()
+    }
+        </div><figcaption>
+<p><span class="caption-text">Applied to upper example</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>the methods of <em>Gate</em> blindly delegate to the <em>GateState</em>, which the logic about the gate’s state
+(here, the <em>Gate</em> class doesn’t do anything but calling the respective method on the <em>GateState</em>
+implementing class, though it also could do something before or after calling it)</p></li>
+<li><p>each concrete State class implements all Context methods to have all combinations from the
+<a class="reference internal" href="#transitioning-table"><span class="std std-ref">transitioning table</span></a> and implements the behavior expected from that state</p></li>
+<li><p>there are various ways of changing the state of the <em>Gate</em> class:</p>
+<blockquote>
+<div><ul>
+<li><p>The simplest way is to give then <em>ConcreteState</em> classes a reference to the <em>Gate</em> class in
+order to call a <em>Gate</em>’s <em>transition_to(state: State)</em> method which changes the <em>Gate</em>
+classes state. This is the approach <strong>used in the Gate example</strong></p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This approach violates the <a class="reference internal" href="decorator_pattern.html#open-closed-principle"><span class="std std-ref">Open-Closed Principle</span></a>
+since the original <em>Gate</em> class is mutated</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>To <strong>avoid mutation</strong> make the <em>ConcreteState</em> classes changing-state methods return a
+<em>ConcreteState</em> object, which the <em>Gate</em> class will use the return a new <em>Gate</em> class to
+the <em>Client</em> (original caller) with the proper state set</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+
+<span class="k">class</span> <span class="nc">GateState</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">pay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">pay_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">pay_failed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Gate</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># initial state cannot be dependency injected, since the State requires</span>
+        <span class="c1"># an instance of the Gate upon instantiation, therefore no arguments</span>
+        <span class="c1"># for the __init__() method, but state is set within the method</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">ClosedGateState</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">pay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="o">.</span><span class="n">pay</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">pay_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="o">.</span><span class="n">pay_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">pay_failed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="o">.</span><span class="n">pay_failed</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">change_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_state</span><span class="p">:</span> <span class="n">GateState</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="n">new_state</span>
+
+
+<span class="k">class</span> <span class="nc">OpenGateState</span><span class="p">(</span><span class="n">GateState</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="n">Gate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span> <span class="o">=</span> <span class="n">gate</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User entering. Closing gate ... &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="o">.</span><span class="n">change_state</span><span class="p">(</span><span class="n">ClosedGateState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="p">))</span>
+
+    <span class="c1"># here: return None.</span>
+    <span class="c1"># in case the Gate is supposed to be handled as closed for mutation</span>
+    <span class="c1"># a new instance of OpenGateState must be returned</span>
+    <span class="k">def</span> <span class="nf">pay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ignoring unexpected card swipe. Keeping gate open ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pay_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gate already open. Ignore Payment OK ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pay_failed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Payment failed. Keep gates open ... &quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ClosedGateState</span><span class="p">(</span><span class="n">GateState</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="n">Gate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span> <span class="o">=</span> <span class="n">gate</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot enter before payment. Keeping gate closed ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received card swipe. Process payment ...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="o">.</span><span class="n">change_state</span><span class="p">(</span><span class="n">ProcessingPaymentGateState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">pay_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid payment OK received (probably error). Keeping gate &quot;</span>
+              <span class="s2">&quot;closed ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pay_failed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid payment failed received (probably error). Keeping&quot;</span>
+              <span class="s2">&quot;gate closed ...&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ProcessingPaymentGateState</span><span class="p">(</span><span class="n">GateState</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="n">Gate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span> <span class="o">=</span> <span class="n">gate</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot enter while processing ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Already processing previous payment. Please wait ...&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pay_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Payment OK. Opening gates ...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="o">.</span><span class="n">change_state</span><span class="p">(</span><span class="n">OpenGateState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">pay_failed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Payment failed. Gates remain closed ...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="o">.</span><span class="n">change_state</span><span class="p">(</span><span class="n">ClosedGateState</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gate</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">gate</span> <span class="o">=</span> <span class="n">Gate</span><span class="p">()</span>
+
+    <span class="c1"># try to enter without paying</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+
+    <span class="c1"># enter after successful payment</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">pay</span><span class="p">()</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">pay_ok</span><span class="p">()</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+
+    <span class="c1"># forbid enter due to failed payment</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">pay</span><span class="p">()</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">pay_failed</span><span class="p">()</span>
+    <span class="n">gate</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="iterator_pattern.html" class="btn btn-neutral float-left" title="Iterator Pattern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="observer_pattern.html" class="btn btn-neutral float-right" title="Observer Pattern" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

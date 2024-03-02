@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decorator Pattern &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Factory Method Pattern" href="factory_method_pattern.html" />
+    <link rel="prev" title="Strategy Pattern" href="strategy_pattern.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Design</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Design Patterns</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="strategy_pattern.html">Strategy Pattern</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Decorator Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#issue">Issue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#design-principles-definition">Design Principles &amp; Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#idea">Idea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#appliance">Appliance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="factory_method_pattern.html">Factory Method Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_factory_pattern.html">Abstract Factory Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command_pattern.html">Command Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adapter_pattern.html">Adapter Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="facade_pattern.html">Facade Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proxy_pattern.html">Proxy Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="template_method_pattern.html">Template Method Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composite_pattern.html">Composite Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iterator_pattern.html">Iterator Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="state_pattern.html">State Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="observer_pattern.html">Observer Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="singleton.html">Singleton Pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../design_principles/index.html">Design Principles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Software Design</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Design Patterns</a></li>
+      <li class="breadcrumb-item active">Decorator Pattern</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/software_design/design_patterns/decorator_pattern.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="decorator-pattern">
+<span id="id1"></span><h1>Decorator Pattern<a class="headerlink" href="#decorator-pattern" title="Link to this heading"></a></h1>
+<section id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Link to this heading"></a></h2>
+<p>An object behavior (-&gt; base object or <em>component</em>) is supposed to be changed at runtime (not compile time),
+which means that the object’s code is not supposed to be changed, but merely adapted for one call.</p>
+</section>
+<section id="design-principles-definition">
+<h2>Design Principles &amp; Definition<a class="headerlink" href="#design-principles-definition" title="Link to this heading"></a></h2>
+<div class="design-principle admonition" id="open-closed-principle">
+<p class="admonition-title">Open-Closed Principle</p>
+<p><strong>Classes should be open for extension, but closed for modification</strong></p>
+<p>The goal is to allow classes to be easily extendable to incorporate new behavior
+without modifying existing code. Focus its appliance to those areas, which are most
+likely to change as applying this principle everywhere in your code is unnecessary
+and can lead to complex, hard-to-understand code.</p>
+</div>
+<div class="pattern-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The <strong>Decorator Pattern</strong> attaches additional responsibilities to an object dynamically.
+Decorators provide a flexible alternative to subclassing for extending functionality.</p>
+</div>
+</section>
+<section id="idea">
+<h2>Idea<a class="headerlink" href="#idea" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The base object is “wrapped” by additional objects, that add behavior to it without the need
+to change the base class</p></li>
+<li><p>The amount and type of wrappers used for a function call defines the behavior</p></li>
+<li><p>Each wrapper layer may define custom behavior to the function call or its return value</p></li>
+</ul>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/DecoratorPattern1.jpg" src="../../../_images/DecoratorPattern1.jpg" />
+<figcaption>
+<p><span class="caption-text">Outmost wrapper function is called first (<em>speak()</em>), which calls the next inner function
+until base object returns something, which is then again eventually passed along to the original function call</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>How wrappers work:</dt><dd><ul class="simple">
+<li><p>All wrappers must be of the same type as the base class is (IS-A) in order to act like it
+(from outside they behave just like the base class) -&gt; implementing a wrapper super-class which itself extends
+the base class supertype</p></li>
+<li><p>All wrappers must contain an object of the base class type (HAS-A) to use composition (adding behavior dynamically)
+(required to call the next inner wrapper or base class) -&gt; wrapped object is assigned during wrapper instantiation</p></li>
+<li><p>Each wrapper implements the desired base class functions differently</p></li>
+<li><p>When a method is called on a wrapped object, the method call is first processed by the outermost wrapper</p></li>
+<li><p>That outermost wrapper calls the same function of its wrapped object and make some characteristic
+changes to the result returned from it</p></li>
+<li><p>That wrapped object can be the base object or another wrapper of the same type or any other type inheriting
+from the same wrapper super-class</p></li>
+</ul>
+</dd>
+</dl>
+<div align="center" class="mermaid align-center">
+            classDiagram
+    Beverage &lt;|-- Decaf
+    Beverage &lt;|-- Espresso
+    Beverage &lt;|-- AddonDecorator : IS-A
+    Beverage &lt;-- AddonDecorator : HAS-A
+    AddonDecorator &lt;|-- CaramelDecorator
+    AddonDecorator &lt;|-- SoyDecorator
+    class Beverage{
+        +get_desc()
+        +cost()
+    }
+    class Decaf{
+        +cost()
+    }
+    class Espresso{
+        +cost()
+    }
+    class AddonDecorator{
+        +get_desc()
+    }
+    class CaramelDecorator{
+        +get_desc()
+        +cost()
+    }
+    class SoyDecorator{
+        +get_desc()
+        +cost()
+    }
+        </div>
+        <ul class="simple">
+<li><p>In this example, all classes of type <em>Beverage</em> function as the base class and all classes of type <em>AddonDecorator</em>
+function as decorator classes (wrappers)</p></li>
+<li><p>Instead of creating lots of concrete Beverage classes (like DecafWithCaramelAndSoy), we are able to decorate the
+base class (e.g. <em>Decaf</em>) with a random amount of decorators (e.g. <em>CaramelDecorator</em> &amp; <em>SoyDecorator</em>)</p></li>
+</ul>
+<p>In general</p>
+<ul class="simple">
+<li><p>each decorator refers to the inner object (may it be the base class or another wrapper). For this, it needs an object of
+that type (HAS-A), but the same time it can be used as that inside object by another wrapper of the same type (therefore IS-A)</p></li>
+<li><p>a wrapper function implementations are completely dependent on the scenario. Some may not even refer to the inner wrapped object
+(e.g. purpose is to multiple input with 0, which always will be zero, no matter what the inner “thing” is), but immediately turn
+direction and return a value to the outside layer</p></li>
+<li><p>it is an flexible alternative to sub-classing by providing more functionality to a base object</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Component<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Base class for all concrete component (undecorated classes)</p>
+</dd>
+<dt class="field-even">Decorator<span class="colon">:</span></dt>
+<dd class="field-even"><p>Base class for all concrete decorator</p>
+</dd>
+</dl>
+</section>
+<section id="appliance">
+<h2>Appliance<a class="headerlink" href="#appliance" title="Link to this heading"></a></h2>
+<p>Find a template example for Python on <a class="reference external" href="https://refactoring.guru/design-patterns/decorator/python/example">https://refactoring.guru/design-patterns/decorator/python/example</a></p>
+<p>Implementation of the upper example:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Beverage</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Decaf</span><span class="p">(</span><span class="n">Beverage</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Decaf&quot;</span>
+
+    <span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+
+
+<span class="k">class</span> <span class="nc">Espresso</span><span class="p">(</span><span class="n">Beverage</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Espresso&quot;</span>
+
+    <span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+
+<span class="k">class</span> <span class="nc">AddonDecorator</span><span class="p">(</span><span class="n">Beverage</span><span class="p">):</span>
+
+    <span class="n">cost</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beverage</span><span class="p">:</span> <span class="n">Beverage</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_beverage</span> <span class="o">=</span> <span class="n">beverage</span>
+
+    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beverage</span><span class="o">.</span><span class="n">get_desc</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">CaramelDecorator</span><span class="p">(</span><span class="n">AddonDecorator</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beverage</span><span class="p">:</span> <span class="n">Beverage</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">beverage</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beverage</span><span class="o">.</span><span class="n">cost</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beverage</span><span class="o">.</span><span class="n">get_desc</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; + Caramel&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">SoyDecorator</span><span class="p">(</span><span class="n">AddonDecorator</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beverage</span><span class="p">:</span> <span class="n">Beverage</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">beverage</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beverage</span><span class="o">.</span><span class="n">cost</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">get_desc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_beverage</span><span class="o">.</span><span class="n">get_desc</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; + Soy&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">espresso</span> <span class="o">=</span> <span class="n">Espresso</span><span class="p">()</span>
+    <span class="n">espresso_with_latte</span> <span class="o">=</span> <span class="n">CaramelDecorator</span><span class="p">(</span><span class="n">espresso</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">espresso_with_latte</span><span class="o">.</span><span class="n">get_desc</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">espresso_with_latte</span><span class="o">.</span><span class="n">cost</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The decorator pattern is not very suitable for this example, as</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the decorator implementation of <em>cost()</em> don’t significantly differ (only added value is different differs).
+This could be more easily done within constructor of a concrete beverage, passing in a list of addon prices.</p></li>
+<li><p>using the decorator pattern here violates the rule of separating concerns: here the <em>cost()</em>
+method implementation does specify the way of how (<em>logic</em>) the addon affects the cost of the base object <strong>and</strong>
+also specifies the value by how much (<em>magnitude</em>) the cost is changed. In this particular case, it is unnecessary
+to specify the logic in each concrete addon decorator, since that is unlikely to change (costs for each addon will
+probably always be added to base price, not multiplied or in more complex ways).</p></li>
+<li><p>the added change of any decorator does not affect the <em>behavior</em> of the decorate object (<em>Beverage</em>)
+but merely its <em>state</em> (cost parameter), whereas the decorator pattern should foremost be used for the former.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="strategy_pattern.html" class="btn btn-neutral float-left" title="Strategy Pattern" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="factory_method_pattern.html" class="btn btn-neutral float-right" title="Factory Method Pattern" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

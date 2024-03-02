@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An real-life example Jenkinsfile &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Linux" href="../linux/index.html" />
+    <link rel="prev" title="Jenkinsfile" href="jenkinsfile.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jenkins</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="jenkinsfile.html">Jenkinsfile</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">An real-life example Jenkinsfile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-variables">Global variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agent-parameters-and-options">Agent, Parameters and Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stage-checkout-a-git-branch">Stage - Checkout a git branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-configure-environment-variables">Step - Configure environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stage-execute-makefile-target">Stage - Execute Makefile target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stage-run-inline-groovy-script">Stage - Run inline groovy script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-section">Post section</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Jenkins</a></li>
+      <li class="breadcrumb-item active">An real-life example Jenkinsfile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/jenkins/example_jenkinsfile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="an-real-life-example-jenkinsfile">
+<h1>An real-life example Jenkinsfile<a class="headerlink" href="#an-real-life-example-jenkinsfile" title="Link to this heading"></a></h1>
+<p>This How-To shows an example of a Jenkinsfile used in an actual pipeline. It took me
+days to finish it (including writing additional script files), so in order to decrease
+the pain when writing the next one, I want to document the knowledge I gained while
+writing it.</p>
+<p>For this purpose, the file is split in smaller sections, which include the literal
+content of the file and a detailed explanations of the meaning of each file.</p>
+<section id="global-variables">
+<h2>Global variables<a class="headerlink" href="#global-variables" title="Link to this heading"></a></h2>
+<p>This section defines global variables, which are visible within the entire Jenkinsfile.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nd">@Library</span><span class="o">(</span><span class="s1">&#39;tts_shared&#39;</span><span class="o">)</span><span class="w"> </span><span class="n">_</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1">// --------------------------------------------------------------------------------------------------------------------</span>
+<span class="linenos"> 4</span><span class="c1">//</span>
+<span class="linenos"> 5</span><span class="c1">// Constants</span>
+<span class="linenos"> 6</span><span class="c1">//</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ARTIFACTORY_SOURCE_REPO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tts-release/com/cerence&#39;</span>
+<span class="linenos"> 9</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CREDENTIAL_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tts_rd_jenkins_writer&#39;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_METAPACKAGE_REPO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cerence_neural_tts&quot;</span>
+<span class="linenos">12</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_METAPACKAGE_REPO_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://aac-srv-bitbucket.coretech.cerence.net/scm/trng21/cerence_neural_tts.git&#39;</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_CHOICES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="linenos">15</span><span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">,</span>
+<span class="linenos">16</span><span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span>
+<span class="linenos">17</span><span class="o">].</span><span class="na">join</span><span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="kd">final</span><span class="w"> </span><span class="kt">def</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="linenos">20</span><span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cntts&quot;</span><span class="o">,</span>
+<span class="linenos">21</span><span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;vvt&quot;</span>
+<span class="linenos">22</span><span class="o">]</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="c1">// separate multiple email recipients with &#39;;&#39;</span>
+<span class="linenos">25</span><span class="c1">// use the empty string &#39;&#39; to avoid sending email notifications</span>
+<span class="linenos">26</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NOTIFY_ON_FAILURE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;alberto.pettarin@cerence.com;stefaan.willems@cerence.com;rahul.ranjan@cerence.com&#39;</span>
+<span class="linenos">27</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NOTIFY_ON_SUCCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="c1">// --------------------------------------------------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Defines the import of an external library. To be able to import such a library,
+it must be added to the Jenkins installation’s configuration, where it can be
+retrieved from an SCM (such as a git repository, where it is kept) and a name
+is defined (here: <em>tts_shared</em>) under which is can be imported.</p>
+<p>See <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/shared-libraries/">External Libraries</a> for further information.</p>
+</dd>
+</dl>
+<dl class="field-list">
+<dt class="field-odd">line 8 - 12<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Definition of constant values, which are available for the entire Jenkinsfile.
+As the Jenkinsfile follows the Groovy syntax (which itself derives from the Java syntax),
+variables at the top-level must be declared in the following manner:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">VARIABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;some_value&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">final</span></code> keyword defines, that this variable a constant.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">String</span></code> keyword defines the type as String. Using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword
+defines a variable without a type, which is defined at runtime.</p>
+<p>All basic types: <a class="reference external" href="https://pledbrook.github.io/groovy-cheat-sheet/guide/index.html#_type_list">https://pledbrook.github.io/groovy-cheat-sheet/guide/index.html#_type_list</a></p>
+</dd>
+<dt class="field-even">line 14-17<span class="colon">:</span></dt>
+<dd class="field-even"><p>This definition defines String which consists of an array of strings, which is
+joined into a single string with a new-line character as delimiter (<code class="docutils literal notranslate"><span class="pre">join(&quot;\n&quot;</span></code>).
+This is a possible format needed to define the <em>choices</em> within the <em>choice</em>
+<a class="reference external" href="jenkinsfile_parameters">parameter</a>, where all values must be separated via a
+new line character.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">line 19-22<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The definition of a <a class="reference external" href="groovy_map">map</a>, which contains two key-value pairs. The value
+of a key can be accessed via the get method (see <a class="reference external" href="https://docs.groovy-lang.org/latest/html/groovy-jdk/">https://docs.groovy-lang.org/latest/html/groovy-jdk/</a>).</p>
+</dd>
+</dl>
+</section>
+<section id="agent-parameters-and-options">
+<h2>Agent, Parameters and Options<a class="headerlink" href="#agent-parameters-and-options" title="Link to this heading"></a></h2>
+<p>The <a class="reference external" href="jenkinsfile_agent">agent</a>, <a class="reference external" href="jenkinsfile_parameters">parameter</a> and
+<a class="reference external" href="jenkinsfile_options">options</a> sections are defined inside the
+<a class="reference external" href="jenkinsfile_pipeline">pipeline</a> section. They could also be defined in the
+Jenkins job configuration itself, but defining them inside the Jenkinsfile is a
+good practice, as changed are tracked and the Jenkinsfile can be applied to various
+pipeline jobs more easily.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">31</span><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">34</span><span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="s1">&#39;ci-cntts-test&#39;</span>
+<span class="linenos">35</span><span class="w">    </span><span class="o">}</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="w">    </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">38</span><span class="w">        </span><span class="n">choice</span><span class="o">(</span>
+<span class="linenos">39</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT&#39;</span><span class="o">,</span>
+<span class="linenos">40</span><span class="w">            </span><span class="nl">choices:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_CHOICES}&quot;</span><span class="o">,</span>
+<span class="linenos">41</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Product, whose product meta-package is promoted and uploaded to AF&#39;</span>
+<span class="linenos">42</span><span class="w">        </span><span class="o">)</span>
+<span class="linenos">43</span><span class="w">        </span><span class="n">string</span><span class="o">(</span>
+<span class="linenos">44</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;SUBTASK_ID&#39;</span><span class="o">,</span>
+<span class="linenos">45</span><span class="w">            </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">&#39;READER-XXXX&#39;</span><span class="o">,</span>
+<span class="linenos">46</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Jira sub-task, which covers this release\&#39;s promotion of the product metapackage (e.g. READER-1234)&#39;</span>
+<span class="linenos">47</span><span class="w">        </span><span class="o">)</span>
+<span class="linenos">48</span><span class="w">        </span><span class="n">gitParameter</span><span class="o">(</span>
+<span class="linenos">49</span><span class="w">            </span><span class="nl">branch:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">,</span>
+<span class="linenos">50</span><span class="w">            </span><span class="nl">branchFilter:</span><span class="w"> </span><span class="s1">&#39;origin/release/.*&#39;</span><span class="o">,</span>
+<span class="linenos">51</span><span class="w">            </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">,</span>
+<span class="linenos">52</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Release branch (in cerence_neural_tts repo) to get development metapackage version from (default: NONE).&#39;</span><span class="o">,</span>
+<span class="linenos">53</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE&#39;</span><span class="o">,</span>
+<span class="linenos">54</span><span class="w">            </span><span class="nl">quickFilterEnabled:</span><span class="w"> </span><span class="kc">true</span><span class="o">,</span>
+<span class="linenos">55</span><span class="w">            </span><span class="nl">selectedValue:</span><span class="w"> </span><span class="s1">&#39;DEFAULT&#39;</span><span class="o">,</span>
+<span class="linenos">56</span><span class="w">            </span><span class="nl">sortMode:</span><span class="w"> </span><span class="s1">&#39;ASCENDING&#39;</span><span class="o">,</span>
+<span class="linenos">57</span><span class="w">            </span><span class="nl">type:</span><span class="w"> </span><span class="s1">&#39;PT_BRANCH&#39;</span><span class="o">,</span>
+<span class="linenos">58</span><span class="w">            </span><span class="nl">useRepository:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_METAPACKAGE_REPO_URL}&quot;</span><span class="o">,</span>
+<span class="linenos">59</span><span class="w">            </span><span class="nl">listSize:</span><span class="w"> </span><span class="s1">&#39;10&#39;</span>
+<span class="linenos">60</span><span class="w">        </span><span class="o">)</span>
+<span class="linenos">61</span><span class="w">    </span><span class="o">}</span>
+<span class="linenos">62</span>
+<span class="linenos">63</span><span class="w">    </span><span class="n">options</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">64</span><span class="w">        </span><span class="n">timeout</span><span class="o">(</span><span class="nl">time:</span><span class="w"> </span><span class="mi">5</span><span class="o">,</span><span class="w"> </span><span class="nl">unit:</span><span class="w"> </span><span class="s1">&#39;MINUTES&#39;</span><span class="o">)</span>
+<span class="linenos">65</span><span class="w">        </span><span class="n">timestamps</span><span class="o">()</span>
+<span class="linenos">66</span><span class="w">    </span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 31<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <cite>pipeline &lt;jenkinsfile_declarative_pipeline&gt;</cite> section starts a <em>declarative pipeline</em>.
+Jenkins supports two types of pipelines:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>declarative pipelines</p></li>
+<li><p><a class="reference external" href="jenkins_scripted_pipelines">scripted pipelines</a></p></li>
+</ul>
+</div></blockquote>
+<p>A declarative pipeline may contain scripted sections, which are equal to <em>scripted pipelines</em>.
+Declarative pipelines, though, have additional features (like restarting a
+pipelines from stage), but have limits in terms of what can be declared at which point.</p>
+</dd>
+<dt class="field-even">line 33-35<span class="colon">:</span></dt>
+<dd class="field-even"><p>An <a class="reference external" href="jenkinsfile_agent">agent</a>, running on a Jenkins node, is defined via it’s label.
+During runtime, an agent, which has this label associated to it, is selected
+as the node, to run this pipeline on. If multiple agent have that same label,
+Jenkins selects one of them (preferably one, which currently does not execute any
+job, or which has the shorted queue).</p>
+</dd>
+<dt class="field-odd">line 37-61<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Declaration of the job’s input <a class="reference external" href="jenkinsfile_parameters">parameter</a>. The <em>parameter</em>
+sections expect any available parameter, namely</p>
+<blockquote>
+<div><ul>
+<li><p><em>string</em>: a single line string</p></li>
+<li><p><em>text</em>: a single or multiline string</p></li>
+<li><p><em>booleanParam</em>: accepts <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
+<blockquote>
+<div><p>It may be used to not run certain <em>stages</em>, if the parameter is set to <em>false</em>:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">booleanParam</span><span class="o">(</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;DO_SOMETHING&#39;</span><span class="o">,</span>
+<span class="w">        </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="kc">false</span><span class="o">,</span>
+<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Select me, if you want to do something&#39;</span>
+<span class="o">}</span>
+
+<span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Do something if not skipped&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">when</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">expression</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">DO_SOMETHING</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="c1">// ... do something</span>
+</pre></div>
+</div>
+<p>In the Jenkins web UI’s job configuration, the parameter is a checkbox,
+where unchecked translates to <code class="docutils literal notranslate"><span class="pre">false</span></code> and checked to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p><em>choice</em>: a drop-down list of predefined choices</p></li>
+<li><p><em>password</em>: a password string (designed for secrets, as it won’t be
+printed in the log output)</p></li>
+</ul>
+</div></blockquote>
+<p>All parameter values can be accessed further down the Jenkinsfile via
+<code class="docutils literal notranslate"><span class="pre">${params.PARAMETER_NAME}</span></code>.</p>
+<p>Alternatively, parameters can be defined in a <em>properties</em> section. For this example:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">properties</span><span class="o">([</span>
+<span class="w">    </span><span class="n">parameters</span><span class="o">([</span>
+<span class="w">        </span><span class="n">choice</span><span class="o">(</span>
+<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="c1">// ... other parameter settings</span>
+<span class="w">        </span><span class="o">),</span>
+<span class="w">        </span><span class="n">string</span><span class="o">(</span>
+<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;SUBTASK_ID&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="c1">// ... other parameter settings</span>
+<span class="w">        </span><span class="o">),</span>
+<span class="w">        </span><span class="n">gitParameter</span><span class="o">(</span>
+<span class="w">            </span><span class="nl">branch:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="c1">// ... other parameter settings</span>
+<span class="w">        </span><span class="o">)</span>
+<span class="w">    </span><span class="o">])</span>
+<span class="o">])</span>
+
+<span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="c1">// all other pipeline sections</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 48-60<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <a class="reference external" href="jenkins_gitparameter">Git Parameter</a> plugin provides a <em>gitParameter</em> directive, which allows
+for assigning a git branch (used here), tag, pull request or a revision number
+as a build parameter.</p>
+<p>In this case, the user is asked to select a branch (only branches matching
+the <em>branchFilter</em> expression are available) from the <code class="docutils literal notranslate"><span class="pre">&quot;${PRODUCT_METAPACKAGE_REPO_URL}&quot;</span></code>
+repository (defined as global variable in line 12) and assigns the selection
+to the <em>PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE</em> parameter variable.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">line 63-66<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pipeline options may be declared in the <a class="reference external" href="jenkinsfile_options">options</a> section.
+A variety of options are available. Here, a <code class="docutils literal notranslate"><span class="pre">timeout</span></code> of five minutes is declared,
+which automatically fails the pipeline, if it hasn’t completed within that timeframe.
+The <code class="docutils literal notranslate"><span class="pre">timestamps()</span></code> option prepends all console outputs with a timestamp.</p>
+</dd>
+</dl>
+</section>
+<section id="stage-checkout-a-git-branch">
+<h2>Stage - Checkout a git branch<a class="headerlink" href="#stage-checkout-a-git-branch" title="Link to this heading"></a></h2>
+<p>Pipelines are divided into <em>stages</em>. Unless defined as <a class="reference external" href="jenkinsfile_parallel">parallel</a>,
+all stages are executed in the specified order.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">68</span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">69</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Checkout product repo release branch&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">70</span><span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">71</span><span class="w">            </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">72</span><span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;echo Checkout repository&#39;</span>
+<span class="linenos">73</span><span class="w">                </span><span class="n">checkout</span><span class="o">([</span><span class="n">$class</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GitSCM&#39;</span><span class="o">,</span>
+<span class="linenos">74</span><span class="w">                    </span><span class="nl">branches:</span><span class="w"> </span><span class="o">[[</span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;${params.PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE}&quot;</span><span class="w"> </span><span class="o">]],</span>
+<span class="linenos">75</span><span class="w">                    </span><span class="nl">extensions:</span><span class="w"> </span><span class="o">[[</span><span class="n">$class</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RelativeTargetDirectory&#39;</span><span class="o">,</span><span class="w"> </span><span class="nl">relativeTargetDir:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_METAPACKAGE_REPO}&quot;</span><span class="o">]],</span>
+<span class="linenos">76</span><span class="w">                    </span><span class="nl">userRemoteConfigs:</span><span class="w"> </span><span class="o">[[</span>
+<span class="linenos">77</span><span class="w">                        </span><span class="nl">url:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_METAPACKAGE_REPO_URL}&quot;</span><span class="o">,</span>
+<span class="linenos">78</span><span class="w">                        </span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s2">&quot;${CREDENTIAL_KEY}&quot;</span>
+<span class="linenos">79</span><span class="w">                    </span><span class="o">]]</span>
+<span class="linenos">80</span><span class="w">                </span><span class="o">])</span>
+<span class="linenos">81</span><span class="w">            </span><span class="o">}</span>
+<span class="linenos">82</span><span class="w">        </span><span class="o">}</span>
+<span class="linenos">83</span><span class="w">    </span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 68<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Start the <a class="reference external" href="jenkinsfile_stages">stages</a> section. It must contain at least one
+<a class="reference external" href="jenkinsfile_stage">stage</a> directive.</p>
+</dd>
+<dt class="field-even">line 70-82<span class="colon">:</span></dt>
+<dd class="field-even"><p>Definition of a <a class="reference external" href="jenkinsfile_stage">stage</a>. It contains a <a class="reference external" href="jenkinsfile_steps">steps</a>
+section, which contains additional step directives defined in the <a class="reference external" href="jenkinsfile_steps">Jenkins Steps Reference</a>.
+It may also contain a <a class="reference external" href="jenkinsfile_script">script</a> section, which contains a block
+of <a class="reference external" href="jenkins_scripted_pipelines">scripted pipeline</a>, which allows for execution
+of a more complex series of steps.</p>
+<p>In this case, it contains a <em>script</em> section. It first executes a <a class="reference external" href="jenkinsfile_sh">sh</a>
+command, which opens executes the shell script, in this case <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">Checkout</span> <span class="pre">repository</span></code>.
+The <a class="reference external" href="jenkinsfile_checkout">checkout</a> checks out the sources of another git repository,
+specified via the URL <code class="docutils literal notranslate"><span class="pre">${PRODUCT_METAPACKAGE_REPO_URL}</span></code>, wheras the specific branch
+${params.PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE} is checked out (note that git
+checkout is done via the <a class="reference external" href="jenkins_gitplugin">Git plugin</a>).</p>
+</dd>
+</dl>
+</section>
+<section id="step-configure-environment-variables">
+<h2>Step - Configure environment variables<a class="headerlink" href="#step-configure-environment-variables" title="Link to this heading"></a></h2>
+<p>Pipelines may require some job or run-specific environment variables to be defined.
+If those are few and simple or already known at the very beginning of the pipeline,
+those can also be defined inside a <a class="reference external" href="jenkinsfile_environment">environment</a> directive,
+either at the above of the <em>stages</em> section or individual <em>stage</em> section (in case, those
+will only be needed for this single step).</p>
+<p>As the definition becomes more complex or certain parameters are only known until
+checking out additional sources (as in our case), an extra <em>stage</em>, which globally
+defines those variables, becomes necessary. Note, that here, each environment variable
+must be added to the <cite>env &lt;jenkinsfile_env&gt;</cite> object. Variables defined in the
+<em>environment</em> sections are automatically added to the <em>env</em> object.</p>
+<blockquote>
+<div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 84</span><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;Configure environment variables&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 85</span><span class="w">    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 86</span><span class="w">        </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 87</span><span class="w">            </span><span class="c1">// Input validation</span>
+<span class="linenos"> 88</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(!(</span><span class="n">params</span><span class="o">.</span><span class="na">SUBTASK_ID</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s">/READER-\d+/</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 89</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ABORTED&#39;</span>
+<span class="linenos"> 90</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">&quot;The entered SUBTASK_ID must match READER-[0-9]+ (e.g. READER-1234)&quot;</span>
+<span class="linenos"> 91</span><span class="w">            </span><span class="o">}</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span><span class="w">            </span><span class="c1">// Product variables</span>
+<span class="linenos"> 94</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">PRODUCT</span><span class="o">)</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos"> 97</span><span class="s2">                cd ${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${NTTS_PRODUCT_PREFIX_SUFFIX};</span>
+<span class="linenos"> 98</span><span class="s2">                python3 -c &quot;from src.neuraltts.products.${NTTS_PRODUCT_PREFIX_SUFFIX}.__version__ import __version__;print(__version__)&quot;</span>
+<span class="linenos"> 99</span><span class="s2">                &quot;&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_PRODUCT_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;yq &#39;.product.version&#39; $WORKSPACE/$PRODUCT_METAPACKAGE_REPO/docker/&quot;$NTTS_PRODUCT_PREFIX_SUFFIX&quot;_build_deps.yaml&quot;&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="linenos">102</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_PRODUCT_VERSION</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">103</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ABORTED&#39;</span>
+<span class="linenos">104</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">&quot;The product version (${env.CURRENT_PRODUCT_VERSION}) and product metapackage version (${env.CURRENT_METAPACKAGE_VERSION}) are not identical. Make sure both versions match and then retry.&quot;&quot;&quot;</span>
+<span class="linenos">105</span><span class="w">            </span><span class="o">}</span>
+<span class="linenos">106</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(!</span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s1">&#39;dev&#39;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">107</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ABORTED&#39;</span>
+<span class="linenos">108</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">&quot;This release branch ($PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE) already uses a promoted (non-dev) metapackage version for ${env.PRODUCT}: ${env.CURRENT_METAPACKAGE_VERSION}. Pipeline run was aborted.&quot;</span>
+<span class="linenos">109</span><span class="w">            </span><span class="o">}</span>
+<span class="linenos">110</span>
+<span class="linenos">111</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTED_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;$CURRENT_METAPACKAGE_VERSION&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s1">&#39;.dev&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+<span class="linenos">112</span>
+<span class="linenos">113</span><span class="w">            </span><span class="c1">// Paths</span>
+<span class="linenos">114</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">MAKEFILE_DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${WORKSPACE}/pipelines/common/promote_product_metapackage&quot;</span>
+<span class="linenos">115</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">METAPACKAGE_SETUP_PY_FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/setup.py&quot;</span>
+<span class="linenos">116</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">METAPACKAGE_VERSION_FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/src/neuraltts/products/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/__version__.py&quot;</span>
+<span class="linenos">117</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PRODUCT_DESCRIPTORS_DIR_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/docker&quot;</span>
+<span class="linenos">118</span>
+<span class="linenos">119</span><span class="w">            </span><span class="c1">// Git branches</span>
+<span class="linenos">120</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTION_RELEASE_BRANCH_LOCAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;$PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE&quot;</span><span class="o">.</span><span class="na">replaceFirst</span><span class="o">(</span><span class="s2">&quot;origin/&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="o">)</span>
+<span class="linenos">121</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTION_PULL_REQUEST_BRANCH_LOCAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;feature/${params.SUBTASK_ID}_promote_product_metapackage_${params.PRODUCT}_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;$PROMOTED_METAPACKAGE_VERSION&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s1">&#39;.&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="o">)</span>
+<span class="linenos">122</span><span class="w">        </span><span class="o">}</span>
+<span class="linenos">123</span><span class="w">    </span><span class="o">}</span>
+<span class="linenos">124</span><span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">line 94<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Defines the <em>PRODUCT</em> build parameter to the <em>NTTS_PRODUCT_PREFIX_SUFFIX</em> environment variables,
+by retrieving the associated value from the <em>PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP</em>. The <cite>get() &lt;java_map_get&gt;</cite>
+method returns the value of the given key (<em>params.PRODUCT</em>). It is a method provided by the
+Java layer, which Groovy builds upon. The type of the <em>PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP</em>
+variable was not declared (using the <code class="docutils literal notranslate"><span class="pre">def</span></code> type), but assigned to the Map interface
+implementation during runtime.</p>
+</dd>
+<dt class="field-even">line 96-99<span class="colon">:</span></dt>
+<dd class="field-even"><p>Defines the output of a shell script (<a class="reference external" href="jenkinsfile_sh">sh</a>) as the value of environment variable.
+The script itself must a string value assigned to the <code class="docutils literal notranslate"><span class="pre">script</span></code> option. If the string starts
+with triple single quotes (<code class="docutils literal notranslate"><span class="pre">'''</span></code>), the script allows for multiple lines without using line continuation
+(this is a requirement from Groovy). The same applies to using triple double-quotes (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>).</p>
+<p>For both, global or environmental variables put inside <code class="docutils literal notranslate"><span class="pre">${...}</span></code> are interpolated by their value.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">returnStdout:</span> <span class="pre">true</span></code> ensure, that the standard output value is returned and, in this case,
+assigned to a variable.</p>
+<p><strong>General rules</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">'''</span></code> specifically, if your script requires to use variables literally:</p>
+<blockquote>
+<div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">VAR</span><span class="o">=</span><span class="s2">&quot;global_value&quot;</span>
+
+<span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">            VAR=local_value</span>
+<span class="s1">            echo $VAR</span>
+<span class="s1">        &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>which prints <code class="docutils literal notranslate"><span class="pre">local_var</span></code>, as $VAR is not replaced by the environmental value.</p>
+</div></blockquote>
+<p>Use <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> specifically, if your script requires variables to be interpolated by their actual value:</p>
+<blockquote>
+<div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">VAR</span><span class="o">=</span><span class="s2">&quot;global_value&quot;</span>
+
+<span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            VAR=local_value</span>
+<span class="s2">            echo $VAR</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>which prints <code class="docutils literal notranslate"><span class="pre">global_var</span></code>, as $VAR is replaced by the environmental value.</p>
+</div></blockquote>
+<p>This also applies for single quotes. Variables inside single quotes (<code class="docutils literal notranslate"><span class="pre">'$VAR'</span></code>)
+are used literally, whereas inside double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;$VAR&quot;</span></code>) are replaced by their
+interpolated value.</p>
+<p>In both single and double quotes script blocks, variables can be accessed both via
+<code class="docutils literal notranslate"><span class="pre">$VAR</span></code> or <code class="docutils literal notranslate"><span class="pre">${VAR}</span></code>.</p>
+</dd>
+<dt class="field-odd">line 101-105<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Within the script block (which are executed in the default shell on the node, which
+is either <em>bash</em> on Linux or <em>zsh</em> on macOS), the environment variables inside
+the <cite>env &lt;jenkinsfile_env&gt;</cite> object can be accessed via <code class="docutils literal notranslate"><span class="pre">${env.&lt;VARIABLE_NAME&gt;}</span></code>.
+The block assigns the <em>currentBuild</em> <a class="reference external" href="jenkins_global_variable_reference">global variable</a>,
+settings it to <code class="docutils literal notranslate"><span class="pre">'ABORTED'</span></code> and emitting and <a class="reference external" href="jenkins_error_signal">error signal</a>
+via <code class="docutils literal notranslate"><span class="pre">error</span></code>, which uses variable interpolation in its error string, which
+requires it to use <em>double quotes</em>.</p>
+</dd>
+<dt class="field-even">line 106-109<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">contains</span></code> method checks whether the array contains the given value.</p>
+</dd>
+<dt class="field-odd">line 111<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">replace</span></code> method replaces a given target string (here: <code class="docutils literal notranslate"><span class="pre">'.dev'</span></code>)
+with a substitute (here: <code class="docutils literal notranslate"><span class="pre">''</span></code> (empty)) within a string.</p>
+</dd>
+<dt class="field-even">line 120<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">replaceFirst</span></code> method replaces the first match of a given target (here:
+<code class="docutils literal notranslate"><span class="pre">'origin/'</span></code> with a substitute (here: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (empty)) within a string.</p>
+</dd>
+</dl>
+</section>
+<section id="stage-execute-makefile-target">
+<h2>Stage - Execute Makefile target<a class="headerlink" href="#stage-execute-makefile-target" title="Link to this heading"></a></h2>
+<p>More complex logic is advised to be moved into shell script. Furthermore, such
+shell script can be executed via a Makefile target.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">128</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;Get latest compatible metapackage dependencies from AF&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">129</span><span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">130</span><span class="w">            </span><span class="n">dir</span><span class="o">(</span><span class="s2">&quot;${MAKEFILE_DIR}&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">131</span><span class="w">                </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">132</span><span class="w">                    </span><span class="n">sh</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos">133</span><span class="s2">                        CURRENT_METAPACKAGE_VERSION=${CURRENT_METAPACKAGE_VERSION} \</span>
+<span class="linenos">134</span><span class="s2">                        NTTS_PRODUCT_PREFIX_SUFFIX=${NTTS_PRODUCT_PREFIX_SUFFIX} \</span>
+<span class="linenos">135</span><span class="s2">                        ARTIFACTORY_SOURCE_REPO=${ARTIFACTORY_SOURCE_REPO} \</span>
+<span class="linenos">136</span><span class="s2">                        JFROG_HOME=${JFROG_HOME} \</span>
+<span class="linenos">137</span><span class="s2">                        make pull-python-dependencies</span>
+<span class="linenos">138</span><span class="s2">                    &quot;&quot;&quot;</span>
+<span class="linenos">139</span><span class="w">                </span><span class="o">}</span>
+<span class="linenos">140</span><span class="w">            </span><span class="o">}</span>
+<span class="linenos">141</span><span class="w">        </span><span class="o">}</span>
+<span class="linenos">142</span><span class="w">    </span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 130<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <a class="reference external" href="jenkinsfile_dir">dir</a> block defines the working directory of all processes
+within the block (so from line 131 until line 139).</p>
+</dd>
+<dt class="field-even">line 131 - 139<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference external" href="jenkinsfile_script">script</a> section, which includes a <a class="reference external" href="jenkinsfile_sh">sh</a>
+command. As mentioned above, the <em>script</em> block contains a block of
+<a class="reference external" href="jenkins_scripted_pipelines">scripted pipeline</a>. In this case, this includes
+the <em>sh</em> command, which opens executes the shell script. As the script opens with
+triple double-quotes (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>) it is a multi-line shell script, which supports
+variable interpolation. As this multi-line script is actually a single line command,
+just broken into several lines for better readability, each line but the last
+requires the <a class="reference external" href="https://www.gnu.org/software/bash/manual/bash.html#Escape-Character">line continuation</a> character <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="stage-run-inline-groovy-script">
+<h2>Stage - Run inline groovy script<a class="headerlink" href="#stage-run-inline-groovy-script" title="Link to this heading"></a></h2>
+<p>Jenkins recommends to <a class="reference external" href="outsource_scripts">outsource more complex logic into separate Groovy script files</a>,
+to keep a Jenkinsfile simpler and to allow reuse but other pipeline. Simpler scripts
+can still be defined within the Jenkinsfile itself.</p>
+<p>It follows the <a class="reference external" href="https://groovy-lang.org/syntax.html">Groovy syntax</a>, while also supporting <a class="reference external" href="jenkinsfile_steps">additional steps</a>
+provided by Jenkins.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">183</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;Push promotion changes to remote and create pull request&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">184</span><span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">185</span><span class="w">            </span><span class="n">dir</span><span class="o">(</span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">186</span><span class="w">                </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">187</span><span class="w">                    </span><span class="n">withCredentials</span><span class="o">([</span><span class="n">gitUsernamePassword</span><span class="o">(</span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s2">&quot;${CREDENTIAL_KEY}&quot;</span><span class="o">)])</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">188</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">create_pull_request_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos">189</span><span class="s2">                            PROMOTED_METAPACKAGE_VERSION=${PROMOTED_METAPACKAGE_VERSION} \</span>
+<span class="linenos">190</span><span class="s2">                            NTTS_PRODUCT_PREFIX_SUFFIX=${NTTS_PRODUCT_PREFIX_SUFFIX} \</span>
+<span class="linenos">191</span><span class="s2">                            PROMOTION_PULL_REQUEST_BRANCH_LOCAL=${PROMOTION_PULL_REQUEST_BRANCH_LOCAL} \</span>
+<span class="linenos">192</span><span class="s2">                            PROMOTION_RELEASE_BRANCH_LOCAL=${PROMOTION_RELEASE_BRANCH_LOCAL} \</span>
+<span class="linenos">193</span><span class="s2">                            PRODUCT_METAPACKAGE_PULL_REQUEST_URL=${PRODUCT_METAPACKAGE_PULL_REQUEST_URL} \</span>
+<span class="linenos">194</span><span class="s2">                            SUBTASK_ID=${params.SUBTASK_ID} \</span>
+<span class="linenos">195</span><span class="s2">                            CURRENT_BUILD_URL=${currentBuild.getAbsoluteUrl()} \</span>
+<span class="linenos">196</span><span class="s2">                            MAKEFILE_DIR=${MAKEFILE_DIR} \</span>
+<span class="linenos">197</span><span class="s2">                            make -f ${MAKEFILE_DIR}/Makefile push-promotion-changes-to-remote-and-create-pull-request</span>
+<span class="linenos">198</span><span class="s2">                            &quot;&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="linenos">199</span>
+<span class="linenos">200</span><span class="w">                        </span><span class="cm">/* Determine pull request URL and use as job description</span>
+<span class="linenos">201</span><span class="cm">                        Note: an already existing PR is updated, if pipeline runs successfully</span>
+<span class="linenos">202</span><span class="cm">                        another time against the same product release branch */</span>
+<span class="linenos">203</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">pull_request_url</span>
+<span class="linenos">204</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">new_pull_request_url_regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/NEW_PULL_REQUEST_URL ((?!.*null).*) EOL/</span>
+<span class="linenos">205</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">existing_pull_request_url_regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/EXISTING_PULL_REQUEST_URL ((?!.*null).*) EOL/</span>
+<span class="linenos">206</span>
+<span class="linenos">207</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">new_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_pull_request_log</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="n">new_pull_request_url_regex</span>
+<span class="linenos">208</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">existing_match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_pull_request_log</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="n">existing_pull_request_url_regex</span>
+<span class="linenos">209</span>
+<span class="linenos">210</span><span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">new_match</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">211</span><span class="w">                            </span><span class="n">pull_request_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_match</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span>
+<span class="linenos">212</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">213</span><span class="w">                            </span><span class="s2">&quot;&quot;&quot;Pull request created: &lt;a href=&quot;${pull_request_url}&quot;&gt;${pull_request_url}&lt;/a&gt;&quot;&quot;&quot;</span>
+<span class="linenos">214</span><span class="w">                        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">existing_match</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">215</span><span class="w">                            </span><span class="n">pull_request_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">existing_match</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span>
+<span class="linenos">216</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">217</span><span class="w">                            </span><span class="s2">&quot;&quot;&quot;Pull request updated: &lt;a href=&quot;${pull_request_url}&quot;&gt;${pull_request_url}&lt;/a&gt;&quot;&quot;&quot;</span>
+<span class="linenos">218</span><span class="w">                        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">219</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cannot determine pull request URL - check logs&quot;</span>
+<span class="linenos">220</span><span class="w">                        </span><span class="o">}</span>
+<span class="linenos">221</span><span class="w">                    </span><span class="o">}</span>
+<span class="linenos">222</span><span class="w">                </span><span class="o">}</span>
+<span class="linenos">223</span><span class="w">            </span><span class="o">}</span>
+<span class="linenos">224</span><span class="w">        </span><span class="o">}</span>
+<span class="linenos">225</span><span class="w">    </span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 187<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Opens a <a class="reference external" href="jenkinsfile_withcredentials">withCredentials</a> block, which binds credentials,
+stored as a credentials set in Jenkins, to variables within this block. In this case,
+it calls the <code class="docutils literal notranslate"><span class="pre">gitUsernamePassword(...)</span></code> method, passing in the <code class="docutils literal notranslate"><span class="pre">&quot;${CREDENTIAL_KEY}&quot;</span></code>
+(defined in line 9) as <em>credentialsID</em>, referencing the credentials set predefined on
+the Jenkins instance under that same ID. Effectively, this sets the variables</p>
+<ul class="simple">
+<li><p>$GIT_USERNAME</p></li>
+<li><p>$GIT_PASSWORD</p></li>
+<li><p>$GIT_ASKPASS</p></li>
+</ul>
+<p>for the duration of the block.</p>
+</dd>
+<dt class="field-even">line 188 - 198<span class="colon">:</span></dt>
+<dd class="field-even"><p>Assigns the variables <em>create_pull_request_log</em> as the stdout (standard output)
+of the shells script in line 189 - 197. The <code class="docutils literal notranslate"><span class="pre">returnStdout:</span> <span class="pre">true</span></code> option is
+an optional option of the <a class="reference external" href="jenkinsfile_sh">sh</a> command. If set to <code class="docutils literal notranslate"><span class="pre">true</span></code>,
+the standard output of the command is returned as string (in this case, whatever
+the Makefile target returns).</p>
+</dd>
+<dt class="field-odd">line 204 - 205<span class="colon">:</span></dt>
+<dd class="field-odd"><p>These two lines each define a regular expression. The regex’s <a class="reference external" href="groovy_regex">syntax</a>
+follows the one for Java. They must start and end with a <code class="docutils literal notranslate"><span class="pre">\</span></code>. For line 204,
+a match must start with the string <code class="docutils literal notranslate"><span class="pre">NEW_PULL_REQUEST_URL</span></code>, followed with the
+matching group which must not contain <em>null</em>, the followed by the string <code class="docutils literal notranslate"><span class="pre">EOL</span></code>.</p>
+</dd>
+<dt class="field-even">line 207 - 208<span class="colon">:</span></dt>
+<dd class="field-even"><p>Here the pattern is applied to the output of the command in line 188 -198.
+The syntax is: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">match_object</span> <span class="pre">=</span> <span class="pre">input_text</span> <span class="pre">=~</span> <span class="pre">regex_pattern</span></code>.</p>
+</dd>
+<dt class="field-odd">line 211 + 215<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The match object contains the matching string, which accessed via
+<code class="docutils literal notranslate"><span class="pre">match_string</span> <span class="pre">=</span> <span class="pre">match_object[0][1]</span></code> in this case, as the entire matching
+text is accessed via <code class="docutils literal notranslate"><span class="pre">match_object[0]</span></code> and the <code class="docutils literal notranslate"><span class="pre">[1]</span></code> defines the match
+of the first capturing group, which is the wanted text.</p>
+</dd>
+</dl>
+</section>
+<section id="post-section">
+<h2>Post section<a class="headerlink" href="#post-section" title="Link to this heading"></a></h2>
+<p>The <a class="reference external" href="jenkins_post">post</a> section contains all steps, which are executed after the
+pipeline or it’s steps are completed.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">228</span><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">229</span><span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">230</span><span class="w">        </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">231</span><span class="w">            </span><span class="n">nttsMonitorEmail</span><span class="w"> </span><span class="n">nttsMonitorEmail</span><span class="o">.</span><span class="na">SUCCESS</span><span class="o">()</span>
+<span class="linenos">232</span><span class="w">        </span><span class="o">}</span>
+<span class="linenos">233</span><span class="w">    </span><span class="o">}</span>
+<span class="linenos">234</span><span class="w">    </span><span class="n">failure</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">235</span><span class="w">        </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">236</span><span class="w">            </span><span class="n">nttsMonitorEmail</span><span class="w"> </span><span class="n">nttsMonitorEmail</span><span class="o">.</span><span class="na">FAILURE</span><span class="o">()</span>
+<span class="linenos">237</span><span class="w">        </span><span class="o">}</span>
+<span class="linenos">238</span><span class="w">    </span><span class="o">}</span>
+<span class="linenos">239</span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 229<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This opens a <em>success</em> condition block, which is only executed, if the pipeline
+is marked as success.</p>
+</dd>
+<dt class="field-even">line 231 + 236<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <em>nttsMonitorEmail</em> is the name of an imported Groovy script (line 1).
+The <code class="docutils literal notranslate"><span class="pre">nttsMonitorEmail.groovy</span></code> file defines a <em>call()</em> method, which accepts
+a custom type <code class="docutils literal notranslate"><span class="pre">MonitorTypes</span></code> (an enum, which is either <code class="docutils literal notranslate"><span class="pre">MonitorTypes.SUCCESS</span></code>
+or <code class="docutils literal notranslate"><span class="pre">MonitorTypes.FAILURE</span></code>) which executes differently depending on the given
+argument. In this case, different recipients are contacted in case of a
+successful (none, as it uses the empty <code class="docutils literal notranslate"><span class="pre">NOTIFY_ON_SUCCESS</span></code> string defined in line 29)
+and a failing pipeline (uses <code class="docutils literal notranslate"><span class="pre">NOTIFY_ON_FAILURE</span></code> defined in line 28).</p>
+<p>More on shared libraries: <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/shared-libraries/">https://www.jenkins.io/doc/book/pipeline/shared-libraries/</a></p>
+</dd>
+<dt class="field-odd">line 234<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This opens a <em>failure</em> condition block, which is only executed, if the pipeline
+is marked as failure.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jenkinsfile.html" class="btn btn-neutral float-left" title="Jenkinsfile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../linux/index.html" class="btn btn-neutral float-right" title="Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dockerfile &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="git" href="../git/index.html" />
+    <link rel="prev" title="Docker" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dockerfile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Docker</a></li>
+      <li class="breadcrumb-item active">Dockerfile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/docker/dockerfile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dockerfile">
+<h1>Dockerfile<a class="headerlink" href="#dockerfile" title="Link to this heading"></a></h1>
+<p>Example Dockerfile (contains various incoherent statements only, cannot be run):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span># syntax=docker/dockerfile:1
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>ARG NVIDIA_TRITON_IMAGE_FQN
+<span class="linenos"> 4</span>FROM ${NVIDIA_TRITON_IMAGE_FQN}
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>ARG ARTIFACTORY_HOST=aac-srv-artifactory.coretech.cerence.net
+<span class="linenos"> 7</span>ARG BUILD_BACKENDS=${BUILD_BACKENDS:-ALL}
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>USER root
+<span class="linenos">10</span>
+<span class="linenos">11</span>RUN &lt;&lt;EOF
+<span class="linenos">12</span>    apt-get update
+<span class="linenos">13</span>    apt-get install -y --no-install-recommends gnupg2 curl ca-certificates
+<span class="linenos">14</span>EOF
+<span class="linenos">15</span>
+<span class="linenos">16</span>ARG TRITON_SERVER_USER=triton-server
+<span class="linenos">17</span>ARG TRITON_SERVER_CHMOD=${TRITON_SERVER_USER}:${TRITON_SERVER_USER}
+<span class="linenos">18</span>COPY --chown=${TRITON_SERVER_CHMOD} 3rd_party/tensorrt-7.2.3.4-cp38-none-linux_x86_64.whl /pkgs/tensorrt-7.2.3.4-cp38-none-linux_x86_64.whl
+<span class="linenos">19</span>
+<span class="linenos">20</span>ENV LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/usr/local/cuda-10.2/lib64
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.docker.com/engine/reference/builder/#parser-directives">Parser directive</a> for <a class="reference external" href="https://docs.docker.com/build/dockerfile/frontend/#dockerfile-frontend">Dockerfile frontend</a>. This must be defined on top of
+the Dockerfile, because after the first <em>comment</em>, <em>empty line</em> or <em>builder instruction</em>
+has been processed, any following <em>parser directives</em> are treated as regular comments.</p>
+<p>The <em>Dockerfile frontend</em> entry allows to dynamically load a custom Dockerfile syntax,
+whereas <code class="docutils literal notranslate"><span class="pre">syntax=docker/dockerfile:1</span></code> points to the latest stable version 1 syntax.</p>
+</dd>
+<dt class="field-even">line 3<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">ARG</span> <span class="pre">&lt;NAME&gt;</span></code> instructions defines a variable that the user pass in at build-time.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">NVIDIA_TRITON_IMAGE_FQN</span><span class="o">=</span><span class="s2">&quot;some_value&quot;</span></span>
+</pre></div></div></dd>
+<dt class="field-odd">line 6<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">ARG</span> <span class="pre">&lt;NAME&gt;=&lt;VALUE&gt;</span></code> instruction defines a variable with a default value,
+so it is not mandatory to pass it in at build-time.</p>
+</dd>
+<dt class="field-even">line 7<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">ARG</span> <span class="pre">&lt;NAME&gt;=${&lt;VARIABLE&gt;:-&lt;DEFAULT&gt;}</span></code> instruction defines a variable &lt;NAME&gt;
+to the value of the variable &lt;VARIABLE&gt;. In case, &lt;VARIABLE&gt; is not passed in,
+the value assigned to &lt;NAME&gt; will be &lt;DEFAULT&gt;.</p>
+</dd>
+<dt class="field-odd">line 9<span class="colon">:</span></dt>
+<dd class="field-odd"><p>From here onwards, all commands will be executed as user <em>root</em>.</p>
+</dd>
+<dt class="field-even">line 11 - 15<span class="colon">:</span></dt>
+<dd class="field-even"><p>This section defines a <a class="reference external" href="https://docs.docker.com/engine/reference/builder/#here-documents">Here-Document</a>, which allows any lines after the
+opening (line 11) until the closing (line 15) to be part of the same command.
+This allows for multi-line scripts without chaining these lines together with
+<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span> <span class="pre">\</span></code> statements at the end of each of those lines.
+The delimiter (here: <code class="docutils literal notranslate"><span class="pre">EOF</span></code>) can be any single word string.</p>
+<p>This were the substitute without the <em>here-document</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>RUN<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>gnupg2<span class="w"> </span>curl<span class="w"> </span>ca-certificates
+</pre></div>
+</div>
+</dd>
+<dt class="field-odd">line 18<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Copies a local file into the built Docker image using the <code class="docutils literal notranslate"><span class="pre">--chown</span></code> option to
+define the ownership of the copied file.</p>
+</dd>
+<dt class="field-even">line 20<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set an <a class="reference external" href="https://docs.docker.com/engine/reference/builder/#env">environment variable</a>, here append <code class="docutils literal notranslate"><span class="pre">:/usr/local/cuda-10.2/lib64</span></code> to the
+predefined environment variable <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> (the variable contains directories,
+which contain shared libraries, to be searched before using the default directories)</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../git/index.html" class="btn btn-neutral float-right" title="git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

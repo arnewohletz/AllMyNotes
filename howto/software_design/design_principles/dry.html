@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRY &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Others" href="others.html" />
+    <link rel="prev" title="SOLID" href="solid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Design</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../design_patterns/index.html">Design Patterns</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Design Principles</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="solid.html">SOLID</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DRY</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#definition">Definition </a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example </a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplication-in-documentation">Duplication in Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplication-in-data">Duplication in Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="others.html">Others</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Software Design</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Design Principles</a></li>
+      <li class="breadcrumb-item active">DRY</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/software_design/design_principles/dry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dry">
+<h1>DRY<a class="headerlink" href="#dry" title="Link to this heading"></a></h1>
+<section id="definition">
+<h2>Definition <a class="footnote-reference brackets" href="#footcite-2019-thomas" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#definition" title="Link to this heading"></a></h2>
+<p>Maintenance is a constant part of programming. If we have duplicated knowledge within
+our programs, they all need to be changed in case that knowledge changes (e.g. a new
+requirement) -&gt; maintenance nightmare.</p>
+<div class="design-principle admonition">
+<p class="admonition-title">Definition</p>
+<p><strong>Don’t repeat yourself!</strong></p>
+<p>Each piece of knowledge must have a single, unambiguous, authoritative representation
+within a system.</p>
+</div>
+<p>This doesn’t just mean code within a program should not be copy-pasted, but two pieces
+of code must not duplicate <em>knowledge</em> or <em>intent</em>, even if done in two very different ways.</p>
+<p>To test, if your code complies with the principle, see if a single facet of your code need
+to be changed, does this change require changes at different places in the code as well.</p>
+</section>
+<section id="example">
+<h2>Example <a class="footnote-reference brackets" href="#footcite-dry-python" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<p>We want to calculate the BMI of five subjects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># This example has duplications</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># Subject data = [weight_kg, height_m]</span>
+<span class="linenos"> 4</span><span class="n">subject1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.62</span><span class="p">]</span>
+<span class="linenos"> 5</span><span class="n">subject2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">]</span>
+<span class="linenos"> 6</span><span class="n">subject3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.66</span><span class="p">]</span>
+<span class="linenos"> 7</span><span class="n">subject4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">]</span>
+<span class="linenos"> 8</span><span class="n">subject5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mf">1.60</span><span class="p">]</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">bmi_subject1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subject1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">subject1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject1&#39;</span><span class="p">,</span> <span class="n">bmi_subject1</span><span class="p">))</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">bmi_subject2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subject2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">subject2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject2&#39;</span><span class="p">,</span> <span class="n">bmi_subject2</span><span class="p">))</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="n">bmi_subject3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subject3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">subject3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject3&#39;</span><span class="p">,</span> <span class="n">bmi_subject3</span><span class="p">))</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">bmi_subject4</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subject4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">subject4</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject4&#39;</span><span class="p">,</span> <span class="n">bmi_subject4</span><span class="p">))</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">bmi_subject5</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subject5</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">subject5</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">23</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject5&#39;</span><span class="p">,</span> <span class="n">bmi_subject5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>which produces the following output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bmi subject1 = 30
+bmi subject2 = 29
+bmi subject3 = 29
+bmi subject4 = 24
+bmi subject5 = 28
+</pre></div>
+</div>
+<p>First let’s remove the duplication of calculating the BMI for various subjects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">bmi_calc</span><span class="p">(</span><span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate BMI from weight in kg and height in meters&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span>    <span class="n">bmi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">weight_kg</span> <span class="o">/</span> <span class="n">height_m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">bmi</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="c1"># Subject data = [weight_kg, height_m]</span>
+<span class="linenos"> 7</span><span class="n">subject1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.62</span><span class="p">]</span>
+<span class="linenos"> 8</span><span class="n">subject2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">]</span>
+<span class="linenos"> 9</span><span class="n">subject3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.66</span><span class="p">]</span>
+<span class="linenos">10</span><span class="n">subject4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">]</span>
+<span class="linenos">11</span><span class="n">subject5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mf">1.60</span><span class="p">]</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">bmi_subject1</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="n">subject1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject1&#39;</span><span class="p">,</span> <span class="n">bmi_subject1</span><span class="p">))</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="n">bmi_subject2</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="n">subject2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject2&#39;</span><span class="p">,</span> <span class="n">bmi_subject2</span><span class="p">))</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">bmi_subject3</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="n">subject3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject3&#39;</span><span class="p">,</span> <span class="n">bmi_subject3</span><span class="p">))</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">bmi_subject4</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="n">subject4</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject4</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">23</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject4&#39;</span><span class="p">,</span> <span class="n">bmi_subject4</span><span class="p">))</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="n">bmi_subject5</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="n">subject5</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject5</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">26</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;subject5&#39;</span><span class="p">,</span> <span class="n">bmi_subject5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We moved the calculation in its own class, which saves us from explicitly defining
+the calculation for each subject. If the calculation method changes, there is now
+only one place (the <em>bmi_calc()</em> method) to adapt the code.</p>
+<p>To improve it further, let’s move the print statement to the function as well, since
+it is duplicated for each subject:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">bmi_calc</span><span class="p">(</span><span class="n">sub_num</span><span class="p">,</span> <span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate BMI from weight in kg and height in meters&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span>    <span class="n">bmi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">weight_kg</span> <span class="o">/</span> <span class="n">height_m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_num</span><span class="p">)</span>
+<span class="linenos"> 5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">bmi</span><span class="p">))</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1"># Subject data = [weight_kg, height_m]</span>
+<span class="linenos"> 8</span><span class="n">subject1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.62</span><span class="p">]</span>
+<span class="linenos"> 9</span><span class="n">subject2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">]</span>
+<span class="linenos">10</span><span class="n">subject3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.66</span><span class="p">]</span>
+<span class="linenos">11</span><span class="n">subject4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">]</span>
+<span class="linenos">12</span><span class="n">subject5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mf">1.60</span><span class="p">]</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="n">bmi_subject1</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">subject1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">15</span><span class="n">bmi_subject2</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">subject2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">16</span><span class="n">bmi_subject3</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">subject3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">17</span><span class="n">bmi_subject4</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">subject4</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject4</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">18</span><span class="n">bmi_subject5</span> <span class="o">=</span> <span class="n">bmi_calc</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">subject5</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subject5</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>To improve it even more let’s remove calling each subject individually and move them
+all to a list and iterate over it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">bmi_calc</span><span class="p">(</span><span class="n">sub_num</span><span class="p">,</span> <span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate BMI from weight in kg and height in meters&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span>    <span class="n">bmi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">weight_kg</span> <span class="o">/</span> <span class="n">height_m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_num</span><span class="p">)</span>
+<span class="linenos"> 5</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bmi </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">bmi</span><span class="p">))</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1"># Subject data = [weight_kg, height_m]</span>
+<span class="linenos"> 8</span><span class="n">subjects</span> <span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mf">1.62</span><span class="p">],</span> <span class="c1"># subject1</span>
+<span class="linenos"> 9</span>           <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mf">1.53</span><span class="p">],</span> <span class="c1"># subject2</span>
+<span class="linenos">10</span>           <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mf">1.66</span><span class="p">],</span> <span class="c1"># subject3</span>
+<span class="linenos">11</span>           <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">],</span> <span class="c1"># subject4</span>
+<span class="linenos">12</span>           <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mf">1.60</span><span class="p">]]</span> <span class="c1"># subject5</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">subjects</span><span class="p">:</span>
+<span class="linenos">15</span>    <span class="n">bmi_calc</span><span class="p">(</span><span class="n">sub</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sub</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sub</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="duplication-in-documentation">
+<h2>Duplication in Documentation<a class="headerlink" href="#duplication-in-documentation" title="Link to this heading"></a></h2>
+<p>When adding a docstring to a function, don’t explain the function in detail e.g. to
+compensate for bad design and naming. The code should be readable, so that a docstring
+must not repeat what is happening in the function.</p>
+</section>
+<section id="duplication-in-data">
+<h2>Duplication in Data<a class="headerlink" href="#duplication-in-data" title="Link to this heading"></a></h2>
+<p>The attributes of a class must not depend on each other in a way, that if one
+data value changes, another attribute has to be manually adapted.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Line</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
+    <span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">length</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is a violation of DRY. The length derives from the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> attributes.
+If the start or the end Point changes, the length must change as well. It’s better to make
+length a function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Line</span> <span class="p">{</span>
+    <span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
+    <span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="docutils container" id="id3">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-2019-thomas" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>David Thomas. <em>The Pragmatic Programmer - 20th Anniversary Edition</em>. Addison-Wesley Professional, 2019.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-dry-python" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Martin Héroux. Don’t repeat yourself: python functions. 2018. URL: <a class="reference external" href="https://scientificallysound.org/2018/07/19/python-functions/">https://scientificallysound.org/2018/07/19/python-functions/</a> (visited on 2021-09-17).</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="solid.html" class="btn btn-neutral float-left" title="SOLID" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="others.html" class="btn btn-neutral float-right" title="Others" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>67. Bounds &amp; Wildcards &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="68. Wrapper &amp; Auto-(Un) Boxing" href="68_wrapper.html" />
+    <link rel="prev" title="66. Generics" href="66_generics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">JavaVideoKurs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="06_instantiation.html">06. Instanz-Initialisierung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09_access_modifier.html">09. Access Modifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20_packages.html">20. Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="21_primitive_types.html">21. Primitive Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="27_call_by_value.html">27. Call by Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="28_call_by_reference.html">28. Referenzen (Call by Reference)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="29_garbage_collector.html">29. Garbage Collector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31_conditional_command.html">31 Bedingte Anweisung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="36_arrays.html">36. Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="38_recursion.html">38. Rekursion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="44_break_continue.html">44. Break &amp; Continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45_code_labels.html">45. Code Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="46_inheritance.html">46. Vererbung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="47_inheritance_hierarchy.html">47. Vererbungshierarchie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="48_polymorphism.html">48. Polymorphism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="49_casting.html">49. Casting von komplexen Dateitypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50_inheritance_scope.html">50. Scopes bei der Vererbung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="51_super.html">51. Keyword super</a></li>
+<li class="toctree-l3"><a class="reference internal" href="52_overriding.html">52. Overriding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="53_abstract.html">53. Keyword abstract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="54_interfaces.html">54. Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="55_error_handling.html">55. Error Handling (Theorie)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="56_exception_handling.html">56. Ausnahmebehandlung (exceptions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="57_try_catch.html">57. Exceptions behandeln (try-catch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="58_throw_exceptions.html">58. Exceptions werfen (throw)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="59_exc_design_guide.html">59. Ausnahmebehandlung: Design Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60_copy_objects.html">60. Objekte kopieren (clone)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="61_compare_objects.html">61. Objekte vergleichen (equals)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="62_object_id.html">62. Objekt-ID (hashCode)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="63_string_constant_pool.html">63. String Constant Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="64_regex.html">64. Reguläre Ausdrücke (RegEx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="65_enums.html">65. Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="66_generics.html">66. Generics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">67. Bounds &amp; Wildcards</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bounded-type-parameter-bounds">Bounded Type Parameter (Bounds)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wildcards">Wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="68_wrapper.html">68. Wrapper &amp; Auto-(Un) Boxing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="69_collections.html">69. Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="70_threading.html">70. (Multi-) Threading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="71_thread_runnable.html">71. Thread &amp; Runnable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="72_threading_anomalies_examples.html">73. Threading Anomalien (Beispiele)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="73_threading_anomalies_solution.html">73. Threading Anomalies (Explanation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="74_synchronization.html">74. Synchronisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="75_deadlocks.html">75. Deadlocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="76_keyword_volatile.html">76. Keyword volatile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Java</a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaVideoKurs</a></li>
+      <li class="breadcrumb-item active">67. Bounds &amp; Wildcards</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java/javavideokurs/67_bounds_wildcards.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bounds-wildcards">
+<h1>67. Bounds &amp; Wildcards<a class="headerlink" href="#bounds-wildcards" title="Link to this heading"></a></h1>
+<section id="bounded-type-parameter-bounds">
+<h2>Bounded Type Parameter (Bounds)<a class="headerlink" href="#bounded-type-parameter-bounds" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Bounds schränken die Auswahl eines Typ-Parameters ein</p></li>
+<li><p>Funktioniert für Typ-Parameter von Klassen und Interfaces, sowie von Methoden
+und Konstruktoren</p></li>
+</ul>
+<p><strong>Anforderung</strong></p>
+<p>Dem Platzhalter Typ-Parameter soll zur Laufzeit nicht ein beliebiger Typ (bzw.
+Typen) zugewiesen werden, sondern nur eine eingeschränkte Auswahl haben. Dadurch
+lassen sich dann auf alle Objekte, die von der Klasse akzeptiert werden, bestimmte
+typ-spezifische Methoden anwenden. Es soll nicht möglich sein, dass diese Methoden
+bei Objekten aufgerufen werden, die diese Funktionalität gar nicht haben.</p>
+<p><strong>Möglichkeiten</strong></p>
+<ol class="arabic simple">
+<li><p>Generic wird nicht genutzt. Stattdessen werden verschiedenen Listen erzeugt,
+welche jeweils nur die Methoden des akzeptierten Objekts besitzen. So verhindert
+man nicht kompatible Aufrufe -&gt; Problematik vor der Anwendung von Generic wieder da</p></li>
+<li><p>Es wird in der jeweiligen Methode entsprechend von Typ &lt;T&gt; (z.B.) auf den benötigten
+Typ gecastet. Dies führt dazu, dass oftmals auf Typen gecastet wird, die gar
+nicht im Array zur Verfügung stehen (CastClassException) (z.B. wird auf
+Fahrzeug gecastet, aber im Array stehen Strings) -&gt; generisches Verhalten ist
+quasi vorgegaukelt.</p></li>
+</ol>
+<p><strong>Lösung</strong></p>
+<p>Mischung: Generisches Typ-Parameter für die Typsicherheit + Zugriff auf Methoden
+eines konkreten Typs -&gt; <span class="ulined">alles in einer Klasse!</span>, also ein Mittelweg
+zwischen ‘freien’ Genetics und strikter Klassenzuweisung.</p>
+<p>Zunächst muss der Typ-Parameter den entsprechenden Klassentyp erweitern:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FahrzeugListe</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Fahrzeug</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<p>nun kann auf Methode der Klasse Fahrzeug zugegriffen werden:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">berechneEinnahmen</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">summe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">:</span><span class="w"> </span><span class="n">array</span><span class="p">){</span>
+<span class="w">        </span><span class="n">summe</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="na">getPreis</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">summe</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>So kann anschließend nur ein entsprechendes Array des erlaubten Typs (oder dessen
+Kind-Klassen) erzeugt werden:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">FahrzeugListe</span><span class="o">&lt;</span><span class="n">PKW</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fahrzeuge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FahrzeugListe</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PKW</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="n">FahrzeugListe</span><span class="o">&lt;</span><span class="n">Fahrzeug</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fahrzeuge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FahrzeugListe</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Fahrzeug</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Andere Typen erzeugen einen Compiler-Fehler.</p>
+<div class="admonition-faustregel admonition">
+<p class="admonition-title">Faustregel</p>
+<p>Möchte ich auf bestimmte gemeinsame Methoden zugreifen und trotzdem generisch
+bleiben, so dass alle gewünschten Objekte eines Typ in der Klasse akzeptiert sind,
+sollten Bounds verwendet werden.</p>
+</div>
+<p>Nicht nur Klassen, sondern <span class="ulined">auch Interfaces</span> können als Schranke angegeben
+werden:</p>
+<ul class="simple">
+<li><p>auch hier wird extends verwendet und nicht implements</p></li>
+<li><p><code class="code highlight java docutils literal highlight-java"><span class="kd">extends</span></code> ist hier zu lesen wie ‘kompatibel’</p></li>
+<li><p>nun können nur die Klassentypen verwendet werden, welches dieses Interface
+implementieren (bzw. von einer Klasse erben, die dieses Interface bereits
+implementiert hat</p></li>
+</ul>
+<p>Es lassen sich mehrere Interfaces und Klassen als Bereich angeben oder diese auch kombinieren:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FahrzeugListe</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Fahrzeug</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Verkaeuflich</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<p>-&gt; Es werden nun nur die Typen zugelassen, auf die <span class="ulined">alle Bedingungen zutreffen</span></p>
+<p><span class="ulined">Merke</span>: Es müssen zuerst die Klassen und dann die Interfaces angegeben
+werden. Nach der Deklaration eines Interfaces darf keine Klasse mehr kommen.</p>
+</section>
+<section id="wildcards">
+<h2>Wildcards<a class="headerlink" href="#wildcards" title="Link to this heading"></a></h2>
+<p><strong>Problem</strong></p>
+<p>Generische Klassen sind nicht polymorph wie normale Klassen (was bedeutet, statt
+einen Typ X zu übergeben lässt sich auch ein Typ Y heranziehen, der selbst ein
+Kind von X ist bzw. X implementiert), d.h. eine Methode, die den Typ Fahrzeug
+erwartet kann keine Objekte vom Typ Object akzeptieren.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">();</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">OK</span><span class="p">:</span><span class="w"> </span><span class="n">Polymorphie</span>
+<span class="n">Liste</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">objListe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Liste</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="c1">// -&gt; Nicht OK: Type mismatch: cannot convert from Liste&lt;String&gt; to Liste&lt;Object&gt;</span>
+</pre></div>
+</div>
+<p>Bei Generics gilt: <span class="ulined">Eine Liste vom Subtyp einer anderen Klasse kann diese nicht ersetzen</span>
+(eine Liste Object ist keine Liste String). Genauso kann eine Methode in einer
+generischen Klasse, die ein Object als generischen Typ verwendet keinen Subtyp
+akzeptieren:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRemainingSlots</span><span class="p">(</span><span class="n">Liste</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">liste</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">liste</span><span class="p">.</span><span class="na">getCapacity</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">liste</span><span class="p">.</span><span class="na">getElementCount</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Der Aufruf <code class="code highlight java docutils literal highlight-java"><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayUtils</span><span class="p">.</span><span class="na">getRemainingSlots</span><span class="p">(</span><span class="n">strListe</span><span class="p">);</span></code> führt zu einem
+Compile-Error (The method getRemainingSlots(Liste&lt;Object&gt;) in the type ArrayUtils
+is not applicable for the arguments (Liste&lt;String&gt;))</p>
+<p>Um dies zu verhindern müsste also für jeden Typ eine eigene Methode
+<code class="code highlight java docutils literal highlight-java"><span class="n">getRemainingSlots</span><span class="p">(</span><span class="n">Liste</span><span class="o">&lt;</span><span class="n">Typ</span><span class="o">&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">)</span></code> geschrieben werden.</p>
+<p><strong>Lösung</strong></p>
+<p>Wildcards:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRemainingSlots</span><span class="p">(</span><span class="n">Liste</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">liste</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">liste</span><span class="p">.</span><span class="na">getCapacity</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">liste</span><span class="p">.</span><span class="na">getElementCount</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Das &lt;Object&gt; wird durch &lt;?&gt; ersetzt (Kurzschreibweise für: x extends Object)
+-&gt; Es ist alles erlaubt was innerhalb der bounds von Object ist (also alles)</p>
+<ul class="simple">
+<li><p>Man kann auch jeder andere bound setzten: z.B. x extends Fahrzeug. Dies muss
+dann aber explizit angegeben werden</p></li>
+<li><p>Auch Interfaces sind möglich (alle Datentypen die dieses Interface implementieren)</p></li>
+<li><p>Es gibt keine Möglichkeit mehrere Klassen oder Interfaces anzugeben (mit &amp;)
+-&gt; dies ist nur bei bounds möglich</p></li>
+</ul>
+<p>Es lässt sich auch eine Untergrenze eingeben (statt einer Obergrenze mit extends):</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Wildcards sollten nicht dazu verwendet werden undefinierte Typ-Parameter zu ermöglichen.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">listTwo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Dadurch ist es nicht mehr möglich Methoden, die den Typ-Parameter nutzen
+(z.B. add(E e)) zu nutzen: add(?) ist nicht möglich, da diese Methode mit
+keinerlei Datentyp aufgerufen werden kann. Wildcards daher nur in Methoden
+verwenden, nicht beim Erzeugen neuer Listen.</p>
+</div>
+<p><strong>Unterscheidung von Bounds und Wildcards</strong></p>
+<ul class="simple">
+<li><p>Bounds werden in der Definition von Tipparameter festgelegt (also zu bereits
+in der Definition des Interfaces oder der Klasse in welcher die kompatiblen
+Datentypen angegeben werden müssen): <code class="code highlight java docutils literal highlight-java"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Liste</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span></code></p></li>
+<li><p>Wildcards werden dort angegeben, wo der letztlich Typ eines Platzhalter zur
+Laufzeit definiert wird: <code class="code highlight java docutils literal highlight-java"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRemainingSlots</span><span class="p">(</span><span class="n">Liste</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">liste</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></code></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="66_generics.html" class="btn btn-neutral float-left" title="66. Generics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="68_wrapper.html" class="btn btn-neutral float-right" title="68. Wrapper &amp; Auto-(Un) Boxing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

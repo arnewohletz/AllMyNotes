@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create extension (custom role) &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Custom Roles" href="roles.html" />
+    <link rel="prev" title="Extending" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sphinx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../host.html">Host documentation on localhost (with nginx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vale.html">Documentation linting with vale</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Extending</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Create extension (custom role)  </a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Custom Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algolia.html">How to use Docsearch + Algolia for searching Spinx documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sphinx</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Extending</a></li>
+      <li class="breadcrumb-item active">Create extension (custom role)  </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/sphinx/extending/extension.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="create-extension-custom-role">
+<h1>Create extension (custom role) <a class="footnote-reference brackets" href="#footcite-sphinx-role-extension-doug" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-sphinx-role-extension-thai" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#create-extension-custom-role" title="Link to this heading"></a></h1>
+<p>In some cases, there is no adequate role available for your purpose, for instance,
+when nesting two roles. In such cases, adding an extension to your Sphinx project
+can overcome this limitation.</p>
+<p>In this example case, the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel">guilabel</a> role will be extended to support displaying
+a single unicode character, like a symbol, to describe buttons or GUI item which show
+such symbols instead of regular text.</p>
+<p>Create a new Python module in a proper location (e.g. <code class="docutils literal notranslate"><span class="pre">./source/_ext/</span></code>).</p>
+<p>First off, we need to register our role in our Sphinx application:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_role</span><span class="p">(</span><span class="s2">&quot;unicode-guilabel&quot;</span><span class="p">,</span> <span class="n">unicode_guilabel_role</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we are adding the role <em>unicode-guilabel</em> and assign it to the function <em>unicode_guilabel_role</em>.</p>
+<p>Next, we need to define this role processor function. The docutils parser used by Sphinx converts the input
+text into tree, made up of different types of nodes. That tree is then parsed by a <em>writer</em>
+which creates the desired output format, hence your role processor function must return such a node,
+taking arguments describing the marked-up text:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">docutils</span> <span class="kn">import</span> <span class="n">nodes</span>
+
+<span class="k">def</span> <span class="nf">unicode_guilabel_role</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rawtext</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">inliner</span><span class="p">,</span>
+                          <span class="n">options</span><span class="o">=</span><span class="p">{},</span> <span class="n">content</span><span class="o">=</span><span class="p">[]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a guilabel node including a single unicode html-code&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;&amp;#&quot;</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">reporter</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Wrong Unicode! &quot;</span>
+                                     <span class="s2">&quot;Must start with &#39;&amp;#&#39;.&quot;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="n">lineno</span><span class="p">)</span>
+        <span class="n">prb</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">problematic</span><span class="p">(</span><span class="n">rawtext</span><span class="p">,</span> <span class="n">rawtext</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">msg</span><span class="p">],</span> <span class="p">[</span><span class="n">prb</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">reporter</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Wrong Unicode! &quot;</span>
+                                     <span class="s2">&quot;Must end with &#39;;&#39;.&quot;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="n">lineno</span><span class="p">)</span>
+        <span class="n">prb</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">problematic</span><span class="p">(</span><span class="n">rawtext</span><span class="p">,</span> <span class="n">rawtext</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">msg</span><span class="p">],</span> <span class="p">[</span><span class="n">prb</span><span class="p">]</span>
+
+    <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">guilabel</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">),</span> <span class="n">html</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>The arguments are expected in a certain order (see more under
+<a class="reference external" href="https://docutils.sourceforge.io/docs/howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a>). The return value is a tuple
+containing two lists. The first list contains any new nodes to be added to the parse tree,
+the second list contains error or warning messages to show the user (processors
+are defined to return errors instead of raising exceptions because the error messages
+can be inserted into the output instead of halting all processing.</p>
+<p>In this example, the node itself is a <a class="reference external" href="https://pydoc.dev/docutils/latest/docutils.nodes.raw.html">raw data node</a>, which passes the node data as is.
+The nodes text is an HTML expression, wrapping a passed in <em>text</em> within a <em>guilabel</em> span
+assigned to the guilabel class.</p>
+<p>Lastly, your extension must be added to <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/_ext&quot;</span><span class="p">)</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># your other extensions</span>
+<span class="s2">&quot;unicode_guilabel&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>You can now use the new role like this:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>You can click the <span class="na">:unicode-guilabel:</span><span class="nv">`&amp;#5130;`</span> and <span class="na">:unicode-guilabel:</span><span class="nv">`&amp;#5125;`</span>
+buttons to navigate.
+</pre></div>
+</div>
+<p>translates into:</p>
+<blockquote>
+<div><p>You can click the <span class="guilabel">&#5130;</span> and <span class="guilabel">&#5125;</span>
+buttons to navigate.</p>
+</div></blockquote>
+<p>Full <code class="docutils literal notranslate"><span class="pre">unicode_guilabel.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">docutils</span> <span class="kn">import</span> <span class="n">nodes</span>
+
+
+<span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_role</span><span class="p">(</span><span class="s1">&#39;unicode-guilabel&#39;</span><span class="p">,</span> <span class="n">unicode_guilabel_role</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">unicode_guilabel_role</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rawtext</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">inliner</span><span class="p">,</span>
+                          <span class="n">options</span><span class="o">=</span><span class="p">{},</span> <span class="n">content</span><span class="o">=</span><span class="p">[]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a guilabel node including a single unicode html-code&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;&amp;#&quot;</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">reporter</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Wrong Unicode! &quot;</span>
+                                     <span class="s2">&quot;Must start with &#39;&amp;#&#39;.&quot;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="n">lineno</span><span class="p">)</span>
+        <span class="n">prb</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">problematic</span><span class="p">(</span><span class="n">rawtext</span><span class="p">,</span> <span class="n">rawtext</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">msg</span><span class="p">],</span> <span class="p">[</span><span class="n">prb</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">reporter</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Wrong Unicode! &quot;</span>
+                                     <span class="s2">&quot;Must end with &#39;;&#39;.&quot;</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="n">lineno</span><span class="p">)</span>
+        <span class="n">prb</span> <span class="o">=</span> <span class="n">inliner</span><span class="o">.</span><span class="n">problematic</span><span class="p">(</span><span class="n">rawtext</span><span class="p">,</span> <span class="n">rawtext</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">msg</span><span class="p">],</span> <span class="p">[</span><span class="n">prb</span><span class="p">]</span>
+
+    <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">guilabel</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">),</span> <span class="n">html</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It depends on the font, the used Sphinx theme (for example <a class="reference external" href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx-rtd-theme</a>)
+uses, whether a symbols can be displayed. If the font does not include the
+symbol for a certain unicode character, it will be displayed as <span class="raw-html">&#128712;</span>.</p>
+<p>To overcome this limitation, the theme must use a backup font, that features
+most or all defined Unicode symbols. A possible candidate is the <a class="reference external" href="https://dn-works.com/wp-content/uploads/2023/UFAS010223/Symbola.pdf">Symbola</a>
+font.</p>
+<p>An older version (v9.00) is provided by the <a class="reference external" href="https://fontlibrary.org/en/font/symbola">Font Library</a> as a web font.
+To add it follow these steps:</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>These steps proved to work for the <em>sphinx-rtd-theme</em>. If using a different
+theme, the <code class="docutils literal notranslate"><span class="pre">layout.html</span></code> or used Jinja blocks may be named differently.</p>
+</div>
+<ol class="arabic">
+<li><p>Inside the sphinx sources directory (for example <code class="docutils literal notranslate"><span class="pre">source</span></code>) create a new
+directory for HTML templates (here: <code class="docutils literal notranslate"><span class="pre">_templates</span></code>) and an empty template
+file (here: <code class="docutils literal notranslate"><span class="pre">layout.html</span></code>):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">cd</span><span class="w"> </span><span class="nb">source</span></span>
+<span class="prompt1">mkdir<span class="w"> </span>_templates</span>
+<span class="prompt1">touch<span class="w"> </span>_templates/layout.html</span>
+</pre></div></div></div></blockquote>
+<p>If the directory is new, also add the templates to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to be
+considered when building the HTML:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Copy the include HTML code (from the website’s <em>Use this font</em> section)
+into <code class="docutils literal notranslate"><span class="pre">layout.html</span></code> and mark it as the block extension (here: <em>extrabody</em>),
+so it looks like this:</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% extends &quot;!layout.html&quot; %}
+
+{% block extrabody %}
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;screen&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fontlibrary.org//face/symbola&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">/&gt;</span>
+{% endblock %}
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Open the <a class="reference external" href="https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html#how-to-add-custom-css-or-javascript-to-sphinx-documentation">custom.css</a> and add the following content:</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If using a different theme, check the originally used <code class="docutils literal notranslate"><span class="pre">font-family</span></code>
+setting for the <em>guilabel</em> role first and attach <code class="docutils literal notranslate"><span class="pre">SymbolaRegular</span></code>
+as the last option.</p>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">guilabel</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Lato</span><span class="p">,</span><span class="n">proxima-nova</span><span class="p">,</span><span class="n">Helvetica</span><span class="w"> </span><span class="n">Neue</span><span class="p">,</span><span class="n">Arial</span><span class="p">,</span><span class="kc">sans-serif</span><span class="p">,</span><span class="n">SymbolaRegular</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Rebuild the documentation to see the new font being applied.</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A download for Symbola (v7.21) is available at <a class="reference external" href="https://fonts2u.com/symbola.font">https://fonts2u.com/symbola.font</a>.</p>
+</div>
+</div>
+<div class="docutils container" id="id3">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-sphinx-role-extension-doug" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Doug Hellmann. Defining custom roles in sphinx. 2010. URL: <a class="reference external" href="https://doughellmann.com/posts/defining-custom-roles-in-sphinx/">https://doughellmann.com/posts/defining-custom-roles-in-sphinx/</a> (visited on 2022-03-17).</p>
+</aside>
+<aside class="footnote brackets" id="footcite-sphinx-role-extension-thai" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Thai Pangsakulyanont. Creating custom link roles. 2015. URL: <a class="reference external" href="https://protips.readthedocs.io/link-roles.html">https://protips.readthedocs.io/link-roles.html</a> (visited on 2022-03-17).</p>
+</aside>
+</aside>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Extending" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="roles.html" class="btn btn-neutral float-right" title="Custom Roles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

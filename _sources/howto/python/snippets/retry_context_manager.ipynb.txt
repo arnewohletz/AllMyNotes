@@ -1,0 +1,213 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "source": [
+    "## Retry function call with context manager\n",
+    "\n",
+    "### Goal\n",
+    "\n",
+    "A function call may fail due to a temporal issue, for instance, a request call\n",
+    "to an external URL. In this case, it may be useful, to retry calling that function\n",
+    "multiple times in sequence, and only raising an error if all retries fail.\n",
+    "\n",
+    "### The retry module\n",
+    "\n",
+    "The [retry][retry] package provides a convenient method [retry_call][retry_call], which calls\n",
+    "a function either up until the amount of ``retries`` is reached or to be retried function\n",
+    "returns a non-error type object.\n",
+    "\n",
+    "[retry]: https://pypi.org/project/retry2/\n",
+    "[retry_call]: https://github.com/eSAMTrade/retry#retry_call"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "db02be950881a125"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "from retry.api import retry_call\n",
+    "\n",
+    "def say_hi():\n",
+    "    print(\"hi\")\n",
+    "    raise OSError\n",
+    "\n",
+    "\n",
+    "def retry_say_hi():\n",
+    "    exceptions = (OSError, IOError,)\n",
+    "    try:\n",
+    "        retry_call(say_hi, tries=3)\n",
+    "    except exceptions:\n",
+    "        print(\"That didn't go well\")\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    retry_say_hi()"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "is_executing": true
+   },
+   "id": "4fc05f388d261b9f"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "The above function call of `retry_say_hi()` enters `say_hi()` three times, each time raising a `OSError`, which causes a retry, and ultimately fails.\n",
+    "\n",
+    "### Wrapping retry in a context manager\n",
+    "\n",
+    "To provide a uniform way to retry sensitive functions, a [context manager] can be used to wrap a to-be-retried-in-error-case function:"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "38913210aa9bfffe"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "from typing import Tuple, Type\n",
+    "from logging import Logger\n",
+    "from contextlib import contextmanager\n",
+    "from dataclasses import dataclass\n",
+    "from functools import partial\n",
+    "\n",
+    "\n",
+    "@dataclass\n",
+    "class RetryContextManager:\n",
+    "    \"\"\"Context manager to *retry* calls.\n",
+    "\n",
+    "    The class wraps the methods provided by the `retry` Python package\n",
+    "    to simplify the retry of failing function calls. The class implements\n",
+    "    a context manager that allows us to specify retry parameters once\n",
+    "    at init time.\n",
+    "    \"\"\"\n",
+    "\n",
+    "    exceptions: Tuple[Type[Exception], ...] = (Exception,)\n",
+    "    tries: int = 1\n",
+    "    delay: int = 0\n",
+    "    max_delay: int = None\n",
+    "    backoff: int = 1\n",
+    "    jitter: Tuple[int, int] = (0, 0)\n",
+    "    logger: Logger = None\n",
+    "\n",
+    "    @contextmanager\n",
+    "    def retry(self, f, *fargs, **fkwargs):\n",
+    "        yield partial(\n",
+    "            retry_call, f, fargs, fkwargs,\n",
+    "            exceptions=self.exceptions,\n",
+    "            tries=self.tries,\n",
+    "            delay=self.delay,\n",
+    "            max_delay=self.max_delay,\n",
+    "            backoff=self.backoff,\n",
+    "            jitter=self.jitter,\n",
+    "            logger=self.logger\n",
+    "        )"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "4ebf2a842fade2de"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "**Line 9-24**: Definition of the `RetryContextManager` dataclass\n",
+    "\n",
+    "**Line 26-36**: Definition of the context manager factory function. The `@contextmanager` decorator\n",
+    "enables to define a function as context manager, instead of a class implementing the `__enter__()`\n",
+    "and `__exit__()` method. It returns the `retry_call` method as *partial object*, which behaves like\n",
+    "the regular method would, but passes in the arguments from the `RetryContextManager` instance it is\n",
+    "called from. The [partial][partial] method allows calling the function (here: `retry_call`) with\n",
+    "custom positional arguments.\n",
+    "\n",
+    "[partial]: https://docs.python.org/3/library/functools.html#functools.partial\n",
+    "\n",
+    "### Using the custom context manager\n",
+    "\n",
+    "A class may now define a custom `RetryContextManager`, specifying custom `tries` or `delay` parameters"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "79d9d58218d33e9"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "outputs": [],
+   "source": [
+    "import logging\n",
+    "import requests\n",
+    "\n",
+    "class MyRequestClass:\n",
+    "\n",
+    "    def __init__(self):\n",
+    "        self.get_response_retry_ctx = RetryContextManager(\n",
+    "            tries=3,\n",
+    "            delay=1,\n",
+    "            exceptions=(requests.RequestException,),\n",
+    "            logger=logging.getLogger(\"RobotFramework\")\n",
+    "        )\n",
+    "\n",
+    "    def get_audio_bytes_from_url(self, url: str) -> bytes:\n",
+    "        with self.get_response_retry_ctx.retry(requests.get,\n",
+    "                                               url) as get_response:\n",
+    "            response = get_response()\n",
+    "        if response.status_code == 200:\n",
+    "            print(\"That went well\")\n",
+    "        else:\n",
+    "            raise ConnectionError(f\"Unable to receive content from {url}\")"
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "7669a7ca02c6ea1a"
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "**Line 7**: An instance of `RetryContextManager` dataclass which contains the `retry`\n",
+    "context manager method is defined.\n",
+    "\n",
+    "**Line 15 & 16**: The `retry` context manager is entered, passing in `requests.get` as \n",
+    "the function to be called and `url` as a function argument (which leads to the function\n",
+    "call `requests.get(url)`) an assigning the function call to `get_response`.\n",
+    "\n",
+    "**Line 17**: The `get_response` function is called. Afterward, the context manager is closed."
+   ],
+   "metadata": {
+    "collapsed": false
+   },
+   "id": "3f4adc0b80588113"
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

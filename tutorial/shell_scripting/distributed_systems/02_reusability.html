@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Reusability &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Unit testing" href="03_unit_testing.html" />
+    <link rel="prev" title="Best practices" href="01_best_practices.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Shell Scripting</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Distributed Systems - A Bash Tutorial</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_best_practices.html">Best practices </a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Code Reusability </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#source-other-modules">Source other modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialize-sourced-modules">Initialize sourced modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-a-test-module">Setting up a test module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#same-namespace-for-all-modules">Same namespace for all modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#helper-functions-for-arrays">Helper functions for arrays</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#print-array-one-line-per-item">Print array, one line per item</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#sort-array">Sort array</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#search-item-in-array">Search item in array</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#add-a-constructor">Add a constructor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#testing-the-functions">Testing the functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_unit_testing.html">Unit testing </a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cronjobs.html">Linux: Manage scripts via cron job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macos_zsh_basic.html">macOS: zsh and launchd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Shell Scripting</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Distributed Systems - A Bash Tutorial</a></li>
+      <li class="breadcrumb-item active">Code Reusability </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/shell_scripting/distributed_systems/02_reusability.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="code-reusability">
+<h1>Code Reusability <a class="footnote-reference brackets" href="#footcite-kruk22-scheibchenweise" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#code-reusability" title="Link to this heading"></a></h1>
+<section id="source-other-modules">
+<h2>Source other modules<a class="headerlink" href="#source-other-modules" title="Link to this heading"></a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Comparison_of_command_shells">Shell family</a> (to which Bash belongs) doesn’t know library, classes or modules.
+Dynamically loading code can be done via <code class="code highlight bash docutils literal highlight-bash"><span class="nb">source</span></code>, but using</p>
+<ul class="simple">
+<li><p>absolute paths aren’t possible since the script location isn’t fix</p></li>
+<li><p>relative paths aren’t possible since those are relative by the current directory,
+not the location of the script file</p></li>
+</ul>
+<p>This <code class="code highlight bash docutils literal highlight-bash">try_include<span class="o">()</span></code> function is passed the module name, then attempts to find
+its path and load it via <code class="code highlight bash docutils literal highlight-bash"><span class="nb">source</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>try_include<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">mod_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>mod_dir
+<span class="linenos"> 4</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>mod_path
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nv">mod_dir</span><span class="o">=</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cannot resolve </span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nv">mod_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">mod_dir</span><span class="p">%/*</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="nv">mod_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$mod_dir</span><span class="s2">/include/</span><span class="nv">$mod_name</span><span class="s2">.sh&quot;</span>
+<span class="linenos">11</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>.<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mod_path</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cannot load </span><span class="nv">$mod_path</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="linenos">13</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">15</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos">16</span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 5<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="code highlight bash docutils literal highlight-bash"><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span></code> returns the relative path of the current script file
+towards the present working directory, whereas <code class="code highlight bash docutils literal highlight-bash">realpath</code> returns its
+absolute path. If the resulting path cannot be resolved (throws an exit code
+other than 0), the conditional block is executed.</p>
+</dd>
+<dt class="field-even">line 9 + 10<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="code highlight bash docutils literal highlight-bash">mod_dir</code> is stripped by the final slash and the proceeding filename,
+resulting in the parent directory of the script, which is then expanded by
+<code class="code highlight bash docutils literal highlight-bash">/include/<span class="nv">$mod_name</span>.sh</code> (where <code class="code highlight bash docutils literal highlight-bash"><span class="nv">$mod_name</span></code> is passed into the module).</p>
+</dd>
+<dt class="field-odd">line 11<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="code highlight bash docutils literal highlight-bash">.</code> (<a class="reference external" href="https://en.wikipedia.org/wiki/Dot_(command)">dot command</a>) is a short writing for <code class="code highlight bash docutils literal highlight-bash"><span class="nb">source</span></code> and attempts
+to load the module file, entering the conditional block in case of an error
+(exit code differs from 0).</p>
+</dd>
+</dl>
+</section>
+<section id="initialize-sourced-modules">
+<h2>Initialize sourced modules<a class="headerlink" href="#initialize-sourced-modules" title="Link to this heading"></a></h2>
+<p>Without an initialization function, the loaded module is executed as if it were
+directly written inside <code class="code highlight bash docutils literal highlight-bash">try_include<span class="o">()</span></code>. Bugs in the loaded module will impact
+the function. To prevent that, let’s define that each module must contain a
+constructor method, called <code class="code highlight bash docutils literal highlight-bash">__init</code>, which returns 0 in case of success. This
+method is then called by <code class="code highlight bash docutils literal highlight-bash">try_include<span class="o">()</span></code>.</p>
+<p>In addition, it must be prevented that a module is loaded more than once, since this
+would reset any changes done to the module’s state. A helper method called <code class="code highlight bash docutils literal highlight-bash">have<span class="o">()</span></code>
+is making sure of that.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>have<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">module</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="linenos">3</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">__BMS_INCLUDED</span><span class="p">[</span><span class="nv">$module</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">4</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos">5</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">6</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">7</span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="code highlight bash docutils literal highlight-bash">-n</code> test operator evaluates if the succeeding string is empty
+(can be omitted, <code class="code highlight bash docutils literal highlight-bash"><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">__BMS_INCLUDED</span><span class="p">[</span><span class="nv">$module</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span></code> also suffices).
+<code class="code highlight bash docutils literal highlight-bash">__BMS_INCLUDED</code> is a associative array (stores key-value pairs), which
+includes all successfully loaded modules (this will be added to the
+<code class="code highlight bash docutils literal highlight-bash">try_include<span class="o">()</span></code> method)</p>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>BMS stands for <em>Bash Module System</em>, the name of the framework.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>There is no rule or effect using double underscores (‘__’) preceding in
+method or variable names, but it is commonly used across languages to mark
+something as private (in case the language itself does not feature access
+modifiers, like bash).</p>
+</div>
+<p><code class="code highlight bash docutils literal highlight-bash">try_include<span class="o">()</span></code> is now updated to store successfully loaded modules into the
+<code class="code highlight bash docutils literal highlight-bash">__BMS_INCLUDED</code> associative array. Also a wrapper method <code class="code highlight bash docutils literal highlight-bash">include<span class="o">()</span></code>,
+which enables loading multiple modules in one call is added:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>try_include<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">module</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>mod_path
+<span class="linenos"> 4</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>-i<span class="w"> </span>err
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>have<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$module</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nv">mod_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$__BMS_PATH</span><span class="s2">/</span><span class="nv">$module</span><span class="s2">.sh&quot;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>.<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$mod_path</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cannot load </span><span class="nv">$mod_path</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="linenos">11</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">12</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">13</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>__init<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">14</span><span class="w">    </span>__BMS_INCLUDED<span class="o">[</span><span class="s2">&quot;</span><span class="nv">$module</span><span class="s2">&quot;</span><span class="o">]=</span><span class="s2">&quot;</span><span class="nv">$mod_path</span><span class="s2">&quot;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nv">err</span><span class="o">=</span><span class="m">0</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">else</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cannot initialize </span><span class="nv">$module</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">18</span><span class="w">    </span><span class="nv">err</span><span class="o">=</span><span class="m">1</span>
+<span class="linenos">19</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">20</span><span class="w">  </span><span class="nb">unset</span><span class="w"> </span>-f<span class="w"> </span>__init
+<span class="linenos">21</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$err</span><span class="s2">&quot;</span>
+<span class="linenos">22</span><span class="o">}</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>include<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">25</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">modules</span><span class="o">=(</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="linenos">26</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>module
+<span class="linenos">27</span><span class="w">  </span><span class="k">for</span><span class="w"> </span>module<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">modules</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos">28</span><span class="w">    </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>try_include<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$module</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">29</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">30</span><span class="w">    </span><span class="k">fi</span>
+<span class="linenos">31</span><span class="w">  </span><span class="k">done</span>
+<span class="linenos">32</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos">33</span><span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 4<span class="colon">:</span></dt>
+<dd class="field-odd"><p>declares a local variables of type integer</p>
+</dd>
+<dt class="field-even">line 5<span class="colon">:</span></dt>
+<dd class="field-even"><p>Calls the <code class="code highlight bash docutils literal highlight-bash">have<span class="o">()</span></code> method to verifies if specified module has
+already been located.</p>
+</dd>
+<dt class="field-odd">line 13<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Calling the module’s <code class="code highlight bash docutils literal highlight-bash">__init<span class="o">()</span></code> method, on success adding the module
+to <code class="code highlight bash docutils literal highlight-bash">__BMS_INCLUDED</code>.</p>
+</dd>
+<dt class="field-even">line 20<span class="colon">:</span></dt>
+<dd class="field-even"><p>Remove variable <code class="code highlight bash docutils literal highlight-bash">__init</code> (pointing to the module’s initialization method)
+to clear reference for the next call on <code class="code highlight bash docutils literal highlight-bash">try_included<span class="o">()</span></code>.</p>
+</dd>
+</dl>
+<p>Naturally those global variables used by <code class="code highlight bash docutils literal highlight-bash">try_included<span class="o">()</span></code> must be declared
+as well:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>__bms_init<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>mod_dir
+<span class="linenos"> 3</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nv">mod_dir</span><span class="o">=</span><span class="k">$(</span>realpath<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cannot resolve </span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="nv">mod_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">mod_dir</span><span class="p">%/*</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nb">declare</span><span class="w"> </span>-gxr<span class="w"> </span><span class="nv">__BMS_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$mod_dir</span><span class="s2">/include&quot;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nb">declare</span><span class="w"> </span>-Axg<span class="w"> </span>__BMS_INCLUDED
+<span class="linenos">10</span><span class="w">  </span><span class="nb">readonly</span><span class="w"> </span>-f<span class="w"> </span>have
+<span class="linenos">11</span><span class="w">  </span><span class="nb">readonly</span><span class="w"> </span>-f<span class="w"> </span>try_include
+<span class="linenos">12</span><span class="w">  </span><span class="nb">readonly</span><span class="w"> </span>-f<span class="w"> </span>include
+<span class="linenos">13</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos">14</span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 8<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="code highlight bash docutils literal highlight-bash"><span class="nb">declare</span><span class="w"> </span>-gxr</code> declares a global (<code class="code highlight bash docutils literal highlight-bash">-g</code>) variable, which is
+<a class="reference external" href="https://www.delftstack.com/howto/linux/export-in-bash/">exported</a> after initialization (meaning it is available to every subsequent
+command / sub-shell in the environment) via the <code class="code highlight bash docutils literal highlight-bash">-x</code> option and is
+read-only (<code class="code highlight bash docutils literal highlight-bash">-r</code> option), so it cannot be accidentally overwritten.</p>
+</dd>
+<dt class="field-even">line 9<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="code highlight bash docutils literal highlight-bash">-A</code> option marks that the name is an associative array.</p>
+</dd>
+<dt class="field-odd">line 10 - 12<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mark functions as read-only, securing them from subsequent changes.</p>
+</dd>
+</dl>
+<p>All these functions are saved to a script (e.g. <code class="docutils literal notranslate"><span class="pre">bms.sh</span></code>) and a new script is
+created, which sources it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>main<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 4</span><span class="w">  </span>test_hello
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 6</span><span class="o">}</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="o">{</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>.<span class="w"> </span>bms.sh<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">11</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">12</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>include<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">13</span><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">15</span><span class="w">  </span>main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="linenos">16</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span>
+<span class="linenos">17</span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 4<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Calling a function from a test module (included in line 12).</p>
+</dd>
+<dt class="field-even">line 9<span class="colon">:</span></dt>
+<dd class="field-even"><p>Attempt to source <code class="docutils literal notranslate"><span class="pre">bms.sh</span></code>.</p>
+</dd>
+<dt class="field-odd">line 12<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Attempt to source the <em>test</em> module using the <code class="code highlight bash docutils literal highlight-bash">include<span class="o">()</span></code> function from
+<code class="docutils literal notranslate"><span class="pre">bms.sh</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="setting-up-a-test-module">
+<h2>Setting up a test module<a class="headerlink" href="#setting-up-a-test-module" title="Link to this heading"></a></h2>
+<p>For convenience and general usability the <code class="docutils literal notranslate"><span class="pre">bms.sh</span></code> module, it should be placed
+somewhere visible to all users, for example at <code class="docutils literal notranslate"><span class="pre">/usr/local/share/bms/</span></code>, also
+featuring an <code class="docutils literal notranslate"><span class="pre">include/</span></code> sub-folder.</p>
+<p>In order to access the module from any bash script, this new directory needs to be
+visible to the <code class="code highlight bash docutils literal highlight-bash"><span class="nb">source</span></code> command, hence it needs to be added to the PATH variable.
+This can be done by placing a symbolic link:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: " ";
+}
+</style><span class="prompt1">ln -s /usr/local/share/bms /usr/local/bin/bms.sh</span>
+</pre></div></div><p>The test module is now created in <code class="docutils literal notranslate"><span class="pre">test.sh</span></code>. As previously defined, it must feature
+a constructor method <code class="code highlight bash docutils literal highlight-bash">__init<span class="o">()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "$ ";
+}
+</style><span class="prompt2">__init<span class="o">()</span><span class="w"> </span><span class="o">{</span></span>
+<span class="prompt2"><span class="w">  </span><span class="nb">declare</span><span class="w"> </span>-gxr<span class="w"> </span><span class="nv">__test_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">&quot;</span></span>
+<span class="prompt2"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span></span>
+<span class="prompt2"><span class="o">}</span></span>
+<span class="prompt2"></span>
+<span class="prompt2">test_hello<span class="o">()</span><span class="w"> </span><span class="o">{</span></span>
+<span class="prompt2"><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello </span><span class="nv">$__test_name</span><span class="s2">&quot;</span></span>
+<span class="prompt2"><span class="o">}</span></span>
+</pre></div></div></section>
+<section id="same-namespace-for-all-modules">
+<h2>Same namespace for all modules<a class="headerlink" href="#same-namespace-for-all-modules" title="Link to this heading"></a></h2>
+<p>In bash all sourced modules share the same namespace, which means that a variable
+or method name must be unique across all sourced modules. To avoid such conflicts
+when sourcing a new module.</p>
+<p>This can be prevented when sticking to a set of rule within a module:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Naming Convention</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>module</p></td>
+<td><p>lowercase letters and digits</p></td>
+<td><p>mod</p></td>
+</tr>
+<tr class="row-odd"><td><p>function</p></td>
+<td><p>module_name + “_” + …</p></td>
+<td><p>mod_functionA</p></td>
+</tr>
+<tr class="row-even"><td><p>internal function</p></td>
+<td><p>“_” + module_name + “_” + …</p></td>
+<td><p>_mod_helper</p></td>
+</tr>
+<tr class="row-odd"><td><p>global variable</p></td>
+<td><p>“__” + module_name + “_” + …</p></td>
+<td><p>__mod_variable</p></td>
+</tr>
+</tbody>
+</table>
+<p>Because bash functions inherit the variables of its callee, by that being able
+to change them. To prevent that all local variables must be declare using
+<code class="code highlight bash docutils literal highlight-bash"><span class="nb">local</span></code> or <code class="code highlight bash docutils literal highlight-bash"><span class="nb">declare</span></code>.</p>
+</section>
+<section id="helper-functions-for-arrays">
+<h2>Helper functions for arrays<a class="headerlink" href="#helper-functions-for-arrays" title="Link to this heading"></a></h2>
+<p>Because arrays are used regularly a helper module to write, search and sort arrays
+is useful and save it under <code class="docutils literal notranslate"><span class="pre">/usr/local/share/bms/include/array.sh</span></code>.</p>
+<section id="print-array-one-line-per-item">
+<h3>Print array, one line per item<a class="headerlink" href="#print-array-one-line-per-item" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>array_to_lines<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">array</span><span class="o">=(</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="linenos">3</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">4</span><span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%s\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">5</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">6</span><span class="o">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Define an array putting all passed in arguments (<code class="code highlight bash docutils literal highlight-bash"><span class="nv">$@</span></code>) into it.</p>
+</dd>
+<dt class="field-even">line 3 + 4<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="code highlight bash docutils literal highlight-bash"><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span></code> expands each member of the array into a separate word,
+separated with a space, for example (“one” “two” “three”) -&gt; “one” “two” “three”.
+If the array has no members it expands to 0, so the conditional block is entered,
+if the array has any members. Each word is then printed via <code class="code highlight bash docutils literal highlight-bash"><span class="nb">printf</span></code>,
+by declaring each value as string followed by a new line (<code class="code highlight bash docutils literal highlight-bash"><span class="s2">&quot;%sn&quot;</span></code>)
+and passing all array words as arguments.</p>
+</dd>
+</dl>
+<p>Use <code class="code highlight bash docutils literal highlight-bash"><span class="nb">printf</span></code> over <code class="code highlight bash docutils literal highlight-bash"><span class="nb">echo</span></code>, because the ladder accepts options, so
+something like <code class="code highlight bash docutils literal highlight-bash">-o</code> in the array is interpreted as option and won’t be printed.
+It also saves the declaration of a loop, because <code class="code highlight bash docutils literal highlight-bash"><span class="nb">printf</span></code> is able to handle
+arrays of various length in one call.</p>
+</section>
+<section id="sort-array">
+<h3>Sort array<a class="headerlink" href="#sort-array" title="Link to this heading"></a></h3>
+<p>To get the sorted elements of an array, the <code class="code highlight bash docutils literal highlight-bash">array_to_lines<span class="o">()</span></code> function comes in
+handy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>array_sort<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">array</span><span class="o">=(</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="linenos">3</span><span class="w">  </span>array_to_lines<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-V<span class="s2">&quot;</span>
+<span class="linenos">4</span><span class="s2">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>As <code class="code highlight bash docutils literal highlight-bash">array_to_lines</code> returns a new-line separated list of values, we
+can pipe this directly into <code class="code highlight bash docutils literal highlight-bash">sort</code> (the -V option is used to support
+version numbering within the text as well)</p>
+</dd>
+</dl>
+</section>
+<section id="search-item-in-array">
+<h3>Search item in array<a class="headerlink" href="#search-item-in-array" title="Link to this heading"></a></h3>
+<p>The function either returns an exit code 0, if the array contains a match or 1
+if it doesn’t. Using a <code class="code highlight bash docutils literal highlight-bash">grep</code> on the array isn’t as performant on longer
+arrays as a regular loop is, so <code class="code highlight bash docutils literal highlight-bash">array_to_lines<span class="o">()</span></code> will <span class="ulined">not</span> be
+utilized here, but the array’s elements are compared one by one:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>array_contains<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">needle</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">haystack</span><span class="o">=(</span><span class="s2">&quot;</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>cur
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">for</span><span class="w"> </span>cur<span class="w"> </span>on<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">haystack</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$needle</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cur</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">fi</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="k">done</span>
+<span class="linenos">10</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The function expects the first argument to be the term to search for and
+all following arguments to be the array content (<code class="code highlight bash docutils literal highlight-bash"><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span></code>).</p>
+</dd>
+<dt class="field-even">line 4 + 5<span class="colon">:</span></dt>
+<dd class="field-even"><p>Loop over all elements in the array (<code class="code highlight bash docutils literal highlight-bash"><span class="nv">$cur</span></code>) and compare it to the
+searched term (<code class="code highlight bash docutils literal highlight-bash"><span class="nv">$needle</span></code>).</p>
+</dd>
+</dl>
+</section>
+<section id="add-a-constructor">
+<h3>Add a constructor<a class="headerlink" href="#add-a-constructor" title="Link to this heading"></a></h3>
+<p>Because it is here defined that each module must implement a <code class="code highlight bash docutils literal highlight-bash">__init<span class="o">()</span></code> function,
+even though this function isn’t used as nothing is required to be initialized by it,
+so it only reports success:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>__init<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-the-functions">
+<h3>Testing the functions<a class="headerlink" href="#testing-the-functions" title="Link to this heading"></a></h3>
+<p>In order to test each function created in this section, this test script is used:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>main<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>array
+<span class="linenos"> 5</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span>i
+<span class="linenos"> 6</span><span class="w">  </span><span class="nv">array</span><span class="o">=()</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span>i++<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="nb">local</span><span class="w"> </span>num
+<span class="linenos"> 9</span><span class="w">    </span><span class="nv">num</span><span class="o">=</span><span class="k">$((</span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">10</span><span class="k">))</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nv">array</span><span class="o">+=(</span><span class="s2">&quot;</span><span class="nv">$num</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="linenos">11</span><span class="w">  </span><span class="k">done</span>
+<span class="linenos">12</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Unsorted:&quot;</span>
+<span class="linenos">13</span><span class="w">  </span>array_to_lines<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">14</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Sorted:&quot;</span>
+<span class="linenos">15</span><span class="w">  </span>array_sort<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span>i++<span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nb">local</span><span class="w"> </span>num
+<span class="linenos">18</span><span class="w">    </span><span class="nv">num</span><span class="o">=</span><span class="k">$((</span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">10</span><span class="k">))</span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">if</span><span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$num</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</pre></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">20</span><span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;array contains </span><span class="nv">$num</span><span class="s2">&quot;</span>
+<span class="linenos">21</span><span class="w">    </span><span class="k">else</span>
+<span class="linenos">22</span><span class="w">      </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;array does not contain </span><span class="nv">$num</span><span class="s2">&quot;</span>
+<span class="linenos">23</span><span class="w">    </span><span class="k">fi</span>
+<span class="linenos">24</span><span class="w">  </span><span class="k">done</span>
+<span class="linenos">25</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos">26</span><span class="o">}</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="o">{</span>
+<span class="linenos">29</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>bms.sh:<span class="w"> </span><span class="k">then</span>
+<span class="linenos">30</span><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">31</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">32</span><span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>include<span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">33</span><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">34</span><span class="w">  </span><span class="k">fi</span>
+<span class="linenos">35</span><span class="w">  </span>main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="linenos">36</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span>
+<span class="linenos">37</span><span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">line 7 - 11<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Add five random numbers (integer between 0 and 32767): the double brackets
+in <code class="code highlight bash docutils literal highlight-bash"><span class="nv">num</span><span class="o">=</span><span class="k">$((</span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">10</span><span class="k">))</span></code> enable the expression within to contain
+operators such as <cite>%</cite> (modulo) or other <a class="reference external" href="https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html">arithmetic expressions</a> as opposed
+to single brackets. Same applies to square brackets as commonly used in
+if-statements (for example <code class="code highlight bash docutils literal highlight-bash"><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span></code>).</p>
+</dd>
+<dt class="field-even">line 29 - 34<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sourcing the two modules <code class="docutils literal notranslate"><span class="pre">bms.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">array</span></code>. The ladder uses the
+<code class="code highlight bash docutils literal highlight-bash">include<span class="o">()</span></code> function from <code class="docutils literal notranslate"><span class="pre">bms.sh</span></code> so expects the module name as
+an argument.</p>
+</dd>
+</dl>
+<p>Executing the test script produces an output similar to this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Unsorted:
+2
+5
+3
+4
+9
+Sorted:
+2
+3
+4
+5
+9
+array contains 3
+array contains 9
+array does not contain 1
+</pre></div>
+</div>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-kruk22-scheibchenweise" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Matthias Kruk. Scheibchenweise. <em>Linux-Magazin</em>, 07/2022:82–87, 2022.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_best_practices.html" class="btn btn-neutral float-left" title="Best practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_unit_testing.html" class="btn btn-neutral float-right" title="Unit testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Important numpy methods &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Package code - Comparing options" href="../packaging.html" />
+    <link rel="prev" title="Machine Learning" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cheat_sheets/index.html">Cheat Sheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../class_and_static_methods.html">Class method &lt;-&gt; static method </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iterators.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Machine Learning</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Important numpy methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arrays">Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#files">Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#others">Others</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../packaging.html">Package code - Comparing options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pep8.html">PEP 8 - Python code style guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pip_commands.html">pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pytest_extensions.html">Pytest extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql_alchemy.html">SQL Alchemy - Basic Declarative DB Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Python</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Machine Learning</a></li>
+      <li class="breadcrumb-item active">Important numpy methods</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/reference/python/machine_learning/numpy_functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="important-numpy-methods">
+<h1>Important numpy methods<a class="headerlink" href="#important-numpy-methods" title="Link to this heading"></a></h1>
+<p>To shorten things, the numpy module is referred to as <code class="docutils literal notranslate"><span class="pre">np</span></code> here. Think of
+all code examples using this import statement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<section id="arrays">
+<h2>Arrays<a class="headerlink" href="#arrays" title="Link to this heading"></a></h2>
+<p class="rubric">Reshape</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">new_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Creates <code class="docutils literal notranslate"><span class="pre">new_array</span></code> from <code class="docutils literal notranslate"><span class="pre">some_array</span></code>, setting <code class="docutils literal notranslate"><span class="pre">rows</span></code> as new amount of rows and
+<code class="docutils literal notranslate"><span class="pre">columns</span></code> as new amount of columns. If -1 is used for either <code class="docutils literal notranslate"><span class="pre">rows</span></code> or <code class="docutils literal notranslate"><span class="pre">columns</span></code>,
+the amount is calculated, depending on the amount of a values of <code class="docutils literal notranslate"><span class="pre">some_array</span></code> and the
+specified rows or columns.</p>
+<p class="rubric">Insert element</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Inserts a single column of 1s in the position 0 of <code class="docutils literal notranslate"><span class="pre">my_array</span></code>. If <code class="docutils literal notranslate"><span class="pre">my_array</span></code>
+has multiple rows, the value is put into the same position in each row. A <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> means, the insert
+is done as new row (here: at position 0, a <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> means the insert is done as column (here: at position 0)
+If <code class="docutils literal notranslate"><span class="pre">axis</span></code> is not defined (or None), the array is flattened first (-&gt; 1D) and the insert value is inserted
+at the defined position.</p>
+<p class="rubric">Convert element type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_array</span> <span class="o">=</span> <span class="p">(</span><span class="n">my_array</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creates <code class="docutils literal notranslate"><span class="pre">new_array</span></code> out of <code class="docutils literal notranslate"><span class="pre">my_array</span></code>, while checking each value in <code class="docutils literal notranslate"><span class="pre">my_array</span></code> if it
+matches 5, replacing the value with 0 if false or 1 if true for <code class="docutils literal notranslate"><span class="pre">new_array</span></code>.</p>
+<p class="rubric">Multiply elements of two arrays</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="mf">9.0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># 3x3 row-wise filled from 1.0 to 9.0</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">my_array</span><span class="p">,</span> <span class="n">my_array</span><span class="p">)</span>  <span class="c1"># 3x3 matrix, row-wise with square values</span>
+</pre></div>
+</div>
+<p>Multiplies two compatible arrays, which means either</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>both matrices must have the same shape</p></li>
+<li><p>one matrix must have a single row</p></li>
+<li><p>one matrix must have a single column</p></li>
+</ol>
+</div></blockquote>
+<p>Each case returns an array with the shape biggest array. Case a) multiplies each
+both values at the same location in each array. Case b) multiplies all values
+of the bigger array’s column with the respective value at the same column of the
+smaller. Case c) is like b) but multiplying each value of the bigger arrays row
+with the respective value in the smaller array.</p>
+<p class="rubric">Find maximum value</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">some_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Returns a the index of the highest number in <code class="docutils literal notranslate"><span class="pre">some_array</span></code>. If
+<code class="docutils literal notranslate"><span class="pre">my_array</span></code> has multiple rows, the highest value of all rows is returned, if
+<code class="docutils literal notranslate"><span class="pre">axis</span></code> is undefined or <code class="docutils literal notranslate"><span class="pre">axis=None</span></code>, <code class="docutils literal notranslate"><span class="pre">some_array</span></code> is flattened first (-&gt; 1D).
+If <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>, the indexes of the row containing the highest values are given,
+if <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, the indexes of the column containing the highest values are given.
+In both cases, the index is returned as array if <code class="docutils literal notranslate"><span class="pre">my_array</span></code> has is 2-D. Adding
+more dimensions, offers further axes (e.g. <code class="docutils literal notranslate"><span class="pre">axis=2</span></code>), which returns the index
+of the highest number within the</p>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h2>
+<p class="rubric">Read file into 1D array</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unint8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Read data values (here: unsigned 8-bit integers) from file and put them into an array.</p>
+</section>
+<section id="others">
+<h2>Others<a class="headerlink" href="#others" title="Link to this heading"></a></h2>
+<p class="rubric">Get exponential (e to the power of all input elements)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e_power_ten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Calculates the value of a given exponent using <em>e</em> as base (exponential function)
+(here: e^10). Can also process arrays.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../packaging.html" class="btn btn-neutral float-right" title="Package code - Comparing options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>05 - Docker Workshop &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="06 - Docker Compose Workshop" href="06_compose.html" />
+    <link rel="prev" title="04 - Discovering Docker" href="04_discover.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_introduction.html">01 - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_understand.html">02 - Understanding Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_install.html">03 - Installing Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_discover.html">04 - Discovering Docker</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">05 - Docker Workshop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-dockerfile">Creating a dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-a-docker-image">Building a docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inspect-the-docker-image">Inspect the docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-a-docker-image">Delete a docker image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-docker-image-to-docker-hub-and-pull-it-again">Push docker image to docker hub (and pull it again)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-docker-containers">Running docker containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#making-code-changes-with-volumes">Making Code Changes with Volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging-tips-and-tricks">Debugging Tips and Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linking-containers-with-docker-networks">Linking Containers with Docker Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#persisting-data-to-your-docker-host">Persisting data to your docker host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-data-between-containers">Sharing Data between Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimizing-your-docker-images-decrease-your-docker-images-size">Optimizing your Docker images (decrease your docker images size)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-scripts-when-a-container-starts">Running scripts when a container starts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cleaning-up-after-yourself">Cleaning up after yourself</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="06_compose.html">06 - Docker Compose Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_dockerize_webapp.html">07 - Dockerizing your web applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_linux.html">Install Docker (CE) on Linux Mint (Ubuntu)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Docker</a></li>
+      <li class="breadcrumb-item active">05 - Docker Workshop</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorial/docker/05_workshop.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="docker-workshop">
+<h1>05 - Docker Workshop<a class="headerlink" href="#docker-workshop" title="Link to this heading"></a></h1>
+<section id="creating-a-dockerfile">
+<h2>Creating a dockerfile<a class="headerlink" href="#creating-a-dockerfile" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Adding python</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">FROM</span> python:3.7-alpine
+</pre>
+</div><p>Different Linux distributions (here for Python images):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Stretch (Debian distribution Version 9.8)</p></li>
+<li><p>Slim-Stretched (based on Debian:Stretch, uses a light desktop environment
+-&gt; suitable when remote access is not required)</p></li>
+<li><p>Alpine (smallest space amount needed -&gt; therefor especially used in containers)</p></li>
+<li><p>Windows Server Core -&gt; WON’T COVER</p></li>
+<li><p>OnBuild -&gt; WON’T COVER</p></li>
+</ul>
+</div></blockquote>
+<p>Python’s dockerfile specifies the installation of an Operating System for the image to run on:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FROM alpine:3.9
+</pre></div>
+</div>
+<p>Adding Alpine Linux in Version 3.9 (Alpine’s dockerfile itself states ‘FROM scratch’, which
+means, that no OS is installed here)</p>
+</div></blockquote>
+</li>
+<li><p>Create a folder for the flask application (RUN executes any shell command)</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">RUN</span> mkdir /app
+</pre>
+</div></div></blockquote>
+</li>
+<li><p>Specify a working directory (all commands from here use it as the relative root dir)</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">WORKDIR</span> /app
+</pre>
+</div></div></blockquote>
+</li>
+<li><p>Copy files to application directory (COPY &lt;src&gt; &lt;dest&gt;)</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">COPY</span> requirements.txt requirements.txt
+</pre>
+</div><p>or using the absolute path (not needed as working directory has been set before):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COPY requirements.txt /app/requirements.txt
+</pre></div>
+</div>
+<p>You cannot copy any files or directories that are above the working directory.</p>
+</div></blockquote>
+</li>
+<li><p>Install Python packages from requirements.txt</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>RUN pip install -r requirements.txt
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>packages installation should be done before the deployment of the app (next step) as
+when any change to the application code occurs, all packages will be installed again,
+even though there are no changes</p></li>
+<li><p>this happens since all steps are repeated after the first step with a change is detected</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Copy all application files to working directory (using relative ‘.’)</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COPY . .
+</pre></div>
+</div>
+<p>When the source code has changed all steps after this step are executed -&gt; that’s why the
+dependencies installation steps should be put before this one.</p>
+</div></blockquote>
+</li>
+<li><p>Add metadata to your docker image (optional, but useful)</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">LABEL</span> maintainer="Arne Wohletz &lt;arnewohletz@gmx.de&gt;"
+</pre>
+</div><ul class="simple">
+<li><p>You should try to keep the amount of layers in your docker images as low as possible</p></li>
+<li><p>Each additional layer increases filesize and built time of your docker image</p></li>
+<li><p>Each label creates a new layer, so it is wise to chain multiple labels together to form a single layer</p></li>
+<li><p>The image (FROM) used in one image can be cached to be used in other images, e.g.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FROM python:2.7-alpine
+</pre></div>
+</div>
+<p>can be used in multiple images without saving a copy for each image on the Docker Host system
+(decreases file size).</p>
+<p>Here, two metadata key-value pairs are added to the same label and layer:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LABEL maintainer=&quot;Arne Wohletz &lt;arnewohletz@gmx.de&gt;&quot; \
+      version=&quot;1.0&quot;
+</pre></div>
+</div>
+<p>Indentation isn’t required, but looks better.</p>
+</div></blockquote>
+</li>
+<li><p>Define the application start command</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">CMD</span> flask run --host=0.0.0.0 --port=5000
+</pre>
+</div><ul class="simple">
+<li><p>The CMD command is run when the application is run (whereas the RUN command is run,
+when the application is built)</p></li>
+<li><p>This command defines what it supposed to be executed, when the image is executed</p></li>
+<li><p>The CMD command can be overridden from users via the command line (if they want to)</p></li>
+<li><p>The CMD command should always be the last entry in the dockerfile</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="building-a-docker-image">
+<h2>Building a docker image<a class="headerlink" href="#building-a-docker-image" title="Link to this heading"></a></h2>
+<p>After the dockerfile is complete, run this command from inside the projects working directory.</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+docker <span style="color:red;">image build -t</span> web1 .
+</pre>
+</div><p>-&gt; builds the docker image with the tag ‘web1’ of the current directory (‘.’)</p>
+<p><strong>-t</strong> defines a tag name</p>
+<ul class="simple">
+<li><p>The build process creates different layers for</p></li>
+<li><p>Running the command again without any changes to the dockerfile lets the image build
+finish almost instantly</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="inspect-the-docker-image">
+<h2>Inspect the docker image<a class="headerlink" href="#inspect-the-docker-image" title="Link to this heading"></a></h2>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">image inspect</span> web1
+</pre>
+</div><p>see the output:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>version is set to latest, since no version was supplied during build</p></li>
+<li><p>Cmd shows the exact command being executed on the image</p></li>
+<li><p>Created layers are displayed at the bottom</p></li>
+</ul>
+</div></blockquote>
+<p>Specify a version</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker image build -t web1:1.0 .
+</pre></div>
+</div>
+<p>List all docker image on the host system</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">image ls</span>
+</pre>
+</div></section>
+<section id="delete-a-docker-image">
+<h2>Delete a docker image<a class="headerlink" href="#delete-a-docker-image" title="Link to this heading"></a></h2>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">image rm</span> web1:1.0
+</pre>
+</div><p>Delete via image id</p>
+<div class="highlight">
+<pre>
+docker image rm <span style="color:red;">-f</span> &lt;image_id&gt;
+</pre>
+</div><p>You may only use the first few digits of the id to delete all tags referencing an image
+with the same id (as done when adding additional tags to an existing image)</p>
+<p><strong>-f</strong> option enforces the removal</p>
+</section>
+<section id="push-docker-image-to-docker-hub-and-pull-it-again">
+<h2>Push docker image to docker hub (and pull it again)<a class="headerlink" href="#push-docker-image-to-docker-hub-and-pull-it-again" title="Link to this heading"></a></h2>
+<p>First you need to authenticate your Docker CLI to Docker Hub in order to push images to it</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker login
+</pre></div>
+</div>
+<p>-&gt; Enter your username and password</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This step does not required to be repeated as your authentication data is written to
+a config file located at ~/.docker/config.json (OSX, Linux) or
+%USERPROFILE%/.docker/config.json (Windows)</p>
+</div>
+<p>Tag your image with your Docker Hub username -&gt; image copy with new name on host system
+is created (uses same image id as original)</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">image tag</span> web1 &lt;dockerhub_username&gt;/web1:latest
+</pre>
+</div><p>Push the image to docker hub</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">image push</span> web1 &lt;dockerhub_username&gt;/web1:latest
+</pre>
+</div><p>You can find the image under your account / Repositories</p>
+<p>When deleting the image from the host sytem (see last chapter), the image from the docker
+hub repo can be pulled via</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">pull</span> web1 &lt;dockerhub_username&gt;/web1:latest
+</pre>
+</div></section>
+<section id="running-docker-containers">
+<h2>Running docker containers<a class="headerlink" href="#running-docker-containers" title="Link to this heading"></a></h2>
+<p>Get all currently running containers</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container ls</span>
+</pre>
+</div><p>Get all containers including stopped ones</p>
+<div class="highlight">
+<pre>
+docker container ls <span style="color:red;">-a</span>
+</pre>
+</div><p>Remove a (stopped) container</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container rm</span> &lt;four_first_digits_of_container_id&gt;
+</pre>
+</div><p>Start your app image inside a container (here: web1)</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container run</span> -it -p 5000:5000 -e FLASK_APP=app.py web1
+</pre>
+</div><p><strong>-it</strong> sets the container up to be interactive:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>allows for interrupting the app via ctrl+c</p></li>
+<li><p>provide real-time input (e.g. navigating the filesystem)</p></li>
+</ul>
+</div></blockquote>
+<p><strong>-p</strong> specifies ports used by docker container an the application:
+<code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">&lt;bind_port_of_docker_host&gt;:&lt;bind_port_of_docker_container&gt;</span></code> (here the application uses
+5000 internally and is supposed to be accessible via 5000: CMD flask run –host=0.0.0.0 –port=5000)</p>
+<p><strong>-e</strong> sets an environmental variable. Flask expects the FLASK_APP variable being set to
+the file that launches the flask server (so contains the flask app), which is in app.py</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Get overview of all containers (including stopped containers)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container ls -a
+</pre></div>
+</div>
+</div>
+<p>Start it with a given name (instead of letting docker choose one) + remove it once it is
+stopped (otherwise stopped containers will stay):</p>
+<div class="highlight">
+<pre>
+docker container run -it <span style="color:red;">--rm --name</span> web1 -p 5000:5000 -e FLASK_APP=app.py web1
+</pre>
+</div><p><strong>–rm</strong> automatically removes container, after it is killed</p>
+<p><strong>–name</strong> adds a name to the container (if none is given, a random one is assigned to it
+-&gt; name must be unique)</p>
+<p>Run a container in detached mode (in the background) -&gt; the only output is the container id:</p>
+<div class="highlight">
+<pre>
+docker container run -it --rm --name web1 -p 5000:5000 -e FLASK_APP=app.py <span style="color:red;">-d</span> web1
+</pre>
+</div><p><strong>-d</strong> launches app in detached mode, which means the container is run in the background</p>
+<p>To check logs from running or closed containers run</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container logs</span> &lt;container_name&gt;
+</pre>
+</div><ul class="simple">
+<li><p>Container name can be defined via <strong>-d</strong>)</p></li>
+<li><p>Prints out all log content</p></li>
+</ul>
+<p>To print current logs to the command line type</p>
+<div class="highlight">
+<pre>
+docker container logs <span style="color:red;">-f</span> &lt;container_name&gt;
+</pre>
+</div><p><strong>-f</strong> stands for foreground</p>
+<p>Checking the current resource usage of running docker containers</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container stats</span>
+</pre>
+</div><p>showing disk usage, cpu usage, memory usage, network i/o</p>
+<p><strong>Running multiple instances of the same container in parallel</strong> requires</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>unique name</p></li>
+<li><p>unused internal host port</p></li>
+</ul>
+</div></blockquote>
+<p>so</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container run -it --name othername -p 5000 -e FLASK_APP=app.py -d web1
+</pre></div>
+</div>
+<p>-&gt; leaving the first port out (host port) assigns a random port on the docker host</p>
+<p>Automatically restart a docker container, if it crashed or docker daemon is restarted</p>
+<div class="highlight">
+<pre>
+docker container run -it —name another name -p 5000 -e FLASK_APP=app.py -d <span style="color:red;">-—restart-on-failure</span> web1
+</pre>
+</div><p><strong>–restart on-failure</strong> enables the automatic restart of the container when it crashes
+(cannot be combined with –rm). You can test it by running ‘sudo service docker restart’ on
+Linux and see if the container is restarted once Docker is back. If stopped manually, it does
+not restart.</p>
+<p>Stop a running container (command takes a few seconds)</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container stop</span> <container_name>
+</pre>
+</div></section>
+<section id="making-code-changes-with-volumes">
+<h2>Making Code Changes with Volumes<a class="headerlink" href="#making-code-changes-with-volumes" title="Link to this heading"></a></h2>
+<p>Activate the debugger in flask</p>
+<div class="highlight">
+<pre>
+docker container run -it --name withDebug -p 5000:5000 --rm -e FLASK_APP=app.py -e <span style="color:red;">FLASK_DEBUG=1</span> web1
+</pre>
+</div><p>Make some changes in the code (app.py) -&gt; restarting the container won’t apply the code changes</p>
+<p><strong>Manual approach</strong></p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>The manual approach is to rebuilt the image</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker image build -t web1 .
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Starting the new container applies the code changes</p></li>
+</ol>
+</div></blockquote>
+<p><strong>Approach with volumes</strong></p>
+<p>Mounting the application code into the running container</p>
+<p>Starting the container with the volume flag (-v)</p>
+<div class="highlight">
+<pre>
+docker container run -it --name withDebug -p 5000:5000 --rm -e FLASK_APP=app.py -e FLASK_DEBUG=1 <span style="color:red;">-v $PWD:/app</span> web1
+</pre>
+</div><div class="line-block">
+<div class="line"><strong>-v</strong> &lt;source_dir&gt;:&lt;destination_dir&gt;</div>
+<div class="line"><strong>$PWD</strong> is a variable that stands for present working directory</div>
+</div>
+<p>-&gt; Multiple volumes flags can be supplied</p>
+<p>You can inspect the mounted volumes by running (providingthe container name)</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container inspect</span> web1
+</pre>
+</div><p>and checking the “Mounts” section content</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Changes applied within the mapped source directory are applied to the docker container’s mounted copy</p></li>
+<li><p>CAREFUL: Changes made to the container’s mounted volume are also made to the source directory</p></li>
+<li><p>Changes made outside a mapped directory are not applied to running containers (out of scope)</p></li>
+</ul>
+</div>
+</section>
+<section id="debugging-tips-and-tricks">
+<h2>Debugging Tips and Tricks<a class="headerlink" href="#debugging-tips-and-tricks" title="Link to this heading"></a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Problem</p>
+<blockquote>
+<div><p>Cannot interact with alpine filesystem of a running container using VirtualBox (Docker
+Toolbox, Windows issue only)</p>
+</div></blockquote>
+<p>Cause</p>
+<blockquote>
+<div><p>inotify (notifies OS about file system changes) does behave differently on alpine.
+It seems no problem when alpine is used on a Linux docker installation, though.</p>
+</div></blockquote>
+<p>Solution</p>
+<blockquote>
+<div><p>Change alpine to slim in your dockerfile: python3.7-alpine -&gt; python3.7-slim-stretch</p>
+</div></blockquote>
+</div>
+<p>Connecting to a running container’s file system</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">container exec</span> -it &lt;container_name&gt; <span style="color:red;">sh</span>
+</pre>
+</div><div class="line-block">
+<div class="line">-&gt; Opens up the containers shell (using ‘bash’ or ‘sh’ when running other Linux distributions)</div>
+<div class="line">-&gt; Navigates to the specified working directory (WORKDIR) from the dockerfile</div>
+</div>
+<p>Command is useful to make sure, you are really running what you think you’re running</p>
+<p>Exit the exec session by hitting Ctrl+D</p>
+<p>You can use any other command instead of ‘sh’ e.g. flask –version which prints the
+flask version info to the local terminal window</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All commands docker executes on the containers host OS are executed as root user.
+If new files are created by docker, they are owned by root (Linux only).</p>
+<p>To prevent this use the –user flag</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container exec -it --user &quot;$(id -u):$(id -g)&quot; web1 touch hi.txt
+</pre></div>
+</div>
+</div>
+</section>
+<section id="linking-containers-with-docker-networks">
+<h2>Linking Containers with Docker Networks<a class="headerlink" href="#linking-containers-with-docker-networks" title="Link to this heading"></a></h2>
+<p>Install redis container</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">pull</span> redis:5.0-alpine
+</pre>
+</div><ul class="simple">
+<li><p>Docker containers can run on multiple networks</p></li>
+<li><p>Same as computers in general, docker containers must be on the same network</p></li>
+<li><p>If they are scattered across multiple networks, a bridge must be created between the
+various docker container networks</p></li>
+</ul>
+<p>Docker creates several networks on it own. Check them out</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">network ls</span>
+</pre>
+</div><ul class="simple">
+<li><p>bridge: stands for the outside docker network (listed in your networks when running ifconfig)</p></li>
+<li><p>‘host’ and ‘none’ are required by the docker daemon</p></li>
+<li><p>if no other network is specified for a container, the <strong>bridge</strong> is used as default</p></li>
+</ul>
+<p>Inspect bridge network</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">network inspect</span> bridge
+</pre>
+</div><p>-&gt; “Containers” entry lists all running containers on that network</p>
+<p>Running containers on the same network can talk to each other via their local IP addresses
+(here web2 and redis are launched to the bridge network)</p>
+<p>Check out a running containers IP address (here: redis)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec redis ifconfig
+</pre></div>
+</div>
+<p>Check their communication by piing the other container</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec web2 ping 172.17.0.2
+</pre></div>
+</div>
+<p>Check the hosts mapping file -&gt; other container is added with ip and its container ID</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec redis cat /etc/hosts
+</pre></div>
+</div>
+<p>Creating a new network for Docker is useful, as it automatically the containers names to
+its current IP addresses, even if those change, due to their unique ID (automatic DNS)</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">network create</span> --driver bridge &lt;some_network_name&gt;
+</pre>
+</div>
+
+-> When inspecting the new network, it is visible that it uses the 172.18.0.0 subnet whereas
+the bridge used the 172.17.0.0<p>Launch a container on a specified network (created a network named ‘firstnetwork’)</p>
+<div class="highlight">
+<pre>
+docker container run -itd --name web2 -p 5000:5000 --rm -e FLASK_APP=app.py -e FLASK_DEBUG=1 <span style="color:red;">--net firstnetwork</span> -v $PWD:/app web1
+</pre>
+</div><p>Now we can access each container on firstnetwork with their name (not their IP addresses anymore)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec web2 ping redis
+</pre></div>
+</div>
+</section>
+<section id="persisting-data-to-your-docker-host">
+<h2>Persisting data to your docker host<a class="headerlink" href="#persisting-data-to-your-docker-host" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Restoring data after the container has been stopped</p></li>
+<li><p>For storing data of redis we will use a named volume (web2_redis:/data)</p></li>
+<li><p>Perfect for databases</p></li>
+</ul>
+<p>Create a named volume</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">volume create</span> web2_redis
+</pre>
+</div>
+
+web2_redis is the volume name here<p>List all volumes of docker host</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">volume ls</span>
+</pre>
+</div><p>more details</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">volume inspect</span> web2_redis
+</pre>
+</div>
+
+will show, where the volume will be mounted on the docker image<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The mount point is not accessible on the local system (at least on OSX it is not)
+-&gt; this is a design concept, the path is a place on the “remote” machine filesystem
+(from: <a class="reference external" href="https://github.com/docker/for-win/issues/6875">https://github.com/docker/for-win/issues/6875</a>)</p>
+</div>
+<p>Add the data volume to redis container when starting it</p>
+<div class="highlight">
+<pre>
+docker container run -itd --name redis -p 6379:6379 --rm -e --net firstnetwork<span style="color:red;">-v web2_redis:/data</span> redis:5.0-alpine
+</pre>
+</div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Redis specific stuff: Save current data</p>
+<p>Since redis is a in-memory storage, it must be manually saved to the file system.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec redis redis-cli save
+</pre></div>
+</div>
+<p>This will create a dump.rdb file within the /data directory (on local redis container mount point)
+and on root dir of the redis container.</p>
+</div>
+<p>When stopping the container and restarting it, previous data is still there</p>
+<p>This method is applicable for all kind of database -&gt; you must merely find out, where
+such data needs to be stored inside the container (/data for redis)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There should be no data stored inside the docker container once the application is
+running in production, since the application is supposed to be easily installable on
+various systems (portable)</p>
+</div>
+</section>
+<section id="sharing-data-between-containers">
+<h2>Sharing Data between Containers<a class="headerlink" href="#sharing-data-between-containers" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>link data between containers without touching the docker host</p></li>
+<li><p>most popular use case is a web application using static assets (CSS, Javascript)</p></li>
+<li><p>Those static files are supposed to be shared via a webserver like nginx</p></li>
+</ul>
+<p>New setting in the dockerfile</p>
+<div class="highlight">
+<pre>
+<span style="color:red;">VOLUME</span> ["app/public"]
+</pre>
+</div><ul class="simple">
+<li><p>means, that the app/public folder is supposed to be exposed as a volume when containers
+is running</p></li>
+<li><p>multiple volume instructions are possible</p></li>
+</ul>
+<p>Re-build the docker image (since dockerfile has changed) and start the container</p>
+<p>Restart the redis container with referencing the new exposed volume of web2</p>
+<div class="highlight">
+<pre>
+docker container run -itd --name redis -p 6379:6379 --rm -e --net firstnetwork -v web2_redis:/data <span style="color:red;">--volumes-from web2</span> redis:5.0-alpine
+</pre>
+</div><p>-&gt; volumes-from &lt;container_name_that_has_the_volume_we_need&gt;</p>
+<p>Changes to the shared volumes are immediately visible to the other containers that added it (and vice versa)</p>
+<p>In order to share directories, those must reside on the same docker host system</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Not recommended method</strong></p>
+<p>Volumes can be shared without editing the docker file:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>add a -v flag to the container that shares a directory (e.g. -v /app/public)</p></li>
+<li><p>execute redis as above</p></li>
+</ul>
+</div></blockquote>
+<p>-&gt; the shared volumes must be specified in the command, not the dockerfile</p>
+</div></blockquote>
+</div>
+</section>
+<section id="optimizing-your-docker-images-decrease-your-docker-images-size">
+<h2>Optimizing your Docker images (decrease your docker images size)<a class="headerlink" href="#optimizing-your-docker-images-decrease-your-docker-images-size" title="Link to this heading"></a></h2>
+<p>Use a <em>.dockerignore</em> file to reduce image size and not publish secure files:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>during container creation docker will evaluate the file when COPY or ADD commands
+are executed</p></li>
+<li><p>WORKDIR is the default start path for all ignore paths</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dockerignore #ignore the file itself
+.git/ #ignore a directory
+.foo/\* #ignore all files within a directory (but not the dir itself)
+\**/*.txt #ignore all files with txt extension
+!special.txt #make exception to above rule for special.txt file
+</pre></div>
+</div>
+<p>-&gt; Check out the updated dockerfile run script in the repository</p>
+<p>Make .dockerignore a whitelist (instead of a blacklist)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*
+!keepthisfile.txt
+</pre></div>
+</div>
+</section>
+<section id="running-scripts-when-a-container-starts">
+<h2>Running scripts when a container starts<a class="headerlink" href="#running-scripts-when-a-container-starts" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Usage: Same docker images is supposed to be used for several projects, but each
+project has a slightly different setup routine</p></li>
+<li><p>Usually separate dockerfiles are needed in which most commands will be the same for
+each application</p></li>
+<li><p>It technically works, but all these files need to be maintained if the image changes</p></li>
+</ul>
+<p><strong>Scenario:</strong> Adding a database to all these projects (e.g. PostgreSQL), setting a own user
+login and table name for each project’s dockerfile -&gt; very tedious</p>
+<div class="line-block">
+<div class="line">-&gt; Postgres is able to setup a table with username and password via a shell command (if
+not existing already)</div>
+<div class="line">-&gt; This script can be referenced as an entry point for each project’s dockerfile</div>
+</div>
+<ol class="arabic">
+<li><p>Add the entry point script to your dockerfile (located in root dir, not working dir):</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COPY docker-entrypoint.sh /
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Make entrypoint script executable</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>RUN chmod +x /docker-entrypoint.sh
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Add entrypoint pointing to the copied script</p>
+<blockquote>
+<div><div class="highlight">
+<pre>
+<span style="color:red;">ENTRYPOINT</span> ["/docker-entrypoint.sh"]
+</pre>
+</div></div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">Rebuild the application docker image</div>
+<div class="line">Restart the redis container and the start the new application container</div>
+</div>
+<p>The used shell script:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>within your entrypoint script, you can print terminal message by using <strong>echo</strong> (shell) e.g.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo &quot;The Dockerfile ENTRYPOINT has been executed!&quot;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>an environmental variable is set (with a default value)</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export WEB2_COUNTER_MSG=&quot;${WEB2_COUNTER_MSG:-some default value if not specified}
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>${WEB2_COUNTER_MSG} is a shell variable, which can be overridden by passing it into
+the docker command using the -e flag</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Python is able to access environmental variables by using:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>os.getenv(&lt;env_var_name&gt;) e.g os.getenv(&#39;WEB2_COUNTER_MSG, &#39;&#39;)
+</pre></div>
+</div>
+</div>
+<p><strong>Explaining exec “$&#64;”</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Dockerfile’s CMD instruction passes whatever comes after to a default entry point
+(if none is defined)</p></li>
+<li><p>This default entry point is “/bin/sh -c” (run whatever I pass as a command (-c) in /bin/sh)</p></li>
+<li><p>Since our entrypoint now overrides this default, the “CMD flask –host …” command actually does this</p></li>
+</ul>
+<div class="highlight">
+<pre>
+bin/sh -c "<span style="color:red;">$</span> && flask --host=0.0.0.0 --port=5000"
+</pre>
+</div><p>where <strong>$</strong> stands for our docker-entrypoint.sh content</p>
+<ul class="simple">
+<li><p>the last command</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>exec &quot;$@&quot;
+</pre></div>
+</div>
+<p>then does take every command given by you on the command line (e.g. docker container run …)
+and executes it ($&#64; stands for all command-line arguments)</p>
+<p>-&gt; basically continues the docker command</p>
+<p>-&gt; The ENTRYPOINT defines what to run when using CMD in a dockerfile</p>
+<p>Used for</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>database migration</p></li>
+<li><p>nginx config modification</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="cleaning-up-after-yourself">
+<h2>Cleaning up after yourself<a class="headerlink" href="#cleaning-up-after-yourself" title="Link to this heading"></a></h2>
+<p><strong>Get info</strong></p>
+<p>Check out all containers (running and stopped)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container ls -a
+</pre></div>
+</div>
+<p>Check docker’s currently used disk space</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">system df</span>
+</pre>
+</div><p>Check docker images</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker image ls
+
+* images with name &lt;none&gt; are not used by anything -&gt; they&#39;re dangling
+* these may be failed builds or builds that were replaced by a new image using the
+  same tag (or both using the &#39;latest&#39; tag)
+* dangling images are declared as reclaimable
+</pre></div>
+</div>
+<p>Get containers and images spaces usage together (verbose output)</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">system df -v</span>
+</pre>
+</div><p>Get system info</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">system info</span>
+</pre>
+</div><p>(also verifies that docker daemon runs well)</p>
+<p><strong>Cleaning up</strong></p>
+<p>Remove all stopped containers, unused volumes and networks and all dangling images</p>
+<div class="highlight">
+<pre>
+docker <span style="color:red;">system prune</span>
+</pre>
+</div><div class="line-block">
+<div class="line"><strong>-f</strong> … force deleting (no confirmation needed)</div>
+<div class="line"><strong>-a</strong> … removes all unused images (not associated to a container) -&gt; use with
+care, images associated with stopped containers are deleted (images must be rebuild
+to retrieve them)</div>
+</div>
+<p>Stop multiple containers</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container stop &lt;containerA_name&gt; &lt;containerB_name&gt; ...
+</pre></div>
+</div>
+<p>Stop all running containers (at least one must be running, otherwise reports error)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container stop $(container ls -a -q)
+</pre></div>
+</div>
+<p><strong>-q</strong> means quiet mode, and outputs the container id as string</p>
+<p>Removing multiple images</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker image rm &lt;imageA_name&gt; &lt;imageB_name&gt;:&lt;tag_name&gt; ...
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="04_discover.html" class="btn btn-neutral float-left" title="04 - Discovering Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="06_compose.html" class="btn btn-neutral float-right" title="06 - Docker Compose Workshop" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

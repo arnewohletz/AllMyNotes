@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic Tricks on Testing (Sandy Metz) &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Windows" href="../windows/index.html" />
+    <link rel="prev" title="Testing" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Testing</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Magic Tricks on Testing (Sandy Metz)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-module">Example module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Testing</a></li>
+      <li class="breadcrumb-item active">Magic Tricks on Testing (Sandy Metz)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/testing/magic_tricks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="magic-tricks-on-testing-sandy-metz">
+<h1>Magic Tricks on Testing (Sandy Metz)<a class="headerlink" href="#magic-tricks-on-testing-sandy-metz" title="Link to this heading"></a></h1>
+<p>Based on <a class="reference external" href="https://www.youtube.com/watch?v=URSWYvyc42M">https://www.youtube.com/watch?v=URSWYvyc42M</a></p>
+<p>The talk gives a clear recommendation on which methods of an object are subject to
+unit tests, and which should be omitted.</p>
+<p>An object, the <em>Object under Test</em> (OUT), is a regular class, containing methods (functions
+within objects are called methods).</p>
+<p>The ruleset implies that a message (a.k.a method call) is either of type <strong>command</strong>
+or <strong>query</strong>, but never both.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>There is a principle for separating commands and queries, called the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">Command–query separation (CQS)</a>
+principle. It is generally not always advisable to strictly follow this rule, though.</p>
+</div>
+<p>A query is a call on a method which</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>returns data to the caller</p></li>
+<li><p>does not alter the state of any object (no side-effects)</p></li>
+</ul>
+</div></blockquote>
+<p>A command is a call on a method which</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>returns no data</p></li>
+<li><p>alters the state of one or many objects (side-effects)</p></li>
+</ul>
+</div></blockquote>
+<p>Furthermore, there are three origin types for messages, which define from where
+a method is called from the perspective of the OUT:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>methods, which are called by an outside object -&gt; <strong>Incoming</strong></p></li>
+<li><p>methods, which call methods from outside objects -&gt; <strong>Outgoing</strong></p></li>
+<li><p>methods, which call internal (private) methods -&gt; <strong>Send-to-Self</strong></p></li>
+</ul>
+</div></blockquote>
+<p>In total then, there are six types of methods:</p>
+<figure class="align-default" id="id1">
+<img alt="../../_images/unit_test_minimalist_blank.png" src="../../_images/unit_test_minimalist_blank.png" />
+<figcaption>
+<p><span class="caption-text">Type of messages types</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="example-module">
+<h2>Example module<a class="headerlink" href="#example-module" title="Link to this heading"></a></h2>
+<p>This module feature three object, <code class="docutils literal notranslate"><span class="pre">Wheel</span></code>, <code class="docutils literal notranslate"><span class="pre">Gear</span></code> and <code class="docutils literal notranslate"><span class="pre">Observer</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">class</span> <span class="nc">Wheel</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rim</span><span class="p">,</span> <span class="n">tire</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rim</span> <span class="o">=</span> <span class="n">rim</span>  <span class="c1"># diameter of wheel rim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tire</span> <span class="o">=</span> <span class="n">tire</span>  <span class="c1"># diameter of tire</span>
+
+    <span class="k">def</span> <span class="nf">diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rim</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tire</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Observer</span><span class="p">:</span>
+    <span class="c1"># e.g. writes data into the database</span>
+
+    <span class="k">def</span> <span class="nf">changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># update database</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">class</span> <span class="nc">Gear</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chainring</span><span class="p">,</span> <span class="n">cog</span><span class="p">,</span> <span class="n">wheel</span><span class="p">,</span> <span class="n">observer</span><span class="o">=</span><span class="n">Observer</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chainring</span> <span class="o">=</span> <span class="n">chainring</span>  <span class="c1"># length of chain ring</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cog</span> <span class="o">=</span> <span class="n">cog</span>  <span class="c1"># amount of cogs on wheel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wheel</span> <span class="o">=</span> <span class="n">wheel</span>  <span class="c1"># Wheel instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observer</span> <span class="o">=</span> <span class="n">observer</span>  <span class="c1"># Observer instance</span>
+
+    <span class="k">def</span> <span class="nf">gear_inches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ratio</span><span class="p">()</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheel</span><span class="o">.</span><span class="n">diameter</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">chainring</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cog</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_cog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cog</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cog</span> <span class="o">=</span> <span class="n">cog</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_changed</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">changed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chainring</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cog</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Incoming Query</strong></p>
+<div class="design-principle admonition">
+<p class="admonition-title">Rule</p>
+<p> Test incoming query messages by making assertions about what they send back.</p>
+</div>
+<p>Incoming queries should always be tested, as it is our object, and we are responsible for its
+methods to return the correct value. So, we write one or multiple tests for it, asserting towards
+the returned value.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">diameter(self)</span></code> method in <code class="docutils literal notranslate"><span class="pre">Wheel</span></code> is a subject to incoming queries, so we write a
+test for it, asserting to the return value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WheelTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<span class="c1"># GOOD: Test incoming query</span>
+<span class="k">def</span> <span class="nf">test_calculates_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">wheel</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+    <span class="c1"># assert the return value</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">wheel</span><span class="o">.</span><span class="n">diameter</span><span class="p">(),</span> <span class="mi">29</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The same applies to the <code class="docutils literal notranslate"><span class="pre">gear_inches(self)</span></code> method in <code class="docutils literal notranslate"><span class="pre">Gear</span></code>, so we write another test:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<span class="c1"># GOOD: Test incoming query</span>
+<span class="k">def</span> <span class="nf">test_calculates_gear_inches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+    <span class="c1"># assert the return value</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">gear</span><span class="o">.</span><span class="n">gear_inches</span><span class="p">(),</span> <span class="mf">137.1</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Incoming Commands</strong></p>
+<div class="design-principle admonition">
+<p class="admonition-title">Rule</p>
+<p> Test incoming command messages by making assertions about direct public side effects.</p>
+</div>
+<p>Incoming commands should always be tested, as it is our object, and we are responsible
+for the direct public side-effects our methods have. So, we write one or multiple tests for it,
+asserting towards these side-effects.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">set_cog(self)</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Gear</span></code> class is a subject to incoming commands, as
+it changes the objects state (side-effect), but does not return a value. Consequentially,
+we write a unit test for it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<span class="c1"># ...</span>
+
+<span class="c1"># GOOD: Test incoming command</span>
+<span class="k">def</span> <span class="nf">test_set_cog</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+    <span class="n">gear</span><span class="o">.</span><span class="n">set_cog</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
+    <span class="c1"># assert the direct public side effect</span>
+    <span class="k">assert</span> <span class="mi">27</span> <span class="o">==</span> <span class="n">gear</span><span class="o">.</span><span class="n">cog</span>
+</pre></div>
+</div>
+<p><strong>Messages To Self (Query/Command)</strong></p>
+<div class="design-principle admonition">
+<p class="admonition-title">Rule</p>
+<p> Do not test private methods.</p>
+</div>
+<p>Testing internal queries (assert return values) or commands (assert if certain set-method
+was called or value was changed) explicitly is redundant since these methods are
+already covered by other tests. Therefore, defining such tests do not improve the
+security of your code, but fail, if the code is improved, since it is bound to it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">_ratio(self)</span></code> method of class <code class="docutils literal notranslate"><span class="pre">Gear</span></code> is a <strong>Send-to-Self query</strong>, since it is
+a private method (Python marks private method with a preceding underscore). A test is
+redundant, since the method is already covered by the <code class="docutils literal notranslate"><span class="pre">test_calculates_gear_inches(self)</span></code>
+method, since <code class="docutils literal notranslate"><span class="pre">gear_inches(self)</span></code> is calling <code class="docutils literal notranslate"><span class="pre">_ratio(self)</span></code>. No additional test is
+necessary.</p>
+<p>This test is redundant:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<span class="c1"># ...</span>
+
+<span class="c1"># BAD: redundant test</span>
+<span class="k">def</span> <span class="nf">test_calculates_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">gear</span><span class="o">.</span><span class="n">_ratio</span><span class="p">(),</span> <span class="mf">4.7</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Additionally, if the internal implementation of <code class="docutils literal notranslate"><span class="pre">_ratio(self)</span></code> changes (or its name),
+this test breaks, so there is a maintenance effort for a test of no value.</p>
+<p><strong>Outgoing Query</strong></p>
+<div class="design-principle admonition">
+<p class="admonition-title">Rule</p>
+<p> Do not test outgoing query messages.</p>
+</div>
+<p>An outgoing query of one object is always an incoming query of another object.
+Therefore asserting the return value of an outgoing query is already covered
+by the tests of that other object.</p>
+<p>Don’t write tests for it, since they are redundant:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<span class="c1"># ...</span>
+
+<span class="c1"># BAD: test outgoing queries -&gt; redundant test</span>
+<span class="k">def</span> <span class="nf">test_calculate_gear_inches_outgoing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="n">gear</span><span class="o">.</span><span class="n">wheel</span><span class="o">.</span><span class="n">diameter</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Outgoing Commands</strong></p>
+<div class="design-principle admonition">
+<p class="admonition-title">Rule</p>
+<p> Expect to send outgoing command messages
+(assert on method calls of outside object).</p>
+</div>
+<p>A unit test is supposed to test the object under test, not the effects it has on
+other distant objects -&gt; this is then an integration test. The only thing to test is
+that outgoing command messages are sent, on other words, that these OUT methods have
+been called.</p>
+<p>Testing an outgoing command against a real interface, which relies on a chain of
+events is not a good idea, since it easily breaks for reasons out of the unit tests scope.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="c1"># ...</span>
+
+    <span class="c1"># BAD: test against real interface (here: set_cog(27) calls an Observer instance)</span>
+    <span class="k">def</span> <span class="nf">test_saves_changed_cog_in_db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="n">chainring</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="n">cog</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">wheel</span><span class="o">=</span><span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+                    <span class="n">observer</span><span class="o">=</span><span class="n">Observer</span><span class="p">())</span>
+        <span class="n">gear</span><span class="o">.</span><span class="n">set_cog</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Therefore instead of calling the real interface, use a <strong>mock</strong> object, which the internal outgoing
+command method calls instead, to have a stable edge. Remember: A mock is a test
+double which promises to have the same API as the real object (must stay in-sync).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">mock</span>
+
+<span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="c1"># GOOD: test against a mock, instead of a real out-of-scope interface</span>
+    <span class="k">def</span> <span class="nf">test_notifies_observers_when_cogs_changes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;unittest_magic_tricks.Observer&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockObserver</span><span class="p">:</span>
+            <span class="n">wheel</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="n">rim</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">tire</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+            <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="n">chainring</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="n">cog</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">wheel</span><span class="o">=</span><span class="n">wheel</span><span class="p">,</span>
+                        <span class="n">observer</span><span class="o">=</span><span class="n">MockObserver</span><span class="p">)</span>
+            <span class="n">gear</span><span class="o">.</span><span class="n">_changed</span><span class="p">()</span>
+            <span class="c1"># assert that method was called once</span>
+            <span class="n">MockObserver</span><span class="o">.</span><span class="n">changed</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
+            <span class="n">gear</span><span class="o">.</span><span class="n">set_cog</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>Determine, which methods in an object are subject to which type of message.</p>
+<p>Write tests according to this recommendation:</p>
+<figure class="align-default" id="id2">
+<img alt="../../_images/unit_test_minimalist_filled.png" src="../../_images/unit_test_minimalist_filled.png" />
+<figcaption>
+<p><span class="caption-text">Unit Test Minimalist Overview</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Refrain from writing additional tests, if those don’t add any value or are redundant.</p>
+<p>Don’t test objects other than the <em>object under test</em>.</p>
+<p>Refrain from calling outside objects, as errors in these objects will lead to
+the failure of your test, even though the error lies outside of the
+<em>object under test</em>.</p>
+<p>Use mocks to check if outside methods are called to avoid unwanted side-effects,
+which breaks subsequent tests from failing.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../windows/index.html" class="btn btn-neutral float-right" title="Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

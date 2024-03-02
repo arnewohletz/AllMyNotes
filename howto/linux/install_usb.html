@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install Linux on USB flash drive &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="tree - Troubleshooting" href="tree.html" />
+    <link rel="prev" title="Get missing drivers" href="drivers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">Get missing drivers </a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install Linux on USB flash drive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tree.html">tree - Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Install Linux on USB flash drive</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/linux/install_usb.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="install-linux-on-usb-flash-drive">
+<h1>Install Linux on USB flash drive<a class="headerlink" href="#install-linux-on-usb-flash-drive" title="Link to this heading"></a></h1>
+<p>Having an entire Linux distribution installed on a USB flash drive enables you to
+boot it on various computer, using it as a portable environment.</p>
+<p>This tutorial follows the process of creating and using a portable distribution of
+<a class="reference external" href="https://pop.system76.com/">Pop!_OS</a> on a MacBook Air (Mid 2014).</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Two USB flash drives (one used as the Installer (at least 4 to 8 GB) , the
+other one as the installation and your future portable Linux distribution target
+(128 GB or more recommended)</p></li>
+<li><p>Download the Linux distribution as *.iso (check their official website). Stick to the
+latest LTS version, if available.</p></li>
+<li><p><a class="reference external" href="https://etcher.balena.io/">Etcher</a> is installed</p></li>
+</ul>
+<div class="admonition-macbook-air-only admonition">
+<p class="admonition-title">MacBook Air Only</p>
+<p><strong>Get your network device driver</strong></p>
+<p>As of now, Mac computers use a Broadcom network device, for which drivers
+are commonly not included in Linux distributions. We’ll need the driver to be
+available to use offline (except, if you have a wired internet connection available).</p>
+<ol class="arabic">
+<li><p>Find out your network device name:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">ioreg<span class="w"> </span>-r<span class="w"> </span>-n<span class="w"> </span>ARPT</span>
+</pre></div></div><p>Find the IOName (e.g. “IOName” = “pci14e4,43ba”).</p>
+<p>Go to <a class="reference external" href="https://devicehunt.com/">https://devicehunt.com/</a> and select <em>PCI</em> as type and type in the IDs
+of your device. For the upper example:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Vendor ID</p></th>
+<th class="head"><p>Device ID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PCI</p></td>
+<td><p>14e4</p></td>
+<td><p>43ba</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>This will print the details. Under <em>Device Details</em> you will see a BCM entry
+(e.g. BCM43602), which is the hardware model of your wireless network device.</p>
+</div></blockquote>
+</li>
+<li><p>Many devices are supported by the <cite>bcmwl-kernel-source</cite> , including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>BCM4321</p></li>
+<li><p>BCM4322</p></li>
+<li><p>BCM4331</p></li>
+<li><p>BCM4352</p></li>
+<li><p>BCM43224</p></li>
+<li><p>BCM43225</p></li>
+<li><p>BCM43227</p></li>
+<li><p>BCM43228</p></li>
+<li><p>BCM4352</p></li>
+<li><p>BCM4360</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>As Pop!_OS is Ubunutu based, go the official <a class="reference external" href="https://packages.ubuntu.com/source/">Ubuntu packages</a>
+website. In the search area, select your Ubuntu version (the LTS version of
+both OS’s are the same) and search for <em>bcmwl-kernel-source</em>.</p></li>
+<li><p>Download the package (you might need to approve the download for the browser).</p></li>
+</ol>
+</div>
+</section>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Create a backup</strong> of your native system on the device, which you will use to create the
+portable USB. If you select the wrong target during installation (local disk instead of
+USB flash device) you will erase your entire internal hard disk.</p>
+</div>
+<ol class="arabic">
+<li><p>Connect the USB which you will use as the installer (not the installation target USB).</p></li>
+<li><p>Open Etcher, select the image, your USB as target and start the flash.</p></li>
+<li><p>Restart the system and boot from the USB.</p></li>
+<li><p>Once the OS has started, plug in your installation target USB as well.</p></li>
+<li><p>Start the installation, <strong>*selecting the installation target USB as target</strong>.</p></li>
+<li><p>Once the installation is done, shut down the computer and remove the installer USB.</p></li>
+<li><p>Restart the PC, booting from the portable Linux distribution USB device.</p>
+<blockquote>
+<div><div class="admonition-macbook-air-only admonition">
+<p class="admonition-title">MacBook Air Only</p>
+<p>You will probably experience, that the Wi-Fi connection isn’t available.
+Follow these steps to install the required driver:</p>
+<ol class="arabic">
+<li><p>Copy the downloaded Broadcom driver onto the system (e.g. to ~/Downloads)</p></li>
+<li><p>Extract the archive (in case its not already a *.deb file):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~/Downloads</span>
+<span class="prompt1">tar<span class="w"> </span>xzvf<span class="w"> </span>./bcmwl-kernel-source*.deb</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Install the driver (might a minute or two):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./bcmwl-kernel-source*.deb</span>
+</pre></div></div></div></blockquote>
+<p><strong>Important</strong>: If the installation requires downloading additional dependencies,
+establish a bluetooth tethering connection to a smartphone before the installation.</p>
+</li>
+<li><p>Load the Broadcom Wi-Fi driver (here: Broadcom Model 43xx):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>modprobe<span class="w"> </span>-r<span class="w"> </span>b43<span class="w"> </span>ssb<span class="w"> </span>wl<span class="w"> </span>brcmfmac<span class="w"> </span>brcmsmac<span class="w"> </span>bcma</span>
+<span class="prompt1">sudo<span class="w"> </span>modprobe<span class="w"> </span>wl</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+<p>You should now be able to connect to a Wi-Fi.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="drivers.html" class="btn btn-neutral float-left" title="Get missing drivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tree.html" class="btn btn-neutral float-right" title="tree - Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

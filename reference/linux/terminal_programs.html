@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Important Terminal Programs &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File System Structure" href="file_system.html" />
+    <link rel="prev" title="Linux" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Important Terminal Programs  </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directories">Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drives">Drives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processes-tasks">Processes &amp; Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-accounts">User Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-web">Network &amp; Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-filter">String &amp; Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminal">Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-packages">Software &amp; Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_system.html">File System Structure </a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_files.html">System and configuration files </a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli_tools/index.html">CLI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Important Terminal Programs  </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/linux/terminal_programs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="important-terminal-programs">
+<h1>Important Terminal Programs <a class="footnote-reference brackets" href="#footcite-apfelboeck22-terminal-guide" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-apfelboeck22-linux-tabellen" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#important-terminal-programs" title="Link to this heading"></a></h1>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Files</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cat / head / tail</p></td>
+<td><p>text viewer</p></td>
+</tr>
+<tr class="row-odd"><td><p>chmod</p></td>
+<td><p>Show / edit access rights</p></td>
+</tr>
+<tr class="row-even"><td><p>chown</p></td>
+<td><p>Show / edit owner</p></td>
+</tr>
+<tr class="row-odd"><td><p>cp</p></td>
+<td><p>Copy file(s)</p></td>
+</tr>
+<tr class="row-even"><td><p>file</p></td>
+<td><p>Get exact file type</p></td>
+</tr>
+<tr class="row-odd"><td><p>find</p></td>
+<td><p>Search for any file attribute</p></td>
+</tr>
+<tr class="row-even"><td><p>ln</p></td>
+<td><p>Create soft and hard links for files and directories</p></td>
+</tr>
+<tr class="row-odd"><td><p>locate</p></td>
+<td><p>Index search for file names</p></td>
+</tr>
+<tr class="row-even"><td><p>ls</p></td>
+<td><p>List directory content</p></td>
+</tr>
+<tr class="row-odd"><td><p>mv</p></td>
+<td><p>Move / rename files</p></td>
+</tr>
+<tr class="row-even"><td><p>rdfind</p></td>
+<td><p>Find / edit / link file duplicates</p></td>
+</tr>
+<tr class="row-odd"><td><p>rm</p></td>
+<td><p>Remove files and directories</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system">
+<h2>System<a class="headerlink" href="#system" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">System</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 45.5%" />
+<col style="width: 54.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hostname</p></td>
+<td><p>Server name or computer name</p></td>
+</tr>
+<tr class="row-odd"><td><p>env</p></td>
+<td><p>Get current system variables (for example path, language encoding, user account)</p></td>
+</tr>
+<tr class="row-even"><td><p>getconf</p></td>
+<td><p>Get POSIX configuration variables (usually only system architecture)</p></td>
+</tr>
+<tr class="row-odd"><td><p>inxi</p></td>
+<td><p>Very exhaustive info on system, network, package sources, hardware, devices, tasks (usually not preinstalled)</p></td>
+</tr>
+<tr class="row-even"><td><p>launchctl / systemctl</p></td>
+<td><p>Service info and control</p></td>
+</tr>
+<tr class="row-odd"><td><p>lsb_release</p></td>
+<td><p>Get short distribution info</p></td>
+</tr>
+<tr class="row-even"><td><p>mount</p></td>
+<td><p>Get all mounted drives (also network drives)</p></td>
+</tr>
+<tr class="row-odd"><td><p>neofetch</p></td>
+<td><p>Linux Mint only: get system data like system, hostname, kernel, uptime, CPU, GPU, RAM</p></td>
+</tr>
+<tr class="row-even"><td><p>shutdown / reboot</p></td>
+<td><p>System shut down and restart</p></td>
+</tr>
+<tr class="row-odd"><td><p>service / systmctl</p></td>
+<td><p>Control active and deactivated services (<cite>systemctl</cite> is preferred on Ubuntu-like systems)</p></td>
+</tr>
+<tr class="row-even"><td><p>sysctl</p></td>
+<td><p>Control Kernel-Parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>uname</p></td>
+<td><p>System &amp; Kernel short info</p></td>
+</tr>
+<tr class="row-even"><td><p>uptime</p></td>
+<td><p>Get system runtime</p></td>
+</tr>
+<tr class="row-odd"><td><p>whereis</p></td>
+<td><p>Get program path</p></td>
+</tr>
+<tr class="row-even"><td><p>which</p></td>
+<td><p>Get program path</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Directories</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cd</p></td>
+<td><p>Navigation</p></td>
+</tr>
+<tr class="row-odd"><td><p>du</p></td>
+<td><p>Display disk usage statistics</p></td>
+</tr>
+<tr class="row-even"><td><p>mkdir</p></td>
+<td><p>Create directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>rmdir</p></td>
+<td><p>Remove directory (only if empty)</p></td>
+</tr>
+<tr class="row-even"><td><p>tree</p></td>
+<td><p>Directory hierarchy and file tree display</p></td>
+</tr>
+<tr class="row-odd"><td><p>rsync</p></td>
+<td><p>Backups &amp; Synchronization</p></td>
+</tr>
+<tr class="row-even"><td><p>tar</p></td>
+<td><p>Packer &amp; archiver</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Hardware</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dmesg</p></td>
+<td><p>Kernel protocol (‘driver message’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dmidecode</p></td>
+<td><p>Hardware info</p></td>
+</tr>
+<tr class="row-even"><td><p>free</p></td>
+<td><p>Storage occupancy</p></td>
+</tr>
+<tr class="row-odd"><td><p>hwinfo</p></td>
+<td><p>Hardware info</p></td>
+</tr>
+<tr class="row-even"><td><p>lsblk</p></td>
+<td><p>Attached devices info</p></td>
+</tr>
+<tr class="row-odd"><td><p>lscpu</p></td>
+<td><p>CPU info</p></td>
+</tr>
+<tr class="row-even"><td><p>lshw</p></td>
+<td><p>All hardware info</p></td>
+</tr>
+<tr class="row-odd"><td><p>lspci</p></td>
+<td><p>PCI devices info</p></td>
+</tr>
+<tr class="row-even"><td><p>lsusb</p></td>
+<td><p>USB devices info</p></td>
+</tr>
+<tr class="row-odd"><td><p>sysbench</p></td>
+<td><p>CPU/RAM/Volume test</p></td>
+</tr>
+<tr class="row-even"><td><p>hardinfo</p></td>
+<td><p>Infotool (graphical &amp; non-standard)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="drives">
+<h2>Drives<a class="headerlink" href="#drives" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Drives</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>blkid</p></td>
+<td><p>Volume info incl. UUID</p></td>
+</tr>
+<tr class="row-odd"><td><p>dd</p></td>
+<td><p>Binary copy for files and volumes</p></td>
+</tr>
+<tr class="row-even"><td><p>df</p></td>
+<td><p>Volume occupancy info</p></td>
+</tr>
+<tr class="row-odd"><td><p>fdisk / cfdisk</p></td>
+<td><p>Partitioning</p></td>
+</tr>
+<tr class="row-even"><td><p>gdisk / cgdisk</p></td>
+<td><p>Partitioning</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdparm</p></td>
+<td><p>Control volume parameters</p></td>
+</tr>
+<tr class="row-even"><td><p>lsblk</p></td>
+<td><p>Volume info incl. UUID</p></td>
+</tr>
+<tr class="row-odd"><td><p>mkfs</p></td>
+<td><p>Format volume</p></td>
+</tr>
+<tr class="row-even"><td><p>mount</p></td>
+<td><p>Mount volume</p></td>
+</tr>
+<tr class="row-odd"><td><p>parted</p></td>
+<td><p>Partitioning</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="processes-tasks">
+<h2>Processes &amp; Tasks<a class="headerlink" href="#processes-tasks" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Processes / Tasks</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>crontab</p></td>
+<td><p>View and create cronjobs</p></td>
+</tr>
+<tr class="row-odd"><td><p>disown</p></td>
+<td><p>Remove jobs from current shell</p></td>
+</tr>
+<tr class="row-even"><td><p>htop</p></td>
+<td><p>Task info and control</p></td>
+</tr>
+<tr class="row-odd"><td><p>iotop</p></td>
+<td><p>Hard disk activities info</p></td>
+</tr>
+<tr class="row-even"><td><p>killall</p></td>
+<td><p>Kill tasks via their name</p></td>
+</tr>
+<tr class="row-odd"><td><p>lsof</p></td>
+<td><p>Show open files</p></td>
+</tr>
+<tr class="row-even"><td><p>pgrep</p></td>
+<td><p>Get process via application name</p></td>
+</tr>
+<tr class="row-odd"><td><p>pkill</p></td>
+<td><p>Kill tasks via their name</p></td>
+</tr>
+<tr class="row-even"><td><p>powertop</p></td>
+<td><p>Power consumption info &amp; tuning</p></td>
+</tr>
+<tr class="row-odd"><td><p>ps</p></td>
+<td><p>Task info and control</p></td>
+</tr>
+<tr class="row-even"><td><p>pstree</p></td>
+<td><p>Task info in tree view</p></td>
+</tr>
+<tr class="row-odd"><td><p>top</p></td>
+<td><p>Task info and control</p></td>
+</tr>
+<tr class="row-even"><td><p>which</p></td>
+<td><p>Get path of queried application</p></td>
+</tr>
+<tr class="row-odd"><td><p>xprop</p></td>
+<td><p>Get info about UI applications</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="user-accounts">
+<h2>User Accounts<a class="headerlink" href="#user-accounts" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">User Accounts</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>adduser / useradd</p></td>
+<td><p>Create system account</p></td>
+</tr>
+<tr class="row-odd"><td><p>deluser / userdel</p></td>
+<td><p>Delete system account</p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Show group membership and UID</p></td>
+</tr>
+<tr class="row-odd"><td><p>passwd</p></td>
+<td><p>Define system account password</p></td>
+</tr>
+<tr class="row-even"><td><p>sudo</p></td>
+<td><p>Change account (default: root)</p></td>
+</tr>
+<tr class="row-odd"><td><p>sudoedit</p></td>
+<td><p>Change account (default: root)</p></td>
+</tr>
+<tr class="row-even"><td><p>usermod</p></td>
+<td><p>Edit system account</p></td>
+</tr>
+<tr class="row-odd"><td><p>visudo</p></td>
+<td><p>Manage the sudo-rights</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="network-web">
+<h2>Network &amp; Web<a class="headerlink" href="#network-web" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Network / Web</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>curl</p></td>
+<td><p>Download and upload file(s)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dig</p></td>
+<td><p>Get info about internet domains according to DNS name server</p></td>
+</tr>
+<tr class="row-even"><td><p>ftp</p></td>
+<td><p>Access FTP server</p></td>
+</tr>
+<tr class="row-odd"><td><p>ifconfig</p></td>
+<td><p>Network info (outdated - now: ip)</p></td>
+</tr>
+<tr class="row-even"><td><p>ip</p></td>
+<td><p>Network adapter &amp; IP info</p></td>
+</tr>
+<tr class="row-odd"><td><p>iwconfig</p></td>
+<td><p>Connect to Wi-Fi (requires connection found via <code class="docutils literal notranslate"><span class="pre">iwlist</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>iwlist</p></td>
+<td><p>Search for Wi-Fi connections</p></td>
+</tr>
+<tr class="row-odd"><td><p>net</p></td>
+<td><p>User level share info</p></td>
+</tr>
+<tr class="row-even"><td><p>net usershare</p></td>
+<td><p>Import sub-command for samba share approvals</p></td>
+</tr>
+<tr class="row-odd"><td><p>nmap</p></td>
+<td><p>LAN &amp; WAN port analysis</p></td>
+</tr>
+<tr class="row-even"><td><p>ping</p></td>
+<td><p>Test device network availability</p></td>
+</tr>
+<tr class="row-odd"><td><p>rfkill</p></td>
+<td><p>Display, activate or deactivate all wireless adapters (Bluetooth, Wi-Fi, UMTS)</p></td>
+</tr>
+<tr class="row-even"><td><p>route</p></td>
+<td><p>Display system routing table and Gateway IP</p></td>
+</tr>
+<tr class="row-odd"><td><p>scp</p></td>
+<td><p>Copy data from/onto SSH server</p></td>
+</tr>
+<tr class="row-even"><td><p>smbpasswd</p></td>
+<td><p>Manager Samba users</p></td>
+</tr>
+<tr class="row-odd"><td><p>sftp</p></td>
+<td><p>Copy data from/onto SSH server</p></td>
+</tr>
+<tr class="row-even"><td><p>ssh</p></td>
+<td><p>SSH remote access (client)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ssh-copy-id</p></td>
+<td><p>SSH copy access key (client)</p></td>
+</tr>
+<tr class="row-even"><td><p>ssh-keygen</p></td>
+<td><p>SSH key generator (client)</p></td>
+</tr>
+<tr class="row-odd"><td><p>traceroute</p></td>
+<td><p>Track a IP-packages from gateway to target</p></td>
+</tr>
+<tr class="row-even"><td><p>wget</p></td>
+<td><p>Download file(s) from web servers</p></td>
+</tr>
+<tr class="row-odd"><td><p>whois</p></td>
+<td><p>Internet domain name info</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="string-filter">
+<h2>String &amp; Filter<a class="headerlink" href="#string-filter" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Strings / Filter</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>awk</p></td>
+<td><p>Output filter (column selection etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>column</p></td>
+<td><p>Column arrangement via tabulators</p></td>
+</tr>
+<tr class="row-even"><td><p>grep</p></td>
+<td><p>Text finder &amp; filter</p></td>
+</tr>
+<tr class="row-odd"><td><p>sed</p></td>
+<td><p>Stream editor and string processing</p></td>
+</tr>
+<tr class="row-even"><td><p>sort</p></td>
+<td><p>Sort terminal output</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="terminal">
+<h2>Terminal<a class="headerlink" href="#terminal" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Terminal</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>alias</p></td>
+<td><p>Show command abbreviations</p></td>
+</tr>
+<tr class="row-odd"><td><p>apropos</p></td>
+<td><p>Search available command</p></td>
+</tr>
+<tr class="row-even"><td><p>bind</p></td>
+<td><p>Create keyboard shortcut</p></td>
+</tr>
+<tr class="row-odd"><td><p>cdpath</p></td>
+<td><p>Extended directory navigation</p></td>
+</tr>
+<tr class="row-even"><td><p>history</p></td>
+<td><p>Show command history</p></td>
+</tr>
+<tr class="row-odd"><td><p>mc</p></td>
+<td><p>Terminal file manager (Midnight Commander)</p></td>
+</tr>
+<tr class="row-even"><td><p>shopt</p></td>
+<td><p>Set shell option</p></td>
+</tr>
+<tr class="row-odd"><td><p>whatis</p></td>
+<td><p>Command description</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="software-packages">
+<h2>Software &amp; Packages<a class="headerlink" href="#software-packages" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Software / Packages</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>apt</p></td>
+<td><p>Package manager for Debian/Ubunutu systems</p></td>
+</tr>
+<tr class="row-odd"><td><p>apt-cache search</p></td>
+<td><p>Searches package sources for software package names or descriptions</p></td>
+</tr>
+<tr class="row-even"><td><p>dpkg-query</p></td>
+<td><p>Delivers a sorted inventory about all installed software including a short description and version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<tbody>
+<tr class="row-odd"><td><figure class="">
+            <a 
+               data-lightbox="group-examples"
+               href="../../_images/terminal_examples_11.png"
+               title="Examples 1"
+               data-title="Examples 1"
+               
+               ><img src="../../_images/terminal_examples_11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><figcaption>Examples 1</figcaption>
+            </figure></td>
+<td><figure class="">
+            <a 
+               data-lightbox="group-examples"
+               href="../../_images/terminal_examples_21.png"
+               title="Examples 2"
+               data-title="Examples 2"
+               
+               ><img src="../../_images/terminal_examples_21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><figcaption>Examples 2</figcaption>
+            </figure></td>
+<td><figure class="">
+            <a 
+               data-lightbox="group-examples"
+               href="../../_images/terminal_examples_31.png"
+               title="Examples 3"
+               data-title="Examples 3"
+               
+               ><img src="../../_images/terminal_examples_31.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><figcaption>Examples 3</figcaption>
+            </figure></td>
+</tr>
+<tr class="row-even"><td><figure class="">
+            <a 
+               data-lightbox="group-examples"
+               href="../../_images/terminal_examples_41.png"
+               title="Example 4"
+               data-title="Example 4"
+               
+               ><img src="../../_images/terminal_examples_41.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><figcaption>Example 4</figcaption>
+            </figure></td>
+<td><figure class="">
+            <a 
+               data-lightbox="group-examples"
+               href="../../_images/terminal_examples_51.png"
+               title="Examples 5"
+               data-title="Examples 5"
+               
+               ><img src="../../_images/terminal_examples_51.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><figcaption>Examples 5</figcaption>
+            </figure></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="docutils container" id="id3">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-apfelboeck22-terminal-guide" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Herrmann Apfelböck. Der große terminal-guide. <em>Linuxwelt</em>, 3/2022:28–39, 2022.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-apfelboeck22-linux-tabellen" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Herrmann Apfelböck. Linux in tabellen. <em>Linuxwelt Sonderheft</em>, 3/2022:84–97, 2022.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="file_system.html" class="btn btn-neutral float-right" title="File System Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

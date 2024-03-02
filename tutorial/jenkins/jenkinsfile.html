@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn to write Jenkinsfile &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python" href="../python/index.html" />
+    <link rel="prev" title="Jenkins" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Jenkins</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Learn to write Jenkinsfile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-basic-pipeline">A basic pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-referencing-variables">Managing &amp; referencing variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global-variables">Global variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#local-variables">Local variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#referencing-variables">Referencing variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#further-documentation">Further documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Jenkins</a></li>
+      <li class="breadcrumb-item active">Learn to write Jenkinsfile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorial/jenkins/jenkinsfile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="learn-to-write-jenkinsfile">
+<h1>Learn to write Jenkinsfile<a class="headerlink" href="#learn-to-write-jenkinsfile" title="Link to this heading"></a></h1>
+<p>A Jenkinsfile defines all steps of a pipeline, while also handling variables and
+defining functions to be called from within step definitions. It is written in
+<a class="reference external" href="https://www.groovy-lang.org/documentation.html">Groovy</a> syntax.</p>
+<section id="a-basic-pipeline">
+<h2>A basic pipeline<a class="headerlink" href="#a-basic-pipeline" title="Link to this heading"></a></h2>
+<p>A basic structure of a Jenkinsfile using a <em>declarative pipeline</em> may look like this:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_CHOICES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">,</span>
+<span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span>
+<span class="o">].</span><span class="na">join</span><span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span>
+
+<span class="kd">final</span><span class="w"> </span><span class="kt">def</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_SUFFIX_MAP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cntts&quot;</span><span class="o">,</span>
+<span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;vvt&quot;</span>
+<span class="o">]</span>
+
+<span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="s1">&#39;linux-jenkins&#39;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="n">options</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">timeout</span><span class="o">(</span><span class="nl">time:</span><span class="w"> </span><span class="mi">10</span><span class="o">,</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="s1">&#39;MINUTES&#39;</span><span class="o">)</span>
+<span class="w">        </span><span class="n">timestamps</span><span class="o">()</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">choice</span><span class="o">(</span>
+<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">choices:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_CHOICES}&quot;</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Product to be built.&quot;</span>
+<span class="w">        </span><span class="o">)</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="o">...</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="o">...</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">agent</span></code> section defines a node, a machine running a Jenkins agent, which in
+this case must carry the <em>label</em> <code class="docutils literal notranslate"><span class="pre">linux-jenkins</span></code>. If there are multiple matching
+agents available, any of them is chosen.</p>
+<p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#options">options</a> section defines job options, such as the timeout.</p>
+<p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#parameters">parameters</a> section define job parameters that are defined before running the job.
+Parameters defined here, are automatically moved into the <em>parameter</em> screen (where
+the values can be adjusted before starting the build), after running the job at least once
+(and not failing before the first stage, that is).
+As shown above, variables can be defined and used as default values or choices for
+build parameters.</p>
+<p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#environment">environment</a> section allows for defining environment variables, only existing
+within the scope of the file. Example:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">REPO_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://aac-srv-bitbucket-coretech.cerence.net/scm/trng21/cerence_neural_tts.git&quot;</span>
+<span class="w">    </span><span class="n">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_SUFFIX_MAP</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">PRODUCT_CHOICES</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#matrix-stages">stages</a> section expects one or more <code class="docutils literal notranslate"><span class="pre">stage</span></code> sections. Those are made up of
+one or more``steps`` sections. Example:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Do something meaningful&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="o">...</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#declarative-steps">steps</a> section contains any allowed type of steps (see <a class="reference external" href="https://www.jenkins.io/doc/pipeline/steps/">https://www.jenkins.io/doc/pipeline/steps/</a>).
+To point out a few:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">script</span></code>: allows to define scripted pipeline, which is Groovy code. It allows for
+running shell scripts via the <a class="reference external" href="https://www.jenkins.io/doc/pipeline/steps/workflow-durable-task-step/#sh-shell-script">sh</a> (via the Pipeline Plugin). Example:</p>
+<blockquote>
+<div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">            ls -l | grep foo</span>
+<span class="s1">            echo &quot;All done&quot;</span>
+<span class="s1">        &#39;&#39;&#39;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="managing-referencing-variables">
+<h2>Managing &amp; referencing variables<a class="headerlink" href="#managing-referencing-variables" title="Link to this heading"></a></h2>
+<p>One of the biggest problems when starting to write Jenkinsfile pipelines is the
+handling of variables. To keep things flexible, variables are defined and referenced
+to avoid having to change them at multiple places.</p>
+<section id="global-variables">
+<h3>Global variables<a class="headerlink" href="#global-variables" title="Link to this heading"></a></h3>
+<p>Globally available variables are accessible via the <code class="docutils literal notranslate"><span class="pre">env</span></code> global variable.
+Some are already available (check &lt;JENKINS_URL&gt;/pipeline-syntax/globals#env for details),
+the <em>env</em> variable is recommended to clearly see that it is a global variable, but
+can also be omitted:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="o">{</span><span class="n">env</span><span class="o">.</span><span class="na">BUILD_NUMBER</span><span class="o">}</span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="n">$</span><span class="o">{</span><span class="n">BUILD_NUMBER</span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>They also can be added to each individual Jenkins node, via
+<span class="menuselection">Dashboard ‣ Computers ‣ &lt;NODE&gt; ‣ Configure</span> and checking
+the <em>Node properties</em> to have <strong>Environment variables</strong> checked and added as
+key-value pairs.</p>
+</section>
+<section id="local-variables">
+<h3>Local variables<a class="headerlink" href="#local-variables" title="Link to this heading"></a></h3>
+<p>Local variables are those declared within the Jenkinsfile. This can happen in
+the <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#environment">environment</a> section as a simple declaration:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">FOO</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>or within the <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#script">script</a> section:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">scripts</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">env</span><span class="o">.</span><span class="na">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Another way is to define local variables at the top of the file. Those can then
+be accessed in any pipeline step:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CREDENTIAL_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tts_rd_jenkins&#39;</span>
+
+<span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="o">...</span>
+<span class="w">    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">checkout</span><span class="o">(</span><span class="n">some_url</span><span class="o">,</span><span class="w"> </span><span class="n">some_branch</span><span class="o">,</span><span class="w"> </span><span class="nl">user:</span><span class="w"> </span><span class="s2">&quot;${CREDENTIAL_KEY}&quot;</span><span class="o">)</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="referencing-variables">
+<h3>Referencing variables<a class="headerlink" href="#referencing-variables" title="Link to this heading"></a></h3>
+<p>Depending on where and how variables are declared and from where in the Jenkinsfile
+they are referenced, the syntax is slightly varying, but can cause a lot of confusion.
+This reference is supposed to make it simple (this applies to string values):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Access (Y) \ Definition (X)</p></th>
+<th class="head"><p>global env, defined outside of Jenkinsfile</p></th>
+<th class="head"><p>local env, defined in environment section</p></th>
+<th class="head"><p>local env, define in script section (using <code class="docutils literal notranslate"><span class="pre">env.VAR_NAME</span> <span class="pre">=</span> <span class="pre">...</span></code> syntax)</p></th>
+<th class="head"><p>local variable, defined at file’s top</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>within <code class="docutils literal notranslate"><span class="pre">script</span></code> (but not in <code class="docutils literal notranslate"><span class="pre">sh</span></code> section)</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>“${env.VAR_NAME}”</p></td>
+<td><p>“${VAR_NAME}”</p></td>
+</tr>
+<tr class="row-odd"><td><p>within <code class="docutils literal notranslate"><span class="pre">sh</span></code> section</p></td>
+<td><p>“${VAR_NAME}”</p></td>
+<td><p>“${VAR_NAME}” ${VAR_NAME}</p></td>
+<td><p>${VAR_NAME}</p></td>
+<td><p>${VAR_NAME}</p></td>
+</tr>
+<tr class="row-even"><td><p>outside of <code class="docutils literal notranslate"><span class="pre">sh</span></code> or <code class="docutils literal notranslate"><span class="pre">script</span></code></p></td>
+<td><p>-</p></td>
+<td><p>“${VAR_NAME}”</p></td>
+<td><p>“${env.VAR_NAME}”</p></td>
+<td><p>String: “${VAR_NAME}”; def: VAR_NAME</p></td>
+</tr>
+</tbody>
+</table>
+<p>Deviating from this syntax often lead to empty value (‘’), <code class="docutils literal notranslate"><span class="pre">null</span></code> values or
+a <em>bad substitution</em> error report by the shell.</p>
+</section>
+</section>
+<section id="further-documentation">
+<h2>Further documentation<a class="headerlink" href="#further-documentation" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/">https://www.jenkins.io/doc/book/pipeline/syntax/</a></p></li>
+<li><p><a class="reference external" href="https://phoenixnap.com/kb/jenkins-environment-variables">https://phoenixnap.com/kb/jenkins-environment-variables</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Jenkins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../python/index.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

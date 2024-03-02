@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>git &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title=".gitconfig" href="config.html" />
+    <link rel="prev" title="git" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">git</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">git</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-local-repository">Create a local repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-user-configuration-to-repository">Add user configuration to repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-remote-repository">Add remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#log-into-remote-repository-account">Log into remote repository account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-files-to-source-control">Add files to source control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#un-stage-files">Un/Stage files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commits">Commits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stashing">Stashing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#branching">Branching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merging-rebase">Merging &amp; Rebase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tagging">Tagging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-along-the-tree">Moving along the tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#revert-changes">Revert changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cherry-pick">Cherry Pick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detached-head-mode">Detached head mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clone-remote-repositories">Clone remote repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-a-repository">Update a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-changes-to-remote-repository">Push changes to remote repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resolve-push-conflicts">Resolve push conflicts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-forks">Working with forks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">.gitconfig</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">git</a></li>
+      <li class="breadcrumb-item active">git</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/reference/git/commands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git">
+<h1>git<a class="headerlink" href="#git" title="Link to this heading"></a></h1>
+<section id="create-a-local-repository">
+<h2>Create a local repository<a class="headerlink" href="#create-a-local-repository" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a new directory</p></li>
+<li><p>Open a terminal window and go to the new directory, then type</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">git<span class="w"> </span>init</span>
+</pre></div></div></section>
+<section id="add-user-configuration-to-repository">
+<h2>Add user configuration to repository<a class="headerlink" href="#add-user-configuration-to-repository" title="Link to this heading"></a></h2>
+<p>Add user information to allow commits</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;johndoe@company.com&quot;</span></span>
+<span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;johndoe&quot;</span></span>
+</pre></div></div></section>
+<section id="add-remote-repository">
+<h2>Add remote repository<a class="headerlink" href="#add-remote-repository" title="Link to this heading"></a></h2>
+<p>Add new remote repository (here named <code class="docutils literal notranslate"><span class="pre">origin</span></code>). Remote repository must already exist.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;remote_repo_url&gt;</span>
+</pre></div></div><p>Change remote repository URL</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>&lt;new_remote_repo_url&gt;</span>
+</pre></div></div><p>Check remote URLs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>remote<span class="w"> </span>-v</span>
+</pre></div></div></section>
+<section id="log-into-remote-repository-account">
+<h2>Log into remote repository account<a class="headerlink" href="#log-into-remote-repository-account" title="Link to this heading"></a></h2>
+<p>In case your IDE isn’t managing your remote login (for example Github), you may use
+the <cite>git-credential-manager</cite> (already included in <a class="reference external" href="https://git-scm.com/download/win">Git for Windows</a> if checked
+during installation, see
+<cite>here &lt;https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md&gt;</cite>
+for installation instruction on Linux &amp; macOS)</p>
+<p>From inside your git repository, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>wincred</span>
+</pre></div></div><p>to set the <em>git-credential-manager</em> as your global credential helper tool.</p>
+<p>Next, run a git command involving the remote repository, for example <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.
+In case, the git config doesn’t have your login credentials, it launches the
+credential manager, which asks for it.</p>
+<p>To see your set credential manager, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>credential.helper</span>
+</pre></div></div></section>
+<section id="add-files-to-source-control">
+<h2>Add files to source control<a class="headerlink" href="#add-files-to-source-control" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create files within local repository</p></li>
+<li><p>Add the files to source control via</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>add<span class="w"> </span>&lt;path/to/fileA&gt;<span class="w"> </span>&lt;path/to/fileB&gt;<span class="w"> </span>...</span>
+</pre></div></div></section>
+<section id="un-stage-files">
+<h2>Un/Stage files<a class="headerlink" href="#un-stage-files" title="Link to this heading"></a></h2>
+<p>Add files to git index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># stage single files</span></span>
+<span class="prompt1">git<span class="w"> </span>add<span class="w"> </span>&lt;path/to/fileA&gt;<span class="w"> </span>&lt;path/to/fileB&gt;</span>
+<span class="prompt1"><span class="c1"># stage all files within current directory</span></span>
+<span class="prompt1">git<span class="w"> </span>add<span class="w"> </span>.</span>
+<span class="prompt1"><span class="c1"># stage all new, modified, deleted files within repository</span></span>
+<span class="prompt1">git<span class="w"> </span>add<span class="w"> </span>-A</span>
+</pre></div></div><p>Revoke staged files from git index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>&lt;/path/to/fileA&gt;<span class="w"> </span>&lt;/path/to/fileB&gt;</span>
+</pre></div></div><p>Remove files from repo that have already been committed before (doesn’t remove them
+from the local file system )</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>&lt;path/to/file&gt;</span>
+</pre></div></div></section>
+<section id="commits">
+<h2>Commits<a class="headerlink" href="#commits" title="Link to this heading"></a></h2>
+<p>Commit to current branch with a message</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Important changes&quot;</span></span>
+</pre></div></div><p>Stage and commit all modified or deleted file (excluding new files)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Important changes</span></span>
+</pre></div></div><p>Change message on most recent commit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>--amend</span>
+<span class="prompt1"></span>
+<span class="prompt1">An<span class="w"> </span>editor<span class="w"> </span>opens,<span class="w"> </span>edit<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>close<span class="w"> </span>to<span class="w"> </span>confirm.</span>
+</pre></div></div></section>
+<section id="stashing">
+<h2>Stashing<a class="headerlink" href="#stashing" title="Link to this heading"></a></h2>
+<p>In contrast to ‘staging’, a stash is a temporary storage of any recent changes made
+inside a directory and thereby cleaning it from those changes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>stash<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Stashing potential implementation&quot;</span></span>
+</pre></div></div><p>Apply changes from stash to current directory and remove them from the stash</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>stash<span class="w"> </span>pop</span>
+</pre></div></div><p>Apply changes from stash to current directory, but keep them in the stash</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>stash<span class="w"> </span>apply</span>
+</pre></div></div><p>List all stashed changes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>stash<span class="w"> </span>list</span>
+</pre></div></div></section>
+<section id="branching">
+<h2>Branching<a class="headerlink" href="#branching" title="Link to this heading"></a></h2>
+<p>List all local branches</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch</span>
+</pre></div></div><p>List all local and remote branches</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-a</span>
+</pre></div></div><p>Create a new branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div><p>Create a new branch from existing branch on remote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;local_branch_name&gt;<span class="w"> </span>&lt;remote_name&gt;/&lt;remote_branch_name&gt;</span>
+</pre></div></div><p>Switch to another branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div><p>Create and switch to a new branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div><p>Delete an existing branch (if it’s merged)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div><p>Force delete an existing branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div><p>Delete all branches except <em>master</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>master<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-D</span>
+</pre></div></div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>Delete “useless” branches locally</strong></p>
+<p><em>Useless</em> branches are considered those who are merged, not currently
+checked out and not <em>master</em> (the main branch).</p>
+<p>Copy those lines into <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[alias]</span>
+<span class="w">    </span><span class="c1"># Delete all local branches but master and the current one, but only if they are fully merged with master</span>
+<span class="w">    </span><span class="na">br-delete-useless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){</span>\
+<span class="w">        </span><span class="s">git branch | grep -v &quot;master&quot; | grep -v ^* | xargs git branch -d;</span>\
+<span class="w">    </span><span class="s">}; f&quot;</span>
+<span class="w">    </span><span class="c1"># Delete all local branches but master and the current one</span>
+<span class="w">    </span><span class="na">br-delete-useless-force</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){</span>\
+<span class="w">        </span><span class="s">git branch | grep -v &quot;master&quot; | grep -v ^* | xargs git branch -D;</span>\
+<span class="w">    </span><span class="s">}; f&quot;</span>
+</pre></div>
+</div>
+<p>This enables those two git aliases:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>br-delete-useless</span>
+<span class="prompt1">git<span class="w"> </span>br-delete-useless-force</span>
+</pre></div></div><p>which deletes all <em>useless</em> local branches. Be careful, using
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">br-delete-useless-force</span></code> also deletes them if they haven’t
+yet been merged to master.</p>
+</div>
+<p>Delete branch on remote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_name&gt;<span class="w"> </span>--delete<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div><p>Rename currently checked out branch (local)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;New branch name&quot;</span></span>
+</pre></div></div><p>Rename remote branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># Rename branch locally</span></span>
+<span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>&lt;old_name&gt;<span class="w"> </span>&lt;new_name&gt;</span>
+<span class="prompt1"></span>
+<span class="prompt1"><span class="c1"># Delete old branch on remote</span></span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote&gt;<span class="w"> </span>--delete<span class="w"> </span>&lt;old_name&gt;</span>
+<span class="prompt1"></span>
+<span class="prompt1"><span class="c1"># Push the new branch to remote</span></span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote&gt;<span class="w"> </span>&lt;new_name&gt;</span>
+</pre></div></div></section>
+<section id="merging-rebase">
+<h2>Merging &amp; Rebase<a class="headerlink" href="#merging-rebase" title="Link to this heading"></a></h2>
+<p><strong>Merge the active branch with the branch &lt;branch_name&gt;</strong></p>
+<p>You will create a new commit for the active branch with the merged changes remain in the
+active branch (use <code class="docutils literal notranslate"><span class="pre">-m</span></code> to overwrite default commit message)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>merge<span class="w"> </span>&lt;branch_name&gt;<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;merge with &lt;branch_name&gt;&quot;</span></span>
+</pre></div></div><p><strong>Abort a merge</strong></p>
+<p>If a merge results in a conflict, it has to be aborted, before it can be resolved</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>merge<span class="w"> </span>--abort</span>
+</pre></div></div><p><strong>Rebase a branch</strong></p>
+<p>This puts the <em>active branch</em> on top of the <em>specified branch</em>. It is basically a merge,
+where the inheritance tree of the <em>specified branch</em> becomes a sequential line with the commits of the
+<em>active branch</em> at its end. If the changes of the <em>active branch</em> are lower than in the tree as the latest
+changes of the <em>specified branch</em>, it merges the changes onto the latest commit <em>specified branch</em>.</p>
+<p>Rebasing allows for cleaner commit history, since all commits are eventually gathered onto the same branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>&lt;target_branch_name&gt;</span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Never rebase public history (e.g. master), but rebase your changes onto the current state of master.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;master_branch&gt;</span>
+<span class="prompt1">git<span class="w"> </span>pull</span>
+<span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;feature_branch&gt;</span>
+<span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>&lt;master_branch&gt;</span>
+</pre></div></div></div>
+<p>Rebase a <code class="docutils literal notranslate"><span class="pre">&lt;on_top_branch_name&gt;</span></code> onto a <code class="docutils literal notranslate"><span class="pre">&lt;base_branch_name&gt;</span></code> without having checked out any of them</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>&lt;base_branch_name&gt;<span class="w"> </span>&lt;on_top_branch_name&gt;</span>
+</pre></div></div><p>After a successful rebase, the master branch HEAD is still pointing to its latest commit, not the latest commit
+added to the stream via the rebase. To get <em>master</em> back to the very front of the stream (so you can
+continue with it), you need to merge the master with the rebased branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;master_branch&gt;</span>
+<span class="prompt1">git<span class="w"> </span>merge<span class="w"> </span>&lt;rebased_branch&gt;</span>
+</pre></div></div><p><strong>Abort rebase</strong></p>
+<p>If a rebase action results in a conflict, it has to be aborted before it can be resolved</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>--abort</span>
+</pre></div></div><p><strong>Interactive rebase</strong></p>
+<p>It means to pick certain commits of the current branch for a rebase (here: using the three latest commits)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>&lt;target_branch_name&gt;~3</span>
+</pre></div></div><p>This opens a text editor window, which allows you to <em>pick</em> certain commits from the list.
+Delete commits from the list you want to omit:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pick f7f3f6d changed my name a bit
+pick 310154e updated README formatting and added blame
+pick a5f4a0d added cat-file
+...
+</pre></div>
+</div>
+<p>The commit order can be changed by changing the pick order. Close the file to execute.</p>
+</section>
+<section id="tagging">
+<h2>Tagging<a class="headerlink" href="#tagging" title="Link to this heading"></a></h2>
+<p>A lightweight tag is a pointer to a specific commit in a branch.</p>
+<p><strong>Create a tag for the current commit (to which HEAD points to)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>tag<span class="w"> </span>&lt;TAG_NAME&gt;</span>
+</pre></div></div><p><strong>Push the tag to the remote (here: origin)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;TAG_NAME&gt;</span>
+</pre></div></div><p><strong>Push all local tabs to the remote</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>--tags</span>
+</pre></div></div><p><strong>List all available tags (in current branch)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>tag<span class="w"> </span>-l</span>
+</pre></div></div><p><strong>Checkout a tag</strong></p>
+<p>While having checked out the same branch as tag is applied onto, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;TAG_NAME&gt;</span>
+</pre></div></div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Checking out a tag puts the repo into <em>detached HEAD</em> state</p>
+</div>
+<p><strong>Delete a tag</strong></p>
+<p>Delete a local tab:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>&lt;TAG_NAME&gt;</span>
+</pre></div></div><p>Delete a remote tab:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>--delete<span class="w"> </span>origin<span class="w"> </span>&lt;TAG_NAME&gt;</span>
+</pre></div></div></section>
+<section id="moving-along-the-tree">
+<h2>Moving along the tree<a class="headerlink" href="#moving-along-the-tree" title="Link to this heading"></a></h2>
+<p>The currently selected commit is the HEAD. Going up the tree means shifting to older commits,
+going down means shifting to newer commits.</p>
+<p>Select a different commit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit_hash_sum&gt;</span>
+</pre></div></div><p><strong>Getting previous commit’s hash sum</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>log</span>
+</pre></div></div><p>For short hashes (here: latest commit)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>log<span class="w"> </span>-s<span class="w"> </span>--pretty<span class="o">=</span>format:%h<span class="w"> </span>-1</span>
+</pre></div></div><p>Increase the last number to show the last n entries in the commit tree. Also use tools
+such as Gitkraken to get hash code of commits easily.</p>
+<p>Get previous xx commits</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>log<span class="w"> </span>-&lt;number_of_previous_commits&gt;</span>
+</pre></div></div><p>Get previous commits by a certain author</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span><span class="s2">&quot;&lt;name&gt;&quot;</span></span>
+</pre></div></div><p>Get commits within a certain time frame (date format: YYYY-MM-DD)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>log<span class="w"> </span>--before<span class="o">=</span><span class="s2">&quot;&lt;date&gt;&quot;</span><span class="w"> </span>--after<span class="o">=</span><span class="s2">&quot;&lt;date&gt;&quot;</span></span>
+</pre></div></div><p><strong>Relative Refs</strong></p>
+<p>Move upwards by one commit on a certain branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch_name&gt;^</span>
+</pre></div></div><p>Move upwards by three commits on a certain branch</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch_name&gt;^^^</span>
+<span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch_name&gt;~3</span>
+</pre></div></div><p>Move up from current HEAD (here: two commits)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>HEAD^^</span>
+<span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>HEAD~2</span>
+</pre></div></div><p><strong>Move a branch to a different commit</strong></p>
+<p>This sets the latest commit of a branch to a certain previous commit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-f<span class="w"> </span>&lt;branch_name&gt;<span class="w"> </span>HEAD~3</span>
+<span class="prompt1">git<span class="w"> </span>branch<span class="w"> </span>-f<span class="w"> </span>&lt;branch_name&gt;<span class="w"> </span>&lt;target_commit_hash_sum&gt;</span>
+</pre></div></div></section>
+<section id="revert-changes">
+<h2>Revert changes<a class="headerlink" href="#revert-changes" title="Link to this heading"></a></h2>
+<p>Move back the branch and undo all in-between changes (here: by one commit)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>reset<span class="w"> </span>&lt;branch_name&gt;~1</span>
+</pre></div></div><p>Revert changes done to a staged file (first un-stage, then checkout latest commit)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>&lt;path_to_file&gt;</span>
+<span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>.</span>
+</pre></div></div><p>Revert changes made to current working copy since last checkout</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>.</span>
+</pre></div></div><p>Remove all unstaged files and directories (<code class="docutils literal notranslate"><span class="pre">-f</span></code> … force; <code class="docutils literal notranslate"><span class="pre">-d</span></code> … include directories)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>clean<span class="w"> </span>-fd</span>
+</pre></div></div><p>Reverts changes of previous commits. In contrast to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>, the revert command does not delete
+the reverted commits, but creates a new commit, which excludes the reverted commits.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># revert changes from specific commit</span></span>
+<span class="prompt1">git<span class="w"> </span>revert<span class="w"> </span>&lt;bad_commit_hash_sum&gt;</span>
+<span class="prompt1"><span class="c1"># revert changes of previous three commits</span></span>
+<span class="prompt1">git<span class="w"> </span>revert<span class="w"> </span>HEAD~3</span>
+</pre></div></div><p>Reset HEAD to latest commit, reverting all changes since then</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>reset<span class="w"> </span>--hard</span>
+<span class="prompt1">git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD</span>
+</pre></div></div><p>Reset HEAD to previous commit (will delete all changes/commits in between)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># to certain commit</span></span>
+<span class="prompt1">git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>&lt;commit_hash_sum&gt;</span>
+<span class="prompt1"><span class="c1"># three commits upwards</span></span>
+<span class="prompt1">git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~3</span>
+</pre></div></div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Reverting is often preferred over resetting, since resetted commits are removed permanently,
+whereas reverted commits are still in the tree (in case, they are still needed later).</p>
+</div>
+</section>
+<section id="cherry-pick">
+<h2>Cherry Pick<a class="headerlink" href="#cherry-pick" title="Link to this heading"></a></h2>
+<p>Cherry picking lets you pick specific commits from different branches and add it to the current HEAD</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>cherry-pick<span class="w"> </span>&lt;commit_hash_sum_A&gt;<span class="w"> </span>&lt;commit_hash_sum_B&gt;</span>
+</pre></div></div></section>
+<section id="detached-head-mode">
+<h2>Detached head mode<a class="headerlink" href="#detached-head-mode" title="Link to this heading"></a></h2>
+<p>When checking out a commit instead of a branch that HEAD is not pointing to you are forced into the detached head mode.
+You can work here, but in order to merge your changes into HEAD, you must first create a new branch,
+make your changes there, then checkout <em>master</em> and merge it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit_hash_sum&gt;</span>
+<span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;new_branch_name&gt;</span>
+<span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;important changes&quot;</span></span>
+<span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>master</span>
+<span class="prompt1">git<span class="w"> </span>merge<span class="w"> </span>&lt;new_branch_name&gt;</span>
+</pre></div></div></section>
+<section id="clone-remote-repositories">
+<h2>Clone remote repositories<a class="headerlink" href="#clone-remote-repositories" title="Link to this heading"></a></h2>
+<p>Clone remote repository into the current working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>&lt;remote_repository_url&gt;</span>
+</pre></div></div></section>
+<section id="update-a-repository">
+<h2>Update a repository<a class="headerlink" href="#update-a-repository" title="Link to this heading"></a></h2>
+<p>Download latest commits from the remote repository (same branch)</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> fetches all commits (including branches and tags) that are not in the local repository.
+Our local state (including the current branch) remain <strong>unchanged</strong> (no update). Newly fetched branches
+become present in our local repo and are properly named, so it’s obvious, those derive from remote changes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch</span>
+</pre></div></div><p>Download changes from a specific remote. If not &lt;remote_name&gt; is given, <strong>origin</strong> is used by default.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch<span class="w"> </span>&lt;remote_name&gt;</span>
+</pre></div></div><p>Remove all local references to no more existing branches on the remote (not including tags, here the
+option <code class="docutils literal notranslate"><span class="pre">--prune-tags</span></code> must be used).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch<span class="w"> </span>--prune</span>
+</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> also fetches missing commits from the remote, but also merges them into new commits</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>pull</span>
+</pre></div></div><p>is the shorthand for</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch</span>
+<span class="prompt1">git<span class="w"> </span>merge<span class="w"> </span>FETCH_HEAD</span>
+</pre></div></div><p>while FETCH_HEAD points to the fetched remote branch (i.e. origin)</p>
+<p><strong>Update via ``pull –rebase``</strong></p>
+<p>Gets remote changes (commits), adds them on top of the last common state (last merge),
+packs my local changes (commits) on top, all inside one stream.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Must be applied on a specific branch.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>&lt;remote_name&gt;<span class="w"> </span>&lt;branch_name&gt;</span>
+</pre></div></div></section>
+<section id="push-changes-to-remote-repository">
+<h2>Push changes to remote repository<a class="headerlink" href="#push-changes-to-remote-repository" title="Link to this heading"></a></h2>
+<p>Push all committed changes of the current branch to the branch’s defined remote repository (default: origin)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push</span>
+</pre></div></div><p>Push committed changes of &lt;local_branch_name&gt; to &lt;remote_branch_name&gt; (default: origin)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_repo_name&gt;<span class="w"> </span>&lt;local_branch_name&gt;</span>
+</pre></div></div><p>Push latest commit of a tag to the remote repository</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_repo_name&gt;<span class="w"> </span>&lt;local_tag_name&gt;</span>
+</pre></div></div><p>Push all local branches to the remote</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_repo_name&gt;<span class="w"> </span>--all</span>
+</pre></div></div></section>
+<section id="resolve-push-conflicts">
+<h2>Resolve push conflicts<a class="headerlink" href="#resolve-push-conflicts" title="Link to this heading"></a></h2>
+<dl class="field-list">
+<dt class="field-odd">Error<span class="colon">:</span></dt>
+<dd class="field-odd"><p>When trying to push commits that are based on outdated commits, the push fails.</p>
+</dd>
+<dt class="field-even">Solution 1<span class="colon">:</span></dt>
+<dd class="field-even"><p>Fetch the latest state of the remote repo, <strong>rebase</strong> that state with your local branch, then push teh resulting changes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch</span>
+<span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>origin/master</span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;</span>
+</pre></div></div><p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin/master</span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;</span>
+</pre></div></div></dd>
+<dt class="field-odd">Solution 2<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Fetch the lastest state from the remote repo, <strong>merge</strong> that state with your current local branch, then push the resulting changes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch</span>
+<span class="prompt1">git<span class="w"> </span>merge<span class="w"> </span>origin/master</span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;</span>
+</pre></div></div><p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>pull<span class="w"> </span>origin/master</span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;</span>
+</pre></div></div></dd>
+<dt class="field-even">Solution 3<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Accept the remote version</strong> of a conflicted file, then push your commit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>--theirs<span class="w"> </span>&lt;conflicted_file_name&gt;</span>
+<span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;using theirs&quot;</span></span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;</span>
+</pre></div></div></dd>
+<dt class="field-odd">Solution 4<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Override the remote version</strong> of a conflicted file, then push your commit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>--yours<span class="w"> </span>&lt;conflicted_file_name&gt;</span>
+<span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;using ours&quot;</span></span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;</span>
+</pre></div></div></dd>
+</dl>
+</section>
+<section id="working-with-forks">
+<h2>Working with forks<a class="headerlink" href="#working-with-forks" title="Link to this heading"></a></h2>
+<p>Forking a repository creates a full copy of repository, that can be freely experimented on
+without affecting the original repository. You can contribute back to the original repo
+using <strong>pull requests</strong>.</p>
+<p>Cloning in comparison, does not unhook you from the original repository and you are not
+able to contribute, unless you are authorized as a collaborator.</p>
+<p><strong>Contribute to a repository</strong></p>
+<ol class="arabic">
+<li><p>Create a fork of the original repository. The steps depend on the used Git Host (e.g. Github, Bitbucket).</p></li>
+<li><p>Clone the fork:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>&lt;url_to_forked_repository&gt;</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Make changes, commit and push to remote.</p></li>
+<li><p>Create a pull request towards the target branch of the original repository.
+The steps depend on the used Git Host (e.g. Github, Bitbucket).</p></li>
+</ol>
+<p><strong>Keep your fork up-to-date</strong></p>
+<p>As other contributors push and merge changes onto the original repository, your fork does not
+receives these changes automatically. Having your fork up-to-date when starting your
+changes makes merges back to the original much simpler.</p>
+<ol class="arabic">
+<li><p>Add the original repository as additional remote:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>&lt;url_to_original_repository&gt;</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p><strong>Before you start making changes inside your fork</strong>, get the latest changes from
+the original repository (upstream). First, fetch all branches from upstream:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>fetch<span class="w"> </span>upstream</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Make sure you’re on <em>master</em>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>checkout<span class="w"> </span>master</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Now rewrite your master branch so that any commits of yours that aren’t already
+in upstream/master are replayed on top of that other branch:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>rebase<span class="w"> </span>upstream/master</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Lastly, push the changes to your forked remote:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>origin<span class="w"> </span>master</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+<p>Now you go ahead creating a feature branch.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral float-right" title=".gitconfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

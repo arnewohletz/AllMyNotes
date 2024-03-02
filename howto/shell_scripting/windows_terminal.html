@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows Terminal &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/thebelab-helper.js"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bash shell" href="bash.html" />
+    <link rel="prev" title="Shell Scripting" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Shell Scripting</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Windows Terminal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#colorful-for-text-output">Colorful for text output </a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html">Bash shell</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Shell Scripting</a></li>
+      <li class="breadcrumb-item active">Windows Terminal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/howto/shell_scripting/windows_terminal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="windows-terminal">
+<h1>Windows Terminal<a class="headerlink" href="#windows-terminal" title="Link to this heading"></a></h1>
+<section id="colorful-for-text-output">
+<span id="windows-terminal-colorful-text"></span><h2>Colorful for text output <a class="footnote-reference brackets" href="#footcite-schulz23-terminal-colors" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#colorful-for-text-output" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors">ANSI-Escape-Sequences</a> can be used to tell the Windows Terminal to print text
+in various colors. It is possible to define a text color and a background color.
+The <em>Windows Terminal</em> application supports the 8-Bit colors, although standard
+and bright colors are sometimes not differentiable (e.g. green foreground).</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The Windows Console uses an old protocol named VT100 which invented in the
+late 70s, featuring control commands. Those were mostly used to tell the
+displaying terminal what to do, like cleaning the screen or position the
+cursor. Later, colors were supported, though only a limited set. The
+commands remain unchanged until today.</p>
+</div>
+<p>The valid sequences are:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Color</p></th>
+<th class="head"><p>Foreground</p></th>
+<th class="head"><p>Background</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Black</p></td>
+<td><p>ESC[30m</p></td>
+<td><p>ESC[40m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Red</p></td>
+<td><p>ESC[31m</p></td>
+<td><p>ESC[41m</p></td>
+</tr>
+<tr class="row-even"><td><p>Green</p></td>
+<td><p>ESC[32m</p></td>
+<td><p>ESC[42m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Yellow</p></td>
+<td><p>ESC[33m</p></td>
+<td><p>ESC[43m</p></td>
+</tr>
+<tr class="row-even"><td><p>Blue</p></td>
+<td><p>ESC[34m</p></td>
+<td><p>ESC[44m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Violet</p></td>
+<td><p>ESC[35m</p></td>
+<td><p>ESC[45m</p></td>
+</tr>
+<tr class="row-even"><td><p>Turquoise</p></td>
+<td><p>ESC[36m</p></td>
+<td><p>ESC[46m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bright Grey</p></td>
+<td><p>ESC[37m</p></td>
+<td><p>ESC[47m</p></td>
+</tr>
+<tr class="row-even"><td><p>Dark Grey</p></td>
+<td><p>ESC[90m</p></td>
+<td><p>ESC[100m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bright Red</p></td>
+<td><p>ESC[91m</p></td>
+<td><p>ESC[101m</p></td>
+</tr>
+<tr class="row-even"><td><p>Bright Green</p></td>
+<td><p>ESC[92m</p></td>
+<td><p>ESC[102m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bright Yellow</p></td>
+<td><p>ESC[93m</p></td>
+<td><p>ESC[103m</p></td>
+</tr>
+<tr class="row-even"><td><p>Bright Blue</p></td>
+<td><p>ESC[94m</p></td>
+<td><p>ESC[104m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bright Violet</p></td>
+<td><p>ESC[95m</p></td>
+<td><p>ESC[105m</p></td>
+</tr>
+<tr class="row-even"><td><p>Bright Turquoise</p></td>
+<td><p>ESC[96m</p></td>
+<td><p>ESC[106m</p></td>
+</tr>
+<tr class="row-odd"><td><p>White</p></td>
+<td><p>ESC[97m</p></td>
+<td><p>ESC[107m</p></td>
+</tr>
+<tr class="row-even"><td><p>RESET</p></td>
+<td><p>ESC[39m</p></td>
+<td><p>ESC[49m</p></td>
+</tr>
+</tbody>
+</table>
+<p>Here <strong>ESC</strong> stands for the special character Escape (ASCII-Code 27, 0x1b).</p>
+<p>Most terminals support various color schemes, which map an color code to a specific
+color defined in RGB values. The <a class="reference external" href="https://github.com/microsoft/terminal/releases/tag/1904.29002">ColorTool</a> from Windows Terminal, for instance,
+displays the default <em>Campbell</em> scheme like this:</p>
+<img alt="../../_images/ansi_8bit_colors.png" src="../../_images/ansi_8bit_colors.png" />
+<p>The bright colors start with <strong>1;</strong> (for example, 1;32m for bright green) which
+is another valid way to write the escape codes.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some terminals do not differentiate between standard and bright colors or
+use different colors schemes. So expect different results when using another
+Terminal. In <em>Windows Terminal</em>, the scheme can be defined in
+<span class="menuselection">Settings ‣ Color Schemes</span>. Additional themes can be
+downloaded from <a class="reference external" href="https://terminalsplash.com/">https://terminalsplash.com/</a> and copied into the config JSON
+via <span class="menuselection">Settings ‣ Open JSON file</span> (lower left corner).</p>
+</div>
+<ol class="arabic">
+<li><p>These sequences start with the unprintable <em>Escape</em> character. To enter it,
+create it by opening a PowerShell window and type</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "PS C:\\> ";
+}
+</style><span class="prompt1"><span class="nb">Set-Clipboard</span> <span class="p">(</span><span class="no">[char]</span><span class="n">27</span><span class="p">)</span></span>
+</pre></div></div><p>which puts the character into the clipboard for further usage (The escape
+character has the ANSI-Code 27).</p>
+</div></blockquote>
+</li>
+<li><p>Open the script, which is supposed to print colored text. Optionally, define
+the <em>Escape</em> character as variable. Here for batch:</p>
+<blockquote>
+<div><div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">ESC</span><span class="p">=</span>
+</pre></div>
+</div>
+<p>where the square is the pasted Escape character (might be displayed differently,
+depending on the used editor)</p>
+</div></blockquote>
+</li>
+<li><p>Stating an ANSI-Escape-Sequence for color changes the color from that
+character <strong>onwards</strong>. So to properly colorize a certain section of a
+printed text</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>its beginning must set the formatting to the desired color</p></li>
+<li><p>at its end, the formatting must be set back to default</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">ESC</span><span class="p">=</span>
+<span class="k">echo</span> standard text - <span class="nv">%ESC%</span>[40mred text<span class="nv">%ESC%</span>[39m
+</pre></div>
+</div>
+<p>which renders to:</p>
+<blockquote>
+<div><p>standard text - <span class="rfg">red text</span></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%ESC%[40m</span></code> defines a red text, whereas <code class="docutils literal notranslate"><span class="pre">%ESC%[39m</span></code> sets it back to
+default.</p>
+</div></blockquote>
+</li>
+<li><p>To define both a foreground and a background color, they can be put together
+in one expression:</p>
+<blockquote>
+<div><div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">ESC</span><span class="p">=</span>
+<span class="k">echo</span> <span class="nv">%ESC%</span>[35;101mViolet text on bright red background<span class="nv">%ESC%</span>[39;49m
+</pre></div>
+</div>
+</div></blockquote>
+<p>Here, foreground <strong>and</strong> background must be reset afterwards.</p>
+</li>
+</ol>
+<div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-schulz23-terminal-colors" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Hajo Schulz. Buntschrift. <em>c’t</em>, 1/2023:170–173, 2023.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Shell Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bash.html" class="btn btn-neutral float-right" title="Bash shell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

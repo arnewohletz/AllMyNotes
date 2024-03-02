@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set up Proxy Jump &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=44eb6c13" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SSL" href="../ssl.html" />
+    <link rel="prev" title="Set up key authentication" href="key_authentication.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Network</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gpg.html">GPG - GNU Privacy Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netcat.html">Netcat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scp.html">SCP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SSH</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="key_authentication.html">Set up key authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="key_authentication.html#configure-connections">Configure connections</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Set up Proxy Jump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-ssh-tunneling">Set up SSH Tunneling </a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ssl.html">SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zscaler.html">Zscaler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Network</a></li>
+          <li class="breadcrumb-item"><a href="index.html">SSH</a></li>
+      <li class="breadcrumb-item active">Set up Proxy Jump</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/network/ssh/proxy_jump_tunnelling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="set-up-proxy-jump">
+<h1>Set up Proxy Jump<a class="headerlink" href="#set-up-proxy-jump" title="Link to this heading"></a></h1>
+<p>The Proxy Jump is a feature introduced in OpenSSH 7.3 and allows connecting to a remote machine
+using an intermediate machine. It can be used, if the target machine is only reachable by
+the intermediate machine.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It’s recommended to use key authentication to authenticate on the
+machines to save yourself from entering passwords for the connection.</p>
+</div>
+<p class="rubric">Prerequisites</p>
+<ul class="simple">
+<li><p>Access over SSH to the intermediate machine</p></li>
+<li><p>Intermediate machine has access to target machine</p></li>
+</ul>
+<p class="rubric">Steps</p>
+<p>To create a proxy jump, execute this command from your shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">ssh<span class="w"> </span>-J<span class="w"> </span>&lt;user_intermediate&gt;@&lt;ip_or_domain_name_intermediate&gt;<span class="w"> </span>&lt;user_target&gt;@&lt;ip_or_domain_name_target&gt;</span>
+</pre></div></div><p>e.g. <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-J</span> <span class="pre">testpc&#64;ulm-ntg7-testb1</span> <span class="pre">root&#64;10.120.1.91</span></code></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>Proxy Jump in WinSCP</strong></p>
+<p>WinSCP also supports connections over a proxy jump. Steps:</p>
+<ol class="arabic simple">
+<li><p>Select a new session.</p></li>
+<li><p>Enter the <em>Host name</em> and <em>User name</em> of the <strong>target machine</strong>.</p></li>
+<li><p>Open <span class="menuselection">Advanced ‣ Connection ‣ Tunnel</span>.</p></li>
+<li><p>Check <em>Connect through SSH tunnel</em>.</p></li>
+<li><p>Enter <em>Host name</em> and <em>User name</em> of the <strong>intermediate machine</strong>.</p></li>
+<li><p>In case key authentication is used to connect to intermediate machine:
+Add path to <em>Private key file</em>.</p></li>
+<li><p>Close settings.</p></li>
+</ol>
+</div>
+</section>
+<section id="set-up-ssh-tunneling">
+<h1>Set up SSH Tunneling <a class="footnote-reference brackets" href="#footcite-ssh-tunnel-gentoo" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#set-up-ssh-tunneling" title="Link to this heading"></a></h1>
+<p>As proxy jumping is not supported on older versions of OpenSSH (before v7.3), the SSH
+tunnel is another way to connect to a target machine (here, called server) over an
+intermediate machine (here, called gateway).</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Older Linux distributions (such as Ubuntu 16.04) are not supporting proxy jumping.</p>
+</div>
+<ol class="arabic">
+<li><p>Set up the tunnel on you local machine:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-f<span class="w"> </span>GATEWAY_USERNAME<span class="w"> </span>-L<span class="w"> </span>localhost:CPORT:SERVER:SPORT<span class="w"> </span>-N</span>
+</pre></div></div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>When using key authentication towards the gateway machine, execute:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-<span class="w"> </span>i<span class="w"> </span>/path/to/private/key<span class="w"> </span>-f<span class="w"> </span>GATEWAY_USERNAME<span class="w"> </span>-L<span class="w"> </span>localhost:CPORT:SERVER:SPORT<span class="w"> </span>-N</span>
+</pre></div></div></div></blockquote>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a connection:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-p<span class="w"> </span>CPORT<span class="w"> </span>SUSERNAME@localhost</span>
+</pre></div></div></div></blockquote>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">GATEWAY_USERNAME<span class="colon">:</span></dt>
+<dd class="field-odd"><p>User name on the gateway machine</p>
+</dd>
+<dt class="field-even">GATEWAY<span class="colon">:</span></dt>
+<dd class="field-even"><p>IP address or domain name of gateway machine</p>
+</dd>
+<dt class="field-odd">CPORT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Port number used on Client (should be greater than 1024)</p>
+</dd>
+<dt class="field-even">SERVER<span class="colon">:</span></dt>
+<dd class="field-even"><p>IP address or domain name of server machine</p>
+</dd>
+<dt class="field-odd">SPORT<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Port number the SSH server is listening to (default: 22)</p>
+</dd>
+<dt class="field-even">SUSERNAME<span class="colon">:</span></dt>
+<dd class="field-even"><p>User name on the server machine</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-f<span class="w"> </span>testpc@ulm-ntg7-testb1<span class="w"> </span>-L<span class="w"> </span>localhost:1025:10.120.1.91:22<span class="w"> </span>-N</span>
+<span class="prompt1">ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">1025</span><span class="w"> </span>root@localhost</span>
+</pre></div></div><div class="docutils container" id="id2">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-ssh-tunnel-gentoo" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Gentoo Foundation. Ssh tunneling. 2022. URL: <a class="reference external" href="https://wiki.gentoo.org/wiki/SSH_tunneling">https://wiki.gentoo.org/wiki/SSH_tunneling</a> (visited on 2022-03-22).</p>
+</aside>
+</aside>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="key_authentication.html" class="btn btn-neutral float-left" title="Set up key authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ssl.html" class="btn btn-neutral float-right" title="SSL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Mar 02, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
