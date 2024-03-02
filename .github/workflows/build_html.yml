@@ -18,11 +18,10 @@ jobs:
         pwd
         ls -a .
         ls -a ./build
-        ls -a ./build/html
     - uses: actions/upload-artifact@v1
       with:
         name: Create artifacts for HTML output
-        path: /home/runner/work/AllMyNotes/AllMyNotes/build/html/
+        path: /home/runner/work/AllMyNotes/AllMyNotes/build/
   deploy:
     needs: docs
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
