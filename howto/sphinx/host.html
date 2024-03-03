@@ -93,6 +93,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Sphinx</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="build.html">Building</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Host documentation on localhost (with nginx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#host-documentation-on-github-pages">Host documentation on GitHub Pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploy-from-branch">Deploy from branch</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="vale.html">Documentation linting with vale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extending/index.html">Extending</a></li>
 </ul>
@@ -190,6 +194,65 @@ span.prompt1:before {
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">https://127.0.0.1:&lt;PORT&gt;</span></code>, using the port specified in your configuration, in your browser.</p></li>
 </ol>
 </section>
+<section id="host-documentation-on-github-pages">
+<h1>Host documentation on GitHub Pages<a class="headerlink" href="#host-documentation-on-github-pages" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://pages.github.com/">GitHub Pages</a> is an alternative to host a Sphinx documentation, making it available
+from anywhere. GitHub provides the service for free for public repositories (make sure,
+the repository, containing the documentation, is publicly available).</p>
+<section id="deploy-from-branch">
+<h2>Deploy from branch<a class="headerlink" href="#deploy-from-branch" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Log into your GitHub account and open the documentation repository.</p></li>
+<li><p>Create a new, empty branch (<span class="menuselection">View all branches ‣ New branch</span>),
+named <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> and push it to the remote (here: <code class="docutils literal notranslate"><span class="pre">origin</span></code>):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>switch<span class="w"> </span>--orphan<span class="w"> </span>gh-pages</span>
+<span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span><span class="s2">&quot;initial commit&quot;</span></span>
+<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Select <span class="menuselection">Actions ‣ New Workflow</span>. Here, select to <em>set up a workflow yourself</em>.</p></li>
+<li><p>A new file (default: <code class="docutils literal notranslate"><span class="pre">main.yml</span></code>) is created under <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code> and presented
+in the editor. Change the name to a proper name, for example <code class="docutils literal notranslate"><span class="pre">build_publish_html.yml</span></code>.</p></li>
+<li><p>In the editor, enter the action’s workflow. This shows a working example:</p>
+<blockquote>
+<div><p>Adapt the workflow to your needs. In the upper form, it executes the following
+steps on a Linux virtual machine:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Checks out the repo’s sources</p></li>
+<li><p>Installs Python 3.11</p></li>
+<li><p>Install Python dependencies and <em>pandoc</em></p></li>
+<li><p>Build the documentation as HTML</p></li>
+<li><p>Upload the HTML output as build artifact to this run</p></li>
+<li><p>Commit and the HTML output to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Select <span class="guilabel">Commit changes…</span> to commit the workflow file. As the workflow
+defines, that a runs is triggered on every push, this will trigger a workflow run.</p></li>
+<li><p>Go to <span class="guilabel">Actions</span> and check the workflow (here: <em>Pull Request Docs Build</em>)
+completes successfully.</p></li>
+<li><p>If so, go back <span class="guilabel">Code</span> and select the <em>gh-pages</em> branch, which should contain
+all HTML output files.</p></li>
+<li><p>Select <span class="menuselection">Settings ‣ Code and automation ‣ Pages</span>.</p></li>
+<li><p>Under <span class="menuselection">Build and deployment ‣ Source</span>, select <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">branch</span></code>.
+Below, under <em>Branch</em>, make sure the <code class="docutils literal notranslate"><span class="pre">gh-branch</span></code> is selected and <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">(root)</span></code> is
+used as the pages parent directory (as <code class="docutils literal notranslate"><span class="pre">index.html</span></code> is on the branches root
+directory) and save the selection.</p></li>
+<li><p>Refresh the page. On the top, there should now appear a box, containing the
+message <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">site</span> <span class="pre">is</span> <span class="pre">live</span> <span class="pre">at</span> <span class="pre">...</span></code>. If not, enter the following URL into your browser:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://&lt;github_username&gt;.github.io/&lt;repository_name&gt;/
+</pre></div>
+</div>
+</div></blockquote>
+<p>This should open your documentation.</p>
+</li>
+</ol>
+</section>
+</section>
 
 
            </div>
@@ -204,7 +267,7 @@ span.prompt1:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Mar 02, 2024</span>.
+        <span class="update_date">Mar 03, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
