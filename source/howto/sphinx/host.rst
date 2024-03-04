@@ -80,7 +80,7 @@ Deploy from branch
    in the editor. Change the name to a proper name, for example ``build_publish_html.yml``.
 #. In the editor, enter the action's workflow. This shows a working example:
 
-    .. prompt:: yaml
+    .. code-block:: yaml
         :linenos:
 
         name: "Pull Request Docs Build"

@@ -37,6 +37,7 @@ version = 'stable'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'fix_docsearch_not_found_error',
     'fix_mermaid_jupyter_conflict',
     'jupyter_sphinx', # combined with sphinxcontrib.mermaid requires 'fix_mermaid_jupyter_conflict'
     'nbsphinx',
@@ -66,7 +67,7 @@ templates_path = ['_templates']
 # exclude_patterns = []
 
 docsearch_app_id = 'WOEM7FVORC'
-docsearch_api_key = '58572af7098fa34e5f17486c4c4b491f'
+docsearch_api_key = '6dbea932bf661e0b80a33bd99d184f75'
 docsearch_index_name = 'arnewohletzio'
 
 jupyter_sphinx_thebelab_config = {
