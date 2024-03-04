@@ -1,6 +1,6 @@
 docsearch({
   container: "#docsearch",
   appId: "WOEM7FVORC",
-  apiKey: "58572af7098fa34e5f17486c4c4b491f",
+  apiKey: "6dbea932bf661e0b80a33bd99d184f75",
   indexName: "arnewohletzio",
 });

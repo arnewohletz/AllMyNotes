@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     
@@ -35,7 +37,7 @@
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=7b48ea47"></script>
-        <script defer="defer" src="../../_static/docsearch_config.js?v=33e46fee"></script>
+        <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="../../_static/tabs.js?v=3030b3cb"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -212,7 +214,46 @@ named <code class="docutils literal notranslate"><span class="pre">gh-pages</spa
 in the editor. Change the name to a proper name, for example <code class="docutils literal notranslate"><span class="pre">build_publish_html.yml</span></code>.</p></li>
 <li><p>In the editor, enter the action’s workflow. This shows a working example:</p>
 <blockquote>
-<div><p>Adapt the workflow to your needs. In the upper form, it executes the following
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Pull</span><span class="nv"> </span><span class="s">Request</span><span class="nv"> </span><span class="s">Docs</span><span class="nv"> </span><span class="s">Build&quot;</span>
+<span class="linenos"> 2</span><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pull_request</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">push</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="nt">jobs</span><span class="p">:</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="nt">docs</span><span class="p">:</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="linenos">10</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="linenos">11</span><span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.11&#39;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="linenos">14</span><span class="w">        </span><span class="no">pip install -r requirements.txt</span>
+<span class="linenos">15</span><span class="w">        </span><span class="no">sudo apt-get update</span>
+<span class="linenos">16</span><span class="w">        </span><span class="no">sudo apt-get install -y pandoc</span>
+<span class="linenos">17</span><span class="w">        </span><span class="no">python -m sphinx build -b html source build</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@v1</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="linenos">20</span><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-pages</span>
+<span class="linenos">21</span><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/runner/work/AllMyNotes/AllMyNotes/build/</span>
+<span class="linenos">22</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commit HTML output to gh-pages</span>
+<span class="linenos">23</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="linenos">24</span><span class="w">          </span><span class="no">git clone https://github.com/horsewithnoname1985/AllMyNotes.git --branch gh-pages --single-branch gh-pages</span>
+<span class="linenos">25</span><span class="w">          </span><span class="no">cp -r ./build/* gh-pages/</span>
+<span class="linenos">26</span><span class="w">          </span><span class="no">cd gh-pages</span>
+<span class="linenos">27</span><span class="w">          </span><span class="no">touch .nojekyll</span>
+<span class="linenos">28</span><span class="w">          </span><span class="no">git config --local user.email &quot;action@github.com&quot;</span>
+<span class="linenos">29</span><span class="w">          </span><span class="no">git config --local user.name &quot;GitHub Action&quot;</span>
+<span class="linenos">30</span><span class="w">          </span><span class="no">git add .</span>
+<span class="linenos">31</span><span class="w">          </span><span class="no">git commit -m &quot;Update documentation&quot; -a || true</span>
+<span class="linenos">32</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push changes</span>
+<span class="linenos">33</span><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@master</span>
+<span class="linenos">34</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="linenos">35</span><span class="w">        </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+<span class="linenos">36</span><span class="w">        </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+<span class="linenos">37</span><span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+</pre></div>
+</div>
+<p>Adapt the workflow to your needs. In the upper form, it executes the following
 steps on a Linux virtual machine:</p>
 <blockquote>
 <div><ul class="simple">
