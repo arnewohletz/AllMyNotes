@@ -43,6 +43,7 @@ extensions = [
     'sphinx-prompt',
     'sphinx_copybutton',
     'sphinx_design',
+    'sphinx_docsearch',
     'sphinx_git',
     'sphinx_gitstamp',
     'sphinx_tabs.tabs',
@@ -63,6 +64,10 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 # exclude_patterns = []
+
+docsearch_app_id = 'WOEM7FVORC'
+docsearch_api_key = '58572af7098fa34e5f17486c4c4b491f'
+docsearch_index_name = 'arnewohletzio'
 
 jupyter_sphinx_thebelab_config = {
     'requestKernel': True,
