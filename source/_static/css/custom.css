@@ -1,18 +1,10 @@
-p {
-    margin-bottom: 10px;
+.rst-content {
+    dt.field-odd, dt.field-even, dt.label { padding-top: 2px; } /* correct bad horizontal alignment with <dd> elements */
+    h1, h2, h3, h4, h5, h6 { margin: 25px 0 15px 0; }  /* more margin for headings */
+    p { margin-bottom: 10px; } /* decrease margin to next element */
 }
 
-.rst-content .section ol {
-    margin-bottom: 10px;
-}
-
-.highlight {
-    background: #d5d5d5;
-}
-
-dt.field-odd, dt.field-even {
-    padding-top: 2px;
-}
+.highlight { background: #d5d5d5; }
 
 code,
 .rst-content tt,
@@ -28,9 +20,6 @@ th.head p {
     margin-bottom: 0px;
 }
 
-h4 {
-    margin-bottom: 12px;
-}
 
 table.docutils.align-center {
     text-align: center;
@@ -48,9 +37,7 @@ table.docutils.align-center {
     margin-top: 25px;
 }
 
-dt.field-odd, dt.field-even, dt.label {
-    padding-top: 2px;
-}
+
 
 /*html.writer-html5 .rst-content dl.field-list,
 html.writer-html5 .rst-content dl.footnote {
@@ -61,15 +48,7 @@ html.writer-html5 .rst-content dl.footnote {
     margin-bottom: 0;
 }
 
-.rst-content .toctree-wrapper > p.caption,
-.rst-content h1,
-.rst-content h2,
-.rst-content h3,
-.rst-content h4,
-.rst-content h5,
-.rst-content h6 {
-    margin: 25px 0 20px 0;
-}
+
 
 .wy-plain-list-disc li p:last-child,
 .rst-content .section ul li p:last-child,
@@ -161,13 +140,13 @@ article ul li p:last-child, article ul li ul {
 }
 
 .lastupdate {
-  color: #d9d9d9;
-  background: #343131;
-  border-radius: 10px;
-  text-align: center;
-  padding: 5px 0 5px 0;
-  margin: auto auto 15px auto;
-  border-width: 1px;
+    color: #d9d9d9;
+    background: #343131;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0 5px 0;
+    margin: auto auto 15px auto;
+    border-width: 1px;
 }
 .red-header thead tr.row-odd {
     background-color: #e60000;
@@ -195,6 +174,7 @@ article ul li p:last-child, article ul li ul {
 .ulined {
     text-decoration: underline;
 }
+
 
 /*.rst-content table th.stub {*/
 /*    position: absolute;*/
