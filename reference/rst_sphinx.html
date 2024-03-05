@@ -19,7 +19,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
       <link rel="stylesheet" type="text/css" href="../_static/docsearch.css?v=233fe0e4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=44eb6c13" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c65e77e7" />
       <link rel="stylesheet" type="text/css" href="../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
   
@@ -108,11 +108,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#basics-docutils">Basics (docutils)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extensions-by-sphinx">Extensions by Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#third-party-extensions">Third-party extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#autodoc">Autodoc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-blocks-prompts">Code blocks &amp; prompts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#design-elements">Design elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design-elements">Design Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git">Git</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#graphs">Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#publish">Publish</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#quoting">Quoting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#substitution">Substitution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#themes">Themes</a></li>
@@ -176,6 +178,13 @@
 </section>
 <section id="third-party-extensions">
 <h2>Third-party extensions<a class="headerlink" href="#third-party-extensions" title="Link to this heading"></a></h2>
+<section id="autodoc">
+<h3>Autodoc<a class="headerlink" href="#autodoc" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tox-dev/sphinx-autodoc-typehints">sphinx-autodoc-typehints</a>: Use type annotations for documenting acceptable argument
+types and return value types of function</p></li>
+</ul>
+</section>
 <section id="code-blocks-prompts">
 <h3>Code blocks &amp; prompts<a class="headerlink" href="#code-blocks-prompts" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -184,7 +193,7 @@
 </ul>
 </section>
 <section id="design-elements">
-<h3>Design elements<a class="headerlink" href="#design-elements" title="Link to this heading"></a></h3>
+<h3>Design Elements<a class="headerlink" href="#design-elements" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sharm294.github.io/sphinx-datatables/">sphinx-datatables</a>: Add data tables, which allow sorting entries</p></li>
 <li><p><a class="reference external" href="https://sphinx-design.readthedocs.io/en/latest/index.html">sphinx-design</a>: Designing beautiful, screen-size responsive web-components</p></li>
@@ -218,6 +227,12 @@ with <a class="reference external" href="https://nbsphinx.readthedocs.io/en/late
 <a class="reference external" href="https://github.com/mgaitan/sphinxcontrib-mermaid/issues/74#issuecomment-1937184257">this workaround</a> to load <code class="docutils literal notranslate"><span class="pre">mermaid.min.js</span></code> after the Jupyter notebook JavaScript)</p></li>
 </ul>
 </section>
+<section id="publish">
+<h3>Publish<a class="headerlink" href="#publish" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/">sphinxcontrib-confluencebuilder</a>: Sphinx extension to build Atlassian Confluence Storage Markup</p></li>
+</ul>
+</section>
 <section id="quoting">
 <h3>Quoting<a class="headerlink" href="#quoting" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -227,7 +242,7 @@ with <a class="reference external" href="https://nbsphinx.readthedocs.io/en/late
 <section id="substitution">
 <h3>Substitution<a class="headerlink" href="#substitution" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/adamtheturtle/sphinx-substitution-extensions">sphinx-substitution-extensions</a>: Allow substitutions within code blocks, prompts and inline.</p></li>
+<li><p><a class="reference external" href="https://github.com/adamtheturtle/sphinx-substitution-extensions">sphinx-substitution-extensions</a>: Allow substitutions within code blocks, prompts and inline</p></li>
 </ul>
 </section>
 <section id="themes">
@@ -240,6 +255,7 @@ with <a class="reference external" href="https://nbsphinx.readthedocs.io/en/late
 <h3>Tweaks<a class="headerlink" href="#tweaks" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sphinx.silverrainz.me/comboroles/index.html">sphinxnotes-comboroles</a>: Sphinx extension for composing multiple roles</p></li>
+<li><p><a class="reference external" href="https://sphinx.silverrainz.me/strike/">sphinxnotes-strike</a>: An extension that adds strikethrough text support to Sphinx</p></li>
 </ul>
 </section>
 </section>
@@ -377,7 +393,7 @@ This is called a <span class="na">:raw-html:</span><span class="nv">`&lt;span st
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Mar 04, 2024</span>.
+        <span class="update_date">Mar 05, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

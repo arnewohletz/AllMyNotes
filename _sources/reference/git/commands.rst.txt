@@ -115,13 +115,11 @@ Stage and commit all modified or deleted file (excluding new files)
 
     git commit -a -m "Important changes
 
-Change message on most recent commit
+Change message on most recent commit (editor opens, edit message and close to confirm)
 
 .. prompt:: bash
 
     git commit --amend
-
-    An editor opens, edit message and close to confirm.
 
 Stashing
 --------

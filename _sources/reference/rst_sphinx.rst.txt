@@ -22,12 +22,17 @@ Extensions by Sphinx
 
 Third-party extensions
 ----------------------
+Autodoc
+```````
+* `sphinx-autodoc-typehints`_: Use type annotations for documenting acceptable argument
+  types and return value types of function
+
 Code blocks & prompts
 `````````````````````
 * `sphinx-copybutton`_: Adds a copy button to all code and command line blocks
 * `sphinx-prompt`_: Directive for unselectable prompts (nice for bash sections)
 
-Design elements
+Design Elements
 ```````````````
 * `sphinx-datatables`_: Add data tables, which allow sorting entries
 * `sphinx-design`_: Designing beautiful, screen-size responsive web-components
@@ -54,13 +59,17 @@ Graphs
   with `nbsphinx`_ and `jupyter_sphinx`_; if used together with either of these, apply
   `this workaround <mermaid_jupyter_fix_>`_ to load ``mermaid.min.js`` after the Jupyter notebook JavaScript)
 
+Publish
+```````
+* `sphinxcontrib-confluencebuilder`_: Sphinx extension to build Atlassian Confluence Storage Markup
+
 Quoting
 ```````
 * `sphinxcontrib-bibtex`_: Allows `BibTeX`_ citations into the documentation
 
 Substitution
 ````````````
-* `sphinx-substitution-extensions`_: Allow substitutions within code blocks, prompts and inline.
+* `sphinx-substitution-extensions`_: Allow substitutions within code blocks, prompts and inline
 
 Themes
 ``````
@@ -69,6 +78,7 @@ Themes
 Tweaks
 ``````
 * `sphinxnotes-comboroles`_: Sphinx extension for composing multiple roles
+* `sphinxnotes-strike`_: An extension that adds strikethrough text support to Sphinx
 
 
 .. _jupyter_sphinx: https://jupyter-sphinx.readthedocs.io/en/latest/
@@ -88,7 +98,9 @@ Tweaks
 .. _sphinxcontrib-mermaid: https://github.com/mgaitan/sphinxcontrib-mermaid
 .. _sphinxemoji: https://github.com/sphinx-contrib/emojicodes
 .. _sphinxnotes-comboroles: https://sphinx.silverrainz.me/comboroles/index.html
-
+.. _sphinx-autodoc-typehints: https://github.com/tox-dev/sphinx-autodoc-typehints
+.. _sphinxnotes-strike: https://sphinx.silverrainz.me/strike/
+.. _sphinxcontrib-confluencebuilder: https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/
 
 .. _BibTeX: https://www.bibtex.org/
 .. _mermaid graphs: https://mermaid.js.org/
