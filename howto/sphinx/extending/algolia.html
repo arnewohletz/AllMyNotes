@@ -9,7 +9,7 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to use Docsearch + Algolia for searching Spinx documentation &mdash; All-My-Notes  documentation</title>
+  <title>Add Algolia DocSearch engine &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
@@ -19,7 +19,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
       <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=233fe0e4" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4d4933a2" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=2a13ce83" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
   
@@ -97,12 +97,21 @@
 <li class="toctree-l3"><a class="reference internal" href="roles.html">Custom Roles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">How to use Docsearch + Algolia for searching Spinx documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#set-up-algolia-docsearch">Set up Algolia DocSearch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#set-up-the-sphinx-documentation">Set up the Sphinx documentation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#set-up-docsearch-scraper">Set up DocSearch Scraper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#execute-the-crawler">Execute the crawler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#further-documentation">Further documentation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Add Algolia DocSearch engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-docsearch-v2-as-search-engine">How to use DocSearch v2 as search engine</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#set-up-algolia-docsearch">Set up Algolia DocSearch</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-up-the-sphinx-documentation">Set up the Sphinx documentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-up-docsearch-scraper">Set up DocSearch Scraper</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#execute-the-crawler">Execute the crawler</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#further-documentation">Further documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-docsearch-v3-as-search-engine">How to use DocSearch v3 as search engine</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id1">Set up the Sphinx documentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#troubleshooting-using-together-with-jupyter-extensions">Troubleshooting: Using together with Jupyter extensions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -147,7 +156,7 @@
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Sphinx</a></li>
           <li class="breadcrumb-item"><a href="index.html">Extending</a></li>
-      <li class="breadcrumb-item active">How to use Docsearch + Algolia for searching Spinx documentation</li>
+      <li class="breadcrumb-item active">Add Algolia DocSearch engine</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/howto/sphinx/extending/algolia.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -157,10 +166,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="how-to-use-docsearch-algolia-for-searching-spinx-documentation">
-<h1>How to use Docsearch + Algolia for searching Spinx documentation<a class="headerlink" href="#how-to-use-docsearch-algolia-for-searching-spinx-documentation" title="Link to this heading"></a></h1>
+  <section id="add-algolia-docsearch-engine">
+<h1>Add Algolia DocSearch engine<a class="headerlink" href="#add-algolia-docsearch-engine" title="Link to this heading"></a></h1>
+<section id="how-to-use-docsearch-v2-as-search-engine">
+<span id="docsearch-v2-sphinx"></span><h2>How to use DocSearch v2 as search engine<a class="headerlink" href="#how-to-use-docsearch-v2-as-search-engine" title="Link to this heading"></a></h2>
 <section id="set-up-algolia-docsearch">
-<h2>Set up Algolia DocSearch<a class="headerlink" href="#set-up-algolia-docsearch" title="Link to this heading"></a></h2>
+<h3>Set up Algolia DocSearch<a class="headerlink" href="#set-up-algolia-docsearch" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Create an free <a class="reference external" href="https://www.algolia.com/">Algolia</a> account at <a class="reference external" href="https://dashboard.algolia.com/users/sign_up">https://dashboard.algolia.com/users/sign_up</a>.</p></li>
 <li><p>Log into the created account and create a new application.</p></li>
@@ -183,7 +194,7 @@ it an expressive name (like: <em>documentation_search</em>).</p></li>
 </ol>
 </section>
 <section id="set-up-the-sphinx-documentation">
-<h2>Set up the Sphinx documentation<a class="headerlink" href="#set-up-the-sphinx-documentation" title="Link to this heading"></a></h2>
+<span id="docsearch-v2-setup-sphinx"></span><h3>Set up the Sphinx documentation<a class="headerlink" href="#set-up-the-sphinx-documentation" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Install both the extensions <a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a> and <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/">sphinx-docsearch</a>.</p>
 <blockquote>
@@ -240,7 +251,7 @@ we created, as only reading rights are required)</p></li>
 </ol>
 </section>
 <section id="set-up-docsearch-scraper">
-<h2>Set up DocSearch Scraper<a class="headerlink" href="#set-up-docsearch-scraper" title="Link to this heading"></a></h2>
+<h3>Set up DocSearch Scraper<a class="headerlink" href="#set-up-docsearch-scraper" title="Link to this heading"></a></h3>
 <p>First, the documentation needs needs to be scraped and the results published to the index
 in your Algolia application. As the current v3 of DocSearch only allows to be used for
 publicly available web pages, the legacy v2 must be used. It must be self-hosted, which is
@@ -320,7 +331,7 @@ to be searched. In this case, it was observed, that the sitemap is ignored.</p>
 </ol>
 </section>
 <section id="execute-the-crawler">
-<h2>Execute the crawler<a class="headerlink" href="#execute-the-crawler" title="Link to this heading"></a></h2>
+<h3>Execute the crawler<a class="headerlink" href="#execute-the-crawler" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Rebuild the documentation to create or update the <code class="docutils literal notranslate"><span class="pre">sitemap.xml</span></code>.</p></li>
 <li><p>Make sure, the documentation is hosted under the specified address (you may also
@@ -351,8 +362,8 @@ should now display the information according the previously extracted records.</
 </ol>
 </section>
 <section id="further-documentation">
-<h2>Further documentation<a class="headerlink" href="#further-documentation" title="Link to this heading"></a></h2>
-<p>Aloglia DocSearch GitHub: <a class="reference external" href="https://github.com/algolia/docsearch">https://github.com/algolia/docsearch</a>
+<h3>Further documentation<a class="headerlink" href="#further-documentation" title="Link to this heading"></a></h3>
+<p>Algolia DocSearch GitHub: <a class="reference external" href="https://github.com/algolia/docsearch">https://github.com/algolia/docsearch</a>
 Algolia DocSearch for Sphinx: <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/index">https://sphinx-docsearch.readthedocs.io/en/latest/index</a>.html#
 Algolia Dashboard: <a class="reference external" href="https://dashboard.algolia.com/">https://dashboard.algolia.com/</a>
 Algolia Config File: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/config-file/">https://docsearch.algolia.com/docs/legacy/config-file/</a>
@@ -361,6 +372,144 @@ Algolia self run DocSearch: <a class="reference external" href="https://docsearc
 Tutorial: <a class="reference external" href="https://brunoscheufler.com/blog/2021-08-08-setting-up-algolia-docsearch-with-nextjs">https://brunoscheufler.com/blog/2021-08-08-setting-up-algolia-docsearch-with-nextjs</a>
 Tutorial 2: <a class="reference external" href="https://www.howtocode.io/posts/algolia/how-to-setup-algolia-doc-search">https://www.howtocode.io/posts/algolia/how-to-setup-algolia-doc-search</a></p>
 <p>Maybe switch to v3: <a class="reference external" href="https://docsearch.algolia.com/docs/what-is-docsearch/">https://docsearch.algolia.com/docs/what-is-docsearch/</a></p>
+</section>
+</section>
+<section id="how-to-use-docsearch-v3-as-search-engine">
+<span id="docsearch-v3-sphinx"></span><h2>How to use DocSearch v3 as search engine<a class="headerlink" href="#how-to-use-docsearch-v3-as-search-engine" title="Link to this heading"></a></h2>
+<p>Using the latest DocSearch version 3 provides a simpler setup, but requires the
+documentation hosted on a publicly accessible domain (like <a class="reference external" href="https://about.readthedocs.com/">ReadTheDocs</a> or
+<a class="reference external" href="https://pages.github.com/">Github Pages</a>). The search will be available on locally hosted documentation,
+but when selecting a search result will then defer to the corresponding address
+on the publicly hosted version.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Make sure, your documentation is hosted from a publicly available URL.</p></li>
+<li><p><a class="reference external" href="https://docsearch.algolia.com/apply">Apply for a DocSearch</a>. This will take one or two business days until receiving
+a reply from Algolia. In case, the request is approved, it will contain</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>your Algolia login credentials</p></li>
+<li><p>an application ID</p></li>
+<li><p>an API key (for accessing the saved records)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>With the provided credentials, log into your Algolia account and create a new
+index (e.g. ‘documentation_search’) for the pre-created application, which is
+mentioned in the email.
+Got to <span class="menuselection">Search ‣ Configure ‣ Index ‣ New… ‣ Index</span>.
+Give it an expressive name (like: <em>documentation_search</em>).</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3>Set up the Sphinx documentation<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The setup is similar to that when <a class="reference internal" href="#docsearch-v2-setup-sphinx"><span class="std std-ref">using v2 of the DocSearch crawler</span></a>,
+but without the need to create a <code class="docutils literal notranslate"><span class="pre">sitemap.yaml</span></code>.</p>
+<ol class="arabic">
+<li><p>Install the extensions <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/">sphinx-docsearch</a>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>sphinx-docsearch</span>
+</pre></div></div></div></blockquote>
+</li>
+<li><p>Add the extensions to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span>
+    <span class="s1">&#39;sphinx_docsearch&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>For <em>sphinx-docsearch</em>, also add these variables to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docsearch_app_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_APP_ID&gt;&quot;</span>
+<span class="n">docsearch_api_key</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_SEARCH_API_KEY&gt;&quot;</span>
+<span class="n">docsearch_index_name</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_INDEX_NAME&gt;&quot;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_APP_ID&gt;</span></code> is the application ID and <code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_SEARCH_API_KEY&gt;</span></code>
+are both listed in the approval email from Algolia and <code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_INDEX_NAME&gt;</span></code>
+is the index, you created in the prerequisites step.</p>
+</div></blockquote>
+</li>
+<li><p>Build your documentation. The built-in search should now be replaced by the
+Algolia Docsearch widget. If your index already contains records, the search
+should be usable right away. If not, wait for 24 hours until Algolia indexed
+your website.</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The documentation is indexed every 24 hours by Algolia automatically and
+published to your index. If your search is not working within that time,
+log into your Algolia account and check, if the created index contains
+any records. If not, reach out to Algolia for support.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If your documentation’s public URL changes, you need to re-apply for DocSearch,
+using the new URL and adapt your Sphinx config accordingly.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="troubleshooting-using-together-with-jupyter-extensions">
+<h3>Troubleshooting: Using together with Jupyter extensions<a class="headerlink" href="#troubleshooting-using-together-with-jupyter-extensions" title="Link to this heading"></a></h3>
+<p>It has been observed, that same as using the sphinx-mermaid extension with extensions
+relying on the Jupyter Notebook widgets, such as <a class="reference external" href="https://github.com/jupyter/jupyter-sphinx/">jupyter-sphinx</a> or <a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.9.3/">nbsphinx</a>,
+the DocSearch widget not being rendered into the HTML, resulting in a missing
+search field.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This fix has only been tested using the <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">sphinx-rtd-theme</a>. It might not work
+on other Sphinx themes.</p>
+</div>
+<p>To fix this issue, put this code into a Python script (e.g. <code class="docutils literal notranslate"><span class="pre">fix_docsearch_jupyter.py</span></code>)
+which is located in a directory, that is listed in the systems PATH variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sphinx.application</span> <span class="kn">import</span> <span class="n">Sphinx</span>
+
+
+<span class="k">def</span> <span class="nf">add_docsearch_js</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">templatename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">doctree</span><span class="p">):</span>
+    <span class="n">docsearch_script</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@docsearch/js@3&quot;&gt;&lt;/script&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;metatags&quot;</span> <span class="ow">in</span> <span class="n">context</span><span class="p">:</span>
+        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;metatags&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">docsearch_script</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;metatags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">docsearch_script</span>
+
+
+<span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;html-page-context&quot;</span><span class="p">,</span> <span class="n">add_docsearch_js</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>Save the above code in <code class="docutils literal notranslate"><span class="pre">source/_ext/fix_docsearch_jupyter.py</span></code> (create file and directory).</p></li>
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">source/conf.py</span></code> file and add these lines near the top:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/_ext&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Also in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, add the file to your Sphinx extensions:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span>
+    <span class="s1">&#39;fix_docsearch_jupyter&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Re-build your Sphinx application. The DocSearch widget should now appear correctly.</p></li>
+</ol>
+</section>
 </section>
 </section>
 
@@ -377,7 +526,7 @@ Tutorial 2: <a class="reference external" href="https://www.howtocode.io/posts/a
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Mar 05, 2024</span>.
+        <span class="update_date">Mar 08, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

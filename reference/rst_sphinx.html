@@ -19,7 +19,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
       <link rel="stylesheet" type="text/css" href="../_static/docsearch.css?v=233fe0e4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=4d4933a2" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2a13ce83" />
       <link rel="stylesheet" type="text/css" href="../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
   
@@ -116,9 +116,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#graphs">Graphs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#publish">Publish</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#quoting">Quoting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search">Search</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#substitution">Substitution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#themes">Themes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tweaks">Tweaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#videos">Videos</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#custom-extensions">Custom extensions</a><ul>
@@ -183,6 +185,8 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/tox-dev/sphinx-autodoc-typehints">sphinx-autodoc-typehints</a>: Use type annotations for documenting acceptable argument
 types and return value types of function</p></li>
+<li><p><a class="reference external" href="https://github.com/click-contrib/sphinx-click">sphinx-click</a>: Automatically extract documentation from a Click-based application and
+include it in your docs</p></li>
 </ul>
 </section>
 <section id="code-blocks-prompts">
@@ -231,6 +235,8 @@ with <a class="reference external" href="https://nbsphinx.readthedocs.io/en/late
 <h3>Publish<a class="headerlink" href="#publish" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sphinxcontrib-confluencebuilder.readthedocs.io/en/stable/">sphinxcontrib-confluencebuilder</a>: Sphinx extension to build Atlassian Confluence Storage Markup</p></li>
+<li><p><a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a>: Generate multi-version and multi-language sitemaps.org compliant sitemaps
+for the HTML version of your Sphinx documentation</p></li>
 </ul>
 </section>
 <section id="quoting">
@@ -239,23 +245,43 @@ with <a class="reference external" href="https://nbsphinx.readthedocs.io/en/late
 <li><p><a class="reference external" href="https://github.com/mcmtroffaes/sphinxcontrib-bibtex">sphinxcontrib-bibtex</a>: Allows <a class="reference external" href="https://www.bibtex.org/">BibTeX</a> citations into the documentation</p></li>
 </ul>
 </section>
+<section id="search">
+<h3>Search<a class="headerlink" href="#search" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/">sphinx-docsearch</a>: Replaces built-in search engine with <a class="reference external" href="https://docsearch.algolia.com/">Algolia DocSearch</a>. Check out
+the setup manual for <a class="reference internal" href="../howto/sphinx/extending/algolia.html#docsearch-v2-sphinx"><span class="std std-ref">v2</span></a> or <a class="reference internal" href="../howto/sphinx/extending/algolia.html#docsearch-v3-sphinx"><span class="std std-ref">v3</span></a>
+of the crawler.</p></li>
+</ul>
+</section>
 <section id="substitution">
 <h3>Substitution<a class="headerlink" href="#substitution" title="Link to this heading"></a></h3>
 <ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sloria/sphinx-issues">sphinx-issues</a>: Create links to project’s issue tracker (useful if doc only covers single repo)</p></li>
 <li><p><a class="reference external" href="https://github.com/adamtheturtle/sphinx-substitution-extensions">sphinx-substitution-extensions</a>: Allow substitutions within code blocks, prompts and inline</p></li>
 </ul>
 </section>
 <section id="themes">
 <h3>Themes<a class="headerlink" href="#themes" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/latest/">sphinx-rtd-theme</a>: Theme used for the web page of this documentation</p></li>
+<li><p><a class="reference external" href="https://github.com/pradyunsg/furo">furo</a>: A clean customisable Sphinx documentation theme.</p></li>
+<li><p><a class="reference external" href="https://sphinxawesome.xyz/">sphinxawesome-theme</a></p></li>
+<li><p><a class="reference external" href="https://github.com/executablebooks/sphinx-book-theme">sphinx-book-theme</a>: A clean book theme for scientific explanations and documentation with Sphinx</p></li>
+<li><p><a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/latest/">sphinx-rtd-theme</a>: Theme used for the web page of this documentation (provided by <a class="reference external" href="https://about.readthedocs.com/">ReadTheDocs.com</a>)</p></li>
 </ul>
+<p>Additional themes can be browsed in the <a class="reference external" href="https://sphinx-themes.org/">Sphinx Themes Gallery</a>.</p>
 </section>
 <section id="tweaks">
 <h3>Tweaks<a class="headerlink" href="#tweaks" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sphinx.silverrainz.me/comboroles/index.html">sphinxnotes-comboroles</a>: Sphinx extension for composing multiple roles</p></li>
 <li><p><a class="reference external" href="https://sphinx.silverrainz.me/strike/">sphinxnotes-strike</a>: An extension that adds strikethrough text support to Sphinx</p></li>
+</ul>
+</section>
+<section id="videos">
+<h3>Videos<a class="headerlink" href="#videos" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sphinx-contrib/video">sphinxcontrib-video</a>: Embed <code class="docutils literal notranslate"><span class="pre">.mp4</span></code>, <code class="docutils literal notranslate"><span class="pre">.webm</span></code> and <code class="docutils literal notranslate"><span class="pre">.ogg</span></code> videos into RST documents</p></li>
+<li><p><a class="reference external" href="https://github.com/sphinx-contrib/youtube">sphinxcontrib-youtube</a>: Insert videos from YouTube and Vimeo (by reference)</p></li>
 </ul>
 </section>
 </section>
@@ -376,6 +402,11 @@ This is called a <span class="na">:raw-html:</span><span class="nv">`&lt;span st
 </div>
 <p>renders into</p>
 <p><span class="ulined">Underlined</span> text parts</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="na">:strike:</span><span class="nv">`Struck through`</span> text parts
+</pre></div>
+</div>
+<p>renders into</p>
+<p><span class="strike">Struck through</span> text parts</p>
 </section>
 </section>
 </section>
@@ -393,7 +424,7 @@ This is called a <span class="na">:raw-html:</span><span class="nv">`&lt;span st
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Mar 05, 2024</span>.
+        <span class="update_date">Mar 08, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
