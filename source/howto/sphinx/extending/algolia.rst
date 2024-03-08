@@ -1,9 +1,13 @@
-How to use Docsearch + Algolia for searching Spinx documentation
-================================================================
+============================
+Add Algolia DocSearch engine
+============================
 
+.. _docsearch_v2_sphinx:
+
+How to use DocSearch v2 as search engine
+========================================
 Set up Algolia DocSearch
 ------------------------
-
 #. Create an free `Algolia`_ account at https://dashboard.algolia.com/users/sign_up.
 #. Log into the created account and create a new application.
 #. For this new application (which has a unique ID, like ``XDNC7OV40H``), which
@@ -18,6 +22,9 @@ Set up Algolia DocSearch
        the documenation page's records, which will be used for searching. Got to
        :menuselection:`Search --> Configure --> Index --> New... --> Index`. Give
        it an expressive name (like: *documentation_search*).
+
+
+.. _docsearch_v2_setup_sphinx:
 
 Set up the Sphinx documentation
 -------------------------------
@@ -177,8 +184,7 @@ Execute the crawler
 
 Further documentation
 ---------------------
-
-Aloglia DocSearch GitHub: https://github.com/algolia/docsearch
+Algolia DocSearch GitHub: https://github.com/algolia/docsearch
 Algolia DocSearch for Sphinx: https://sphinx-docsearch.readthedocs.io/en/latest/index.html#
 Algolia Dashboard: https://dashboard.algolia.com/
 Algolia Config File: https://docsearch.algolia.com/docs/legacy/config-file/
@@ -191,7 +197,6 @@ Tutorial 2: https://www.howtocode.io/posts/algolia/how-to-setup-algolia-doc-sear
 Maybe switch to v3: https://docsearch.algolia.com/docs/what-is-docsearch/
 
 
-
 .. _Algolia: https://www.algolia.com/
 .. _sphinx-sitemap: https://sphinx-sitemap.readthedocs.io/en/latest/index.html
 .. _sphinx-docsearch: https://sphinx-docsearch.readthedocs.io/en/latest/
@@ -199,3 +204,140 @@ Maybe switch to v3: https://docsearch.algolia.com/docs/what-is-docsearch/
 .. _DocSearch config: https://docsearch.algolia.com/docs/legacy/config-file/
 .. _class: https://docutils.sourceforge.io/docs/ref/rst/directives.html#class-option
 .. _jq: https://github.com/jqlang/jq
+
+
+.. _docsearch_v3_sphinx:
+
+How to use DocSearch v3 as search engine
+========================================
+Using the latest DocSearch version 3 provides a simpler setup, but requires the
+documentation hosted on a publicly accessible domain (like `ReadTheDocs`_ or
+`Github Pages`_). The search will be available on locally hosted documentation,
+but when selecting a search result will then defer to the corresponding address
+on the publicly hosted version.
+
+Prerequisites
+-------------
+#. Make sure, your documentation is hosted from a publicly available URL.
+#. `Apply for a DocSearch`_. This will take one or two business days until receiving
+   a reply from Algolia. In case, the request is approved, it will contain
+
+    * your Algolia login credentials
+    * an application ID
+    * an API key (for accessing the saved records)
+
+#. With the provided credentials, log into your Algolia account and create a new
+   index (e.g. 'documentation_search') for the pre-created application, which is
+   mentioned in the email.
+   Got to :menuselection:`Search --> Configure --> Index --> New... --> Index`.
+   Give it an expressive name (like: *documentation_search*).
+
+Set up the Sphinx documentation
+-------------------------------
+The setup is similar to that when :ref:`using v2 of the DocSearch crawler <docsearch_v2_setup_sphinx>`,
+but without the need to create a ``sitemap.yaml``.
+
+#. Install the extensions `sphinx-docsearch`_.
+
+    .. prompt:: bash
+
+        pip install sphinx-docsearch
+
+#. Add the extensions to your ``conf.py`` file:
+
+    .. code-block:: python
+
+        extensions = [ ...
+            'sphinx_docsearch',
+            ...
+            ]
+
+#. For *sphinx-docsearch*, also add these variables to your ``conf.py`` file:
+
+    .. code-block:: python
+
+        docsearch_app_id = "<DOCSEARCH_APP_ID>"
+        docsearch_api_key = "<DOCSEARCH_SEARCH_API_KEY>"
+        docsearch_index_name = "<DOCSEARCH_INDEX_NAME>"
+
+    where ``<DOCSEARCH_APP_ID>`` is the application ID and ``<DOCSEARCH_SEARCH_API_KEY>``
+    are both listed in the approval email from Algolia and ``<DOCSEARCH_INDEX_NAME>``
+    is the index, you created in the prerequisites step.
+
+#. Build your documentation. The built-in search should now be replaced by the
+   Algolia Docsearch widget. If your index already contains records, the search
+   should be usable right away. If not, wait for 24 hours until Algolia indexed
+   your website.
+
+    .. hint::
+
+        The documentation is indexed every 24 hours by Algolia automatically and
+        published to your index. If your search is not working within that time,
+        log into your Algolia account and check, if the created index contains
+        any records. If not, reach out to Algolia for support.
+
+    .. important::
+
+        If your documentation's public URL changes, you need to re-apply for DocSearch,
+        using the new URL and adapt your Sphinx config accordingly.
+
+Troubleshooting: Using together with Jupyter extensions
+-------------------------------------------------------
+It has been observed, that same as using the sphinx-mermaid extension with extensions
+relying on the Jupyter Notebook widgets, such as `jupyter-sphinx`_ or `nbsphinx`_,
+the DocSearch widget not being rendered into the HTML, resulting in a missing
+search field.
+
+.. warning::
+
+    This fix has only been tested using the `sphinx-rtd-theme`_. It might not work
+    on other Sphinx themes.
+
+To fix this issue, put this code into a Python script (e.g. ``fix_docsearch_jupyter.py``)
+which is located in a directory, that is listed in the systems PATH variable.
+
+.. code-block:: python
+
+    from sphinx.application import Sphinx
+
+
+    def add_docsearch_js(app: Sphinx, pagename: str, templatename: str, context: dict, doctree):
+        docsearch_script = r"""
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+        """
+        if "metatags" in context:
+            context["metatags"] += docsearch_script
+        else:
+            context["metatags"] = docsearch_script
+
+
+    def setup(app: Sphinx):
+        app.connect("html-page-context", add_docsearch_js)
+
+#. Save the above code in ``source/_ext/fix_docsearch_jupyter.py`` (create file and directory).
+#. Open your ``source/conf.py`` file and add these lines near the top:
+
+    .. code-block:: python
+
+        import os
+        import sys
+
+        sys.path.insert(0, os.path.abspath('.') + '/_ext')
+
+#. Also in your ``conf.py`` file, add the file to your Sphinx extensions:
+
+    .. code-block:: python
+
+        extensions = [ ...
+            'fix_docsearch_jupyter',
+            ...
+            ]
+
+#. Re-build your Sphinx application. The DocSearch widget should now appear correctly.
+
+.. _ReadTheDocs: https://about.readthedocs.com/
+.. _Github Pages: https://pages.github.com/
+.. _Apply for a DocSearch: https://docsearch.algolia.com/apply
+.. _jupyter-sphinx: https://github.com/jupyter/jupyter-sphinx/
+.. _nbsphinx: https://nbsphinx.readthedocs.io/en/0.9.3/
+.. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io/en/stable/
