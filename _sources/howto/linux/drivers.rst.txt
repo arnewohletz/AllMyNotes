@@ -78,7 +78,7 @@ The ``lshw.html`` shows general machine information, while the ``lspci.txt`` and
 
 .. hint::
 
-    An example ID for a PCI device might be `0bda:b812``, in which the ``0bda``
+    An example ID for a PCI device might be ``0bda:b812``, in which the ``0bda``
     determines the manufacturer and ``b812`` determines the device.
 
 After determining the devices ID go to https://linux-hardware.org/?view=search

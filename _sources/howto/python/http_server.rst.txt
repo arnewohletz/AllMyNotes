@@ -23,7 +23,7 @@ Inside the new screen start the HTTP server via
   (as long as no other service already uses that port)
 
 To switch back to the original window, type :kbd:`Ctrl + A` followed by a
-simple :kbd:``d`` (for detach). See :ref:`screen reference <gnu_screen_reference>`
+simple :kbd:`d` (for detach). See :ref:`screen reference <gnu_screen_reference>`
 for more info.
 
 .. _http server module: https://docs.python.org/3/library/http.server.html
