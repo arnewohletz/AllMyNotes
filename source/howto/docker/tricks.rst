@@ -48,7 +48,7 @@ Make ``docker exec`` return same exit code as executed command
 :Cause:
 
     The ``docker exec`` command ran successfully, as the container was reachable
-    and the command could be triggered. When running``docker exec`` like this:
+    and the command could be triggered. When running ``docker exec`` like this:
 
     .. prompt:: bash
 

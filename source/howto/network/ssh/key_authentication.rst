@@ -350,7 +350,7 @@ To shorten this you may create a config file to store all these parameters.
 .. hint::
 
     To list all configured hosts, specify this command under an alias in your
-    ``~/.bashrc``or ``~/.zshrc`` file:
+    ``~/.bashrc`` or ``~/.zshrc`` file:
 
     .. code-block:: none
 
