@@ -5,3 +5,4 @@ Docker
     :maxdepth: 1
 
     dockerfile.rst
+    commands.rst
