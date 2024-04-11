@@ -9,7 +9,7 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>git &mdash; All-My-Notes  documentation</title>
+  <title>Commands &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
@@ -46,8 +46,8 @@
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="next" title="git" href="commands.html" />
-    <link rel="prev" title="Commands" href="../docker/commands.html" /> 
+    <link rel="next" title="git" href="../git/index.html" />
+    <link rel="prev" title="Dockerfile" href="dockerfile.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,12 +95,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../coding_fonts.html">Coding fonts </a></li>
 <li class="toctree-l1"><a class="reference internal" href="../conda_commands.html">conda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands.html">git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">.gitconfig</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Docker</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dockerfile.html">Dockerfile</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#images">Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logs">Logs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#log-saving-location">Log saving location</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
@@ -128,9 +135,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">git</li>
+          <li class="breadcrumb-item"><a href="index.html">Docker</a></li>
+      <li class="breadcrumb-item active">Commands</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/reference/git/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/reference/docker/commands.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -138,51 +146,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="git">
-<h1>git<a class="headerlink" href="#git" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#create-a-local-repository">Create a local repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#add-user-configuration-to-repository">Add user configuration to repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#add-remote-repository">Add remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#log-into-remote-repository-account">Log into remote repository account</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#add-files-to-source-control">Add files to source control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#un-stage-files">Un/Stage files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#commits">Commits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#stashing">Stashing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#branching">Branching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#merging-rebase">Merging &amp; Rebase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#tagging">Tagging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#moving-along-the-tree">Moving along the tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#revert-changes">Revert changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#cherry-pick">Cherry Pick</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#detached-head-mode">Detached head mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#clone-remote-repositories">Clone remote repositories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#update-a-repository">Update a repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#push-changes-to-remote-repository">Push changes to remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#resolve-push-conflicts">Resolve push conflicts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#working-with-forks">Working with forks</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">.gitconfig</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="config.html#alias">[alias]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#core">[core]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#credential">[credential]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#pull">[pull]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#user">[user]</a></li>
-</ul>
-</li>
-</ul>
+  <section id="commands">
+<h1>Commands<a class="headerlink" href="#commands" title="Link to this heading"></a></h1>
+<p>A full reference can be viewed at <a class="reference external" href="https://docs.docker.com/reference/cli/docker/">https://docs.docker.com/reference/cli/docker/</a></p>
+<section id="images">
+<h2>Images<a class="headerlink" href="#images" title="Link to this heading"></a></h2>
+<p>List all available image tags</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">docker<span class="w"> </span>images</span>
+</pre></div></div></section>
+<section id="logs">
+<h2>Logs<a class="headerlink" href="#logs" title="Link to this heading"></a></h2>
+<p>Display log messages (follow latest):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>&lt;CONTAINER_NAME&gt;</span>
+</pre></div></div><p>Follow incoming log messages (but don’t show previous):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">0</span><span class="w"> </span>--follow<span class="w"> </span>&lt;CONTAINER_NAME&gt;</span>
+</pre></div></div><p>Save all previous logs to file (no file <a class="reference external" href="https://docs.docker.com/config/containers/logging/configure/">logging driver</a> configured,
+container must still run):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>logs<span class="w"> </span>&lt;CONTAINER_NAME&gt;<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>file.log</span>
+</pre></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The command does not catch logs arriving after executing the command.</p>
 </div>
+<section id="log-saving-location">
+<h3>Log saving location<a class="headerlink" href="#log-saving-location" title="Link to this heading"></a></h3>
+<p>(default logging driver is JSON)</p>
+<ul class="simple">
+<li><p>Docker: <code class="docutils literal notranslate"><span class="pre">/var/lib/docker/containers/&lt;container_id&gt;/&lt;CONTAINER_ID&gt;-json.log</span></code></p></li>
+<li><p>Rootless Docker: <code class="docutils literal notranslate"><span class="pre">~/.local/share/docker/containers/&lt;CONTAINER_ID&gt;/&lt;CONTAINER_ID&gt;-json.log</span></code></p></li>
+</ul>
+<p>The beginning of the container ID can be retrieved via <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span></code>.</p>
+<p>You may also retrieve the filepath by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>inspect<span class="w"> </span>&lt;CONTAINER_NAME&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.<span class="o">[]</span>.LogPath</span>
+</pre></div></div></section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../docker/commands.html" class="btn btn-neutral float-left" title="Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="commands.html" class="btn btn-neutral float-right" title="git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dockerfile.html" class="btn btn-neutral float-left" title="Dockerfile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../git/index.html" class="btn btn-neutral float-right" title="git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
