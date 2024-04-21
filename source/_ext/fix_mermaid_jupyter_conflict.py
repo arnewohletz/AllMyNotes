@@ -16,7 +16,7 @@ from sphinx.application import Sphinx
 
 def add_mermaid_js(app: Sphinx, pagename: str, templatename: str, context: dict, doctree):
     mermaid_script = r"""
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     """
     if "metatags" in context:
