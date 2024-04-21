@@ -29,7 +29,7 @@ Idea
     classDiagram
         Component <|-- Leaf : implements
         Component <|-- Composite : implements
-        Component "1..*" <-- Composite : HAS-A
+        Component "1..*" <-- Composite : ___HAS-A___
         class Component {
             <<interface>>
             +operation()
