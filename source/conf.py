@@ -53,6 +53,7 @@ extensions = [
     'sphinxcontrib.mermaid',
     'sphinxemoji.sphinxemoji',
     'unicode_guilabel',
+    'waiting_admonition'
 ]
 
 # Bibtex Bibfiles
