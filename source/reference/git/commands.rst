@@ -121,6 +121,13 @@ Change message on most recent commit (editor opens, edit message and close to co
 
     git commit --amend
 
+Change message on most recent, but already pushed, commit
+
+.. prompt:: bash
+
+    git commit --amend -m "<new message>"
+    git push --force
+
 Stashing
 --------
 In contrast to 'staging', a stash is a temporary storage of any recent changes made
