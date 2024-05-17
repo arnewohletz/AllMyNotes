@@ -185,8 +185,8 @@ Execute the crawler
 Further documentation
 ---------------------
 Algolia DocSearch GitHub: https://github.com/algolia/docsearch
-Algolia DocSearch for Sphinx: https://sphinx-docsearch.readthedocs.io/en/latest/index.html#
-Algolia Dashboard: https://dashboard.algolia.com/
+Algolia DocSearch for Sphinx: https://sphinx-docsearch.readthedocs.io/
+Algolia Dashboard (requires login): https://dashboard.algolia.com/
 Algolia Config File: https://docsearch.algolia.com/docs/legacy/config-file/
 Algolia self run DocSearch: https://docsearch.algolia.com/docs/legacy/run-your-own/
 
@@ -199,7 +199,7 @@ Maybe switch to v3: https://docsearch.algolia.com/docs/what-is-docsearch/
 
 .. _Algolia: https://www.algolia.com/
 .. _sphinx-sitemap: https://sphinx-sitemap.readthedocs.io/en/latest/index.html
-.. _sphinx-docsearch: https://sphinx-docsearch.readthedocs.io/en/latest/
+.. _sphinx-docsearch: https://sphinx-docsearch.readthedocs.io/
 .. _Install Docker: https://docs.docker.com/engine/install/
 .. _DocSearch config: https://docsearch.algolia.com/docs/legacy/config-file/
 .. _class: https://docutils.sourceforge.io/docs/ref/rst/directives.html#class-option

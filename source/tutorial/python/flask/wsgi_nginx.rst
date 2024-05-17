@@ -301,7 +301,7 @@ with ``y``. Alternatively, you may send a quit command while outside the screen 
 
 Automatically start application on system startup
 -------------------------------------------------
-**macOS** [#macos_autostart]_:
+**macOS**:
 
 Copy the \*.plist file into ``/Library/LaunchDaemons`` to start nginx as a brew service on startup:
 
@@ -312,6 +312,3 @@ Copy the \*.plist file into ``/Library/LaunchDaemons`` to start nginx as a brew 
 **Linux**:
 
 *coming later*
-
-.. rubric:: Sources:
-.. [#macos_autostart] https://derickbailey.com/2014/12/27/how-to-start-nginx-on-port-80-at-mac-osx-boot-up-log-in/

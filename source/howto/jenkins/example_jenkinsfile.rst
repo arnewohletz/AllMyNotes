@@ -79,23 +79,23 @@ This section defines global variables, which are visible within the entire Jenki
     This definition defines String which consists of an array of strings, which is
     joined into a single string with a new-line character as delimiter (``join("\n"``).
     This is a possible format needed to define the *choices* within the *choice*
-    `parameter <jenkinsfile_parameters>`_, where all values must be separated via a
+    `parameter <jenkinsfile_parameters_>`_, where all values must be separated via a
     new line character.
 
 .. _jenkinsfile_choice: https://www.jenkins.io/doc/book/pipeline/syntax/#available-parameters
 
 :line 19-22:
 
-    The definition of a `map <groovy_map>`_, which contains two key-value pairs. The value
+    The definition of a `map <groovy_map_>`_, which contains two key-value pairs. The value
     of a key can be accessed via the get method (see https://docs.groovy-lang.org/latest/html/groovy-jdk/).
 
 .. _groovy_map: https://docs.groovy-lang.org/latest/html/documentation/core-syntax.html#_maps
 
 Agent, Parameters and Options
 -----------------------------
-The `agent <jenkinsfile_agent>`_, `parameter <jenkinsfile_parameters>`_ and
-`options <jenkinsfile_options>`_ sections are defined inside the
-`pipeline <jenkinsfile_pipeline>`_ section. They could also be defined in the
+The `agent <jenkinsfile_agent_>`_, `parameter <jenkinsfile_parameters_>`_ and
+`options <jenkinsfile_options_>`_ sections are defined inside the
+`pipeline <jenkinsfile_pipeline_>`_ section. They could also be defined in the
 Jenkins job configuration itself, but defining them inside the Jenkinsfile is a
 good practice, as changed are tracked and the Jenkinsfile can be applied to various
 pipeline jobs more easily.
@@ -143,11 +143,11 @@ pipeline jobs more easily.
 
 :line 31:
 
-    The `pipeline <jenkinsfile_declarative_pipeline>` section starts a *declarative pipeline*.
+    The `pipeline <jenkinsfile_declarative_pipeline_>`_ section starts a *declarative pipeline*.
     Jenkins supports two types of pipelines:
 
         * declarative pipelines
-        * `scripted pipelines <jenkins_scripted_pipelines>`_
+        * `scripted pipelines <jenkins_scripted_pipelines_>`_
 
     A declarative pipeline may contain scripted sections, which are equal to *scripted pipelines*.
     Declarative pipelines, though, have additional features (like restarting a
@@ -155,7 +155,7 @@ pipeline jobs more easily.
 
 :line 33-35:
 
-    An `agent <jenkinsfile_agent>`_, running on a Jenkins node, is defined via it's label.
+    An `agent <jenkinsfile_agent_>`_, running on a Jenkins node, is defined via it's label.
     During runtime, an agent, which has this label associated to it, is selected
     as the node, to run this pipeline on. If multiple agent have that same label,
     Jenkins selects one of them (preferably one, which currently does not execute any
@@ -163,7 +163,7 @@ pipeline jobs more easily.
 
 :line 37-61:
 
-    Declaration of the job's input `parameter <jenkinsfile_parameters>`_. The *parameter*
+    Declaration of the job's input `parameter <jenkinsfile_parameters_>`_. The *parameter*
     sections expect any available parameter, namely
 
         * *string*: a single line string
@@ -225,9 +225,9 @@ pipeline jobs more easily.
 
     :line 48-60:
 
-        The `Git Parameter <jenkins_gitparameter>`_ plugin provides a *gitParameter* directive, which allows
-        for assigning a git branch (used here), tag, pull request or a revision number
-        as a build parameter.
+        The `Git Parameter <jenkins_gitparameter_>`_ plugin provides a *gitParameter* directive,
+        which allows for assigning a git branch (used here), tag, pull request or a revision
+        number as a build parameter.
 
         In this case, the user is asked to select a branch (only branches matching
         the *branchFilter* expression are available) from the ``"${PRODUCT_METAPACKAGE_REPO_URL}"``
@@ -236,23 +236,23 @@ pipeline jobs more easily.
 
 :line 63-66:
 
-    Pipeline options may be declared in the `options <jenkinsfile_options>`_ section.
+    Pipeline options may be declared in the `options <jenkinsfile_options_>`_ section.
     A variety of options are available. Here, a ``timeout`` of five minutes is declared,
     which automatically fails the pipeline, if it hasn't completed within that timeframe.
     The ``timestamps()`` option prepends all console outputs with a timestamp.
 
 
-.. _jenkinsfile_declarative_pipeline: https://www.jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline
+.. _jenkins_gitparameter: https://plugins.jenkins.io/git-parameter/
 .. _jenkins_scripted_pipelines: https://www.jenkins.io/doc/book/pipeline/syntax/#scripted-pipeline
 .. _jenkinsfile_agent: https://www.jenkins.io/doc/book/pipeline/syntax/#agent
-.. _jenkinsfile_parameters: https://www.jenkins.io/doc/book/pipeline/syntax/#parameters
-.. _jenkins_gitparameter: https://plugins.jenkins.io/git-parameter/
+.. _jenkinsfile_declarative_pipeline: https://www.jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline
 .. _jenkinsfile_options: https://www.jenkins.io/doc/book/pipeline/syntax/#options
-
+.. _jenkinsfile_parameters: https://www.jenkins.io/doc/book/pipeline/syntax/#parameters
+.. _jenkinsfile_pipeline: https://www.jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline
 
 Stage - Checkout a git branch
 -----------------------------
-Pipelines are divided into *stages*. Unless defined as `parallel <jenkinsfile_parallel>`_,
+Pipelines are divided into *stages*. Unless defined as `parallel <jenkinsfile_parallel_>`_,
 all stages are executed in the specified order.
 
 .. code-block:: groovy
@@ -278,23 +278,23 @@ all stages are executed in the specified order.
 
 :line 68:
 
-    Start the `stages <jenkinsfile_stages>`_ section. It must contain at least one
-    `stage <jenkinsfile_stage>`_ directive.
+    Start the `stages <jenkinsfile_stages_>`_ section. It must contain at least one
+    `stage <jenkinsfile_stage_>`_ directive.
 
 :line 70-82:
 
-    Definition of a `stage <jenkinsfile_stage>`_. It contains a `steps <jenkinsfile_steps>`_
-    section, which contains additional step directives defined in the `Jenkins Steps Reference <jenkinsfile_steps>`_.
-    It may also contain a `script <jenkinsfile_script>`_ section, which contains a block
-    of `scripted pipeline <jenkins_scripted_pipelines>`_, which allows for execution
+    Definition of a `stage <jenkinsfile_stage_>`_. It contains a `steps <jenkinsfile_steps_>`_
+    section, which contains additional step directives defined in the `Jenkins Steps Reference <jenkinsfile_steps_>`_.
+    It may also contain a `script <jenkinsfile_script_>`_ section, which contains a block
+    of `scripted pipeline <jenkins_scripted_pipelines_>`_, which allows for execution
     of a more complex series of steps.
 
-    In this case, it contains a *script* section. It first executes a `sh <jenkinsfile_sh>`_
+    In this case, it contains a *script* section. It first executes a `sh <jenkinsfile_sh_>`_
     command, which opens executes the shell script, in this case ``echo Checkout repository``.
-    The `checkout <jenkinsfile_checkout>`_ checks out the sources of another git repository,
+    The `checkout <jenkinsfile_checkout_>`_ checks out the sources of another git repository,
     specified via the URL ``${PRODUCT_METAPACKAGE_REPO_URL}``, wheras the specific branch
     ${params.PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE} is checked out (note that git
-    checkout is done via the `Git plugin <jenkins_gitplugin>`_).
+    checkout is done via the `Git plugin <jenkins_gitplugin_>`_).
 
 .. _jenkinsfile_parallel: https://www.jenkins.io/doc/book/pipeline/syntax/#parallel
 .. _jenkinsfile_stages: https://www.jenkins.io/doc/book/pipeline/syntax/#stages
@@ -310,14 +310,14 @@ Step - Configure environment variables
 --------------------------------------
 Pipelines may require some job or run-specific environment variables to be defined.
 If those are few and simple or already known at the very beginning of the pipeline,
-those can also be defined inside a `environment <jenkinsfile_environment>`_ directive,
+those can also be defined inside a `environment <jenkinsfile_environment_>`_ directive,
 either at the above of the *stages* section or individual *stage* section (in case, those
 will only be needed for this single step).
 
 As the definition becomes more complex or certain parameters are only known until
 checking out additional sources (as in our case), an extra *stage*, which globally
 defines those variables, becomes necessary. Note, that here, each environment variable
-must be added to the `env <jenkinsfile_env>` object. Variables defined in the
+must be added to the `env <jenkinsfile_env_>`_ object. Variables defined in the
 *environment* sections are automatically added to the *env* object.
 
     .. code-block:: groovy
@@ -370,7 +370,7 @@ must be added to the `env <jenkinsfile_env>` object. Variables defined in the
 :line 94:
 
     Defines the *PRODUCT* build parameter to the *NTTS_PRODUCT_PREFIX_SUFFIX* environment variables,
-    by retrieving the associated value from the *PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP*. The `get() <java_map_get>`
+    by retrieving the associated value from the *PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP*. The `get() <java_map_get_>`_
     method returns the value of the given key (*params.PRODUCT*). It is a method provided by the
     Java layer, which Groovy builds upon. The type of the *PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP*
     variable was not declared (using the ``def`` type), but assigned to the Map interface
@@ -378,7 +378,7 @@ must be added to the `env <jenkinsfile_env>` object. Variables defined in the
 
 :line 96-99:
 
-    Defines the output of a shell script (`sh <jenkinsfile_sh>`_) as the value of environment variable.
+    Defines the output of a shell script (`sh <jenkinsfile_sh_>`_) as the value of environment variable.
     The script itself must a string value assigned to the ``script`` option. If the string starts
     with triple single quotes (``'''``), the script allows for multiple lines without using line continuation
     (this is a requirement from Groovy). The same applies to using triple double-quotes (``"""``).
@@ -431,9 +431,9 @@ must be added to the `env <jenkinsfile_env>` object. Variables defined in the
 
     Within the script block (which are executed in the default shell on the node, which
     is either *bash* on Linux or *zsh* on macOS), the environment variables inside
-    the `env <jenkinsfile_env>` object can be accessed via ``${env.<VARIABLE_NAME>}``.
-    The block assigns the *currentBuild* `global variable <jenkins_global_variable_reference>`_,
-    settings it to ``'ABORTED'`` and emitting and `error signal <jenkins_error_signal>`_
+    the `env <jenkinsfile_env_>`_ object can be accessed via ``${env.<VARIABLE_NAME>}``.
+    The block assigns the *currentBuild* `global variable <jenkins_global_variable_reference_>`_,
+    settings it to ``'ABORTED'`` and emitting and `error signal <jenkins_error_signal_>`_
     via ``error``, which uses variable interpolation in its error string, which
     requires it to use *double quotes*.
 
@@ -485,14 +485,14 @@ shell script can be executed via a Makefile target.
 
 :line 130:
 
-    The `dir <jenkinsfile_dir>`_ block defines the working directory of all processes
+    The `dir <jenkinsfile_dir_>`_ block defines the working directory of all processes
     within the block (so from line 131 until line 139).
 
 :line 131 - 139:
 
-    A `script <jenkinsfile_script>`_ section, which includes a `sh <jenkinsfile_sh>`_
+    A `script <jenkinsfile_script_>`_ section, which includes a `sh <jenkinsfile_sh_>`_
     command. As mentioned above, the *script* block contains a block of
-    `scripted pipeline <jenkins_scripted_pipelines>`_. In this case, this includes
+    `scripted pipeline <jenkins_scripted_pipelines_>`_. In this case, this includes
     the *sh* command, which opens executes the shell script. As the script opens with
     triple double-quotes (``"""``) it is a multi-line shell script, which supports
     variable interpolation. As this multi-line script is actually a single line command,
@@ -505,11 +505,11 @@ shell script can be executed via a Makefile target.
 
 Stage - Run inline groovy script
 --------------------------------
-Jenkins recommends to `outsource more complex logic into separate Groovy script files <outsource_scripts>`_,
+Jenkins recommends to `outsource more complex logic into separate Groovy script files <outsource_scripts_>`_,
 to keep a Jenkinsfile simpler and to allow reuse but other pipeline. Simpler scripts
 can still be defined within the Jenkinsfile itself.
 
-It follows the `Groovy syntax`_, while also supporting `additional steps <jenkinsfile_steps>`_
+It follows the `Groovy syntax`_, while also supporting `additional steps <jenkinsfile_steps_>`_
 provided by Jenkins.
 
 .. code-block:: groovy
@@ -562,7 +562,7 @@ provided by Jenkins.
 
 :line 187:
 
-    Opens a `withCredentials <jenkinsfile_withcredentials>`_ block, which binds credentials,
+    Opens a `withCredentials <jenkinsfile_withcredentials_>`_ block, which binds credentials,
     stored as a credentials set in Jenkins, to variables within this block. In this case,
     it calls the ``gitUsernamePassword(...)`` method, passing in the ``"${CREDENTIAL_KEY}"``
     (defined in line 9) as *credentialsID*, referencing the credentials set predefined on
@@ -578,13 +578,13 @@ provided by Jenkins.
 
     Assigns the variables *create_pull_request_log* as the stdout (standard output)
     of the shells script in line 189 - 197. The ``returnStdout: true`` option is
-    an optional option of the `sh <jenkinsfile_sh>`_ command. If set to ``true``,
+    an optional option of the `sh <jenkinsfile_sh_>`_ command. If set to ``true``,
     the standard output of the command is returned as string (in this case, whatever
     the Makefile target returns).
 
 :line 204 - 205:
 
-    These two lines each define a regular expression. The regex's `syntax <groovy_regex>`_
+    These two lines each define a regular expression. The regex's `syntax <groovy_regex_>`_
     follows the one for Java. They must start and end with a ``\``. For line 204,
     a match must start with the string ``NEW_PULL_REQUEST_URL``, followed with the
     matching group which must not contain *null*, the followed by the string ``EOL``.
@@ -609,7 +609,7 @@ provided by Jenkins.
 
 Post section
 ------------
-The `post <jenkins_post>`_ section contains all steps, which are executed after the
+The `post <jenkins_post_>`_ section contains all steps, which are executed after the
 pipeline or it's steps are completed.
 
 .. code-block:: groovy

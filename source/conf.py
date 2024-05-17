@@ -78,17 +78,20 @@ jupyter_sphinx_thebelab_config = {
     },
 }
 
+linkcheck_anchors = False
 linkcheck_ignore = [
     ".*/_static/",
     "http://www.javavideokurs.de/",
     "https://computingforgeeks.com",
+    "https://dashboard.algolia.com/",
     "https://derickbailey.com",
     "https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox",
     "https://github.com/shellspec/shellspec#installation",
     "https://linux.die.net/man/8/update-alternatives",
     "https://mkyong.com",
+    "https://prosupport.logi.com/",
     "https://treyhunner.com/2019/06/loop-better-a-deeper-look-at-iteration-in-python",
-    "https://zdoom.org/"
+    "https://zdoom.org/",
 ]
 
 pygments_style = "default"
