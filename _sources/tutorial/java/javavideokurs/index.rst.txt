@@ -9,7 +9,7 @@ Not every chapter of the course is covered in these notes, as some are so simple
 that no future reference is required.
 
 My personal code written during this tutorial is located at
-https://github.com/horsewithnoname1985/JavaVideoKurs.
+https://github.com/arnewohletz/JavaVideoKurs.
 
 .. toctree::
     :maxdepth: 1

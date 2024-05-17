@@ -19,7 +19,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
       <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=233fe0e4" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=2a13ce83" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=908fc493" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Extending</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Create extension (custom role)  </a></li>
 <li class="toctree-l3"><a class="reference internal" href="roles.html">Custom Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="new_directive.html">Create a new directive</a></li>
 <li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="algolia.html">Add Algolia DocSearch engine</a></li>
@@ -151,12 +152,12 @@
            <div itemprop="articleBody">
              
   <section id="create-extension-custom-role">
-<h1>Create extension (custom role) <a class="footnote-reference brackets" href="#footcite-sphinx-role-extension-doug" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-sphinx-role-extension-thai" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#create-extension-custom-role" title="Link to this heading"></a></h1>
+<span id="extend-sphinx-create-custom-role"></span><h1>Create extension (custom role) <a class="footnote-reference brackets" href="#footcite-sphinx-role-extension-doug" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-sphinx-role-extension-thai" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#create-extension-custom-role" title="Link to this heading"></a></h1>
 <p>In some cases, there is no adequate role available for your purpose, for instance,
 when nesting two roles. In such cases, adding an extension to your Sphinx project
 can overcome this limitation.</p>
 <p>In this example case, the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#role-guilabel">guilabel</a> role will be extended to support displaying
-a single unicode character, like a symbol, to describe buttons or GUI item which show
+a single unicode character, like a symbol, to describe buttons or GUI items which show
 such symbols instead of regular text.</p>
 <p>Create a new Python module in a proper location (e.g. <code class="docutils literal notranslate"><span class="pre">./source/_ext/</span></code>).</p>
 <p>First off, we need to register our role in our Sphinx application:</p>
@@ -353,7 +354,7 @@ as the last option.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Apr 22, 2024</span>.
+        <span class="update_date">May 17, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -16,7 +16,7 @@ You may use either the
     You need to use either the hex or the decimal code for emojis.
 
 | Entity names for Unicode characters: https://html.spec.whatwg.org/multipage/named-characters.html.
-| Unicode hex & decimal codes (incl. emojis): https://symbl.cc/en/unicode/table/
+| Unicode hex & decimal codes (incl. emojis): https://symbl.cc/en/unicode-table/
 
 **HTML Syntax**
 

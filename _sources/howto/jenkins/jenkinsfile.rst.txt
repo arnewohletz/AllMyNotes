@@ -98,8 +98,8 @@ You can also use the status as a conditional for execution of a stage:
 
 .. note::
 
-    ``currentBuild.result`` returns ``null`` if used inside the `stages <jenkins_sections_stages>`_
-    section, but returns the status if used inside the `post <jenkins_sections_post>`_ section.
+    ``currentBuild.result`` returns ``null`` if used inside the `stages <jenkins_sections_stages_>`_
+    section, but returns the status if used inside the `post <jenkins_sections_post_>`_ section.
 
 .. _jenkins_sections_stages: https://www.jenkins.io/doc/book/pipeline/syntax/#stages
 .. _jenkins_sections_post: https://www.jenkins.io/doc/book/pipeline/syntax/#post

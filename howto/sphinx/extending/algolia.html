@@ -19,7 +19,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
       <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=233fe0e4" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=2a13ce83" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=908fc493" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Extending</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="extension.html">Create extension (custom role)  </a></li>
 <li class="toctree-l3"><a class="reference internal" href="roles.html">Custom Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="new_directive.html">Create a new directive</a></li>
 <li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Add Algolia DocSearch engine</a><ul>
@@ -196,7 +197,7 @@ it an expressive name (like: <em>documentation_search</em>).</p></li>
 <section id="set-up-the-sphinx-documentation">
 <span id="docsearch-v2-setup-sphinx"></span><h3>Set up the Sphinx documentation<a class="headerlink" href="#set-up-the-sphinx-documentation" title="Link to this heading"></a></h3>
 <ol class="arabic">
-<li><p>Install both the extensions <a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a> and <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/">sphinx-docsearch</a>.</p>
+<li><p>Install both the extensions <a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a> and <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/">sphinx-docsearch</a>.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
@@ -364,8 +365,8 @@ should now display the information according the previously extracted records.</
 <section id="further-documentation">
 <h3>Further documentation<a class="headerlink" href="#further-documentation" title="Link to this heading"></a></h3>
 <p>Algolia DocSearch GitHub: <a class="reference external" href="https://github.com/algolia/docsearch">https://github.com/algolia/docsearch</a>
-Algolia DocSearch for Sphinx: <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/index">https://sphinx-docsearch.readthedocs.io/en/latest/index</a>.html#
-Algolia Dashboard: <a class="reference external" href="https://dashboard.algolia.com/">https://dashboard.algolia.com/</a>
+Algolia DocSearch for Sphinx: <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/">https://sphinx-docsearch.readthedocs.io/</a>
+Algolia Dashboard (requires login): <a class="reference external" href="https://dashboard.algolia.com/">https://dashboard.algolia.com/</a>
 Algolia Config File: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/config-file/">https://docsearch.algolia.com/docs/legacy/config-file/</a>
 Algolia self run DocSearch: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/run-your-own/">https://docsearch.algolia.com/docs/legacy/run-your-own/</a></p>
 <p>Use a sitemap.xml: <a class="reference external" href="https://docsearch.algolia.com/docs/legacy/tips/">https://docsearch.algolia.com/docs/legacy/tips/</a>
@@ -407,7 +408,7 @@ Give it an expressive name (like: <em>documentation_search</em>).</p></li>
 <p>The setup is similar to that when <a class="reference internal" href="#docsearch-v2-setup-sphinx"><span class="std std-ref">using v2 of the DocSearch crawler</span></a>,
 but without the need to create a <code class="docutils literal notranslate"><span class="pre">sitemap.yaml</span></code>.</p>
 <ol class="arabic">
-<li><p>Install the extensions <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/en/latest/">sphinx-docsearch</a>.</p>
+<li><p>Install the extensions <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/">sphinx-docsearch</a>.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>sphinx-docsearch</span>
 </pre></div></div></div></blockquote>
@@ -526,7 +527,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Apr 22, 2024</span>.
+        <span class="update_date">May 17, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -49,7 +49,7 @@ Links
 -----
 PEX (and others):
 
-* https://github.com/pantsbuild/pex
+* https://github.com/pex-tool/pex
 * https://github.com/google/subpar
 * https://github.com/linkedin/shiv/
 * https://docs.python.org/3/library/zipapp.html

@@ -1,3 +1,5 @@
+.. _extend_sphinx_create_custom_role:
+
 Create extension (custom role) :footcite:p:`sphinx_role_extension_doug` :footcite:p:`sphinx_role_extension_thai`
 ================================================================================================================
 In some cases, there is no adequate role available for your purpose, for instance,
@@ -5,7 +7,7 @@ when nesting two roles. In such cases, adding an extension to your Sphinx projec
 can overcome this limitation.
 
 In this example case, the `guilabel`_ role will be extended to support displaying
-a single unicode character, like a symbol, to describe buttons or GUI item which show
+a single unicode character, like a symbol, to describe buttons or GUI items which show
 such symbols instead of regular text.
 
 Create a new Python module in a proper location (e.g. ``./source/_ext/``).

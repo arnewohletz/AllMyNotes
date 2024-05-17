@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a new directive &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=233fe0e4" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=908fc493" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/thebelab-helper.js"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script defer="defer" src="../../../_static/docsearch.js?v=7b48ea47"></script>
+        <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Create selective custom style using classes" href="custom_class_style.html" />
+    <link rel="prev" title="Custom Roles" href="roles.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design/index.html">Software Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sphinx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build.html">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../host.html">Host documentation on localhost (with nginx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../host.html#host-documentation-on-github-pages">Host documentation on GitHub Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vale.html">Documentation linting with vale</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Extending</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="extension.html">Create extension (custom role)  </a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">Custom Roles</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Create a new directive</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#understand-the-concept-of-directives">Understand the concept of directives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-create-a-custom-admonition-directive">Example: Create a custom admonition directive</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#define-the-admonition">Define the admonition</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#add-the-admonition-to-the-config">Add the admonition to the config</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#style-the-admonition">Style the admonition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="algolia.html">Add Algolia DocSearch engine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sphinx</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Extending</a></li>
+      <li class="breadcrumb-item active">Create a new directive</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/howto/sphinx/extending/new_directive.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="create-a-new-directive">
+<h1>Create a new directive<a class="headerlink" href="#create-a-new-directive" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> can be extended with new directives. Similar to defining
+<a class="reference internal" href="extension.html#extend-sphinx-create-custom-role"><span class="std std-ref">new roles</span></a>, such can be defined in
+Python modules, which are attached to the Sphinx application.</p>
+<p>Docutils offers a manual on how to <a class="reference external" href="https://docutils.sourceforge.io/docs/howto/rst-directives.html">create RST directives</a>, and also Sphinx
+offers <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/tutorials/index.html">some tutorials</a> on the subject. Though this How-To guide bases on my
+actual experiences and attempts to be as thorough and hands-on as possible.</p>
+<section id="understand-the-concept-of-directives">
+<h2>Understand the concept of directives<a class="headerlink" href="#understand-the-concept-of-directives" title="Link to this heading"></a></h2>
+<p>It is important to understand what <em>directives</em> actually represent in a Sphinx
+application. <em>Directives</em> actually are an implementation in <a class="reference external" href="https://docutils.sourceforge.io/">docutils</a>, which
+Sphinx extends with additional capabilities.</p>
+<p>Docutils itself translates the <em>reStructuredText</em> syntax in XML, which, similar to
+HTML, is a markup language, which consists of <em>nodes</em>. These nodes stand in a particular
+relation to each other, forming the <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/doctree.html">Docutils Document Tree</a>. Docutils provides
+a <a class="reference external" href="https://docutils.sourceforge.io/docutils/nodes.py">docutils.nodes.py</a> Python module, which implements the tree data structure.</p>
+<p>The important thing to understand here is, that each piece of content inside a
+<code class="docutils literal notranslate"><span class="pre">*.rst</span></code> file is translated to a class of type <code class="docutils literal notranslate"><span class="pre">Node</span></code> or an attribute of it.</p>
+<p>Basically, each <code class="docutils literal notranslate"><span class="pre">Node</span></code> is represented by a class of type <code class="docutils literal notranslate"><span class="pre">Element</span></code>, whereas
+concrete element classes (detected by docutil’s <code class="docutils literal notranslate"><span class="pre">NodeVisitor</span></code> instance) inherit
+from them. In addition, there are so-called <em>element category</em> classes, which the
+concrete element class inherit from. The graph below shows the inheritance graph
+of a small fraction of available element and  category classes.</p>
+<div class="mermaid">
+            classDiagram
+    Node &lt;-- Text
+    Node &lt;-- Element
+    Element &lt;-- TextElement
+    Element &lt;-- document
+    TextElement &lt;-- title
+    TextElement &lt;-- subtitle
+    TextElement &lt;-- rubric
+    Structural &lt;-- document
+    Root &lt;-- document
+    Titlebar &lt;-- title
+    Body &lt;-- Admonition
+    Element &lt;-- admonition
+    Admonition &lt;-- admonition
+
+    style Text fill: #85ff83ff
+    style Element fill: #85ff83ff
+    style TextElement fill: #85ff83ff
+
+    style Admonition fill: #6fb8ffff
+    style Structural fill: #6fb8ffff
+    style Root fill: #6fb8ffff
+    style Titlebar fill: #6fb8ffff
+        </div><p>As a naming convention, concrete element classes are named in <strong>camelcase</strong>.
+To differentiate, parent element classes are colored in green, category classes
+are colored in blue.</p>
+<p>When creating a new directive, we have to create two things:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the <strong>directive class</strong>, so that the directive is detected as such in an
+RST text (as opposed to regular paragraph text). In other word, <em>docutils</em>
+must <em>know</em> about the directive.</p></li>
+<li><p>the corresponding <strong>node class</strong> into which the detected directive instance
+(which is created for any match of that directive) is translated into.
+As said above, docutils creates a doctree document out of each RST document,
+which can then be translated into HTML or other format by Sphinx.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="example-create-a-custom-admonition-directive">
+<h2>Example: Create a custom admonition directive<a class="headerlink" href="#example-create-a-custom-admonition-directive" title="Link to this heading"></a></h2>
+<p>It is highly advised to make use of existing elements, and extending those, instead
+of creating entire new directives from scratch, thereby leveraging code that is
+already included in <em>docutils</em>. In this example, we will create a <em>waiting</em>
+admonition, which is used like this:</p>
+<blockquote>
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">waiting</span><span class="p">::</span> 30 min
+
+    Just you wait ...
+</pre></div>
+</div>
+</div></blockquote>
+<p>to be rendered into</p>
+<blockquote>
+<div><div class="admonition waiting"><p class="admonition-title">30 min</p><p>Just you wait …</p>
+</div></div></blockquote>
+<section id="define-the-admonition">
+<h3>Define the admonition<a class="headerlink" href="#define-the-admonition" title="Link to this heading"></a></h3>
+<p>For that, we create a new file inside <code class="docutils literal notranslate"><span class="pre">source/_ext/</span></code> named <code class="docutils literal notranslate"><span class="pre">waiting_admonition.py</span></code>.</p>
+<p>In here, we import the necessary base classes for both our custom admonition
+directive and our custom admonition node:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">docutils.parsers.rst.directives.admonitions</span> <span class="kn">import</span> <span class="n">BaseAdmonition</span>
+<span class="linenos">2</span><span class="kn">from</span> <span class="nn">docutils.nodes</span> <span class="kn">import</span> <span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span>
+<span class="linenos">3</span><span class="kn">from</span> <span class="nn">sphinx.application</span> <span class="kn">import</span> <span class="n">Sphinx</span>
+<span class="linenos">4</span><span class="kn">from</span> <span class="nn">sphinx.util.typing</span> <span class="kn">import</span> <span class="n">ExtensionMetadata</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Note, that the imports from line 3 and 4 will be used for type hinting only later on.</p>
+<p>The <code class="code highlight python docutils literal highlight-python"><span class="n">BaseAdmonition</span></code> will be used as a parent of our <code class="code highlight python docutils literal highlight-python"><span class="n">WaitingAdmonition</span></code>
+directive class, where both <code class="code highlight python docutils literal highlight-python"><span class="n">Admonition</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="n">Element</span></code> will be the parents
+of our <code class="code highlight python docutils literal highlight-python"><span class="n">waiting</span></code> node class:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 7</span><span class="k">class</span> <span class="nc">waiting</span><span class="p">(</span><span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="k">pass</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">class</span> <span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
+<span class="linenos">12</span>    <span class="k">pass</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To find out, which classes are best suited to inherit from for both the custom
+node class and the directive or role element class, check out these modules</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nodes: <a class="reference external" href="https://docutils.sourceforge.io/docutils/nodes.py">docutils.nodes.py</a></p></li>
+<li><p>Directives: <a class="reference external" href="https://docutils.sourceforge.io/docutils/parsers/rst/directives/">docutils.parsers.rst.directives</a> (choose the respective module)</p></li>
+<li><p>Roles: <a class="reference external" href="https://docutils.sourceforge.io/docutils/parsers/rst/roles.py">docutils.parsers.rst.roles.py</a></p></li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">waiting</span></code> class is already done. Usually, it doesn’t have anything to do
+except inheriting from the standard <em>docutils</em> class(es) (defined in <code class="docutils literal notranslate"><span class="pre">docutils.nodes</span></code>).</p>
+<p>Let’s continue with the implementation of the <code class="docutils literal notranslate"><span class="pre">WaitingAdmonition</span></code> class:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">11</span><span class="k">class</span> <span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
+<span class="linenos">12</span>    <span class="n">required_arguments</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">13</span>    <span class="n">final_argument_whitespace</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">14</span>    <span class="n">has_content</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="n">node_class</span> <span class="o">=</span> <span class="n">waiting</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">19</span>        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
+<span class="linenos">20</span>        <span class="n">waiting_node</span> <span class="o">=</span> <span class="n">waiting</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+<span class="linenos">21</span>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">nested_parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_offset</span><span class="p">,</span>
+<span class="linenos">22</span>                                <span class="n">waiting_node</span><span class="p">)</span>
+<span class="linenos">23</span>        <span class="k">return</span> <span class="p">[</span><span class="n">waiting_node</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Each class inheriting from <code class="code highlight python docutils literal highlight-python"><span class="n">docutils</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">rst</span><span class="o">.</span><span class="n">Directive</span></code> (which
+<code class="docutils literal notranslate"><span class="pre">BaseAdmonition</span></code> does) may define a list of attributes, which specify how the
+<em>WaitingAdmonition</em> is supposed to be used.</p>
+<dl class="field-list">
+<dt class="field-odd">line 12-13<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">required_arguments</span> <span class="pre">=</span> <span class="pre">1</span></code> specifies that the directive expects exactly one
+argument. The <code class="docutils literal notranslate"><span class="pre">final_argument_whitespace</span> <span class="pre">=</span> <span class="pre">True</span></code> attribute declares that
+the last (in this case, the last is also the first, as
+<code class="docutils literal notranslate"><span class="pre">optional_arguments</span></code> is not defined, therefore is considered as <code class="docutils literal notranslate"><span class="pre">0</span></code>)
+argument is expected to contain whitespace.
+Both attributes allow for such syntax:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">waiting</span><span class="p">::</span> 30 min
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">min</span></code> is considered as one argument, as only one is allowed, though
+it may contain whitespaces. Note, that this declaration is optional, as the
+default value is already <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt class="field-even">line 14<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">has_content</span> <span class="pre">=</span> <span class="pre">True</span></code> allows for providing content inside the admonition.
+Providing content, while this is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> will throw an error during
+parsing the directive. It allows for the following syntax:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">waiting</span><span class="p">::</span> 30 min
+
+    Please wait patiently, a good time to get a coffee.
+</pre></div>
+</div>
+</dd>
+<dt class="field-odd">line 16<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This line is a special attribute added by th <code class="code highlight python docutils literal highlight-python"><span class="n">BaseAdmonition</span></code> class,
+which specifies the admonition node class, the <em>WaitingAdmonition</em> element
+is set to in the doctree. This will be our <code class="code highlight python docutils literal highlight-python"><span class="n">waiting</span></code> class, which
+will be defined next.</p>
+</dd>
+<dt class="field-even">line 18<span class="colon">:</span></dt>
+<dd class="field-even"><p>Defining the <code class="code highlight python docutils literal highlight-python"><span class="n">run</span><span class="p">()</span></code> method is mandatory, as it is called to
+transform the associated directive into one or more nodes.</p>
+<p>Additional arguments are defined in the <code class="docutils literal notranslate"><span class="pre">rst.Directive</span></code> docstring:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">docutils.parsers</span> <span class="kn">import</span> <span class="n">rst</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">rst</span><span class="o">.</span><span class="n">Directive</span><span class="o">.</span><span class="vm">__doc__</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt class="field-odd">line 19<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All arguments values, separated by space, are mapped into a list. The
+<code class="docutils literal notranslate"><span class="pre">title</span></code> variable is created by concatenating this list of all input
+arguments. So, for</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">waiting</span><span class="p">::</span> 30 min or more
+</pre></div>
+</div>
+<p>the <code class="docutils literal notranslate"><span class="pre">title</span></code> will be <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">min</span> <span class="pre">or</span> <span class="pre">more</span></code>.</p>
+</dd>
+<dt class="field-even">line 20<span class="colon">:</span></dt>
+<dd class="field-even"><p>Creating the node that the <em>waiting</em> admonition is supposed to be translated
+to. Here, it passes the <code class="docutils literal notranslate"><span class="pre">title</span></code> variable as <em>title</em>, so that the node can
+make use of it.</p>
+</dd>
+<dt class="field-odd">line 21-22<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Calling the <code class="docutils literal notranslate"><span class="pre">self.state.nested_parse()</span></code> method, the content body of the
+directive is parsed. The first argument gives the content body, and the second
+one gives content offset. The third argument gives the parent node of parsed
+result, in our case the waiting node. Following this, the waiting node is
+added to the environment. This is needed to be able to insert the waiting
+directive’s <em>content</em> into the directive entries.</p>
+</dd>
+<dt class="field-even">line 23<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return the node to be put into the doctree (here, the waiting node). As multiple
+nodes may be returned for a directive, a list of one or more nodes is expected.</p>
+</dd>
+</dl>
+<p>As a next step, the custom waiting node must receive methods on how the <em>waiting</em>
+doctree node is translated into a HTML node, specifically <code class="docutils literal notranslate"><span class="pre">sphinx.writers.html5.HTML5Translator</span></code>
+(other writer, such as for <em>latex</em>, each require separate methods. A method for
+visiting the node and departing from the node is needed. The former defines what
+HTML nodes to insert <strong>before</strong> any further nested nodes (see line 1 below), the latter
+defines what nodes to insert <strong>after</strong> any further nested nodes (see line 3 blow):</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">my_custom_node</span><span class="p">&gt;</span>
+    // further nested contents
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>In the easiest case, the <code class="docutils literal notranslate"><span class="pre">visit_waiting_node()</span></code> and <code class="docutils literal notranslate"><span class="pre">depart_waiting_node()</span></code>
+methods may simply call the predefined Sphinx <code class="docutils literal notranslate"><span class="pre">sphinx.writers.html5.HTML5Translator</span></code>
+methods for visiting and departing from admonition nodes:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">visit_admonition</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">depart_admonition</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">self</span></code> argument is the writer instance, in case of HTML,
+the <code class="docutils literal notranslate"><span class="pre">sphinx.writers.html5.HTML5Translator</span></code> instance. It must be declared
+like that even though the functions are defined outside of a class.</p>
+</div>
+</div></blockquote>
+<p>In our case, this is not sufficient, because passing only the <code class="docutils literal notranslate"><span class="pre">node</span></code> into the
+predefined methods, will create an admonition without title. Calling it like
+<code class="code highlight python docutils literal highlight-python"><span class="bp">self</span><span class="o">.</span><span class="n">visit_admonition</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;waiting&#39;</span><span class="p">)</span></code> will lead to an error, as the
+admonition label <code class="code highlight python docutils literal highlight-python"><span class="s1">&#39;waiting&#39;</span></code> is not known to sphinx. We could pass in a
+known label, such as <code class="code highlight python docutils literal highlight-python"><span class="bp">self</span><span class="o">.</span><span class="n">visit_admonition</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;warning&#39;</span><span class="p">)</span></code>, but this
+will treat our custom <em>waiting</em> node exactly like a built-in <em>warning</em> node,
+which obscures the existence of this custom admonition (we could have used a
+warning admonition, in that case).</p>
+<p>For this reason, we will define a custom body for the <em>waiting</em> node:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">26</span><span class="k">def</span> <span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">27</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;div class=</span><span class="se">\&quot;</span><span class="s2">admonition waiting</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">28</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;p class=</span><span class="se">\&quot;</span><span class="s2">admonition-title</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">30</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="k">def</span> <span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">34</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Besides the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument, both methods require the <code class="docutils literal notranslate"><span class="pre">node</span></code> argument,
+even if it is not used (as is the case for <code class="code highlight python docutils literal highlight-python"><span class="n">depart_waiting_node</span><span class="p">()</span></code>).</p>
+</div>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">line 27<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Append a <code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span></code> element to the HTML writer <code class="docutils literal notranslate"><span class="pre">body</span></code>, with the
+<code class="code highlight html docutils literal highlight-html">class=&quot;admonition waiting&quot;</code> attribute. The <code class="docutils literal notranslate"><span class="pre">admonition</span></code> class is
+present for all admonition nodes, whereas the <code class="docutils literal notranslate"><span class="pre">waiting</span></code> class is a new
+class, allowing for customized styling.</p>
+<p>Note, that the <code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span></code> element is not closed here (will be done in
+the <code class="code highlight python docutils literal highlight-python"><span class="n">depart_waiting_node</span><span class="p">()</span></code> method in line 34.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The same is achieved by adding the <code class="docutils literal notranslate"><span class="pre">:class:</span> <span class="pre">waiting</span></code> option to a
+admonition directives:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span>
+    <span class="nc">:class:</span> waiting
+</pre></div>
+</div>
+</div>
+</dd>
+<dt class="field-even">line 28<span class="colon">:</span></dt>
+<dd class="field-even"><p>Appends the admonition title bar into the admonition.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Even though this element is contained in the <code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span></code> admonition element,
+there is no need to indent the string. The rendering browser will handle
+this automatically.</p>
+</div>
+</dd>
+<dt class="field-odd">line 29<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The admonition-title is appended. This <code class="docutils literal notranslate"><span class="pre">title</span></code> value was defined and
+inserted into the <em>waiting</em> node in the <code class="docutils literal notranslate"><span class="pre">WaitingAdmonition.run()</span></code> method.
+Node attributes can be retrieved by the <code class="docutils literal notranslate"><span class="pre">Element.get()</span></code> method.</p>
+</dd>
+<dt class="field-even">line 30<span class="colon">:</span></dt>
+<dd class="field-even"><p>This adds a closing line for the admonition-title paragraph node. This line
+can actually be omitted, as a closing statement for this element is automatically
+set by the rendering browser before the next element starts. This is because
+the following node will be another paragraph (<code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span></code>) which will contain the
+contents of the waiting admonition. Nesting one paragraph into another is
+not possible in HTML, so the paragraph is closed, before another one is opened.</p>
+</dd>
+</dl>
+<p>Last but not least, both the defined <em>waiting</em> admonition and the <em>waiting</em> node
+must be registered in Sphinx, so they are known to the Sphinx builder:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">37</span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
+<span class="linenos">38</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">waiting</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">visit_waiting_node</span><span class="p">,</span> <span class="n">depart_waiting_node</span><span class="p">))</span>
+<span class="linenos">39</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;waiting&#39;</span><span class="p">,</span> <span class="n">WaitingAdmonition</span><span class="p">)</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;0.1&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">line 37<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">setup()</span></code> method is a required method to plug new directives into Sphinx.
+It requires the Sphinx application instance as an argument.</p>
+</dd>
+<dt class="field-even">line 38<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="code highlight python docutils literal highlight-python"><span class="n">add_node</span><span class="p">()</span></code> method registers the <em>waiting</em> node. For the <code class="docutils literal notranslate"><span class="pre">html</span></code>
+builder, it expects a tuple, consisting of the <em>visiting</em> and the <em>departing</em>
+method for the node. For this, we pass the previously defined respective methods.</p>
+</dd>
+<dt class="field-odd">line 39<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="code highlight python docutils literal highlight-python"><span class="n">add_directive</span></code> method register the ‘waiting* directive. It requires
+the name value of the directive (here: <code class="code highlight python docutils literal highlight-python"><span class="s1">&#39;waiting&#39;</span></code>) and the admonition,
+this name is connected to (here: <code class="code highlight python docutils literal highlight-python"><span class="n">WaitingAdmonition</span></code>).</p>
+</dd>
+<dt class="field-even">line 41<span class="colon">:</span></dt>
+<dd class="field-even"><p>This return statement is optional. It may return a dictionary, which is treated
+as the extensions metadata. For more info, see <a class="reference external" href="https://www.sphinx-doc.org/en/master/extdev/index.html#extension-metadata">Extension metadata</a>.</p>
+</dd>
+</dl>
+<p>This concludes the definition of the <em>waiting</em> admonition.</p>
+<p>This is the entire content of the <code class="docutils literal notranslate"><span class="pre">waiting_admonition.py</span></code> module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">docutils.parsers.rst.directives.admonitions</span> <span class="kn">import</span> <span class="n">BaseAdmonition</span>
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">docutils.nodes</span> <span class="kn">import</span> <span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">sphinx.application</span> <span class="kn">import</span> <span class="n">Sphinx</span>
+<span class="linenos"> 4</span><span class="kn">from</span> <span class="nn">sphinx.util.typing</span> <span class="kn">import</span> <span class="n">ExtensionMetadata</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">class</span> <span class="nc">waiting</span><span class="p">(</span><span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="k">pass</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">class</span> <span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
+<span class="linenos">12</span>    <span class="n">required_arguments</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">13</span>    <span class="n">final_argument_whitespace</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">14</span>    <span class="n">has_content</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="n">node_class</span> <span class="o">=</span> <span class="n">waiting</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">19</span>        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
+<span class="linenos">20</span>        <span class="n">waiting_node</span> <span class="o">=</span> <span class="n">waiting</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+<span class="linenos">21</span>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">nested_parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_offset</span><span class="p">,</span>
+<span class="linenos">22</span>                                <span class="n">waiting_node</span><span class="p">)</span>
+<span class="linenos">23</span>        <span class="k">return</span> <span class="p">[</span><span class="n">waiting_node</span><span class="p">]</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="k">def</span> <span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">27</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;div class=</span><span class="se">\&quot;</span><span class="s2">admonition waiting</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">28</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;p class=</span><span class="se">\&quot;</span><span class="s2">admonition-title</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">30</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="k">def</span> <span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">34</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExtensionMetadata</span><span class="p">:</span>
+<span class="linenos">38</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">waiting</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">visit_waiting_node</span><span class="p">,</span> <span class="n">depart_waiting_node</span><span class="p">))</span>
+<span class="linenos">39</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;waiting&#39;</span><span class="p">,</span> <span class="n">WaitingAdmonition</span><span class="p">)</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;0.1&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="add-the-admonition-to-the-config">
+<h3>Add the admonition to the config<a class="headerlink" href="#add-the-admonition-to-the-config" title="Link to this heading"></a></h3>
+<p>The <em>waiting</em> admonition can now be added the documentation’s <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file.
+Under the <code class="code highlight python docutils literal highlight-python"><span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">]</span></code> list, add the module name of the extension:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># other extensions</span>
+    <span class="s1">&#39;waiting_admonition&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Make sure, the <code class="docutils literal notranslate"><span class="pre">source/_ext/</span></code> directory is added to the interpreter’s
+PYTHONPATH. Add the following line near the top of the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/_ext&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>On the next build, the extension will allow for using <em>waiting</em> admonitions:</p>
+<blockquote>
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">waiting</span><span class="p">::</span> 30 min
+
+    You just missed to the train. Have to catch the next one.
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="style-the-admonition">
+<h3>Style the admonition<a class="headerlink" href="#style-the-admonition" title="Link to this heading"></a></h3>
+<p>For the rendered HTML output, the style of the waiting admonition will be
+defined by the used theme. And those themes naturally don’t provide a custom
+style for nodes that are not part of basic Sphinx. Hence, it is the responsibility
+of the extension to provide a decent style.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A customized style might only work for a particular theme, as each may use
+different HTML templates. Effectively, CSS rules customized for a particular
+theme’s HTML template, are likely not considered for those of other themes.</p>
+<p>As a general rule, when starting to add custom CSS rules, be certain to
+stay on a particular theme for the documentation project. It is not a
+solution to make CSS rules more general, making it match for templates
+on various themes, as the rules likely have low <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">specificity</a>, that they
+are overridden by the theme’s own, more specific, CSS rules.</p>
+<p>As a workaround, you may define a <code class="docutils literal notranslate"><span class="pre">custom.css</span></code> file for each used theme:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">html_theme</span> <span class="o">==</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">:</span>
+    <span class="n">html_css_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;css/custom_rtd.css&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="k">elif</span> <span class="n">html_theme</span> <span class="o">==</span> <span class="s1">&#39;nature&#39;</span><span class="p">:</span>
+    <span class="n">html_css_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;css/custom_nature.css&quot;</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Make sure, the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> contains the variable definition to support custom styling:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
+<span class="n">html_css_files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;css/custom.css&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>In your <code class="docutils literal notranslate"><span class="pre">source/_static/css/custom.css</span></code> file, add the following content:</p>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">waiting</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#e7ffc2</span><span class="n">ff</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">waiting</span><span class="w"> </span><span class="nt">p</span><span class="p">.</span><span class="nc">admonition-title</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#7eab48</span><span class="n">ff</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">waiting</span><span class="w"> </span><span class="nt">p</span><span class="p">.</span><span class="nc">admonition-title</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\2615   &quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The style is applied after at the next <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code> run.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="roles.html" class="btn btn-neutral float-left" title="Custom Roles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="custom_class_style.html" class="btn btn-neutral float-right" title="Create selective custom style using classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 17, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

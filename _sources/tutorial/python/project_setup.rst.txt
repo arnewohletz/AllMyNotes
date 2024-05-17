@@ -84,7 +84,7 @@ https://cookiecutter.readthedocs.io/en/1.7.2/usage.html#usage to clone the templ
 make adaptions on ``cookiecutter.json``.
 
 There is already an adapted version of this template available at
-https://github.com/horsewithnoname1985/my-cookiecutter-pypackage, which we use in
+https://github.com/arnewohletz/my-cookiecutter-pypackage, which we use in
 this tutorial.
 
 The template sets up a `makefile <https://en.wikipedia.org/wiki/Make_(software)>`_, which

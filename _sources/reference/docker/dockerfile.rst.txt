@@ -64,7 +64,7 @@ Example Dockerfile (contains various incoherent statements only, cannot be run):
     predefined environment variable ``LD_LIBRARY_PATH`` (the variable contains directories,
     which contain shared libraries, to be searched before using the default directories)
 
-.. _Parser directive: https://docs.docker.com/engine/reference/builder/#parser-directives
+.. _Parser directive: https://docs.docker.com/reference/dockerfile/#parser-directives
 .. _Dockerfile frontend: https://docs.docker.com/build/dockerfile/frontend/#dockerfile-frontend
-.. _Here-Document: https://docs.docker.com/engine/reference/builder/#here-documents
-.. _environment variable: https://docs.docker.com/engine/reference/builder/#env
+.. _Here-Document: https://docs.docker.com/reference/dockerfile/#here-documents
+.. _environment variable: https://docs.docker.com/reference/dockerfile/#env

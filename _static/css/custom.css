@@ -21,16 +21,25 @@
 
 /* Color styles
 ** ------------
-** must stay outside of .rst-content to allow override by Dark Reader */
+** most rules must stay outside of .rst-content to allow override by Dark Reader */
 
 .highlight { background: #d5d5d5; }                                             /* code and prompt windows background */
 div.nboutput.container div.output_area .highlight { background: #d0ffaeff; }    /* nbsphinx cell output background */
 
 /* Custom Admonitions */
+/* .. design-principle:: */
 .design-principle .admonition-title { background: hotpink; }
+/* .. pattern-definition:: */
 .pattern-definition .admonition-title { background: forestgreen; }
+/* .. problem:: */
 .problem .admonition-title { background: #ff9999; }
-.problem .admonition-title::before { content: ""; }                           /* use custom warning element */
+.problem .admonition-title::before { content: ""; }                            /* prepend custom warning element */
+/* .. waiting:: */
+.rst-content {
+    div.admonition.waiting { background: #e7ffc2ff; }
+    div.admonition.waiting p.admonition-title { background: #7eab48ff; }
+    div.admonition.waiting p.admonition-title::before { content: "\2615   "; }  /* prepend coffee symbol */
+}
 
 /* Custom foreground colors */
 .gfg { color: #2eb82e; }                    /* green foreground */
