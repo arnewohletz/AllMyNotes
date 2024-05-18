@@ -1,7 +1,11 @@
 from docutils.parsers.rst.directives.admonitions import BaseAdmonition
 from docutils.nodes import Admonition, Element
 from sphinx.application import Sphinx
-from sphinx.util.typing import ExtensionMetadata
+
+try:
+    from sphinx.util.typing import ExtensionMetadata
+except ImportError:
+    ExtensionMetadata = 'ExtensionMetadataType'   # Sphinx <7.3
 
 
 class waiting(Admonition, Element):
