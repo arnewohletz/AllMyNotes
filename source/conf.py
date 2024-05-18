@@ -4,25 +4,17 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Fix Sphinx 4.0+ deprecation of sphinx.util.osutil.ENOENT ----------------
-# from: https://github.com/mgaitan/sphinxcontrib-mermaid/issues/72#issuecomment-835822975
-
-# import errno
-# import sphinx.util.osutil
-# sphinx.util.osutil.ENOENT = errno.ENOENT
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
+
 import os
 import sys
 import locale
 
 sys.path.insert(0, os.path.abspath('.') + '/_ext')
-
 
 # -- Project information -----------------------------------------------------
 
@@ -33,13 +25,12 @@ version = 'stable'
 
 # -- General configuration ---------------------------------------------------
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
+# if both 'jupyter_sphinx' and 'sphinxcontrib.mermaid' are listed also requires
+# the 'fix_mermaid_jupyter_conflict' extension (found in source/_ext directory)
 extensions = [
     'fix_docsearch_not_found_error',
     'fix_mermaid_jupyter_conflict',
-    'jupyter_sphinx', # combined with sphinxcontrib.mermaid requires 'fix_mermaid_jupyter_conflict'
+    'jupyter_sphinx',
     'nbsphinx',
     'sphinx-prompt',
     'sphinx_copybutton',
@@ -56,28 +47,12 @@ extensions = [
     'waiting_admonition'
 ]
 
-# Bibtex Bibfiles
-bibtex_bibfiles = ['refs.bib']
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-# exclude_patterns = []
+exclude_patterns = []
 
-docsearch_app_id = 'WOEM7FVORC'
-docsearch_api_key = '6dbea932bf661e0b80a33bd99d184f75'
-docsearch_index_name = 'arnewohletzio'
-
-jupyter_sphinx_thebelab_config = {
-    'requestKernel': True,
-    'binderOptions': {
-        'repo': "binder-examples/requirements",
-    },
-}
-
+# linkcheck config
 linkcheck_anchors = False
 linkcheck_ignore = [
     ".*/_static/",
@@ -90,11 +65,42 @@ linkcheck_ignore = [
     "https://linux.die.net/man/8/update-alternatives",
     "https://mkyong.com",
     "https://prosupport.logi.com/",
-    "https://treyhunner.com/2019/06/loop-better-a-deeper-look-at-iteration-in-python",
+    "https://treyhunner.com/",
     "https://zdoom.org/",
 ]
 
 pygments_style = "default"
+
+# -- Extension configuration -------------------------------------------------
+
+# sphinx-docsearch
+docsearch_app_id = 'WOEM7FVORC'
+docsearch_api_key = '6dbea932bf661e0b80a33bd99d184f75'
+docsearch_index_name = 'arnewohletzio'
+
+# jupyter_sphinx
+jupyter_sphinx_thebelab_config = {
+    'requestKernel': True,
+    'binderOptions': {
+        'repo': "binder-examples/requirements",
+    },
+}
+
+# sphinxcontrib.bibtex
+bibtex_bibfiles = ['refs.bib']
+
+# nbsphinx
+nbsphinx_epilog = r"""
+.. footbibliography::
+"""
+
+# sphinx_gitstamp
+try:
+    locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
+except locale.Error:
+    locale.setlocale(locale.LC_TIME, '')
+
+gitstamp_fmt = "%b %d, %Y"   # Date format for git timestamps
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -106,6 +112,16 @@ html_theme_options = {
     'logo_only': True,
     'navigation_depth': 5,
 }
+html_favicon = "_static/img/favicon.png"
+html_logo = "_static/img/logo.png"
+
+# Custom CSS files
+html_css_files = [
+    'css/custom.css',
+]
+
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ['_templates']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -117,26 +133,9 @@ html_static_path = ['_static',
                     'reference/python/_file',
                     'reference/python/cheat_sheets/_file',
                     ]
-html_css_files = [
-    'css/custom.css',
-]
-html_favicon = "_static/img/favicon.png"
-html_logo = "_static/img/logo.png"
 
-# Date format for git timestamps
-try:
-    locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
-except locale.Error:
-    locale.setlocale(locale.LC_TIME, '')
-
-gitstamp_fmt = "%b %d, %Y"
-
-# nbsphinx
-nbsphinx_epilog = r"""
-.. footbibliography::
-"""
-
-# Add custom role directives globally
+# -- rst_prolog reStructuredText string --------------------------------------
+#  included at the beginning of every source file
 rst_prolog = """
 .. role:: python(code)
     :language: python
