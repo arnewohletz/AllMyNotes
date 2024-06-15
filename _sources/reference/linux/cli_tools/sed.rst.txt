@@ -22,3 +22,11 @@ Update value in file
 .. code-block::
 
     sed -i "s/[pattern]/[replacement]/g <filename>"
+
+.. hint::
+
+    For macOS, use the following pattern for the in-place replacement:
+
+    .. code-block::
+
+        sed -i "" "s/[pattern]/[replacement]/g <filename>"
