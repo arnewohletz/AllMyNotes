@@ -7,11 +7,11 @@ Create a PlantUML class diagram
 .. prompt:: bash
 
     pyreverse -o plantuml --module-names yes -s 1 -d my/output/dir \
-    path/to/module_A.py path/to/module_B.py ... \
+    path/to/module_A.py path/to/module_B.py ... && \
     sed -i "" "s/set namespaceSeparator none/set namespaceSeparator ./g" my/output/dir/classes.plantuml
 
 ``-o plantuml``
-    Generate the UML diagram in PlantUML format (*.plantuml)
+    Generate the UML diagram in PlantUML format (\*.plantuml)
 
 ``--module-names yes``
     Embed classes inside the module, they are located in
