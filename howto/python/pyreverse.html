@@ -156,10 +156,10 @@ span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">pyreverse<span class="w"> </span>-o<span class="w"> </span>plantuml<span class="w"> </span>--module-names<span class="w"> </span>yes<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span><span class="w"> </span>-d<span class="w"> </span>my/output/dir<span class="w"> </span><span class="se">\</span>
-path/to/module_A.py<span class="w"> </span>path/to/module_B.py<span class="w"> </span>...<span class="w"> </span><span class="se">\</span>
+path/to/module_A.py<span class="w"> </span>path/to/module_B.py<span class="w"> </span>...<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;s/set namespaceSeparator none/set namespaceSeparator ./g&quot;</span><span class="w"> </span>my/output/dir/classes.plantuml</span>
 </pre></div></div><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">plantuml</span></code></dt><dd><p>Generate the UML diagram in PlantUML format (<a href="#id1"><span class="problematic" id="id2">*</span></a>.plantuml)</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">plantuml</span></code></dt><dd><p>Generate the UML diagram in PlantUML format (*.plantuml)</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">--module-names</span> <span class="pre">yes</span></code></dt><dd><p>Embed classes inside the module, they are located in</p>
 </dd>
