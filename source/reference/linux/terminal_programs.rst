@@ -1,5 +1,5 @@
-Important Terminal Programs :footcite:p:`apfelboeck22_terminal_guide` :footcite:p:`apfelboeck22_linux_tabellen`
-===============================================================================================================
+Important Terminal Programs :footcite:p:`apfelboeck22_terminal_guide` :footcite:p:`apfelboeck22_linux_tabellen` :footcite:p:`apfelboeck24_terminal_guide`
+=========================================================================================================================================================
 Files
 -----
 .. csv-table:: Files
@@ -13,6 +13,15 @@ System
     :file: _file/commands/system.csv
     :header-rows: 1
     :widths: 50,60
+
+System with systemd
+-------------------
+.. csv-table:: System with `systemd`_
+    :file: _file/commands/systemd.csv
+    :header-rows: 1
+    :widths: 50, 60
+
+.. _systemd: https://en.wikipedia.org/wiki/Systemd
 
 Directories
 -----------
