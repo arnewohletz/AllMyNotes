@@ -99,9 +99,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes.html">Kubectl</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Important Terminal Programs  </a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Important Terminal Programs   </a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#system">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-with-systemd">System with systemd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#directories">Directories</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#drives">Drives</a></li>
@@ -146,7 +147,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
-      <li class="breadcrumb-item active">Important Terminal Programs  </li>
+      <li class="breadcrumb-item active">Important Terminal Programs   </li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/linux/terminal_programs.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -157,11 +158,11 @@
            <div itemprop="articleBody">
              
   <section id="important-terminal-programs">
-<h1>Important Terminal Programs <a class="footnote-reference brackets" href="#footcite-apfelboeck22-terminal-guide" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-apfelboeck22-linux-tabellen" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><a class="headerlink" href="#important-terminal-programs" title="Link to this heading"></a></h1>
+<h1>Important Terminal Programs <a class="footnote-reference brackets" href="#footcite-apfelboeck22-terminal-guide" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-apfelboeck22-linux-tabellen" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#footcite-apfelboeck24-terminal-guide" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a><a class="headerlink" href="#important-terminal-programs" title="Link to this heading"></a></h1>
 <section id="files">
 <h2>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Files</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Files</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -173,7 +174,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>cat / head / tail</p></td>
-<td><p>text viewer</p></td>
+<td><p>text viewer: show all / first rows / last rows</p></td>
 </tr>
 <tr class="row-odd"><td><p>chmod</p></td>
 <td><p>Show / edit access rights</p></td>
@@ -188,33 +189,51 @@
 <td><p>Get exact file type</p></td>
 </tr>
 <tr class="row-odd"><td><p>find</p></td>
-<td><p>Search for any file attribute</p></td>
+<td><p>Search for any file attribut</p></td>
 </tr>
-<tr class="row-even"><td><p>ln</p></td>
+<tr class="row-even"><td><p>less / more</p></td>
+<td><p>text viewer: page-by-page display</p></td>
+</tr>
+<tr class="row-odd"><td><p>ln</p></td>
 <td><p>Create soft and hard links for files and directories</p></td>
 </tr>
-<tr class="row-odd"><td><p>locate</p></td>
+<tr class="row-even"><td><p>locate</p></td>
 <td><p>Index search for file names</p></td>
 </tr>
-<tr class="row-even"><td><p>ls</p></td>
+<tr class="row-odd"><td><p>ls</p></td>
 <td><p>List directory content</p></td>
 </tr>
-<tr class="row-odd"><td><p>mv</p></td>
+<tr class="row-even"><td><p>md5sum</p></td>
+<td><p>Determine checksum</p></td>
+</tr>
+<tr class="row-odd"><td><p>mimetype</p></td>
+<td><p>Determine file type</p></td>
+</tr>
+<tr class="row-even"><td><p>mv</p></td>
 <td><p>Move / rename files</p></td>
 </tr>
-<tr class="row-even"><td><p>rdfind</p></td>
+<tr class="row-odd"><td><p>rdfind</p></td>
 <td><p>Find / edit / link file duplicates</p></td>
 </tr>
-<tr class="row-odd"><td><p>rm</p></td>
+<tr class="row-even"><td><p>rm</p></td>
 <td><p>Remove files and directories</p></td>
+</tr>
+<tr class="row-odd"><td><p>shred / wipe</p></td>
+<td><p>Save delete file</p></td>
+</tr>
+<tr class="row-even"><td><p>split</p></td>
+<td><p>Split file in smaller parts</p></td>
+</tr>
+<tr class="row-odd"><td><p>touch</p></td>
+<td><p>Create new file</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="system">
 <h2>System<a class="headerlink" href="#system" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">System</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">System</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 45.5%" />
 <col style="width: 54.5%" />
@@ -249,34 +268,93 @@
 <tr class="row-odd"><td><p>neofetch</p></td>
 <td><p>Linux Mint only: get system data like system, hostname, kernel, uptime, CPU, GPU, RAM</p></td>
 </tr>
-<tr class="row-even"><td><p>shutdown / reboot</p></td>
+<tr class="row-even"><td><p>rtcwake</p></td>
+<td><p>Enter a system sleep state until specified wakeup time</p></td>
+</tr>
+<tr class="row-odd"><td><p>shutdown / reboot</p></td>
 <td><p>System shut down and restart</p></td>
 </tr>
-<tr class="row-odd"><td><p>service / systmctl</p></td>
+<tr class="row-even"><td><p>service / systmctl</p></td>
 <td><p>Control active and deactivated services (<cite>systemctl</cite> is preferred on Ubuntu-like systems)</p></td>
 </tr>
-<tr class="row-even"><td><p>sysctl</p></td>
+<tr class="row-odd"><td><p>sysctl</p></td>
 <td><p>Control Kernel-Parameters</p></td>
 </tr>
-<tr class="row-odd"><td><p>uname</p></td>
+<tr class="row-even"><td><p>uname</p></td>
 <td><p>System &amp; Kernel short info</p></td>
 </tr>
-<tr class="row-even"><td><p>uptime</p></td>
+<tr class="row-odd"><td><p>uptime</p></td>
 <td><p>Get system runtime</p></td>
 </tr>
-<tr class="row-odd"><td><p>whereis</p></td>
+<tr class="row-even"><td><p>whereis</p></td>
 <td><p>Get program path</p></td>
 </tr>
-<tr class="row-even"><td><p>which</p></td>
+<tr class="row-odd"><td><p>which</p></td>
 <td><p>Get program path</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-with-systemd">
+<h2>System with systemd<a class="headerlink" href="#system-with-systemd" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">System with <a class="reference external" href="https://en.wikipedia.org/wiki/Systemd">systemd</a></span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 45.5%" />
+<col style="width: 54.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Short description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bootctl</p></td>
+<td><p>Detailed boot info</p></td>
+</tr>
+<tr class="row-odd"><td><p>hostnamectl</p></td>
+<td><p>Show and change computer name</p></td>
+</tr>
+<tr class="row-even"><td><p>journalctl</p></td>
+<td><p>Print log entries from the systemd journal</p></td>
+</tr>
+<tr class="row-odd"><td><p>localectl</p></td>
+<td><p>Show and change system language</p></td>
+</tr>
+<tr class="row-even"><td><p>loginctl</p></td>
+<td><p>Show/end logins and sessions</p></td>
+</tr>
+<tr class="row-odd"><td><p>networkctl</p></td>
+<td><p>Manage network adapters, IPs and MAC addresses</p></td>
+</tr>
+<tr class="row-even"><td><p>resolvectl</p></td>
+<td><p>Resolve domain names, IPV4 and IPv6 addresses, DNS resource records and services introspect, and reconfigure the DNS resolver</p></td>
+</tr>
+<tr class="row-odd"><td><p>systemctl</p></td>
+<td><p>Control tool for services</p></td>
+</tr>
+<tr class="row-even"><td><p>timedatectl</p></td>
+<td><p>Show/change time and time zone</p></td>
+</tr>
+<tr class="row-odd"><td><p>systemd-analyze</p></td>
+<td><p>Show exact time for system start</p></td>
+</tr>
+<tr class="row-even"><td><p>systemd-cgtop</p></td>
+<td><p>CPU and RAM usage of system services</p></td>
+</tr>
+<tr class="row-odd"><td><p>sytemd-mount</p></td>
+<td><p>Show/create mount points</p></td>
+</tr>
+<tr class="row-even"><td><p>systemd-path</p></td>
+<td><p>Show detailed commented system paths</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="directories">
 <h2>Directories<a class="headerlink" href="#directories" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Directories</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Directories</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -299,22 +377,22 @@
 <tr class="row-odd"><td><p>rmdir</p></td>
 <td><p>Remove directory (only if empty)</p></td>
 </tr>
-<tr class="row-even"><td><p>tree</p></td>
-<td><p>Directory hierarchy and file tree display</p></td>
-</tr>
-<tr class="row-odd"><td><p>rsync</p></td>
+<tr class="row-even"><td><p>rsync</p></td>
 <td><p>Backups &amp; Synchronization</p></td>
 </tr>
-<tr class="row-even"><td><p>tar</p></td>
+<tr class="row-odd"><td><p>tar</p></td>
 <td><p>Packer &amp; archiver</p></td>
+</tr>
+<tr class="row-even"><td><p>tree</p></td>
+<td><p>Directory hierarchy and file tree display</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="hardware">
 <h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Hardware</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Hardware</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -334,17 +412,23 @@
 <tr class="row-even"><td><p>free</p></td>
 <td><p>Storage occupancy</p></td>
 </tr>
-<tr class="row-odd"><td><p>hwinfo</p></td>
+<tr class="row-odd"><td><p>hardinfo</p></td>
+<td><p>Infotool (graphical &amp; non-standard)</p></td>
+</tr>
+<tr class="row-even"><td><p>hwinfo</p></td>
 <td><p>Hardware info</p></td>
 </tr>
-<tr class="row-even"><td><p>lsblk</p></td>
+<tr class="row-odd"><td><p>lsblk</p></td>
 <td><p>Attached devices info</p></td>
 </tr>
-<tr class="row-odd"><td><p>lscpu</p></td>
+<tr class="row-even"><td><p>lscpu</p></td>
 <td><p>CPU info</p></td>
 </tr>
-<tr class="row-even"><td><p>lshw</p></td>
+<tr class="row-odd"><td><p>lshw</p></td>
 <td><p>All hardware info</p></td>
+</tr>
+<tr class="row-even"><td><p>lsmod</p></td>
+<td><p>Show kernel modules (drivers)</p></td>
 </tr>
 <tr class="row-odd"><td><p>lspci</p></td>
 <td><p>PCI devices info</p></td>
@@ -352,19 +436,19 @@
 <tr class="row-even"><td><p>lsusb</p></td>
 <td><p>USB devices info</p></td>
 </tr>
-<tr class="row-odd"><td><p>sysbench</p></td>
-<td><p>CPU/RAM/Volume test</p></td>
+<tr class="row-odd"><td><p>modprobe</p></td>
+<td><p>Activate/Deactivate Kernel modules (drivers)</p></td>
 </tr>
-<tr class="row-even"><td><p>hardinfo</p></td>
-<td><p>Infotool (graphical &amp; non-standard)</p></td>
+<tr class="row-even"><td><p>sysbench</p></td>
+<td><p>CPU/RAM/Volume test</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="drives">
 <h2>Drives<a class="headerlink" href="#drives" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Drives</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Drives</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
@@ -410,8 +494,8 @@
 </section>
 <section id="processes-tasks">
 <h2>Processes &amp; Tasks<a class="headerlink" href="#processes-tasks" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Processes / Tasks</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Processes / Tasks</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -458,10 +542,13 @@
 <tr class="row-odd"><td><p>top</p></td>
 <td><p>Task info and control</p></td>
 </tr>
-<tr class="row-even"><td><p>which</p></td>
+<tr class="row-even"><td><p>watch</p></td>
+<td><p>Execute a program periodically showing output fullscreen</p></td>
+</tr>
+<tr class="row-odd"><td><p>which</p></td>
 <td><p>Get path of queried application</p></td>
 </tr>
-<tr class="row-odd"><td><p>xprop</p></td>
+<tr class="row-even"><td><p>xprop</p></td>
 <td><p>Get info about UI applications</p></td>
 </tr>
 </tbody>
@@ -469,8 +556,8 @@
 </section>
 <section id="user-accounts">
 <h2>User Accounts<a class="headerlink" href="#user-accounts" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-text">User Accounts</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">User Accounts</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
@@ -510,8 +597,8 @@
 </section>
 <section id="network-web">
 <h2>Network &amp; Web<a class="headerlink" href="#network-web" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-text">Network / Web</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Network / Web</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -522,70 +609,79 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>curl</p></td>
+<tr class="row-even"><td><p>arp</p></td>
+<td><p>Show network devices with MAC address</p></td>
+</tr>
+<tr class="row-odd"><td><p>curl</p></td>
 <td><p>Download and upload file(s)</p></td>
 </tr>
-<tr class="row-odd"><td><p>dig</p></td>
+<tr class="row-even"><td><p>dig</p></td>
 <td><p>Get info about internet domains according to DNS name server</p></td>
 </tr>
-<tr class="row-even"><td><p>ftp</p></td>
+<tr class="row-odd"><td><p>ftp</p></td>
 <td><p>Access FTP server</p></td>
 </tr>
-<tr class="row-odd"><td><p>ifconfig</p></td>
+<tr class="row-even"><td><p>ifconfig</p></td>
 <td><p>Network info (outdated - now: ip)</p></td>
 </tr>
-<tr class="row-even"><td><p>ip</p></td>
+<tr class="row-odd"><td><p>ip</p></td>
 <td><p>Network adapter &amp; IP info</p></td>
 </tr>
-<tr class="row-odd"><td><p>iwconfig</p></td>
+<tr class="row-even"><td><p>iwconfig</p></td>
 <td><p>Connect to Wi-Fi (requires connection found via <code class="docutils literal notranslate"><span class="pre">iwlist</span></code>)</p></td>
 </tr>
-<tr class="row-even"><td><p>iwlist</p></td>
+<tr class="row-odd"><td><p>iwlist</p></td>
 <td><p>Search for Wi-Fi connections</p></td>
 </tr>
-<tr class="row-odd"><td><p>net</p></td>
+<tr class="row-even"><td><p>net</p></td>
 <td><p>User level share info</p></td>
 </tr>
-<tr class="row-even"><td><p>net usershare</p></td>
+<tr class="row-odd"><td><p>net usershare</p></td>
 <td><p>Import sub-command for samba share approvals</p></td>
+</tr>
+<tr class="row-even"><td><p>nload</p></td>
+<td><p>Network analysis</p></td>
 </tr>
 <tr class="row-odd"><td><p>nmap</p></td>
 <td><p>LAN &amp; WAN port analysis</p></td>
 </tr>
-<tr class="row-even"><td><p>ping</p></td>
+<tr class="row-even"><td><p>nmcli</p></td>
+<td><p>Terminal console of the network manager</p></td>
+</tr>
+<tr class="row-odd"><td><p>ping</p></td>
 <td><p>Test device network availability</p></td>
 </tr>
-<tr class="row-odd"><td><p>rfkill</p></td>
+<tr class="row-even"><td><p>rfkill</p></td>
 <td><p>Display, activate or deactivate all wireless adapters (Bluetooth, Wi-Fi, UMTS)</p></td>
 </tr>
-<tr class="row-even"><td><p>route</p></td>
+<tr class="row-odd"><td><p>route</p></td>
 <td><p>Display system routing table and Gateway IP</p></td>
 </tr>
-<tr class="row-odd"><td><p>scp</p></td>
+<tr class="row-even"><td><p>scp</p></td>
 <td><p>Copy data from/onto SSH server</p></td>
 </tr>
-<tr class="row-even"><td><p>smbpasswd</p></td>
-<td><p>Manager Samba users</p></td>
+<tr class="row-odd"><td><p>smbpasswd</p></td>
+<td><p>Manage Samba users</p></td>
 </tr>
-<tr class="row-odd"><td><p>sftp</p></td>
+<tr class="row-even"><td><p>sftp</p></td>
 <td><p>Copy data from/onto SSH server</p></td>
 </tr>
-<tr class="row-even"><td><p>ssh</p></td>
+<tr class="row-odd"><td><p>ssh</p></td>
 <td><p>SSH remote access (client)</p></td>
 </tr>
-<tr class="row-odd"><td><p>ssh-copy-id</p></td>
+<tr class="row-even"><td><p>ssh-copy-id</p></td>
 <td><p>SSH copy access key (client)</p></td>
 </tr>
-<tr class="row-even"><td><p>ssh-keygen</p></td>
+<tr class="row-odd"><td><p>ssh-keygen</p></td>
 <td><p>SSH key generator (client)</p></td>
 </tr>
-<tr class="row-odd"><td><p>traceroute</p></td>
+<tr class="row-even"><td><p>traceroute</p></td>
 <td><p>Track a IP-packages from gateway to target</p></td>
 </tr>
-<tr class="row-even"><td><p>wget</p></td>
+<tr class="row-odd"><td><p>wget</p></td>
 <td><p>Download file(s) from web servers</p></td>
 </tr>
-<tr class="row-odd"><td><p>whois</p></td>
+<tr class="row-even"><td><p>whois</p></td>
 <td><p>Internet domain name info</p></td>
 </tr>
 </tbody>
@@ -593,8 +689,8 @@
 </section>
 <section id="string-filter">
 <h2>String &amp; Filter<a class="headerlink" href="#string-filter" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id12">
-<caption><span class="caption-text">Strings / Filter</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Strings / Filter</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -620,13 +716,16 @@
 <tr class="row-even"><td><p>sort</p></td>
 <td><p>Sort terminal output</p></td>
 </tr>
+<tr class="row-odd"><td><p>xargs</p></td>
+<td><p>Pass in arguments from standard input (common in pipes)</p></td>
+</tr>
 </tbody>
 </table>
 </section>
 <section id="terminal">
 <h2>Terminal<a class="headerlink" href="#terminal" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id13">
-<caption><span class="caption-text">Terminal</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Terminal</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -649,16 +748,31 @@
 <tr class="row-odd"><td><p>cdpath</p></td>
 <td><p>Extended directory navigation</p></td>
 </tr>
+<tr class="row-even"><td><p>chsh</p></td>
+<td><p>Change default login-shell</p></td>
+</tr>
+<tr class="row-odd"><td><p>dircolors</p></td>
+<td><p>Change ls-colors</p></td>
+</tr>
+<tr class="row-even"><td><p>exec</p></td>
+<td><p>Launch sub-shell</p></td>
+</tr>
+<tr class="row-odd"><td><p>exit</p></td>
+<td><p>Quit shell</p></td>
+</tr>
 <tr class="row-even"><td><p>history</p></td>
 <td><p>Show command history</p></td>
 </tr>
 <tr class="row-odd"><td><p>mc</p></td>
 <td><p>Terminal file manager (Midnight Commander)</p></td>
 </tr>
-<tr class="row-even"><td><p>shopt</p></td>
+<tr class="row-even"><td><p>nohup</p></td>
+<td><p>Make command ignore hang-up (e.g. exit) (no-hang-up)</p></td>
+</tr>
+<tr class="row-odd"><td><p>shopt</p></td>
 <td><p>Set shell option</p></td>
 </tr>
-<tr class="row-odd"><td><p>whatis</p></td>
+<tr class="row-even"><td><p>whatis</p></td>
 <td><p>Command description</p></td>
 </tr>
 </tbody>
@@ -666,8 +780,8 @@
 </section>
 <section id="software-packages">
 <h2>Software &amp; Packages<a class="headerlink" href="#software-packages" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-text">Software / Packages</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">Software / Packages</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 70.0%" />
@@ -684,8 +798,32 @@
 <tr class="row-odd"><td><p>apt-cache search</p></td>
 <td><p>Searches package sources for software package names or descriptions</p></td>
 </tr>
-<tr class="row-even"><td><p>dpkg-query</p></td>
+<tr class="row-even"><td><p>dpkg</p></td>
+<td><p>Software management and installation (Debian)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dpkg-query</p></td>
 <td><p>Delivers a sorted inventory about all installed software including a short description and version</p></td>
+</tr>
+<tr class="row-even"><td><p>dpkg-reconfigure</p></td>
+<td><p>Reconfigure software components</p></td>
+</tr>
+<tr class="row-odd"><td><p>flatpak / snap</p></td>
+<td><p>Control Flatpak containers</p></td>
+</tr>
+<tr class="row-even"><td><p>ldd</p></td>
+<td><p>Print shared object dependencies</p></td>
+</tr>
+<tr class="row-odd"><td><p>man</p></td>
+<td><p>An interface to the system reference manuals</p></td>
+</tr>
+<tr class="row-even"><td><p>pacman</p></td>
+<td><p>Package management, installation, updates (Arch)</p></td>
+</tr>
+<tr class="row-odd"><td><p>snap</p></td>
+<td><p>Control Snap containers (similar to flatpak / snap)</p></td>
+</tr>
+<tr class="row-even"><td><p>yum</p></td>
+<td><p>Package management, installation, updates (RPM)</p></td>
 </tr>
 </tbody>
 </table>
@@ -769,7 +907,7 @@
 </tr>
 </tbody>
 </table>
-<div class="docutils container" id="id3">
+<div class="docutils container" id="id4">
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="footcite-apfelboeck22-terminal-guide" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -778,6 +916,10 @@
 <aside class="footnote brackets" id="footcite-apfelboeck22-linux-tabellen" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>Herrmann Apfelböck. Linux in tabellen. <em>Linuxwelt Sonderheft</em>, 3/2022:84–97, 2022.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-apfelboeck24-terminal-guide" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Herrmann Apfelböck. Der terminal-guide. <em>Linuxwelt</em>, 4/2024:20–23, 2024.</p>
 </aside>
 </aside>
 </div>
@@ -797,7 +939,7 @@
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jun 18, 2024</span>.
+        <span class="update_date">Jun 20, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
