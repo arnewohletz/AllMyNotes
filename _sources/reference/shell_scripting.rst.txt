@@ -202,7 +202,8 @@ Directory stack
 ---------------
 The directory stack is known as a “last-in, first-out” or LIFO structure. Putting
 something on the stack is referred to as *pushing*, taking something off the stack
-is called *popping*.
+is called *popping*. The current working directory is always on top of the
+directory stack.
 
 *Pushing* and *popping* allows to move back to previous directories along the
 directory stack.
@@ -240,6 +241,38 @@ directory stack.
 
         # Directory stack
         $(pwd)      # directory where pushd was initially called from
+
+``dirs``
+
+    Prints the current directory stack.
+
+    .. prompt:: bash
+
+        dirs
+
+    It supports the following options:
+
+    +--------+--------------------------------------------------------+
+    | Option | Description                                            |
+    +========+========================================================+
+    | -c     | Clears the directory stack                             |
+    +--------+--------------------------------------------------------+
+    | -l     | Print full path                                        |
+    +--------+--------------------------------------------------------+
+    | -p     | One directory per line                                 |
+    +--------+--------------------------------------------------------+
+    | -v     | Prints the directory stack with line numbers           |
+    +--------+--------------------------------------------------------+
+    | +N     | | Displays the Nth directory (counting from the left)  |
+    |        | | of the directory stack, starting with zero.          |
+    +--------+--------------------------------------------------------+
+    | -N     | | Displays the Nth directory (counting from the right) |
+    |        | | of the directory stack, starting with zero.          |
+    +--------+--------------------------------------------------------+
+
+    .. important::
+
+        ``+N`` and ``-N`` are not supported in Zsh.
 
 Flow controls
 -------------
@@ -791,6 +824,219 @@ Example:
 
 Arithmetic Variables and Assignment
 '''''''''''''''''''''''''''''''''''
+The ``let`` command allows for assigning the return value of a arithmetic
+expression to a variable:
 
-continue learning the bash shell page 150
+.. code-block:: bash
 
+    let intvar=expression
+
+The expression does **not** have to be written within a ``$((...))`` statement.
+
+.. code-block:: bash
+
+    # Examples
+    let x=2+5*10
+    echo $x
+    # output: 52
+
+Arithmetic for loops
+''''''''''''''''''''
+The arithmetic *for* loop is used to execute a set of statement based on ...
+
+.. code-block:: none
+
+    for (( initialisation ; ending condition ; update )) do
+        statements...
+    done
+
+The *initialisation* expressions must equal to *true* for the loop to be started
+(otherwise it is skipped). If it is entered, the *ending condition* is evaluated.
+If it is also *true*, the loop executes the *statements* and evaluates the *update*
+and repeats the cycle again. The cycle repeats up until the *ending condition*
+is *false* or the loop is exited via the *statements*.
+
+Example:
+
+    .. code-block:: bash
+
+        for (( i=1; i <= 12 ; i++ ))
+        do
+            for (( j=1 ; j <= 12 ; j++ ))
+            do
+                echo –ne "$(( j * i ))\t"
+            done
+
+            echo
+        done
+
+Array
+-----
+An array is a series of numerical indexed elements starting with the index 0.
+
+.. important::
+
+    In ``zsh`` shell, the index starts with ``1``, not ``0``.
+
+It is **initialized** as follows:
+
+.. code-block:: bash
+
+    names=(alice hatter duchess)
+
+The index for each value can be assigned during initialization and may gaps
+
+.. code-block:: bash
+
+    names_random_indices=([134]=alice [23]=hatter [1]=duchess)
+
+To create an empty array *names* use
+
+.. code-block:: bash
+
+    declare -a names
+
+.. hint::
+
+    Make the array read-only by also providing the ``-r`` option.
+
+To **reference** a single element within an array use
+
+.. code-block:: bash
+
+    echo $names
+
+To reference a value from within an array use the indices (the variables may be
+enclosed in ``{}`` brackets):
+
+.. code-block:: bash
+
+    echo $names[0]
+    # alice
+    echo $names[100]
+    # <empty> (as index 100 does not have any value)
+
+To reference all values from within an array use the ``@`` or ``*`` special indices
+
+.. code-block:: bash
+
+    echo $names[@]
+    # alice hatter duchess
+    echo ${names[*]}
+    # alice hatter duchess
+
+.. hint::
+
+    To find out the length of a array value, use the ``#`` operator:
+
+    .. code-block:: bash
+
+        echo ${#names[2]}
+        # 7 (for 'duchess')
+
+    To find out the amount of items in an array run:
+
+    .. code-block:: bash
+
+        echo ${#names[@]}
+
+To **assign** a value to an index of an array run
+
+.. code-block:: bash
+
+    names[<index>]=<value>
+
+If the index is already occupied, the value is overwritten.
+
+To **append** a value to the next free index use the ``+=`` assignment operator
+
+.. code-block:: bash
+
+    # append single element
+    names+=rabbit
+    echo $names
+    alice hatter duchess rabbit
+
+    # append multiple elements
+    names+=(tweedledee tweedledum)
+
+
+I/O Redirectors
+---------------
+A comprehensive list of redirectors (many are used by system programmers only):
+
++-------------+---------------------------------------------------------------------------+
+| Redirector  | Function                                                                  |
++=============+===========================================================================+
+| cmd1 | cmd2 | | Pipe; take standard output of *cmd1*                                    |
+|             | | as standard input to *cmd2*                                             |
++-------------+---------------------------------------------------------------------------+
+| > file      | Direct standard output to *file*                                          |
++-------------+---------------------------------------------------------------------------+
+| < file      | Take standard input from *file*                                           |
++-------------+---------------------------------------------------------------------------+
+| >> file     | | Direct standard output to *file*;                                       |
+|             | | append to *file* if it already exists                                   |
++-------------+---------------------------------------------------------------------------+
+| >|file      | Force standard output to *file* even if noclobber is set                  |
++-------------+---------------------------------------------------------------------------+
+| n>|file     | Force output to *file* from file descriptor *n* even if noclobber is set  |
++-------------+---------------------------------------------------------------------------+
+| <>file      | Use *file* as both standard input and standard output                     |
++-------------+---------------------------------------------------------------------------+
+| n<>file     | Use *file* as both input and output for file descriptor *n*               |
++-------------+---------------------------------------------------------------------------+
+| <<label     | Here-document; see text                                                   |
++-------------+---------------------------------------------------------------------------+
+| n>file      | Direct file descriptor *n* to file                                        |
++-------------+---------------------------------------------------------------------------+
+| n<file      | Take file descriptor *n* from file                                        |
++-------------+---------------------------------------------------------------------------+
+| n>>file     | Direct file descriptor *n* to file; append to *file* if it already exists |
++-------------+---------------------------------------------------------------------------+
+| n>&         | Duplicate standard output to file descriptor *n*                          |
++-------------+---------------------------------------------------------------------------+
+| n<&         | Duplicate standard input from file descriptor *n*                         |
++-------------+---------------------------------------------------------------------------+
+| n>&m        | File descriptor *n* is made to be a copy of the output file descriptor    |
++-------------+---------------------------------------------------------------------------+
+| n<&m        | File descriptor *n* is made to be a copy of the input file descriptor     |
++-------------+---------------------------------------------------------------------------+
+| &>file      | Directs standard output and standard error to *file*                      |
++-------------+---------------------------------------------------------------------------+
+| <&-         | Close the standard input                                                  |
++-------------+---------------------------------------------------------------------------+
+| >&-         | Close the standard output                                                 |
++-------------+---------------------------------------------------------------------------+
+| n>&-        | Close the output from file descriptor *n*                                 |
++-------------+---------------------------------------------------------------------------+
+| n<&-        | Close the input from file descriptor *n*                                  |
++-------------+---------------------------------------------------------------------------+
+| n>&word     | | If *n* is not specified, the standard output                            |
+|             | | (file descriptor 1) is used. If the digits in                           |
+|             | | *word* do not specify a file descriptor open for                        |
+|             | | output, a redirection error occurs. As a special                        |
+|             | | case, if *n* is omitted, and *word* does not expand                     |
+|             | | to one or more digits, the standard output and                          |
+|             | | standard error are redirected as described previously.                  |
++-------------+---------------------------------------------------------------------------+
+| n<&word     | | If *word* expands to one or more digits, the file                       |
+|             | | descriptor denoted by *n* is made to be a copy of                       |
+|             | | that file descriptor. If the digits in *word* do                        |
+|             | | not specify a file descriptor open for input,                           |
+|             | | a redirection error occurs. If *word* evaluates                         |
+|             | | to -, file descriptor *n* is closed. If *n* is not                      |
+|             | | specified, the standard input (file descriptor 0)                       |
+|             | | is used.                                                                |
++-------------+---------------------------------------------------------------------------+
+| n>&digit-   | | Moves the file descriptor *digit* to file descriptor                    |
+|             | | *n*, or the standard output (file descriptor 1)                         |
+|             | | if *n* is not specified                                                 |
++-------------+---------------------------------------------------------------------------+
+| n<&digit    | | Moves the file descriptor *digit* to file descriptor                    |
+|             | | *n*, or the standard input (file descriptor 0)                          |
+|             | | if *n* is not specified. *digit* is closed after                        |
+|             | | being duplicated to *n*.                                                |
++-------------+---------------------------------------------------------------------------+
+
+continue at page 163 of learning bash shell
