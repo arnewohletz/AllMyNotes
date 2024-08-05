@@ -73,6 +73,27 @@ pygments_style = "default"
 
 # -- Extension configuration -------------------------------------------------
 
+# sphinx-copybutton
+# ----- remove this later ----
+# copybutton_prompt_text = (r"span.prompt1:before \{|"
+#                           r"  content: \".*\"\;|"
+#                           r"\}|"
+#                           r"\(.*\) \$ |"
+#                           r"\(.*\) |"
+#                           r"\$|"
+#                           r"\>{3} "
+#                           )
+# -----------------------------
+copybutton_prompt_text = (r"\(.*\) \$ |"
+                          r"\(.*\) |"
+                          r"\$ |"
+                          r"\>{3} "
+                          )
+copybutton_prompt_is_regexp = True
+copybutton_only_copy_prompt_lines = True
+copybutton_copy_empty_lines = False
+copybutton_here_doc_delimiter = "EOT"
+
 # sphinx-docsearch
 docsearch_app_id = 'WOEM7FVORC'
 docsearch_api_key = '6dbea932bf661e0b80a33bd99d184f75'
