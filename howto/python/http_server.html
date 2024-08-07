@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -148,14 +148,14 @@
 <p>Python comes with a <a class="reference external" href="https://docs.python.org/3/library/http.server.html">http server module</a>, allowing to host web applications or
 a sphinx documentation for development purposes.</p>
 <p>To keep it running, move it to a separate <a class="reference external" href="https://www.gnu.org/software/screen/">screen</a> session named <em>http_server</em>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">screen<span class="w"> </span>-S<span class="w"> </span>http_server</span>
-</pre></div></div><p>Inside the new screen start the HTTP server via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span>--bind<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--directory<span class="w"> </span>~/my_sphinx_doc/build<span class="w"> </span><span class="m">31500</span></span>
-</pre></div></div><ul class="simple">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-S<span class="w"> </span>http_server
+</pre></div>
+</div>
+<p>Inside the new screen start the HTTP server via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span>--bind<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--directory<span class="w"> </span>~/my_sphinx_doc/build<span class="w"> </span><span class="m">31500</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">--bind</span></code> option sets the URL to localhost</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">--directory</span></code> option must point to the web application (usually
 where the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file resides)</p></li>
@@ -181,7 +181,7 @@ for more info.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -171,18 +171,16 @@ the latest version.</p>
 <li><p>Run these commands to make sure, all packages required for building Python from sources
 is available on the local system:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>update</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libncurses5-dev<span class="w"> </span>libncursesw5-dev<span class="w"> </span>libgdbm-dev<span class="w"> </span>libc6-dev</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>zlib1g-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>tk-dev</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libssl-dev<span class="w"> </span>openssl<span class="w"> </span>python-openssl</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libffi-dev<span class="w"> </span>wget</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libbz2-dev<span class="w"> </span>libreadline-dev<span class="w"> </span>llvm<span class="w"> </span>xz-utils<span class="w"> </span>liblzma-dev</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libncurses5-dev<span class="w"> </span>libncursesw5-dev<span class="w"> </span>libgdbm-dev<span class="w"> </span>libc6-dev
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>zlib1g-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>tk-dev
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libssl-dev<span class="w"> </span>openssl<span class="w"> </span>python-openssl
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libffi-dev<span class="w"> </span>wget
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libbz2-dev<span class="w"> </span>libreadline-dev<span class="w"> </span>llvm<span class="w"> </span>xz-utils<span class="w"> </span>liblzma-dev
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Open <a class="reference external" href="https://www.python.org">https://www.python.org</a>, select <em>Downloads / Source code</em> and select <em>Download
 XZ compressed source tarball</em> of the version you like to install</p>
@@ -190,27 +188,35 @@ XZ compressed source tarball</em> of the version you like to install</p>
 <div><div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Alternatively, you may download the file to the current directory via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">wget<span class="w"> </span>https://www.python.org/ftp/python/&lt;version&gt;/Python-&lt;version&gt;.tgz</span>
-</pre></div></div><p>where &lt;version&gt; is the Python version, you want to install (e.g. 3.9.4)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wget<span class="w"> </span>https://www.python.org/ftp/python/&lt;version&gt;/Python-&lt;version&gt;.tgz
+</pre></div>
+</div>
+<p>where &lt;version&gt; is the Python version, you want to install (e.g. 3.9.4)</p>
 </div>
 </div></blockquote>
 </li>
 <li><p>Extract the archive:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">tar<span class="w"> </span>xzf<span class="w"> </span>Python-&lt;version&gt;.tgz</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span>Python-&lt;version&gt;.tgz
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Create system dependent Makefile and other dependencies:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>Python-&lt;version&gt;</span>
-<span class="prompt1">sudo<span class="w"> </span>./configure<span class="w"> </span>--enable-optimizations</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Python-&lt;version&gt;
+$<span class="w"> </span>sudo<span class="w"> </span>./configure<span class="w"> </span>--enable-optimizations
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>After completion, run the installation (using alternative-installation to allow us install
 additional Python versions, as Ubuntu has a system default installed):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>make<span class="w"> </span>altinstall</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>altinstall
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Python binaries now reside in the <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code> directory, library files
 reside in <code class="docutils literal notranslate"><span class="pre">/usr/local/lib/</span></code>.</p></li>
@@ -234,8 +240,10 @@ have been set as default Python interpreter).</p></li>
 <li><p>Navigate into the installation files directory (e.g. <code class="docutils literal notranslate"><span class="pre">~/Downloads/Python-&lt;x.x.x&gt;</span></code>).</p></li>
 <li><p>Run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>make<span class="w"> </span>uninstall</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>uninstall
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </section>
@@ -255,18 +263,22 @@ to be used for it can be achieved by using the <a class="reference external" hre
 <ol class="arabic">
 <li><p>Add the system installations as alternative (here: 3.8 and 2.7):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python3<span class="w"> </span>python3<span class="w"> </span>/usr/bin/python3.8<span class="w"> </span><span class="m">1</span></span>
-<span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python2<span class="w"> </span>python2<span class="w"> </span>/usr/bin/python2.7<span class="w"> </span><span class="m">1</span></span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python3<span class="w"> </span>python3<span class="w"> </span>/usr/bin/python3.8<span class="w"> </span><span class="m">1</span>
+$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python2<span class="w"> </span>python2<span class="w"> </span>/usr/bin/python2.7<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Add the user installed installations as alternative (here: 2.7, 3.6, 3.7, 3.8 and 3.9):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python2.7<span class="w"> </span>python2<span class="w"> </span>/usr/local/bin/python2.7<span class="w"> </span><span class="m">2</span></span>
-<span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.6<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.6<span class="w"> </span><span class="m">2</span></span>
-<span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.7<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.7<span class="w"> </span><span class="m">2</span></span>
-<span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.8<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.8<span class="w"> </span><span class="m">2</span></span>
-<span class="prompt1">sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.9<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.9<span class="w"> </span><span class="m">2</span></span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python2.7<span class="w"> </span>python2<span class="w"> </span>/usr/local/bin/python2.7<span class="w"> </span><span class="m">2</span>
+$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.6<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.6<span class="w"> </span><span class="m">2</span>
+$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.7<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.7<span class="w"> </span><span class="m">2</span>
+$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.8<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.8<span class="w"> </span><span class="m">2</span>
+$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/local/bin/python3.9<span class="w"> </span>python3<span class="w"> </span>/usr/local/bin/python3.9<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>You may also define alternative for the general <code class="docutils literal notranslate"><span class="pre">python</span></code> command, by stating <code class="docutils literal notranslate"><span class="pre">python</span></code> instead
 of <code class="docutils literal notranslate"><span class="pre">python3</span></code> in the above commands.</p>
@@ -290,7 +302,7 @@ of <code class="docutils literal notranslate"><span class="pre">python3</span></
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

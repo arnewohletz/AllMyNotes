@@ -14,9 +14,9 @@ Additional reference: https://astrobiomike.github.io/unix/screen-intro
 
 Create and open a new screen
 ----------------------------
-.. prompt:: bash
+.. code-block:: bash
 
-    screen -S my_screen_session_name
+    $ screen -S my_screen_session_name
 
 Each screen receives a unique PID.
 
@@ -29,15 +29,15 @@ To switch back to the original window, type :kbd:`Ctrl + A` followed by a
 
 Original --> Screen (Re-attach)
 ```````````````````````````````
-.. prompt:: bash
+.. code-block:: bash
 
-    screen -r SCREEN_PID
+    $ screen -r SCREEN_PID
 
 List all screens
 ----------------
-.. prompt:: bash
+.. code-block:: bash
 
-    screen -ls
+    $ screen -ls
 
 This list all screen in the following manner::
 
@@ -53,8 +53,8 @@ To kill the currently attached screen, type :kbd:`Ctrl + A` followed by a
 
 Alternatively, while not being detached to any screen, kill a screen via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    screen -XS SCREEN_PID quit
+    $ screen -XS SCREEN_PID quit
 
 passing the that screen's SCREEN_PID.

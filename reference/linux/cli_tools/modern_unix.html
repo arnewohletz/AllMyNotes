@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -165,14 +165,14 @@
 <p><a class="reference external" href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></p>
 <p>An alternative for <code class="docutils literal notranslate"><span class="pre">cat</span></code>.</p>
 <p>Install via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>bat</span>
-</pre></div></div><p>Configure theme,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">bat<span class="w"> </span>--list-themes</span>
-</pre></div></div><p>Select a suitable theme, then add this line to your <code class="docutils literal notranslate"><span class="pre">~/.zprofile</span></code> or <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>bat
+</pre></div>
+</div>
+<p>Configure theme,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bat<span class="w"> </span>--list-themes
+</pre></div>
+</div>
+<p>Select a suitable theme, then add this line to your <code class="docutils literal notranslate"><span class="pre">~/.zprofile</span></code> or <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>
 (here using the <em>Coldark-Dark</em> theme, adjust to your theme):</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># bat
@@ -186,31 +186,41 @@ export BAT_THEME=&quot;Coldark-Dark&quot;
 <p><a class="reference external" href="https://github.com/eza-community/eza">https://github.com/eza-community/eza</a></p>
 <p>An alternative for <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
 <p>Install via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>eza</span>
-</pre></div></div><p>Display the contents of a directory with extended details, groups column and icons:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">eza<span class="w"> </span>-lg<span class="w"> </span>--icons</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>eza
+</pre></div>
+</div>
+<p>Display the contents of a directory with extended details, groups column and icons:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>eza<span class="w"> </span>-lg<span class="w"> </span>--icons
+</pre></div>
+</div>
+</section>
 <section id="lsd">
 <h2>  lsd<a class="headerlink" href="#lsd" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://github.com/lsd-rs/lsd">https://github.com/lsd-rs/lsd</a></p>
 <p>An alternative for <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
 <p>Install via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>lsd</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>lsd
+</pre></div>
+</div>
+</section>
 <section id="duf">
 <h2>   duf<a class="headerlink" href="#duf" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://github.com/muesli/duf">https://github.com/muesli/duf</a></p>
 <p>An alternative for <code class="docutils literal notranslate"><span class="pre">du</span></code></p>
 <p>Install via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>duf</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>duf
+</pre></div>
+</div>
+</section>
 <section id="df">
 <h2>df<a class="headerlink" href="#df" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://github.com/sharkdp/fd">https://github.com/sharkdp/fd</a></p>
 <p>An alternative for <code class="docutils literal notranslate"><span class="pre">find</span></code></p>
 <p>Install via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>fd</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>fd
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -226,7 +236,7 @@ export BAT_THEME=&quot;Coldark-Dark&quot;
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

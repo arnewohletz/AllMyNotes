@@ -23,36 +23,36 @@ Host documentation on localhost (with nginx)
     .. tabs::
         .. group-tab:: macOS
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                ln -s </path/to/my/application>/nginx.conf /usr/local/etc/nginx/init.d/<doc_project_name>.conf
+                $ ln -s </path/to/my/application>/nginx.conf /usr/local/etc/nginx/init.d/<doc_project_name>.conf
 
         .. group-tab:: Linux
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                ln -s </path/to/my/application>/nginx.conf /etc/nginx/sites-enabled/<doc_project_name>.conf
+                $ ln -s </path/to/my/application>/nginx.conf /etc/nginx/sites-enabled/<doc_project_name>.conf
 
 #. Restart nginx
 
     .. tabs::
         .. group-tab:: macOS
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                nginx -c /usr/local/etc/nginx/nginx.conf
+                $ nginx -c /usr/local/etc/nginx/nginx.conf
 
             or restart as brew service via
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                brew services restart nginx
+                $ brew services restart nginx
 
         .. group-tab:: Linux
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                nginx /etc/init.d/nginx restart
+                $ nginx /etc/init.d/nginx restart
 
 #. Open ``https://127.0.0.1:<PORT>``, using the port specified in your configuration, in your browser.
 
@@ -69,11 +69,11 @@ Deploy from branch
 #. Create a new, empty branch (:menuselection:`View all branches --> New branch`),
    named ``gh-pages`` and push it to the remote (here: ``origin``):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git switch --orphan gh-pages
-        git commit --allow-empty "initial commit"
-        git push origin gh-pages
+        $ git switch --orphan gh-pages
+        $ git commit --allow-empty "initial commit"
+        $ git push origin gh-pages
 
 #. Select :menuselection:`Actions --> New Workflow`. Here, select to *set up a workflow yourself*.
 #. A new file (default: ``main.yml``) is created under ``.github/workflows/`` and presented

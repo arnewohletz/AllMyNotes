@@ -5,46 +5,46 @@ Manage environments
 -------------------
 Create new environment
 ''''''''''''''''''''''
-.. prompt:: bash
+.. code-block:: bash
 
-    conda create -n <ENV_NAME>
+    $ conda create -n <ENV_NAME>
 
 Clone an existing environment
 '''''''''''''''''''''''''''''
-.. prompt:: bash
+.. code-block:: bash
 
-    conda create -n <NEW_ENV_NAME> --clone <EXISTING_ENV_NAME>
+    $ conda create -n <NEW_ENV_NAME> --clone <EXISTING_ENV_NAME>
 
 Rename an environment
 '''''''''''''''''''''
-.. prompt:: bash
+.. code-block:: bash
 
-    conda rename -n <CURRENT_NAME> <NEW_NAME>
+    $ conda rename -n <CURRENT_NAME> <NEW_NAME>
 
 Remove an environment
 '''''''''''''''''''''
-.. prompt:: bash
+.. code-block:: bash
 
-    conda env remove -n <ENV_NAME>
+    $ conda env remove -n <ENV_NAME>
 
 Packages
 --------
 Install Python interpreter into environment
 '''''''''''''''''''''''''''''''''''''''''''
-.. prompt:: bash, (conda_env)
+.. code-block:: bash
 
-    conda install python=<X.X.X>
+    (conda_env) $ conda install python=<X.X.X>
 
 where ``<X.X.X>`` defines a valid Python version (for example 3.9.3).
 
 List all available versions for package
 '''''''''''''''''''''''''''''''''''''''
-.. prompt:: bash
+.. code-block:: bash
 
-    conda search <package_name>
+    $ conda search <package_name>
 
 If the name is not entirely known, use wildcard characters:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    conda search '*<partial_package_name>*'
+    $ conda search '*<partial_package_name>*'

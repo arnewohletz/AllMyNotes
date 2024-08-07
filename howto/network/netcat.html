@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -154,18 +154,20 @@
 <h2>Check port availability<a class="headerlink" href="#check-port-availability" title="Link to this heading"></a></h2>
 <p>Use <a class="reference external" href="https://nc110.sourceforge.io/">netcat</a> to get port information (preinstalled on Linux and macOS).</p>
 <p>Check if a certain port is available via TCP connection:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">nc<span class="w"> </span>-v<span class="w"> </span>-z<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;port&gt;</span>
-</pre></div></div><p>In case, the port is actively used and open, a success message is reported,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nc<span class="w"> </span>-v<span class="w"> </span>-z<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;port&gt;
+</pre></div>
+</div>
+<p>In case, the port is actively used and open, a success message is reported,
 if not, a connection refused message appears.</p>
 <p>Same for UDP connection:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nc<span class="w"> </span>-v<span class="w"> </span>-z<span class="w"> </span>-u<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;port&gt;</span>
-</pre></div></div><p>To check for an available port on your local system, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nc<span class="w"> </span>-zv<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;port_from&gt;-&lt;port_until&gt;<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>failed</span>
-</pre></div></div><p>to receive the first unused port within the specified range.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nc<span class="w"> </span>-v<span class="w"> </span>-z<span class="w"> </span>-u<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;port&gt;
+</pre></div>
+</div>
+<p>To check for an available port on your local system, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nc<span class="w"> </span>-zv<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;port_from&gt;-&lt;port_until&gt;<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>failed
+</pre></div>
+</div>
+<p>to receive the first unused port within the specified range.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Don’t assign port numbers 1 to 1024 for your services, as <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports">well-known services</a>
@@ -175,8 +177,10 @@ reserve those.</p>
 <p class="admonition-title">Alternative</p>
 <p>You may also run <a class="reference download internal" download="" href="../../_downloads/9393c00e7d46e2dec3ebaf7f32042463/open_ports.sh"><code class="xref download docutils literal notranslate"><span class="pre">open_ports.sh</span></code></a> to receive information on a
 port range (&lt;from_port&gt; until &lt;to_port&gt;):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./open_ports<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;from_port&gt;<span class="w"> </span>&lt;to_port&gt;</span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./open_ports<span class="w"> </span>&lt;host_ip&gt;<span class="w"> </span>&lt;from_port&gt;<span class="w"> </span>&lt;to_port&gt;
+</pre></div>
+</div>
+</div>
 </section>
 <section id="send-chat-messages-between-two-machines">
 <h2>Send chat messages between two machines<a class="headerlink" href="#send-chat-messages-between-two-machines" title="Link to this heading"></a></h2>
@@ -184,10 +188,14 @@ port range (&lt;from_port&gt; until &lt;to_port&gt;):</p>
 acts as the server, other devices can connect to the server as client. All machines
 must have netcat installed.</p>
 <p>On the server machine, create a netcat instance to listen to a specific port (here: 10001):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nc<span class="w"> </span>-n<span class="w"> </span>-v<span class="w"> </span>-l<span class="w"> </span><span class="m">10001</span></span>
-</pre></div></div><p>On the client side, create a connection to the specified port on the server (host):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nc<span class="w"> </span>-n<span class="w"> </span>-v<span class="w"> </span>&lt;server_ip_address&gt;<span class="w"> </span><span class="m">10001</span></span>
-</pre></div></div><p>Now, you may enter a message on either the server or any client machine and all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nc<span class="w"> </span>-n<span class="w"> </span>-v<span class="w"> </span>-l<span class="w"> </span><span class="m">10001</span>
+</pre></div>
+</div>
+<p>On the client side, create a connection to the specified port on the server (host):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nc<span class="w"> </span>-n<span class="w"> </span>-v<span class="w"> </span>&lt;server_ip_address&gt;<span class="w"> </span><span class="m">10001</span>
+</pre></div>
+</div>
+<p>Now, you may enter a message on either the server or any client machine and all
 connection machines will receive the message.</p>
 </section>
 </section>
@@ -205,7 +213,7 @@ connection machines will receive the message.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

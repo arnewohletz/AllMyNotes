@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -172,12 +172,10 @@
 operating system.</p>
 <p><strong>For macOS</strong></p>
 <p>Using Homebrew:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>gnupg</span>
-</pre></div></div><p>Add this to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>gnupg
+</pre></div>
+</div>
+<p>Add this to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>:</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Fixing &quot;gpg: signing failed: Inappropriate ioctl for device&quot;
 GPG_TTY=$(tty)
@@ -194,8 +192,10 @@ export GPG_TTY
 <p>Have a sufficiently strong passphrase ready before starting the generation.</p>
 </div>
 <p>To generate a key pair run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gpg<span class="w"> </span>--full-generate-key</span>
-</pre></div></div><p>Follow the <a class="reference external" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key#generating-a-gpg-key">instructions provided on Github</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gpg<span class="w"> </span>--full-generate-key
+</pre></div>
+</div>
+<p>Follow the <a class="reference external" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key#generating-a-gpg-key">instructions provided on Github</a>.</p>
 </section>
 </section>
 <section id="add-pgp-verification">
@@ -246,7 +246,7 @@ repositories.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

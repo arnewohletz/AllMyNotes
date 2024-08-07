@@ -91,9 +91,9 @@ Pattern matching operator:
     If the ``pattern`` matches the beginning of the variable's value, delete the shortest
     path that matches and return the rest.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo ${some_path#/*/}
+        $ echo ${some_path#/*/}
         # cam/book/long.file.name
 
     ``/*/`` matches everything between two slashes. The *shortest* pattern match
@@ -104,9 +104,9 @@ Pattern matching operator:
     If the ``pattern`` matches the beginning of the variable’s value, delete the longest
     part that matches and return the rest.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo ${some_path##/*/}
+        $ echo ${some_path##/*/}
         # long.file.name
 
     ``/*/`` matches everything between two slashes. The *longest* pattern match
@@ -117,9 +117,9 @@ Pattern matching operator:
     If the ``pattern`` matches the end of the variable’s value, delete the shortest
     part that matches and return the rest.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo ${some_path%.*}
+        $ echo ${some_path%.*}
         # /home/cam/book/long.file
 
     ``.*`` matches a dot and everything that follows it. The shortest pattern match
@@ -130,9 +130,9 @@ Pattern matching operator:
     If the ``pattern`` matches the end of the variable’s value, delete the longest
     part that matches and return the rest.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo ${some_path%%.*}
+        $ echo ${some_path%%.*}
         # /home/cam/book/long
 
     ``.*`` matches a dot and everything that follows it. The longest pattern match
@@ -142,20 +142,20 @@ Pattern matching operator:
 
         If *exact* matches are found, only the *first* match is deleted:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            export name=alicece
-            echo ${name%%ce}
-            # alice
+            $ export name=alicece
+            $ echo ${name%%ce}
+            alice
 
         But if using the wildcard ``*``, then the longest occurrence will contain
         everything that follows it:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            export name=alicece
-            echo ${name%%ce*}
-            # ali
+            $ export name=alicece
+            $ echo ${name%%ce*}
+            ali
 
 ``${variable/pattern/string}``
 
@@ -174,29 +174,29 @@ Pattern matching operator:
     **Example:** Replace all colons with LINEFEED in PATH variable (print each
     entry in new line)
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo -e ${PATH//:/'\n'}
+        $ echo -e ${PATH//:/'\n'}
 
 ``${#varname}``
 
     Returns the length of the value of the variable as a character string
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        export SOME_VAR=123456789
-        echo ${#SOME_VAR}
-        # 9
+        $ export SOME_VAR=123456789
+        $ echo ${#SOME_VAR}
+        9
 
 Command substitution
 --------------------
 ``command_A $(command_B)`` means, to use the return value of a ``command_B``
 as a variable for ``command_A``. For example:
 
-.. prompt:: bash
+.. code-block:: bash
 
     # open all txt files in the current directory which contain 'hello'
-    vi $(grep -l 'hello' *.txt)
+    $ vi $(grep -l 'hello' *.txt)
 
 Directory stack
 ---------------
@@ -216,9 +216,9 @@ directory stack.
 
     Example:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pushd /some/path       # cd into /some/path
+        $ pushd /some/path       # cd into /some/path
 
     .. code-block:: none
 
@@ -233,9 +233,10 @@ directory stack.
 
     Example:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        popd                # cd into $(pwd)
+        # cd into $(pwd)
+        $ popd
 
     .. code-block:: none
 
@@ -246,9 +247,9 @@ directory stack.
 
     Prints the current directory stack.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        dirs
+        $ dirs
 
     It supports the following options:
 

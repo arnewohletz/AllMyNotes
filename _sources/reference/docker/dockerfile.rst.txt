@@ -19,9 +19,9 @@ Example Dockerfile (contains various incoherent statements only, cannot be run):
     The ``ARG <NAME>`` instructions defines a variable that the user pass in at build-time.
     For example:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker build --build-arg NVIDIA_TRITON_IMAGE_FQN="some_value"
+        $ docker build --build-arg NVIDIA_TRITON_IMAGE_FQN="some_value"
 
 :line 6:
 

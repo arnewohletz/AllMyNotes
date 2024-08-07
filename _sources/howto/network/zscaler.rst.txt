@@ -24,26 +24,26 @@ ZScaler CA root certificate isn't found, you'll see a similar error:
 To resolve, make sure the ZScaler CA Root certificate is in \*.crt format (can
 be simply renamed, if its \*.pem) and copy the certificate file:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo mkdir /usr/local/share/ca-certificates/zscaler
-    sudo mv /path/of/ZscalerRootCA.crt /usr/local/share/ca-certificates/zscaler/
-    sudo chmod 755 /usr/local/share/ca-certificates/zscaler
-    sudo chmod 644 /usr/local/share/ca-certificates/zscaler/ZscalerRootCA.crt
+    $ sudo mkdir /usr/local/share/ca-certificates/zscaler
+    $ sudo mv /path/of/ZscalerRootCA.crt /usr/local/share/ca-certificates/zscaler/
+    $ sudo chmod 755 /usr/local/share/ca-certificates/zscaler
+    $ sudo chmod 644 /usr/local/share/ca-certificates/zscaler/ZscalerRootCA.crt
 
 Create a ``.curlrc`` file inside your $HOME directory and add some content:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    touch ~/.curlrc
-    echo "cacert=/usr/local/share/ca-certificates/zscaler/ZscalerRootCA.crt" >> ~/.curlrc
+    $ touch ~/.curlrc
+    $ echo "cacert=/usr/local/share/ca-certificates/zscaler/ZscalerRootCA.crt" >> ~/.curlrc
 
 Also, Homebrew must be told to trust ``.curlrc``:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    echo insecure >> ~/.curlrc
+    $ echo insecure >> ~/.curlrc
     HOMEBREW_CURLRC=1
-    export HOMEBREW_CURLRC
+    $ export HOMEBREW_CURLRC
 
 Now the installation should run without errors.

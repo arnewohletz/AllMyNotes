@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -159,14 +159,14 @@ proper location (add directory to your PATH variable) or download via a
 package manager:</p>
 <blockquote>
 <div><p><strong>macOS:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>vale</span>
-</pre></div></div><p><strong>Windows:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">choco<span class="w"> </span>install<span class="w"> </span>vale</span>
-</pre></div></div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>vale
+</pre></div>
+</div>
+<p><strong>Windows:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>choco<span class="w"> </span>install<span class="w"> </span>vale
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Open the project directory which contains the documents you want to lint.</p></li>
 <li><p>Make sure the project’s Python interpreter has sphinx or docutils installed
@@ -218,8 +218,10 @@ any style or reduce the amount of styles in the configuration.</p>
 </li>
 <li><p>Download and install external configuration sources via</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">vale<span class="w"> </span>sync</span>
-</pre></div></div><div class="admonition warning">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>vale<span class="w"> </span>sync
+</pre></div>
+</div>
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Executing <code class="docutils literal notranslate"><span class="pre">sync</span></code> re-downloads <strong>all</strong> specified styles . Any adjustments to the
 original styles have been done are overwritten. It is highly advised to save a
@@ -257,8 +259,10 @@ name to the <em>BasedOnStyles</em> option in <code class="docutils literal notra
 </div>
 <p>To execute a check on a single document execute:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">vale<span class="w"> </span>&lt;/path/to/some.rst&gt;</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>vale<span class="w"> </span>&lt;/path/to/some.rst&gt;
+</pre></div>
+</div>
+</div></blockquote>
 <p>It will list you all the detected violations. You may open the respective grammar
 file and edit the rules to your liking.</p>
 </section>
@@ -277,7 +281,7 @@ file and edit the rules to your liking.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -4,9 +4,9 @@ pip
 List available package versions (not possible for PyPI)
 --------------------------------------------------------
 
-.. prompt:: bash
+.. code-block:: bash
 
-    pip index versions <package_name>
+    $ pip index versions <package_name>
 
 .. note::
 

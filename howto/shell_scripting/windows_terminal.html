@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -257,12 +257,10 @@ via <span class="menuselection">Settings ‣ Open JSON file</span> (lower left c
 <li><p>These sequences start with the unprintable <em>Escape</em> character. To enter it,
 create it by opening a PowerShell window and type</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "PS C:\\> ";
-}
-</style><span class="prompt1"><span class="nb">Set-Clipboard</span> <span class="p">(</span><span class="no">[char]</span><span class="n">27</span><span class="p">)</span></span>
-</pre></div></div><p>which puts the character into the clipboard for further usage (The escape
+<div><div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">Set-Clipboard</span> <span class="p">(</span><span class="no">[char]</span><span class="n">27</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which puts the character into the clipboard for further usage (The escape
 character has the ANSI-Code 27).</p>
 </div></blockquote>
 </li>
@@ -332,7 +330,7 @@ in one expression:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

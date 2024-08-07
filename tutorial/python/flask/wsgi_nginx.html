@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -184,20 +184,20 @@ usage on Windows, please follow the instructions on <a class="reference external
 </div>
 <p>Then we need to install and configure nginx on the server machine.</p>
 <dl>
-<dt><strong>Linux</strong></dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:nginx/stable</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nginx</span>
-</pre></div></div></dd>
+<dt><strong>Linux</strong></dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:nginx/stable
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nginx
+</pre></div>
+</div>
+</dd>
 </dl>
 <p><strong>macOS</strong>
 (<a class="reference external" href="https://brew.sh/">Homebrew</a> must be installed)</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>nginx</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>nginx
+</pre></div>
+</div>
+</div></blockquote>
 <p>An nginx server is able to host multiple applications while each must use a different port.
 In order to define the port an applications uses (among other settings), your application
 requires a configuration file for nginx.</p>
@@ -208,8 +208,10 @@ only knows about its default config.</p>
 <p>On Linux, the default config should be removed, because future application should each be
 defined in a separate config file:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-enabled/default</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>/etc/nginx/sites-enabled/default
+</pre></div>
+</div>
+</div></blockquote>
 <p>This <code class="docutils literal notranslate"><span class="pre">default</span></code> configuration extends the base configuration found at <code class="docutils literal notranslate"><span class="pre">/etc/nginx/nginx.conf</span></code>.
 If you open it, you should find the line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/*</span><span class="p">;</span>
@@ -218,20 +220,26 @@ If you open it, you should find the line:</p>
 <p>which tells nginx to add all configurations files found within this directory. Don’t change it.</p>
 <p>In case that line is not present, add it, save the file and restart nginx:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nginx<span class="w"> </span>/etc/init.d/nginx<span class="w"> </span>restart</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nginx<span class="w"> </span>/etc/init.d/nginx<span class="w"> </span>restart
+</pre></div>
+</div>
+</div></blockquote>
 </section>
 <section id="macos">
 <h3>macOS<a class="headerlink" href="#macos" title="Link to this heading"></a></h3>
 <p>On macOS, create a new directory, that will hold this application’s config file:</p>
 <dl>
-<dt><strong>macOS only:</strong></dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>/usr/local/etc/nginx/init.d</span>
-</pre></div></div></dd>
+<dt><strong>macOS only:</strong></dt><dd><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>/usr/local/etc/nginx/init.d
+</pre></div>
+</div>
+</dd>
 </dl>
 <p>Open nginx’s default config and include your new config folder:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nano<span class="w"> </span>/usr/local/etc/nginx/nginx.conf</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>/usr/local/etc/nginx/nginx.conf
+</pre></div>
+</div>
+</div></blockquote>
 <p>Go to the bottom of the file and add</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>include /usr/local/etc/nginx/init.d/*.conf;
@@ -241,25 +249,33 @@ If you open it, you should find the line:</p>
 <p>before the last closing curly bracket, then save and close the file.</p>
 <p>Restart the nginx server to apply your changes:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nginx<span class="w"> </span>-c<span class="w"> </span>/usr/local/etc/nginx/nginx.conf</span>
-</pre></div></div><p>or restart as brew service via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>nginx</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nginx<span class="w"> </span>-c<span class="w"> </span>/usr/local/etc/nginx/nginx.conf
+</pre></div>
+</div>
+<p>or restart as brew service via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>nginx
+</pre></div>
+</div>
+</div></blockquote>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>On macOS, Nginx uses the port 8080 as default. This might conflict with applications already running on
 that same port (e.g. some Java application). In order to change the default port, you need to
 adapt the default config.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nano<span class="w"> </span>/usr/local/etc/nginx/nginx.conf</span>
-</pre></div></div><p>Find the uncommented line</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>/usr/local/etc/nginx/nginx.conf
+</pre></div>
+</div>
+<p>Find the uncommented line</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server</span> <span class="p">{</span>
     <span class="n">listen</span>       <span class="mi">8080</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>and change the port to your desired default port, then save and exit the file.
 Now, restart the nginx server with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>nginx</span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>nginx
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="add-a-configuration-to-your-application">
@@ -288,9 +304,11 @@ and is created when your application is launched on the server machine (i.e. whe
 you need a valid path from your server machine.</p>
 <p>The <em>listen</em> parameter (line 2) defines the port your application will use. It is recommended to use a free
 port anywhere within the range between 1024 and 32767. You can check all used ports by running these commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">tail<span class="w"> </span>/etc/service</span>
-<span class="prompt1">netstat<span class="w"> </span>-an<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>LISTEN</span>
-</pre></div></div><p>You can also check this list of <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">common default ports</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>tail<span class="w"> </span>/etc/service
+$<span class="w"> </span>netstat<span class="w"> </span>-an<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>LISTEN
+</pre></div>
+</div>
+<p>You can also check this list of <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">common default ports</a>.</p>
 <p>It is recommended to use a separate launcher to run the app over the WSGI server. Create a new Python file
 in the project’s root directory e.g. <code class="docutils literal notranslate"><span class="pre">wsgi-runner.py</span></code> and insert this content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mywebapp.mywebapp</span> <span class="kn">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">application</span>
@@ -331,21 +349,19 @@ Also adapt <em>app</em> runner script (line 7) to your launcher.</p>
 Since the config file is part of the project (hence, it might be changed in the future) the server machine should
 stay within the project structure, we create a symlink for it:</p>
 <p><strong>macOS</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: " ";
-}
-</style><span class="prompt2">ln -s /path/to/my/application/nginx.conf /usr/local/etc/nginx/init.d/mywebapp.conf</span>
-</pre></div></div><p><strong>Linux</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">ln -s /path/to/my/application/nginx.conf /etc/nginx/sites-enabled/mywebapp.conf</span>
-</pre></div></div><p>Now, you are ready to launch the uWSGI server for your application on the server machine. First make sure, you
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my/application/nginx.conf<span class="w"> </span>/usr/local/etc/nginx/init.d/mywebapp.conf
+</pre></div>
+</div>
+<p><strong>Linux</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my/application/nginx.conf<span class="w"> </span>/etc/nginx/sites-enabled/mywebapp.conf
+</pre></div>
+</div>
+<p>Now, you are ready to launch the uWSGI server for your application on the server machine. First make sure, you
 activate your project’s virtual environment, then type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt3:before {
-  content: "(venv) ";
-}
-</style><span class="prompt3">uwsgi<span class="w"> </span>--ini<span class="w"> </span>/absolute/path/to/my/application/uwsgi.ini</span>
-</pre></div></div><p>This launches the uWSGI server using your project’s configuration. Now open a browser on your local
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>uwsgi<span class="w"> </span>--ini<span class="w"> </span>/absolute/path/to/my/application/uwsgi.ini
+</pre></div>
+</div>
+<p>This launches the uWSGI server using your project’s configuration. Now open a browser on your local
 machine and type your server machines IP, colon and the port specified in <code class="docutils literal notranslate"><span class="pre">nginx.conf</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">10.180.2.75:1050</span></code>)
 into the address bar, which will open the index page of your application.</p>
 </section>
@@ -359,39 +375,50 @@ achieve this by creating separate session via <a class="reference external" href
 console is closed.</p>
 <p>Check, if your server already features <code class="docutils literal notranslate"><span class="pre">screen</span></code> by typing</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen<span class="w"> </span>-h</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-h
+</pre></div>
+</div>
+</div></blockquote>
 <p>If that command is not available, install <em>screen</em> via</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>screen</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>screen
+</pre></div>
+</div>
+</div></blockquote>
 <p>Now open a new screen via</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen
+</pre></div>
+</div>
+</div></blockquote>
 <p>A new screen is opened. Now you can start the uWSGI server (first activate the virtual environment):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt3">uwsgi<span class="w"> </span>--ini<span class="w"> </span>/absolute/path/to/my/application/uwsgi.ini</span>
-</pre></div></div></div></blockquote>
+<div></div></blockquote>
 <p>To switch back to the original window, type <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">A</span></code> followed by a simple <code class="docutils literal notranslate"><span class="pre">d</span></code> (for detach). This does not close
 the screen, which continues in the background, even after closing your terminal window.</p>
 <p>Running <code class="docutils literal notranslate"><span class="pre">screen</span> <span class="pre">-ls</span></code> will list you all available screens. Each screen name starts with session ID (e.g. 32196).
 To enter a specific screen (let’s say 32196.pts-10) , type</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen<span class="w"> </span>-r<span class="w"> </span><span class="m">32196</span></span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-r<span class="w"> </span><span class="m">32196</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p>to resume a detached session. To kill a window, enter it, then type <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">a</span></code> followed by simple <code class="docutils literal notranslate"><span class="pre">k</span></code>, then confirm
 with <code class="docutils literal notranslate"><span class="pre">y</span></code>. Alternatively, you may send a quit command while outside the screen (let’s say 32196.pts-10 again):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen<span class="w"> </span>-XS<span class="w"> </span><span class="m">32196</span><span class="w"> </span>quit</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-XS<span class="w"> </span><span class="m">32196</span><span class="w"> </span>quit
+</pre></div>
+</div>
+</div></blockquote>
 </section>
 <section id="automatically-start-application-on-system-startup">
 <h1>Automatically start application on system startup<a class="headerlink" href="#automatically-start-application-on-system-startup" title="Link to this heading"></a></h1>
 <p><strong>macOS</strong>:</p>
 <p>Copy the *.plist file into <code class="docutils literal notranslate"><span class="pre">/Library/LaunchDaemons</span></code> to start nginx as a brew service on startup:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>cp<span class="w"> </span>/usr/local/opt/nginx/*.plist<span class="w"> </span>/Library/LaunchDaemons</span>
-</pre></div></div><p><strong>Linux</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>cp<span class="w"> </span>/usr/local/opt/nginx/*.plist<span class="w"> </span>/Library/LaunchDaemons
+</pre></div>
+</div>
+<p><strong>Linux</strong>:</p>
 <p><em>coming later</em></p>
 </section>
 
@@ -408,7 +435,7 @@ with <code class="docutils literal notranslate"><span class="pre">y</span></code
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

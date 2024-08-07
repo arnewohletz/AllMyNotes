@@ -227,7 +227,7 @@ var copyTargetText = (trigger) => {
   let exclude = '.linenos';
 
   let text = filterText(target, exclude);
-  return formatCopyText(text, '\\(.*\\) \\$ |\\(.*\\) |\\$ |\\>{3} ', true, true, true, false, '', 'EOT')
+  return formatCopyText(text, '\\(.*\\) \\$ |\\(.*\\) |\\$ |\\>{3} |P?S?\\ ?C:\\\\> ', true, true, true, false, '\\', 'EOT')
 }
 
   // Initialize with a callback so we can modify the text before copy

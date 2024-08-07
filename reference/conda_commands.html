@@ -35,7 +35,7 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -154,42 +154,48 @@
 <h2>Manage environments<a class="headerlink" href="#manage-environments" title="Link to this heading"></a></h2>
 <section id="create-new-environment">
 <h3>Create new environment<a class="headerlink" href="#create-new-environment" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;ENV_NAME&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;ENV_NAME&gt;
+</pre></div>
+</div>
+</section>
 <section id="clone-an-existing-environment">
 <h3>Clone an existing environment<a class="headerlink" href="#clone-an-existing-environment" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;NEW_ENV_NAME&gt;<span class="w"> </span>--clone<span class="w"> </span>&lt;EXISTING_ENV_NAME&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;NEW_ENV_NAME&gt;<span class="w"> </span>--clone<span class="w"> </span>&lt;EXISTING_ENV_NAME&gt;
+</pre></div>
+</div>
+</section>
 <section id="rename-an-environment">
 <h3>Rename an environment<a class="headerlink" href="#rename-an-environment" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">conda<span class="w"> </span>rename<span class="w"> </span>-n<span class="w"> </span>&lt;CURRENT_NAME&gt;<span class="w"> </span>&lt;NEW_NAME&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>rename<span class="w"> </span>-n<span class="w"> </span>&lt;CURRENT_NAME&gt;<span class="w"> </span>&lt;NEW_NAME&gt;
+</pre></div>
+</div>
+</section>
 <section id="remove-an-environment">
 <h3>Remove an environment<a class="headerlink" href="#remove-an-environment" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>&lt;ENV_NAME&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>&lt;ENV_NAME&gt;
+</pre></div>
+</div>
+</section>
 </section>
 <section id="packages">
 <h2>Packages<a class="headerlink" href="#packages" title="Link to this heading"></a></h2>
 <section id="install-python-interpreter-into-environment">
 <h3>Install Python interpreter into environment<a class="headerlink" href="#install-python-interpreter-into-environment" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: "(conda_env) ";
-}
-</style><span class="prompt2">conda install python=&lt;X.X.X&gt;</span>
-</pre></div></div><p>where <code class="docutils literal notranslate"><span class="pre">&lt;X.X.X&gt;</span></code> defines a valid Python version (for example 3.9.3).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>conda_env<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">python</span><span class="o">=</span>&lt;X.X.X&gt;
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;X.X.X&gt;</span></code> defines a valid Python version (for example 3.9.3).</p>
 </section>
 <section id="list-all-available-versions-for-package">
 <h3>List all available versions for package<a class="headerlink" href="#list-all-available-versions-for-package" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">conda<span class="w"> </span>search<span class="w"> </span>&lt;package_name&gt;</span>
-</pre></div></div><p>If the name is not entirely known, use wildcard characters:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">conda<span class="w"> </span>search<span class="w"> </span><span class="s1">&#39;*&lt;partial_package_name&gt;*&#39;</span></span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>search<span class="w"> </span>&lt;package_name&gt;
+</pre></div>
+</div>
+<p>If the name is not entirely known, use wildcard characters:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>search<span class="w"> </span><span class="s1">&#39;*&lt;partial_package_name&gt;*&#39;</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -206,7 +212,7 @@ span.prompt2:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

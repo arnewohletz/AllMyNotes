@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -152,22 +152,26 @@
 <section id="images">
 <h2>Images<a class="headerlink" href="#images" title="Link to this heading"></a></h2>
 <p>List all available image tags</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">docker<span class="w"> </span>images</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>images
+</pre></div>
+</div>
+</section>
 <section id="logs">
 <h2>Logs<a class="headerlink" href="#logs" title="Link to this heading"></a></h2>
 <p>Display log messages (follow latest):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>&lt;CONTAINER_NAME&gt;</span>
-</pre></div></div><p>Follow incoming log messages (but don’t show previous):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">0</span><span class="w"> </span>--follow<span class="w"> </span>&lt;CONTAINER_NAME&gt;</span>
-</pre></div></div><p>Save all previous logs to file (no file <a class="reference external" href="https://docs.docker.com/config/containers/logging/configure/">logging driver</a> configured,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>&lt;CONTAINER_NAME&gt;
+</pre></div>
+</div>
+<p>Follow incoming log messages (but don’t show previous):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">0</span><span class="w"> </span>--follow<span class="w"> </span>&lt;CONTAINER_NAME&gt;
+</pre></div>
+</div>
+<p>Save all previous logs to file (no file <a class="reference external" href="https://docs.docker.com/config/containers/logging/configure/">logging driver</a> configured,
 container must still run):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>logs<span class="w"> </span>&lt;CONTAINER_NAME&gt;<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>file.log</span>
-</pre></div></div><div class="admonition important">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>&lt;CONTAINER_NAME&gt;<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>file.log
+</pre></div>
+</div>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The command does not catch logs arriving after executing the command.</p>
 </div>
@@ -180,8 +184,10 @@ container must still run):</p>
 </ul>
 <p>The beginning of the container ID can be retrieved via <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">container</span> <span class="pre">ls</span></code>.</p>
 <p>You may also retrieve the filepath by running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>inspect<span class="w"> </span>&lt;CONTAINER_NAME&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.<span class="o">[]</span>.LogPath</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span>&lt;CONTAINER_NAME&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.<span class="o">[]</span>.LogPath
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -198,7 +204,7 @@ container must still run):</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

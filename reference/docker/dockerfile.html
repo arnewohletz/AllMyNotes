@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -175,12 +175,10 @@ whereas <code class="docutils literal notranslate"><span class="pre">syntax=dock
 <dt class="field-even">line 3<span class="colon">:</span></dt>
 <dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">ARG</span> <span class="pre">&lt;NAME&gt;</span></code> instructions defines a variable that the user pass in at build-time.
 For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">NVIDIA_TRITON_IMAGE_FQN</span><span class="o">=</span><span class="s2">&quot;some_value&quot;</span></span>
-</pre></div></div></dd>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">NVIDIA_TRITON_IMAGE_FQN</span><span class="o">=</span><span class="s2">&quot;some_value&quot;</span>
+</pre></div>
+</div>
+</dd>
 <dt class="field-odd">line 6<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">ARG</span> <span class="pre">&lt;NAME&gt;=&lt;VALUE&gt;</span></code> instruction defines a variable with a default value,
 so it is not mandatory to pass it in at build-time.</p>
@@ -230,7 +228,7 @@ which contain shared libraries, to be searched before using the default director
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

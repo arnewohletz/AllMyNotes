@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -168,12 +168,10 @@ without a active terminal.</p>
 <p>Additional reference: <a class="reference external" href="https://astrobiomike.github.io/unix/screen-intro">https://astrobiomike.github.io/unix/screen-intro</a></p>
 <section id="create-and-open-a-new-screen">
 <h2>Create and open a new screen<a class="headerlink" href="#create-and-open-a-new-screen" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">screen<span class="w"> </span>-S<span class="w"> </span>my_screen_session_name</span>
-</pre></div></div><p>Each screen receives a unique PID.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-S<span class="w"> </span>my_screen_session_name
+</pre></div>
+</div>
+<p>Each screen receives a unique PID.</p>
 </section>
 <section id="switch-between-original-window-and-screens">
 <h2>Switch between original window and screens<a class="headerlink" href="#switch-between-original-window-and-screens" title="Link to this heading"></a></h2>
@@ -184,13 +182,17 @@ span.prompt1:before {
 </section>
 <section id="original-screen-re-attach">
 <h3>Original –&gt; Screen (Re-attach)<a class="headerlink" href="#original-screen-re-attach" title="Link to this heading"></a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen<span class="w"> </span>-r<span class="w"> </span>SCREEN_PID</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-r<span class="w"> </span>SCREEN_PID
+</pre></div>
+</div>
+</section>
 </section>
 <section id="list-all-screens">
 <h2>List all screens<a class="headerlink" href="#list-all-screens" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen<span class="w"> </span>-ls</span>
-</pre></div></div><p>This list all screen in the following manner:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-ls
+</pre></div>
+</div>
+<p>This list all screen in the following manner:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SCREEN_PID</span><span class="o">.</span><span class="n">SESSION_NAME</span> <span class="p">(</span><span class="n">CREATION_TIMEDATE</span><span class="p">)</span> <span class="p">(</span><span class="n">STATUS</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -202,8 +204,10 @@ span.prompt1:before {
 <p>To kill the currently attached screen, type <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">A</kbd></kbd> followed by a
 <kbd class="kbd docutils literal notranslate">k</kbd> (for kill).</p>
 <p>Alternatively, while not being detached to any screen, kill a screen via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">screen<span class="w"> </span>-XS<span class="w"> </span>SCREEN_PID<span class="w"> </span>quit</span>
-</pre></div></div><p>passing the that screen’s SCREEN_PID.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>screen<span class="w"> </span>-XS<span class="w"> </span>SCREEN_PID<span class="w"> </span>quit
+</pre></div>
+</div>
+<p>passing the that screen’s SCREEN_PID.</p>
 </section>
 </section>
 
@@ -220,7 +224,7 @@ span.prompt1:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

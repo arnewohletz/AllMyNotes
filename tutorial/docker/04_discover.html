@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -166,14 +166,11 @@ you need to run a file</p></li>
 the container is closed</p></li>
 </ul>
 <p>Start a container</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>&lt;application&gt;</span>
-<span class="prompt1"></span>
-<span class="prompt1">e.g.<span class="w"> </span><span class="sb">``</span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>alpine<span class="w"> </span>sh<span class="sb">``</span><span class="w"> </span>which<span class="w"> </span>starts<span class="w"> </span>the<span class="w"> </span>shell<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>alpine<span class="w"> </span>image</span>
-</pre></div></div><p>Multiple containers of the same image can be accessed / opened  at the same time (while changes
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>&lt;image_name&gt;<span class="w"> </span>&lt;application&gt;
+</pre></div>
+</div>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">alpine</span> <span class="pre">sh</span></code> which starts the shell on the alpine image</p>
+<p>Multiple containers of the same image can be accessed / opened  at the same time (while changes
 to one container does not affect the others)</p>
 <p>-&gt; Running a docker images creates a docker container</p>
 </section>
@@ -198,11 +195,15 @@ e.g. docker pull nickjj/faye</p></li>
 </ul>
 </div></blockquote>
 <p>Run an image from a url:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>run<span class="w"> </span>&lt;image_url&gt;</span>
-</pre></div></div><p>e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">docker.io/library/hello-world</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>&lt;image_url&gt;
+</pre></div>
+</div>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">docker.io/library/hello-world</span></code></p>
 <p>Since this is an official repo, you can simply run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>run<span class="w"> </span>hello-world</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</pre></div>
+</div>
+</section>
 <section id="docker-build-process">
 <h2>Docker build process<a class="headerlink" href="#docker-build-process" title="Link to this heading"></a></h2>
 <ul>
@@ -240,7 +241,7 @@ containing changes) -&gt; won’t be used in this tutorial</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

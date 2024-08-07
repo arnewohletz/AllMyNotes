@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -157,12 +157,10 @@ automatically downloads missing resources required to join a particular session.
 <ol class="arabic">
 <li><p>Install Zandronum via Homebrew:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>zandronum</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>zandronum
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Create a new directory <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/zandronum</span></code> and put in your
 <code class="docutils literal notranslate"><span class="pre">doom.wad</span></code> and <code class="docutils literal notranslate"><span class="pre">doom2.wad</span></code> file (from an existing Doom or Doom2 installation).</p></li>
@@ -184,35 +182,45 @@ issue is to build the binaries locally.</p>
 </li>
 <li><p>Install the required dependencies to build Doomseeker (Qt5 and CMake):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>qt5</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>qt5
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Set the variable Qt5_DIR in order for CMake to find your Qt5 installation:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">Qt5_DIR</span><span class="o">=</span><span class="s2">&quot;/usr/local/opt/qt@5/&quot;</span></span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">Qt5_DIR</span><span class="o">=</span><span class="s2">&quot;/usr/local/opt/qt@5/&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Enter the extracted <em>doomseeker</em> directory and run the build:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>build</span>
-<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>build</span>
-<span class="prompt1">cmake<span class="w"> </span>..</span>
-<span class="prompt1">make</span>
-<span class="prompt1">sudo<span class="w"> </span>make<span class="w"> </span>install</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>build
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+$<span class="w"> </span>cmake<span class="w"> </span>..
+$<span class="w"> </span>make
+$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>After the installation finished you may copy the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory to a
 more suitable location (you may also want to rename it to <code class="docutils literal notranslate"><span class="pre">doomseeker</span></code> or
 something like that).</p></li>
 <li><p>Create a link to your <code class="docutils literal notranslate"><span class="pre">doomseeker</span></code> executable:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my/doomseeker/dir/doomseeker<span class="w"> </span>/usr/local/bin/doomseeker</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/my/doomseeker/dir/doomseeker<span class="w"> </span>/usr/local/bin/doomseeker
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Launch Doomseeker via:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">doomseeker</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>doomseeker
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 <div class="admonition hint">
@@ -308,8 +316,10 @@ session without aborting it). For more info check the <a class="reference extern
 </dd></dl>
 
 <p>A basic host command might be:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gzdoom<span class="w"> </span>-host<span class="w"> </span><span class="m">2</span><span class="w"> </span>-useip<span class="w"> </span><span class="m">192</span>.168.178.50<span class="w"> </span>-port<span class="w"> </span><span class="m">5029</span><span class="w"> </span>-netmode<span class="w"> </span><span class="m">0</span></span>
-</pre></div></div><p>Extra options may be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gzdoom<span class="w"> </span>-host<span class="w"> </span><span class="m">2</span><span class="w"> </span>-useip<span class="w"> </span><span class="m">192</span>.168.178.50<span class="w"> </span>-port<span class="w"> </span><span class="m">5029</span><span class="w"> </span>-netmode<span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>Extra options may be:</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-deathmatch">
 <span class="sig-name descname"><span class="pre">-deathmatch</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-deathmatch" title="Link to this definition"></a></dt>
@@ -355,12 +365,10 @@ accessed via SM01, SM02 and SM03.</p></li>
 the IP address (and port, if it differs from the default).
 If you are in the same network as the host, use the local IP address, otherwise
 use the global IP address:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: " ";
-}
-</style><span class="prompt2">gzdoom -join &lt;HOST_IP_ADDRESS&gt;</span>
-</pre></div></div><div class="admonition important">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gzdoom<span class="w"> </span>-join<span class="w"> </span>&lt;HOST_IP_ADDRESS&gt;
+</pre></div>
+</div>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>For both creating and joining a multiplayer game, also specify the used WAD and IPK3
 files via the <code class="docutils literal notranslate"><span class="pre">-file</span></code> (for *.ipk3 files) and <code class="docutils literal notranslate"><span class="pre">-iwad</span></code> (for *.wad files) options.</p>
@@ -389,7 +397,7 @@ files via the <code class="docutils literal notranslate"><span class="pre">-file
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

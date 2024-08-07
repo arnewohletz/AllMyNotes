@@ -14,9 +14,9 @@ Config
 ------
 Get current config (from ``~/.kube/config``)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl config view
+    $ kubectl config view
 
 
 
@@ -24,24 +24,24 @@ Cluster
 -------
 Get info about the cluster:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl cluster-info
+    $ kubectl cluster-info
 
 
 Node
 ----
 Get all nodes in current cluster
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get nodes
+    $ kubectl get nodes
 
 Describe node (shows included namespaces)
 
-.. prompt::
+.. code-block:: bash
 
-    kubectl describe node <NODE>
+    $ kubectl describe node <NODE>
 
 
 Namespace
@@ -50,9 +50,9 @@ A namespace is a space which separates resources and workloads.
 
 Get all namespaces in current cluster:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get namespaces
+    $ kubectl get namespaces
 
 .. note::
 
@@ -69,15 +69,15 @@ Get all namespaces in current cluster:
 
 Describe a namespace:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl describe namespace <NAMESPACE>
+    $ kubectl describe namespace <NAMESPACE>
 
 Create a namespace:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl apply -f <path/to/namespace.yaml>
+    $ kubectl apply -f <path/to/namespace.yaml>
 
 .. hint::
 
@@ -92,9 +92,9 @@ Create a namespace:
 
 Delete a namespace (all namespaces defined in ``namespace.yaml``:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl delete -f <path/to/namespace.yaml>
+    $ kubectl delete -f <path/to/namespace.yaml>
 
 
 Deployment
@@ -107,17 +107,17 @@ runs in the desired state.
 
 Deploy an application from a single Docker image (uses single node)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl create deployment <DEPLOYMENT_NAME> --image=<IMAGE_URL:TAG>
+    $ kubectl create deployment <DEPLOYMENT_NAME> --image=<IMAGE_URL:TAG>
 
 **Describe**
 
 Get detailed information about a deployment
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl describe deployment <DEPLOYMENT_NAME>
+    $ kubectl describe deployment <DEPLOYMENT_NAME>
 
 **Scaling**
 
@@ -127,9 +127,9 @@ to multiple nodes.
 
 Scale deployment to 4 replicas
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl scale deployments/<DEPLOYMENT_NAME> --replicas=4
+    $ kubectl scale deployments/<DEPLOYMENT_NAME> --replicas=4
 
 **Update image version**
 
@@ -137,21 +137,21 @@ Update the used Docker image version for a deployment, initiating a rolling upda
 new pods using new images are created. When those running, the olds ones are
 terminated
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl set image deployments/<DEPLOYMENT_NAME> <IMAGE_NAME:TAG>
+    $ kubectl set image deployments/<DEPLOYMENT_NAME> <IMAGE_NAME:TAG>
 
 Check rollout status of deployment (e.g. after updating image version)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl rollout status deployments/<DEPLOYMENT_NAME>
+    $ kubectl rollout status deployments/<DEPLOYMENT_NAME>
 
 Revert latest rollout  of deployment (e.g. a failed image version update)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl rollout undo deployments/<DEPLOYMENT_NAME>
+    $ kubectl rollout undo deployments/<DEPLOYMENT_NAME>
 
 
 Services
@@ -161,38 +161,38 @@ application deployment to external traffic providing a port.
 
 Create a new service exposing a deployment under port 8001
 
-.. prompt::
+.. code-block:: bash
 
-    kubectl expose deployments/<DEPLOYMENT_NAME> --type="NodePort" --port 8001
+    $ kubectl expose deployments/<DEPLOYMENT_NAME> --type="NodePort" --port 8001
 
 Get all services within a namespace
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get services -n <NAMESPACE>
+    $ kubectl get services -n <NAMESPACE>
 
 **Describe a service**
 
 Show detailed info on all services within the namespace
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl describe services -n <NAMESPACE>
+    $ kubectl describe services -n <NAMESPACE>
 
 Show detailed info on specific services within the namespace
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl describe service <SERVICE_NAME> -n <NAMESPACE>
+    $ kubectl describe service <SERVICE_NAME> -n <NAMESPACE>
 
 **Delete a service**
 
 Delete a single service (this does not affect the application deployment which
 uses the service)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl delete service <SERVICE_NAME> -n <NAMESPACE>
+    $ kubectl delete service <SERVICE_NAME> -n <NAMESPACE>
 
 
 Pod
@@ -201,27 +201,27 @@ A pod is a abstraction which represents one or more application containers.
 
 Get names all pods of a namespace:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get pods -n <NAMESPACE>
+    $ kubectl get pods -n <NAMESPACE>
 
 Get names of all pods in all namespaces
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get pods -A
+    $ kubectl get pods -A
 
 Get wide output format of all pods of a namespace (includes cluster-internal IP address)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get pods -o wide
+    $ kubectl get pods -o wide
 
 Get names of all pods using a specific label name
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get pods -l <LABEL_NAME>
+    $ kubectl get pods -l <LABEL_NAME>
 
 **Describe a pod**
 
@@ -229,15 +229,15 @@ Shows the containers, running inside the pod among other information.
 
 Describe single pod within a namespace:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl describe pod <POD> -n <NAMESPACE>
+    $ kubectl describe pod <POD> -n <NAMESPACE>
 
 Describe all pods within a namespace:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl describe pods -n <NAMESPACE>
+    $ kubectl describe pods -n <NAMESPACE>
 
 
 **Get logs**
@@ -245,9 +245,9 @@ Describe all pods within a namespace:
 Print the latest logs of a running container inside a log (if pod only runs a single
 container, ``-c <CONTAINER>``  must not be specified):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl logs -n <NAMESPACE> <POD> -c <CONTAINER>
+    $ kubectl logs -n <NAMESPACE> <POD> -c <CONTAINER>
 
 
 **Labels**
@@ -256,15 +256,15 @@ Labels are used to tag one or multiple pods
 
 Add another label name to a pod
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl label pod <POD_NAME> <LABEL_NAME=VALUE>
+    $ kubectl label pod <POD_NAME> <LABEL_NAME=VALUE>
 
 Delete a label from a pod
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl label pod <POD_NAME> <LABEL_NAME>-
+    $ kubectl label pod <POD_NAME> <LABEL_NAME>-
 
 
 ReplicaSet
@@ -278,7 +278,7 @@ so it is not recommended to use them directly.
 
 Get all ReplicaSets within the namespace which manage pods containing a certain label
 
-.. prompt:: bash
+.. code-block:: bash
 
-    kubectl get replicaset -l <LABEL_NAME> -n <NAMESPACE>
+    $ kubectl get replicaset -l <LABEL_NAME> -n <NAMESPACE>
 

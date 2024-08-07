@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -338,15 +338,15 @@ message <code class="docutils literal notranslate"><span class="pre">Windows</sp
 <ol class="arabic">
 <li><p>Check, if the recovery environment is active:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "C:\\> ";
-}
-</style><span class="prompt1">reagentc /info</span>
-</pre></div></div><p>If it shows <em>enabled</em> under <em>Status</em>, it’s already active. In this case,
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reagentc<span class="w"> </span>/info
+</pre></div>
+</div>
+<p>If it shows <em>enabled</em> under <em>Status</em>, it’s already active. In this case,
 deactivate it temporarily by entering:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">reagentc /disable</span>
-</pre></div></div><p>You may check the status via <code class="docutils literal notranslate"><span class="pre">/info</span></code> again to verify.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>reagentc<span class="w"> </span>/disable
+</pre></div>
+</div>
+<p>You may check the status via <code class="docutils literal notranslate"><span class="pre">/info</span></code> again to verify.</p>
 </div></blockquote>
 </li>
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\Recovery</span></code> and check whether it contains a file
@@ -383,23 +383,26 @@ Ignore the next step.</p>
 a file called <code class="docutils literal notranslate"><span class="pre">install.esd</span></code> and copy it to <code class="docutils literal notranslate"><span class="pre">C:\</span></code>.</p></li>
 <li><p>Open a command prompt as administrator, go to <code class="docutils literal notranslate"><span class="pre">C:\</span></code> and run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity</span>
-</pre></div></div></div></blockquote>
+<div></div></blockquote>
 <p>which converts the file to <code class="docutils literal notranslate"><span class="pre">install.wim</span></code> located at the same directory.</p>
 </li>
 <li><p>Mount the file by running</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="k">mkdir</span> C:\wintemp</span>
-<span class="prompt1">dism /Mount-Wim /WimFile:<span class="s2">&quot;C:\install.wim&quot;</span> /index:1 /MountDir:<span class="s2">&quot;C:\wintemp&quot;</span></span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>mkdir<span class="w"> </span>C:<span class="se">\w</span>intemp
+C:<span class="se">\&gt;</span><span class="w"> </span>dism<span class="w"> </span>/Mount-Wim<span class="w"> </span>/WimFile:<span class="s2">&quot;C:\install.wim&quot;</span><span class="w"> </span>/index:1<span class="w"> </span>/MountDir:<span class="s2">&quot;C:\wintemp&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">C:\wintemp\Windows\System32\Recovery</span></code> and copy the <code class="docutils literal notranslate"><span class="pre">Winre.wim</span></code>
 file to <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32\Recovery</span></code>.</p></li>
 <li><p>Restart the WIMage script. If the error doesn’t reoccur, delete <code class="docutils literal notranslate"><span class="pre">C:\wintemp</span></code>,
 <code class="docutils literal notranslate"><span class="pre">install.wim</span></code> and <code class="docutils literal notranslate"><span class="pre">install.esd</span></code>. First unmount <code class="docutils literal notranslate"><span class="pre">C:\wintemp</span></code> via:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dism /Unmount-Wim /mountdir:C:\wintemp /discard</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>dism<span class="w"> </span>/Unmount-Wim<span class="w"> </span>/mountdir:C:<span class="se">\w</span>intemp<span class="w"> </span>/discard
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </section>
@@ -442,8 +445,10 @@ This may occur if OneDrive has crashed or terminated improperly at some point.</
 <li><p>Open a command prompt as administrator.</p></li>
 <li><p>Enter (in case the system drive uses a different letter, replace <code class="docutils literal notranslate"><span class="pre">c</span></code> below):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chkdsk c: /r /f</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>chkdsk<span class="w"> </span>c:<span class="w"> </span>/r<span class="w"> </span>/f
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Confirm with <kbd class="kbd docutils literal notranslate">Y</kbd> when asked.</p></li>
 <li><p>Restart the PC and wait for the disk check to complete (it may take two hours or longer).</p></li>
@@ -464,8 +469,10 @@ overwrite the existing image bundle file (<code class="docutils literal notransl
 <li><p>Open a command line as administrator.</p></li>
 <li><p>Analyze the image bundle file (<code class="docutils literal notranslate"><span class="pre">install.wim</span></code>) on the external disk (here: disk letter <em>E</em>):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">Dism /Get-ImageInfo /ImageFile:E:\sources\install.wim</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>Dism<span class="w"> </span>/Get-ImageInfo<span class="w"> </span>/ImageFile:E:<span class="se">\s</span>ources<span class="se">\i</span>nstall.wim
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Make sure you have enough free disk space on your internal hard disk (or an
 additional external hard disk) to save the latest image (highest index), which
@@ -474,15 +481,19 @@ is approximately half the size of the currently occupied space on the main disk 
 <li><p>Export the latest image into a new Windows image file (here again, disk letter <em>E</em>),
 replacing the &lt;HIGHEST_INDEX&gt; with the proper number:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">Dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:<span class="p">&lt;</span>HIGHEST_INDEX<span class="p">&gt;</span> /DestinationImageFile:install.wim</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>Dism<span class="w"> </span>/Export-Image<span class="w"> </span>/SourceImageFile:E:<span class="se">\s</span>ources<span class="se">\i</span>nstall.wim<span class="w"> </span>/SourceIndex:&lt;HIGHEST_INDEX&gt;<span class="w"> </span>/DestinationImageFile:install.wim
+</pre></div>
+</div>
+</div></blockquote>
 <p>The export may take around 15 minutes, depending on the image size and your hardware.
 The filesize should be less than the corresponding file on the external hard disk.</p>
 </li>
 <li><p>You may check the resulting image file for its content:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">Dism /Get-ImageInfo /ImageFile:install.wim</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>Dism<span class="w"> </span>/Get-ImageInfo<span class="w"> </span>/ImageFile:install.wim
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Replace <code class="docutils literal notranslate"><span class="pre">E:\sources\install.wim</span></code> on the external hard disk with the newly
 created one. Make sure to delete it from its original destination afterwards.</p></li>
@@ -513,7 +524,7 @@ created one. Make sure to delete it from its original destination afterwards.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

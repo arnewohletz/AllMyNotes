@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -167,12 +167,10 @@ which also installs the <em>pyenv-virtualenv</em> extension.</p>
 <ol class="arabic">
 <li><p>Run the command</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">curl<span class="w"> </span>https://pyenv.run<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>https://pyenv.run<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>To make <code class="docutils literal notranslate"><span class="pre">pyenv</span></code> available append this content to <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>
 (also <code class="docutils literal notranslate"><span class="pre">~/.bash_login</span></code> if available):</p>
@@ -186,36 +184,46 @@ span.prompt1:before {
 </li>
 <li><p>Apply both files by typing (or restart your shell via <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">&quot;$SHELL&quot;</span></code>):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">source</span><span class="w"> </span>~/.profile</span>
-<span class="prompt1"><span class="nb">source</span><span class="w"> </span>~/.bashrc</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.profile
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Log off from your user profile and login again, then try to run <code class="docutils literal notranslate"><span class="pre">pyenv</span></code>.</p>
 <blockquote>
 <div><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Before installing any Python versions, make sure the required build libraries are installed. Run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="p">;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>make<span class="w"> </span>build-essential<span class="w"> </span>libssl-dev<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="p">;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>make<span class="w"> </span>build-essential<span class="w"> </span>libssl-dev<span class="w"> </span><span class="se">\</span>
 zlib1g-dev<span class="w"> </span>libbz2-dev<span class="w"> </span>libreadline-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>wget<span class="w"> </span>curl<span class="w"> </span>llvm<span class="w"> </span><span class="se">\</span>
 libncursesw5-dev<span class="w"> </span>xz-utils<span class="w"> </span>tk-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>libxmlsec1-dev<span class="w"> </span>libffi-dev<span class="w"> </span><span class="se">\</span>
-liblzma-dev</span>
-</pre></div></div></div>
+liblzma-dev
+</pre></div>
+</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>To update pyenv, simply run:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pyenv<span class="w"> </span>update</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyenv<span class="w"> </span>update
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </section>
 <section id="install-pyenv-on-macos">
 <h2>Install pyenv on macOS<a class="headerlink" href="#install-pyenv-on-macos" title="Link to this heading"></a></h2>
 <p>The recommended way to install pyenv on macOS is via <a class="reference external" href="https://brew.sh/">Homebrew</a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>pyenv</span>
-</pre></div></div><p>Also, install the extension <em>pyenv-virtualenv</em>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>pyenv-virtualenv</span>
-</pre></div></div><p>Same as on Linux, add the auto-initializing commands to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>pyenv
+</pre></div>
+</div>
+<p>Also, install the extension <em>pyenv-virtualenv</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>pyenv-virtualenv
+</pre></div>
+</div>
+<p>Same as on Linux, add the auto-initializing commands to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># pyenv
 eval &quot;$(pyenv init -)&quot;
 eval &quot;$(pyenv virtualenv-init -)&quot;
@@ -273,8 +281,10 @@ Attempting to use lzma compression will result in a RuntimeError.
 </pre></div>
 </div>
 <p>Install the <a class="reference external" href="https://formulae.brew.sh/formula/xz">xz</a> formulaee via Homebrew, which contains these dependencies:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>xz</span>
-</pre></div></div><p>Now go ahead and install your desired Python interpreter.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>xz
+</pre></div>
+</div>
+<p>Now go ahead and install your desired Python interpreter.</p>
 </section>
 <section id="tcl-tk">
 <h4>Tcl/Tk<a class="headerlink" href="#tcl-tk" title="Link to this heading"></a></h4>
@@ -285,10 +295,14 @@ version 8.5.9). Since <em>pyenv</em> builds Python distributions
 from source and does not include a recent version of Tcl/Tk with it, as the regular installers from python.org do,
 it uses the preinstalled version from the OS by default.</p>
 <p>First install the latest Tcl/Tk version:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>tcl-tk</span>
-</pre></div></div><p>Open the python-build script of pyenv and point it towards the newly installed Tcl/Tk installation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nano<span class="w"> </span>/usr/local/Cellar/pyenv/&lt;version&gt;/plugins/python-build/bin/python-build</span>
-</pre></div></div><p>Find the line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>tcl-tk
+</pre></div>
+</div>
+<p>Open the python-build script of pyenv and point it towards the newly installed Tcl/Tk installation.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>/usr/local/Cellar/pyenv/&lt;version&gt;/plugins/python-build/bin/python-build
+</pre></div>
+</div>
+<p>Find the line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CONFIGURE_OPTS ${!PACKAGE_CONFIGURE_OPTS} &quot;${!PACKAGE_CONFIGURE_OPTS_ARRAY}&quot; || return 1
 </pre></div>
 </div>
@@ -300,8 +314,10 @@ it uses the preinstalled version from the OS by default.</p>
 <p class="admonition-title">Hint</p>
 <p>The replacement string expects a Tcl/Tk version 8.6. Version 8.7 will be released in the future,
 so check your current installed version via:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;puts [info tclversion]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tclsh</span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;puts [info tclversion]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tclsh
+</pre></div>
+</div>
+</div>
 <p>Any new CPython version installed via <code class="docutils literal notranslate"><span class="pre">pyenv</span> <span class="pre">install</span></code> should now utilize your Tcl/Tk installation.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -326,7 +342,7 @@ while navigating to the new &lt;version&gt; directory.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

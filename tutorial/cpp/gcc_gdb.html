@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -153,18 +153,18 @@ or <cite>Cygwin &lt;https://sourceware.org/cygwin/&gt;</cite>.</p>
 <h2>Install GCC on Linux (Ubuntu)<a class="headerlink" href="#install-gcc-on-linux-ubuntu" title="Link to this heading"></a></h2>
 <p>GCC may come preinstalled on Linux. Check your installed version, if any:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">gcc<span class="w"> </span>-v</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gcc<span class="w"> </span>-v
+</pre></div>
+</div>
+</div></blockquote>
 <ol class="arabic">
 <li><p>Update or install your GCC compiler:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>update</span>
-<span class="prompt1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>gdb</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>gdb
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </section>
@@ -178,21 +178,29 @@ to install mingw-w64.</p>
 <li><p>Open a <code class="docutils literal notranslate"><span class="pre">C:\mysys64\mysys2.exe</span></code> to open a MYSYS2 shell.</p></li>
 <li><p>Run these commands to install the base packages:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pacman<span class="w"> </span>-Syu</span>
-</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pacman<span class="w"> </span>-Su</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pacman<span class="w"> </span>-Syu
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pacman<span class="w"> </span>-Su
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Run this command to install the build tools including GCC:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>base-devel<span class="w"> </span>mingw-w64-x86_64-toolchain</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>base-devel<span class="w"> </span>mingw-w64-x86_64-toolchain
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Next, add the .mingw64bin directory within you MYSYS2 installation to your PATH variable.</p></li>
 <li><p>Open a new command window and try to run:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">g++<span class="w"> </span>--version</span>
-<span class="prompt1">gdb<span class="w"> </span>--version</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>g++<span class="w"> </span>--version
+$<span class="w"> </span>gdb<span class="w"> </span>--version
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>G++ is the compiler of GCC used for C++ source code and GDB is a debugger,
 capable of debugging C++ code.</p>
@@ -214,8 +222,10 @@ C++ code.</p>
 the build, which eventually puts an *.exe file of the same name into the same directory.
 You can execute the file by running:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">my_file.exe</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>my_file.exe
+</pre></div>
+</div>
+</div></blockquote>
 <p>from the output directory.</p>
 <p>In order to <strong>debug</strong> a file, first we create a configuration for it. Select <em>Run / Add Configuration</em>
 and select <strong>GDB/LLDB</strong> and next up again <strong>g++</strong> as the compiler (pointing towards the MinGW G++ compiler
@@ -240,7 +250,7 @@ e.g.``C:mysys64mingw64bing++.exe``).</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

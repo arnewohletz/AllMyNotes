@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -166,15 +166,15 @@
 <code class="code highlight bash docutils literal highlight-bash">readarray</code> is not available on older versions. Since <strong>macOS</strong> contains
 a very old version of bash (3.2 from 2007) due to a licensing change and
 might drop bash entirely in the future, install it manually:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>bash</span>
-</pre></div></div><p>When calling bash, the new version is now called. Also add the new bash to your
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>bash
+</pre></div>
+</div>
+<p>When calling bash, the new version is now called. Also add the new bash to your
 list of trusted shells. Run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>nano<span class="w"> </span>/etc/shells</span>
-</pre></div></div><p>and add <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/bash</span></code> to the list.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/shells
+</pre></div>
+</div>
+<p>and add <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/bash</span></code> to the list.</p>
 <p><strong>Important</strong>: In case your bash scripts use a shebang line, change it to</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/local/bin/bash</span>
 </pre></div>
@@ -186,13 +186,17 @@ list of trusted shells. Run</p>
 for dash, bash, ksh, zsh and all POSIX shells.</p>
 <p>To install it, follow the instructions on <a class="reference external" href="https://github.com/shellspec/shellspec#installation">https://github.com/shellspec/shellspec#installation</a>.</p>
 <p>On macOS, install it via <em>homebrew</em>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>tap<span class="w"> </span>shellspec/shellspec</span>
-<span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>shellspec</span>
-</pre></div></div><p>On Linux, build the binaries from the sources:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/shellspec/shellspec</span>
-<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>spellcheck</span>
-<span class="prompt1">sudo<span class="w"> </span>make<span class="w"> </span>install</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>tap<span class="w"> </span>shellspec/shellspec
+$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>shellspec
+</pre></div>
+</div>
+<p>On Linux, build the binaries from the sources:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/shellspec/shellspec
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>spellcheck
+$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
 <section id="define-the-tests">
 <h2>Define the tests<a class="headerlink" href="#define-the-tests" title="Link to this heading"></a></h2>
 <p>Tests are organized in Specfiles. It comprises of one or multiple test groups.
@@ -585,8 +589,10 @@ End
 </pre></div>
 </div>
 <p>You may save the upper code in <code class="docutils literal notranslate"><span class="pre">array_spec.sh</span></code> and execute it via:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">shellcheck<span class="w"> </span>--shell<span class="w"> </span>bash<span class="w"> </span>--format<span class="w"> </span>documentation<span class="w"> </span>array_spec.sh</span>
-</pre></div></div><p>This executes the tests and produces a test run documentation. Lastly, save
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>shellcheck<span class="w"> </span>--shell<span class="w"> </span>bash<span class="w"> </span>--format<span class="w"> </span>documentation<span class="w"> </span>array_spec.sh
+</pre></div>
+</div>
+<p>This executes the tests and produces a test run documentation. Lastly, save
 the <code class="docutils literal notranslate"><span class="pre">array_spec.sh</span></code> under <code class="docutils literal notranslate"><span class="pre">/usr/local/share/bms/test/</span></code>.</p>
 </section>
 <section id="parameterized-tests">
@@ -758,8 +764,10 @@ End
 </pre></div>
 </div>
 <p>To execute the tests, again call shellspec:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">shellcheck<span class="w"> </span>--shell<span class="w"> </span>bash<span class="w"> </span>--format<span class="w"> </span>documentation<span class="w"> </span>is_spec.sh</span>
-</pre></div></div><div class="docutils container" id="id3">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>shellcheck<span class="w"> </span>--shell<span class="w"> </span>bash<span class="w"> </span>--format<span class="w"> </span>documentation<span class="w"> </span>is_spec.sh
+</pre></div>
+</div>
+<div class="docutils container" id="id3">
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="footcite-kruk22-nachkontrolle" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -788,7 +796,7 @@ End
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

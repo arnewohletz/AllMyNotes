@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -199,12 +199,10 @@ it an expressive name (like: <em>documentation_search</em>).</p></li>
 <ol class="arabic">
 <li><p>Install both the extensions <a class="reference external" href="https://sphinx-sitemap.readthedocs.io/en/latest/index.html">sphinx-sitemap</a> and <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/">sphinx-docsearch</a>.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>sphinx-sitemap<span class="w"> </span>sphinx-docsearch</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-sitemap<span class="w"> </span>sphinx-docsearch
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Add both extensions to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
@@ -340,8 +338,10 @@ check that the <code class="docutils literal notranslate"><span class="pre">site
 <li><p>From the documentations sources root directory (where <code class="docutils literal notranslate"><span class="pre">.env</span></code> and
 <code class="docutils literal notranslate"><span class="pre">docsearch_crawler_settings.json</span></code> are located), run the Docker image like this:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--env-file<span class="o">=</span>.env<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;CONFIG=</span><span class="k">$(</span>cat<span class="w"> </span>docsearch_crawler_settings.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>tostring<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>algolia/docsearch-scraper</span>
-</pre></div></div><div class="admonition important">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--env-file<span class="o">=</span>.env<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;CONFIG=</span><span class="k">$(</span>cat<span class="w"> </span>docsearch_crawler_settings.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>tostring<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>algolia/docsearch-scraper
+</pre></div>
+</div>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>It has been observed, that ZScaler is blocking the connection from the Docker
 container towards the hosted documentation. If you see <em>Host unreachable</em> errors
@@ -410,8 +410,10 @@ but without the need to create a <code class="docutils literal notranslate"><spa
 <ol class="arabic">
 <li><p>Install the extensions <a class="reference external" href="https://sphinx-docsearch.readthedocs.io/">sphinx-docsearch</a>.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>sphinx-docsearch</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-docsearch
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Add the extensions to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
@@ -527,7 +529,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -27,15 +27,15 @@ can replace the low-res icons:
 
     **macOS**
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        jar -uf /Applications/muCommander.app/Contents/app/app/mucommander-core-1.0.1.jar -C ~/Downloads/highres_icons images/action
+        $ jar -uf /Applications/muCommander.app/Contents/app/app/mucommander-core-1.0.1.jar -C ~/Downloads/highres_icons images/action
 
     **Windows**
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        jar -uf "%USERPROFILE%\Program Files\muCommander\app\app\mucommander-cor-1.0.1.jar -C %USERPROFILE%\Downloads\highres_icons images\action"
+s+$jar -uf "%USERPROFILE%\Program Files\muCommander\app\app\mucommander-cor-1.0.1.jar -C %USERPROFILE%\Downloads\highres_icons images\action"
 
     .. hint::
 

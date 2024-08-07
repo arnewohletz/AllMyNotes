@@ -15,9 +15,9 @@ versions behind the Linux build).
 
         Alternatively, you may install OpenSSH via `winget`_:
 
-        .. prompt:: batch
+        .. code-block:: bash batch
 
-            winget install "openssh beta"
+            C:\> winget install "openssh beta"
 
 .. _winget: https://learn.microsoft.com/en-us/windows/package-manager/winget/
 
@@ -26,17 +26,17 @@ Linux
 OpenSSH is pre-installed on many Linux distributions. To check that, open a shell windows
 and run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    ssh -V
+    $ ssh -V
 
 which prints the version of OpenSSH, if installed. If the command is not recognized, you probably
 need to install an SSH tool. To install OpenSSH, use the package manager (e.g. apt on Ubuntu based Linux):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo apt install openssh-client
-    sudo apt install openssh-server
+    $ sudo apt install openssh-client
+    $ sudo apt install openssh-server
 
 .. note::
 
@@ -47,10 +47,10 @@ need to install an SSH tool. To install OpenSSH, use the package manager (e.g. a
 
 As always, consider upgrading your OpenSSH version:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo apt upgrade openssh-client
-    sudo apt upgrade openssh-server
+    $ sudo apt upgrade openssh-client
+    $ sudo apt upgrade openssh-server
 
 macOS
 `````
@@ -63,17 +63,17 @@ installed), best use `homebrew`_:
 #. Install Homebrew.
 #. Install OpenSSH (also installs OpenSSL, which is a precondition):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install openssh
+        $ brew install openssh
 
 .. hint::
 
     To update your OpenSSH version, run:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew upgrade openssh
+        $ brew upgrade openssh
 
 .. hint::
 

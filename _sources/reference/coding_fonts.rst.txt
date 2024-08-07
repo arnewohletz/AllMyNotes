@@ -4,29 +4,29 @@ Coding fonts :footcite:p:`coding_font`
 
     To install these fonts via `Homebrew`_, first run:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew tap homebrew/cask-fonts
+        $ brew tap homebrew/cask-fonts
 
 **B612 Mono** (https://b612-font.com/):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install font-b612
+    $ brew install font-b612
 
 
 |:+1:| |:+1:| **Iosevka Mono** (https://github.com/be5invis/Iosevka):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install --cask font-iosevska
+    $ brew install --cask font-iosevska
 
 
 |:+1:| **Sudo** (https://github.com/jenskutilek/sudo-font):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install --cask font-sudo
+    $ brew install --cask font-sudo
 
 
 .. _Homebrew: https://brew.sh/

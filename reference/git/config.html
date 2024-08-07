@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -184,12 +184,10 @@ git config --local --edit
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">!</span></code> is needed upfront to run an external (non-git) command. It is called via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: " ";
-}
-</style><span class="prompt1">git my-simple-alias</span>
-</pre></div></div><p>To create a more complex, multiline script, the script is put into a function
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>my-simple-alias
+</pre></div>
+</div>
+<p>To create a more complex, multiline script, the script is put into a function
 (here: <code class="docutils literal notranslate"><span class="pre">f()</span></code>), which is eventually called. Inside the function, lines have to
 end with a <code class="docutils literal notranslate"><span class="pre">\</span></code> to be continued in the next line. Commands are separated with <code class="docutils literal notranslate"><span class="pre">;</span></code>:</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">my-more-complex-alias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){</span>
@@ -254,7 +252,7 @@ commit objects.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

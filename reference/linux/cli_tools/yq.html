@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -158,12 +158,10 @@
 <section id="update-values">
 <h2>Update values<a class="headerlink" href="#update-values" title="Link to this heading"></a></h2>
 <p>Update multiple values (using environment variables)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">yq<span class="w"> </span>--indent<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s2">&quot;.ntis.ntis_repository_volume_name = \&quot;</span><span class="si">${</span><span class="nv">NTIS_REPOSITORY_VOLUME_NAME</span><span class="si">}</span><span class="s2">\&quot; | .data.volume_name = \&quot;</span><span class="si">${</span><span class="nv">DATA_VOLUME_NAME</span><span class="si">}</span><span class="s2">\&quot;&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">_run_tags.yaml&quot;</span></span>
-</pre></div></div><ul class="simple">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>yq<span class="w"> </span>--indent<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s2">&quot;.ntis.ntis_repository_volume_name = \&quot;</span><span class="si">${</span><span class="nv">NTIS_REPOSITORY_VOLUME_NAME</span><span class="si">}</span><span class="s2">\&quot; | .data.volume_name = \&quot;</span><span class="si">${</span><span class="nv">DATA_VOLUME_NAME</span><span class="si">}</span><span class="s2">\&quot;&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">_run_tags.yaml&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>preserve the double-quotes: <code class="docutils literal notranslate"><span class="pre">\&quot;${NTIS_REPOSITORY_VOLUME_NAME}\&quot;</span></code></p></li>
 </ul>
 </section>
@@ -182,7 +180,7 @@ span.prompt1:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

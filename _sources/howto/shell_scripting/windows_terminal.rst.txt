@@ -81,9 +81,9 @@ is another valid way to write the escape codes.
 #. These sequences start with the unprintable *Escape* character. To enter it,
    create it by opening a PowerShell window and type
 
-    .. prompt:: powershell
+    .. code-block:: powershell
 
-        Set-Clipboard ([char]27)
+        PS C:\> Set-Clipboard ([char]27)
 
     which puts the character into the clipboard for further usage (The escape
     character has the ANSI-Code 27).

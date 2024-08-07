@@ -15,15 +15,15 @@ Setup
 
     **macOS:**
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install vale
+        $ brew install vale
 
     **Windows:**
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        choco install vale
+        $ choco install vale
 
 #. Open the project directory which contains the documents you want to lint.
 #. Make sure the project's Python interpreter has sphinx or docutils installed
@@ -70,9 +70,9 @@ Setup
 
 #. Download and install external configuration sources via
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        vale sync
+        $ vale sync
 
     .. warning::
 
@@ -110,9 +110,9 @@ Usage
 
 To execute a check on a single document execute:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        vale </path/to/some.rst>
+        $ vale </path/to/some.rst>
 
 It will list you all the detected violations. You may open the respective grammar
 file and edit the rules to your liking.

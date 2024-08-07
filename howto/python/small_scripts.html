@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -152,12 +152,10 @@ be executed</p>
 <li><p>without prior activating any virtual environment</p></li>
 </ul>
 <p>but simply like in this example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">my_little_script.py</span>
-</pre></div></div><div class="admonition important">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>my_little_script.py
+</pre></div>
+</div>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>These steps only work on macOS and Linux.</p>
 </div>
@@ -177,19 +175,25 @@ installed on your system.</p>
 <li><p>Open new Terminal window or <a class="reference external" href="https://linuxways.net/centos/source-command-in-linux/">source</a> your
 shell initialization script. Example:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">source</span><span class="w"> </span>~/.zprofile</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zprofile
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Create a virtual environment using pyenv for your scripts:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pyenv<span class="w"> </span>virtualenv<span class="w"> </span>&lt;PYTHON_VERSION&gt;<span class="w"> </span>&lt;VENV_NAME&gt;</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyenv<span class="w"> </span>virtualenv<span class="w"> </span>&lt;PYTHON_VERSION&gt;<span class="w"> </span>&lt;VENV_NAME&gt;
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Select your virtual environment as interpreter for the scripts directory:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>/your/scripts/directory</span>
-<span class="prompt1">pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;VENV_NAME&gt;</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/your/scripts/directory
+$<span class="w"> </span>pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span>&lt;VENV_NAME&gt;
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Create a new script file or copy your existing script(s) into your new scripts directory.</p></li>
 <li><p>Add this content on the very top of any script file in your scripts directory
@@ -207,8 +211,10 @@ shell initialization script. Example:</p>
 <p>Depending on your operating system, you may have to alter the shell path (line 1)
 (e.g. <code class="docutils literal notranslate"><span class="pre">/usr/bin/bash</span></code>). Check your default shell by opening your Terminal
 and execute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span></span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
+</pre></div>
+</div>
+</div>
 </div></blockquote>
 </li>
 </ol>
@@ -230,7 +236,7 @@ first.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

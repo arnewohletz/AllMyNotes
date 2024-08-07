@@ -35,7 +35,7 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -261,53 +261,61 @@ the end. If offset is less than 0, offset is taken from end of varname.</p>
 <blockquote>
 <div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the beginning of the variable’s value, delete the shortest
 path that matches and return the rest.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">#/*/</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># cam/book/long.file.name</span></span>
-</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">/*/</span></code> matches everything between two slashes. The <em>shortest</em> pattern match
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">#/*/</span><span class="si">}</span>
+<span class="c1"># cam/book/long.file.name</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/*/</span></code> matches everything between two slashes. The <em>shortest</em> pattern match
 on the front is <code class="docutils literal notranslate"><span class="pre">/home/</span></code>, which is deleted.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">${variable##pattern}</span></code></p>
 <blockquote>
 <div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the beginning of the variable’s value, delete the longest
 part that matches and return the rest.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">##/*/</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># long.file.name</span></span>
-</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">/*/</span></code> matches everything between two slashes. The <em>longest</em> pattern match
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">##/*/</span><span class="si">}</span>
+<span class="c1"># long.file.name</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/*/</span></code> matches everything between two slashes. The <em>longest</em> pattern match
 on the front is <code class="docutils literal notranslate"><span class="pre">/home/cam/book</span></code>, which is deleted.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">${variable%pattern}</span></code></p>
 <blockquote>
 <div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the end of the variable’s value, delete the shortest
 part that matches and return the rest.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">%.*</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># /home/cam/book/long.file</span></span>
-</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">.*</span></code> matches a dot and everything that follows it. The shortest pattern match
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">%.*</span><span class="si">}</span>
+<span class="c1"># /home/cam/book/long.file</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.*</span></code> matches a dot and everything that follows it. The shortest pattern match
 on the rear is <code class="docutils literal notranslate"><span class="pre">.name</span></code>, which is deleted.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">${variable%%pattern}</span></code></p>
 <blockquote>
 <div><p>If the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches the end of the variable’s value, delete the longest
 part that matches and return the rest.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">%%.*</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># /home/cam/book/long</span></span>
-</pre></div></div><p><code class="docutils literal notranslate"><span class="pre">.*</span></code> matches a dot and everything that follows it. The longest pattern match
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">some_path</span><span class="p">%%.*</span><span class="si">}</span>
+<span class="c1"># /home/cam/book/long</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.*</span></code> matches a dot and everything that follows it. The longest pattern match
 on the rear is <code class="docutils literal notranslate"><span class="pre">long.file.name</span></code>, which is deleted.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>If <em>exact</em> matches are found, only the <em>first</em> match is deleted:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>alicece</span>
-<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="p">%%ce</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># alice</span></span>
-</pre></div></div><p>But if using the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code>, then the longest occurrence will contain
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>alicece
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="p">%%ce</span><span class="si">}</span>
+alice
+</pre></div>
+</div>
+<p>But if using the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code>, then the longest occurrence will contain
 everything that follows it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>alicece</span>
-<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="p">%%ce*</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># ali</span></span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">name</span><span class="o">=</span>alicece
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">name</span><span class="p">%%ce*</span><span class="si">}</span>
+ali
+</pre></div>
+</div>
+</div>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">${variable/pattern/string}</span></code></p>
 <blockquote>
@@ -325,24 +333,30 @@ Only the first match is replaced.</p>
 All matches are replaced.</p>
 <p><strong>Example:</strong> Replace all colons with LINEFEED in PATH variable (print each
 entry in new line)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="si">${</span><span class="nv">PATH</span><span class="p">//:/</span><span class="s1">&#39;\n&#39;</span><span class="si">}</span></span>
-</pre></div></div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="si">${</span><span class="nv">PATH</span><span class="p">//:/</span><span class="s1">&#39;\n&#39;</span><span class="si">}</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">${#varname}</span></code></p>
 <blockquote>
 <div><p>Returns the length of the value of the variable as a character string</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">export</span><span class="w"> </span><span class="nv">SOME_VAR</span><span class="o">=</span><span class="m">123456789</span></span>
-<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">SOME_VAR</span><span class="si">}</span></span>
-<span class="prompt1"><span class="c1"># 9</span></span>
-</pre></div></div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SOME_VAR</span><span class="o">=</span><span class="m">123456789</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">SOME_VAR</span><span class="si">}</span>
+<span class="m">9</span>
+</pre></div>
+</div>
+</div></blockquote>
 </section>
 </section>
 <section id="command-substitution">
 <h2>Command substitution<a class="headerlink" href="#command-substitution" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">command_A</span> <span class="pre">$(command_B)</span></code> means, to use the return value of a <code class="docutils literal notranslate"><span class="pre">command_B</span></code>
 as a variable for <code class="docutils literal notranslate"><span class="pre">command_A</span></code>. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># open all txt files in the current directory which contain &#39;hello&#39;</span></span>
-<span class="prompt1">vi<span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-l<span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span>*.txt<span class="k">)</span></span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># open all txt files in the current directory which contain &#39;hello&#39;</span>
+$<span class="w"> </span>vi<span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-l<span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span>*.txt<span class="k">)</span>
+</pre></div>
+</div>
+</section>
 <section id="directory-stack">
 <h2>Directory stack<a class="headerlink" href="#directory-stack" title="Link to this heading"></a></h2>
 <p>The directory stack is known as a “last-in, first-out” or LIFO structure. Putting
@@ -357,8 +371,10 @@ directory stack.</p>
 The first time, <code class="docutils literal notranslate"><span class="pre">pushd</span></code> is called in a script or shell session, the current
 directory is pushed onto the directory stack first.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">pushd</span><span class="w"> </span>/some/path<span class="w">       </span><span class="c1"># cd into /some/path</span></span>
-</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Directory stack
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pushd</span><span class="w"> </span>/some/path<span class="w">       </span><span class="c1"># cd into /some/path</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Directory stack
 /some/path   # top of the stack
 $(pwd)      # directory where pushd was initially called from
 </pre></div>
@@ -369,8 +385,11 @@ $(pwd)      # directory where pushd was initially called from
 <div><p>Remove the directory at the top of the directory stack, which then reveals
 a new top, then <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">popd</span><span class="w">                </span><span class="c1"># cd into $(pwd)</span></span>
-</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Directory stack
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># cd into $(pwd)</span>
+$<span class="w"> </span><span class="nb">popd</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Directory stack
 $(pwd)      # directory where pushd was initially called from
 </pre></div>
 </div>
@@ -378,8 +397,10 @@ $(pwd)      # directory where pushd was initially called from
 <p><code class="docutils literal notranslate"><span class="pre">dirs</span></code></p>
 <blockquote>
 <div><p>Prints the current directory stack.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">dirs</span></span>
-</pre></div></div><p>It supports the following options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">dirs</span>
+</pre></div>
+</div>
+<p>It supports the following options:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Option</p></th>
@@ -1280,7 +1301,7 @@ alice<span class="w"> </span>hatter<span class="w"> </span>duchess<span class="w
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

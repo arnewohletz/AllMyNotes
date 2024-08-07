@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -145,17 +145,19 @@
 <h1>Control processes with PowerShell<a class="headerlink" href="#control-processes-with-powershell" title="Link to this heading"></a></h1>
 <p>Processes can be manipulated by referring to their Process ID (PID).</p>
 <p><strong>Get all running processes</strong> (including PIDs):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "PS C:\\> ";
-}
-</style><span class="prompt1"><span class="nb">Get-Process</span></span>
-</pre></div></div><p>To <strong>stop a certain process</strong> use its PID:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">Stop-Process</span> <span class="p">&lt;</span><span class="n">PID</span><span class="p">&gt;</span></span>
-</pre></div></div><p>The process is quit immediately and the PID is released for new processes.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">Get-Process</span>
+</pre></div>
+</div>
+<p>To <strong>stop a certain process</strong> use its PID:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">Stop-Process</span> <span class="p">&lt;</span><span class="n">PID</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>The process is quit immediately and the PID is released for new processes.</p>
 <p>To <strong>change the priority of a process</strong> for <em>APPLICATION.EXE</em> (edit!) to <em>XXX</em> run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">Get-WmiObject</span> <span class="n">Win32_process-filter</span> <span class="s1">&#39;name=&quot;APPLICATION.EXE&quot;&#39;</span><span class="p">|</span><span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">SetPriority</span><span class="p">(</span><span class="n">XXX</span><span class="p">)}</span></span>
-</pre></div></div><p>where XXX ist set to</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_process-filter</span> <span class="s1">&#39;name=&quot;APPLICATION.EXE&quot;&#39;</span><span class="p">|</span><span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">SetPriority</span><span class="p">(</span><span class="n">XXX</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>where XXX ist set to</p>
 <blockquote>
 <div><table class="docutils align-default">
 <tbody>
@@ -181,11 +183,15 @@ span.prompt1:before {
 </table>
 </div></blockquote>
 <p>To <strong>get more info</strong> about a process:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">Get-Process</span> <span class="n">PROCESS_NAME</span> <span class="p">|</span> <span class="nb">Format-List</span> <span class="p">*</span></span>
-</pre></div></div><p>like the priority, the process executable path or version</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">Get-Process</span> <span class="n">PROCESS_NAME</span> <span class="p">|</span> <span class="nb">Format-List</span> <span class="p">*</span>
+</pre></div>
+</div>
+<p>like the priority, the process executable path or version</p>
 <p>To see the <strong>user rights of a running process</strong> (requires admin console), run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">Get-Process</span> <span class="n">PROCESS_NAME</span> <span class="n">-Include-UserName</span></span>
-</pre></div></div></section>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="nb">Get-Process</span> <span class="n">PROCESS_NAME</span> <span class="n">-Include-UserName</span>
+</pre></div>
+</div>
+</section>
 
 
            </div>
@@ -200,7 +206,7 @@ span.prompt1:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

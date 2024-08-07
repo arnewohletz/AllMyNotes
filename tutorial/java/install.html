@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -193,12 +193,10 @@ overwrite the default Java, as it might create lots of issues.</p>
 </li>
 <li><p>Add installation to <code class="docutils literal notranslate"><span class="pre">/Library/Java/JavaVirtualMachines/</span></code> create a symbolic link:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sudo<span class="w"> </span>ln<span class="w"> </span>-sfn<span class="w"> </span>/usr/local/opt/openjdk/libexec/openjdk.jdk<span class="w"> </span>/Library/Java/JavaVirtualMachines/openjdk.jdk</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-sfn<span class="w"> </span>/usr/local/opt/openjdk/libexec/openjdk.jdk<span class="w"> </span>/Library/Java/JavaVirtualMachines/openjdk.jdk
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Check, if the correct installation is now referenced by running <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">--version</span></code>, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openjdk</span> <span class="mf">16.0.1</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">20</span>
@@ -221,8 +219,10 @@ All versions can printed out by running <code class="docutils literal notranslat
 </div>
 <p>They are also located in <code class="docutils literal notranslate"><span class="pre">/Library/Java/JavaVirtualMachines</span></code> and can be called like this:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-ls<span class="w"> </span>/Library/Java/JavaVirtualMachines</span>
-</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 drwxr-xr-x  3 root  wheel  96 Jun  1  2020 jdk-14.0.1.jdk
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-ls<span class="w"> </span>/Library/Java/JavaVirtualMachines
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 drwxr-xr-x  3 root  wheel  96 Jun  1  2020 jdk-14.0.1.jdk
 0 lrwxr-xr-x  1 root  wheel  42 Aug  9 09:24 openjdk.jdk -&gt; /usr/local/opt/openjdk/libexec/openjdk.jdk
 </pre></div>
 </div>
@@ -238,18 +238,24 @@ All versions can printed out by running <code class="docutils literal notranslat
 </div>
 <p>Save and close the file and source it to become active:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">source</span><span class="w"> </span>~/.zhsrc</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.zhsrc
+</pre></div>
+</div>
+</div></blockquote>
 <p>Now you are able to switch to any installed version by running <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">&lt;version&gt;</span></code> e.g.:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">jdk<span class="w"> </span><span class="m">14</span></span>
-</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>java version &quot;14.0.1&quot; 2020-04-14
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jdk<span class="w"> </span><span class="m">14</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>java version &quot;14.0.1&quot; 2020-04-14
 Java(TM) SE Runtime Environment (build 14.0.1+7)
 Java HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">jdk<span class="w"> </span><span class="m">16</span></span>
-</pre></div></div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>openjdk version &quot;16.0.1&quot; 2021-04-20
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jdk<span class="w"> </span><span class="m">16</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>openjdk version &quot;16.0.1&quot; 2021-04-20
 OpenJDK Runtime Environment Homebrew (build 16.0.1+0)
 OpenJDK 64-Bit Server VM Homebrew (build 16.0.1+0, mixed mode, sharing)
 </pre></div>
@@ -271,7 +277,7 @@ OpenJDK 64-Bit Server VM Homebrew (build 16.0.1+0, mixed mode, sharing)
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

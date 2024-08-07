@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -150,35 +150,41 @@
 <ol class="arabic">
 <li><p>Update apt package index.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>update</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Install required packages.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gnupg-agent</span>
-<span class="prompt1">software-properties-common</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gnupg-agent
+$<span class="w"> </span>software-properties-common
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Add Dockers official GPG key.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/docker-archive-keyring.gpg</span>
-</pre></div></div><div class="admonition-optional admonition">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/docker-archive-keyring.gpg
+</pre></div>
+</div>
+<div class="admonition-optional admonition">
 <p class="admonition-title">Optional</p>
 <p><strong>Verify the key with fingerprint</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt-key<span class="w"> </span>fingerprint<span class="w"> </span>0EBFCD88</span>
-</pre></div></div><p>Output should display 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>fingerprint<span class="w"> </span>0EBFCD88
+</pre></div>
+</div>
+<p>Output should display 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
 (check the last 8 digits).</p>
 </div>
 </div></blockquote>
 </li>
 <li><p>Add the Docker repository to your package index</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$UBUNTU_CODENAME</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$UBUNTU_CODENAME</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Other Linux distributions require a different repository url (see
 <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">here</a>)</p>
@@ -187,8 +193,10 @@ span.prompt1:before {
 </li>
 <li><p>Check, if the repository was added to your “additional repositories list”</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cat<span class="w"> </span>/etc/apt/sources.list.d/docker.list</span>
-</pre></div></div><p>The output should contain something like this:</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>/etc/apt/sources.list.d/docker.list
+</pre></div>
+</div>
+<p>The output should contain something like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
 </pre></div>
 </div>
@@ -196,23 +204,29 @@ span.prompt1:before {
 </li>
 <li><p>Install docker components</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>update</span>
-<span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>docker-compose<span class="w"> </span>containerd.io</span>
-</pre></div></div><div class="admonition-optional admonition">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>docker-compose<span class="w"> </span>containerd.io
+</pre></div>
+</div>
+<div class="admonition-optional admonition">
 <p class="admonition-title">Optional</p>
 <p><strong>Access docker without using ‘sudo’</strong></p>
 <p>In order to access docker without the ‘sudo’ command, your current user must
 be added to the docker group (was created during installation)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span></span>
-</pre></div></div><p>Then, log out and re-log in to apply the changes</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>Then, log out and re-log in to apply the changes</p>
 </div>
 </div></blockquote>
 </li>
 <li><p>Create an account on <a class="reference external" href="https://hub.docker.com/">Docker Hub</a>.</p></li>
 <li><p>Add your Docker Hub login to your docker installation</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>login</span>
-</pre></div></div><div class="admonition-optional admonition">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>login
+</pre></div>
+</div>
+<div class="admonition-optional admonition">
 <p class="admonition-title">Optional</p>
 <p>A warning message may appear:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>WARNING! Your password will be stored unencrypted in /home/&lt;USERNAME&gt;/.docker/config.json.
@@ -224,13 +238,17 @@ to not leave your credentials unencrypted.</p>
 <div><ol class="arabic">
 <li><p>Install <a class="reference external" href="https://www.passwordstore.org/">pass</a> and <a class="reference external" href="https://gnupg.org/">gnupg2</a>:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pass<span class="w"> </span>gnupg2</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pass<span class="w"> </span>gnupg2
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Create a key pair which will be used to encrypt your password database:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gpg2<span class="w"> </span>--quick-gen-key<span class="w"> </span>&lt;YOUR_USERNAME&gt;</span>
-</pre></div></div><div class="admonition important">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gpg2<span class="w"> </span>--quick-gen-key<span class="w"> </span>&lt;YOUR_USERNAME&gt;
+</pre></div>
+</div>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>In case you define a passphrase, keep it somewhere save, you
 will need it later.</p>
@@ -250,29 +268,33 @@ sub   rsa3072 2022-02-09 [E]
 </li>
 <li><p>Ensure, that the primary key is trusted:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gpg<span class="w"> </span>--edit-key<span class="w"> </span>&lt;YOUR_PUBLIC_KEY_ID&gt;</span>
-</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: " ";
-}
-</style><span class="prompt2">trust</span>
-<span class="prompt2">5</span>
-<span class="prompt2">quit</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gpg<span class="w"> </span>--edit-key<span class="w"> </span>&lt;YOUR_PUBLIC_KEY_ID&gt;
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg&gt;<span class="w"> </span>trust
+gpg&gt;<span class="w"> </span><span class="m">5</span>
+gpg&gt;<span class="w"> </span>quit
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Set up <em>pass</em>:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pass<span class="w"> </span>init<span class="w"> </span>gpg2<span class="w"> </span>&lt;YOUR_PUBLIC_KEY_ID&gt;</span>
-<span class="prompt1">pass<span class="w"> </span>insert<span class="w"> </span>docker-credential-helpers/docker-pass-initialized-check</span>
-</pre></div></div><p>You should be prompted twice to enter your Docker Hub password.</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pass<span class="w"> </span>init<span class="w"> </span>gpg2<span class="w"> </span>&lt;YOUR_PUBLIC_KEY_ID&gt;
+$<span class="w"> </span>pass<span class="w"> </span>insert<span class="w"> </span>docker-credential-helpers/docker-pass-initialized-check
+</pre></div>
+</div>
+<p>You should be prompted twice to enter your Docker Hub password.</p>
 </div></blockquote>
 </li>
 <li><p>Download latest release of <strong>docker-credential-pass</strong> (utilizes <strong>pass</strong>)</p></li>
 <li><p>Extract the binary into a directory listed in PATH.</p></li>
 <li><p>Open your docker config file:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nano<span class="w"> </span>~/.docker/config.json</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>~/.docker/config.json
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Erase all content (if any) and add:</p>
 <blockquote>
@@ -286,14 +308,18 @@ span.prompt2:before {
 </li>
 <li><p>Log into Docker Hub:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>login<span class="w"> </span>--username<span class="o">=</span><span class="s2">&quot;&lt;YOUR_DOCKER_HUB_USERNAME&quot;</span><span class="w"> </span>docker.io</span>
-</pre></div></div><p>Enter your password (this should not be required once).</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="o">=</span><span class="s2">&quot;&lt;YOUR_DOCKER_HUB_USERNAME&quot;</span><span class="w"> </span>docker.io
+</pre></div>
+</div>
+<p>Enter your password (this should not be required once).</p>
 </div></blockquote>
 </li>
 <li><p>Check if <em>docker-credential-pass</em> saved the login:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker-credentials-pass<span class="w"> </span>list</span>
-</pre></div></div><p>which should print something like this:</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker-credentials-pass<span class="w"> </span>list
+</pre></div>
+</div>
+<p>which should print something like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;https://index.docker.io/v1/&quot;:&quot;&lt;YOUR_DOCKER_HUB_USERNAME&gt;&quot;}
 </pre></div>
 </div>
@@ -306,14 +332,18 @@ span.prompt2:before {
 </li>
 <li><p>Check installation success</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span>alpine:latest<span class="w"> </span>/bin/sh</span>
-</pre></div></div><ul class="simple">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span>alpine:latest<span class="w"> </span>/bin/sh
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Output should be, that alpine:latest isn’t found and is downloaded</p></li>
 <li><p>Entering alpine shell after installation</p></li>
 </ul>
 <p>Enter this into the alpine shell:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cat<span class="w"> </span>/etc/os-release</span>
-</pre></div></div><p>which should output the alpine distribution info.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>/etc/os-release
+</pre></div>
+</div>
+<p>which should output the alpine distribution info.</p>
 <p>Type <code class="docutils literal notranslate"><span class="pre">exit</span></code> to close the connection.</p>
 </div></blockquote>
 </li>
@@ -337,7 +367,7 @@ span.prompt2:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

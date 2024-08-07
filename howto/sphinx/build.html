@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -156,14 +156,14 @@ are not rebuild unless the content of that doc files itself changes.</p>
 <p>In order to force sphinx to rebuild all sources (<code class="docutils literal notranslate"><span class="pre">-a</span></code>) and don’t use the cached
 environment from previous builds (<code class="docutils literal notranslate"><span class="pre">-E</span></code>), call sphinx-build directly using this
 command in the documentations root folder:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sphinx-build<span class="w"> </span>&lt;my_source_directory&gt;<span class="w"> </span>&lt;my_output_directory&gt;<span class="w"> </span>-a<span class="w"> </span>-E</span>
-</pre></div></div><p>for instance</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sphinx-build<span class="w"> </span><span class="nb">source</span><span class="w"> </span>_build<span class="w"> </span>-a<span class="w"> </span>-E</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sphinx-build<span class="w"> </span>&lt;my_source_directory&gt;<span class="w"> </span>&lt;my_output_directory&gt;<span class="w"> </span>-a<span class="w"> </span>-E
+</pre></div>
+</div>
+<p>for instance</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sphinx-build<span class="w"> </span><span class="nb">source</span><span class="w"> </span>_build<span class="w"> </span>-a<span class="w"> </span>-E
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>It is recommended to run sphinx with the <code class="docutils literal notranslate"><span class="pre">-a</span> <span class="pre">-E</span></code> option if new files have
 been added to the documentation or files have been moved. This rules out
@@ -192,7 +192,7 @@ the page.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

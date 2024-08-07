@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -151,23 +151,25 @@ on OSX, comes with XCode and the XCode command line tools.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
 <p>Install the XCode command line tools:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sudo<span class="w"> </span>xcode-select<span class="w"> </span>--install</span>
-</pre></div></div><p>This will trigger the download and installation.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>xcode-select<span class="w"> </span>--install
+</pre></div>
+</div>
+<p>This will trigger the download and installation.</p>
 <p>If you already have those installed, but are unable to update them to a later version,
 first remove them manually, then re-install:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/Library/Developer/CommandLineTools</span>
-<span class="prompt1">sudo<span class="w"> </span>xcode-select<span class="w"> </span>--install</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/Library/Developer/CommandLineTools
+$<span class="w"> </span>sudo<span class="w"> </span>xcode-select<span class="w"> </span>--install
+</pre></div>
+</div>
+</section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <p>Clang++ is a command line tool, which features a lot of optional parameters.</p>
 <p><strong>Basic compilation</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">clang++<span class="w"> </span>--std<span class="o">=</span>c++20<span class="w"> </span>-g<span class="w"> </span>&lt;input_file&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output_file&gt;</span>
-</pre></div></div><dl class="field-list simple">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>clang++<span class="w"> </span>--std<span class="o">=</span>c++20<span class="w"> </span>-g<span class="w"> </span>&lt;input_file&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output_file&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">--std=&lt;standard&gt;</span></code><span class="colon">:</span></dt>
 <dd class="field-odd"><p>Language standard to compile for. Possible: c++98, c++11, c++14, c++17, c++20</p>
 </dd>
@@ -194,7 +196,7 @@ first remove them manually, then re-install:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

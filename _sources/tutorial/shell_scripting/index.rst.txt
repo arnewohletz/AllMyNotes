@@ -5,9 +5,9 @@ Shell Scripting
     Some GNU utilities aren't available natively on macOS. Install `coreutils`_
     via homebrew:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install coreutils
+        $ brew install coreutils
 
 .. _coreutils: https://www.gnu.org/software/coreutils/
 

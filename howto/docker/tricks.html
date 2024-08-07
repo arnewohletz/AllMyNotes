@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -159,12 +159,10 @@
 <li><p>If no container of the image exists (running or stopped), create it from the image
 (here: <em>my_image</em>). It won’t be started. Run:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">docker<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_container<span class="w"> </span>my_image</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_container<span class="w"> </span>my_image
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>You may also reference the image ID, instead of the name.</p>
 </div>
@@ -172,8 +170,10 @@ span.prompt1:before {
 </li>
 <li><p>Export the container contents into a tar archive:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span><span class="nb">export</span><span class="w"> </span>my_container<span class="w"> </span>&gt;<span class="w"> </span>my_container.tar</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">export</span><span class="w"> </span>my_container<span class="w"> </span>&gt;<span class="w"> </span>my_container.tar
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>This also works for running or stopped containers.</p>
 </div>
@@ -181,9 +181,11 @@ span.prompt1:before {
 </li>
 <li><p>Extract the image archive:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>my_container</span>
-<span class="prompt1">tar<span class="w"> </span>-xf<span class="w"> </span>my_container.tar<span class="w"> </span>-C<span class="w"> </span>./my_container</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>my_container
+$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>my_container.tar<span class="w"> </span>-C<span class="w"> </span>./my_container
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 <p>You may now inspect all the content inside the <code class="docutils literal notranslate"><span class="pre">./my_container</span></code> directory.</p>
@@ -202,26 +204,30 @@ exit code 0.</p>
 <dt class="field-even">Cause<span class="colon">:</span></dt>
 <dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code> command ran successfully, as the container was reachable
 and the command could be triggered. When running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code> like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>CONTAINER_NAME<span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGUMENTS...<span class="o">]</span></span>
-<span class="prompt1"><span class="c1"># for example</span></span>
-<span class="prompt1">docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some_container<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/not/here</span>
-<span class="prompt1"><span class="c1"># output:</span></span>
-<span class="prompt1"><span class="c1"># ls: cannot access &#39;/not/here&#39;: No such file or directory</span></span>
-<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span></span>
-<span class="prompt1"><span class="c1"># 0 -&gt; shows exit code 0 (OK)</span></span>
-</pre></div></div></dd>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>CONTAINER_NAME<span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGUMENTS...<span class="o">]</span>
+<span class="c1"># for example</span>
+$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some_container<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/not/here
+<span class="c1"># output:</span>
+<span class="c1"># ls: cannot access &#39;/not/here&#39;: No such file or directory</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="c1"># 0 -&gt; shows exit code 0 (OK)</span>
+</pre></div>
+</div>
+</dd>
 <dt class="field-odd">Solution<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The command itself must call another <code class="docutils literal notranslate"><span class="pre">bash</span></code> instance to execute the command.
 If that instance returns a non-zero exit code, the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code> command
 will also return a non-zero exit code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>CONTAINER_NAME<span class="w"> </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;COMMAND [ARGUMENTS...]&#39;</span></span>
-<span class="prompt1"><span class="c1"># for example</span></span>
-<span class="prompt1">docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some_container<span class="w"> </span>/bin/bash<span class="w"> </span><span class="s1">&#39;ls -l /not/here&#39;</span></span>
-<span class="prompt1"><span class="c1"># output:</span></span>
-<span class="prompt1"><span class="c1"># ls: cannot access &#39;/not/here&#39;: No such file or directory</span></span>
-<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span></span>
-<span class="prompt1"><span class="c1"># 2 -&gt; shows exit code 2 (NOK)</span></span>
-</pre></div></div><div class="admonition attention">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>CONTAINER_NAME<span class="w"> </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;COMMAND [ARGUMENTS...]&#39;</span>
+<span class="c1"># for example</span>
+$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>some_container<span class="w"> </span>/bin/bash<span class="w"> </span><span class="s1">&#39;ls -l /not/here&#39;</span>
+<span class="c1"># output:</span>
+<span class="c1"># ls: cannot access &#39;/not/here&#39;: No such file or directory</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="c1"># 2 -&gt; shows exit code 2 (NOK)</span>
+</pre></div>
+</div>
+<div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The command argument for the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option must be put in single quotes,
 not double quotes.</p>
@@ -251,7 +257,7 @@ the Docker container. Make sure, that shell supports the <code class="docutils l
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

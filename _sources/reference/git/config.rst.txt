@@ -45,9 +45,9 @@ Contains custom git alias commands in this form:
 
 The ``!`` is needed upfront to run an external (non-git) command. It is called via
 
-.. prompt::
+.. code-block:: bash
 
-    git my-simple-alias
+    $ git my-simple-alias
 
 To create a more complex, multiline script, the script is put into a function
 (here: ``f()``), which is eventually called. Inside the function, lines have to

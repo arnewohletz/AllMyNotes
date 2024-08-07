@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -153,14 +153,14 @@
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
 <p>Install <a class="reference external" href="https://iterm2.com/index.html">iTerm2</a> via Homebrew:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>iterm2</span>
-</pre></div></div><p>Install <a class="reference external" href="https://ohmyz.sh/">oh-my-zsh</a> via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span></span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>iterm2
+</pre></div>
+</div>
+<p>Install <a class="reference external" href="https://ohmyz.sh/">oh-my-zsh</a> via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
 <section id="set-up-movement-delete-shortcuts">
 <h2>Set up movement &amp; delete shortcuts<a class="headerlink" href="#set-up-movement-delete-shortcuts" title="Link to this heading"></a></h2>
 <p>iTerm does not feature shortcuts for moving word-by-word or to the end or beginning of a line.</p>
@@ -250,13 +250,17 @@ immediately applied to the current shell.</p></li>
 <ol class="arabic">
 <li><p>Install the theme via homebrew:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>powerlevel10k</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>powerlevel10k
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Add it to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file to be launched for each new shell window:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/powerlevel10k/powerlevel10k.zsh-theme&quot;</span><span class="w"> </span>&gt;&gt;~/.zshrc</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/powerlevel10k/powerlevel10k.zsh-theme&quot;</span><span class="w"> </span>&gt;&gt;~/.zshrc
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Open a new shell window to start the setup wizard.</p></li>
 <li><p>Confirm installing the new font, afterwards restart iTerm2.</p></li>
@@ -294,13 +298,17 @@ for example:</p>
 <div><ol class="arabic">
 <li><p>Install <a class="reference external" href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a>:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>install<span class="w"> </span>zsh-syntax-highlighting</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>zsh-syntax-highlighting
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Enable it by adding a source line to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="si">}</span>/.zshrc</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="si">}</span>/.zshrc
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 </div></blockquote>
@@ -322,7 +330,7 @@ for example:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

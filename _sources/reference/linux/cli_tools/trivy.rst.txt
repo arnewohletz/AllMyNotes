@@ -7,14 +7,14 @@ Scan Docker image
 -----------------
 Scan a Docker image from a repository URL
 
-.. prompt:: bash
+.. code-block:: bash
 
-    trivy image <URL>
+    $ trivy image <URL>
 
 for example:  ``trivy image artifactory.prod.cre.az-eastus2.hosting.nuautoco.com/cli-docker/calllog-sidecar-master:0.0.7``
 
 Scan a local Docker image
 
-.. prompt:: bash
+.. code-block:: bash
 
-    trivy image <IMAGE_ID>
+    $ trivy image <IMAGE_ID>

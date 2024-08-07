@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -156,18 +156,22 @@
 <p>If the remote system name is unknown, you may also use its IP address.</p>
 </div>
 <p class="rubric">Copy files from remote server to local drive</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">scp<span class="w"> </span>&lt;remote_username&gt;@&lt;remote_machine_name&gt;:&lt;/remote/source/file&gt;<span class="w"> </span>&lt;/local/target/directory/&gt;</span>
-</pre></div></div><p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">scp<span class="w"> </span>root@AECG111416:/tmp/test.txt<span class="w"> </span>/home/arnewohletz/docs/</span>
-</pre></div></div><p class="rubric">Copy files from local drive to remote server</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">scp<span class="w"> </span>&lt;/local/source/file&gt;<span class="w"> </span>&lt;remote_username&gt;@&lt;remote_machine_name&gt;:&lt;/remote/target/directory&gt;</span>
-</pre></div></div><p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">scp<span class="w"> </span>/home/arnewohletz/docs/test_local.txt<span class="w"> </span>root@AECG111416:/tmp/</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>&lt;remote_username&gt;@&lt;remote_machine_name&gt;:&lt;/remote/source/file&gt;<span class="w"> </span>&lt;/local/target/directory/&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>root@AECG111416:/tmp/test.txt<span class="w"> </span>/home/arnewohletz/docs/
+</pre></div>
+</div>
+<p class="rubric">Copy files from local drive to remote server</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>&lt;/local/source/file&gt;<span class="w"> </span>&lt;remote_username&gt;@&lt;remote_machine_name&gt;:&lt;/remote/target/directory&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>/home/arnewohletz/docs/test_local.txt<span class="w"> </span>root@AECG111416:/tmp/
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Alternatively, you can use SFTP to copy files from and to a remote target. The basic copy
 command is analog to SCP. Simply exchange <code class="docutils literal notranslate"><span class="pre">scp</span></code> with <code class="docutils literal notranslate"><span class="pre">sftp</span></code>.</p>
@@ -187,7 +191,7 @@ command is analog to SCP. Simply exchange <code class="docutils literal notransl
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

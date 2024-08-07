@@ -8,9 +8,9 @@ Inspect image content (with or without starting container)
 #. If no container of the image exists (running or stopped), create it from the image
    (here: *my_image*). It won't be started. Run:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker create --name my_container my_image
+        $ docker create --name my_container my_image
 
     .. hint::
 
@@ -18,9 +18,9 @@ Inspect image content (with or without starting container)
 
 #. Export the container contents into a tar archive:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker export my_container > my_container.tar
+        $ docker export my_container > my_container.tar
 
     .. hint::
 
@@ -28,10 +28,10 @@ Inspect image content (with or without starting container)
 
 #. Extract the image archive:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        mkdir my_container
-        tar -xf my_container.tar -C ./my_container
+        $ mkdir my_container
+        $ tar -xf my_container.tar -C ./my_container
 
 You may now inspect all the content inside the ``./my_container`` directory.
 
@@ -50,14 +50,14 @@ Make ``docker exec`` return same exit code as executed command
     The ``docker exec`` command ran successfully, as the container was reachable
     and the command could be triggered. When running ``docker exec`` like this:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker exec -it CONTAINER_NAME COMMAND [ARGUMENTS...]
+        $ docker exec -it CONTAINER_NAME COMMAND [ARGUMENTS...]
         # for example
-        docker exec -it some_container ls -l /not/here
+        $ docker exec -it some_container ls -l /not/here
         # output:
         # ls: cannot access '/not/here': No such file or directory
-        echo $?
+        $ echo $?
         # 0 -> shows exit code 0 (OK)
 
 :Solution:
@@ -66,14 +66,14 @@ Make ``docker exec`` return same exit code as executed command
     If that instance returns a non-zero exit code, the ``docker exec`` command
     will also return a non-zero exit code:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker exec -it CONTAINER_NAME /bin/bash -c 'COMMAND [ARGUMENTS...]'
+        $ docker exec -it CONTAINER_NAME /bin/bash -c 'COMMAND [ARGUMENTS...]'
         # for example
-        docker exec -it some_container /bin/bash 'ls -l /not/here'
+        $ docker exec -it some_container /bin/bash 'ls -l /not/here'
         # output:
         # ls: cannot access '/not/here': No such file or directory
-        echo $?
+        $ echo $?
         # 2 -> shows exit code 2 (NOK)
 
     .. attention::

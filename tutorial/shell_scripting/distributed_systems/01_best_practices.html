@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -201,12 +201,10 @@ group. Otherwise an attacker could still append content, which is then executed 
 the group finishes.</p>
 <p>Running script instances cannot be altered, but to prevent any changes to the script
 on the files system, prevent other users from editing the file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/path/to/script.sh</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/path/to/script.sh
+</pre></div>
+</div>
+</section>
 <section id="use-functions">
 <h2>Use functions<a class="headerlink" href="#use-functions" title="Link to this heading"></a></h2>
 <p>Functions are also read in one go, so another possibility is to use a <em>main</em> function,
@@ -375,7 +373,7 @@ always 0 except if the command received illegal parameters.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

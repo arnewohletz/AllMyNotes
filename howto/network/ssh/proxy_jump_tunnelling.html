@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -169,12 +169,10 @@ machines to save yourself from entering passwords for the connection.</p>
 </ul>
 <p class="rubric">Steps</p>
 <p>To create a proxy jump, execute this command from your shell:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">ssh<span class="w"> </span>-J<span class="w"> </span>&lt;user_intermediate&gt;@&lt;ip_or_domain_name_intermediate&gt;<span class="w"> </span>&lt;user_target&gt;@&lt;ip_or_domain_name_target&gt;</span>
-</pre></div></div><p>e.g. <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-J</span> <span class="pre">testpc&#64;ulm-ntg7-testb1</span> <span class="pre">root&#64;10.120.1.91</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-J<span class="w"> </span>&lt;user_intermediate&gt;@&lt;ip_or_domain_name_intermediate&gt;<span class="w"> </span>&lt;user_target&gt;@&lt;ip_or_domain_name_target&gt;
+</pre></div>
+</div>
+<p>e.g. <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-J</span> <span class="pre">testpc&#64;ulm-ntg7-testb1</span> <span class="pre">root&#64;10.120.1.91</span></code></p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><strong>Proxy Jump in WinSCP</strong></p>
@@ -203,20 +201,26 @@ intermediate machine (here, called gateway).</p>
 <ol class="arabic">
 <li><p>Set up the tunnel on you local machine:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-f<span class="w"> </span>GATEWAY_USERNAME<span class="w"> </span>-L<span class="w"> </span>localhost:CPORT:SERVER:SPORT<span class="w"> </span>-N</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-f<span class="w"> </span>GATEWAY_USERNAME<span class="w"> </span>-L<span class="w"> </span>localhost:CPORT:SERVER:SPORT<span class="w"> </span>-N
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>When using key authentication towards the gateway machine, execute:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-<span class="w"> </span>i<span class="w"> </span>/path/to/private/key<span class="w"> </span>-f<span class="w"> </span>GATEWAY_USERNAME<span class="w"> </span>-L<span class="w"> </span>localhost:CPORT:SERVER:SPORT<span class="w"> </span>-N</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-<span class="w"> </span>i<span class="w"> </span>/path/to/private/key<span class="w"> </span>-f<span class="w"> </span>GATEWAY_USERNAME<span class="w"> </span>-L<span class="w"> </span>localhost:CPORT:SERVER:SPORT<span class="w"> </span>-N
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 </div></blockquote>
 </li>
 <li><p>Create a connection:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-p<span class="w"> </span>CPORT<span class="w"> </span>SUSERNAME@localhost</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span>CPORT<span class="w"> </span>SUSERNAME@localhost
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 <dl class="field-list simple">
@@ -240,9 +244,11 @@ intermediate machine (here, called gateway).</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-f<span class="w"> </span>testpc@ulm-ntg7-testb1<span class="w"> </span>-L<span class="w"> </span>localhost:1025:10.120.1.91:22<span class="w"> </span>-N</span>
-<span class="prompt1">ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">1025</span><span class="w"> </span>root@localhost</span>
-</pre></div></div><div class="docutils container" id="id2">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-f<span class="w"> </span>testpc@ulm-ntg7-testb1<span class="w"> </span>-L<span class="w"> </span>localhost:1025:10.120.1.91:22<span class="w"> </span>-N
+$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">1025</span><span class="w"> </span>root@localhost
+</pre></div>
+</div>
+<div class="docutils container" id="id2">
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="footcite-ssh-tunnel-gentoo" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -265,7 +271,7 @@ intermediate machine (here, called gateway).</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

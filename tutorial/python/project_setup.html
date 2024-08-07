@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,25 +237,27 @@ Choose the latest version, which both <em>cookiecutter and *pipx</em> itself sup
 <li><p><a class="reference external" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a></p></li>
 </ul>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">pyenv<span class="w"> </span>virtualenv<span class="w"> </span>&lt;PYTHON_VERSION&gt;<span class="w"> </span>pipx</span>
-</pre></div></div><p>Activate the environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pyenv<span class="w"> </span>activate<span class="w"> </span>pipx</span>
-</pre></div></div><p>Next, let’s install pipx:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: "(pipx) ";
-}
-</style><span class="prompt2">pip<span class="w"> </span>install<span class="w"> </span>pipx</span>
-</pre></div></div><p>Now, we have to ensure that the packages installed via pipx are added to our PATH
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyenv<span class="w"> </span>virtualenv<span class="w"> </span>&lt;PYTHON_VERSION&gt;<span class="w"> </span>pipx
+</pre></div>
+</div>
+<p>Activate the environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyenv<span class="w"> </span>activate<span class="w"> </span>pipx
+</pre></div>
+</div>
+<p>Next, let’s install pipx:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>pipx<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pipx
+</pre></div>
+</div>
+<p>Now, we have to ensure that the packages installed via pipx are added to our PATH
 variable. This ensures that those are executable from anywhere (only must to be done once):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">pipx<span class="w"> </span>ensurepath</span>
-</pre></div></div><p>Now we’re ready to install cookiecutter &amp; pip-tools in it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">pipx<span class="w"> </span>install<span class="w"> </span>cookiecutter</span>
-</pre></div></div><p>Open a new terminal window and run <code class="docutils literal notranslate"><span class="pre">cookiecutter</span> <span class="pre">-V</span></code>, which should print the
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>pipx<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pipx<span class="w"> </span>ensurepath
+</pre></div>
+</div>
+<p>Now we’re ready to install cookiecutter &amp; pip-tools in it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>pipx<span class="o">)</span><span class="w"> </span>pipx<span class="w"> </span>install<span class="w"> </span>cookiecutter
+</pre></div>
+</div>
+<p>Open a new terminal window and run <code class="docutils literal notranslate"><span class="pre">cookiecutter</span> <span class="pre">-V</span></code>, which should print the
 installed cookiecutter package’s version.</p>
 </section>
 <section id="adjust-cookiecutter-template">
@@ -285,13 +287,17 @@ features commands for</p>
 <section id="create-project">
 <h3>Create project<a class="headerlink" href="#create-project" title="Link to this heading"></a></h3>
 <p>Now we’re ready to create the project based on our slightly adapted template:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>/my/project/root/dir</span>
-<span class="prompt1">cookiecutter<span class="w"> </span>/path/to/cookiecutter/template/root/dir</span>
-</pre></div></div><p>For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>~/best_practice_project</span>
-<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~/best_practice_project</span>
-<span class="prompt1">cookiecutter<span class="w"> </span>~/my_templates/cookiecutter-pypackage</span>
-</pre></div></div><p>Define your project parameters in the wizard.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/my/project/root/dir
+$<span class="w"> </span>cookiecutter<span class="w"> </span>/path/to/cookiecutter/template/root/dir
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>~/best_practice_project
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/best_practice_project
+$<span class="w"> </span>cookiecutter<span class="w"> </span>~/my_templates/cookiecutter-pypackage
+</pre></div>
+</div>
+<p>Define your project parameters in the wizard.</p>
 </section>
 </section>
 <section id="create-your-project-s-virtual-environment">
@@ -299,18 +305,24 @@ features commands for</p>
 <p>We recommended to create a virtual environment using <code class="docutils literal notranslate"><span class="pre">pyenv</span> <span class="pre">&lt;install_pyenv&gt;</span></code>
 (with the pyenv-virtualenv extensions).</p>
 <p>Create virtual environment via:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pyenv<span class="w"> </span>virtualenv<span class="w"> </span>&lt;PYTHON-VERSION&gt;<span class="w"> </span>&lt;VENV_NAME&gt;</span>
-</pre></div></div><p>Alternatively, use may use Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyenv<span class="w"> </span>virtualenv<span class="w"> </span>&lt;PYTHON-VERSION&gt;<span class="w"> </span>&lt;VENV_NAME&gt;
+</pre></div>
+</div>
+<p>Alternatively, use may use Python’s built-in <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>
 via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>&lt;VENV_NAME&gt;</span>
-</pre></div></div><p>It uses the venv module and creates a virtual environment named &lt;VENV_NAME&gt; inside
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>&lt;VENV_NAME&gt;
+</pre></div>
+</div>
+<p>It uses the venv module and creates a virtual environment named &lt;VENV_NAME&gt; inside
 your current directory (you may also specify an absolute path).</p>
 <p>As a second alternative, the module <a class="reference external" href="https://pypi.org/project/virtualenv/">virtualenv</a> can
 also be used. Although, it has to be installed into the Python environment (from which to
 create the virtual environment from) first:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>virtualenv</span>
-<span class="prompt1">virtualenv<span class="w"> </span>&lt;VENV_NAME&gt;</span>
-</pre></div></div><p>Same as for Python’s built in <em>venv</em> module, it creates a virtual environment in your
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
+$<span class="w"> </span>virtualenv<span class="w"> </span>&lt;VENV_NAME&gt;
+</pre></div>
+</div>
+<p>Same as for Python’s built in <em>venv</em> module, it creates a virtual environment in your
 current directory.</p>
 <p>A major difference of <em>virtualenv</em> is that its created environment is autonomous of its
 originating interpreter. The virtual environment from <em>venv</em> and <em>pyenv</em> require
@@ -319,12 +331,10 @@ resources from the original interpreter (Pro: they are smaller).</p>
 <h3>Install dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading"></a></h3>
 <p>First, install <a class="reference external" href="https://github.com/jazzband/pip-tools">pip-tools</a>, which we use
 to manage our dependencies (activate your project’s virtual environment first):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt3:before {
-  content: "(project_venv) ";
-}
-</style><span class="prompt3">pip install pip-tools</span>
-</pre></div></div><div class="admonition important">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>project_venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pip-tools
+</pre></div>
+</div>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
 <p><em>pip-tools</em> must be installed into the project’s virtual environment. You must
 not use a pip-tools installation from a different environment (e.g. from a
@@ -335,18 +345,24 @@ is called from.</p>
 All requirements for development as mentioned in the <a class="reference internal" href="#project-dev-packages-overview"><span class="std std-ref">overview table</span></a>
 are already listed in <code class="docutils literal notranslate"><span class="pre">requirements-dev.in</span></code>. To create a <code class="docutils literal notranslate"><span class="pre">requirements-dev.txt</span></code>,
 execute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt3">pip-compile requirements-dev.in -o requirements-dev.txt</span>
-</pre></div></div><p>This produces the *.txt file containing our dependencies plus all required
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>project_venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip-compile<span class="w"> </span>requirements-dev.in<span class="w"> </span>-o<span class="w"> </span>requirements-dev.txt
+</pre></div>
+</div>
+<p>This produces the *.txt file containing our dependencies plus all required
 packages for those dependencies (all using pinned versions). To install all these
 dependencies, execute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt3">pip-sync requirements-dev.txt</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>project_venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip-sync<span class="w"> </span>requirements-dev.txt
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>All dependencies which are required to <strong>execute</strong> our project are gathered
 in <code class="docutils literal notranslate"><span class="pre">requirements.in</span></code>. Same workflow here:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt3">pip-compile requirements.in -o requirements.txt</span>
-<span class="prompt3">pip-sync requirements.txt</span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>project_venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip-compile<span class="w"> </span>requirements.in<span class="w"> </span>-o<span class="w"> </span>requirements.txt
+<span class="o">(</span>project_venv<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip-sync<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</div>
 <div class="docutils container" id="id2">
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="footcite-popular-python-project-tools" role="doc-footnote">
@@ -372,7 +388,7 @@ in <code class="docutils literal notranslate"><span class="pre">requirements.in<
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="../../_static/tabs.js?v=3030b3cb"></script>
@@ -170,23 +170,29 @@ build output resides).</p></li>
 <li><p>Create a symlink of your configuration to your nginx configuration directory:</p>
 <blockquote>
 <div><div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">ln<span class="w"> </span>-s<span class="w"> </span>&lt;/path/to/my/application&gt;/nginx.conf<span class="w"> </span>/usr/local/etc/nginx/init.d/&lt;doc_project_name&gt;.conf</span>
-</pre></div></div></div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ln<span class="w"> </span>-s<span class="w"> </span>&lt;/path/to/my/application&gt;/nginx.conf<span class="w"> </span>/etc/nginx/sites-enabled/&lt;doc_project_name&gt;.conf</span>
-</pre></div></div></div></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>&lt;/path/to/my/application&gt;/nginx.conf<span class="w"> </span>/usr/local/etc/nginx/init.d/&lt;doc_project_name&gt;.conf
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>&lt;/path/to/my/application&gt;/nginx.conf<span class="w"> </span>/etc/nginx/sites-enabled/&lt;doc_project_name&gt;.conf
+</pre></div>
+</div>
+</div></div>
 </div></blockquote>
 </li>
 <li><p>Restart nginx</p>
 <blockquote>
 <div><div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-1-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-1-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-1-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nginx<span class="w"> </span>-c<span class="w"> </span>/usr/local/etc/nginx/nginx.conf</span>
-</pre></div></div><p>or restart as brew service via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>services<span class="w"> </span>restart<span class="w"> </span>nginx</span>
-</pre></div></div></div><div aria-labelledby="tab-1-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nginx<span class="w"> </span>/etc/init.d/nginx<span class="w"> </span>restart</span>
-</pre></div></div></div></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-1-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-1-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-1-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nginx<span class="w"> </span>-c<span class="w"> </span>/usr/local/etc/nginx/nginx.conf
+</pre></div>
+</div>
+<p>or restart as brew service via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>services<span class="w"> </span>restart<span class="w"> </span>nginx
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nginx<span class="w"> </span>/etc/init.d/nginx<span class="w"> </span>restart
+</pre></div>
+</div>
+</div></div>
 </div></blockquote>
 </li>
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">https://127.0.0.1:&lt;PORT&gt;</span></code>, using the port specified in your configuration, in your browser.</p></li>
@@ -204,10 +210,12 @@ the repository, containing the documentation, is publicly available).</p>
 <li><p>Create a new, empty branch (<span class="menuselection">View all branches ‣ New branch</span>),
 named <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> and push it to the remote (here: <code class="docutils literal notranslate"><span class="pre">origin</span></code>):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>switch<span class="w"> </span>--orphan<span class="w"> </span>gh-pages</span>
-<span class="prompt1">git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span><span class="s2">&quot;initial commit&quot;</span></span>
-<span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>--orphan<span class="w"> </span>gh-pages
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span><span class="s2">&quot;initial commit&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Select <span class="menuselection">Actions ‣ New Workflow</span>. Here, select to <em>set up a workflow yourself</em>.</p></li>
 <li><p>A new file (default: <code class="docutils literal notranslate"><span class="pre">main.yml</span></code>) is created under <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code> and presented
@@ -304,7 +312,7 @@ message <code class="docutils literal notranslate"><span class="pre">Your</span>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

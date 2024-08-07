@@ -56,9 +56,9 @@ the group finishes.
 Running script instances cannot be altered, but to prevent any changes to the script
 on the files system, prevent other users from editing the file:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    chmod 755 /path/to/script.sh
+    $ chmod 755 /path/to/script.sh
 
 Use functions
 -------------

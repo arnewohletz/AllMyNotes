@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -191,19 +191,24 @@ can replace the low-res icons:</p>
 <li><p>Execute this command (adapt the version number, here 1.0.1):</p>
 <blockquote>
 <div><p><strong>macOS</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">jar<span class="w"> </span>-uf<span class="w"> </span>/Applications/muCommander.app/Contents/app/app/mucommander-core-1.0.1.jar<span class="w"> </span>-C<span class="w"> </span>~/Downloads/highres_icons<span class="w"> </span>images/action</span>
-</pre></div></div><p><strong>Windows</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">jar<span class="w"> </span>-uf<span class="w"> </span><span class="s2">&quot;%USERPROFILE%\Program Files\muCommander\app\app\mucommander-cor-1.0.1.jar -C %USERPROFILE%\Downloads\highres_icons images\action&quot;</span></span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jar<span class="w"> </span>-uf<span class="w"> </span>/Applications/muCommander.app/Contents/app/app/mucommander-core-1.0.1.jar<span class="w"> </span>-C<span class="w"> </span>~/Downloads/highres_icons<span class="w"> </span>images/action
+</pre></div>
+</div>
+<p><strong>Windows</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>s+$jar -uf “%USERPROFILE%Program FilesmuCommanderappappmucommander-cor-1.0.1.jar -C %USERPROFILE%Downloadshighres_icons imagesaction”</p>
+<blockquote>
+<div><div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>The jar executable (jar.exe on Windows) is only available in Oracle JDK installations.</p>
 </div>
 </div></blockquote>
-</li>
+<ol class="arabic simple">
 <li><p>(Re)start muCommander.</p></li>
 </ol>
 </section>
@@ -326,7 +331,7 @@ pasting in this content:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

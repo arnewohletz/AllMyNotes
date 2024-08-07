@@ -13,9 +13,9 @@ which also installs the *pyenv-virtualenv* extension.
 
 #. Run the command
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        curl https://pyenv.run | bash
+        $ curl https://pyenv.run | bash
 
 #. To make ``pyenv`` available append this content to ``~/.profile`` and ``~/.bashrc``
    (also ``~/.bash_login`` if available)::
@@ -28,10 +28,10 @@ which also installs the *pyenv-virtualenv* extension.
 
 #. Apply both files by typing (or restart your shell via ``exec "$SHELL"``):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        source ~/.profile
-        source ~/.bashrc
+        $ source ~/.profile
+        $ source ~/.bashrc
 
 #. Log off from your user profile and login again, then try to run ``pyenv``.
 
@@ -39,32 +39,32 @@ which also installs the *pyenv-virtualenv* extension.
 
         Before installing any Python versions, make sure the required build libraries are installed. Run:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            sudo apt-get update; sudo apt-get install make build-essential libssl-dev \
+            $ sudo apt-get update; sudo apt-get install make build-essential libssl-dev \
             zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
             libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
             liblzma-dev
 
 #. To update pyenv, simply run:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pyenv update
+        $ pyenv update
 
 Install pyenv on macOS
 ``````````````````````
 The recommended way to install pyenv on macOS is via `Homebrew`_:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install pyenv
+    $ brew install pyenv
 
 Also, install the extension *pyenv-virtualenv*:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install pyenv-virtualenv
+    $ brew install pyenv-virtualenv
 
 .. TODO: Add missing bash profile setting and similar stuff
 
@@ -143,9 +143,9 @@ the module:
 
 Install the `xz`_ formulaee via Homebrew, which contains these dependencies:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install xz
+    $ brew install xz
 
 Now go ahead and install your desired Python interpreter.
 
@@ -164,15 +164,15 @@ it uses the preinstalled version from the OS by default.
 
 First install the latest Tcl/Tk version:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install tcl-tk
+    $ brew install tcl-tk
 
 Open the python-build script of pyenv and point it towards the newly installed Tcl/Tk installation.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    nano /usr/local/Cellar/pyenv/<version>/plugins/python-build/bin/python-build
+    $ nano /usr/local/Cellar/pyenv/<version>/plugins/python-build/bin/python-build
 
 Find the line::
 
@@ -187,9 +187,9 @@ and replace it with::
     The replacement string expects a Tcl/Tk version 8.6. Version 8.7 will be released in the future,
     so check your current installed version via:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo "puts [info tclversion]" | tclsh
+        $ echo "puts [info tclversion]" | tclsh
 
 Any new CPython version installed via ``pyenv install`` should now utilize your Tcl/Tk installation.
 

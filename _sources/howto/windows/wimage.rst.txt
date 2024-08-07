@@ -169,16 +169,16 @@ message ``Windows RE auf Windows-Partition verschieben``.
 
 #. Check, if the recovery environment is active:
 
-    .. prompt:: text C:\\>
+    .. code-block:: bash
 
-        reagentc /info
+         reagentc /info
 
     If it shows *enabled* under *Status*, it's already active. In this case,
     deactivate it temporarily by entering:
 
-    .. prompt:: text C:\\>
+    .. code-block:: bash
 
-        reagentc /disable
+        C:\> reagentc /disable
 
     You may check the status via ``/info`` again to verify.
 
@@ -212,27 +212,27 @@ message ``Windows RE auf Windows-Partition verschieben``.
    a file called ``install.esd`` and copy it to ``C:\``.
 #. Open a command prompt as administrator, go to ``C:\`` and run
 
-    .. prompt:: batch
+    .. code-block:: bash batch
 
-        dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity
+        C:\> dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity
 
    which converts the file to ``install.wim`` located at the same directory.
 
 #. Mount the file by running
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        mkdir C:\wintemp
-        dism /Mount-Wim /WimFile:"C:\install.wim" /index:1 /MountDir:"C:\wintemp"
+        C:\> mkdir C:\wintemp
+        C:\> dism /Mount-Wim /WimFile:"C:\install.wim" /index:1 /MountDir:"C:\wintemp"
 
 #. Go to ``C:\wintemp\Windows\System32\Recovery`` and copy the ``Winre.wim``
    file to ``C:\Windows\System32\Recovery``.
 #. Restart the WIMage script. If the error doesn't reoccur, delete ``C:\wintemp``,
    ``install.wim`` and ``install.esd``. First unmount ``C:\wintemp`` via:
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        dism /Unmount-Wim /mountdir:C:\wintemp /discard
+        C:\> dism /Unmount-Wim /mountdir:C:\wintemp /discard
 
 OneDrive sync crashes WIMage
 ````````````````````````````
@@ -282,9 +282,9 @@ This may occur if OneDrive has crashed or terminated improperly at some point.
 #. Open a command prompt as administrator.
 #. Enter (in case the system drive uses a different letter, replace ``c`` below):
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        chkdsk c: /r /f
+        C:\> chkdsk c: /r /f
 
 #. Confirm with :kbd:`Y` when asked.
 #. Restart the PC and wait for the disk check to complete (it may take two hours or longer).
@@ -307,9 +307,9 @@ overwrite the existing image bundle file (``install.wim``). Follow these steps:
 #. Open a command line as administrator.
 #. Analyze the image bundle file (``install.wim``) on the external disk (here: disk letter *E*):
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        Dism /Get-ImageInfo /ImageFile:E:\sources\install.wim
+        C:\> Dism /Get-ImageInfo /ImageFile:E:\sources\install.wim
 
 #. Make sure you have enough free disk space on your internal hard disk (or an
    additional external hard disk) to save the latest image (highest index), which
@@ -318,18 +318,18 @@ overwrite the existing image bundle file (``install.wim``). Follow these steps:
 #. Export the latest image into a new Windows image file (here again, disk letter *E*),
    replacing the <HIGHEST_INDEX> with the proper number:
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        Dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:<HIGHEST_INDEX> /DestinationImageFile:install.wim
+        C:\> Dism /Export-Image /SourceImageFile:E:\sources\install.wim /SourceIndex:<HIGHEST_INDEX> /DestinationImageFile:install.wim
 
    The export may take around 15 minutes, depending on the image size and your hardware.
    The filesize should be less than the corresponding file on the external hard disk.
 
 #. You may check the resulting image file for its content:
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        Dism /Get-ImageInfo /ImageFile:install.wim
+        C:\> Dism /Get-ImageInfo /ImageFile:install.wim
 
 #. Replace ``E:\sources\install.wim`` on the external hard disk with the newly
    created one. Make sure to delete it from its original destination afterwards.

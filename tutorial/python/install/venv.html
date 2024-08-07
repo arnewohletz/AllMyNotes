@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -167,52 +167,53 @@ is updated to later versions, if the base interpreter is (for example, 3.9.2 -&g
 any other directory, but make sure to adapt the commands.</p>
 <section id="create-a-virtual-environment">
 <h2>Create a virtual environment<a class="headerlink" href="#create-a-virtual-environment" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>&lt;/path/to/target/env&gt;</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>&lt;/path/to/target/env&gt;
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>On Windows, it has been observed, that if the interpreter is <strong>not</strong> referenced by
 <code class="docutils literal notranslate"><span class="pre">python</span></code> but something like <code class="docutils literal notranslate"><span class="pre">python3.9</span></code>, the command fails. In that case,
 use the absolute path to your interpreter, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: "C:\\> ";
-}
-</style><span class="prompt2">C<span class="p">:</span><span class="nl">\Users\my_username\AppData\Local\Programs\Python\Python39\python.exe</span><span class="c1"> -m venv &lt;/path/to/target/env&gt;</span></span>
-</pre></div></div></div>
+</div>
 <p>You may choose something like <code class="docutils literal notranslate"><span class="pre">~/.venv/my_project_venv</span></code>
 (Windows: <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%\.venv\my_project_env</span></code>) as target path.</p>
 </section>
 <section id="activate-the-virtual-environment">
 <h2>Activate the virtual environment<a class="headerlink" href="#activate-the-virtual-environment" title="Link to this heading"></a></h2>
 <p><strong>On Linux / macOS:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">source</span><span class="w"> </span>&lt;/path/to/target/env&gt;/bin/activate</span>
-</pre></div></div><p><strong>On Windows:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2"><span class="p">&lt;</span>/path/to/target/env<span class="p">&gt;</span>/Scripts/activate.bat</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>&lt;/path/to/target/env&gt;/bin/activate
+</pre></div>
+</div>
+<p><strong>On Windows:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>&lt;/path/to/target/env&gt;/Scripts/activate.bat
+</pre></div>
+</div>
+</section>
 <section id="add-activation-script-to-your-project">
 <h2>Add activation script to your project<a class="headerlink" href="#add-activation-script-to-your-project" title="Link to this heading"></a></h2>
 <p>To easily activate the associated environment from inside a project, create a file called <code class="docutils literal notranslate"><span class="pre">activate</span></code>
 (Windows: <code class="docutils literal notranslate"><span class="pre">activate.bat</span></code>) in your project’s root directory.</p>
 <p><strong>On Linux / macOS:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>/my/project/root</span>
-<span class="prompt1">touch<span class="w"> </span>activate</span>
-<span class="prompt1">chmod<span class="w"> </span>a+x<span class="w"> </span>activate</span>
-</pre></div></div><p>Next, open the <code class="docutils literal notranslate"><span class="pre">activate</span></code> script and add the following content, then save exit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/my/project/root
+$<span class="w"> </span>touch<span class="w"> </span>activate
+$<span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span>activate
+</pre></div>
+</div>
+<p>Next, open the <code class="docutils literal notranslate"><span class="pre">activate</span></code> script and add the following content, then save exit:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
 <span class="nb">source</span><span class="w"> </span>~/.venv/&lt;ENV_NAME&gt;/bin/activate
 </pre></div>
 </div>
 <p>Make the script executable via <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">activate</span></code>. To call the script, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">source</span><span class="w"> </span>activate</span>
-<span class="prompt1"></span>
-<span class="prompt1"><span class="c1"># or alternatively</span></span>
-<span class="prompt1">.<span class="w"> </span>activate</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate
+
+<span class="c1"># or alternatively</span>
+$<span class="w"> </span>.<span class="w"> </span>activate
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Starting the script without <code class="docutils literal notranslate"><span class="pre">source</span></code> will execute the command in a sub-shell, in which
 case the environment is activate only for the sub-shell, which is closed, once the script
@@ -292,7 +293,7 @@ all available environments only run <code class="docutils literal notranslate"><
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

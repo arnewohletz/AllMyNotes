@@ -35,7 +35,7 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/thebelab-helper.js"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -156,34 +156,36 @@
 <section id="config">
 <h2>Config<a class="headerlink" href="#config" title="Link to this heading"></a></h2>
 <p>Get current config (from <code class="docutils literal notranslate"><span class="pre">~/.kube/config</span></code>)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">kubectl<span class="w"> </span>config<span class="w"> </span>view</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>config<span class="w"> </span>view
+</pre></div>
+</div>
+</section>
 <section id="cluster">
 <h2>Cluster<a class="headerlink" href="#cluster" title="Link to this heading"></a></h2>
 <p>Get info about the cluster:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>cluster-info</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>cluster-info
+</pre></div>
+</div>
+</section>
 <section id="node">
 <h2>Node<a class="headerlink" href="#node" title="Link to this heading"></a></h2>
 <p>Get all nodes in current cluster</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>nodes</span>
-</pre></div></div><p>Describe node (shows included namespaces)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: " ";
-}
-</style><span class="prompt2">kubectl describe node &lt;NODE&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+</pre></div>
+</div>
+<p>Describe node (shows included namespaces)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>node<span class="w"> </span>&lt;NODE&gt;
+</pre></div>
+</div>
+</section>
 <section id="namespace">
 <h2>Namespace<a class="headerlink" href="#namespace" title="Link to this heading"></a></h2>
 <p>A namespace is a space which separates resources and workloads.</p>
 <p>Get all namespaces in current cluster:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>namespaces</span>
-</pre></div></div><div class="admonition note">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces
+</pre></div>
+</div>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Predefined namespaces:</strong></p>
 <ul class="simple">
@@ -198,10 +200,14 @@ The public aspect of this namespace is only a convention, not a requirement.</p>
 </ul>
 </div>
 <p>Describe a namespace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>describe<span class="w"> </span>namespace<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p>Create a namespace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>&lt;path/to/namespace.yaml&gt;</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>namespace<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p>Create a namespace:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>&lt;path/to/namespace.yaml&gt;
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>An example <code class="docutils literal notranslate"><span class="pre">namespace.yaml</span></code> for a development namespace:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
@@ -212,8 +218,10 @@ The public aspect of this namespace is only a convention, not a requirement.</p>
 </div>
 </div>
 <p>Delete a namespace (all namespaces defined in <code class="docutils literal notranslate"><span class="pre">namespace.yaml</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>&lt;path/to/namespace.yaml&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>&lt;path/to/namespace.yaml&gt;
+</pre></div>
+</div>
+</section>
 <section id="deployment">
 <h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading"></a></h2>
 <p>A deployment is a resource which manages an application on the cluster. It handles
@@ -221,72 +229,112 @@ the creation of the defined pods (and possible replicas) and ensures the applica
 runs in the desired state.</p>
 <p><strong>Create</strong></p>
 <p>Deploy an application from a single Docker image (uses single node)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>--image<span class="o">=</span>&lt;IMAGE_URL:TAG&gt;</span>
-</pre></div></div><p><strong>Describe</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>--image<span class="o">=</span>&lt;IMAGE_URL:TAG&gt;
+</pre></div>
+</div>
+<p><strong>Describe</strong></p>
 <p>Get detailed information about a deployment</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>describe<span class="w"> </span>deployment<span class="w"> </span>&lt;DEPLOYMENT_NAME&gt;</span>
-</pre></div></div><p><strong>Scaling</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>deployment<span class="w"> </span>&lt;DEPLOYMENT_NAME&gt;
+</pre></div>
+</div>
+<p><strong>Scaling</strong></p>
 <p>A deployment may have multiple replica pods running the same container to ensure
 the constant availability of the application or to distribute incoming traffic
 to multiple nodes.</p>
 <p>Scale deployment to 4 replicas</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>scale<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>--replicas<span class="o">=</span><span class="m">4</span></span>
-</pre></div></div><p><strong>Update image version</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>--replicas<span class="o">=</span><span class="m">4</span>
+</pre></div>
+</div>
+<p><strong>Update image version</strong></p>
 <p>Update the used Docker image version for a deployment, initiating a rolling update:
 new pods using new images are created. When those running, the olds ones are
 terminated</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>&lt;IMAGE_NAME:TAG&gt;</span>
-</pre></div></div><p>Check rollout status of deployment (e.g. after updating image version)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;</span>
-</pre></div></div><p>Revert latest rollout  of deployment (e.g. a failed image version update)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>&lt;IMAGE_NAME:TAG&gt;
+</pre></div>
+</div>
+<p>Check rollout status of deployment (e.g. after updating image version)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;
+</pre></div>
+</div>
+<p>Revert latest rollout  of deployment (e.g. a failed image version update)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;
+</pre></div>
+</div>
+</section>
 <section id="services">
 <h2>Services<a class="headerlink" href="#services" title="Link to this heading"></a></h2>
 <p>A service is a load balancer and transfers traffic to pods. It exposes an
 application deployment to external traffic providing a port.</p>
 <p>Create a new service exposing a deployment under port 8001</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">kubectl expose deployments/&lt;DEPLOYMENT_NAME&gt; --type=&quot;NodePort&quot; --port 8001</span>
-</pre></div></div><p>Get all services within a namespace</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p><strong>Describe a service</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>expose<span class="w"> </span>deployments/&lt;DEPLOYMENT_NAME&gt;<span class="w"> </span>--type<span class="o">=</span><span class="s2">&quot;NodePort&quot;</span><span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span>
+</pre></div>
+</div>
+<p>Get all services within a namespace</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>services<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p><strong>Describe a service</strong></p>
 <p>Show detailed info on all services within the namespace</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>describe<span class="w"> </span>services<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p>Show detailed info on specific services within the namespace</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>describe<span class="w"> </span>service<span class="w"> </span>&lt;SERVICE_NAME&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p><strong>Delete a service</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>services<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p>Show detailed info on specific services within the namespace</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>service<span class="w"> </span>&lt;SERVICE_NAME&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p><strong>Delete a service</strong></p>
 <p>Delete a single service (this does not affect the application deployment which
 uses the service)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>&lt;SERVICE_NAME&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>&lt;SERVICE_NAME&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+</section>
 <section id="pod">
 <h2>Pod<a class="headerlink" href="#pod" title="Link to this heading"></a></h2>
 <p>A pod is a abstraction which represents one or more application containers.</p>
 <p>Get names all pods of a namespace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p>Get names of all pods in all namespaces</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A</span>
-</pre></div></div><p>Get wide output format of all pods of a namespace (includes cluster-internal IP address)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>wide</span>
-</pre></div></div><p>Get names of all pods using a specific label name</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span>&lt;LABEL_NAME&gt;</span>
-</pre></div></div><p><strong>Describe a pod</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p>Get names of all pods in all namespaces</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A
+</pre></div>
+</div>
+<p>Get wide output format of all pods of a namespace (includes cluster-internal IP address)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-o<span class="w"> </span>wide
+</pre></div>
+</div>
+<p>Get names of all pods using a specific label name</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span>&lt;LABEL_NAME&gt;
+</pre></div>
+</div>
+<p><strong>Describe a pod</strong></p>
 <p>Shows the containers, running inside the pod among other information.</p>
 <p>Describe single pod within a namespace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;POD&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p>Describe all pods within a namespace:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>describe<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div><p><strong>Get logs</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;POD&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p>Describe all pods within a namespace:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+<p><strong>Get logs</strong></p>
 <p>Print the latest logs of a running container inside a log (if pod only runs a single
 container, <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">&lt;CONTAINER&gt;</span></code>  must not be specified):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>&lt;POD&gt;<span class="w"> </span>-c<span class="w"> </span>&lt;CONTAINER&gt;</span>
-</pre></div></div><p><strong>Labels</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>&lt;POD&gt;<span class="w"> </span>-c<span class="w"> </span>&lt;CONTAINER&gt;
+</pre></div>
+</div>
+<p><strong>Labels</strong></p>
 <p>Labels are used to tag one or multiple pods</p>
 <p>Add another label name to a pod</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>label<span class="w"> </span>pod<span class="w"> </span>&lt;POD_NAME&gt;<span class="w"> </span>&lt;<span class="nv">LABEL_NAME</span><span class="o">=</span>VALUE&gt;</span>
-</pre></div></div><p>Delete a label from a pod</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>label<span class="w"> </span>pod<span class="w"> </span>&lt;POD_NAME&gt;<span class="w"> </span>&lt;LABEL_NAME&gt;-</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>label<span class="w"> </span>pod<span class="w"> </span>&lt;POD_NAME&gt;<span class="w"> </span>&lt;<span class="nv">LABEL_NAME</span><span class="o">=</span>VALUE&gt;
+</pre></div>
+</div>
+<p>Delete a label from a pod</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>label<span class="w"> </span>pod<span class="w"> </span>&lt;POD_NAME&gt;<span class="w"> </span>&lt;LABEL_NAME&gt;-
+</pre></div>
+</div>
+</section>
 <section id="replicaset">
 <h2>ReplicaSet<a class="headerlink" href="#replicaset" title="Link to this heading"></a></h2>
 <p>A ReplicaSet is a resource, which ensures that a specific number of pod replicas
@@ -294,8 +342,10 @@ are running at any given time. Commonly deployments are used to manage ReplicaSe
 so it is not recommended to use them directly.</p>
 <p><strong>Get replica sets</strong></p>
 <p>Get all ReplicaSets within the namespace which manage pods containing a certain label</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">kubectl<span class="w"> </span>get<span class="w"> </span>replicaset<span class="w"> </span>-l<span class="w"> </span>&lt;LABEL_NAME&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>replicaset<span class="w"> </span>-l<span class="w"> </span>&lt;LABEL_NAME&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -311,7 +361,7 @@ so it is not recommended to use them directly.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

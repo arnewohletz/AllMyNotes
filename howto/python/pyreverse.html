@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -151,14 +151,12 @@
 <p>Pyreverse is a module inside <a class="reference external" href="https://www.pylint.org">Pylint</a>, which generates UML diagrams out of Python code.</p>
 <section id="create-a-plantuml-class-diagram">
 <h2>Create a PlantUML class diagram<a class="headerlink" href="#create-a-plantuml-class-diagram" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">pyreverse<span class="w"> </span>-o<span class="w"> </span>plantuml<span class="w"> </span>--module-names<span class="w"> </span>yes<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span><span class="w"> </span>-d<span class="w"> </span>my/output/dir<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pyreverse<span class="w"> </span>-o<span class="w"> </span>plantuml<span class="w"> </span>--module-names<span class="w"> </span>yes<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span><span class="w"> </span>-d<span class="w"> </span>my/output/dir<span class="w"> </span><span class="se">\</span>
 path/to/module_A.py<span class="w"> </span>path/to/module_B.py<span class="w"> </span>...<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;s/set namespaceSeparator none/set namespaceSeparator ./g&quot;</span><span class="w"> </span>my/output/dir/classes.plantuml</span>
-</pre></div></div><dl class="simple">
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot;s/set namespaceSeparator none/set namespaceSeparator ./g&quot;</span><span class="w"> </span>my/output/dir/classes.plantuml
+</pre></div>
+</div>
+<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">plantuml</span></code></dt><dd><p>Generate the UML diagram in PlantUML format (*.plantuml)</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">--module-names</span> <span class="pre">yes</span></code></dt><dd><p>Embed classes inside the module, they are located in</p>
@@ -188,7 +186,7 @@ inside a frame</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

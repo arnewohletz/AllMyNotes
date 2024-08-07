@@ -18,9 +18,9 @@ the intermediate machine.
 
 To create a proxy jump, execute this command from your shell:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    ssh -J <user_intermediate>@<ip_or_domain_name_intermediate> <user_target>@<ip_or_domain_name_target>
+    $ ssh -J <user_intermediate>@<ip_or_domain_name_intermediate> <user_target>@<ip_or_domain_name_target>
 
 e.g. :code:`ssh -J testpc@ulm-ntg7-testb1 root@10.120.1.91`
 
@@ -51,23 +51,23 @@ intermediate machine (here, called gateway).
 
 #. Set up the tunnel on you local machine:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ssh -f GATEWAY_USERNAME -L localhost:CPORT:SERVER:SPORT -N
+        $ ssh -f GATEWAY_USERNAME -L localhost:CPORT:SERVER:SPORT -N
 
     .. hint::
 
         When using key authentication towards the gateway machine, execute:
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                ssh - i /path/to/private/key -f GATEWAY_USERNAME -L localhost:CPORT:SERVER:SPORT -N
+                $ ssh - i /path/to/private/key -f GATEWAY_USERNAME -L localhost:CPORT:SERVER:SPORT -N
 
 #. Create a connection:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ssh -p CPORT SUSERNAME@localhost
+        $ ssh -p CPORT SUSERNAME@localhost
 
 :GATEWAY_USERNAME:
 
@@ -95,9 +95,9 @@ intermediate machine (here, called gateway).
 
 Example:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    ssh -f testpc@ulm-ntg7-testb1 -L localhost:1025:10.120.1.91:22 -N
-    ssh -p 1025 root@localhost
+    $ ssh -f testpc@ulm-ntg7-testb1 -L localhost:1025:10.120.1.91:22 -N
+    $ ssh -p 1025 root@localhost
 
 .. footbibliography::

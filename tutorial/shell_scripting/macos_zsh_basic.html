@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -152,14 +152,14 @@ is recommended to zsh, including for shell scripts.</p>
 <section id="a-basic-shell-script">
 <h2>A basic shell script<a class="headerlink" href="#a-basic-shell-script" title="Link to this heading"></a></h2>
 <p>Shell scripts use the *.sh suffix. In order to execute shell scripts directly, like</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">my_first_script.sh</span>
-</pre></div></div><p>instead of requiring to pass it as an argument to a shell call like</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">zsh<span class="w"> </span>./my_first_script.sh</span>
-</pre></div></div><p>a so called <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> line is required in your script as the first line. This declares
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>my_first_script.sh
+</pre></div>
+</div>
+<p>instead of requiring to pass it as an argument to a shell call like</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>zsh<span class="w"> </span>./my_first_script.sh
+</pre></div>
+</div>
+<p>a so called <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> line is required in your script as the first line. This declares
 which type of shell is used when the script is called directly. It is recommended to
 use this shebang line on macOS:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/usr/bin/env zsh -l</span>
@@ -195,8 +195,10 @@ It is called from <code class="docutils literal notranslate"><span class="pre">/
 <li><p><a class="reference external" href="https://zsh.sourceforge.io/Doc/Release/zsh_toc.html">https://zsh.sourceforge.io/Doc/Release/zsh_toc.html</a></p></li>
 </ul>
 <p>Make sure to make your script executable (for security reasons this is not done by default):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>my_first_script.sh</span>
-</pre></div></div></section>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>my_first_script.sh
+</pre></div>
+</div>
+</section>
 <section id="launchd-script-management">
 <h2>launchd: Script management<a class="headerlink" href="#launchd-script-management" title="Link to this heading"></a></h2>
 <p>If you created a script and wish to execute regularly or on specific occasion (e.g.
@@ -215,8 +217,10 @@ need to do some manual tweaking afterwards), such as:</p>
 <p>Launchd tasks (agents and daemons) are defined in *.plist config files, which follows the
 XML syntax. For our script we create a new file in <code class="docutils literal notranslate"><span class="pre">~/Library/LaunchAgents</span></code> (the user
 agent directory):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">touch<span class="w"> </span>~/Library/LaunchAgents/my_first_script.plist</span>
-</pre></div></div><p>Add in the following content:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>~/Library/LaunchAgents/my_first_script.plist
+</pre></div>
+</div>
+<p>Add in the following content:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="linenos"> 2</span><span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
 <span class="linenos"> 3</span><span class="nt">&lt;plist</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
@@ -255,11 +259,15 @@ To run the script only once on login replace</p>
 </div>
 <p>For more information on the plist options, check <a class="reference external" href="https://www.launchd.info/">https://www.launchd.info/</a>.</p>
 <p>After you finished configuration file, add it to the <em>launchd</em> controller:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">launchctl<span class="w"> </span>load<span class="w"> </span>~/Library/LaunchAgents/my_first_script.plist</span>
-</pre></div></div><p>To check the status of the last execution run (replace MY_SCRIPT_NAME with the label
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>launchctl<span class="w"> </span>load<span class="w"> </span>~/Library/LaunchAgents/my_first_script.plist
+</pre></div>
+</div>
+<p>To check the status of the last execution run (replace MY_SCRIPT_NAME with the label
 you defined in your *.plist file)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">launchctl<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>MY_SCRIPT_NAME</span>
-</pre></div></div><p>which lists the return code of your script from the last execution, which should be 0,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>launchctl<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>MY_SCRIPT_NAME
+</pre></div>
+</div>
+<p>which lists the return code of your script from the last execution, which should be 0,
 if the script ran successfully. Check the <em>stderr.log</em> and <em>stdout.log</em> files which
 you defined in the *.plist config file for clues.</p>
 <div class="admonition hint">
@@ -268,8 +276,10 @@ you defined in the *.plist config file for clues.</p>
 For debugging, change to a low <em>StartInterval</em> value to trigger an execution.</p>
 </div>
 <p>To remove the script from the launcher run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">launchctl<span class="w"> </span>unload<span class="w"> </span>~/Library/LaunchAgents/my_first_script.plist</span>
-</pre></div></div><div class="admonition hint">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>launchctl<span class="w"> </span>unload<span class="w"> </span>~/Library/LaunchAgents/my_first_script.plist
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Changes to the shell script are adapted and used at the next execution, but changes
 to the *.plist require a reload (<em>unload</em> then again <em>load</em>) to the launch controller.</p>
@@ -290,7 +300,7 @@ to the *.plist require a reload (<em>unload</em> then again <em>load</em>) to th
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

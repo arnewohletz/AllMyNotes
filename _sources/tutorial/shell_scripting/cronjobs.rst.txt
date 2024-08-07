@@ -7,9 +7,9 @@ commands and scripts.
 Cron jobs run as the current user are define in your user's ``crontab`` file.
 To open it run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    crontab -e
+    $ crontab -e
 
 You may need to select an editor on first usage.
 

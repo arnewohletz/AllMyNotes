@@ -7,24 +7,24 @@ Use `netcat`_ to get port information (preinstalled on Linux and macOS).
 
 Check if a certain port is available via TCP connection:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    nc -v -z <host_ip> <port>
+    $ nc -v -z <host_ip> <port>
 
 In case, the port is actively used and open, a success message is reported,
 if not, a connection refused message appears.
 
 Same for UDP connection:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    nc -v -z -u <host_ip> <port>
+    $ nc -v -z -u <host_ip> <port>
 
 To check for an available port on your local system, run:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    nc -zv <host_ip> <port_from>-<port_until> 2>&1 | grep -m 1 failed
+    $ nc -zv <host_ip> <port_from>-<port_until> 2>&1 | grep -m 1 failed
 
 to receive the first unused port within the specified range.
 
@@ -41,9 +41,9 @@ to receive the first unused port within the specified range.
     You may also run :download:`open_ports.sh <_file/open_ports.sh>` to receive information on a
     port range (<from_port> until <to_port>):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ./open_ports <host_ip> <from_port> <to_port>
+        $ ./open_ports <host_ip> <from_port> <to_port>
 
 Send chat messages between two machines
 ---------------------------------------
@@ -53,15 +53,15 @@ must have netcat installed.
 
 On the server machine, create a netcat instance to listen to a specific port (here: 10001):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    nc -n -v -l 10001
+    $ nc -n -v -l 10001
 
 On the client side, create a connection to the specified port on the server (host):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    nc -n -v <server_ip_address> 10001
+    $ nc -n -v <server_ip_address> 10001
 
 Now, you may enter a message on either the server or any client machine and all
 connection machines will receive the message.

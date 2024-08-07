@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -161,12 +161,10 @@
 <span class="n">export</span> <span class="n">PROMOTED_METAPACKAGE_VERSION</span><span class="o">=</span><span class="mf">24.03.0</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s/crnc-tts-neuraltts.products.</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">==.*/crnc-tts-neuraltts.products.</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">==</span><span class="si">${</span><span class="nv">PROMOTED_METAPACKAGE_VERSION</span><span class="si">}</span><span class="s2">\&quot;/g&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">_run_environment.yaml&quot;</span></span>
-</pre></div></div><ul class="simple">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s/crnc-tts-neuraltts.products.</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">==.*/crnc-tts-neuraltts.products.</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">==</span><span class="si">${</span><span class="nv">PROMOTED_METAPACKAGE_VERSION</span><span class="si">}</span><span class="s2">\&quot;/g&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="si">}</span><span class="s2">_run_environment.yaml&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-i</span></code> defines that the file in-place is edited (no backup suffix provided)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">s/</span></code> marks the begin of the regular expression, the single <code class="docutils literal notranslate"><span class="pre">/</span></code> marks its end</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">/g</span></code> at the end, defines to perform global substitution, where the match
@@ -199,7 +197,7 @@ for the regular expression is replaces by the string between <code class="docuti
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

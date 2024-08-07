@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -155,15 +155,15 @@ recommendation to get disk space back.</p>
 the <a class="reference external" href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service">Volume Shadow Copy</a>. By default it uses up to 10 % of the disk space.</p>
 <blockquote>
 <div><p>Check the currently maximum storage space via command line as admin:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "C:\\> ";
-}
-</style><span class="prompt1">vssadmin list shadowstorage</span>
-</pre></div></div><p>and see the <code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">Shadow</span> <span class="pre">Copy</span> <span class="pre">Storage</span> <span class="pre">space</span></code> value on the respective volume.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>vssadmin<span class="w"> </span>list<span class="w"> </span>shadowstorage
+</pre></div>
+</div>
+<p>and see the <code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">Shadow</span> <span class="pre">Copy</span> <span class="pre">Storage</span> <span class="pre">space</span></code> value on the respective volume.</p>
 <p>To reduce the size (here, set to <em>10 GB</em> for <code class="docutils literal notranslate"><span class="pre">C:\</span></code>), execute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">vssadmin resize shadowstorage /on=c: /for=c: /maxsize=10GB</span>
-</pre></div></div><p>This will prevent the directory from saving more than 10 GB of shadow copies.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>vssadmin<span class="w"> </span>resize<span class="w"> </span>shadowstorage<span class="w"> </span>/on<span class="o">=</span>c:<span class="w"> </span>/for<span class="o">=</span>c:<span class="w"> </span>/maxsize<span class="o">=</span>10GB
+</pre></div>
+</div>
+<p>This will prevent the directory from saving more than 10 GB of shadow copies.</p>
 </div></blockquote>
 </li>
 </ul>
@@ -182,7 +182,7 @@ span.prompt1:before {
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

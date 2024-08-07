@@ -10,15 +10,15 @@ An alternative for ``cat``.
 
 Install via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install bat
+    $ brew install bat
 
 Configure theme,
 
-.. prompt:: bash
+.. code-block:: bash
 
-    bat --list-themes
+    $ bat --list-themes
 
 Select a suitable theme, then add this line to your ``~/.zprofile`` or ``.bashrc``
 (here using the *Coldark-Dark* theme, adjust to your theme):
@@ -36,15 +36,15 @@ An alternative for ``ls``.
 
 Install via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install eza
+    $ brew install eza
 
 Display the contents of a directory with extended details, groups column and icons:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    eza -lg --icons
+    $ eza -lg --icons
 
 |:+1:| |:+1:| lsd
 -----------------
@@ -54,9 +54,9 @@ An alternative for ``ls``
 
 Install via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install lsd
+    $ brew install lsd
 
 |:+1:| |:+1:|  duf
 ------------------
@@ -66,9 +66,9 @@ An alternative for ``du``
 
 Install via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install duf
+    $ brew install duf
 
 df
 --
@@ -78,6 +78,6 @@ An alternative for ``find``
 
 Install via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install fd
+    $ brew install fd

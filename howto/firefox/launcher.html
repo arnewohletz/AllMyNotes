@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -153,17 +153,17 @@ instances, each instance featuring a different profile can be done using a trick
 <ol class="arabic">
 <li><p>Create a new file within <code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code>:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">sudo<span class="w"> </span>touch<span class="w"> </span>/usr/local/bin/firefox</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>touch<span class="w"> </span>/usr/local/bin/firefox
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Open the file:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>nano<span class="w"> </span>/usr/local/bin/firefox</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>nano<span class="w"> </span>/usr/local/bin/firefox
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Add the following content and save the file:</p>
 <blockquote>
@@ -176,8 +176,10 @@ span.prompt1:before {
 </li>
 <li><p>To open Firefox using a specific profile, type:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">firefox<span class="w"> </span>&lt;profile_name&gt;</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>firefox<span class="w"> </span>&lt;profile_name&gt;
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>You can find out the profile name, open a Firefox window and enter <code class="docutils literal notranslate"><span class="pre">about:profiles</span></code>
 into the address bar. The profile names are listed there (Profile: &lt;profile_name&gt;).</p>
@@ -212,7 +214,7 @@ manually. It’s still possible to open multiple instances with different profil
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

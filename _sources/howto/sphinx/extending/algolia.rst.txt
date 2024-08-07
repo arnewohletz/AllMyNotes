@@ -30,9 +30,9 @@ Set up the Sphinx documentation
 -------------------------------
 #. Install both the extensions `sphinx-sitemap`_ and `sphinx-docsearch`_.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pip install sphinx-sitemap sphinx-docsearch
+        $ pip install sphinx-sitemap sphinx-docsearch
 
 #. Add both extensions to your ``conf.py`` file:
 
@@ -159,9 +159,9 @@ Execute the crawler
 #. From the documentations sources root directory (where ``.env`` and
    ``docsearch_crawler_settings.json`` are located), run the Docker image like this:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker run -it --env-file=.env -e "CONFIG=$(cat docsearch_crawler_settings.json | jq -r tostring)" algolia/docsearch-scraper
+        $ docker run -it --env-file=.env -e "CONFIG=$(cat docsearch_crawler_settings.json | jq -r tostring)" algolia/docsearch-scraper
 
     .. important::
 
@@ -239,9 +239,9 @@ but without the need to create a ``sitemap.yaml``.
 
 #. Install the extensions `sphinx-docsearch`_.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pip install sphinx-docsearch
+        $ pip install sphinx-docsearch
 
 #. Add the extensions to your ``conf.py`` file:
 

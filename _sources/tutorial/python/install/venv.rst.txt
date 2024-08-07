@@ -15,9 +15,9 @@ any other directory, but make sure to adapt the commands.
 Create a virtual environment
 ----------------------------
 
-.. prompt:: bash
+.. code-block:: bash
 
-    python -m venv </path/to/target/env>
+    $ python -m venv </path/to/target/env>
 
 .. hint::
 
@@ -25,9 +25,9 @@ Create a virtual environment
     ``python`` but something like ``python3.9``, the command fails. In that case,
     use the absolute path to your interpreter, for example:
 
-    .. prompt:: batch
+    .. code-block:: bash batch
 
-        C:\Users\my_username\AppData\Local\Programs\Python\Python39\python.exe -m venv </path/to/target/env>
+        C:\> C:\Users\my_username\AppData\Local\Programs\Python\Python39\python.exe -m venv </path/to/target/env>
 
 You may choose something like ``~/.venv/my_project_venv``
 (Windows: ``%USERPROFILE%\.venv\my_project_env``) as target path.
@@ -36,15 +36,15 @@ Activate the virtual environment
 --------------------------------
 **On Linux / macOS:**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    source </path/to/target/env>/bin/activate
+    $ source </path/to/target/env>/bin/activate
 
 **On Windows:**
 
-.. prompt:: batch
+.. code-block:: bash
 
-    </path/to/target/env>/Scripts/activate.bat
+    C:\> </path/to/target/env>/Scripts/activate.bat
 
 Add activation script to your project
 -------------------------------------
@@ -53,11 +53,11 @@ To easily activate the associated environment from inside a project, create a fi
 
 **On Linux / macOS:**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    cd /my/project/root
-    touch activate
-    chmod a+x activate
+    $ cd /my/project/root
+    $ touch activate
+    $ chmod a+x activate
 
 Next, open the ``activate`` script and add the following content, then save exit:
 
@@ -69,12 +69,12 @@ Next, open the ``activate`` script and add the following content, then save exit
 
 Make the script executable via ``chmod u+x activate``. To call the script, run:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    source activate
+    $ source activate
 
     # or alternatively
-    . activate
+    $ . activate
 
 .. hint::
 

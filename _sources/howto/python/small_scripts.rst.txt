@@ -8,9 +8,9 @@ be executed
 
 but simply like in this example:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    my_little_script.py
+    $ my_little_script.py
 
 .. important::
 
@@ -31,21 +31,22 @@ installed on your system.
 #. Open new Terminal window or `source <https://linuxways.net/centos/source-command-in-linux/>`__ your
    shell initialization script. Example:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            source ~/.zprofile
+            $ source ~/.zprofile
+
 #. Create a virtual environment using pyenv for your scripts:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pyenv virtualenv <PYTHON_VERSION> <VENV_NAME>
+        $ pyenv virtualenv <PYTHON_VERSION> <VENV_NAME>
 
 #. Select your virtual environment as interpreter for the scripts directory:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        cd /your/scripts/directory
-        pyenv local <VENV_NAME>
+        $ cd /your/scripts/directory
+        $ pyenv local <VENV_NAME>
 
 #. Create a new script file or copy your existing script(s) into your new scripts directory.
 #. Add this content on the very top of any script file in your scripts directory
@@ -65,9 +66,9 @@ installed on your system.
         (e.g. ``/usr/bin/bash``). Check your default shell by opening your Terminal
         and execute:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            echo $SHELL
+            $ echo $SHELL
 
 You should now be able to execute any \*.py script file within your scripts directory
 from anywhere in the shell, without the need to activate the script's virtual environment

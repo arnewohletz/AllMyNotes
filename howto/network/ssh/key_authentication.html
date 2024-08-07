@@ -35,7 +35,7 @@
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/thebelab-helper.js"></script>
         <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="../../../_static/tabs.js?v=3030b3cb"></script>
@@ -187,20 +187,24 @@ where it should already exist).</p></li>
 <ol class="arabic">
 <li><p>Start the Key Generator via the command line (Windows) or shell (Linux/macOS)</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>To customize the key pair even further you may also run</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="k">$(</span>scutil<span class="w"> </span>--get<span class="w"> </span>LocalHostName<span class="k">)</span><span class="s2"> - `date +%Y%m%d`&quot;</span></span>
-</pre></div></div></div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="nv">$HOSTNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span></span>
-</pre></div></div></div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Run in git bash (comes with <a class="reference external" href="https://gitforwindows.org/">Git for Windows</a>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USERNAME</span><span class="s2">@</span><span class="nv">$COMPUTERNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span></span>
-</pre></div></div></div></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="k">$(</span>scutil<span class="w"> </span>--get<span class="w"> </span>LocalHostName<span class="k">)</span><span class="s2"> - `date +%Y%m%d`&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="nv">$HOSTNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Run in git bash (comes with <a class="reference external" href="https://gitforwindows.org/">Git for Windows</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USERNAME</span><span class="s2">@</span><span class="nv">$COMPUTERNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span>
+</pre></div>
+</div>
+</div></div>
 </div>
 </div></blockquote>
 </li>
@@ -236,22 +240,24 @@ be able to interact with them.</p>
 <p>On Windows, it is highly recommended to use the included PowerShell scripts to check or
 set the proper access rights. Open a PowerShell instance as administrator, navigate
 to the OpenSSH directory and run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: "PS C:\\> ";
-}
-</style><span class="prompt2"><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">FixHostFilePermissions</span><span class="p">.</span><span class="n">ps1</span></span>
-</pre></div></div></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">FixHostFilePermissions</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+</div>
 <ol class="arabic">
 <li><p><strong>Linux/macOS only</strong>: Make sure, your home directory is only writable by the respective user:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>/home</span>
-<span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>/Users</span>
-</pre></div></div><p>should output <code class="docutils literal notranslate"><span class="pre">drwxr-xr-x</span></code> for the user’s directory.</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/home
+$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/Users
+</pre></div>
+</div>
+<p>should output <code class="docutils literal notranslate"><span class="pre">drwxr-xr-x</span></code> for the user’s directory.</p>
 <p>If not, execute:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>~/</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>~/
+</pre></div>
+</div>
+</div></blockquote>
 </div></blockquote>
 </li>
 <li><p>It is important that <code class="docutils literal notranslate"><span class="pre">$HOME/.ssh</span></code> (<code class="docutils literal notranslate"><span class="pre">%USERPROFILE%\.ssh</span></code> on Windows) and the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code>
@@ -265,13 +271,7 @@ file have the correct permissions and owner:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> must only be writable and readable by the owner</p></li>
 </ul>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh</span>
-<span class="prompt1">chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh/authorized_keys</span>
-<span class="prompt1">chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh/config</span>
-</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh</span>
-<span class="prompt1">chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys</span>
-<span class="prompt1">chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config</span>
-</pre></div></div></div></blockquote>
+</div></blockquote>
 </li>
 </ol>
 </section>
@@ -287,22 +287,21 @@ when trying to establish a connection, so always make sure, those are set correc
 <p>On Windows, it is highly recommended to use the included PowerShell scripts to check or
 set the proper access rights. Open a PowerShell instance as administrator, navigate
 to the OpenSSH directory and run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2"><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">FixUserFilePermissions</span><span class="p">.</span><span class="n">ps1</span></span>
-</pre></div></div></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">PS </span><span class="n">C</span><span class="p">:\&gt;</span> <span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">FixUserFilePermissions</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+</div>
 <p>OpenSSH does not allow the key pair files to be editable by anyone except the owner.
 The private key must also be protected (here: id_ed25519):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh/id_ed25519</span>
-<span class="prompt1">chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh/id_ed25519.pub</span>
-</pre></div></div></div></blockquote>
+<div></div></blockquote>
 </section>
 <section id="server-set-up-key-authentication">
 <h2>Server: Set-up key authentication<a class="headerlink" href="#server-set-up-key-authentication" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Add your private key to the authentication agent (it will handle the authorizations via keys):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-add</span>
-</pre></div></div><div class="admonition hint">
+<div><div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
 <li><p>In case you received the message</p>
@@ -311,8 +310,10 @@ The private key must also be protected (here: id_ed25519):</p>
 </pre></div>
 </div>
 <p>start the <em>ssh-agent</em> via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">eval</span><span class="w"> </span><span class="sb">`</span>ssh-agent<span class="w"> </span>-s<span class="sb">`</span></span>
-</pre></div></div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span><span class="w"> </span><span class="sb">`</span>ssh-agent<span class="w"> </span>-s<span class="sb">`</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p>To autostart the ssh-agent add this content to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or
 <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
 <blockquote>
@@ -329,8 +330,10 @@ ssh-add -l &gt;/dev/null || ssh-add
 </li>
 </ul>
 <p>In case you are using a private key using a different name and/or path, you must pass it:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-add<span class="w"> </span>/path/to/custom_private_key_file</span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-add<span class="w"> </span>/path/to/custom_private_key_file
+</pre></div>
+</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>On the <strong>client</strong>, open the public key file (e.g. id_ed25519.pub) and copy the entire content into the
@@ -343,8 +346,10 @@ with <em>&lt;username&gt;&#64;&lt;hostname&gt;</em>). Save and close both files.
 separate line within the server’s <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file. Each time, this file is edited,
 the SSH server must be restarted.</p>
 <p>This can also be done from the client via:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_ed25519.pub<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;</span>
-</pre></div></div></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_ed25519.pub<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;
+</pre></div>
+</div>
+</div>
 </div></blockquote>
 </li>
 <li><p>Open the OpenSSH config file in a text editor:</p>
@@ -391,16 +396,22 @@ key authentication has been proven to work.</p>
 </div></blockquote>
 <p><strong>Linux:</strong></p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">service<span class="w"> </span>ssh<span class="w"> </span>restart</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>service<span class="w"> </span>ssh<span class="w"> </span>restart
+</pre></div>
+</div>
+</div></blockquote>
 <p><strong>macOS:</strong></p>
 <blockquote>
 <div><p>If using Homebrew installation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>ssh</span>
-</pre></div></div><p>If using preinstalled SSH:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>launchctl<span class="w"> </span>stop<span class="w"> </span>com.openssh.sshd</span>
-<span class="prompt1">sudo<span class="w"> </span>launchctl<span class="w"> </span>start<span class="w"> </span>com.openssh.sshd</span>
-</pre></div></div></div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>ssh
+</pre></div>
+</div>
+<p>If using preinstalled SSH:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>launchctl<span class="w"> </span>stop<span class="w"> </span>com.openssh.sshd
+$<span class="w"> </span>sudo<span class="w"> </span>launchctl<span class="w"> </span>start<span class="w"> </span>com.openssh.sshd
+</pre></div>
+</div>
+</div></blockquote>
 </div></blockquote>
 </li>
 </ol>
@@ -431,29 +442,37 @@ towards the server.</p>
 <h2>Test key authentication<a class="headerlink" href="#test-key-authentication" title="Link to this heading"></a></h2>
 <p>Connect to the server (using the server username):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;
+</pre></div>
+</div>
+</div></blockquote>
 <p>The connection should be established without asking for the password, stating that
 the public key was used for authentication.</p>
 <p>If the connection is not successful, check the log output, by running the connection in
 verbose mode:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;<span class="w"> </span>-v</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>&lt;HOST_USERNAME&gt;@&lt;HOST&gt;<span class="w"> </span>-v
+</pre></div>
+</div>
+</div></blockquote>
 </section>
 </section>
 <section id="configure-connections">
 <h1>Configure connections<a class="headerlink" href="#configure-connections" title="Link to this heading"></a></h1>
 <p>This is a convenience feature. Right now, connecting to a host system is done, for example,
 like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/all_my_keys/imac.ed25519.pub<span class="w"> </span>someuser@some.host.system</span>
-</pre></div></div><p>To shorten this you may create a config file to store all these parameters.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/all_my_keys/imac.ed25519.pub<span class="w"> </span>someuser@some.host.system
+</pre></div>
+</div>
+<p>To shorten this you may create a config file to store all these parameters.</p>
 <ol class="arabic">
 <li><p>On the client machine, create the config file in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory
 (if not already present):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">touch<span class="w"> </span>~/.ssh/config</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>~/.ssh/config
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Open the file and add your config, for example, like this:</p>
 <blockquote>
@@ -471,19 +490,19 @@ Host someotherhost
 <p>You may specify settings for any number of host systems. Check out all
 possible settings via:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">man<span class="w"> </span>ssh_config</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>man<span class="w"> </span>ssh_config
+</pre></div>
+</div>
+</div></blockquote>
 </div></blockquote>
 </li>
 <li><p>Save and close the file.</p></li>
 <li><p>You may connect to a specified host system by only stating its name:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt3:before {
-  content: " ";
-}
-</style><span class="prompt3">ssh imac</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>imac
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 <div class="admonition hint">
@@ -516,7 +535,7 @@ type %USERPROFILE%\.ssh\config | findstr /R &quot;^Host &quot;
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

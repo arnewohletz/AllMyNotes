@@ -35,7 +35,7 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/thebelab-helper.js"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../_static/copybutton.js?v=c19baf25"></script>
+        <script src="../../_static/copybutton.js?v=f0731925"></script>
         <script defer="defer" src="../../_static/docsearch.js?v=77274085"></script>
         <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -169,12 +169,10 @@ available to use offline (except, if you have a wired internet connection availa
 <ol class="arabic">
 <li><p>Find out your network device name:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">ioreg<span class="w"> </span>-r<span class="w"> </span>-n<span class="w"> </span>ARPT</span>
-</pre></div></div><p>Find the IOName (e.g. “IOName” = “pci14e4,43ba”).</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ioreg<span class="w"> </span>-r<span class="w"> </span>-n<span class="w"> </span>ARPT
+</pre></div>
+</div>
+<p>Find the IOName (e.g. “IOName” = “pci14e4,43ba”).</p>
 <p>Go to <a class="reference external" href="https://devicehunt.com/">https://devicehunt.com/</a> and select <em>PCI</em> as type and type in the IDs
 of your device. For the upper example:</p>
 <blockquote>
@@ -245,22 +243,28 @@ Follow these steps to install the required driver:</p>
 <li><p>Copy the downloaded Broadcom driver onto the system (e.g. to ~/Downloads)</p></li>
 <li><p>Extract the archive (in case its not already a *.deb file):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~/Downloads</span>
-<span class="prompt1">tar<span class="w"> </span>xzvf<span class="w"> </span>./bcmwl-kernel-source*.deb</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Downloads
+$<span class="w"> </span>tar<span class="w"> </span>xzvf<span class="w"> </span>./bcmwl-kernel-source*.deb
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 <li><p>Install the driver (might a minute or two):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./bcmwl-kernel-source*.deb</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./bcmwl-kernel-source*.deb
+</pre></div>
+</div>
+</div></blockquote>
 <p><strong>Important</strong>: If the installation requires downloading additional dependencies,
 establish a bluetooth tethering connection to a smartphone before the installation.</p>
 </li>
 <li><p>Load the Broadcom Wi-Fi driver (here: Broadcom Model 43xx):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sudo<span class="w"> </span>modprobe<span class="w"> </span>-r<span class="w"> </span>b43<span class="w"> </span>ssb<span class="w"> </span>wl<span class="w"> </span>brcmfmac<span class="w"> </span>brcmsmac<span class="w"> </span>bcma</span>
-<span class="prompt1">sudo<span class="w"> </span>modprobe<span class="w"> </span>wl</span>
-</pre></div></div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>-r<span class="w"> </span>b43<span class="w"> </span>ssb<span class="w"> </span>wl<span class="w"> </span>brcmfmac<span class="w"> </span>brcmsmac<span class="w"> </span>bcma
+$<span class="w"> </span>sudo<span class="w"> </span>modprobe<span class="w"> </span>wl
+</pre></div>
+</div>
+</div></blockquote>
 </li>
 </ol>
 <p>You should now be able to connect to a Wi-Fi.</p>
@@ -284,7 +288,7 @@ establish a bluetooth tethering connection to a smartphone before the installati
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 05, 2024</span>.
+        <span class="update_date">Aug 07, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -4,23 +4,23 @@ Processes can be manipulated by referring to their Process ID (PID).
 
 **Get all running processes** (including PIDs):
 
-.. prompt:: powershell
+.. code-block:: powershell
 
-    Get-Process
+    PS C:\> Get-Process
 
 To **stop a certain process** use its PID:
 
-.. prompt:: powershell
+.. code-block:: powershell
 
-    Stop-Process <PID>
+    PS C:\> Stop-Process <PID>
 
 The process is quit immediately and the PID is released for new processes.
 
 To **change the priority of a process** for *APPLICATION.EXE* (edit!) to *XXX* run:
 
-.. prompt:: powershell
+.. code-block:: powershell
 
-    Get-WmiObject Win32_process-filter 'name="APPLICATION.EXE"'|ForEach-Object {$_.SetPriority(XXX)}
+    PS C:\> Get-WmiObject Win32_process-filter 'name="APPLICATION.EXE"'|ForEach-Object {$_.SetPriority(XXX)}
 
 where XXX ist set to
 
@@ -40,14 +40,14 @@ where XXX ist set to
 
 To **get more info** about a process:
 
-.. prompt:: powershell
+.. code-block:: powershell
 
-    Get-Process PROCESS_NAME | Format-List *
+    PS C:\> Get-Process PROCESS_NAME | Format-List *
 
 like the priority, the process executable path or version
 
 To see the **user rights of a running process** (requires admin console), run
 
-.. prompt:: powershell
+.. code-block:: powershell
 
-    Get-Process PROCESS_NAME -Include-UserName
+    PS C:\> Get-Process PROCESS_NAME -Include-UserName
