@@ -18,9 +18,9 @@ Server & Client: Create key pair
 ````````````````````````````````
 #. Start the Key Generator via the command line (Windows) or shell (Linux/macOS)
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ssh-keygen -t ed25519
+        $ ssh-keygen -t ed25519
 
     .. hint::
 
@@ -29,23 +29,23 @@ Server & Client: Create key pair
         .. tabs::
             .. group-tab:: macOS
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    ssh-keygen -t ed25519 -C "$USER@$(scutil --get LocalHostName) - `date +%Y%m%d`"
+                    $ ssh-keygen -t ed25519 -C "$USER@$(scutil --get LocalHostName) - `date +%Y%m%d`"
 
             .. group-tab:: Linux
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    ssh-keygen -t ed25519 -C "$USER@$HOSTNAME - `date +%Y%m%d`"
+                    $ ssh-keygen -t ed25519 -C "$USER@$HOSTNAME - `date +%Y%m%d`"
 
             .. group-tab:: Windows
 
                 Run in git bash (comes with `Git for Windows`_):
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    ssh-keygen -t ed25519 -C "$USERNAME@$COMPUTERNAME - `date +%Y%m%d`"
+                    $ ssh-keygen -t ed25519 -C "$USERNAME@$COMPUTERNAME - `date +%Y%m%d`"
 
 #. Set the path and filename of the keys (default: ~/.ssh/id_ed25519).
    In case, you don't need separate keys pairs for different connections, you don't need to
@@ -81,24 +81,24 @@ be able to interact with them.
     set the proper access rights. Open a PowerShell instance as administrator, navigate
     to the OpenSSH directory and run:
 
-    .. prompt:: powershell
+    .. code-block:: powershell
 
-        powershell.exe -ExecutionPolicy Bypass -File .\FixHostFilePermissions.ps1
+        PS C:\> powershell.exe -ExecutionPolicy Bypass -File .\FixHostFilePermissions.ps1
 
 #. **Linux/macOS only**: Make sure, your home directory is only writable by the respective user:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ls -l /home
-        ls -l /Users
+        $ ls -l /home
+        $ ls -l /Users
 
     should output ``drwxr-xr-x`` for the user's directory.
 
     If not, execute:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            chmod 755 ~/
+            $ chmod 755 ~/
 
 #. It is important that ``$HOME/.ssh`` (``%USERPROFILE%\.ssh`` on Windows) and the ``authorized_keys``
    file have the correct permissions and owner:
@@ -108,17 +108,17 @@ be able to interact with them.
        * ``authorized_keys`` must be owned by the user
        * ``authorized_keys`` must only be writable and readable by the owner
 
-    .. prompt:: bash
+    .. code-block:: bash bash
 
-        chown $USER ~/.ssh
-        chown $USER ~/.ssh/authorized_keys
-        chown $USER ~/.ssh/config
+        $ chown $USER ~/.ssh
+        $ chown $USER ~/.ssh/authorized_keys
+        $ chown $USER ~/.ssh/config
 
-    .. prompt:: bash
+    .. code-block:: bash bash
 
-        chmod 700 ~/.ssh
-        chmod 600 ~/.ssh/authorized_keys
-        chmod 600 ~/.ssh/config
+        $ chmod 700 ~/.ssh
+        $ chmod 600 ~/.ssh/authorized_keys
+        $ chmod 600 ~/.ssh/config
 
 Client: Set permissions
 ```````````````````````
@@ -135,25 +135,25 @@ when trying to establish a connection, so always make sure, those are set correc
     set the proper access rights. Open a PowerShell instance as administrator, navigate
     to the OpenSSH directory and run:
 
-    .. prompt:: powershell
+    .. code-block:: powershell
 
-        powershell.exe -ExecutionPolicy Bypass -File .\FixUserFilePermissions.ps1
+        PS C:\> powershell.exe -ExecutionPolicy Bypass -File .\FixUserFilePermissions.ps1
 
 OpenSSH does not allow the key pair files to be editable by anyone except the owner.
 The private key must also be protected (here: id_ed25519):
 
-    .. prompt:: bash
+    .. code-block:: bash bash
 
-        chmod 700 ~/.ssh/id_ed25519
-        chmod 700 ~/.ssh/id_ed25519.pub
+        $ chmod 700 ~/.ssh/id_ed25519
+        $ chmod 700 ~/.ssh/id_ed25519.pub
 
 Server: Set-up key authentication
 `````````````````````````````````
 #. Add your private key to the authentication agent (it will handle the authorizations via keys):
 
-    .. prompt:: bash
+    .. code-block:: bash bash
 
-        ssh-add
+        $ ssh-add
 
     .. hint::
 
@@ -165,7 +165,7 @@ Server: Set-up key authentication
 
             start the *ssh-agent* via
 
-            .. prompt:: bash
+            .. code-block:: bash
 
                 eval `ssh-agent -s`
 
@@ -185,9 +185,9 @@ Server: Set-up key authentication
 
         In case you are using a private key using a different name and/or path, you must pass it:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            ssh-add /path/to/custom_private_key_file
+            $ ssh-add /path/to/custom_private_key_file
 
 #. On the **client**, open the public key file (e.g. id_ed25519.pub) and copy the entire content into the
    ``authorized_keys`` file on the **server** (should be a single line starting with *ssh-rsa* and ending
@@ -201,9 +201,9 @@ Server: Set-up key authentication
 
         This can also be done from the client via:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            ssh-copy-id -i ~/.ssh/id_ed25519.pub <HOST_USERNAME>@<HOST>
+            $ ssh-copy-id -i ~/.ssh/id_ed25519.pub <HOST_USERNAME>@<HOST>
 
 #. Open the OpenSSH config file in a text editor:
 
@@ -242,24 +242,24 @@ Server: Set-up key authentication
 
     **Linux:**
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            service ssh restart
+            $ service ssh restart
 
     **macOS:**
 
         If using Homebrew installation:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            brew services start ssh
+            $ brew services start ssh
 
         If using preinstalled SSH:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            sudo launchctl stop com.openssh.sshd
-            sudo launchctl start com.openssh.sshd
+            $ sudo launchctl stop com.openssh.sshd
+            $ sudo launchctl start com.openssh.sshd
 
 Client: Set-up key authentication
 `````````````````````````````````
@@ -287,9 +287,9 @@ Test key authentication
 ```````````````````````
 Connect to the server (using the server username):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ssh <HOST_USERNAME>@<HOST>
+        $ ssh <HOST_USERNAME>@<HOST>
 
 The connection should be established without asking for the password, stating that
 the public key was used for authentication.
@@ -297,27 +297,27 @@ the public key was used for authentication.
 If the connection is not successful, check the log output, by running the connection in
 verbose mode:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ssh <HOST_USERNAME>@<HOST> -v
+        $ ssh <HOST_USERNAME>@<HOST> -v
 
 Configure connections
 ---------------------
 This is a convenience feature. Right now, connecting to a host system is done, for example,
 like this:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    ssh -i ~/.ssh/all_my_keys/imac.ed25519.pub someuser@some.host.system
+    $ ssh -i ~/.ssh/all_my_keys/imac.ed25519.pub someuser@some.host.system
 
 To shorten this you may create a config file to store all these parameters.
 
 #. On the client machine, create the config file in your ``.ssh`` directory
    (if not already present):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        touch ~/.ssh/config
+        $ touch ~/.ssh/config
 
 #. Open the file and add your config, for example, like this:
 
@@ -336,16 +336,16 @@ To shorten this you may create a config file to store all these parameters.
     You may specify settings for any number of host systems. Check out all
     possible settings via:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            man ssh_config
+            $ man ssh_config
 
 #. Save and close the file.
 #. You may connect to a specified host system by only stating its name:
 
-    .. prompt::
+    .. code-block:: bash
 
-        ssh imac
+        $ ssh imac
 
 .. hint::
 

@@ -10,16 +10,16 @@ Unit testing :footcite:p:`kruk22_nachkontrolle`
     a very old version of bash (3.2 from 2007) due to a licensing change and
     might drop bash entirely in the future, install it manually:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install bash
+        $ brew install bash
 
     When calling bash, the new version is now called. Also add the new bash to your
     list of trusted shells. Run
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo nano /etc/shells
+        $ sudo nano /etc/shells
 
     and add ``/usr/local/bin/bash`` to the list.
 
@@ -38,18 +38,18 @@ To install it, follow the instructions on https://github.com/shellspec/shellspec
 
 On macOS, install it via *homebrew*:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew tap shellspec/shellspec
-    brew install shellspec
+    $ brew tap shellspec/shellspec
+    $ brew install shellspec
 
 On Linux, build the binaries from the sources:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git clone https://github.com/shellspec/shellspec
-    cd spellcheck
-    sudo make install
+    $ git clone https://github.com/shellspec/shellspec
+    $ cd spellcheck
+    $ sudo make install
 
 .. _Spell Check: https://github.com/shellspec/shellspec
 
@@ -464,9 +464,9 @@ Shell-Check will report to us in case of errors:
 
 You may save the upper code in ``array_spec.sh`` and execute it via:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    shellcheck --shell bash --format documentation array_spec.sh
+    $ shellcheck --shell bash --format documentation array_spec.sh
 
 This executes the tests and produces a test run documentation. Lastly, save
 the ``array_spec.sh`` under ``/usr/local/share/bms/test/``.
@@ -651,9 +651,9 @@ The other tests are similar:
 
 To execute the tests, again call shellspec:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    shellcheck --shell bash --format documentation is_spec.sh
+    $ shellcheck --shell bash --format documentation is_spec.sh
 
 .. _BATS: https://github.com/bats-core/bats-core
 

@@ -7,15 +7,15 @@ macOS
 `````
 #. Create a new file within ``/usr/local/bin``:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo touch /usr/local/bin/firefox
+        $ sudo touch /usr/local/bin/firefox
 
 #. Open the file:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo nano /usr/local/bin/firefox
+        $ sudo nano /usr/local/bin/firefox
 
 #. Add the following content and save the file:
 
@@ -27,9 +27,9 @@ macOS
 
 #. To open Firefox using a specific profile, type:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        firefox <profile_name>
+        $ firefox <profile_name>
 
     .. hint::
 

@@ -10,19 +10,19 @@ Installation
 ------------
 Install the XCode command line tools:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo xcode-select --install
+    $ sudo xcode-select --install
 
 This will trigger the download and installation.
 
 If you already have those installed, but are unable to update them to a later version,
 first remove them manually, then re-install:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo rm -rf /Library/Developer/CommandLineTools
-    sudo xcode-select --install
+    $ sudo rm -rf /Library/Developer/CommandLineTools
+    $ sudo xcode-select --install
 
 Usage
 -----
@@ -30,9 +30,9 @@ Clang++ is a command line tool, which features a lot of optional parameters.
 
 **Basic compilation**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    clang++ --std=c++20 -g <input_file> -o <output_file>
+    $ clang++ --std=c++20 -g <input_file> -o <output_file>
 
 :``--std=<standard>``:
     Language standard to compile for. Possible: c++98, c++11, c++14, c++17, c++20

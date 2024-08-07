@@ -6,30 +6,30 @@ Images
 ------
 List all available image tags
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker images
+    $ docker images
 
 Logs
 ----
 Display log messages (follow latest):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker logs --follow <CONTAINER_NAME>
+    $ docker logs --follow <CONTAINER_NAME>
 
 Follow incoming log messages (but don't show previous):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker logs --tail=0 --follow <CONTAINER_NAME>
+    $ docker logs --tail=0 --follow <CONTAINER_NAME>
 
 Save all previous logs to file (no file `logging driver`_ configured,
 container must still run):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker logs <CONTAINER_NAME> 2> file.log
+    $ docker logs <CONTAINER_NAME> 2> file.log
 
 .. important::
 
@@ -46,8 +46,8 @@ The beginning of the container ID can be retrieved via ``docker container ls``.
 
 You may also retrieve the filepath by running:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker inspect <CONTAINER_NAME> | jq -r .[].LogPath
+    $ docker inspect <CONTAINER_NAME> | jq -r .[].LogPath
 
 .. _logging driver: https://docs.docker.com/config/containers/logging/configure/

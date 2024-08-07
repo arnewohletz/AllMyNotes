@@ -247,14 +247,14 @@ In order to access the module from any bash script, this new directory needs to 
 visible to the :bash:`source` command, hence it needs to be added to the PATH variable.
 This can be done by placing a symbolic link:
 
-.. prompt::
+.. code-block:: bash
 
-    ln -s /usr/local/share/bms /usr/local/bin/bms.sh
+    $ ln -s /usr/local/share/bms /usr/local/bin/bms.sh
 
 The test module is now created in ``test.sh``. As previously defined, it must feature
 a constructor method :bash:`__init()`:
 
-.. prompt:: bash
+.. code-block:: bash
 
     __init() {
       declare -gxr __test_name="$USER"

@@ -11,27 +11,27 @@ SCP
 
 .. rubric:: Copy files from remote server to local drive
 
-.. prompt:: bash
+.. code-block:: bash
 
-    scp <remote_username>@<remote_machine_name>:</remote/source/file> </local/target/directory/>
+    $ scp <remote_username>@<remote_machine_name>:</remote/source/file> </local/target/directory/>
 
 Example:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    scp root@AECG111416:/tmp/test.txt /home/arnewohletz/docs/
+    $ scp root@AECG111416:/tmp/test.txt /home/arnewohletz/docs/
 
 .. rubric:: Copy files from local drive to remote server
 
-.. prompt:: bash
+.. code-block:: bash
 
-    scp </local/source/file> <remote_username>@<remote_machine_name>:</remote/target/directory>
+    $ scp </local/source/file> <remote_username>@<remote_machine_name>:</remote/target/directory>
 
 Example:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    scp /home/arnewohletz/docs/test_local.txt root@AECG111416:/tmp/
+    $ scp /home/arnewohletz/docs/test_local.txt root@AECG111416:/tmp/
 
 .. hint::
 

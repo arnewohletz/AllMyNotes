@@ -81,14 +81,14 @@ Check installation
 ------------------
 Check docker
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo docker info
+    $ sudo docker info
 
 which should return docker system info
 
 Check compose
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo docker-compose --version
+    $ sudo docker-compose --version

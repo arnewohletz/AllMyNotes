@@ -5,38 +5,38 @@ Create a local repository
 #. Create a new directory
 #. Open a terminal window and go to the new directory, then type
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git init
+    $ git init
 
 Add user configuration to repository
 ------------------------------------
 Add user information to allow commits
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git config user.email "johndoe@company.com"
-    git config user.name "johndoe"
+    $ git config user.email "johndoe@company.com"
+    $ git config user.name "johndoe"
 
 Add remote repository
 ---------------------
 Add new remote repository (here named ``origin``). Remote repository must already exist.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git remote add origin <remote_repo_url>
+    $ git remote add origin <remote_repo_url>
 
 Change remote repository URL
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git remote set-url origin <new_remote_repo_url>
+    $ git remote set-url origin <new_remote_repo_url>
 
 Check remote URLs
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git remote -v
+    $ git remote -v
 
 Log into remote repository account
 ----------------------------------
@@ -48,9 +48,9 @@ for installation instruction on Linux & macOS)
 
 From inside your git repository, run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git config --global credential.helper wincred
+    $ git config --global credential.helper wincred
 
 to set the *git-credential-manager* as your global credential helper tool.
 
@@ -60,9 +60,9 @@ credential manager, which asks for it.
 
 To see your set credential manager, run:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git config credential.helper
+    $ git config credential.helper
 
 .. _Git for Windows: https://git-scm.com/download/win
 
@@ -71,145 +71,145 @@ Add files to source control
 #. Create files within local repository
 #. Add the files to source control via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git add <path/to/fileA> <path/to/fileB> ...
+    $ git add <path/to/fileA> <path/to/fileB> ...
 
 Un/Stage files
 --------------
 Add files to git index:
 
-.. prompt:: bash
+.. code-block:: bash
 
     # stage single files
-    git add <path/to/fileA> <path/to/fileB>
+    $ git add <path/to/fileA> <path/to/fileB>
     # stage all files within current directory
-    git add .
+    $ git add .
     # stage all new, modified, deleted files within repository
-    git add -A
+    $ git add -A
 
 Revoke staged files from git index:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git reset HEAD </path/to/fileA> </path/to/fileB>
+    $ git reset HEAD </path/to/fileA> </path/to/fileB>
 
 Remove files from repo that have already been committed before (doesn't remove them
 from the local file system |:slight_smile:|)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git rm --cached <path/to/file>
+    $ git rm --cached <path/to/file>
 
 Commits
 -------
 Commit to current branch with a message
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git commit -m "Important changes"
+    $ git commit -m "Important changes"
 
 Stage and commit all modified or deleted file (excluding new files)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git commit -a -m "Important changes
+    $ git commit -a -m "Important changes
 
 Change message on most recent commit (editor opens, edit message and close to confirm)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git commit --amend
+    $ git commit --amend
 
 Change message on most recent, but already pushed, commit
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git commit --amend -m "<new message>"
-    git push --force
+    $ git commit --amend -m "<new message>"
+    $ git push --force
 
 Stashing
 --------
 In contrast to 'staging', a stash is a temporary storage of any recent changes made
 inside a directory and thereby cleaning it from those changes
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git stash -m "Stashing potential implementation"
+    $ git stash -m "Stashing potential implementation"
 
 Apply changes from stash to current directory and remove them from the stash
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git stash pop
+    $ git stash pop
 
 Apply changes from stash to current directory, but keep them in the stash
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git stash apply
+    $ git stash apply
 
 List all stashed changes
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git stash list
+    $ git stash list
 
 Branching
 ---------
 List all local branches
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch
+    $ git branch
 
 List all local and remote branches
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch -a
+    $ git branch -a
 
 Create a new branch
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch <branch_name>
+    $ git branch <branch_name>
 
 Create a new branch from existing branch on remote
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout -b <local_branch_name> <remote_name>/<remote_branch_name>
+    $ git checkout -b <local_branch_name> <remote_name>/<remote_branch_name>
 
 Switch to another branch
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <branch_name>
+    $ git checkout <branch_name>
 
 Create and switch to a new branch
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout -b <branch_name>
+    $ git checkout -b <branch_name>
 
 Delete an existing branch (if it's merged)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch -d <branch_name>
+    $ git branch -d <branch_name>
 
 Force delete an existing branch
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch -D <branch_name>
+    $ git branch -D <branch_name>
 
 Delete all branches except *master*:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch | grep -v master | xargs git branch -D
+    $ git branch | grep -v master | xargs git branch -D
 
 .. hint::
 
@@ -234,10 +234,10 @@ Delete all branches except *master*:
 
     This enables those two git aliases:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git br-delete-useless
-        git br-delete-useless-force
+        $ git br-delete-useless
+        $ git br-delete-useless-force
 
     which deletes all *useless* local branches. Be careful, using
     ``git br-delete-useless-force`` also deletes them if they haven't
@@ -245,28 +245,28 @@ Delete all branches except *master*:
 
 Delete branch on remote
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push <remote_name> --delete <branch_name>
+    $ git push <remote_name> --delete <branch_name>
 
 Rename currently checked out branch (local)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch -m "New branch name"
+    $ git branch -m "New branch name"
 
 Rename remote branch
 
-.. prompt:: bash
+.. code-block:: bash
 
     # Rename branch locally
-    git branch -m <old_name> <new_name>
+    $ git branch -m <old_name> <new_name>
 
     # Delete old branch on remote
-    git push <remote> --delete <old_name>
+    $ git push <remote> --delete <old_name>
 
     # Push the new branch to remote
-    git push <remote> <new_name>
+    $ git push <remote> <new_name>
 
 
 Merging & Rebase
@@ -276,17 +276,17 @@ Merging & Rebase
 You will create a new commit for the active branch with the merged changes remain in the
 active branch (use ``-m`` to overwrite default commit message)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git merge <branch_name> -m "merge with <branch_name>"
+    $ git merge <branch_name> -m "merge with <branch_name>"
 
 **Abort a merge**
 
 If a merge results in a conflict, it has to be aborted, before it can be resolved
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git merge --abort
+    $ git merge --abort
 
 **Rebase a branch**
 
@@ -297,51 +297,51 @@ changes of the *specified branch*, it merges the changes onto the latest commit 
 
 Rebasing allows for cleaner commit history, since all commits are eventually gathered onto the same branch.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git rebase <target_branch_name>
+    $ git rebase <target_branch_name>
 
 .. note::
 
     Never rebase public history (e.g. master), but rebase your changes onto the current state of master.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git checkout <master_branch>
-        git pull
-        git checkout <feature_branch>
-        git rebase <master_branch>
+        $ git checkout <master_branch>
+        $ git pull
+        $ git checkout <feature_branch>
+        $ git rebase <master_branch>
 
 Rebase a ``<on_top_branch_name>`` onto a ``<base_branch_name>`` without having checked out any of them
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git rebase <base_branch_name> <on_top_branch_name>
+    $ git rebase <base_branch_name> <on_top_branch_name>
 
 After a successful rebase, the master branch HEAD is still pointing to its latest commit, not the latest commit
 added to the stream via the rebase. To get *master* back to the very front of the stream (so you can
 continue with it), you need to merge the master with the rebased branch:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <master_branch>
-    git merge <rebased_branch>
+    $ git checkout <master_branch>
+    $ git merge <rebased_branch>
 
 **Abort rebase**
 
 If a rebase action results in a conflict, it has to be aborted before it can be resolved
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git rebase --abort
+    $ git rebase --abort
 
 **Interactive rebase**
 
 It means to pick certain commits of the current branch for a rebase (here: using the three latest commits)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git rebase -i <target_branch_name>~3
+    $ git rebase -i <target_branch_name>~3
 
 This opens a text editor window, which allows you to *pick* certain commits from the list.
 Delete commits from the list you want to omit:
@@ -361,35 +361,35 @@ A lightweight tag is a pointer to a specific commit in a branch.
 
 **Create a tag for the current commit (to which HEAD points to)**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git tag <TAG_NAME>
+    $ git tag <TAG_NAME>
 
 **Push the tag to the remote (here: origin)**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push origin <TAG_NAME>
+    $ git push origin <TAG_NAME>
 
 **Push all local tabs to the remote**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push --tags
+    $ git push --tags
 
 **List all available tags (in current branch)**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git tag -l
+    $ git tag -l
 
 **Checkout a tag**
 
 While having checked out the same branch as tag is applied onto, run:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <TAG_NAME>
+    $ git checkout <TAG_NAME>
 
 .. warning::
 
@@ -399,15 +399,15 @@ While having checked out the same branch as tag is applied onto, run:
 
 Delete a local tab:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git tag -d <TAG_NAME>
+    $ git tag -d <TAG_NAME>
 
 Delete a remote tab:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push --delete origin <TAG_NAME>
+    $ git push --delete origin <TAG_NAME>
 
 Moving along the tree
 ---------------------
@@ -416,126 +416,126 @@ going down means shifting to newer commits.
 
 Select a different commit
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <commit_hash_sum>
+    $ git checkout <commit_hash_sum>
 
 **Getting previous commit's hash sum**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git log
+    $ git log
 
 For short hashes (here: latest commit)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git log -s --pretty=format:%h -1
+    $ git log -s --pretty=format:%h -1
 
 Increase the last number to show the last n entries in the commit tree. Also use tools
 such as Gitkraken to get hash code of commits easily.
 
 Get previous xx commits
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git log -<number_of_previous_commits>
+    $ git log -<number_of_previous_commits>
 
 Get previous commits by a certain author
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git log --author="<name>"
+    $ git log --author="<name>"
 
 Get commits within a certain time frame (date format: YYYY-MM-DD)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git log --before="<date>" --after="<date>"
+    $ git log --before="<date>" --after="<date>"
 
 **Relative Refs**
 
 Move upwards by one commit on a certain branch
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <branch_name>^
+    $ git checkout <branch_name>^
 
 Move upwards by three commits on a certain branch
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <branch_name>^^^
-    git checkout <branch_name>~3
+    $ git checkout <branch_name>^^^
+    $ git checkout <branch_name>~3
 
 Move up from current HEAD (here: two commits)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout HEAD^^
-    git checkout HEAD~2
+    $ git checkout HEAD^^
+    $ git checkout HEAD~2
 
 **Move a branch to a different commit**
 
 This sets the latest commit of a branch to a certain previous commit
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git branch -f <branch_name> HEAD~3
-    git branch -f <branch_name> <target_commit_hash_sum>
+    $ git branch -f <branch_name> HEAD~3
+    $ git branch -f <branch_name> <target_commit_hash_sum>
 
 Revert changes
 --------------
 Move back the branch and undo all in-between changes (here: by one commit)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git reset <branch_name>~1
+    $ git reset <branch_name>~1
 
 Revert changes done to a staged file (first un-stage, then checkout latest commit)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git restore --staged <path_to_file>
-    git checkout .
+    $ git restore --staged <path_to_file>
+    $ git checkout .
 
 Revert changes made to current working copy since last checkout
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout .
+    $ git checkout .
 
 Remove all unstaged files and directories (``-f`` ... force; ``-d`` ... include directories)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git clean -fd
+    $ git clean -fd
 
 Reverts changes of previous commits. In contrast to ``git reset``, the revert command does not delete
 the reverted commits, but creates a new commit, which excludes the reverted commits.
 
-.. prompt:: bash
+.. code-block:: bash
 
     # revert changes from specific commit
-    git revert <bad_commit_hash_sum>
+    $ git revert <bad_commit_hash_sum>
     # revert changes of previous three commits
-    git revert HEAD~3
+    $ git revert HEAD~3
 
 Reset HEAD to latest commit, reverting all changes since then
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git reset --hard
-    git reset --hard HEAD
+    $ git reset --hard
+    $ git reset --hard HEAD
 
 Reset HEAD to previous commit (will delete all changes/commits in between)
 
-.. prompt:: bash
+.. code-block:: bash
 
     # to certain commit
-    git reset --hard <commit_hash_sum>
+    $ git reset --hard <commit_hash_sum>
     # three commits upwards
-    git reset --hard HEAD~3
+    $ git reset --hard HEAD~3
 
 .. hint::
     Reverting is often preferred over resetting, since resetted commits are removed permanently,
@@ -545,9 +545,9 @@ Cherry Pick
 -----------
 Cherry picking lets you pick specific commits from different branches and add it to the current HEAD
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git cherry-pick <commit_hash_sum_A> <commit_hash_sum_B>
+    $ git cherry-pick <commit_hash_sum_A> <commit_hash_sum_B>
 
 Detached head mode
 ------------------
@@ -555,21 +555,21 @@ When checking out a commit instead of a branch that HEAD is not pointing to you 
 You can work here, but in order to merge your changes into HEAD, you must first create a new branch,
 make your changes there, then checkout *master* and merge it.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git checkout <commit_hash_sum>
-    git checkout -b <new_branch_name>
-    git commit -m "important changes"
-    git checkout master
-    git merge <new_branch_name>
+    $ git checkout <commit_hash_sum>
+    $ git checkout -b <new_branch_name>
+    $ git commit -m "important changes"
+    $ git checkout master
+    $ git merge <new_branch_name>
 
 Clone remote repositories
 -------------------------
 Clone remote repository into the current working directory
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git clone <remote_repository_url>
+    $ git clone <remote_repository_url>
 
 Update a repository
 -------------------
@@ -579,35 +579,35 @@ Download latest commits from the remote repository (same branch)
 Our local state (including the current branch) remain **unchanged** (no update). Newly fetched branches
 become present in our local repo and are properly named, so it's obvious, those derive from remote changes.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git fetch
+    $ git fetch
 
 Download changes from a specific remote. If not <remote_name> is given, **origin** is used by default.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git fetch <remote_name>
+    $ git fetch <remote_name>
 
 Remove all local references to no more existing branches on the remote (not including tags, here the
 option ``--prune-tags`` must be used).
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git fetch --prune
+    $ git fetch --prune
 
 ``git pull`` also fetches missing commits from the remote, but also merges them into new commits
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git pull
+    $ git pull
 
 is the shorthand for
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git fetch
-    git merge FETCH_HEAD
+    $ git fetch
+    $ git merge FETCH_HEAD
 
 while FETCH_HEAD points to the fetched remote branch (i.e. origin)
 
@@ -618,35 +618,35 @@ packs my local changes (commits) on top, all inside one stream.
 
 .. hint:: Must be applied on a specific branch.
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git pull --rebase <remote_name> <branch_name>
+    $ git pull --rebase <remote_name> <branch_name>
 
 Push changes to remote repository
 ---------------------------------
 Push all committed changes of the current branch to the branch's defined remote repository (default: origin)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push
+    $ git push
 
 Push committed changes of <local_branch_name> to <remote_branch_name> (default: origin)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push <remote_repo_name> <local_branch_name>
+    $ git push <remote_repo_name> <local_branch_name>
 
 Push latest commit of a tag to the remote repository
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push <remote_repo_name> <local_tag_name>
+    $ git push <remote_repo_name> <local_tag_name>
 
 Push all local branches to the remote
 
-.. prompt:: bash
+.. code-block:: bash
 
-    git push <remote_repo_name> --all
+    $ git push <remote_repo_name> --all
 
 Resolve push conflicts
 ----------------------
@@ -657,52 +657,52 @@ Resolve push conflicts
 :Solution 1:
     Fetch the latest state of the remote repo, **rebase** that state with your local branch, then push teh resulting changes.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git fetch
-        git rebase origin/master
-        git push <remote_branch> <current_branch_name>
+        $ git fetch
+        $ git rebase origin/master
+        $ git push <remote_branch> <current_branch_name>
 
     or
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git pull --rebase origin/master
-        git push <remote_branch> <current_branch_name>
+        $ git pull --rebase origin/master
+        $ git push <remote_branch> <current_branch_name>
 
 :Solution 2:
     Fetch the lastest state from the remote repo, **merge** that state with your current local branch, then push the resulting changes.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git fetch
-        git merge origin/master
-        git push <remote_branch> <current_branch_name>
+        $ git fetch
+        $ git merge origin/master
+        $ git push <remote_branch> <current_branch_name>
 
     or
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git pull origin/master
-        git push <remote_branch> <current_branch_name>
+        $ git pull origin/master
+        $ git push <remote_branch> <current_branch_name>
 
 :Solution 3:
     **Accept the remote version** of a conflicted file, then push your commit.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git checkout --theirs <conflicted_file_name>
-        git commit -m "using theirs"
-        git push <remote_branch> <current_branch_name>
+        $ git checkout --theirs <conflicted_file_name>
+        $ git commit -m "using theirs"
+        $ git push <remote_branch> <current_branch_name>
 
 :Solution 4:
     **Override the remote version** of a conflicted file, then push your commit.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git checkout --yours <conflicted_file_name>
-        git commit -m "using ours"
-        git push <remote_branch> <current_branch_name>
+        $ git checkout --yours <conflicted_file_name>
+        $ git commit -m "using ours"
+        $ git push <remote_branch> <current_branch_name>
 
 Working with forks
 ------------------
@@ -718,9 +718,9 @@ able to contribute, unless you are authorized as a collaborator.
 #. Create a fork of the original repository. The steps depend on the used Git Host (e.g. Github, Bitbucket).
 #. Clone the fork:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git clone <url_to_forked_repository>
+        $ git clone <url_to_forked_repository>
 
 #. Make changes, commit and push to remote.
 #. Create a pull request towards the target branch of the original repository.
@@ -734,34 +734,34 @@ changes makes merges back to the original much simpler.
 
 #. Add the original repository as additional remote:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git remote add upstream <url_to_original_repository>
+        $ git remote add upstream <url_to_original_repository>
 
 #. **Before you start making changes inside your fork**, get the latest changes from
    the original repository (upstream). First, fetch all branches from upstream:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git fetch upstream
+        $ git fetch upstream
 
 #. Make sure you're on *master*:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git checkout master
+        $ git checkout master
 
 #. Now rewrite your master branch so that any commits of yours that aren't already
    in upstream/master are replayed on top of that other branch:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git rebase upstream/master
+        $ git rebase upstream/master
 
 #. Lastly, push the changes to your forked remote:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        git push -f origin master
+        $ git push -f origin master
 
 Now you go ahead creating a feature branch.

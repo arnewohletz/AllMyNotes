@@ -12,9 +12,9 @@ Installation
 ````````````
 #. Install Zandronum via Homebrew:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install zandronum
+        $ brew install zandronum
 
 #. Create a new directory ``~/Library/Application Support/zandronum`` and put in your
    ``doom.wad`` and ``doom2.wad`` file (from an existing Doom or Doom2 installation).
@@ -34,40 +34,40 @@ Installation
 
 #. Install the required dependencies to build Doomseeker (Qt5 and CMake):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install cmake qt5
+        $ brew install cmake qt5
 
 #. Set the variable Qt5_DIR in order for CMake to find your Qt5 installation:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        export Qt5_DIR="/usr/local/opt/qt@5/"
+        $ export Qt5_DIR="/usr/local/opt/qt@5/"
 
 #. Enter the extracted *doomseeker* directory and run the build:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        mkdir build
-        cd build
-        cmake ..
-        make
-        sudo make install
+        $ mkdir build
+        $ cd build
+        $ cmake ..
+        $ make
+        $ sudo make install
 
 #. After the installation finished you may copy the ``build`` directory to a
    more suitable location (you may also want to rename it to ``doomseeker`` or
    something like that).
 #. Create a link to your ``doomseeker`` executable:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ln -s /path/to/my/doomseeker/dir/doomseeker /usr/local/bin/doomseeker
+        $ ln -s /path/to/my/doomseeker/dir/doomseeker /usr/local/bin/doomseeker
 
 #. Launch Doomseeker via:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        doomseeker
+        $ doomseeker
 
 .. hint::
 
@@ -160,9 +160,9 @@ command line using specific options, which are
 
 A basic host command might be:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    gzdoom -host 2 -useip 192.168.178.50 -port 5029 -netmode 0
+    $ gzdoom -host 2 -useip 192.168.178.50 -port 5029 -netmode 0
 
 Extra options may be:
 
@@ -211,9 +211,9 @@ the IP address (and port, if it differs from the default).
 If you are in the same network as the host, use the local IP address, otherwise
 use the global IP address:
 
-.. prompt::
+.. code-block:: bash
 
-    gzdoom -join <HOST_IP_ADDRESS>
+    $ gzdoom -join <HOST_IP_ADDRESS>
 
 .. important::
 

@@ -12,15 +12,15 @@ In order to force sphinx to rebuild all sources (``-a``) and don't use the cache
 environment from previous builds (``-E``), call sphinx-build directly using this
 command in the documentations root folder:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sphinx-build <my_source_directory> <my_output_directory> -a -E
+    $ sphinx-build <my_source_directory> <my_output_directory> -a -E
 
 for instance
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sphinx-build source _build -a -E
+    $ sphinx-build source _build -a -E
 
 .. hint::
 

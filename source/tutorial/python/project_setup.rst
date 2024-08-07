@@ -40,34 +40,34 @@ First, let's create a virtual environment for *pipx* (here: via *pyenv*):
     * `pipx <https://github.com/pypa/pipx>`__
     * `cookiecutter <https://github.com/cookiecutter/cookiecutter>`__
 
-.. prompt:: bash
+.. code-block:: bash
 
-    pyenv virtualenv <PYTHON_VERSION> pipx
+    $ pyenv virtualenv <PYTHON_VERSION> pipx
 
 Activate the environment:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    pyenv activate pipx
+    $ pyenv activate pipx
 
 Next, let's install pipx:
 
-.. prompt:: bash (pipx)
+.. code-block:: bash
 
-    pip install pipx
+    (pipx) $ pip install pipx
 
 Now, we have to ensure that the packages installed via pipx are added to our PATH
 variable. This ensures that those are executable from anywhere (only must to be done once):
 
-.. prompt:: bash (pipx)
+.. code-block:: bash
 
-    pipx ensurepath
+    (pipx) $ pipx ensurepath
 
 Now we're ready to install cookiecutter & pip-tools in it:
 
-.. prompt:: bash (pipx)
+.. code-block:: bash
 
-    pipx install cookiecutter
+    (pipx) pipx install cookiecutter
 
 Open a new terminal window and run ``cookiecutter -V``, which should print the
 installed cookiecutter package's version.
@@ -103,18 +103,18 @@ Create project
 ``````````````
 Now we're ready to create the project based on our slightly adapted template:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    cd /my/project/root/dir
-    cookiecutter /path/to/cookiecutter/template/root/dir
+    $ cd /my/project/root/dir
+    $ cookiecutter /path/to/cookiecutter/template/root/dir
 
 For example:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    mkdir ~/best_practice_project
-    cd ~/best_practice_project
-    cookiecutter ~/my_templates/cookiecutter-pypackage
+    $ mkdir ~/best_practice_project
+    $ cd ~/best_practice_project
+    $ cookiecutter ~/my_templates/cookiecutter-pypackage
 
 Define your project parameters in the wizard.
 
@@ -127,16 +127,16 @@ We recommended to create a virtual environment using ``pyenv <install_pyenv>``
 
 Create virtual environment via:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    pyenv virtualenv <PYTHON-VERSION> <VENV_NAME>
+    $ pyenv virtualenv <PYTHON-VERSION> <VENV_NAME>
 
 Alternatively, use may use Python's built-in `venv <https://docs.python.org/3/library/venv.html>`_
 via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    python -m venv <VENV_NAME>
+    $ python -m venv <VENV_NAME>
 
 It uses the venv module and creates a virtual environment named <VENV_NAME> inside
 your current directory (you may also specify an absolute path).
@@ -145,10 +145,10 @@ As a second alternative, the module `virtualenv <https://pypi.org/project/virtua
 also be used. Although, it has to be installed into the Python environment (from which to
 create the virtual environment from) first:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    pip install virtualenv
-    virtualenv <VENV_NAME>
+    $ pip install virtualenv
+    $ virtualenv <VENV_NAME>
 
 Same as for Python's built in *venv* module, it creates a virtual environment in your
 current directory.
@@ -162,9 +162,9 @@ Install dependencies
 First, install `pip-tools <https://github.com/jazzband/pip-tools>`_, which we use
 to manage our dependencies (activate your project's virtual environment first):
 
-.. prompt:: bash, (project_venv)
+.. code-block:: bash
 
-    pip install pip-tools
+    (project_venv) $ pip install pip-tools
 
 .. important::
 
@@ -178,26 +178,26 @@ All requirements for development as mentioned in the :ref:`overview table <proje
 are already listed in ``requirements-dev.in``. To create a ``requirements-dev.txt``,
 execute:
 
-.. prompt:: bash, (project_venv)
+.. code-block:: bash
 
-    pip-compile requirements-dev.in -o requirements-dev.txt
+    (project_venv) $ pip-compile requirements-dev.in -o requirements-dev.txt
 
 This produces the \*.txt file containing our dependencies plus all required
 packages for those dependencies (all using pinned versions). To install all these
 dependencies, execute:
 
-.. prompt:: bash, (project_venv)
+.. code-block:: bash
 
-    pip-sync requirements-dev.txt
+    (project_venv) $ pip-sync requirements-dev.txt
 
 .. hint::
 
     All dependencies which are required to **execute** our project are gathered
     in ``requirements.in``. Same workflow here:
 
-    .. prompt:: bash, (project_venv)
+    .. code-block:: bash
 
-        pip-compile requirements.in -o requirements.txt
-        pip-sync requirements.txt
+        (project_venv) $ pip-compile requirements.in -o requirements.txt
+        (project_venv) $ pip-sync requirements.txt
 
 .. footbibliography::

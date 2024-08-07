@@ -117,11 +117,11 @@ Full ``unicode_guilabel.py``:
        directory for HTML templates (here: ``_templates``) and an empty template
        file (here: ``layout.html``):
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            cd source
-            mkdir _templates
-            touch _templates/layout.html
+            $ cd source
+            $ mkdir _templates
+            $ touch _templates/layout.html
 
        If the directory is new, also add the templates to your ``conf.py`` to be
        considered when building the HTML:

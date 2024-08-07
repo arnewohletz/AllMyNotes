@@ -5,15 +5,15 @@ Memory
 ------
 **Check currently used memory**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    cat /proc/meminfo
+    $ cat /proc/meminfo
 
 Ports
 -----
 **Check currently listing TCP ports**
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo lsof -nP -iTCP -sTCP:LISTEN
+    $ sudo lsof -nP -iTCP -sTCP:LISTEN
 

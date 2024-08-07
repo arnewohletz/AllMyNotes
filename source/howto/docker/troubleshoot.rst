@@ -25,6 +25,6 @@ exec
 
     Make the ``docker exec`` command non-interactive by removing the ``-it`` options:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            docker exec CONTAINER_NAME COMMAND [ARGUMENTS...]
+            $ docker exec CONTAINER_NAME COMMAND [ARGUMENTS...]

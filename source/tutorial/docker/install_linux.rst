@@ -3,39 +3,39 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
 #. Update apt package index.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo apt update
+        $ sudo apt update
 
 #. Install required packages.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo apt install apt-transport-https ca-certificates curl gnupg-agent
-        software-properties-common
+        $ sudo apt install apt-transport-https ca-certificates curl gnupg-agent
+        $ software-properties-common
 
 #. Add Dockers official GPG key.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+        $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
     .. admonition:: Optional
 
         **Verify the key with fingerprint**
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            sudo apt-key fingerprint 0EBFCD88
+            $ sudo apt-key fingerprint 0EBFCD88
 
         Output should display 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
         (check the last 8 digits).
 
 #. Add the Docker repository to your package index
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$UBUNTU_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$UBUNTU_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
     .. hint::
 
@@ -44,9 +44,9 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
 #. Check, if the repository was added to your "additional repositories list"
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        cat /etc/apt/sources.list.d/docker.list
+        $ cat /etc/apt/sources.list.d/docker.list
 
     The output should contain something like this:
 
@@ -56,10 +56,10 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
 #. Install docker components
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo apt update
-        sudo apt install docker-ce docker-ce-cli docker-compose containerd.io
+        $ sudo apt update
+        $ sudo apt install docker-ce docker-ce-cli docker-compose containerd.io
 
     .. admonition:: Optional
 
@@ -68,18 +68,18 @@ Install Docker (CE) on Linux Mint (Ubuntu)
         In order to access docker without the 'sudo' command, your current user must
         be added to the docker group (was created during installation)
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            sudo usermod -aG docker $USER
+            $ sudo usermod -aG docker $USER
 
         Then, log out and re-log in to apply the changes
 
 #. Create an account on `Docker Hub <https://hub.docker.com/>`__.
 #. Add your Docker Hub login to your docker installation
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker login
+        $ docker login
 
     .. admonition:: Optional
 
@@ -94,15 +94,15 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
             #. Install `pass <https://www.passwordstore.org/>`__ and `gnupg2 <https://gnupg.org/>`__:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    sudo apt install pass gnupg2
+                    $ sudo apt install pass gnupg2
 
             #. Create a key pair which will be used to encrypt your password database:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    gpg2 --quick-gen-key <YOUR_USERNAME>
+                    $ gpg2 --quick-gen-key <YOUR_USERNAME>
 
                 .. important::
 
@@ -126,22 +126,22 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
             #. Ensure, that the primary key is trusted:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    gpg --edit-key <YOUR_PUBLIC_KEY_ID>
+                    $ gpg --edit-key <YOUR_PUBLIC_KEY_ID>
 
-                .. prompt:: gpg>
+                .. code-block:: bash
 
-                    trust
-                    5
-                    quit
+                    gpg> trust
+                    gpg> 5
+                    gpg> quit
 
             #. Set up *pass*:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    pass init gpg2 <YOUR_PUBLIC_KEY_ID>
-                    pass insert docker-credential-helpers/docker-pass-initialized-check
+                    $ pass init gpg2 <YOUR_PUBLIC_KEY_ID>
+                    $ pass insert docker-credential-helpers/docker-pass-initialized-check
 
                 You should be prompted twice to enter your Docker Hub password.
 
@@ -149,9 +149,9 @@ Install Docker (CE) on Linux Mint (Ubuntu)
             #. Extract the binary into a directory listed in PATH.
             #. Open your docker config file:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    nano ~/.docker/config.json
+                    $ nano ~/.docker/config.json
 
             #. Erase all content (if any) and add:
 
@@ -165,17 +165,17 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
             #. Log into Docker Hub:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    docker login --username="<YOUR_DOCKER_HUB_USERNAME" docker.io
+                    $ docker login --username="<YOUR_DOCKER_HUB_USERNAME" docker.io
 
                 Enter your password (this should not be required once).
 
             #. Check if *docker-credential-pass* saved the login:
 
-                .. prompt:: bash
+                .. code-block:: bash
 
-                    docker-credentials-pass list
+                    $ docker-credentials-pass list
 
                 which should print something like this:
 
@@ -185,18 +185,18 @@ Install Docker (CE) on Linux Mint (Ubuntu)
 
 #. Check installation success
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        docker run --rm -it --name test alpine:latest /bin/sh
+        $ docker run --rm -it --name test alpine:latest /bin/sh
 
     * Output should be, that alpine:latest isn't found and is downloaded
     * Entering alpine shell after installation
 
     Enter this into the alpine shell:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        cat /etc/os-release
+        $ cat /etc/os-release
 
     which should output the alpine distribution info.
 

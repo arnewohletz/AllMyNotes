@@ -32,7 +32,6 @@ extensions = [
     'fix_mermaid_jupyter_conflict',
     'jupyter_sphinx',
     'nbsphinx',
-    'sphinx-prompt',
     'sphinx_copybutton',
     'sphinx_design',
     'sphinx_docsearch',
@@ -84,10 +83,12 @@ pygments_style = "default"
 #                           r"\>{3} "
 #                           )
 # -----------------------------
+copybutton_line_continuation_character = "\\"
 copybutton_prompt_text = (r"\(.*\) \$ |"
                           r"\(.*\) |"
                           r"\$ |"
-                          r"\>{3} "
+                          r"\>{3} |"
+                          r"P?S?\ ?C:\\> "
                           )
 copybutton_prompt_is_regexp = True
 copybutton_only_copy_prompt_lines = True

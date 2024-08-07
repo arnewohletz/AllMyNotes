@@ -13,17 +13,17 @@ Specific directories:
 
     Check the currently maximum storage space via command line as admin:
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        vssadmin list shadowstorage
+        C:\> vssadmin list shadowstorage
 
     and see the ``Maximum Shadow Copy Storage space`` value on the respective volume.
 
     To reduce the size (here, set to *10 GB* for ``C:\``), execute:
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        vssadmin resize shadowstorage /on=c: /for=c: /maxsize=10GB
+        C:\> vssadmin resize shadowstorage /on=c: /for=c: /maxsize=10GB
 
     This will prevent the directory from saving more than 10 GB of shadow copies.
 

@@ -11,15 +11,15 @@ A basic shell script
 --------------------
 Shell scripts use the \*.sh suffix. In order to execute shell scripts directly, like
 
-.. prompt:: bash
+.. code-block:: bash
 
-    my_first_script.sh
+    $ my_first_script.sh
 
 instead of requiring to pass it as an argument to a shell call like
 
-.. prompt:: bash
+.. code-block:: bash
 
-    zsh ./my_first_script.sh
+    $ zsh ./my_first_script.sh
 
 a so called shebang_ line is required in your script as the first line. This declares
 which type of shell is used when the script is called directly. It is recommended to
@@ -64,9 +64,9 @@ Next up you may define your shell script. Here are some useful resources:
 
 Make sure to make your script executable (for security reasons this is not done by default):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    chmod 755 my_first_script.sh
+    $ chmod 755 my_first_script.sh
 
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 .. _more info: https://scriptingosx.com/2019/06/moving-to-zsh-part-2-configuration-files/
@@ -90,9 +90,9 @@ Launchd tasks (agents and daemons) are defined in \*.plist config files, which f
 XML syntax. For our script we create a new file in ``~/Library/LaunchAgents`` (the user
 agent directory):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    touch ~/Library/LaunchAgents/my_first_script.plist
+    $ touch ~/Library/LaunchAgents/my_first_script.plist
 
 Add in the following content:
 
@@ -146,16 +146,16 @@ For more information on the plist options, check https://www.launchd.info/.
 
 After you finished configuration file, add it to the *launchd* controller:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    launchctl load ~/Library/LaunchAgents/my_first_script.plist
+    $ launchctl load ~/Library/LaunchAgents/my_first_script.plist
 
 To check the status of the last execution run (replace MY_SCRIPT_NAME with the label
 you defined in your \*.plist file)
 
-.. prompt:: bash
+.. code-block:: bash
 
-    launchctl list | grep MY_SCRIPT_NAME
+    $ launchctl list | grep MY_SCRIPT_NAME
 
 which lists the return code of your script from the last execution, which should be 0,
 if the script ran successfully. Check the *stderr.log* and *stdout.log* files which
@@ -168,9 +168,9 @@ you defined in the \*.plist config file for clues.
 
 To remove the script from the launcher run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    launchctl unload ~/Library/LaunchAgents/my_first_script.plist
+    $ launchctl unload ~/Library/LaunchAgents/my_first_script.plist
 
 .. hint::
 

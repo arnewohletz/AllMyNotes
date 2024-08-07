@@ -4,9 +4,9 @@ Pyreverse is a module inside `Pylint`_, which generates UML diagrams out of Pyth
 
 Create a PlantUML class diagram
 -------------------------------
-.. prompt:: bash
+.. code-block:: bash
 
-    pyreverse -o plantuml --module-names yes -s 1 -d my/output/dir \
+    $ pyreverse -o plantuml --module-names yes -s 1 -d my/output/dir \
     path/to/module_A.py path/to/module_B.py ... && \
     sed -i "" "s/set namespaceSeparator none/set namespaceSeparator ./g" my/output/dir/classes.plantuml
 

@@ -14,11 +14,11 @@ Image vs. Container
 
 Start a container
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker run -it <image_name> <application>
+    $ docker run -it <image_name> <application>
 
-    e.g. ``docker run -it alpine sh`` which starts the shell on the alpine image
+e.g. ``docker run -it alpine sh`` which starts the shell on the alpine image
 
 Multiple containers of the same image can be accessed / opened  at the same time (while changes
 to one container does not affect the others)
@@ -45,17 +45,17 @@ other images and to publish your own images, either public or private)
 
 Run an image from a url:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker run <image_url>
+    $ docker run <image_url>
 
 e.g. ``docker run docker.io/library/hello-world``
 
 Since this is an official repo, you can simply run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    docker run hello-world
+    $ docker run hello-world
 
 Docker build process
 --------------------

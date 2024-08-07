@@ -43,9 +43,9 @@ permanent (until a proper driver is installed).
 
 Open
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo -H gedit /etc/default/grub
+    $ sudo -H gedit /etc/default/grub
 
 and edit this line with your parameters:
 
@@ -55,9 +55,9 @@ and edit this line with your parameters:
 
 To persist those in the GRUB, run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo update-grub
+    $ sudo update-grub
 
 After a restart, the changes are set.
 
@@ -67,11 +67,11 @@ Before getting the proper driver, the exact specifics of the hardware piece must
 be determined. Each device owns a unique ID, which determines the device and its
 manufacturer. Save all your hardware IDs into files:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo lshw -numeric -html > lshw.html
-    sudo lspci -nn > lspci.txt
-    sudo lsusb -v > lsusb.txt
+    $ sudo lshw -numeric -html > lshw.html
+    $ sudo lspci -nn > lspci.txt
+    $ sudo lsusb -v > lsusb.txt
 
 The ``lshw.html`` shows general machine information, while the ``lspci.txt`` and
 ``lsusb.txt`` list information about PCI and USB devices.
@@ -86,19 +86,19 @@ and enter the manufacturer ID (Vendor ID) and device ID into the respective fiel
 The result entry should list the respective driver.
 Another way is to probe your device
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo apt get hw-probe
-    sudo -E hw-probe -all -upload
+    $ sudo apt get hw-probe
+    $ sudo -E hw-probe -all -upload
 
 which reveals a URL to open in the browser.
 
 In any way, the listed driver should state *works* or *detected* to work and must
 be compatible with the kernel version your distribution uses. To determine that run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    uname -a
+    $ uname -a
 
 If there is no match, it's best to switch to matching Linux distribution.
 
@@ -112,39 +112,39 @@ Example for a *Wifi stick RT88x2bu*:
 
 #. Install binary packages needed:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo apt get git build-essential dkms linux-headers-$(uname -r)
+        $ sudo apt get git build-essential dkms linux-headers-$(uname -r)
 
 #. Go to the drivers repository (here: https://github.com/morrownr/88x2bu-20210702)
 #. Sync the repository
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        mkdir -p ~/src
-        cd ~/src
-        git clone [URL]
-        cd 88x2bu-20210702
+        $ mkdir -p ~/src
+        $ cd ~/src
+        $ git clone [URL]
+        $ cd 88x2bu-20210702
 
 #. Execute these commands:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        make clean
-        make
-        sudo insmod 88x2bu.ko
+        $ make clean
+        $ make
+        $ sudo insmod 88x2bu.ko
 
 #. Check the kernel output on the loading of the driver for issues:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        dmesg
+        $ dmesg
 
 #. For most driver, this command needs to be executed next:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo make install
+        $ sudo make install
 
    This puts the driver into ``/lib/modules/[kernel_version]``, which is loaded
    upon the next Linux build
@@ -157,17 +157,17 @@ deactivated or the driver must be signed.
 
 To find out if the driver is signed run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    modinfo [module_name]
+    $ modinfo [module_name]
 
 If the module cannot be installed via DKMS, execute these lines to sign it
 manually (execute from directory where [MODULE] resides and adapt name):
 
-.. prompt:: bash
+.. code-block:: bash
 
-    export KERNEL_BUILD=/lib/modules/$(uname -r)/build
-    sudo -E $KERNEL_BUILD/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der [Modul].ko
+    $ export KERNEL_BUILD=/lib/modules/$(uname -r)/build
+    $ sudo -E $KERNEL_BUILD/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der [Modul].ko
 
 For more info visit https://github.com/Myria-de/kernel-modules.
 

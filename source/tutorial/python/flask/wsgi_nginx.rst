@@ -32,18 +32,18 @@ Let's start by adding the uWSGI package to our ``requirements.txt`` file::
 Then we need to install and configure nginx on the server machine.
 
 **Linux**
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo add-apt-repository ppa:nginx/stable
-        sudo apt-get update && sudo apt-get upgrade
-        sudo apt-get install nginx
+        $ sudo add-apt-repository ppa:nginx/stable
+        $ sudo apt-get update && sudo apt-get upgrade
+        $ sudo apt-get install nginx
 
 **macOS**
 (Homebrew_ must be installed)
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install nginx
+        $ brew install nginx
 
 .. _Homebrew: https://brew.sh/
 
@@ -59,9 +59,9 @@ Linux
 On Linux, the default config should be removed, because future application should each be
 defined in a separate config file:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo rm /etc/nginx/sites-enabled/default
+        $ sudo rm /etc/nginx/sites-enabled/default
 
 This ``default`` configuration extends the base configuration found at ``/etc/nginx/nginx.conf``.
 If you open it, you should find the line::
@@ -72,24 +72,24 @@ which tells nginx to add all configurations files found within this directory. D
 
 In case that line is not present, add it, save the file and restart nginx:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        nginx /etc/init.d/nginx restart
+        $ nginx /etc/init.d/nginx restart
 
 macOS
 '''''
 On macOS, create a new directory, that will hold this application's config file:
 
 **macOS only:**
-    .. prompt:: bash
+    .. code-block:: bash
 
-         mkdir /usr/local/etc/nginx/init.d
+         $ mkdir /usr/local/etc/nginx/init.d
 
 Open nginx's default config and include your new config folder:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        nano /usr/local/etc/nginx/nginx.conf
+        $ nano /usr/local/etc/nginx/nginx.conf
 
 Go to the bottom of the file and add
 
@@ -101,15 +101,15 @@ before the last closing curly bracket, then save and close the file.
 
 Restart the nginx server to apply your changes:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        nginx -c /usr/local/etc/nginx/nginx.conf
+        $ nginx -c /usr/local/etc/nginx/nginx.conf
 
     or restart as brew service via
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew services start nginx
+        $ brew services start nginx
 
 .. hint::
 
@@ -117,9 +117,9 @@ Restart the nginx server to apply your changes:
     that same port (e.g. some Java application). In order to change the default port, you need to
     adapt the default config.
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        nano /usr/local/etc/nginx/nginx.conf
+        $ nano /usr/local/etc/nginx/nginx.conf
 
     Find the uncommented line
 
@@ -131,9 +131,9 @@ Restart the nginx server to apply your changes:
     and change the port to your desired default port, then save and exit the file.
     Now, restart the nginx server with
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew services start nginx
+        $ brew services start nginx
 
 Add a configuration to your application
 ```````````````````````````````````````
@@ -165,10 +165,10 @@ you need a valid path from your server machine.
 The *listen* parameter (line 2) defines the port your application will use. It is recommended to use a free
 port anywhere within the range between 1024 and 32767. You can check all used ports by running these commands:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    tail /etc/service
-    netstat -an | grep LISTEN
+    $ tail /etc/service
+    $ netstat -an | grep LISTEN
 
 You can also check this list of `common default ports`_.
 
@@ -223,22 +223,22 @@ stay within the project structure, we create a symlink for it:
 
 **macOS**:
 
-.. prompt::
+.. code-block:: bash
 
-    ln -s /path/to/my/application/nginx.conf /usr/local/etc/nginx/init.d/mywebapp.conf
+    $ ln -s /path/to/my/application/nginx.conf /usr/local/etc/nginx/init.d/mywebapp.conf
 
 **Linux**:
 
-.. prompt::
+.. code-block:: bash
 
-    ln -s /path/to/my/application/nginx.conf /etc/nginx/sites-enabled/mywebapp.conf
+    $ ln -s /path/to/my/application/nginx.conf /etc/nginx/sites-enabled/mywebapp.conf
 
 Now, you are ready to launch the uWSGI server for your application on the server machine. First make sure, you
 activate your project's virtual environment, then type:
 
-.. prompt:: bash (venv)
+.. code-block:: bash
 
-    uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
+    (venv) $ uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
 
 This launches the uWSGI server using your project's configuration. Now open a browser on your local
 machine and type your server machines IP, colon and the port specified in ``nginx.conf`` (e.g. ``10.180.2.75:1050``)
@@ -260,27 +260,27 @@ console is closed.
 
 Check, if your server already features ``screen`` by typing
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        screen -h
+        $ screen -h
 
 If that command is not available, install *screen* via
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo apt-get install screen
+        $ sudo apt-get install screen
 
 Now open a new screen via
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        screen
+        $ screen
 
 A new screen is opened. Now you can start the uWSGI server (first activate the virtual environment):
 
-    .. prompt:: bash (venv)
+    .. code-block:: bash (venv)
 
-        uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
+        $ uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
 
 To switch back to the original window, type ``Ctrl + A`` followed by a simple ``d`` (for detach). This does not close
 the screen, which continues in the background, even after closing your terminal window.
@@ -288,16 +288,16 @@ the screen, which continues in the background, even after closing your terminal 
 Running ``screen -ls`` will list you all available screens. Each screen name starts with session ID (e.g. 32196).
 To enter a specific screen (let's say 32196.pts-10) , type
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        screen -r 32196
+        $ screen -r 32196
 
 to resume a detached session. To kill a window, enter it, then type ``Ctrl + a`` followed by simple ``k``, then confirm
 with ``y``. Alternatively, you may send a quit command while outside the screen (let's say 32196.pts-10 again):
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-           screen -XS 32196 quit
+        $ screen -XS 32196 quit
 
 Automatically start application on system startup
 -------------------------------------------------
@@ -305,9 +305,9 @@ Automatically start application on system startup
 
 Copy the \*.plist file into ``/Library/LaunchDaemons`` to start nginx as a brew service on startup:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons
+    $ sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons
 
 **Linux**:
 

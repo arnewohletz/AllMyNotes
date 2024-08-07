@@ -6,15 +6,15 @@ Installation
 ------------
 Install `iTerm2`_ via Homebrew:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install --cask iterm2
+    $ brew install --cask iterm2
 
 Install `oh-my-zsh`_ via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 Set up movement & delete shortcuts
 ----------------------------------
@@ -76,15 +76,15 @@ In this guide, the `powerlevel10k`_ theme is used for demonstration.
 
 #. Install the theme via homebrew:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        brew install powerlevel10k
+        $ brew install powerlevel10k
 
 #. Add it to your ``~/.zshrc`` file to be launched for each new shell window:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+        $ echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 #. Open a new shell window to start the setup wizard.
 #. Confirm installing the new font, afterwards restart iTerm2.
@@ -121,14 +121,14 @@ Other tweaks
 
     #. Install `zsh-syntax-highlighting`_:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            brew install zsh-syntax-highlighting
+            $ brew install zsh-syntax-highlighting
 
     #. Enable it by adding a source line to your ``~/.zshrc`` file:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+            $ echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 .. _zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting

@@ -25,9 +25,9 @@ Prerequisites
 
     #. Find out your network device name:
 
-        .. prompt:: bash
+        .. code-block:: bash
 
-            ioreg -r -n ARPT
+            $ ioreg -r -n ARPT
 
         Find the IOName (e.g. "IOName" = "pci14e4,43ba").
 
@@ -85,26 +85,26 @@ Steps
         #. Copy the downloaded Broadcom driver onto the system (e.g. to ~/Downloads)
         #. Extract the archive (in case its not already a \*.deb file):
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                cd ~/Downloads
-                tar xzvf ./bcmwl-kernel-source*.deb
+                $ cd ~/Downloads
+                $ tar xzvf ./bcmwl-kernel-source*.deb
 
         #. Install the driver (might a minute or two):
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                sudo apt install ./bcmwl-kernel-source*.deb
+                $ sudo apt install ./bcmwl-kernel-source*.deb
 
            **Important**: If the installation requires downloading additional dependencies,
            establish a bluetooth tethering connection to a smartphone before the installation.
 
         #. Load the Broadcom Wi-Fi driver (here: Broadcom Model 43xx):
 
-            .. prompt:: bash
+            .. code-block:: bash
 
-                sudo modprobe -r b43 ssb wl brcmfmac brcmsmac bcma
-                sudo modprobe wl
+                $ sudo modprobe -r b43 ssb wl brcmfmac brcmsmac bcma
+                $ sudo modprobe wl
 
         You should now be able to connect to a Wi-Fi.
 

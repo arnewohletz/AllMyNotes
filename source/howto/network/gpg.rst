@@ -11,9 +11,9 @@ operating system.
 
 Using Homebrew:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    brew install gnupg
+    $ brew install gnupg
 
 Add this to your ``~/.zshrc``:
 
@@ -34,9 +34,9 @@ Generate a key pair
 
 To generate a key pair run
 
-.. prompt:: bash
+.. code-block:: bash
 
-    gpg --full-generate-key
+    $ gpg --full-generate-key
 
 Follow the `instructions provided on Github`_.
 

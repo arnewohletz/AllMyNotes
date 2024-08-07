@@ -44,9 +44,9 @@ Installing OpenJDK on macOS
 
 #. Add installation to ``/Library/Java/JavaVirtualMachines/`` create a symbolic link:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+        $ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 #. Check, if the correct installation is now referenced by running ``java --version``, e.g.::
 
@@ -66,9 +66,9 @@ All versions can printed out by running ``/usr/libexec/java_home -V``, e.g.::
 
 They are also located in ``/Library/Java/JavaVirtualMachines`` and can be called like this:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        ls -ls /Library/Java/JavaVirtualMachines
+        $ ls -ls /Library/Java/JavaVirtualMachines
 
     .. code-block:: none
 
@@ -86,15 +86,15 @@ To enable a simple switch, add this content to your ``~/.zshrc`` file (create it
 
 Save and close the file and source it to become active:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        source ~/.zhsrc
+        $ source ~/.zhsrc
 
 Now you are able to switch to any installed version by running ``java <version>`` e.g.:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        jdk 14
+        $ jdk 14
 
     .. code-block:: none
 
@@ -102,9 +102,9 @@ Now you are able to switch to any installed version by running ``java <version>`
         Java(TM) SE Runtime Environment (build 14.0.1+7)
         Java HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        jdk 16
+        $ jdk 16
 
     .. code-block:: none
 

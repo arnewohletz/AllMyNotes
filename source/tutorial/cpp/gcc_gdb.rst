@@ -8,16 +8,16 @@ Install GCC on Linux (Ubuntu)
 -----------------------------
 GCC may come preinstalled on Linux. Check your installed version, if any:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        gcc -v
+        $ gcc -v
 
 #. Update or install your GCC compiler:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        sudo apt-get update
-        sudo apt-get install build-essential gdb
+        $ sudo apt-get update
+        $ sudo apt-get install build-essential gdb
 
 Install GCC on Windows
 ----------------------
@@ -29,27 +29,27 @@ to install mingw-w64.
 #. Open a ``C:\mysys64\mysys2.exe`` to open a MYSYS2 shell.
 #. Run these commands to install the base packages:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pacman -Syu
+        $ pacman -Syu
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pacman -Su
+        $ pacman -Su
 
 #. Run this command to install the build tools including GCC:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+        $ pacman -S --needed base-devel mingw-w64-x86_64-toolchain
 
 #. Next, add the .\mingw64\bin directory within you MYSYS2 installation to your PATH variable.
 #. Open a new command window and try to run:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        g++ --version
-        gdb --version
+        $ g++ --version
+        $ gdb --version
 
     .. hint::
 
@@ -73,9 +73,9 @@ To **build** a file, select it, the choose *Terminal / Run Build Task...*, which
 the build, which eventually puts an \*.exe file of the same name into the same directory.
 You can execute the file by running:
 
-    .. prompt:: bash
+    .. code-block:: bash
 
-        my_file.exe
+        $ my_file.exe
 
 from the output directory.
 

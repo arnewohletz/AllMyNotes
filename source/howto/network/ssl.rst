@@ -24,15 +24,15 @@ Resolve SSL issues
 
     Check the git config for the specified tool:
 
-    .. prompt:: batch
+    .. code-block:: bash
 
-        git config --global --get http.sslbackend
+        C:\> git config --global --get http.sslbackend
 
     which should print **schannel** (refers to `Secured Channel`_). If not, run
 
-    .. prompt:: batch
+    .. code-block:: bash batch
 
-        git config --global http.sslbackend schannel
+        C:\> git config --global http.sslbackend schannel
 
     If that does not resolve the issue, check the root CA certificate:
 

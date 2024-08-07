@@ -5,15 +5,15 @@ a sphinx documentation for development purposes.
 
 To keep it running, move it to a separate `screen`_ session named *http_server*:
 
-.. prompt:: bash
+.. code-block:: bash
 
-    screen -S http_server
+    $ screen -S http_server
 
 Inside the new screen start the HTTP server via
 
-.. prompt:: bash
+.. code-block:: bash
 
-    python -m http.server --bind 127.0.0.1 --directory ~/my_sphinx_doc/build 31500
+    $ python -m http.server --bind 127.0.0.1 --directory ~/my_sphinx_doc/build 31500
 
 * The ``--bind`` option sets the URL to localhost
 * The ``--directory`` option must point to the web application (usually
