@@ -171,6 +171,9 @@ certificate is not able to find the local trusted root CA certificate.</p>
 </pre></div>
 </div>
 <p>which should print <strong>schannel</strong> (refers to <a class="reference external" href="https://learn.microsoft.com/en-us/windows/win32/secauthn/secure-channel">Secured Channel</a>). If not, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.sslbackend<span class="w"> </span>schannel
+</pre></div>
+</div>
 <p>If that does not resolve the issue, check the root CA certificate:</p>
 <ol class="arabic simple">
 <li><p>Open the webpage of the remote git service (for example
@@ -204,7 +207,7 @@ to add the certificate.</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 07, 2024</span>.
+        <span class="update_date">Aug 08, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

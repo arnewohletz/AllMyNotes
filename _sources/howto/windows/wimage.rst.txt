@@ -212,7 +212,7 @@ message ``Windows RE auf Windows-Partition verschieben``.
    a file called ``install.esd`` and copy it to ``C:\``.
 #. Open a command prompt as administrator, go to ``C:\`` and run
 
-    .. code-block:: bash batch
+    .. code-block:: bash
 
         C:\> dism /Export-image /SourceImageFile:install.esd /SourceIndex:1 /DestinationImageFile:C:\install.wim /Compress:max /CheckIntegrity
 

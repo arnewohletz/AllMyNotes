@@ -271,6 +271,16 @@ file have the correct permissions and owner:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> must only be writable and readable by the owner</p></li>
 </ul>
 </div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh
+$<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh/authorized_keys
+$<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>~/.ssh/config
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+$<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys
+$<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config
+</pre></div>
+</div>
 </div></blockquote>
 </li>
 </ol>
@@ -294,14 +304,21 @@ to the OpenSSH directory and run:</p>
 <p>OpenSSH does not allow the key pair files to be editable by anyone except the owner.
 The private key must also be protected (here: id_ed25519):</p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh/id_ed25519
+$<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh/id_ed25519.pub
+</pre></div>
+</div>
+</div></blockquote>
 </section>
 <section id="server-set-up-key-authentication">
 <h2>Server: Set-up key authentication<a class="headerlink" href="#server-set-up-key-authentication" title="Link to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Add your private key to the authentication agent (it will handle the authorizations via keys):</p>
 <blockquote>
-<div><div class="admonition hint">
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-add
+</pre></div>
+</div>
+<div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
 <li><p>In case you received the message</p>
@@ -535,7 +552,7 @@ type %USERPROFILE%\.ssh\config | findstr /R &quot;^Host &quot;
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 07, 2024</span>.
+        <span class="update_date">Aug 08, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

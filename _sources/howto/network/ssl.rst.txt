@@ -30,7 +30,7 @@ Resolve SSL issues
 
     which should print **schannel** (refers to `Secured Channel`_). If not, run
 
-    .. code-block:: bash batch
+    .. code-block:: bash
 
         C:\> git config --global http.sslbackend schannel
 

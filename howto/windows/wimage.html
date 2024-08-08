@@ -383,7 +383,10 @@ Ignore the next step.</p>
 a file called <code class="docutils literal notranslate"><span class="pre">install.esd</span></code> and copy it to <code class="docutils literal notranslate"><span class="pre">C:\</span></code>.</p></li>
 <li><p>Open a command prompt as administrator, go to <code class="docutils literal notranslate"><span class="pre">C:\</span></code> and run</p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>dism<span class="w"> </span>/Export-image<span class="w"> </span>/SourceImageFile:install.esd<span class="w"> </span>/SourceIndex:1<span class="w"> </span>/DestinationImageFile:C:<span class="se">\i</span>nstall.wim<span class="w"> </span>/Compress:max<span class="w"> </span>/CheckIntegrity
+</pre></div>
+</div>
+</div></blockquote>
 <p>which converts the file to <code class="docutils literal notranslate"><span class="pre">install.wim</span></code> located at the same directory.</p>
 </li>
 <li><p>Mount the file by running</p>
@@ -524,7 +527,7 @@ created one. Make sure to delete it from its original destination afterwards.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 07, 2024</span>.
+        <span class="update_date">Aug 08, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
