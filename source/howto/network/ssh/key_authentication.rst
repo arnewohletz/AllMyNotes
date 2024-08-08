@@ -108,13 +108,13 @@ be able to interact with them.
        * ``authorized_keys`` must be owned by the user
        * ``authorized_keys`` must only be writable and readable by the owner
 
-    .. code-block:: bash bash
+    .. code-block:: bash
 
         $ chown $USER ~/.ssh
         $ chown $USER ~/.ssh/authorized_keys
         $ chown $USER ~/.ssh/config
 
-    .. code-block:: bash bash
+    .. code-block:: bash
 
         $ chmod 700 ~/.ssh
         $ chmod 600 ~/.ssh/authorized_keys
@@ -142,7 +142,7 @@ when trying to establish a connection, so always make sure, those are set correc
 OpenSSH does not allow the key pair files to be editable by anyone except the owner.
 The private key must also be protected (here: id_ed25519):
 
-    .. code-block:: bash bash
+    .. code-block:: bash
 
         $ chmod 700 ~/.ssh/id_ed25519
         $ chmod 700 ~/.ssh/id_ed25519.pub
@@ -151,7 +151,7 @@ Server: Set-up key authentication
 `````````````````````````````````
 #. Add your private key to the authentication agent (it will handle the authorizations via keys):
 
-    .. code-block:: bash bash
+    .. code-block:: bash
 
         $ ssh-add
 

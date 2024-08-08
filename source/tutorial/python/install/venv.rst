@@ -25,7 +25,7 @@ Create a virtual environment
     ``python`` but something like ``python3.9``, the command fails. In that case,
     use the absolute path to your interpreter, for example:
 
-    .. code-block:: bash batch
+    .. code-block:: bash
 
         C:\> C:\Users\my_username\AppData\Local\Programs\Python\Python39\python.exe -m venv </path/to/target/env>
 

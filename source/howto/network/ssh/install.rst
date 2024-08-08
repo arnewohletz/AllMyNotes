@@ -15,7 +15,7 @@ versions behind the Linux build).
 
         Alternatively, you may install OpenSSH via `winget`_:
 
-        .. code-block:: bash batch
+        .. code-block:: bash
 
             C:\> winget install "openssh beta"
 

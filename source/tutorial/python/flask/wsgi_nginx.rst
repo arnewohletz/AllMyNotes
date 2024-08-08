@@ -278,9 +278,9 @@ Now open a new screen via
 
 A new screen is opened. Now you can start the uWSGI server (first activate the virtual environment):
 
-    .. code-block:: bash (venv)
+    .. code-block:: bash
 
-        $ uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
+        (venv) $ uwsgi --ini /absolute/path/to/my/application/uwsgi.ini
 
 To switch back to the original window, type ``Ctrl + A`` followed by a simple ``d`` (for detach). This does not close
 the screen, which continues in the background, even after closing your terminal window.
