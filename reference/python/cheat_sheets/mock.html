@@ -111,7 +111,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#for-mocking">For Mocking</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">unittest.mock</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#Basic-methods">Basic methods</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#Patching-an-import-module-from-a-project-module-in-our-unit-test">Patching an import module from a project module in our unit test</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#Patching-an-import-module">Patching an import module</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#Patching-classes">Patching classes</a></li>
 </ul>
 </li>
@@ -202,6 +202,8 @@
 </section>
 <section id="Assign-different-return-values-for-successive-calls">
 <h3>Assign different return values for successive calls<a class="headerlink" href="#Assign-different-return-values-for-successive-calls" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">side_effect</span></code> must be of type list. Each time the mocked method is then called, the next value in the list is returned. If the <code class="docutils literal notranslate"><span class="pre">side_effect</span></code> list has no more values to return, the next call will fail with a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">return_value</span></code> is like a constant side_effect, which always returns the same value.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -359,12 +361,21 @@ call(1, foo=&#39;bar&#39;)
 []
 </pre></div></div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
-<section id="Patching-an-import-module-from-a-project-module-in-our-unit-test">
-<h2>Patching an import module from a project module in our unit test<a class="headerlink" href="#Patching-an-import-module-from-a-project-module-in-our-unit-test" title="Link to this heading"></a></h2>
-<section id="Project-module-(work.py)">
-<h3>Project module (work.py)<a class="headerlink" href="#Project-module-(work.py)" title="Link to this heading"></a></h3>
+<section id="Patching-an-import-module">
+<h2>Patching an import module<a class="headerlink" href="#Patching-an-import-module" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code> is able to patch imports in the module under test using the <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html#patch">patch</a>` function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">patch</span></code> will intercept import statements identified by a string and return a Mock instance you can preconfigure using the techniques from above.</p>
+<p>Module under test (<code class="docutils literal notranslate"><span class="pre">work.py</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">work_on</span><span class="p">():</span>
@@ -373,12 +384,11 @@ call(1, foo=&#39;bar&#39;)
     <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
-<p>The project module imports <em>os</em> and uses its <em>getcwd()</em> method , which we want to mock in our test.</p>
-</section>
-<section id="Defining-the-unit-test">
-<h3>Defining the unit test<a class="headerlink" href="#Defining-the-unit-test" title="Link to this heading"></a></h3>
+<p>The project module imports <code class="docutils literal notranslate"><span class="pre">os</span></code> and uses its <code class="docutils literal notranslate"><span class="pre">getcwd()</span></code> method , which we want to mock in our test.</p>
+<section id="Patch-using-a-context-manager-(with-statement)">
+<h3>Patch using a context manager (<code class="docutils literal notranslate"><span class="pre">with</span></code> statement)<a class="headerlink" href="#Patch-using-a-context-manager-(with-statement)" title="Link to this heading"></a></h3>
+<p>When using the context manager <code class="docutils literal notranslate"><span class="pre">patch</span></code>, the patch ends when the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement ends.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
-
 <span class="kn">from</span> <span class="nn">work</span> <span class="kn">import</span> <span class="n">work_on</span>
 
 <span class="k">class</span> <span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
@@ -389,47 +399,44 @@ call(1, foo=&#39;bar&#39;)
             <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>We specifically patch the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module, not <code class="docutils literal notranslate"><span class="pre">os</span></code>, as this would patch <code class="docutils literal notranslate"><span class="pre">os</span></code> for all modules, not just for <code class="docutils literal notranslate"><span class="pre">work.py</span></code>.</p>
 <ul class="simple">
-<li><p>The test module imports the project module’s method <em>work_on()</em></p></li>
-<li><p>At the beginning of the test, the work.os module (which is the os module in our work.py module) is patched with <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html?highlight=magicmock#unittest.mock.MagicMock">MagickMock</a> object (here called <em>mocked_os</em>)</p></li>
-<li><p>When the <em>work_on()</em> method is called afterward, the <em>MagicMock</em> object is returned instead of the original module (os)</p></li>
-<li><p>The returned <em>MagicMock</em> object assigned the attribute name to the function that is called on the patched module (here: <em>os.getcwd()</em>)</p></li>
+<li><p>The test module imports the project module’s method <code class="docutils literal notranslate"><span class="pre">work_on()</span></code></p></li>
+<li><p>At the beginning of the test, the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module (which is the <code class="docutils literal notranslate"><span class="pre">os</span></code> module in our <code class="docutils literal notranslate"><span class="pre">work.py</span></code> module) is patched with a <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html?highlight=magicmock#unittest.mock.MagicMock">MagickMock</a> object (here called <code class="docutils literal notranslate"><span class="pre">mocked_os</span></code>)</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">work_on()</span></code> method is called afterward, that <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> object is called instead of the original module (<code class="docutils literal notranslate"><span class="pre">os</span></code>) - as no return value is defined <code class="docutils literal notranslate"><span class="pre">work_on()</span></code> returns another MagicMock object - as we are not testing the correctness of the return value here, only checking if the <code class="docutils literal notranslate"><span class="pre">mocked_os</span></code> executed the <code class="docutils literal notranslate"><span class="pre">getcwd()</span></code>method, we do not care about the return value</p></li>
 </ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">as</span></code> statement in the decorator is optional. You may as well not mock the entire <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module, but rather define a return value for the single function, that is called (<code class="docutils literal notranslate"><span class="pre">getcwd()</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
+<span class="kn">from</span> <span class="nn">work</span> <span class="kn">import</span> <span class="n">work_on</span>
+
+<span class="k">class</span> <span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_using_return_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os.getcwd&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="n">work_on</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span>
+</pre></div>
+</div>
 </section>
-<section id="Executing-the-test">
-<h3>Executing the test<a class="headerlink" href="#Executing-the-test" title="Link to this heading"></a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<section id="Patch-using-the-decorator-(&#64;patch)">
+<h3>Patch using the decorator (&#64;patch)<a class="headerlink" href="#Patch-using-the-decorator-(@patch)" title="Link to this heading"></a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">&#64;patch</span></code> decorator allows to inject a mock into the test function. The patch is available for the entire function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
+
+<span class="kn">from</span> <span class="nn">work</span> <span class="kn">import</span> <span class="n">work_on</span>
+
+<span class="k">class</span> <span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_using_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mocked_os</span><span class="p">):</span>
+        <span class="n">work_on</span><span class="p">()</span>
+        <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Alternatively, the :ulined:<code class="docutils literal notranslate"><span class="pre">patch</span> <span class="pre">decorator</span></code> can be used:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_using_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mocked_os</span><span class="p">):</span>
-    <span class="n">work_on</span><span class="p">()</span>
-    <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>To define a <strong>return value</strong> for the mocked <em>os.getcwd()</em> function, define it like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_using_return_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Note &#39;as&#39; in the context manager is optional&quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os.getcwd&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="n">work_on</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span>
-</pre></div>
-</div>
-<p>Applying a <code class="docutils literal notranslate"><span class="pre">return_value='testing'</span></code> will return the string when calling the <code class="docutils literal notranslate"><span class="pre">work.os.getcwd()</span></code> function.</p>
-<p>Running the test leads to this output:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Working on testing
-</pre></div>
-</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module is replaced with a MagicMock object.</p>
 </section>
 </section>
 <section id="Patching-classes">
 <h2>Patching classes<a class="headerlink" href="#Patching-classes" title="Link to this heading"></a></h2>
-<p>To test project classes that interact with other project classes in isolation, the other project classes must be mocked (in order to determine test failure to a specific class and method, not it’s depending classes).</p>
+<p>To test project classes that interact with other project classes in isolation, the other project classes must be mocked (in order to determine test failure to a specific class and method, not by any of its dependency classes).</p>
 <p>Example:</p>
 <section id="Project-module-(worker.py)">
 <h3>Project module (worker.py)<a class="headerlink" href="#Project-module-(worker.py)" title="Link to this heading"></a></h3>
@@ -463,9 +470,9 @@ call(1, foo=&#39;bar&#39;)
 </pre></div>
 </div>
 <p>To test this, the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> needs to be isolated from <code class="docutils literal notranslate"><span class="pre">Helper</span></code>, so that failures can be associated with the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> class only.</p>
-<p>Consequently, the <code class="docutils literal notranslate"><span class="pre">Helper</span></code> class must be patched:</p>
+<p>Consequently, the entire <code class="docutils literal notranslate"><span class="pre">Helper</span></code> class must be patched:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
-<span class="kn">from</span> <span class="nn">worker</span> <span class="kn">import</span> <span class="n">Worker</span><span class="p">,</span> <span class="n">Helper</span>
+<span class="kn">from</span> <span class="nn">worker</span> <span class="kn">import</span> <span class="n">Worker</span>
 
 
 <span class="k">class</span> <span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
@@ -478,7 +485,31 @@ call(1, foo=&#39;bar&#39;)
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here</p>
+<p>Note the double <code class="docutils literal notranslate"><span class="pre">return_value</span></code> in the example, simply using <code class="docutils literal notranslate"><span class="pre">MockHelper.get_path.return_value</span></code> would not work since in the code we call get_path on an instance, not the class itself.</p>
+<p>Alternatively, we can preconfigure the <code class="docutils literal notranslate"><span class="pre">MockHelper</span></code> instance and assign it as the return value of the <code class="docutils literal notranslate"><span class="pre">worker.Helper</span></code> call. Below, shown for both the context manager and the decorator way:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
+<span class="kn">from</span> <span class="nn">worker</span> <span class="kn">import</span> <span class="n">Worker</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="n">mockHelperInstance</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
+    <span class="n">mockHelperInstance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+
+    <span class="k">def</span> <span class="nf">test_patch_class_context_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span>
+                        <span class="n">return_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mockHelperInstance</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockHelper</span><span class="p">:</span>
+            <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">mockHelperInstance</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_patch_class_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_helper</span><span class="p">):</span>
+        <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+        <span class="n">mock_helper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p><em>NEEDS TO BE CONTINUED…</em></p>
 </section>
 </section>
@@ -497,7 +528,7 @@ call(1, foo=&#39;bar&#39;)
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 17, 2024</span>.
+        <span class="update_date">Aug 19, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
