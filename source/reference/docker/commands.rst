@@ -10,6 +10,14 @@ List all available image tags
 
     $ docker images
 
+Volumes
+-------
+List local mount points of a running container
+
+.. code-block:: bash
+
+    $ docker inspect -f '{{ .Mounts }}' <CONTAINER_NAME>
+
 Logs
 ----
 Display log messages (follow latest):
