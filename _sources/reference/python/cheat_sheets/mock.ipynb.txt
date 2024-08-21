@@ -4,9 +4,8 @@
    "cell_type": "markdown",
    "source": [
     "# unittest.mock\n",
-    "## Basic methods\n",
     "\n",
-    "### Create a Mock object"
+    "## Create a Mock object"
    ],
    "metadata": {
     "collapsed": false
@@ -22,8 +21,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.082706Z",
-     "start_time": "2024-08-16T13:32:27.044745Z"
+     "end_time": "2024-08-21T14:51:05.901466Z",
+     "start_time": "2024-08-21T14:51:05.890366Z"
     }
    },
    "id": "14814ab188445f3",
@@ -33,7 +32,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "### Set a default return value when calling mock object"
+    "## Define Mock object behavior\n",
+    "### Set a default return value"
    ],
    "metadata": {
     "collapsed": false
@@ -49,8 +49,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.159647Z",
-     "start_time": "2024-08-16T13:32:27.139925Z"
+     "end_time": "2024-08-21T14:51:05.918196Z",
+     "start_time": "2024-08-21T14:51:05.914137Z"
     }
    },
    "id": "f7552c846014a6a8",
@@ -77,7 +77,9 @@
     "the next value in the list is returned. If the ``side_effect`` list has no more\n",
     "values to return, the next call will fail with a ``StopIteration`` error.\n",
     "\n",
-    "The ``return_value`` is like a constant side_effect, which always returns the same value."
+    "The ``return_value`` is like a constant side_effect, which always returns the same value.\n",
+    "\n",
+    "#### Have a Mock return string values when called"
    ],
    "metadata": {
     "collapsed": false
@@ -95,8 +97,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.385697Z",
-     "start_time": "2024-08-16T13:32:27.372270Z"
+     "end_time": "2024-08-21T14:51:06.006125Z",
+     "start_time": "2024-08-21T14:51:06.004045Z"
     }
    },
    "id": "3b52fbead5a78a8f",
@@ -114,9 +116,46 @@
    "execution_count": 4
   },
   {
+   "metadata": {},
+   "cell_type": "markdown",
+   "source": "#### Have a Mock returns a new Mock for each function call",
+   "id": "d62702cc124e6539"
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-08-21T14:51:06.101271Z",
+     "start_time": "2024-08-21T14:51:06.098026Z"
+    }
+   },
+   "cell_type": "code",
+   "source": [
+    "number = 10\n",
+    "m = mock.Mock()\n",
+    "m.get_mock.side_effect = [ mock.Mock() for _ in range(number)]\n",
+    "\n",
+    "print(m.get_mock())\n",
+    "print(m.get_mock())\n",
+    "# may continue up to 'number'-times"
+   ],
+   "id": "af2721390e86d96c",
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<Mock id='4575504208'>\n",
+      "<Mock id='4573581648'>\n"
+     ]
+    }
+   ],
+   "execution_count": 5
+  },
+  {
    "cell_type": "markdown",
    "source": [
-    "### Check whether mock object has been called at least once"
+    "### Check number of calls on Mock object\n",
+    "#### Check whether mock object has been called at least once"
    ],
    "metadata": {
     "collapsed": false
@@ -133,20 +172,20 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.539316Z",
-     "start_time": "2024-08-16T13:32:27.522598Z"
+     "end_time": "2024-08-21T14:51:06.163928Z",
+     "start_time": "2024-08-21T14:51:06.161999Z"
     }
    },
    "id": "3940370ed5ab33c1",
    "outputs": [],
-   "execution_count": 5
+   "execution_count": 6
   },
   {
    "cell_type": "markdown",
    "source": [
     "Returns *None*, if called, otherwise raises *AssertionError*\n",
     "\n",
-    "### Check whether mock object has been called exactly once"
+    "#### Check whether mock object has been called exactly once"
    ],
    "metadata": {
     "collapsed": false
@@ -168,8 +207,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.569960Z",
-     "start_time": "2024-08-16T13:32:27.560006Z"
+     "end_time": "2024-08-21T14:51:06.181445Z",
+     "start_time": "2024-08-21T14:51:06.179147Z"
     }
    },
    "id": "40b4ddc36efb036c",
@@ -183,11 +222,11 @@
      ]
     }
    ],
-   "execution_count": 6
+   "execution_count": 7
   },
   {
    "cell_type": "markdown",
-   "source": "### Get number of calls to mock object",
+   "source": "#### Get number of calls to mock object",
    "metadata": {
     "collapsed": false
    },
@@ -204,8 +243,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.635775Z",
-     "start_time": "2024-08-16T13:32:27.624658Z"
+     "end_time": "2024-08-21T14:51:06.203388Z",
+     "start_time": "2024-08-21T14:51:06.200684Z"
     }
    },
    "id": "a82ddaa3883f2e2f",
@@ -216,17 +255,18 @@
        "2"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
-   "execution_count": 7
+   "execution_count": 8
   },
   {
    "cell_type": "markdown",
    "source": [
-    "### Get call arguments of last mock call"
+    "### Get Mock call arguments\n",
+    "#### Get call arguments from most recent Mock call"
    ],
    "metadata": {
     "collapsed": false
@@ -243,8 +283,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.748377Z",
-     "start_time": "2024-08-16T13:32:27.736282Z"
+     "end_time": "2024-08-21T14:51:06.217485Z",
+     "start_time": "2024-08-21T14:51:06.214974Z"
     }
    },
    "id": "c83c4b94f4e3c6af",
@@ -255,19 +295,19 @@
        "call(1, foo='bar')"
       ]
      },
-     "execution_count": 8,
+     "execution_count": 9,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
-   "execution_count": 8
+   "execution_count": 9
   },
   {
    "cell_type": "markdown",
    "source": [
     "If mock object hasn't been called yet, *None* is returned.\n",
     "\n",
-    "### Get call arguments of all mock calls"
+    "#### Get call arguments of all previous Mock calls"
    ],
    "metadata": {
     "collapsed": false
@@ -286,8 +326,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.821866Z",
-     "start_time": "2024-08-16T13:32:27.803698Z"
+     "end_time": "2024-08-21T14:51:06.241598Z",
+     "start_time": "2024-08-21T14:51:06.239160Z"
     }
    },
    "id": "edf79f0b9313803b",
@@ -298,18 +338,16 @@
        "[call(), call(1, foo='bar'), call(4, baz='bar2')]"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 10,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
-   "execution_count": 9
+   "execution_count": 10
   },
   {
    "cell_type": "markdown",
-   "source": [
-    "### Reset call previous call (won't change mock configuration)"
-   ],
+   "source": "### Reset previous Mock calls (won't change mock configuration)",
    "metadata": {
     "collapsed": false
    },
@@ -328,8 +366,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2024-08-16T13:32:27.888713Z",
-     "start_time": "2024-08-16T13:32:27.875650Z"
+     "end_time": "2024-08-21T14:51:06.263065Z",
+     "start_time": "2024-08-21T14:51:06.260452Z"
     }
    },
    "id": "8240bb6e6e870b95",
@@ -340,22 +378,15 @@
        "[]"
       ]
      },
-     "execution_count": 10,
+     "execution_count": 11,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
-   "execution_count": 10
+   "execution_count": 11
   },
   {
    "metadata": {},
-   "cell_type": "code",
-   "outputs": [],
-   "execution_count": null,
-   "source": "",
-   "id": "c31e599e4bd4539e"
-  },
-  {
    "cell_type": "markdown",
    "source": [
     "## Patching an import module\n",
@@ -482,6 +513,10 @@
     "        return path\n",
     "```\n",
     "\n",
+    "### Test module (test_worker.py)\n",
+    "\n",
+    "#### Patch entire class\n",
+    "\n",
     "To test this, the `Worker` needs to be isolated from `Helper`,\n",
     "so that failures can be associated with the `Worker` class only.\n",
     "\n",
@@ -520,6 +555,7 @@
     "    mockHelperInstance = mock.MagicMock()\n",
     "    mockHelperInstance.get_path.return_value = 'testing'\n",
     "\n",
+    "    # using patch context manager\n",
     "    def test_patch_class_context_manager(self):\n",
     "        with mock.patch('worker.Helper',\n",
     "                        return_value=self.mockHelperInstance) as MockHelper:\n",
@@ -527,6 +563,7 @@
     "            MockHelper.assert_called_once_with('db')\n",
     "            self.assertEqual(worker.work(), 'testing')\n",
     "\n",
+    "    # using patch class decorator\n",
     "    @mock.patch('worker.Helper', return_value=mockHelperInstance)\n",
     "    def test_patch_class_decorator(self, mock_helper):\n",
     "        worker = Worker()\n",
@@ -534,12 +571,194 @@
     "        self.assertEqual(worker.work(), 'testing')\n",
     "```\n",
     "\n",
+    "**Important**\n",
+    "\n",
+    "It is important to distinguish between **mocking a class** and \n",
+    "**mocking the instance of a class**. Sometimes, it is necessary to mock the\n",
+    "entire class, sometimes it might be sufficient to mock only an instance from\n",
+    "that class.\n",
+    "\n",
+    "Mocking the entire class allows for \n",
+    "\n",
+    "    * checking, in what way that class has been initialized\n",
+    "    * instantiating multiple instances from it, which return a Mock object and\n",
+    "      raises the call count\n",
+    "\n",
+    "For the above ``worker.py`` module, both these tests pass:\n",
+    "\n",
+    "```python\n",
+    "from unittest import TestCase, mock\n",
+    "from worker import Worker\n",
+    "\n",
+    "mockHelper = mock.MagicMock()\n",
+    "\n",
+    "\n",
+    "class TestWorkerModule(TestCase):\n",
+    "\n",
+    "    def setUp(self):\n",
+    "        mockHelper.reset_mock()\n",
+    "        self.mock_helper_instance = mockHelper.return_value\n",
+    "\n",
+    "    @mock.patch('worker.Helper', new=mockHelper)\n",
+    "    def test_initialization(self):\n",
+    "        Worker()\n",
+    "        mockHelper.assert_called_once_with('db')\n",
+    "\n",
+    "    @mock.patch('worker.Helper', new=mockHelper)\n",
+    "    def test_get_path(self):\n",
+    "        self.mock_helper_instance.get_path.return_value = 'testing'\n",
+    "        worker = Worker()\n",
+    "        self.assertEqual(worker.work(), 'testing')\n",
+    "```\n",
+    "\n",
+    "#### Speccing\n",
+    "\n",
+    "The danger with mocks is that a ``Mock`` object returns a new ``MagicMock`` object to\n",
+    "basically every attribute or method it is queried for, no matter if that attribute or\n",
+    "method actually exists. If the mocked class changes signatures or an attribute, the \n",
+    "``Mock``object will still return the requested \"thing\" as another Mock, simply said\n",
+    "\n",
+    "    The Mock does not know about the object it is mocking.\n",
+    "\n",
+    "To prevent this *speccing* can be added to a Mock, which makes it behave as the object\n",
+    "being mocked. The easiest to use is ``autospec=True`` option.\n",
+    "\n",
+    "Example:\n",
+    "\n",
+    "Assuming the ``Helper`` class changed its ``get_path()`` method to ``get_folder()``, but the\n",
+    "call is **not** changed in the ``Worker`` class:\n",
+    "\n",
+    "```python\n",
+    "import os\n",
+    "\n",
+    "\n",
+    "class Helper:\n",
+    "\n",
+    "    def __init__(self, path):\n",
+    "        self.path = path\n",
+    "\n",
+    "    def get_folder(self):\n",
+    "        base_path = os.getcwd()\n",
+    "        return os.path.join(base_path, self.path)\n",
+    "\n",
+    "\n",
+    "class Worker:\n",
+    "\n",
+    "    def __init__(self):\n",
+    "        self.helper = Helper('db')\n",
+    "\n",
+    "    def work(self):\n",
+    "        path = self.helper.get_path()\n",
+    "        print(f'Working on {path}')\n",
+    "        return path\n",
+    "```\n",
+    "\n",
+    "When running the previous test without the ``speccing`` option, this would pass, as we mock\n",
+    "the ``get_path`` method for the Mock instance although the original class does not contain\n",
+    "this method anymore.\n",
+    "\n",
+    "But with the ``autospec=True`` method, the Mock``get_path()`` method, the Mock object checks\n",
+    "for consistence with the original object. So\n",
+    "\n",
+    "```python\n",
+    "    @mock.patch('worker.Helper', new=mockHelper, autospec=True)\n",
+    "    def test_get_path(self):\n",
+    "        self.mock_helper_instance.get_path.return_value = 'testing'\n",
+    "        worker = Worker()\n",
+    "        self.assertEqual(worker.work(), 'testing')\n",
+    "```\n",
+    "\n",
+    "raise an ``AttributeError``:\n",
+    "\n",
+    "    AttributeError: Mock object has no attribute 'get_path'\n",
+    "\n",
+    "#### Partial class mocking\n",
+    "\n",
+    "A class can also be partially mocked by using ``mock.patch.object``:\n",
+    "\n",
+    "```python\n",
+    "from unittest import TestCase, mock\n",
+    "from worker import Worker, Helper\n",
+    "\n",
+    "\n",
+    "class TestWorkerModule(TestCase):\n",
+    "\n",
+    "    def test_partial_patching_decorator(self):\n",
+    "        with mock.patch.object(Helper, 'get_path', return_value='testing'):\n",
+    "            worker = Worker()\n",
+    "            self.assertEqual(worker.helper.path, 'db')\n",
+    "            self.assertEqual(worker.work(), 'testing')\n",
+    "\n",
+    "    @mock.patch.object(Helper, 'get_path', return_value='testing')\n",
+    "    def test_partial_patching_decorator(self, mocked_helper_get_path):\n",
+    "        worker = Worker()\n",
+    "        self.assertEqual(worker.helper.path, 'db')\n",
+    "        self.assertEqual(worker.work(), 'testing')\n",
+    "        mocked_helper_get_path.assert_called_once()\n",
+    "```\n",
+    "\n",
+    "\n",
+    "### Mocking built-in functions and environment variables\n",
+    "\n",
+    "Previously, the ``print()`` call in ``Worker.work()`` was neglected, though\n",
+    "it might be important to test, if that call was made.\n",
+    "\n",
+    "Assuming this version of the ``work()`` method inside ``worker.py``:\n",
+    "\n",
+    "```python\n",
+    "import os\n",
+    "\n",
+    "def work_on_env():\n",
+    "    path = os.path.join(os.getcwd(), os.environ['MY_VAR'])\n",
+    "    print(f'Working on {path}')\n",
+    "    return path\n",
+    "```\n",
+    "\n",
+    "The path is concatenated by a ``MY_VAR`` environment variable and the\n",
+    "``os.getcwd()`` return value. The test:\n",
+    "\n",
+    "```python\n",
+    "from unittest import TestCase, mock\n",
+    "\n",
+    "from worker import work_on_env\n",
+    "\n",
+    "class TestBuiltin(TestCase):\n",
+    "\n",
+    "    def test_patch_dict_context_manager(self):\n",
+    "        with mock.patch('worker.print') as mock_print:\n",
+    "            with mock.patch('os.getcwd', return_value='/home/'):\n",
+    "                with mock.patch.dict('os.environ', {'MY_VAR': 'testing'}):\n",
+    "                    self.assertEqual(work_on_env(), '/home/testing')\n",
+    "                    mock_print.assert_called_once_with('Working on /home/testing')\n",
+    "```\n",
+    "\n",
+    "* we patch the built-in ``print()`` function for the ``worker`` module as ``mock_print`` (patch on import)\n",
+    "* we patch the ``worker.work_on_env()`` method assigning \"/home/\" as the return value\n",
+    "* we patch the ``os.environ`` dictionary with a ``{'MY_VAR': 'testing'}`` dictionary\n",
+    "\n",
+    "Nesting multiple context managers can be prevented by using multiple patch decorators:\n",
+    "\n",
+    "```python\n",
+    "from unittest import TestCase, mock\n",
+    "\n",
+    "from worker import work_on_env\n",
+    "\n",
+    "class TestBuiltin(TestCase):\n",
+    "    @mock.patch('os.getcwd', return_value='/home/')\n",
+    "    @mock.patch('worker.print')\n",
+    "    @mock.patch.dict('os.environ', {'MY_VAR': 'testing'})\n",
+    "    def test_patch_builtin_dict_decorators(self, mock_print, mock_getcwd):\n",
+    "        self.assertEqual(work_on_env(), '/home/testing')\n",
+    "        mock_print.assert_called_once_with('Working on /home/testing')\n",
+    "```\n",
+    "\n",
+    "Note that the ``mock_getcwd`` must be passed into the test function, though it isn't used.\n",
+    "\n",
+    "\n",
+    "--- skipped 'Mocking context managers' here, might document later ---\n",
     "\n",
     "*NEEDS TO BE CONTINUED...*"
    ],
-   "metadata": {
-    "collapsed": false
-   },
    "id": "e29ec97a187f04b8"
   }
  ],

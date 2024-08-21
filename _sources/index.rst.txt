@@ -47,7 +47,7 @@ Table of Contents
     reference/logitech_k860.rst
     reference/network/index.rst
     reference/others/index.rst
-    reference/pycharm_plugins.rst
+    reference/pycharm/index.rst
     reference/python/index.rst
     reference/rst_sphinx.rst
     reference/shell_scripting.rst

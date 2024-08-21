@@ -99,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dockerfile.html">Dockerfile</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Commands</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#images">Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volumes">Volumes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#logs">Logs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#log-saving-location">Log saving location</a></li>
 </ul>
@@ -113,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../logitech_k860.html">Logitech K860 - Special keys </a></li>
 <li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pycharm_plugins.html">Pycharm Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm/index.html">Pycharm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_scripting.html">Shell Scripting</a></li>
@@ -153,6 +154,13 @@
 <h2>Images<a class="headerlink" href="#images" title="Link to this heading"></a></h2>
 <p>List all available image tags</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>images
+</pre></div>
+</div>
+</section>
+<section id="volumes">
+<h2>Volumes<a class="headerlink" href="#volumes" title="Link to this heading"></a></h2>
+<p>List local mount points of a running container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;{{ .Mounts }}&#39;</span><span class="w"> </span>&lt;CONTAINER_NAME&gt;
 </pre></div>
 </div>
 </section>
@@ -204,7 +212,7 @@ container must still run):</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 19, 2024</span>.
+        <span class="update_date">Aug 21, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
