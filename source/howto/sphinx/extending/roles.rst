@@ -66,11 +66,61 @@ But sometimes, you need more options, such as a colored font or background or un
 
 How to apply a custom role containing raw HTML
 ----------------------------------------------
+
+.. used for this section only:
+.. ---------------------------
+.. |br| raw:: html
+
+    <br />
+
+.. ---------------------------
+
 Sometimes a special HTML content is needed to achieve the correct formatting in
 the HTML output.
 
 For instance, the `csv-table`_ does not feature line breaks within cells, but a
 raw HTML substitution can add this feature.
+
+.. attention::
+
+    I found out that having a ``raw-html`` substitution in the ``rst_prolog`` as
+    explained below leads to the `sphinx-contrib/emojicodes`_ to become non functional,
+    meaning that
+
+    * no emojis will be displayed in the output HTML
+    * no warning about the malfunction is shown
+
+    If you use the approach below, watch out for this error and revert the changes
+    in case, it occurs. As an alternative, either
+
+    * only add the substitution to the particular RST document, which needs it
+      (like on the top of the document) like
+
+        .. code-block:: rst
+
+            .. |br| raw:: html
+
+                <br />
+
+            Page Headline
+            =============
+            ...
+
+    * or use `line blocks`_, like:
+
+        .. code-block:: rst
+
+            | Line 1
+            | Line 2
+            | Line 3
+            | Line 4
+
+        translating to
+
+            | Line 1
+            | Line 2
+            | Line 3
+            | Line 4
 
 #. Open the ``conf.py`` file and create an `rst_prolog`_ variable, if not already
    existing.
@@ -113,3 +163,5 @@ raw HTML substitution can add this feature.
 
 .. _csv-table: https://docutils.sourceforge.io/docs/ref/rst/directives.html#csv-table-1
 .. _raw: https://docutils.sourceforge.io/docs/ref/rst/directives.html#raw-data-pass-through
+.. _sphinx-contrib/emojicodes: https://github.com/sphinx-contrib/emojicodes
+.. _line blocks: https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#line-blocks

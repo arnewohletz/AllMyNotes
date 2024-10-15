@@ -130,7 +130,6 @@ gitstamp_fmt = "%b %d, %Y"   # Date format for git timestamps
 # a list of builtin themes.
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-    'display_version': False,
     'logo_only': True,
     'navigation_depth': 5,
 }
@@ -193,7 +192,4 @@ rst_prolog = """
 .. role:: ulined
 .. role:: strike
 
-.. |br| raw:: html
-
-    <br />
 """
