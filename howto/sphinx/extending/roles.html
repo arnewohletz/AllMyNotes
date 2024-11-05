@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
@@ -11,39 +13,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Custom Roles &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=45fb5152" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
   
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/thebelab-helper.js"></script>
-        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../../../_static/copybutton.js?v=f0731925"></script>
-        <script defer="defer" src="../../../_static/docsearch.js?v=77274085"></script>
-        <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="next" title="Create a new directive" href="new_directive.html" />
@@ -103,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="custom_class_style.html">Create selective custom style using classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="inline_code_highlight.html">Inline Code Highlighting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="algolia.html">Add Algolia DocSearch engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intersphinx.html">Intersphinx</a></li>
 </ul>
 </li>
 </ul>
@@ -227,6 +222,53 @@ to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/
 the HTML output.</p>
 <p>For instance, the <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html#csv-table-1">csv-table</a> does not feature line breaks within cells, but a
 raw HTML substitution can add this feature.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>I found out that having a <code class="docutils literal notranslate"><span class="pre">raw-html</span></code> substitution in the <code class="docutils literal notranslate"><span class="pre">rst_prolog</span></code> as
+explained below leads to the <a class="reference external" href="https://github.com/sphinx-contrib/emojicodes">sphinx-contrib/emojicodes</a> to become non functional,
+meaning that</p>
+<ul class="simple">
+<li><p>no emojis will be displayed in the output HTML</p></li>
+<li><p>no warning about the malfunction is shown</p></li>
+</ul>
+<p>If you use the approach below, watch out for this error and revert the changes
+in case, it occurs. As an alternative, either</p>
+<ul>
+<li><p>only add the substitution to the particular RST document, which needs it
+(like on the top of the document) like</p>
+<blockquote>
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">|br|</span> <span class="ow">raw</span><span class="p">::</span> html
+
+    &lt;br /&gt;
+
+<span class="gh">Page Headline</span>
+<span class="gh">=============</span>
+<span class="c">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>or use <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#line-blocks">line blocks</a>, like:</p>
+<blockquote>
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> Line 1
+<span class="o">|</span> Line 2
+<span class="o">|</span> Line 3
+<span class="o">|</span> Line 4
+</pre></div>
+</div>
+<p>translating to</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Line 1</div>
+<div class="line">Line 2</div>
+<div class="line">Line 3</div>
+<div class="line">Line 4</div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+</div>
 <ol class="arabic">
 <li><p>Open the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file and create an <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-rst_prolog">rst_prolog</a> variable, if not already
 existing.</p></li>
@@ -290,7 +332,7 @@ or into the directive content directly. For example</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 21, 2024</span>.
+        <span class="update_date">Nov 05, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
