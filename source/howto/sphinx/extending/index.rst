@@ -10,3 +10,4 @@ Extending
     custom_class_style.rst
     inline_code_highlight.rst
     algolia.rst
+    intersphinx.rst
