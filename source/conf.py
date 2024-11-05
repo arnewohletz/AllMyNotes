@@ -39,7 +39,7 @@ extensions = [
     'sphinx_gitstamp',
     'sphinx_tabs.tabs',
     'sphinxcontrib.bibtex',
-    'sphinxcontrib.images',
+    #'sphinxcontrib.images', disable until https://github.com/sphinx-contrib/images/issues/40 resolved
     'sphinxcontrib.mermaid',
     'sphinxemoji.sphinxemoji',
     'unicode_guilabel',
