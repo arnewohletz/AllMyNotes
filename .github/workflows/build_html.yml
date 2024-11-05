@@ -8,14 +8,14 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.12'
     - name: Install dependenciees
       run: | 
         pip install -r requirements.txt
         sudo apt-get update
         sudo apt-get install -y pandoc
         python -m sphinx build -b html source build
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: github-pages
         path: /home/runner/work/AllMyNotes/AllMyNotes/build/
