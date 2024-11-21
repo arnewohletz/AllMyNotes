@@ -9,6 +9,7 @@ more advanced ways of mocking behavior to be used in your unit tests.
     :maxdepth: 1
 
     mock.ipynb
+    mock_patch.rst
 
 .. _unittest.mock: https://docs.python.org/3/library/unittest.mock.html
 

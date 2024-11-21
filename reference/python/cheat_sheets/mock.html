@@ -11,7 +11,7 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unittest.mock &mdash; All-My-Notes  documentation</title>
+  <title>unittest.mock.Mock &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
@@ -43,7 +43,7 @@
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="next" title="Class method &lt;-&gt; static method" href="../class_and_static_methods.html" />
+    <link rel="next" title="unittest.mock.patch" href="mock_patch.html" />
     <link rel="prev" title="Cheat Sheets" href="index.html" /> 
 </head>
 
@@ -67,6 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/cpp/index.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/docker/index.html">Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
@@ -103,13 +104,21 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cheat Sheets</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#for-mocking">For Mocking</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">unittest.mock</a><ul>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">unittest.mock.Mock</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#Create-a-Mock-object">Create a Mock object</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#Define-Mock-object-behavior">Define Mock object behavior</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#Patching-an-import-module">Patching an import module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#unittest.mock.patch">unittest.mock.patch</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#Patch-an-import-module">Patch an import module</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#Patching-classes">Patching classes</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">unittest.mock.patch</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id2">Patch an import module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id5">Patching classes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mock_patch.html">unittest.mock.patch</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#for-data-science">For Data Science</a></li>
@@ -148,7 +157,7 @@
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Python</a></li>
           <li class="breadcrumb-item"><a href="index.html">Cheat Sheets</a></li>
-      <li class="breadcrumb-item active">unittest.mock</li>
+      <li class="breadcrumb-item active">unittest.mock.Mock</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/reference/python/cheat_sheets/mock.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -158,35 +167,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="unittest.mock">
-<h1>unittest.mock<a class="headerlink" href="#unittest.mock" title="Link to this heading"></a></h1>
+  <section id="unittest.mock.Mock">
+<h1>unittest.mock.Mock<a class="headerlink" href="#unittest.mock.Mock" title="Link to this heading"></a></h1>
 <section id="Create-a-Mock-object">
 <h2>Create a Mock object<a class="headerlink" href="#Create-a-Mock-object" title="Link to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">mock</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">mock</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Define-Mock-object-behavior">
-<h2>Define Mock object behavior<a class="headerlink" href="#Define-Mock-object-behavior" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Define Mock object behavior
+</pre></div>
+</div>
 <section id="Set-a-default-return-value">
 <h3>Set a default return value<a class="headerlink" href="#Set-a-default-return-value" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="mi">42</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">m</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -202,10 +211,10 @@
 <section id="Have-a-Mock-return-string-values-when-called">
 <h4>Have a Mock return string values when called<a class="headerlink" href="#Have-a-Mock-return-string-values-when-called" title="Link to this heading"></a></h4>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">())</span>
@@ -226,12 +235,12 @@ baz
 <section id="Have-a-Mock-returns-a-new-Mock-for-each-function-call">
 <h4>Have a Mock returns a new Mock for each function call<a class="headerlink" href="#Have-a-Mock-returns-a-new-Mock-for-each-function-call" title="Link to this heading"></a></h4>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
-<span class="n">m</span><span class="o">.</span><span class="n">get_mock</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="p">[</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">)]</span>
+<span class="n">m</span><span class="o">.</span><span class="n">get_mock</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="p">[</span><span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">)]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">get_mock</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">get_mock</span><span class="p">())</span>
@@ -244,8 +253,8 @@ baz
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;Mock id=&#39;4575504208&#39;&gt;
-&lt;Mock id=&#39;4573581648&#39;&gt;
+&lt;Mock id=&#39;4444113184&#39;&gt;
+&lt;Mock id=&#39;4442458784&#39;&gt;
 </pre></div></div>
 </div>
 </section>
@@ -255,10 +264,10 @@ baz
 <section id="Check-whether-mock-object-has-been-called-at-least-once">
 <h4>Check whether mock object has been called at least once<a class="headerlink" href="#Check-whether-mock-object-has-been-called-at-least-once" title="Link to this heading"></a></h4>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 <span class="n">m</span><span class="p">()</span>
 <span class="n">m</span><span class="o">.</span><span class="n">assert_called</span><span class="p">()</span>
 </pre></div>
@@ -269,10 +278,10 @@ baz
 <section id="Check-whether-mock-object-has-been-called-exactly-once">
 <h4>Check whether mock object has been called exactly once<a class="headerlink" href="#Check-whether-mock-object-has-been-called-exactly-once" title="Link to this heading"></a></h4>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">m</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
 <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
@@ -296,10 +305,10 @@ Yeah, now I was called
 <section id="Get-number-of-calls-to-mock-object">
 <h4>Get number of calls to mock object<a class="headerlink" href="#Get-number-of-calls-to-mock-object" title="Link to this heading"></a></h4>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 <span class="n">m</span><span class="p">()</span>
 <span class="n">m</span><span class="p">()</span>
 <span class="n">m</span><span class="o">.</span><span class="n">call_count</span>
@@ -307,7 +316,7 @@ Yeah, now I was called
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -322,17 +331,17 @@ Yeah, now I was called
 <section id="Get-call-arguments-from-most-recent-Mock-call">
 <h4>Get call arguments from most recent Mock call<a class="headerlink" href="#Get-call-arguments-from-most-recent-Mock-call" title="Link to this heading"></a></h4>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 <span class="n">m</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">call_args</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -345,10 +354,10 @@ call(1, foo=&#39;bar&#39;)
 <section id="Get-call-arguments-of-all-previous-Mock-calls">
 <h4>Get call arguments of all previous Mock calls<a class="headerlink" href="#Get-call-arguments-of-all-previous-Mock-calls" title="Link to this heading"></a></h4>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 <span class="n">m</span><span class="p">()</span>
 <span class="n">m</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">m</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="s1">&#39;bar2&#39;</span><span class="p">)</span>
@@ -357,7 +366,7 @@ call(1, foo=&#39;bar&#39;)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -370,10 +379,10 @@ call(1, foo=&#39;bar&#39;)
 <section id="Reset-previous-Mock-calls-(won't-change-mock-configuration)">
 <h3>Reset previous Mock calls (won’t change mock configuration)<a class="headerlink" href="#Reset-previous-Mock-calls-(won't-change-mock-configuration)" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">Mock</span><span class="p">()</span>
 <span class="n">m</span><span class="p">()</span>
 <span class="n">m</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">m</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">baz</span><span class="o">=</span><span class="s1">&#39;bar2&#39;</span><span class="p">)</span>
@@ -383,7 +392,7 @@ call(1, foo=&#39;bar&#39;)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -393,10 +402,643 @@ call(1, foo=&#39;bar&#39;)
 </div>
 </section>
 </section>
-<section id="Patching-an-import-module">
-<h2>Patching an import module<a class="headerlink" href="#Patching-an-import-module" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code> is able to patch imports in the module under test using the <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html#patch">patch</a>` function.</p>
-<p><code class="docutils literal notranslate"><span class="pre">patch</span></code> will intercept import statements identified by a string and return a Mock instance you can preconfigure using the techniques from above.</p>
+</section>
+<section id="unittest.mock.patch">
+<h1>unittest.mock.patch<a class="headerlink" href="#unittest.mock.patch" title="Link to this heading"></a></h1>
+<section id="Patch-an-import-module">
+<h2>Patch an import module<a class="headerlink" href="#Patch-an-import-module" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code> is able to patch imports in the module under test using the <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html#patch">patch</a> function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">patch</span></code> will intercept import statements identified by a string and return a Mock instance you can preconfigure using the techniques from <code class="docutils literal notranslate"><span class="pre">unittest.Mock</span></code> (see above).</p>
+<p>Module under test (<code class="docutils literal notranslate"><span class="pre">work.py</span></code>):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><br/><span></span><span class="k">def</span> <span class="nf">work_on</span><span class="p">():</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<p>The project module imports <code class="docutils literal notranslate"><span class="pre">os</span></code> and uses its <code class="docutils literal notranslate"><span class="pre">getcwd()</span></code> method , which we want to mock in our test.</p>
+<section id="Patch-using-a-context-manager-(with-statement)">
+<h3>Patch using a context manager (<code class="docutils literal notranslate"><span class="pre">with</span></code> statement)<a class="headerlink" href="#Patch-using-a-context-manager-(with-statement)" title="Link to this heading"></a></h3>
+<p>When using the context manager <code class="docutils literal notranslate"><span class="pre">patch</span></code>, the patch ends when the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement ends.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_using_context_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mocked_os</span><span class="p">:</span>
+            <span class="n">work_on</span><span class="p">()</span>
+            <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
+
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_context_manager (__main__.TestWorkMockingModule.test_using_context_manager) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4448422176&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x108f095e0&gt;
+</pre></div></div>
+</div>
+<p>We specifically patch the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module, not <code class="docutils literal notranslate"><span class="pre">os</span></code>, as this would patch <code class="docutils literal notranslate"><span class="pre">os</span></code> for all modules, not just for <code class="docutils literal notranslate"><span class="pre">work.py</span></code>.</p>
+<ul class="simple">
+<li><p>The test module imports the project module’s method <code class="docutils literal notranslate"><span class="pre">work_on()</span></code></p></li>
+<li><p>At the beginning of the test, the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module (which is the <code class="docutils literal notranslate"><span class="pre">os</span></code> module in our <code class="docutils literal notranslate"><span class="pre">work.py</span></code> module) is patched with a <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html?highlight=magicmock#unittest.mock.MagicMock">MagickMock</a> object (here called <code class="docutils literal notranslate"><span class="pre">mocked_os</span></code>)</p></li>
+<li><p>When the <code class="docutils literal notranslate"><span class="pre">work_on()</span></code> method is called afterward, that <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> object is called instead of the original module (<code class="docutils literal notranslate"><span class="pre">os</span></code>) - as no return value is defined <code class="docutils literal notranslate"><span class="pre">work_on()</span></code> returns another MagicMock object - as we are not testing the correctness of the return value here, only checking if the <code class="docutils literal notranslate"><span class="pre">mocked_os</span></code> executed the <code class="docutils literal notranslate"><span class="pre">getcwd()</span></code>method, we do not care about the return value</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">as</span></code> statement in the decorator is optional. You may as well not mock the entire <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module, but rather define a return value for the single function, that is called (<code class="docutils literal notranslate"><span class="pre">getcwd()</span></code>):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">main</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_using_return_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os.getcwd&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="n">work_on</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_return_value (__main__.TestWorkMockingModule.test_using_return_value) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on testing
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x109237710&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Patch-using-the-decorator-(&#64;patch)">
+<h3>Patch using the decorator (&#64;patch)<a class="headerlink" href="#Patch-using-the-decorator-(@patch)" title="Link to this heading"></a></h3>
+<p>To test project classes that interact with other project classes in isolation, the other project classes must be mocked (in order to determine test failure to a specific class and method, not by any of its dependency classes).</p>
+<p>Example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">main</span>
+
+<span class="kn">from</span> <span class="nn">source.reference.python.cheat_sheets._file.work</span> <span class="kn">import</span> <span class="n">work_on</span>
+
+<span class="k">class</span> <span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_using_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mocked_os</span><span class="p">):</span>
+        <span class="n">work_on</span><span class="p">()</span>
+        <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_decorator (__main__.TestWorkMockingModule.test_using_decorator) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4448619744&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x1092915b0&gt;
+</pre></div></div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module is replaced with a MagicMock object.</p>
+</section>
+</section>
+<section id="Patching-classes">
+<h2>Patching classes<a class="headerlink" href="#Patching-classes" title="Link to this heading"></a></h2>
+<p>To test project classes that interact with other project classes in isolation, the other project classes must be mocked (in order to determine test failure to a specific class and method, not by any of its dependency classes).</p>
+<p>Example:</p>
+<section id="Project-module-(worker.py)">
+<h3>Project module (<code class="docutils literal notranslate"><span class="pre">worker.py</span></code>)<a class="headerlink" href="#Project-module-(worker.py)" title="Link to this heading"></a></h3>
+<p>In this module, the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> class needs to be tested for these two things:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> calls <code class="docutils literal notranslate"><span class="pre">Helper</span></code> with <code class="docutils literal notranslate"><span class="pre">db</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> returns the expected path supplied by <code class="docutils literal notranslate"><span class="pre">Helper</span></code></p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><br/><br/><span></span><span class="k">class</span> <span class="nc">Helper</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+
+    <span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Worker</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">Helper</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">path</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Test-module-(test_worker.py)">
+<h3>Test module (test_worker.py)<a class="headerlink" href="#Test-module-(test_worker.py)" title="Link to this heading"></a></h3>
+<section id="Patch-entire-class">
+<h4>Patch entire class<a class="headerlink" href="#Patch-entire-class" title="Link to this heading"></a></h4>
+<p>To test this, the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> needs to be isolated from <code class="docutils literal notranslate"><span class="pre">Helper</span></code>, so that failures can be associated with the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> class only.</p>
+<p>Consequently, the entire <code class="docutils literal notranslate"><span class="pre">Helper</span></code> class must be patched:</p>
+<p>```python from unittest import TestCase, mock from worker import Worker</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">main</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_patching_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockHelper</span><span class="p">:</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+            <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_decorator (__main__.TestWorkMockingModule.test_using_decorator) ... ok
+test_patching_class (__main__.TestWorkerModule.test_patching_class) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4447399248&#39;&gt;
+Working on testing
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x1091a6e40&gt;
+</pre></div></div>
+</div>
+<p>Note the double <code class="docutils literal notranslate"><span class="pre">return_value</span></code> in the example, simply using <code class="docutils literal notranslate"><span class="pre">MockHelper.get_path.return_value</span></code> would not work since in the code we call get_path on an instance, not the class itself.</p>
+<p>Alternatively, we can preconfigure the <code class="docutils literal notranslate"><span class="pre">MockHelper</span></code> instance and assign it as the return value of the <code class="docutils literal notranslate"><span class="pre">worker.Helper</span></code> call. Below, shown for both the context manager and the decorator way:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">main</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="n">mockHelperInstance</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
+    <span class="n">mockHelperInstance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+
+    <span class="c1"># using patch context manager</span>
+    <span class="k">def</span> <span class="nf">test_patch_class_context_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span>
+                        <span class="n">return_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mockHelperInstance</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockHelper</span><span class="p">:</span>
+            <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+    <span class="c1"># using patch class decorator</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">mockHelperInstance</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_patch_class_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_helper</span><span class="p">):</span>
+        <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+        <span class="n">mock_helper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_decorator (__main__.TestWorkMockingModule.test_using_decorator) ... ok
+test_patch_class_context_manager (__main__.TestWorkerModule.test_patch_class_context_manager) ... ok
+test_patch_class_decorator (__main__.TestWorkerModule.test_patch_class_decorator) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4448099488&#39;&gt;
+Working on testing
+Working on testing
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x109289550&gt;
+</pre></div></div>
+</div>
+<p><strong>Important</strong></p>
+<p>It is important to distinguish between <strong>mocking a class</strong> and <strong>mocking the instance of a class</strong>. Sometimes, it is necessary to mock the entire class, sometimes it might be sufficient to mock only an instance from that class.</p>
+<p>Mocking the entire class allows for</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* checking, in what way that class has been initialized
+* instantiating multiple instances from it, which return a Mock object and
+  raises the call count
+</pre></div>
+</div>
+<p>For the above <code class="docutils literal notranslate"><span class="pre">worker.py</span></code> module, both these tests pass:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">main</span>
+
+<span class="n">mockHelper</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mockHelper</span><span class="o">.</span><span class="n">reset_mock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span> <span class="o">=</span> <span class="n">mockHelper</span><span class="o">.</span><span class="n">return_value</span>
+
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_initialization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Worker</span><span class="p">()</span>
+        <span class="n">mockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+        <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_decorator (__main__.TestWorkMockingModule.test_using_decorator) ... ok
+test_get_path (__main__.TestWorkerModule.test_get_path) ... ok
+test_initialization (__main__.TestWorkerModule.test_initialization) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+OK
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4448654336&#39;&gt;
+Working on testing
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x109289220&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Speccing">
+<h4>Speccing<a class="headerlink" href="#Speccing" title="Link to this heading"></a></h4>
+<p>The danger with mocks is that a <code class="docutils literal notranslate"><span class="pre">Mock</span></code> object returns a new <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> object to basically every attribute or method it is queried for, no matter if that attribute or method actually exists. If the mocked class changes signatures or an attribute, the <code class="docutils literal notranslate"><span class="pre">Mock</span></code>object will still return the requested “thing” as another Mock, simply said</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The Mock does not know about the object it is mocking.
+</pre></div>
+</div>
+<p>To prevent this <em>speccing</em> can be added to a Mock, which makes it behave as the object being mocked. The easiest to use is <code class="docutils literal notranslate"><span class="pre">autospec=True</span></code> option.</p>
+<p>Example:</p>
+<p>Assuming the <code class="docutils literal notranslate"><span class="pre">Helper</span></code> class changed its <code class="docutils literal notranslate"><span class="pre">get_path()</span></code> method to <code class="docutils literal notranslate"><span class="pre">get_folder()</span></code>, but the call is <strong>not</strong> changed in the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> class:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+
+<span class="k">class</span> <span class="nc">Helper</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+
+    <span class="k">def</span> <span class="nf">get_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Worker</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">Helper</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<p>When running the previous test without the <code class="docutils literal notranslate"><span class="pre">speccing</span></code> option, this would pass, as we mock the <code class="docutils literal notranslate"><span class="pre">get_path</span></code> method for the Mock instance although the original class does not contain this method anymore.</p>
+<p>But with the <code class="docutils literal notranslate"><span class="pre">autospec=True</span></code> method, the Mock<code class="docutils literal notranslate"><span class="pre">get_path()</span></code> method, the Mock object checks for consistence with the original object. So</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">main</span>
+
+<span class="n">mockHelper</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkerModuleRaisesError</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+        <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+======================================================================
+ERROR: test_get_path (__main__.TestWorkerModuleRaisesError.test_get_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1390, in patched
+    with self.decoration_helper(patched,
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py&#34;, line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1372, in decoration_helper
+    arg = exit_stack.enter_context(patching)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py&#34;, line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1539, in __enter__
+    raise TypeError(
+TypeError: autospec creates the mock for you. Can&#39;t specify autospec and new.
+
+======================================================================
+FAIL: test_initialization (__main__.TestWorkerModule.test_initialization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1393, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/var/folders/fr/qctyd7d96dn4qrkwypwgr1pr0000gn/T/ipykernel_8439/255302047.py&#34;, line 16, in test_initialization
+    mockHelper.assert_called_once_with(&#39;db&#39;)
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 958, in assert_called_once_with
+    raise AssertionError(msg)
+AssertionError: Expected &#39;mock&#39; to be called once. Called 0 times.
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+FAILED (failures=1, errors=1)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4449251648&#39;&gt;
+Working on testing
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x109289400&gt;
+</pre></div></div>
+</div>
+<p>raise an <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AttributeError: Mock object has no attribute &#39;get_path&#39;
+</pre></div>
+</div>
+</section>
+<section id="Partial-class-mocking">
+<h4>Partial class mocking<a class="headerlink" href="#Partial-class-mocking" title="Link to this heading"></a></h4>
+<p>A class can also be partially mocked by using <code class="docutils literal notranslate"><span class="pre">mock.patch.object</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">main</span>
+<span class="kn">from</span> <span class="nn">worker</span> <span class="kn">import</span> <span class="n">Worker</span><span class="p">,</span> <span class="n">Helper</span>
+
+
+<span class="k">class</span> <span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_partial_patching_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Helper</span><span class="p">,</span> <span class="s1">&#39;get_path&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">):</span>
+            <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;db&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Helper</span><span class="p">,</span> <span class="s1">&#39;get_path&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_partial_patching_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mocked_helper_get_path</span><span class="p">):</span>
+        <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;db&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+        <span class="n">mocked_helper_get_path</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+test_using_decorator (__main__.TestWorkMockingModule.test_using_decorator) ... ok
+test_partial_patching_decorator (__main__.TestWorkerModule.test_partial_patching_decorator) ... ok
+test_get_path (__main__.TestWorkerModuleRaisesError.test_get_path) ... ERROR
+
+======================================================================
+ERROR: test_get_path (__main__.TestWorkerModuleRaisesError.test_get_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1390, in patched
+    with self.decoration_helper(patched,
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py&#34;, line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1372, in decoration_helper
+    arg = exit_stack.enter_context(patching)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py&#34;, line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File &#34;/usr/local/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py&#34;, line 1539, in __enter__
+    raise TypeError(
+TypeError: autospec creates the mock for you. Can&#39;t specify autospec and new.
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (errors=1)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Working on &lt;MagicMock name=&#39;os.getcwd()&#39; id=&#39;4449406896&#39;&gt;
+Working on testing
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;unittest.main.TestProgram at 0x1092894c0&gt;
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="id1">
+<h1>unittest.mock.patch<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>Patch an import module<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code> is able to patch imports in the module under test using the <a class="reference external" href="https://docs.python.org/3/library/unittest.mock.html#patch">patch</a> function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">patch</span></code> will intercept import statements identified by a string and return a Mock instance you can preconfigure using the techniques from <code class="docutils literal notranslate"><span class="pre">unittest.Mock</span></code> (see above).</p>
 <p>Module under test (<code class="docutils literal notranslate"><span class="pre">work.py</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
@@ -407,8 +1049,8 @@ call(1, foo=&#39;bar&#39;)
 </pre></div>
 </div>
 <p>The project module imports <code class="docutils literal notranslate"><span class="pre">os</span></code> and uses its <code class="docutils literal notranslate"><span class="pre">getcwd()</span></code> method , which we want to mock in our test.</p>
-<section id="Patch-using-a-context-manager-(with-statement)">
-<h3>Patch using a context manager (<code class="docutils literal notranslate"><span class="pre">with</span></code> statement)<a class="headerlink" href="#Patch-using-a-context-manager-(with-statement)" title="Link to this heading"></a></h3>
+<section id="id3">
+<h3>Patch using a context manager (<code class="docutils literal notranslate"><span class="pre">with</span></code> statement)<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>When using the context manager <code class="docutils literal notranslate"><span class="pre">patch</span></code>, the patch ends when the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement ends.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
 <span class="kn">from</span> <span class="nn">work</span> <span class="kn">import</span> <span class="n">work_on</span>
@@ -438,8 +1080,8 @@ call(1, foo=&#39;bar&#39;)
 </pre></div>
 </div>
 </section>
-<section id="Patch-using-the-decorator-(&#64;patch)">
-<h3>Patch using the decorator (&#64;patch)<a class="headerlink" href="#Patch-using-the-decorator-(@patch)" title="Link to this heading"></a></h3>
+<section id="id4">
+<h3>Patch using the decorator (&#64;patch)<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">&#64;patch</span></code> decorator allows to inject a mock into the test function. The patch is available for the entire function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
 
@@ -456,12 +1098,12 @@ call(1, foo=&#39;bar&#39;)
 <p>Here the <code class="docutils literal notranslate"><span class="pre">work.os</span></code> module is replaced with a MagicMock object.</p>
 </section>
 </section>
-<section id="Patching-classes">
-<h2>Patching classes<a class="headerlink" href="#Patching-classes" title="Link to this heading"></a></h2>
+<section id="id5">
+<h2>Patching classes<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <p>To test project classes that interact with other project classes in isolation, the other project classes must be mocked (in order to determine test failure to a specific class and method, not by any of its dependency classes).</p>
 <p>Example:</p>
-<section id="Project-module-(worker.py)">
-<h3>Project module (worker.py)<a class="headerlink" href="#Project-module-(worker.py)" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>Project module (worker.py)<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>In this module, the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> class needs to be tested for these two things:</p>
 <ul class="simple">
 <li><p>the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> calls <code class="docutils literal notranslate"><span class="pre">Helper</span></code> with <code class="docutils literal notranslate"><span class="pre">db</span></code></p></li>
@@ -492,10 +1134,10 @@ call(1, foo=&#39;bar&#39;)
 </pre></div>
 </div>
 </section>
-<section id="Test-module-(test_worker.py)">
-<h3>Test module (test_worker.py)<a class="headerlink" href="#Test-module-(test_worker.py)" title="Link to this heading"></a></h3>
-<section id="Patch-entire-class">
-<h4>Patch entire class<a class="headerlink" href="#Patch-entire-class" title="Link to this heading"></a></h4>
+<section id="id7">
+<h3>Test module (test_worker.py)<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id8">
+<h4>Patch entire class<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
 <p>To test this, the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> needs to be isolated from <code class="docutils literal notranslate"><span class="pre">Helper</span></code>, so that failures can be associated with the <code class="docutils literal notranslate"><span class="pre">Worker</span></code> class only.</p>
 <p>Consequently, the entire <code class="docutils literal notranslate"><span class="pre">Helper</span></code> class must be patched:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
@@ -573,8 +1215,8 @@ call(1, foo=&#39;bar&#39;)
 </pre></div>
 </div>
 </section>
-<section id="Speccing">
-<h4>Speccing<a class="headerlink" href="#Speccing" title="Link to this heading"></a></h4>
+<section id="id9">
+<h4>Speccing<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
 <p>The danger with mocks is that a <code class="docutils literal notranslate"><span class="pre">Mock</span></code> object returns a new <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> object to basically every attribute or method it is queried for, no matter if that attribute or method actually exists. If the mocked class changes signatures or an attribute, the <code class="docutils literal notranslate"><span class="pre">Mock</span></code>object will still return the requested “thing” as another Mock, simply said</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The Mock does not know about the object it is mocking.
 </pre></div>
@@ -620,8 +1262,8 @@ call(1, foo=&#39;bar&#39;)
 </pre></div>
 </div>
 </section>
-<section id="Partial-class-mocking">
-<h4>Partial class mocking<a class="headerlink" href="#Partial-class-mocking" title="Link to this heading"></a></h4>
+<section id="id10">
+<h4>Partial class mocking<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
 <p>A class can also be partially mocked by using <code class="docutils literal notranslate"><span class="pre">mock.patch.object</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">mock</span>
 <span class="kn">from</span> <span class="nn">worker</span> <span class="kn">import</span> <span class="n">Worker</span><span class="p">,</span> <span class="n">Helper</span>
@@ -703,7 +1345,7 @@ call(1, foo=&#39;bar&#39;)
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Cheat Sheets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../class_and_static_methods.html" class="btn btn-neutral float-right" title="Class method &lt;-&gt; static method" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mock_patch.html" class="btn btn-neutral float-right" title="unittest.mock.patch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -711,7 +1353,7 @@ call(1, foo=&#39;bar&#39;)
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Nov 05, 2024</span>.
+        <span class="update_date">Nov 21, 2024</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objekte &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="JSON - JavaScript Notation Object" href="day_06.html" />
+    <link rel="prev" title="Schleifen" href="day_04.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Objekte</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#erstellung">Erstellung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eigenschaften-definieren">Eigenschaften definieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eigenschaft-auslesen">Eigenschaft auslesen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eigenschaft-andern">Eigenschaft ändern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eigenschaft-hinzufugen-und-loschen">Eigenschaft hinzufügen und löschen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methoden-aufrufen">Methoden aufrufen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objektdefinition-in-es6">Objektdefinition in ES6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beispiel-date-objekt">Beispiel: Date Objekt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Objekte</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_05.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="objekte">
+<h1>Objekte<a class="headerlink" href="#objekte" title="Link to this heading"></a></h1>
+<p>Objekte besitzen</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Eigenschaften: objektgebundene Variablen oder Konstanten</p></li>
+<li><p>Methoden: objektgebundene Funktionen</p></li>
+</ul>
+</div></blockquote>
+<section id="erstellung">
+<h2>Erstellung<a class="headerlink" href="#erstellung" title="Link to this heading"></a></h2>
+<p>Über Literal-Schreibweise (üblicher)</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w">  </span><span class="c1">// leeres Objekt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObj</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über Constructor-Funktion</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myNewObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Object</span><span class="p">();</span><span class="w">  </span><span class="c1">// leeres Objekt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObj</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="eigenschaften-definieren">
+<h2>Eigenschaften definieren<a class="headerlink" href="#eigenschaften-definieren" title="Link to this heading"></a></h2>
+<p>Über Komma-separiertes, key-value Paare. Das Kontext- Schlüsselwort <code class="docutils literal notranslate"><span class="pre">this</span></code>
+erlaubt den Zugriff auf das derzeitige Objekt.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">mainTitle</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">subTitle</span><span class="o">:</span><span class="w">           </span><span class="s2">&quot;kurz und gut&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w">             </span><span class="s2">&quot;Anfänger und Fortgeschrittene&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w">              </span><span class="mf">49.99</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Händler Preis&quot;</span><span class="o">:</span><span class="w">    </span><span class="mf">19.99</span><span class="p">,</span><span class="w">  </span><span class="c1">// key als String angelegt</span>
+<span class="w">    </span><span class="nx">showTitle</span><span class="o">:</span><span class="w">          </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="c1">// console.log(book.mainTitle);  // nicht so</span>
+<span class="w">                            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">subTitle</span><span class="p">);</span><span class="w">  </span><span class="c1">// nutze &#39;this&#39;</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">);</span><span class="w">  </span><span class="c1">// Eigenschaften haben keine definierte Reihenfolge</span>
+</pre></div>
+</div>
+<p>Property-Keys (Eigenschaft) mit Sonderzeichen lassen sich per String definieren
+(hier: “Händler Preis”), müssen dann über Property Access ausgelesen werden
+(siehe unten).</p>
+</section>
+<section id="eigenschaft-auslesen">
+<h2>Eigenschaft auslesen<a class="headerlink" href="#eigenschaft-auslesen" title="Link to this heading"></a></h2>
+<p>Über die Punkt-Notation des Objekts:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über den Property Access:</p>
+<p>Wenn der Bezeichner als String vorliegt oder als String angelegt wurde, ist
+der Zugriff über die Punktnotation nicht möglich. Hier muss über den
+<em>Property Access</em> erfolgen</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// geht nicht!!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">[</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// OK! Über Property Access</span>
+</pre></div>
+</div>
+</section>
+<section id="eigenschaft-andern">
+<h2>Eigenschaft ändern<a class="headerlink" href="#eigenschaft-andern" title="Link to this heading"></a></h2>
+<p>Genauso wie auslesen über Punktnotation oder Property Access.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Python&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Python&quot;</span>
+<span class="nx">book</span><span class="p">[</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30.00</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">[</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 30.00</span>
+</pre></div>
+</div>
+</section>
+<section id="eigenschaft-hinzufugen-und-loschen">
+<h2>Eigenschaft hinzufügen und löschen<a class="headerlink" href="#eigenschaft-hinzufugen-und-loschen" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">delete</span></code> löschen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// neue Eigenschaft</span>
+<span class="nx">book</span><span class="p">.</span><span class="nx">inStock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="ow">delete</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">inStock</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">inStock</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+</pre></div>
+</div>
+</section>
+<section id="methoden-aufrufen">
+<h2>Methoden aufrufen<a class="headerlink" href="#methoden-aufrufen" title="Link to this heading"></a></h2>
+<p>Über die Punktnotation.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">book</span><span class="p">.</span><span class="nx">showTitle</span><span class="p">();</span><span class="w">  </span><span class="c1">// Python kurz und gut</span>
+</pre></div>
+</div>
+</section>
+<section id="objektdefinition-in-es6">
+<h2>Objektdefinition in ES6<a class="headerlink" href="#objektdefinition-in-es6" title="Link to this heading"></a></h2>
+<p>In ES6 können Variablen als gleichnamige Eigenschaften in Objekte eingefügt werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42.99</span><span class="p">,</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Office Drinks&quot;</span><span class="p">;</span>
+
+<span class="c1">// ES5</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">product_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Talisker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">prince</span><span class="o">:</span><span class="w">     </span><span class="nx">price</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cat</span><span class="o">:</span><span class="w">        </span><span class="nx">cat</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">product_1</span><span class="p">);</span>
+
+<span class="c1">// ES6</span>
+<span class="kd">let</span><span class="w">  </span><span class="nx">product_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Glenfiddich&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">price</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cat</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sellerPrice</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">price</span><span class="w"> </span><span class="o">-</span><span class="mf">15</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">product_2</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="beispiel-date-objekt">
+<h2>Beispiel: Date Objekt<a class="headerlink" href="#beispiel-date-objekt" title="Link to this heading"></a></h2>
+<p>Allerhand Möglichkeiten zum Erhalten, Manipulieren und Ausgeben von Datum und Uhrzeit.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// erzeugen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">);</span>
+
+<span class="c1">// getter</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">());</span><span class="w"> </span><span class="c1">// Tag im Monat (1 ... 31)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">());</span><span class="w"> </span><span class="c1">// Monat (0 - 11)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getDay</span><span class="p">());</span><span class="w"> </span><span class="c1">// Wochentag (0 - 6, 0 = Sonntag)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">());</span><span class="w"> </span><span class="c1">// Jahr</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getHours</span><span class="p">());</span><span class="w"> </span><span class="c1">// Uhrzeit Stunde</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span><span class="w"> </span><span class="c1">// Uhrzeit Minute</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">());</span><span class="w"> </span><span class="c1">// Uhrzeit Sekunde</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getMilliseconds</span><span class="p">());</span><span class="w"> </span><span class="c1">// Uhrzeit Millisekunde</span>
+
+<span class="c1">// JS-TimeStamp (Millisekunden seit 1.1.1970, Unix Timestamp * 1000)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getTime</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+
+<span class="c1">// setter</span>
+<span class="c1">// Bestandteile Datum ändern</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="nx">newDate</span><span class="p">.</span><span class="nx">setFullYear</span><span class="p">(</span><span class="mf">2224</span><span class="p">);</span><span class="w"> </span><span class="c1">// Jahr</span>
+<span class="nx">newDate</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="mf">11</span><span class="p">);</span><span class="w"> </span><span class="c1">// Monat (April)</span>
+<span class="nx">newDate</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="mf">24</span><span class="p">);</span><span class="w"> </span><span class="c1">// Tag im Monat</span>
+<span class="nx">newDate</span><span class="p">.</span><span class="nx">setHours</span><span class="p">(</span><span class="mf">20</span><span class="p">);</span>
+<span class="nx">newDate</span><span class="p">.</span><span class="nx">setMinutes</span><span class="p">(</span><span class="mf">30</span><span class="p">);</span>
+<span class="nx">newDate</span><span class="p">.</span><span class="nx">setSeconds</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newDate</span><span class="p">);</span>
+
+<span class="c1">// mit Datum rechnen</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="nx">today</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">);</span>
+
+<span class="c1">// Datum mit Date-String erzeugen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;Dec 24 2024 20:30:00&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2024</span><span class="p">,</span><span class="mf">11</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2024</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">19</span><span class="p">,</span><span class="mf">23</span><span class="p">,</span><span class="mf">15</span><span class="p">));</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">myDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">1111111111111111</span><span class="p">);</span><span class="w"> </span><span class="c1">// timestamp (epoch time)</span>
+<span class="nx">myDate</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="mf">1111111111111</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDate</span><span class="p">);</span>
+
+<span class="c1">// UTC - Weltzeit</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">worldTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="nx">worldTime</span><span class="p">.</span><span class="nx">setUTCFullYear</span><span class="p">(</span><span class="mf">2025</span><span class="p">);</span>
+<span class="nx">worldTime</span><span class="p">.</span><span class="nx">setUTCMonth</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
+<span class="nx">worldTime</span><span class="p">.</span><span class="nx">setUTCHours</span><span class="p">(</span><span class="mf">15</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">worldTime</span><span class="p">);</span><span class="w"> </span><span class="c1">// Angabe der UTC Zeit -&gt; wird in lokaler Zeit ausgegeben (e.g. CEST)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">worldTime</span><span class="p">.</span><span class="nx">getUTCHours</span><span class="p">());</span><span class="w"> </span><span class="c1">// 15</span>
+
+<span class="c1">// in UTC Zeit umwandeln</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">utcDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mf">2024</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">31</span><span class="p">,</span><span class="w"> </span><span class="mf">14</span><span class="p">,</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span><span class="w"> </span><span class="mf">11</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utcDate</span><span class="p">);</span>
+
+<span class="c1">// Zeitstring erzeugen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utcDate</span><span class="p">.</span><span class="nx">toUTCString</span><span class="p">());</span><span class="w">  </span><span class="c1">// UTC Zeit: Sat, 31 Aug 2024 14:42:11 GMT</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utcDate</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span><span class="w">  </span><span class="c1">// lokale Zeitrechnung: Sat Aug 31 2024 16:42:11 GMT+0200 (Central European Summer Time)</span>
+
+<span class="c1">// Formatierte Ausgabe</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">();</span><span class="w">  </span><span class="c1">// formatierte Zeitausgabe</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// deutsche Schreibweise</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;ko-KR&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">//koreanische Scrheibweise</span>
+
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">weekday</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;long&quot;</span><span class="p">});</span><span class="w">  </span><span class="c1">// nur Wochentag in Langform (z.B. Freitag)</span>
+
+<span class="c1">// Datumsausgabe parametrisieren</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">OPTIONS</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">weekday</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;long&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">month</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;long&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">day</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">minute</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">second</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span>
+<span class="p">}</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">OPTIONS</span><span class="p">);</span><span class="w"> </span><span class="c1">// z.B. Freitag, 15. November 2024 um 12:19:51</span>
+
+<span class="c1">// nur Datum-Strings erhalten</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
+<span class="c1">// nur Uhrzeit erhalten</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span>
+<span class="c1">// nur Stunde erhalten</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span><span class="p">});</span><span class="w"> </span><span class="c1">// z.B. 12 Uhr</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formatedDate</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_04.html" class="btn btn-neutral float-left" title="Schleifen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_06.html" class="btn btn-neutral float-right" title="JSON - JavaScript Notation Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Nov 21, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

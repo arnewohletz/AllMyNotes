@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON - JavaScript Notation Object &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="DOM - Document Object Model" href="day_07.html" />
+    <link rel="prev" title="Objekte" href="day_05.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">JSON - JavaScript Notation Object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#serialisieren-deserialisieren">Serialisieren / Deserialisieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cookies">Cookies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cookies-erstellen-auslesen-und-loschen-uber-js-funktionen">Cookies erstellen, auslesen und löschen über JS-Funktionen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prufe-ob-arbeit-mit-cookies-moglich-erlaubt-ist">Prüfe ob Arbeit mit Cookies möglich / erlaubt ist</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#web-storage">Web Storage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#storage-methoden">Storage -Methoden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objekt-in-storage-speichern">Objekt in Storage speichern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prufen-ob-storage-verfugbar">Prüfen ob Storage verfügbar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#try-catch-block">try-catch Block</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">JSON - JavaScript Notation Object</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_06.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="json-javascript-notation-object">
+<h1>JSON - JavaScript Notation Object<a class="headerlink" href="#json-javascript-notation-object" title="Link to this heading"></a></h1>
+<p>Austauschformat von JavaScript als JSON String in andere Programmiersprachen,
+z.B. Datenübergabe ans Backend oder als Cookies.</p>
+<ul class="simple">
+<li><p>JS-Daten in JSON String umwandeln = serialisieren</p></li>
+<li><p>Nutzen: JSON String Daten auffangen oder übertragen (z.B. Backend wie DB)</p></li>
+</ul>
+<p>JSON Support in allen modernen Programmiersprachen vorhanden (auch plattformübergreifend)</p>
+<p>Im JSON String müssen <strong>Keys stets in doppelten Anführungszeichen</strong> stehen (einfach
+Anführungszeichen sind nicht erlaubt, da diese für die Übergabe des String benötigt
+werden). Gleiches gilt für String Werte.</p>
+<section id="serialisieren-deserialisieren">
+<h2>Serialisieren / Deserialisieren<a class="headerlink" href="#serialisieren-deserialisieren" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">JSON.stringify()</span></code> wird ein JS Object in ein JSON String überführt. Doppelte
+Anführungszeichen werden bei definierten Objekten automatisch gesetzt. Dies muss bei
+eigens geschriebenen JSON Strings jedoch selbst gemacht werden.</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> wird ein JSON String in ein JS Objekt überführt.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Daten serialisieren</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">jsonStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">product</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonStr</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">jsonStr</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
+
+<span class="c1">// Daten parsen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">&#39;{&quot;name&quot;: &quot;SingleMalt&quot;, &quot;category&quot;: [&quot;Whiskey&quot;, &quot;Office Drinks&quot;], &quot;price&quot;: 29.99, &quot;inStock&quot;: 500}&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">jsonStr</span><span class="p">));</span><span class="w">  </span><span class="c1">// same as above</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="mf">42</span><span class="p">))</span><span class="w"> </span><span class="c1">// &quot;42&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="cookies">
+<h2>Cookies<a class="headerlink" href="#cookies" title="Link to this heading"></a></h2>
+<p>Beim Clientrechner als String gespeicherte Daten des Nutzer, wodurch der Server den
+Client erkennen kann. Diese werden für jeden Browser einzeln gespeichert und verwaltet.
+Werden bei einer Anfrage des Client mitgesendet und zurückgesendet -&gt; können
+abgefangen werden.</p>
+<p>Es dürfen keine sensiblen und großen Daten als Cookies gespeichert werden.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Im HTTP werden Daten in beide Richtungen als Text übertragen. Der Client sendet
+die Anfrage, der Server antwortet immer (notfalls mit Error).</p>
+</div>
+<p>Im Firefox unter <span class="menuselection">Web Tools ‣ Storage ‣ Cookies</span>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Cookie anlegen</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user=Jessica&quot;</span><span class="p">;</span>
+<span class="c1">// Überschreibe Cookie</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user=Elektra&quot;</span><span class="p">;</span>
+<span class="c1">// Neuer Cookies (hier: nur über admin path) -&gt; wird im Browser nur im /admin Pfad angezeigt</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user=Elektra; path=/admin&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Das <code class="docutils literal notranslate"><span class="pre">sameSite=strict</span></code> Cookie Attribut wird Cookie nur gesendet, wenn man sich auf der
+gleichen Domain befindet (nicht, wenn Seite aus anderer Domain heraus angefordert wird).
+Dies verhindert, dass korrumpierte Cookies, nicht ausgelesen wird.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>From ChatGPT on ``sameSite``</strong>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Strict</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Cookies are sent only with requests originating from the same site.</p></li>
+<li><p>Cross-site requests (e.g., navigating to the site from an external
+link or an embedded iframe) do not include the cookie.</p></li>
+<li><p>Best for highly sensitive cookies (e.g., authentication cookies) but
+can reduce usability, as legitimate cross-site requests might not
+work as expected.</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Lax</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Cookies are sent with top-level navigation requests (e.g., when a
+user clicks a link to the site) but not with embedded resources
+(e.g., images or iframes).</p></li>
+<li><p>Provides a balance between usability and security.</p></li>
+<li><p>Default behavior in modern browsers if no SameSite value is specified.</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Cookies are sent with both same-site and cross-site requests.</p></li>
+<li><p>Must be used with the <code class="docutils literal notranslate"><span class="pre">Secure</span></code> flag (i.e., only over HTTPS) in
+modern browsers to avoid being rejected.</p></li>
+<li><p>Allows cookies to work with third-party integrations but may expose
+them to CSRF risks.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// auto-accept Cookie</span>
+<span class="c1">// secure: wird nur bei HTTPS gesendet</span>
+<span class="c1">// max-age: Speicherdauer des Cookie (86400 Sekunden = 1 Tag)</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;accept=1; max-age=86400; Secure; sameSite=lax&quot;</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Das <code class="docutils literal notranslate"><span class="pre">sameSite</span></code> Attribut muss derzeit noch nicht übergeben werden, aber bald.
+Mehr unter <a class="reference external" href="https://owasp.org/www-community/SameSite">https://owasp.org/www-community/SameSite</a>.</p>
+</div>
+</section>
+<section id="cookies-erstellen-auslesen-und-loschen-uber-js-funktionen">
+<h2>Cookies erstellen, auslesen und löschen über JS-Funktionen<a class="headerlink" href="#cookies-erstellen-auslesen-und-loschen-uber-js-funktionen" title="Link to this heading"></a></h2>
+<p>(aus <code class="docutils literal notranslate"><span class="pre">cookies-utils.js</span></code>)</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/* aus cookies-utils.js (Hilfsmethoden für Cookies)</span>
+<span class="cm">####################### */</span>
+
+<span class="c1">// Cookie erstellen</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">createCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">sameSite</span><span class="p">,</span><span class="w"> </span><span class="nx">days</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">expires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">secure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">sameSite</span><span class="p">)</span><span class="w"> </span><span class="nx">secure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sameSite=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">sameSite</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;; &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// if(sameSite == &quot;None&quot;) secure += &quot;Secure; &quot;;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">days</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">date</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">days</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
+<span class="w">        </span><span class="nx">expires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;; expires=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">date</span><span class="p">.</span><span class="nx">toUTCString</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;=&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">expires</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;; &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">secure</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;Secure;  path=/&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// document.cookie = name + &#39;=&#39; + value + expires + &#39;; &#39; + secure + &#39;path=/&#39;;</span>
+<span class="p">}</span>
+
+<span class="c1">// Cookie lesen</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">readCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">nameEQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;=&#39;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">ca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">ca</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ca</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">nameEQ</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">nameEQ</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Cookie löschen</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">deleteCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">createCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;None&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// ########################</span>
+
+<span class="c1">// Erstelle Cookie</span>
+<span class="nx">createCookie</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Lax&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+
+<span class="c1">// Cookie lesen (Cookie --&gt; Array, if found, else Null)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">readCookie</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;Thor&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">readCookie</span><span class="p">(</span><span class="s2">&quot;userName&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// null</span>
+
+<span class="c1">// Cookie löschen (leeren Cookie mit gleichem Namen erstellen)</span>
+<span class="nx">deleteCookie</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">readCookie</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// null</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Auch möglich: Cookie als Objekt erzeugen und an die <code class="docutils literal notranslate"><span class="pre">createCookie()</span></code> Funktion
+übergeben.</p>
+</div>
+</section>
+<section id="prufe-ob-arbeit-mit-cookies-moglich-erlaubt-ist">
+<h2>Prüfe ob Arbeit mit Cookies möglich / erlaubt ist<a class="headerlink" href="#prufe-ob-arbeit-mit-cookies-moglich-erlaubt-ist" title="Link to this heading"></a></h2>
+<p>Möglicherweise hat Nutzer die Verwendung von Cookies untersagt. Manche Browser
+unterstützen das <code class="docutils literal notranslate"><span class="pre">navigator.cookiesEnabled</span></code> object (boolean). Bei anderen Browsern
+muss versucht werden einen leeren Cookie anzulegen und auszulesen.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Mehr zum <code class="docutils literal notranslate"><span class="pre">navigator</span></code> Object: <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">https://developer.mozilla.org/en-US/docs/Web/API/Navigator</a></p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">cookieCheck</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">canUseCookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// check Browser has set navigator.cookieEnabled to true</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">cookiesEnabled</span><span class="p">)</span><span class="w"> </span><span class="nx">canUseCookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Setze leeren Cookie und prüfe ob vorhanden</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">canUseCookies</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">cookieEnabled</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;undefined&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testCookie&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;testCookie&quot;</span><span class="p">))</span><span class="w"> </span><span class="nx">canUseCookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">canUseCookies</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cookieCheck</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;can use cookies&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">cookieEnabled</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nope&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="web-storage">
+<h1>Web Storage<a class="headerlink" href="#web-storage" title="Link to this heading"></a></h1>
+<p>Cookies werden ständig hin und hergeschickt und viele Nutzerdaten enthalten und
+weitergegeben werden können. Viele Nutzer löschen Cookies regelmäßig oder blockieren
+das Erstellen von Cookies generell. Auch ist die Datenmenge begrenzt (4 KB). Außerdem ist
+das Lesen und Schreiben etwas umständlich. Daher bietet der <em>Web Storage</em> eine
+moderne Alternative.</p>
+<p>Daten werden in zwei verschiedenen Storage-Objekte (Datenbanken) abgelegt:</p>
+<ul class="simple">
+<li><p>Local Storage (<code class="docutils literal notranslate"><span class="pre">window.sessionStorage</span></code>) -&gt; speichert Daten über aktuelle Sitzung
+hinaus (Daten auch von anderen Tabs heraus verfügbar)</p></li>
+<li><p>Session Storage (<code class="docutils literal notranslate"><span class="pre">window.localStorage</span></code>) -&gt; Daten bleiben nur in aktueller Sitzung
+(nur innerhalb eines Tabs)</p></li>
+</ul>
+<p>Beide verfügen über die gleichen Methoden und Eigenschaften.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">window</span></code> ist das oberste Objekt des Browserfensters. Dazu muss aber auch ein
+Browserfenster vorhanden sein.</p>
+</div>
+<p>Vorteile:</p>
+<ul class="simple">
+<li><p>4 - 8 MB Datenmenge</p></li>
+<li><p>Daten werden nicht hin- und hergeschickt, nur wenn explizit angefordert</p></li>
+<li><p>Unterscheidet zwischen Domains (e.g. localhost)</p></li>
+<li><p>Daten über Objektzugriff oder Methoden auslesbar und speicherbar</p></li>
+</ul>
+<p>Web Storage wird von Nutzern selten bis nie gelöscht, sind daher in der Regel beim
+nächsten Mal wahrscheinlich wieder da. Trotzdem muss man dies zuvor prüfen, wie bei
+Cookies. Die Storages sind weiterhin in Domains gegliedert (wie bei Cookies).</p>
+<section id="storage-methoden">
+<h2>Storage -Methoden<a class="headerlink" href="#storage-methoden" title="Link to this heading"></a></h2>
+<p>Beide Storages unterstützen die gleichen Methoden.</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.setItem()</span></code> kann ein neuer Eintrag geschrieben oder vorhandener
+überschrieben werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Eintrag in Storage schreiben / ändern</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">);</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;lastName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jones&quot;</span><span class="p">);</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// überschreiben</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;fullName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.length</span></code> wird die Anzahl der Items ermittelt</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Anzahl Items ermitteln</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.getItem()</span></code> ein Element auslesen</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Eintrag auslesen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;fullName&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.removeItem()</span></code> einen vorhanden Eintrag löschen</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Eintrag löschen</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s2">&quot;fullName&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;fullName&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// null</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.clear()</span></code> alle Elemente im Storage löschen</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Storage clearen</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0</span>
+</pre></div>
+</div>
+<p>Alternative Wege:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// alternative Wege</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">firstName</span><span class="p">);</span>
+<span class="nx">sessionStorage</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jones&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">[</span><span class="s2">&quot;lastName&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// über access modifier</span>
+</pre></div>
+</div>
+</section>
+<section id="objekt-in-storage-speichern">
+<h2>Objekt in Storage speichern<a class="headerlink" href="#objekt-in-storage-speichern" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">35</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;Dragonroad&quot;</span>
+<span class="p">};</span>
+
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;userData&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">);</span><span class="w">  </span><span class="c1">// Oh no!</span>
+</pre></div>
+</div>
+<p>Dies ist so <strong>nicht möglich</strong>, da nur der Datentyp (object) übergeben wird, nicht
+jedoch die Daten des Objekts. Daher muss über JSON gegangen werden:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;userData&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;userData&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// {&quot;name&quot;:&quot;Jessica&quot;,&quot;age&quot;:35,&quot;address&quot;:&quot;Dragonroad&quot;}</span>
+</pre></div>
+</div>
+<p>Zum Auslesen, muss der Wert wieder in ein Objekt überführt werden</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;userData&quot;</span><span class="p">)));</span><span class="w"> </span><span class="c1">// --&gt; Object {...}</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Auch Storage Dateien sind nicht sicher. Falls Daten auf keinen Falls verschwinden
+dürfen, sollte diese im Backend (z.B. einer Datenbank) gespeichert werden.</p>
+</div>
+</section>
+<section id="prufen-ob-storage-verfugbar">
+<h2>Prüfen ob Storage verfügbar<a class="headerlink" href="#prufen-ob-storage-verfugbar" title="Link to this heading"></a></h2>
+<p>Bei Zugriff auf Storage ohne das dieser vorhanden ist, wirft Fehler.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Prüfen ob Storage verfügbar</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">Storage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;undefined&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Storage Constructor Funktion verfügbar?</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Storage</span><span class="p">);</span><span class="w">  </span><span class="c1">// umfasst beide Storages</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">sessionStorage</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="errors">
+<h1>Errors<a class="headerlink" href="#errors" title="Link to this heading"></a></h1>
+<p>Typische Arten von Fehlern:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Syntaxfehler<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Verstöße gegen die JS-Syntax (werden meist in Entwicklungsumgebung
+bereits dargestellt.</p>
+</dd>
+<dt class="field-even">Laufzeitfehler<span class="colon">:</span></dt>
+<dd class="field-even"><p>Treten erst während der Programmausführung auf, z.B.</p>
+<ul class="simple">
+<li><p>(noch) nicht vorhandene Variable, Funktionen, etc.</p></li>
+<li><p>falsche Nutzereingaben</p></li>
+<li><p>falsche selektierte oder fehlende Element im DOM (oder DOM noch nicht fertig
+gerendert)</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Logische Fehler (Bugs)<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Falsch gedacht oder falsch umgesetzt.</p>
+</dd>
+</dl>
+<p>Z.B. lassen sich Ausgaben über <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> oder <code class="docutils literal notranslate"><span class="pre">alert()</span></code> prüfen, zur
+Werteermittlung oder Fluss-Kontrolle.</p>
+<p>Alle Fehler stammen von dem Basis-Typ <code class="docutils literal notranslate"><span class="pre">Error</span></code> ab:</p>
+<ul class="simple">
+<li><p>ReferenceError –&gt; reference-object nicht vorhanden</p></li>
+<li><p>SyntaxError –&gt; Syntax nicht korrekt</p></li>
+<li><p>RangeError –&gt; Zugriff auf Wert außerhalb des gültigen Wertebereichs (z.B. Array)</p></li>
+<li><p>TypeError –&gt; Nicht vorhandene Eigenschaften eines Typs aufrufen (z.B. Methode eines Objekts)</p></li>
+</ul>
+<section id="try-catch-block">
+<h2>try-catch Block<a class="headerlink" href="#try-catch-block" title="Link to this heading"></a></h2>
+<p>Trifft Fehler innerhalb des Blocks auf, kann dieser behandelt werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;begin try&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">Alert</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Syntax-Fehler -&gt; ReferenceError</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;end try&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;begin catch&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error-Type:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Error-Type: ReferenceError</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error-Msg:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w">  </span><span class="c1">// Error-Msg: Alert is not defined</span>
+<span class="w">    </span><span class="nx">Alert</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Syntax-Fehler -&gt; bricht catch-Block ab, Fehler geht in console, Programm bricht ab</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;end catch&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// wird immer ausgeführt (z.B. etwas wichtiges Schließen)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;begin finally&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;end finally&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;free again&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">throw</span></code> kann ein eigener Fehler geworfen werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">getInput</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Zahl zwischen 5 und 10:&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;is empty&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">input</span><span class="p">))</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;is not a number&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;is too low&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="s2">&quot;is too high&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Thank you.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">getInput</span><span class="p">();</span><span class="w">  </span><span class="c1">// erneuter Aufruf dieser Funktion</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="debugger">
+<h1>Debugger<a class="headerlink" href="#debugger" title="Link to this heading"></a></h1>
+<p>Über <span class="menuselection">Developer Tools ‣ Debugger</span> lässt sich ein Skript anhalten
+und schrittweise durchlaufen.</p>
+</section>
+<section id="windows-objekt">
+<h1>Windows-Objekt<a class="headerlink" href="#windows-objekt" title="Link to this heading"></a></h1>
+<p>Das Window ist das Haupt-Objekt des Browser-Fensters. Dessen Properties sind global
+verfügbar.</p>
+<p>Beispiel für globale Properties:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">);</span>
+
+<span class="c1">// Properties sind global verfügbar</span>
+<span class="c1">// alert(), confirm(), prompt()</span>
+<span class="c1">// print()</span>
+<span class="c1">// open() nicht mehr verwenden (Pop-ups, werden oft geblockt)</span>
+
+<span class="c1">// in px -&gt; über ParseInt, ParseFloat umrechenbar</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerWidth</span><span class="p">);</span><span class="w">  </span><span class="c1">// innere Fensterbreite (in px, inkl. Scrollbars)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">innerHeight</span><span class="p">);</span><span class="w"> </span><span class="c1">// innere Fensterhöhe (in px, inkl. Scrollbars)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">outerWidth</span><span class="p">);</span><span class="w"> </span><span class="c1">// äußere Fensterbreite (in px, alles inklusive)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">outerHeight</span><span class="p">);</span><span class="w"> </span><span class="c1">// äußere Fensterhöhe (in px, alles inklusive)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scrollX</span><span class="p">);</span><span class="w"> </span><span class="c1">// aktuelle Scroll-Höhe (in px)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scrollY</span><span class="p">);</span><span class="w"> </span><span class="c1">// aktuelle Scroll-Breite (in px)</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_05.html" class="btn btn-neutral float-left" title="Objekte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_07.html" class="btn btn-neutral float-right" title="DOM - Document Object Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Nov 21, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

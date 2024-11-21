@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konstanten &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Kontroll- / Steuerstrukturen" href="day_03.html" />
+    <link rel="prev" title="Introduction" href="day_01.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datentypen">Datentypen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#number">number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string">string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wahrheitswerte-boolean">Wahrheitswerte (boolean)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bigint">BigInt</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operatoren">Operatoren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#numerische-operatoren">Numerische Operatoren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inkrement-dekrement-operator">Inkrement / Dekrement Operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verkettungs-operator">Verkettungs-Operator (+)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relationale-operatoren">Relationale Operatoren</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#typenkonvertierung">Typenkonvertierung</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#implizierte-typenkonvertierung">Implizierte Typenkonvertierung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explizite-typenkonvertierung">Explizite Typenkonvertierung</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#datentyp-ermitteln">Datentyp ermitteln</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-auf-nan">Test auf NaN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Konstanten</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_02.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="konstanten">
+<h1>Konstanten<a class="headerlink" href="#konstanten" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span></code> ist eine Neuerung von ES6 für die Initialisierung von Konstante</p></li>
+<li><p>Konstanten brauchen immer sofort eine Zuweisung</p></li>
+<li><p>Konstanten können nicht überschrieben oder neu zugewiesen werden</p></li>
+<li><p>Konstanten sind ideal für Konfigurationswerten oder Werte, die sich nicht ändern</p></li>
+<li><p>gleiches Scope-Verhalten wie Variablen (<code class="docutils literal notranslate"><span class="pre">let</span></code>)</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Konstanten</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">TAX_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.19</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// const TAX_RATE = 1.19;  // error: Redeklaration von Konstanten</span>
+<span class="w">    </span><span class="c1">// TAX_RATE = 6; // error: keine neue Zuweisung möglich</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">nettoPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// let total = nettoPrice * 1.19; // 1.19 - was ist 1.19?</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nettoPrice</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">TAX_RATE</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="datentypen">
+<h1>Datentypen<a class="headerlink" href="#datentypen" title="Link to this heading"></a></h1>
+<p>Primitive data types (Wert wird übergeben):</p>
+<ul class="simple">
+<li><p>number -&gt; Zahlen (Integer und Float)</p></li>
+<li><p>string -&gt; Zeichenketten</p></li>
+<li><p>boolean -&gt; true/false</p></li>
+<li><p>bigint -&gt; große Zahlen</p></li>
+<li><p>symbol -&gt; ES6: unique</p></li>
+<li><p>undefined -&gt; nicht belegte Variable</p></li>
+<li><p>null -&gt; leerer Objektzeiger  (wird als Typ ‘object’ ausgegeben -&gt; Known Bug)</p></li>
+</ul>
+<p>Reference data types (Referenz auf Objekt im Speicher wird übergeben):</p>
+<p>gilt für alle Objekte</p>
+<ul class="simple">
+<li><p>array -&gt; vordefiniertes Objekt</p></li>
+<li><p>object literals</p></li>
+<li><p>function -&gt; gehört zu Objekten</p></li>
+<li><p>date object -&gt; Objekt zur Ermittlung des aktuellen Datums (speichert Zeit seit 1.1.1970)</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>JavaScript erlaubt das erneutes Zuweisen eines anderen Datentypen zu einer
+Variablen (dynamische Typenkonvertierung).</p>
+</div>
+<section id="number">
+<h2>number<a class="headerlink" href="#number" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// primitive data types</span>
+
+<span class="w">    </span><span class="c1">// Zahlen (number) - Integer und Float</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">MIN_VALUE</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_VALUE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// Unter bzw. überschreiten wir den Wertebereich</span>
+<span class="w">    </span><span class="c1">// bekommt man ein -Infinity oder &#39;Infinity&#39; zurück</span>
+<span class="w">    </span><span class="c1">// (beides Datentyp number)</span>
+<span class="w">    </span><span class="c1">// Hint: Führt nicht zum Fehler, darauf ließe sich noch reagieren</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">1</span><span class="o">/</span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Infinity</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="o">/</span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// -Infinity</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">0</span><span class="o">/</span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN (number)</span>
+
+<span class="w">    </span><span class="c1">// NaN = Ergebnis einer fehlgeschlagenen mathematischen Operation</span>
+<span class="w">    </span><span class="c1">// oder einer fehlgeschlagenen Typenkonvertierung</span>
+
+<span class="w">    </span><span class="c1">// Vergleich von zwei NaN Objekten ist stets &#39;false&#39; (-&gt; daher Prüffunktion nötig)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="string">
+<h2>string<a class="headerlink" href="#string" title="Link to this heading"></a></h2>
+<p>Gekennzeichnet durch <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code> oder <code class="docutils literal notranslate"><span class="pre">\`\`</span></code>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zeichenketten (string)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span>
+
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;p class=&quot;texte&quot;&gt;Content&lt;/p&gt;&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// DOM String (nutzt &quot;&quot; und &#39;&#39;)</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;p class=\&quot;texte\&quot;&gt;Content&lt;/p&gt;&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Escape &quot; mit \</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mein Text mit \nZeilenumbruch&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// mit Zeilenumbruch</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;c:\\neuer_order&quot;</span><span class="w">  </span><span class="c1">// Prevent Escape</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="wahrheitswerte-boolean">
+<h2>Wahrheitswerte (boolean)<a class="headerlink" href="#wahrheitswerte-boolean" title="Link to this heading"></a></h2>
+<p>Es gibt nur <code class="docutils literal notranslate"><span class="pre">true``und</span> <span class="pre">``false</span></code>.</p>
+<p>Ansonsten <code class="docutils literal notranslate"><span class="pre">undefined``für</span> <span class="pre">nicht</span> <span class="pre">zugewiesene</span> <span class="pre">Variable</span> <span class="pre">oder</span> <span class="pre">``null</span></code> für ein nicht
+vorhandenes Objekt.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">null</span></code> ist kein ‘object’ Typ, obwohl so vom Interpreter behauptet, sondern
+ein eigener Objekttyp. Nicht mehr zu behebender Fehler in JavaSript.</p>
+</div>
+</section>
+<section id="bigint">
+<h2>BigInt<a class="headerlink" href="#bigint" title="Link to this heading"></a></h2>
+<p>Nur für Genauigkeiten von über 15 Stellen hinaus, für das Web selten bis
+nie notwendig.</p>
+<p>BigInt Nummern müssen als solche generiert werden, bevor sie außerhalb des
+15 Stellen Bereichs kommen (enden mit <code class="docutils literal notranslate"><span class="pre">n</span></code>).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">bigNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">333444555666777888999</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bigIntNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">333444555666777888999n</span><span class="p">;</span>
+
+<span class="c1">// Zur Umwandlung in BigInt während der Laufzeit -&gt; Konstruktorfunktion BigInt()</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bigIntClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">BigInt</span><span class="p">(</span><span class="mf">333444555666777</span><span class="p">);</span><span class="w">  </span><span class="c1">// muss weniger als 15 Stellen haben</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bigIntClass2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">BigInt</span><span class="p">(</span><span class="mf">333444555666777888999</span><span class="p">);</span><span class="w">  </span><span class="c1">// wird bereits gerundet übergeben</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bigNumber</span><span class="p">);</span><span class="w">  </span><span class="c1">// wird in Ausgabe gerundet</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bigIntNumber</span><span class="p">);</span><span class="w">  </span><span class="c1">// korrekte Ausgabe</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bigIntClass</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">333444555666777888999</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">333444555666777888111</span><span class="p">);</span><span class="w"> </span><span class="c1">// true, obwohl ungleich, da Rundung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">333444555666777888999n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">333444555666777888111n</span><span class="p">);</span><span class="w"> </span><span class="c1">// false -&gt; OK</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="operatoren">
+<h1>Operatoren<a class="headerlink" href="#operatoren" title="Link to this heading"></a></h1>
+<section id="numerische-operatoren">
+<h2>Numerische Operatoren<a class="headerlink" href="#numerische-operatoren" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>  Addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code>  Subtraktion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>  Multiplikation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>  Division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>  Modulo / Rest einer <strong>ganzzahligen</strong> Division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> Potenz (seit ES7)</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">12</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">12</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">12</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">7</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 84 (Punkt vor Strich)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">40</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">8</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 48 (Klammern zuerst)</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">;</span>
+
+<span class="nx">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// identisch zu a = a + b;</span>
+
+<span class="c1">// Mehrfachzuweisung</span>
+<span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="inkrement-dekrement-operator">
+<h2>Inkrement / Dekrement Operator<a class="headerlink" href="#inkrement-dekrement-operator" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">++</span></code>  um 1 erhöhen
+<code class="docutils literal notranslate"><span class="pre">--</span></code>  um 1 verringern</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Inkrement- / Dekrement-Operator</span>
+
+<span class="cm">    Operator    Beispiel    Interpretation</span>
+<span class="cm">    ++          a = ++b     a = b + 1; a = b</span>
+<span class="cm">    ++          a = b++     a = b; b = b + 1</span>
+<span class="cm">    --          a = --b     b = b - 1; a = b</span>
+<span class="cm">    --          a = b--     a = b; b = b - 1</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">++</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+
+<span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">++</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+</pre></div>
+</div>
+</section>
+<section id="verkettungs-operator">
+<h2>Verkettungs-Operator (+)<a class="headerlink" href="#verkettungs-operator" title="Link to this heading"></a></h2>
+<p>Verkettung von Strings:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Mindestens ein Wert muss ein String sein, der/die andere(n) werden zum String
+konvertiert (implizite Typenumwandlung).</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">userName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hey &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">userName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;. Schön, dass du da bist.&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// string</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// number</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 (number)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;123&quot; (string) -&gt; keine Verkettung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;15&quot; (string)</span>
+<span class="c1">// --&gt; implizite Typ-Konvertierung (string wird bevorzugt)</span>
+</pre></div>
+</div>
+</section>
+<section id="relationale-operatoren">
+<h2>Relationale Operatoren<a class="headerlink" href="#relationale-operatoren" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>  kleiner als
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>  größer als
+<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner gleich
+<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer gleich
+<code class="docutils literal notranslate"><span class="pre">==</span></code> gleich (Datentyp wird implizit konvertiert)
+<code class="docutils literal notranslate"><span class="pre">===</span></code> gleich (Datentyp wird <strong>nicht</strong> verändert, daher wird Typengleichheit mit geprüft)
+<code class="docutils literal notranslate"><span class="pre">!=</span></code>  ungleich (Datentyp wird implizit konvertiert)
+<code class="docutils literal notranslate"><span class="pre">!==</span></code> ungleich (Datentyp wird <strong>nicht</strong> verändert, daher wird Typengleichheit mit geprüft)</p>
+<p>Rückgabe ist stets ein boolean (true/false).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// true (string wird implizit konvertiert)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// true (string wird implizit konvertiert)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// false (unterschiedlicher Datentyp)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">100</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;100&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// false (string wird implizit konvertiert)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;100&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">&quot;42&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// true (ASCII Nummer werden zeichenweise verglichen, hier: 1 &lt; 4 -&gt; true)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3 Autos&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// false (da &quot;3 Autos -&gt; NaN&quot;, NaN-Vergleiche sind stets false)</span>
+
+<span class="c1">// NaN Vergleiche (immer false) -&gt; stattdessen isFinite() oder isNaN() nutzen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">NaN</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">NaN</span><span class="p">);</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;3 Autos&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">NaN</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="typenkonvertierung">
+<h1>Typenkonvertierung<a class="headerlink" href="#typenkonvertierung" title="Link to this heading"></a></h1>
+<p>In JavaScript können Datentypen explizit über einen Ausdruck konvertiert werden,
+werden allerdings auch bei bestimmten Operation (z.B. Addition) implizit nur
+für diese Operation konvertiert.</p>
+<section id="implizierte-typenkonvertierung">
+<h2>Implizierte Typenkonvertierung<a class="headerlink" href="#implizierte-typenkonvertierung" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8 (number)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0.5 (number)</span>
+<span class="c1">// --&gt; bei &#39;-&#39;, &#39;*&#39; und &#39;/&#39; werden Operanden in Number konvertiert</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;15&quot;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 7 (number)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Jessy&quot;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// NaN (number) =&gt; NaN - 3 = NaN</span>
+</pre></div>
+</div>
+</section>
+<section id="explizite-typenkonvertierung">
+<h2>Explizite Typenkonvertierung<a class="headerlink" href="#explizite-typenkonvertierung" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;34&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// 7 (number) - implizite Typenkonvertierung nutzen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">+</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 7 (number) - unary plus Operator wird genutzt</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 7 (number)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;-20.123&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -20.123 (number)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;Elektra&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot; 45 &quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 45  --&gt; Leerzeichen werden entfernt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;45 34&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN  --&gt; Innenliegende Leerzeichen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;10px&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;10,20&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="kc">undefined</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN</span>
+
+<span class="cm">/* commented out to prevent prompt</span>
+
+<span class="cm">let price_1 = prompt(&quot;Preis Artikel 1:&quot;, (10));  // 10 wird als Ausdruck übergeben, daher Klammern</span>
+<span class="cm">let price_2 = prompt(&quot;Preis Artikel 2:&quot;, (10));</span>
+
+<span class="cm">console.log(price_1 + price_2);  // 1010  -&gt; NOK</span>
+<span class="cm">console.log(Number(price_1) + Number(price_2)); // 20 -&gt; OK</span>
+
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">parseInt()</span></code> wird versucht, einen Ausdruck in einen Integer zu konvertieren.
+Ausdruck kann alles mögliche sein (muss in Klammern übergeben wird)</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 42 (number)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42.42&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 42, da nur ganzzahlig abgerundet</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;Elektra&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot; 4256 &quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 4256</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42 56&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 42 -&gt; nur erste Zahl wird geparst</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;16px&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 16 -&gt; px wird ignoriert, gut zum Verändern von Web-Elementen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// NaN</span>
+
+<span class="c1">// parseFloat()     versucht übergebenen Ausdruck in Dezimalzahl zu überführen</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42.42&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 42.42</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="datentyp-ermitteln">
+<h1>Datentyp ermitteln<a class="headerlink" href="#datentyp-ermitteln" title="Link to this heading"></a></h1>
+<p>Durch den <code class="docutils literal notranslate"><span class="pre">typeof</span></code> Operator. Gibt stets den Datentyp als <strong>String</strong> zurück.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Datentyp ermitteln durch typeof-Operator</span>
+
+<span class="c1">// Syntax: typeof Operand</span>
+<span class="c1">// Rückgabe = Datentype als String</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;undefined&#39; ist ein eigener Datentype</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;42&quot;</span><span class="p">;</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;null&#39; ist ein eigener Objekttype obwohl &#39;object&#39; angegeben ist</span>
+<span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NaN</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">dataType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">dataType2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span><span class="w">  </span><span class="c1">// type &#39;string&#39; da das rechte typeof einen String zurückgibt</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span><span class="w"> </span><span class="nx">dataType</span><span class="p">);</span>
+</pre></div>
+</div>
+<section id="test-auf-nan">
+<h2>Test auf NaN<a class="headerlink" href="#test-auf-nan" title="Link to this heading"></a></h2>
+<p>Zur Prüfung ob eine Variable eine Number ist oder nicht (<code class="docutils literal notranslate"><span class="pre">isNaN()</span></code>).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    isNaN() liefert true, wenn Konvertierung gescheitert (wenn NaN)</span>
+<span class="cm">    isNaN() liefert false, wenn Konvertierung in nubmer erfolgreich</span>
+<span class="cm">*/</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">));</span><span class="w">        </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;42 Jahre&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true (da NaN)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">));</span><span class="w">         </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>Test auf Infinite oder Finite (<code class="docutils literal notranslate"><span class="pre">isFinite()</span></code>).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    isFinite() prüft ob n endlich ist (im Wertebereich liegt)</span>
+<span class="cm">    liefert false, wenn n = Infinity || -Infinity || NaN</span>
+<span class="cm">    ansonsten true</span>
+<span class="cm">*/</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isFinite</span><span class="p">(</span><span class="mf">42</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isFinite</span><span class="p">(</span><span class="mf">42</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w"> </span><span class="c1">// false (Infinite)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isFinite</span><span class="p">(</span><span class="mf">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w"> </span><span class="c1">// false (NaN)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="beispielobjekt-math">
+<h1>Beispielobjekt: Math<a class="headerlink" href="#beispielobjekt-math" title="Link to this heading"></a></h1>
+<p>Sammlung von mathematischen Konstanten und Funktionen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">)</span><span class="w">       </span><span class="c1">// Überblick über Objekt</span>
+
+<span class="c1">// Konstante PI</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
+
+<span class="c1">// Quadratwurzel ziehen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mf">16</span><span class="p">));</span><span class="w"> </span><span class="c1">// 4</span>
+
+<span class="c1">// Potenz ermitteln</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 10^2 = 100</span>
+
+<span class="c1">// maximaler/minimaler Wert ermitteln</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">43</span><span class="p">,</span><span class="mf">56</span><span class="p">,</span><span class="mf">23</span><span class="p">));</span><span class="w">  </span><span class="c1">// 99</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">43</span><span class="p">,</span><span class="mf">56</span><span class="p">,</span><span class="mf">23</span><span class="p">));</span><span class="w">  </span><span class="c1">// 2</span>
+
+<span class="c1">// absolute Zahl ermitteln</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">42.234</span><span class="p">))</span><span class="w"> </span><span class="c1">// 42.234</span>
+
+<span class="c1">// Zufallszahl</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">())</span><span class="w"> </span><span class="c1">// 0 ... 1 (exclusive 1)</span>
+
+<span class="c1">// Runden</span>
+<span class="c1">// Immer abrunden</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mf">2.99</span><span class="p">));</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="c1">// Immer aufrunden</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">2.1</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="c1">// kaufmännisches Runden</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1.4999</span><span class="p">));</span><span class="w">  </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1.5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 2</span>
+
+<span class="c1">// Runden auf Nachkommastellen</span>
+<span class="c1">// Syntax: (number).toFixed(anzahl_nachkommastellen)</span>
+<span class="c1">// Rückgabe = string</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.12345</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">number</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">());</span><span class="w"> </span><span class="c1">// 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">number</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 10.12</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">number</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 10.1235</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_01.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_03.html" class="btn btn-neutral float-right" title="Kontroll- / Steuerstrukturen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Nov 21, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

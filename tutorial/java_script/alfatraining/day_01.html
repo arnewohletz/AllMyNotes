@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Konstanten" href="day_02.html" />
+    <link rel="prev" title="JavaScript (alfatraining)" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geschichte-von-javascript">Geschichte von JavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#javascript-mit-vs-code">JavaScript mit VS Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#einbinden-von-javascript">Einbinden von JavaScript</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#javascript-direkt-ins-html">JavaScript direkt ins HTML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verweis-auf-externe-js-datei-in-html">Verweis auf externe JS Datei in HTML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asynchrones-laden">Asynchrones Laden</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_01.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>3 Schichten; HTML (semantisch), CSS (Layout), JavaScript (funktional)</p></li>
+<li><p>Über Konsole ist alles erreichbar -&gt; sensible Daten gehören nicht ins Front-End</p></li>
+<li><p>Front-End JavaScript hat keinen Zugang zum Dateisystem, nur zur DOM</p></li>
+</ul>
+<section id="geschichte-von-javascript">
+<h2>Geschichte von JavaScript<a class="headerlink" href="#geschichte-von-javascript" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>1995: Sprache schaffen zum Einbinden von JavaApplets in Netscape Navigator
+Mocca -&gt; LiveScript -&gt; JavaScript</p></li>
+<li><p>1996 Internet Explorer: JScript -&gt; doppelter Aufwand für Programmierer</p></li>
+<li><p>ECMA wollte einheitlichen Standard schaffen -&gt; Wie soll was funktionieren? -&gt; ECMA Script -&gt; ES (derzeit ES6)</p></li>
+<li><p>Macromedia half bei Einführung von ES4 (ActionScript) -&gt; wurde zu ES5</p></li>
+<li><p>2015: ES5 -&gt; ES6 war großer Schritt (Vereinfachung) -&gt; “bestes ES seit ES3”</p></li>
+<li><p>erst seit IE tot war, war der Weg frei für ES6
+(keine “Polyfills” mehr -&gt; dem Browser Funktionalität beibringen, die es noch nicht kann)
+ES5 noch immer stark verbreitet (oft gemischt mit ES6)</p></li>
+<li><p>seitdem jährlicher ECMA Release, aber Änderungen nicht in jedem Browser verfügbar (nur Kern ist garantiert)
+-&gt; JS stets auf unterschiedlichen Browsern testen: Chrome, Firefox, Safari, Opera, Edge</p></li>
+</ul>
+</section>
+<section id="javascript-mit-vs-code">
+<h2>JavaScript mit VS Code<a class="headerlink" href="#javascript-mit-vs-code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VS Code ist in JavaScript mit Hilfe von Node.JS geschrieben (daher Einstellungen in JSON Format)</p>
+</div>
+<p><strong>Empfohlene Extensions</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag</a></p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint</a></p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-de">German Language Pack for Visual Studio Code</a></p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a> -&gt; Ansicht im Browser (NodeJS Express Server), Änderungen im Browser ohne Reload, Ajax</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><em>Live Server</em> benötigt für jedes Projekt einen eigenen Ordner</p>
+</div>
+<p>Jeden Tag
+* ein neues Projekt
+* Unterlagen werden vom Dozenten hochgeladen</p>
+</section>
+<section id="einbinden-von-javascript">
+<h2>Einbinden von JavaScript<a class="headerlink" href="#einbinden-von-javascript" title="Link to this heading"></a></h2>
+<p>HTML Grundgerüst über <em>emets</em> (bei VS Code):
+&gt;&gt;&gt; html
+&gt;&gt;&gt; !</p>
+<section id="javascript-direkt-ins-html">
+<h3>JavaScript direkt ins HTML<a class="headerlink" href="#javascript-direkt-ins-html" title="Link to this heading"></a></h3>
+<p>-&gt; gilt nur für diese eine Seite</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="verweis-auf-externe-js-datei-in-html">
+<h3>Verweis auf externe JS Datei in HTML<a class="headerlink" href="#verweis-auf-externe-js-datei-in-html" title="Link to this heading"></a></h3>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>–&gt; <code class="docutils literal notranslate"><span class="pre">script.js</span></code> wird hier eingelesen
+–&gt; Datei überschreibt explizites JS falls hier zusätzlich (hier: alert) definiert
+–&gt; Pfad stets relativ zur HTML Datei</p>
+</section>
+<section id="asynchrones-laden">
+<h3>Asynchrones Laden<a class="headerlink" href="#asynchrones-laden" title="Link to this heading"></a></h3>
+<p>Interpreter wartet nicht auf vollständiges Laden des Skripts</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">defer</span></code> Skripte dürfen erst ausgeführt wenn DOM fertig geladen ist:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span> <span class="na">async</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">async</span></code> bedeutet, dass das Skript parallel zum Parsen des Dokuments geladen wird</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defer</span></code> bedeutet, dass das Script erst nachdem das Dokument geparst wurde, geladen wird</p></li>
+</ul>
+<p>Beste Möglichkeit: Skript ans Ende des HTML packen</p>
+<p>So erspart man sich <code class="docutils literal notranslate"><span class="pre">async</span></code> und <code class="docutils literal notranslate"><span class="pre">defer</span></code> oder es macht nichts, wenn man diese
+aus Versehen vergisst.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    // the entire body
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Dadurch sollten alle Elemente im DOM sein.</p>
+<p>Mehrere Skript-Tags mit Dateien in ein HTML Seite einfügen
+* werden in dieser Reihenfolge angearbeitet -&gt; darauf achten</p>
+</section>
+</section>
+</section>
+<section id="strict-mode">
+<h1>Strict-Mode<a class="headerlink" href="#strict-mode" title="Link to this heading"></a></h1>
+<p>Generell eine gute Idee, besonders zum Lernen.</p>
+<ul class="simple">
+<li><p>Teilmenge von JS</p></li>
+<li><p>performanter</p></li>
+<li><p><strong>jeder</strong> (Syntax-)Fehler wird angezeigt</p></li>
+<li><p>wird z.B. bei JQuery immer angewandt (automatisch)</p></li>
+<li><p>jeder moderne Browser unterstützt diesem Modus</p></li>
+</ul>
+<p>über</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>zu Beginn eines Dokuments.</p>
+</section>
+<section id="kommentare">
+<h1>Kommentare<a class="headerlink" href="#kommentare" title="Link to this heading"></a></h1>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// einzeiliger Kommentar</span>
+<span class="cm">/*</span>
+<span class="cm">    mehrzeiliger</span>
+<span class="cm">    Kommentar</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</section>
+<section id="schreibregeln-konventionen">
+<h1>Schreibregeln &amp; Konventionen<a class="headerlink" href="#schreibregeln-konventionen" title="Link to this heading"></a></h1>
+<p>Bei JavaScript
+- gilt case sensitive (username != USERNAME)
+- beginnt Zählung bei 0
+- gilt englische Schreibweise (Dezimaltrennzeichen = <code class="docutils literal notranslate"><span class="pre">.</span></code> nicht <code class="docutils literal notranslate"><span class="pre">,</span></code>)</p>
+<p>Nicht relevant für Interpreter, aber Programmierer, dient der Lesbarkeit von Code
+- ein Statement pro Zeile
+- jede Zeile mit Semikolon beendet (obwohl nicht notwendig)
+- Bezeichner sollten sprechend sein (keine Chiffren)</p>
+<p><strong>Regeln für Bezeichner</strong></p>
+<ul class="simple">
+<li><p>beginnt mit einem Buchstaben, Underscore, Dollar-Zeichen oder Hashtag (jedoch haben
+diese oft andere Konventionen)</p></li>
+<li><p>danach sind auch Ziffern erlaubt</p></li>
+<li><p>sonst keine Sonderzeichen und Umlaute</p></li>
+<li><p>keine Leerzeichen</p></li>
+<li><p>keine reservierten Wörter verwenden (<a class="reference external" href="https://www.w3schools.com/Js/js_reserved.asp">https://www.w3schools.com/Js/js_reserved.asp</a>)</p></li>
+<li><p>keine Bezeichner von vordefinierten Funktionen oder Objekten verwenden</p></li>
+</ul>
+<p><strong>Konventionen für Bezeichner</strong></p>
+<ul class="simple">
+<li><p>für Variablen, Konstanten und Funktionen: lower camel case (lowerCamelCase)</p></li>
+<li><p>für Konstruktor-Funktionen: upper camel case (UpperCamelCase)</p></li>
+<li><p>für Konstanten zur Konfiguration: screaming snake case (SCREAMING_SNAKE_CASE)</p></li>
+</ul>
+<p>Anweisungsblöcke {} -&gt; Interpreter weiß, dass alle Anweisungen gemeinsam ausgeführt werden müssen</p>
+</section>
+<section id="vordefinierte-funktionen">
+<h1>Vordefinierte Funktionen<a class="headerlink" href="#vordefinierte-funktionen" title="Link to this heading"></a></h1>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basics</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// pausiert das Skript, User muss Alert-Dialog bestätigen, um fortzusetzen</span>
+<span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Bist du sicher?&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// pausiert das Skript, User kann mit &#39;OK&#39; True zurückgeben oder mit &#39;Cancel&#39; False</span>
+<span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Wer bist du?&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Niemand&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Zeigt Eingabefenster (mit Standardwert) -&gt; gibt &#39;null&#39; (Cancel) oder String mit Eingabe zurück (OK, falls leere Eingabe -&gt; &lt;empty string&gt;)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Wie geht&#39;s?&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// String auf der Konsole darstellen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// Logge Zahl -&gt; grün</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({});</span><span class="w"> </span><span class="c1">// Logge Objekt -&gt; blau</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;Warnung&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Logge Warnung -&gt; Symbol + gelber Hintergrund</span>
+<span class="nx">Alert</span><span class="p">(</span><span class="s2">&quot;Hilfe&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fehler, da &#39;Alert&#39; Funktion nicht verfügbar -&gt; Symbol + roter Hintergrund</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;d&quot;</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Zeigt Array tabellarisch an</span>
+
+<span class="c1">// Zeitmessung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="s2">&quot;Messung&quot;</span><span class="p">);</span>
+<span class="c1">// ... do some other stuff</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="s2">&quot;Messung&quot;</span><span class="p">);</span>
+
+<span class="c1">// Konsolenausgaben löschen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="variablen">
+<h1>Variablen<a class="headerlink" href="#variablen" title="Link to this heading"></a></h1>
+<ol class="arabic simple">
+<li><p>Deklaration -&gt; Variable wird erzeugt</p></li>
+<li><p>Initialisierung -&gt; erfolgt durch Interpreter (erzeugt sie im Speicher)</p></li>
+<li><p>Zuweisung -&gt; Wert wird an Variable übergeben</p></li>
+</ol>
+<p>Generell sollten möglichst wenig Variable im globalen Scope definiert werden.</p>
+<p>Alter Weg (ES5): mit <code class="docutils literal notranslate"><span class="pre">var</span></code></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variablen unterliegen dem &quot;Hoisting&quot;</span>
+<span class="c1">// https://de.wikipedia.org/wiki/Hoisting</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined, da noch keine Zuweisung -&gt; Fehlerquelle!</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">myVar</span><span class="p">;</span><span class="w"> </span><span class="c1">// noch keine Zuweisung</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w">  </span><span class="c1">// mit Zuweisung</span>
+</pre></div>
+</div>
+<p>Neuer Weg (ES6): mit <code class="docutils literal notranslate"><span class="pre">let</span></code></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// kein Hoisting (weil es häufig zu Fehlern führt)</span>
+
+<span class="c1">// console.log(myLetVar); // Fehler: Variable hier noch nicht definiert</span>
+
+<span class="c1">// global Scope</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myLetVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">999</span><span class="p">;</span>
+
+<span class="c1">// früher wurden viele Funktionen nur zum Kapseln von Variablen geschrieben</span>
+<span class="c1">// (zu viele Variablen waren im globalen Scope)</span>
+
+<span class="c1">// Neu: Block Scope (z.B. in Funktionen, If/Else Schleifen oder Blöcken)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">blockScopedVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockScopedVar</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">myLetVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">111</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// console.log(blockScopedVar); // error: not defined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myLetVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// 999</span>
+
+<span class="c1">// mehrere Variablen gleichzeitig erzeugen</span>
+<span class="c1">// myCat hat Zuweisung, andere undefined</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myCat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fussel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myDog</span><span class="p">,</span><span class="w"> </span><span class="nx">myHome</span><span class="p">,</span><span class="w"> </span><span class="nx">myHero</span><span class="p">,</span><span class="w"> </span><span class="nx">myGhost</span><span class="p">;</span>
+
+<span class="nx">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Moja&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCat</span><span class="p">,</span><span class="w"> </span><span class="nx">myDog</span><span class="p">);</span>
+
+<span class="c1">// Rückgabewerte in Variable speichern</span>
+<span class="c1">// let confirmReturn = confirm(&quot;Korrekt?&quot;);</span>
+
+<span class="c1">// Nutzerinput als Variable speichern</span>
+<span class="c1">// let userName = prompt(&quot;Dein Name:&quot;);</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="JavaScript (alfatraining)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_02.html" class="btn btn-neutral float-right" title="Konstanten" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Nov 21, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

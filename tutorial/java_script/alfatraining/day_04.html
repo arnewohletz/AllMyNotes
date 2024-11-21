@@ -1,0 +1,861 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schleifen &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Objekte" href="day_05.html" />
+    <link rel="prev" title="Kontroll- / Steuerstrukturen" href="day_03.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Schleifen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#for-loop-zahlerschleife">for-loop (Zählerschleife)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#do-while-loop">do-while-loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while-loop">while-loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funktionen">Funktionen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#funktionsdeklaration">Funktionsdeklaration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funktionsausdruck">Funktionsausdruck</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-werte-fur-parameter">Default-Werte für Parameter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iife-immediately-invoked-function-expression">IIFE (immediately invoked function expression)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#arrays">Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arrays-erzeugen">Arrays erzeugen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrays-abfragen">Arrays abfragen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mehrere-arrays-verbinden">Mehrere Arrays verbinden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrays-manipulieren">Arrays manipulieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-prufen">Array prüfen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-kopieren">Array kopieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#element-in-array-elemente-teilen">Element in Array Elemente teilen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elemente-in-array-zu-string-verbinden">Elemente in Array zu String verbinden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elemente-sortieren">Elemente sortieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indexposition-von-element-abfragen">Indexposition von Element abfragen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrays-kombinieren">Arrays kombinieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrays-abflachen">Arrays abflachen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Schleifen</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_04.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="schleifen">
+<h1>Schleifen<a class="headerlink" href="#schleifen" title="Link to this heading"></a></h1>
+<section id="for-loop-zahlerschleife">
+<h2>for-loop (Zählerschleife)<a class="headerlink" href="#for-loop-zahlerschleife" title="Link to this heading"></a></h2>
+<p>Zählerschleife mit for (Initialisierung; Bedingung; Befehlsfolge)</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zählerschleife mit for (Initialisierung; Bedingung; Befehlsfolge)</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">11</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Durchlauf &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">101</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Mehrere Variablen</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">11</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">let</span></code> kann für Zählvariable im Nicht-Strikten-Modus weggelassen werden,
+sollte man jedoch nicht.</p>
+</div>
+</section>
+<section id="do-while-loop">
+<h2>do-while-loop<a class="headerlink" href="#do-while-loop" title="Link to this heading"></a></h2>
+<p>Die Schleife wird stets 1x durchgeführt, bevor eine Bedingung geprüft wird.
+Eignet sich für Nutzerabfragen. Es muss sichergestellt sein, dass der erste
+Durchlauf nicht bereits zu einem Fehler führt.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    fußgesteuerte do...while Schleife</span>
+
+<span class="cm">    do {</span>
+<span class="cm">        Statements;</span>
+<span class="cm">    } while (Bedingung)</span>
+<span class="cm">*/</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">SOLUTION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">answer</span><span class="p">;</span>
+
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Die Antwort auf alle Fragen des Universums: &quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">answer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">SOLUTION</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Great!&quot;</span><span class="p">);</span>
+
+<span class="c1">// Erzeuge zufällig ermittelte ungerade Zahl</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">rand</span><span class="p">;</span>
+
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">rand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ermittelte Zahl: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rand</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">rand</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ungerade Zahl: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">rand</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="while-loop">
+<h2>while-loop<a class="headerlink" href="#while-loop" title="Link to this heading"></a></h2>
+<p>Zuerst wird geprüft und daraufhin die Schleife begonnen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    kopfgesteuerte while... Schleife</span>
+
+<span class="cm">    while (Bedingung) {</span>
+<span class="cm">        Statements;</span>
+<span class="cm">    }</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica                Lena             Jones&quot;</span><span class="p">;</span>
+
+<span class="c1">// Solange zwei Leerzeichen in &#39;user&#39;</span>
+<span class="c1">// entferne diese</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">doubleSpace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">partOne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">doubleSpace</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">partOne</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">partTwo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">doubleSpace</span><span class="p">).</span><span class="nx">trim</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">partTwo</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">partOne</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">partTwo</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="schleifensteuerung">
+<h1>Schleifensteuerung<a class="headerlink" href="#schleifensteuerung" title="Link to this heading"></a></h1>
+<p>Vorzeitiger Abbruch einer Schleife (z.B. wenn Bedingung erfüllt ist).</p>
+<ul class="simple">
+<li><p>Beenden der Schleife mit <code class="docutils literal notranslate"><span class="pre">break</span></code></p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">101</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Aktuellen Durchlauf der Schleife abbrechen mit <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">101</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In for Schleif springt Interpreter zur Befehlsfolge (z.B. i++)
+In while Schleife sprint Interpreter zur Bedingungsprüfung (was nach <code class="docutils literal notranslate"><span class="pre">while</span></code> steht)</p>
+</section>
+<section id="funktionen">
+<h1>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading"></a></h1>
+<section id="funktionsdeklaration">
+<h2>Funktionsdeklaration<a class="headerlink" href="#funktionsdeklaration" title="Link to this heading"></a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Funktionen unterliegen dem Hoisting, d.h. eine Funktion kann bereits <strong>vor</strong>
+seiner Deklaration aufgerufen werden.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">function bezeichner (parameter) {</span>
+<span class="cm">        Statements;</span>
+<span class="cm">        return Rückgabewert;</span>
+<span class="cm">    }</span>
+
+<span class="cm">    Aufruf:</span>
+<span class="cm">    bezeichner (argumente);</span>
+
+<span class="cm">    Argumente / Parameter / return = optional</span>
+<span class="cm">    Parameter = funktionsgebundene Variablen</span>
+<span class="cm">    return beendet Funktion und kann Wert aus Funktion heraus zurückgeben</span>
+<span class="cm">    return ersetzt Funktionsaufruf</span>
+
+<span class="cm">    kann vor Deklaration aufgerufen werden - unterliegt Hoisting</span>
+<span class="cm">*/</span>
+
+<span class="nx">myFunc</span><span class="p">();</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">myFunc</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Guten Tag&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">myFunc</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">());</span>
+
+<span class="c1">// mit Parametern</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">logMsg</span><span class="w"> </span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">logMsg</span><span class="p">();</span><span class="w">       </span><span class="c1">// undefined</span>
+<span class="nx">logMsg</span><span class="p">(</span><span class="s2">&quot;Hey&quot;</span><span class="p">);</span>
+<span class="nx">logMsg</span><span class="p">(</span><span class="mf">42</span><span class="p">);</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">MsgRepeater</span><span class="w"> </span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">count</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="nx">MsgRepeater</span><span class="p">(</span><span class="s2">&quot;Koks &quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="c1">// MsgRepeater(1000, &quot;Koks &quot;); =&gt; Reihenfolge der Argumente beachten</span>
+
+<span class="c1">// mit return</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">product</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ergebnis:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">product</span><span class="p">(</span><span class="mf">42</span><span class="p">,</span><span class="mf">111</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ergebnis:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">product</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="mf">10</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ergebnis:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">product</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span><span class="w">       </span><span class="c1">// NaN, da 2. Parameter undefined</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">product</span><span class="p">(</span><span class="nx">product</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">),</span><span class="nx">product</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">)));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">product</span><span class="p">(</span><span class="mf">6</span><span class="p">,</span><span class="nx">product</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">)));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">product</span><span class="p">(</span><span class="mf">6</span><span class="p">,</span><span class="mf">20</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">120</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Eine Funktion ohne <code class="docutils literal notranslate"><span class="pre">return</span></code> Statement liefert <code class="docutils literal notranslate"><span class="pre">undefined</span></code> zurück.</p>
+</div>
+</section>
+<section id="funktionsausdruck">
+<h2>Funktionsausdruck<a class="headerlink" href="#funktionsausdruck" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Funktionsausdrücke unterliegen nicht dem Hoisting, d.h. die Deklaration muss
+<strong>vor</strong> dem ersten Aufruf im Skript erfolgen.</p>
+<p>Daher ist der Funktionsausdruck generell performanter.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    let bezeichner = function (parameter) {</span>
+<span class="cm">        Statements;</span>
+<span class="cm">        return Rückgabewert;</span>
+<span class="cm">    };</span>
+
+<span class="cm">    bezeichner(argumente);</span>
+
+<span class="cm">    unterliegen NICHT dem Hoisting</span>
+<span class="cm">    ist performanter</span>
+<span class="cm">*/</span>
+
+<span class="c1">// square(3);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mf">333</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">());</span><span class="w">      </span><span class="c1">// NaN</span>
+</pre></div>
+</div>
+</section>
+<section id="default-werte-fur-parameter">
+<h2>Default-Werte für Parameter<a class="headerlink" href="#default-werte-fur-parameter" title="Link to this heading"></a></h2>
+<p>Zur Vermeidung von <code class="docutils literal notranslate"><span class="pre">undefined</span></code> für beim Funktionsaufruf nicht übergebenen Argumente.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">wellcomeMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Namenlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">anrede</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">anrede</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">wellcomeMsg</span><span class="p">();</span>
+<span class="nx">wellcomeMsg</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">);</span>
+<span class="nx">wellcomeMsg</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Heldin&quot;</span><span class="p">);</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">multiply</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">e</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">e</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="mf">10</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">14</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">42</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="iife-immediately-invoked-function-expression">
+<h2>IIFE (immediately invoked function expression)<a class="headerlink" href="#iife-immediately-invoked-function-expression" title="Link to this heading"></a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Sind derzeit nicht mehr allzu verbreitet. Wurden früher verwendet, um Variablen
+nicht in den global Scope zu schreiben. Sie werden jedoch weiterhin als
+anonyme Funktionen verwendet.</p>
+</div>
+<p>Wird direkt bei Definition auch einmalig ausgeführt. Die Funktion kann daraufhin
+nicht noch einmal ausgeführt werden, sofern sie nicht auf eine Variable zugewiesen
+wird.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">innerVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;IIFE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">innerVar</span><span class="p">);</span>
+<span class="p">})();</span>
+<span class="c1">// &#39;(...)&#39; um Funktionsdeklaration bedeutet: &quot;das ist eine Funktion&quot;</span>
+<span class="c1">// &#39;()&#39; zum Ende triggern den Aufruf (akzeptiert auch Argumente)</span>
+<span class="c1">// console.log(innerVar);  =&gt; ReferenceError (da innerVar im Funktions-Scope)</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">testing</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Test-IIFE&quot;</span><span class="p">);</span>
+<span class="p">})();</span>
+<span class="c1">// console.log(testing()); =&gt; ReferenceError (da Funktion nicht gespeichert wird)</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">})(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">   </span><span class="c1">// erneute Ausführen sofern Funktion einer Variable zugeordnet</span>
+
+<span class="c1">// Kurzschreibweise</span>
+<span class="c1">// unterstützt kein return &amp; kann nicht an Variable übergeben werden</span>
+<span class="o">!</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Greetings&quot;</span><span class="p">);</span>
+<span class="p">}();</span>
+</pre></div>
+</div>
+<p>Anwendungen findet es das Pattern z.B. bei der Abkapselung von Variablen aus dem
+globalen Namespace.</p>
+<p>See more: <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">https://developer.mozilla.org/en-US/docs/Glossary/IIFE</a></p>
+</section>
+</section>
+<section id="arrays">
+<h1>Arrays<a class="headerlink" href="#arrays" title="Link to this heading"></a></h1>
+<p>Arrays sind kein eigener Datentyp, sondern gehören zu den vordefinierten Objekten.
+Sie enthalten eine Sammlung von Werten, die mit einer Variablen referenziert werden:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[a,b,c,d]
+
+Index   Element
+0       a
+1       b
+2       c
+3       d
+</pre></div>
+</div>
+<section id="arrays-erzeugen">
+<h2>Arrays erzeugen<a class="headerlink" href="#arrays-erzeugen" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Array über Literal-Schreibweise erzeugen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w">     </span><span class="c1">// leeres Array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArr</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">myFilledArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFilledArr</span><span class="p">);</span>
+
+<span class="c1">// Array über Constructor-function erzeugen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">7</span><span class="p">);</span><span class="w">  </span><span class="c1">// leeres Array mit Platz für 7 Elemente</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newArr</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">newFilledArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newFilledArr</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">new</span></code> sorgt dafür, dass das ein neues Array erstellt und
+zurückgegeben wird.</p>
+</section>
+<section id="arrays-abfragen">
+<h2>Arrays abfragen<a class="headerlink" href="#arrays-abfragen" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Über den Index</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// [array].length um Anzahl der Elemente im Array zu ermitteln</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+<span class="c1">// Zugriff über Property Access</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Mit JavaScript kann nicht per nativem Index auf einen Index, der von hinten
+in einem Array gezählt wird, zugegriffen wird.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">abc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">abc</span><span class="p">[</span><span class="o">-</span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// gibt &#39;undefined&#39; zurück</span>
+
+<span class="c1">// Richtige Methode</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">abc</span><span class="p">[</span><span class="nx">abc</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// gibt letztes Element zurück</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Über <code class="docutils literal notranslate"><span class="pre">.at()</span></code></p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zugriff über [array].at(index)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="mehrere-arrays-verbinden">
+<h2>Mehrere Arrays verbinden<a class="headerlink" href="#mehrere-arrays-verbinden" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Die Struktur von verbundenen Arrays sollte es möglichst leicht machen, die
+gespeicherten Daten wieder zu bekommen.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">emptySlots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">primes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">7</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">band</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="s2">&quot;Paul&quot;</span><span class="p">,</span><span class="s2">&quot;Mary&quot;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mixed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">42</span><span class="p">,</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{}];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sparceArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,,</span><span class="mf">4</span><span class="p">];</span><span class="w">  </span><span class="c1">// leeres Element an zweiter Stelle</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">empty</span><span class="p">,</span><span class="w"> </span><span class="nx">emptySlots</span><span class="p">,</span><span class="w"> </span><span class="nx">primes</span><span class="p">,</span><span class="w"> </span><span class="nx">band</span><span class="p">,</span><span class="w"> </span><span class="nx">mixed</span><span class="p">,</span><span class="w"> </span><span class="nx">sparceArr</span><span class="p">];</span>
+
+<span class="c1">// Auf innenliegende Arrays zugreifen</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Array mit&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elementen&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Element an Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">k</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="arrays-manipulieren">
+<h2>Arrays manipulieren<a class="headerlink" href="#arrays-manipulieren" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.push(&lt;element&gt;)</span></code> fügt das Element an letzter Stelle eines Arrays ein und gibt
+die Länge des neuen Arrays zurück.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke Cage&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+
+<span class="c1">// [array].push() =&gt; hinzufügen von 1+ Elementen am Ende des Arrays</span>
+<span class="c1">// Rückgabe = neue Länge des Arrays nach dem hinzufügen</span>
+<span class="nx">heroes</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Loki&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 8</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code> entfernt das letzte Element eines Arrays und gibt es zurück</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// [array].pop() =&gt; entfernt letztes Element des arrays</span>
+<span class="c1">// Rückgabe = entferntes Element</span>
+<span class="nx">heroes</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w">  </span><span class="c1">// &#39;Loki&#39; wird entfernt</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">oneHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w">  </span><span class="c1">// &#39;Thor&#39; wird entfernt und zurückgegeben</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.unshift()</span></code> fügt Elemente <strong>am Anfang</strong> des Arrays ein (bestehende Werte werden
+nach hinten verschoben) und gibt die neue Länge als Nummer zurück.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">newLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="s2">&quot;Loki&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.shift()</span></code> entfernt das erste Element eines Arrays und gibt es zurück.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">heroes</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span><span class="w">  </span><span class="c1">// Thor</span>
+<span class="nx">oneHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span><span class="w">  </span><span class="c1">// Loki</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.splice(index,</span> <span class="pre">anzahl_elemente,</span> <span class="pre">1+</span> <span class="pre">elemente)</span></code> verändert ein Array,
+ab Position mit <code class="docutils literal notranslate"><span class="pre">index</span></code> für die ab hier nächsten <code class="docutils literal notranslate"><span class="pre">anzahl_elemente</span></code>. Fälle:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>(index) –&gt; Entferne alle Element ab <code class="docutils literal notranslate"><span class="pre">index</span></code> bis Ende</p></li>
+<li><p>(index, anzahl_elemente) –&gt; Entfernt ab <code class="docutils literal notranslate"><span class="pre">index</span></code> die nächsten
+<code class="docutils literal notranslate"><span class="pre">anzahl_elemente</span></code></p></li>
+<li><p>(index, anzahl_elemente, 1+_element) –&gt; Ersetzt (entfernt und fügt ein)
+ab <code class="docutils literal notranslate"><span class="pre">index</span></code> die nächsten <code class="docutils literal notranslate"><span class="pre">anzahl_elemente</span></code> mit <code class="docutils literal notranslate"><span class="pre">1+element</span></code> (item1,
+item2, …, itemN)</p></li>
+</ul>
+<p>Die entfernten Elemente werden als Array zurückgegeben. Wurde kein Element
+entfernt wird ein leeres Array zurückgegeben.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke Cage&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">]</span>
+
+<span class="c1">// gibt Array ab index 1 (inklusive) die nächsten 3 Elemente zurück</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">cardRoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cardRoom</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;Luke Cage&quot;, &quot;Daredevil&quot;, &quot;Elektra&quot;]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;Jessica Jones&quot;, &quot;Nebula&quot;, &quot;Odin&quot;]</span>
+
+<span class="c1">// füge an Indexposition 1 diese Elemente ein, gibt leeres Array zurück</span>
+<span class="nx">heroes</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="s2">&quot;Loki&quot;</span><span class="p">,</span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="s2">&quot;Hulk&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span><span class="w"> </span><span class="c1">// [ &quot;Jessica Jones&quot;, &quot;Loki&quot;, &quot;Thor&quot;, &quot;Hulk&quot;, &quot;Nebula&quot;, &quot;Odin&quot; ]</span>
+
+<span class="c1">// entfernt alle Elemente ab index 2</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">offline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">offline</span><span class="p">);</span><span class="w"> </span><span class="c1">// [ &quot;Thor&quot;, &quot;Hulk&quot;, &quot;Nebula&quot;, &quot;Odin&quot; ]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span><span class="w"> </span><span class="c1">// [ &quot;Jessica Jones&quot;, &quot;Loki&quot; ]</span>
+
+<span class="c1">// fügt Element an vorletzter Position ein</span>
+<span class="nx">heroes</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="s2">&quot;Nebula&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// [ &quot;Jessica Jones&quot;, &quot;Loki&quot;, &quot;Elektra&quot;, &quot;Nebula&quot; ]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">offline</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">heroes</span><span class="p">);</span><span class="w">  </span><span class="c1">// object</span>
+</pre></div>
+</div>
+</section>
+<section id="array-prufen">
+<h2>Array prüfen<a class="headerlink" href="#array-prufen" title="Link to this heading"></a></h2>
+<p>Über die <code class="docutils literal notranslate"><span class="pre">Array.isArray()</span></code> Methode.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">heroes</span><span class="p">));</span><span class="w">     </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">oneHero</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</section>
+<section id="array-kopieren">
+<h2>Array kopieren<a class="headerlink" href="#array-kopieren" title="Link to this heading"></a></h2>
+<p>Die <code class="docutils literal notranslate"><span class="pre">.slice()</span></code> Methode gibt eine Kopie eines Arrays zurück. Das originale Array
+wird bei Veränderungen der Kopie <strong>nicht</strong> verändert.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ein Array kann <strong>nicht</strong> über Zuweisung einer zweiten Variablen kopiert werden,
+da dies als Referenz passiert, d.h. beides Variablen zeigen auf das gleiche
+Array. Eine Änderung über eine Variable wirkt sich daher auf beide Variablen aus.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">abc_1</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">abc_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">abc_1</span><span class="p">;</span>
+<span class="nx">abc_1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">abc_2</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]  Oops!</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke Cage&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+
+<span class="c1">// vollständige Kopie</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">());</span>
+
+<span class="c1">// Kopie ab startIndex</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span>
+
+<span class="c1">// Kopie ab startIndex bis exclusive endIndex</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">));</span>
+
+<span class="c1">// arbeit mit negat. Werten ist möglich</span>
+<span class="c1">// Ermittlung der index-Position durch Zählung vom Ende her</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="element-in-array-elemente-teilen">
+<h2>Element in Array Elemente teilen<a class="headerlink" href="#element-in-array-elemente-teilen" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[string].split()</span></code> wird ein String an einem Separator geteilt und in
+Array abgelegt.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// [string]. split(separator)</span>
+<span class="c1">// konvertiert String in Array anhand des übergebenen Separators</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">headline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Willkommen&quot;</span><span class="p">;</span>
+
+<span class="c1">// kein Separator -&gt; packt Variable unverändert in eine Array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headline</span><span class="p">.</span><span class="nx">split</span><span class="p">());</span><span class="w"> </span><span class="c1">// [&quot;Willkommen&quot;]</span>
+<span class="c1">// empty String separator -&gt; jedes Zeichen wird separates Element</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headline</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// [ &quot;W&quot;, &quot;i&quot;, &quot;l&quot;, &quot;l&quot;, &quot;k&quot;, &quot;o&quot;, &quot;m&quot;, &quot;m&quot;, &quot;e&quot;, &quot;n&quot; ]</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Lena Maria Josepha Jones&quot;</span><span class="p">;</span>
+<span class="c1">// Leerzeichen Separator -&gt; trennt jedes Wort (z.B. für CSV Daten)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// [ &quot;Jessica&quot;, &quot;Lena&quot;, &quot;Maria&quot;, &quot;Josepha&quot;, &quot;Jones&quot; ]</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">obst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Apfel, Banane, Tomate, Kirsche&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// [ &quot;Apfel&quot;, &quot;Banane&quot;, &quot;Tomate&quot;, &quot;Kirsche&quot; ]</span>
+
+<span class="c1">// [string]. split(separator, anzahl_elemente)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w">  </span><span class="c1">// [ &quot;Apfel&quot;, &quot;Banane&quot; ]</span>
+</pre></div>
+</div>
+</section>
+<section id="elemente-in-array-zu-string-verbinden">
+<h2>Elemente in Array zu String verbinden<a class="headerlink" href="#elemente-in-array-zu-string-verbinden" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[array].join()</span></code> werden die Elemente eines Array in einen String überführt
+mit ein optional Separator zwischen den Elementen und dieser zurückgegeben. Das
+Array bleibt unverändert.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">obst_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;Apfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Banane&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tomate&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Kirsche&quot;</span><span class="w"> </span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst_array</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// ApfelBananeTomateKirsche</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst_array</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Apfel Banane Tomate Kirsche</span>
+</pre></div>
+</div>
+<p>Performanter, aber weniger flexibel ist die <code class="docutils literal notranslate"><span class="pre">.toString()</span></code> Methode. Es wird
+stets Komma als Separator verwendet.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst_array</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// Apfel,Banane,Tomate,Kirsche</span>
+<span class="c1">// Array selbst bleibt ebenfalls unverändert</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst_array</span><span class="p">);</span><span class="w"> </span><span class="c1">// [ &quot;Apfel&quot;, &quot;Banane&quot;, &quot;Tomate&quot;, &quot;Kirsche&quot; ]</span>
+</pre></div>
+</div>
+</section>
+<section id="elemente-sortieren">
+<h2>Elemente sortieren<a class="headerlink" href="#elemente-sortieren" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">sort()</span></code> werden Elemente <strong>aufsteigend</strong> sortiert.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Udin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
+<span class="nx">heroes</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span><span class="w">  </span><span class="c1">// sortiert aufsteigend</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span><span class="w">  </span><span class="c1">// sortiertes Array</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> nutzt ASCII Zeichentabelle zur Sortierung:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mf">2</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">104</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">65</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">52</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">sort</span><span class="p">());</span><span class="w">  </span><span class="c1">// Funktioniert nicht</span>
+</pre></div>
+</div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> werden Elemente <strong>invertiert</strong>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Udin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
+<span class="nx">heroes</span><span class="p">.</span><span class="nx">sort</span><span class="p">().</span><span class="nx">reverse</span><span class="p">();</span><span class="w">  </span><span class="c1">// sortiert aufsteigend + invertiert -&gt; absteigende Sortierung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span><span class="w">  </span><span class="c1">// sortiertes Array</span>
+</pre></div>
+</div>
+</section>
+<section id="indexposition-von-element-abfragen">
+<h2>Indexposition von Element abfragen<a class="headerlink" href="#indexposition-von-element-abfragen" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.indexOf()</span></code> ermittelt die Indexposition eines Elements von links (Start) aus gezählt.
+Ein Start-Index ist optional. Nach dem ersten Fund wird die Suche gestoppt.
+<code class="docutils literal notranslate"><span class="pre">.lastIndexOf()</span></code> tut dasselbe, beginnt jedoch von hinten an zu suchen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    [array].indexOf(elem [,startIndex])</span>
+<span class="cm">    [array].lastIndexOf(elem [,startIndex])</span>
+<span class="cm">*/</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Udin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Jes&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1 (nicht gefunden)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1 (an Indexpostion 0)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot;Elektra&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// 3</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">includes()</span></code> prüft, ob ein Element in Array enthalten ist. Gibt einen <strong>boolean</strong> zurück.
+Ein Start-Index ist optional.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    [array].incudes(elem [, startIndex])</span>
+<span class="cm">    prüft ob element in Array enthalten</span>
+<span class="cm">    Rückgabe: boolean</span>
+<span class="cm">    Start-Index als optionales 2. Argument</span>
+<span class="cm">*/</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Udin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Elektra&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;or&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">))</span><span class="w">  </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</section>
+<section id="arrays-kombinieren">
+<h2>Arrays kombinieren<a class="headerlink" href="#arrays-kombinieren" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.concat()</span></code> lassen sich Elemente oder Arrays an ein Array anfügen.
+Das Ursprungs-Array wird nicht verändert. Das neue Array wird zurückgegeben.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">array2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">array3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">array2</span><span class="p">);</span>
+<span class="nx">array3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="nx">array2</span><span class="p">,</span><span class="mf">10</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array3</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ 1, 2, 3, 4, 5, 5, 6, 7, 8, 10 ]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ 1, 2, 3, 4 ]</span>
+</pre></div>
+</div>
+</section>
+<section id="arrays-abflachen">
+<h2>Arrays abflachen<a class="headerlink" href="#arrays-abflachen" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.flat()</span></code> werden innenliegende Arrays, in das äußere Array überführt.
+Die <em>Tiefe</em> ist standardmäßig <code class="docutils literal notranslate"><span class="pre">1</span></code>, kann jedoch erhöht werden, so das auch weiter
+innenliegende Arrays mit abgeflacht werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">multiArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,[</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">],</span><span class="mf">7</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">());</span><span class="w"> </span><span class="c1">// [ 1, 2, 3, 4, 5, 6, 7 ]</span>
+<span class="nx">multiArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,[</span><span class="mf">4</span><span class="p">,[</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">]],</span><span class="mf">7</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">());</span><span class="w"> </span><span class="c1">// [ 1, 2, 3, 4, [5, 6], 7 ]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiArr</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// [ 1, 2, 3, 4, 5, 6, 7 ]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_03.html" class="btn btn-neutral float-left" title="Kontroll- / Steuerstrukturen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_05.html" class="btn btn-neutral float-right" title="Objekte" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Nov 21, 2024</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
