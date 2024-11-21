@@ -11,6 +11,7 @@ Table of Contents
     tutorial/cpp/index.rst
     tutorial/docker/index.rst
     tutorial/java/index.rst
+    tutorial/java_script/alfatraining/index.rst
     tutorial/jenkins/index.rst
     tutorial/python/index.rst
     tutorial/shell_scripting/index.rst

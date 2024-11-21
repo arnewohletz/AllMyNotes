@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>E-Book</title>
+  <link rel="stylesheet" type="text/css" href="css/eBook.css" media="screen" />
+
+</head>
+
+<body>
+
+  <div class="eBook_wrapper">
+    <div class="eBook">
+
+      <div class="eBook_content"></div>
+
+      <div class="pagination">
+        <span class="goes_left">
+          <button title="first">«</button>
+          <button title="prev">‹</button>
+        </span>
+
+        <span class="goes_right">
+          <button title="next">›</button>
+          <button title="last">»</button>
+        </span>
+
+        <span class="progressbar">
+          <progress max="3" value="1" id="site_progress"></progress>
+        </span>
+        <span class="bookSite">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/bookscript.js"></script>
+</body>
+
+</html>
