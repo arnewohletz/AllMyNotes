@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrow-Function &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Rest-Parameter" href="day_18.html" />
+    <link rel="prev" title="Ternärer / conditional Operator" href="day_16.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#higher-order-functions">Higher Order Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sort">sort()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#foreach">forEach()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map">map()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filter">filter()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reduce">reduce()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-prufen">Array prüfen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elemente-finden">Elemente finden</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spread-syntax">Spread-Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unterschiede-beim-duplizieren-von-objekten">Unterschiede beim Duplizieren von Objekten</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Arrow-Function</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_17.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="arrow-function">
+<h1>Arrow-Function<a class="headerlink" href="#arrow-function" title="Link to this heading"></a></h1>
+<p>Verkürzte Schreibweise einer Funktion. Seit ES6 verfügbar.</p>
+<ul class="simple">
+<li><p>Schlüsselwort function entfällt</p></li>
+<li><p>dafür wird fat arrow gesetzt</p></li>
+<li><p>wenn nur ein Parameter übergeben wird, können () entfallen</p></li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">bezeichner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">bezeichner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">bezeichner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">para1</span><span class="p">,</span><span class="w"> </span><span class="nx">para2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span>
+</pre></div>
+</div>
+<p>Bei kurzen Statements können <code class="docutils literal notranslate"><span class="pre">{}</span></code> weggelassen werden. Hier wird der Wert
+des Statements implizit zurückgegeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">bezeichner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="nx">p2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">p2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Bei mehreren Statements müssen <code class="docutils literal notranslate"><span class="pre">{}</span></code> hingegen gesetzt werden.</p>
+<p>Das Schlüsselort <code class="docutils literal notranslate"><span class="pre">this</span></code> verhält sich in Arrow-Funktions anders, als in
+regulärer definierten Funktionen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Schlüsselwort this</span>
+
+<span class="cm">    mit this spricht man innerhalb einer Objektmethode (oder Konstruktor)</span>
+<span class="cm">    die jeweilige Objektinstanz an =&gt; das aktuelle Objekt / dieses Objekt (Kontext-Objekt)</span>
+
+<span class="cm">    this = impliziter Parameter von Funktionen</span>
+<span class="cm">    wird beim Aufruf der Funktion mit Kontext-Objekt belegt, auf dem Funktion aufgerufen wird</span>
+<span class="cm">    this kann nicht geändert werden</span>
+
+<span class="cm">    this referenziert immer Objekt, in dessen Kontext Funktion aufgerufen wird</span>
+<span class="cm">    Ausnahme = arrow-Function</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">person_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">myMethod</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">person_1</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">();</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">myNewFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">myNewFunc</span><span class="p">();</span><span class="w"> </span><span class="c1">// undefined</span>
+
+<span class="cm">/*</span>
+<span class="cm">    this befindet sich in Funktion außerhalb eines Objektes</span>
+<span class="cm">    daher bezieht sich this auf umliegenden Raum und hat kein Kontext-Objekt =&gt; undefined</span>
+<span class="cm">    ohne strikten Modus wird window-Object referenziert</span>
+<span class="cm">*/</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">getName2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="p">;</span>
+<span class="cm">/*</span>
+<span class="cm">    mit arrow-Function referenziert this das Objekt, in dem Funktion definiert wurde</span>
+<span class="cm">    im stricten Modus -&gt; this = undefined</span>
+
+<span class="cm">    Kontext-Objekt von this = Objekt, in dem Funktion definert ist</span>
+<span class="cm">    nicht Kontext, in dem sie aufgerufen wird</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">person_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">getName</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">getName2</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person_2</span><span class="p">.</span><span class="nx">getName</span><span class="p">());</span><span class="w">    </span><span class="c1">// &quot;Jessica&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person_2</span><span class="p">.</span><span class="nx">getName2</span><span class="p">());</span><span class="w">   </span><span class="c1">// undefined</span>
+<span class="c1">// wenn Funktion in Objekt gezogen und auf diesem aufgerufen wird,</span>
+<span class="c1">// wird Bezug zum Kontext-Objekt hergestellt</span>
+<span class="c1">// arrow-Function nicht für ausgelagerte Funktionen mit Kontakt zu this erstellen!</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">person_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">28</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">myInnerFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="nx">myInnerFunc</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">person_3</span><span class="p">.</span><span class="nx">myFunc</span><span class="p">();</span><span class="w">  </span><span class="c1">// undefined</span>
+
+<span class="cm">/*</span>
+<span class="cm">    bei Nutzung von this in innerer Funktion fällt this aus Kontext heraus</span>
+<span class="cm">    im stricten Modus =&gt; undefined</span>
+<span class="cm">    sonst window-object</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">person_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">28</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">myInnerFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">myInnerFunc</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">person_4</span><span class="p">.</span><span class="nx">myFunc</span><span class="p">();</span><span class="w">  </span><span class="c1">// object</span>
+
+<span class="cm">/*</span>
+<span class="cm">    um Bezug zum Objekt wieder herzustellen =&gt; arrow-Function nutzen</span>
+<span class="cm">    this referenziert Kontext-Objekt, in dem innere Funktion definiert wird</span>
+<span class="cm">     Objekt wird zurück gegeben</span>
+<span class="cm">*/</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">});</span><span class="w"> </span><span class="c1">// HTMLDocument</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">});</span><span class="w"> </span><span class="c1">// &lt;body&gt;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">));</span><span class="w">        </span><span class="c1">// window</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">));</span><span class="w">   </span><span class="c1">// window</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Zusammenfassung - Kontakt mit this</span>
+
+<span class="cm">    wann noemale Funktion - wann arrow-Function?</span>
+<span class="cm">    - im Raum außerhalb von Objekten =&gt; funktionsdeklaration oder funktionsausdruck</span>
+<span class="cm">    - in callback =&gt; arrow-function</span>
+<span class="cm">    - innerhalb von objekt-Methoden =&gt; arrow-function</span>
+<span class="cm">    - in Konstruktor-Funktionen =&gt; keine arrow Function zur Erzeugung von Objekten nutzbar</span>
+
+<span class="cm">    Eigenschaften von arrow-Function:</span>
+<span class="cm">    - referenzierter Wert von this ergibt sich aus Kontext, in dem Funktion definiert wirde!</span>
+<span class="cm">      nicht aus Kontext, ion dem sie ausgeführt wird!</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</section>
+<section id="higher-order-functions">
+<h1>Higher Order Functions<a class="headerlink" href="#higher-order-functions" title="Link to this heading"></a></h1>
+<p>Funktionen können als Argumente an andere Funktionen übergeben werden</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">(</span><span class="nx">nameFunc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hallo </span><span class="si">${</span><span class="nx">nameFunc</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">giveName</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">sayHello</span><span class="p">(</span><span class="nx">giveName</span><span class="p">);</span>
+<span class="nx">sayHello</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">;});</span>
+<span class="nx">sayHello</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">logHello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">callbackfunction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">callbackfunction</span><span class="p">(</span><span class="s2">&quot;Hallo Duda&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">logHello</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);});</span>
+</pre></div>
+</div>
+<section id="sort">
+<h2>sort()<a class="headerlink" href="#sort" title="Link to this heading"></a></h2>
+<p>Sortiert anhand der UTF16-Zeichentabelle.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">600</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numberCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">numberCheck</span><span class="p">));</span>
+
+<span class="cm">/*</span>
+<span class="cm">    sort() = higher order</span>
+<span class="cm">    numberCheck() = callback</span>
+
+<span class="cm">    callback wird an higher order übergeben</span>
+<span class="cm">    wird von higher order eigenständig mit argumenten aufgerufen</span>
+<span class="cm">    Verarbeitung in higher order erfolgt auf Grundlage des Rückgabewertes der callback</span>
+<span class="cm">*/</span>
+
+<span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin (Chef)&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">isChef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;(Chef)&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sortHeroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">hero1</span><span class="p">,</span><span class="w"> </span><span class="nx">hero2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isChef</span><span class="p">(</span><span class="nx">hero1</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Chef schon vorne --&gt; nicht sortieren</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isChef</span><span class="p">(</span><span class="nx">hero2</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">    </span><span class="c1">// Chef hinten --&gt; nach vorne sortieren</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">hero1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">hero2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ist hero1 hinter hero2 --&gt; nicht sortieren, daher positiv</span>
+<span class="w">    </span><span class="c1">// ansonsten --&gt; sortiere, daher negativ</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">sortHeroes</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="foreach">
+<h2>forEach()<a class="headerlink" href="#foreach" title="Link to this heading"></a></h2>
+<p>Als Ersatz für eine for Schleife für Arrays.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    ersetzt for-Schleife für Arrays</span>
+<span class="cm">    durchläuft Array Element für Element</span>
+<span class="cm">    erwartet callback</span>
+
+<span class="cm">    übergibt an callback:</span>
+<span class="cm">        1. Array-Element</span>
+<span class="cm">        2. index-Position</span>
+<span class="cm">        3. Ursprungsarray</span>
+
+<span class="cm">    erwartet keinen Rückgabewert von callback</span>
+<span class="cm">    lässt sich auf NodeList anwenden - aber nicht auf HTMLCollection</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">jahresZeiten</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Frühling&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Sommer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Herbst&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Winter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Eiszeit&quot;</span><span class="p">];</span>
+
+<span class="nx">jahresZeiten</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">elem</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">600</span><span class="p">],</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">zahl</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w">  </span><span class="c1">// 902</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">paraList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">paraList</span><span class="p">);</span>
+<span class="nx">paraList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="p">.</span><span class="nx">textContent</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="map">
+<h2>map()<a class="headerlink" href="#map" title="Link to this heading"></a></h2>
+<p>Durchläuft ein Array Element für Element und erstellt ein neues Array, wobei
+jedes Element durch eine Callback-Funktion verändert werden kann.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">durchläuft Array Element für Element</span>
+<span class="cm">erwartet callback</span>
+
+<span class="cm">übergibt an callback:</span>
+<span class="cm">    1. Array-Element</span>
+<span class="cm">    2. index-Position</span>
+<span class="cm">    3. Ursprungsarray</span>
+
+<span class="cm">erwartet Rückgabewert von callback</span>
+<span class="cm">erstellt ZielArray (Kopie des Arrays)</span>
+<span class="cm">Rückgabewerte der Callback werden Zielarray geschrieben</span>
+
+<span class="cm">lässt sich nicht auf arrayartige Gebilde anwenden</span>
+<span class="cm">mit Array.from() kann arrayartiges Gebilde in Array konvertiert werden</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">makePassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">password</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// Name spiegeln</span>
+<span class="w">    </span><span class="nx">password</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">password</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">passwordArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">makePassword</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">passwordArray</span><span class="p">);</span>
+
+<span class="c1">// oder...</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">zahl</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squares</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="filter">
+<h2>filter()<a class="headerlink" href="#filter" title="Link to this heading"></a></h2>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">.filter()</span></code> lassen sich Einträge in einem Array filtern.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">durchläuft Array Element für Element</span>
+<span class="cm">erwartet callback, in der Bedingungsprüfung stattfindet</span>
+
+<span class="cm">übergibt an callback:</span>
+<span class="cm">    1. Array-Element</span>
+<span class="cm">    2. index-Position</span>
+<span class="cm">    3. Ursprungsarray</span>
+
+<span class="cm">erwartet Rückgabewert (boolean) von callback</span>
+<span class="cm">erstellt ZielArray mit Elementen, auf die callback mit true geantwortet hat</span>
+<span class="cm">Bedingungsprüfung findet in callback statt</span>
+
+<span class="cm">lässt sich nicht auf arrayartige Gebilde anwenden</span>
+<span class="cm">mit Array.from() kann arrayartiges Gebilde in Array konvertiert werden</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">avengers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">avengers</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">52</span><span class="p">,</span><span class="mf">53</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">111</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">9</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="reduce">
+<h2>reduce()<a class="headerlink" href="#reduce" title="Link to this heading"></a></h2>
+<p>Reduziert Elemente eines Arrays auf einen einzelnen Wert.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    reduziert Elemente eines Arrays auf einen einzelnen Wert</span>
+<span class="cm">    benötigt callback, in der Reduktion definiert wird</span>
+<span class="cm">    reduce() übergibt 2 Argumente an callback</span>
+<span class="cm">    callback reduziert auf einzelnen Wert und gibt diesen zurück</span>
+<span class="cm">    reduce() übergibt Rückgabewert mit nächstem Array-Element</span>
+<span class="cm">    ...</span>
+<span class="cm">    bis nur noch ein Wert vorhanden ist (= Rückgabewert von reduce)</span>
+
+<span class="cm">    lässt sich nicht auf arrayartige Gebilde anwenden</span>
+<span class="cm">    mit Array.from() kann arrayartiges Gebilde in Array konvertiert werden</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">53</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">73</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb"> + </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">([</span><span class="mf">52</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">41</span><span class="p">,</span><span class="mf">11</span><span class="p">]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">([</span><span class="mf">52</span><span class="p">]));</span><span class="w">   </span><span class="c1">// 52 wird zurückgegeben</span>
+<span class="c1">// console.log(sum([]));  // Uncaught TypeError: reduce of empty array with no initial value</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Initialwert kann als 2. Argument an reduce() übergeben werden</span>
+<span class="cm">    Wert muss zzur Reduktion passen</span>
+<span class="cm">    dient der Vermeidung von TypeError bei Übergabe eines leeren Arrays</span>
+<span class="cm">*/</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sumWithInitial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumWithInitial</span><span class="p">([]));</span><span class="w">    </span><span class="c1">// 0</span>
+
+<span class="c1">// reduceRight(cbf [, initial value])</span>
+<span class="c1">// arbeitet wie reduce(), jedoch von rechts nach links</span>
+</pre></div>
+</div>
+</section>
+<section id="array-prufen">
+<h2>Array prüfen<a class="headerlink" href="#array-prufen" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    every()     - prüft, ob ALLE Elemente einer Bedingung entsprechen</span>
+<span class="cm">    some()      - prüft, ob MINDESTENS EIN Element einer Bedingung entspricht</span>
+
+<span class="cm">    higher order übergibt ein Array-Element an callback function</span>
+<span class="cm">    in callback function wird anhand definierter Bedingung geprüft und boolean</span>
+<span class="cm">    als Ergebnis zurückgegeben</span>
+<span class="cm">    Rückgabe der higher order = boolean</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="mf">21</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">9</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">zahl</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">even</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">even</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+</pre></div>
+</div>
+</section>
+<section id="elemente-finden">
+<h2>Elemente finden<a class="headerlink" href="#elemente-finden" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">find()</span></code>, <code class="docutils literal notranslate"><span class="pre">findIndex()</span></code> sowie <code class="docutils literal notranslate"><span class="pre">findLast()</span></code>, <code class="docutils literal notranslate"><span class="pre">findLasstIndex()</span></code>
+lassen sich Elemente in einem Array finden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">21</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">9</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">zahl</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="cm">/*</span>
+<span class="cm">    find()</span>
+<span class="cm">    liefert 1. Element eines Arrays, dass einer in callback function</span>
+<span class="cm">    definierten Bedingung entspricht</span>
+<span class="cm">    ohne Fund: undefined</span>
+<span class="cm">*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">even</span><span class="p">));</span><span class="w">    </span><span class="c1">// 42</span>
+
+<span class="cm">/*</span>
+<span class="cm">    findIndex()</span>
+<span class="cm">    liefert die Indexposition eines Elements in einem Array,  dass einer</span>
+<span class="cm">    in callback function definierten Bedingung entspricht</span>
+<span class="cm">    ohne Fund: -1</span>
+<span class="cm">*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">even</span><span class="p">));</span><span class="w">   </span><span class="c1">// 1</span>
+
+<span class="cm">/*</span>
+<span class="cm">    findLast() und findLastIndex() funktionieren genau so wie find() und</span>
+<span class="cm">    findIndex(), arbeiten jedoch von rechts nach links</span>
+<span class="cm">*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">findLast</span><span class="p">(</span><span class="nx">even</span><span class="p">));</span><span class="w">    </span><span class="c1">// 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">findLastIndex</span><span class="p">(</span><span class="nx">even</span><span class="p">));</span><span class="w">   </span><span class="c1">// 3</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="spread-syntax">
+<h1>Spread-Syntax<a class="headerlink" href="#spread-syntax" title="Link to this heading"></a></h1>
+<p>Werte aus Objekten oder Arrays werden aufgeteilt, als einzelne Werte übergeben.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    ...bezeichner</span>
+<span class="cm">    Syntax teilt Werte von Arrays und Objekten auf</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">d</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">42</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">11</span><span class="p">];</span>
+<span class="nx">add</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">);</span><span class="w">    </span><span class="c1">// Elemente von numbers werden einzeln übergeben</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">));</span><span class="w">  </span><span class="c1">// 99</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">));</span><span class="w">  </span><span class="c1">// 11</span>
+
+<span class="c1">// für Arrays</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">obst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Apfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Kirsche&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pflaume&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Birne&quot;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mehr_obst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Banane&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Kiwi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">obst</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mandarine&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mehr_obst</span><span class="p">);</span>
+
+<span class="c1">// für Objekte</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">    </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;angry&quot;</span>
+<span class="p">};</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">marvelHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">subject</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;Comic Hero&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">...</span><span class="nx">user</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">vote</span><span class="o">:</span><span class="w">       </span><span class="mf">42</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">);</span>
+
+<span class="c1">// Beispiel: Date-Object</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">dateArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2024</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">11</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(...</span><span class="nx">dateArr</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+</pre></div>
+</div>
+<section id="unterschiede-beim-duplizieren-von-objekten">
+<h2>Unterschiede beim Duplizieren von Objekten<a class="headerlink" href="#unterschiede-beim-duplizieren-von-objekten" title="Link to this heading"></a></h2>
+<p>Die Spread-Syntax sollte nicht für das Erstellen von Objekten verwendet werden,
+da hier Referenzen übergeben werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">myUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dragonroad&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">number</span><span class="o">:</span><span class="w"> </span><span class="mf">66</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">city</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Hells Kitchen&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myUser2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">myUser</span><span class="p">};</span>
+<span class="nx">myUser2</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">myUser3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">myUser</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myUser4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">structuredClone</span><span class="p">(</span><span class="nx">myUser</span><span class="p">);</span>
+
+<span class="nx">myUser</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">111</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser</span><span class="p">);</span><span class="w">    </span><span class="c1">// ok</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser2</span><span class="p">);</span><span class="w">   </span><span class="c1">// ok   --&gt; Hausnummer wird auch geändert!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser3</span><span class="p">);</span><span class="w">   </span><span class="c1">// ok</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser4</span><span class="p">);</span><span class="w">   </span><span class="c1">// ok</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span><span class="w">    </span><span class="c1">// ok</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser2</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span><span class="w">   </span><span class="c1">// ok   --&gt; Hausnummer wird auch geändert!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser3</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span><span class="w">   </span><span class="c1">// ok</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser4</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">number</span><span class="p">);</span><span class="w">   </span><span class="c1">// ok</span>
+
+<span class="c1">// Die Spread-Syntax übermittelt Werte als Referenzen. Wird das Ursprungs-Objekt</span>
+<span class="c1">// verändert, wird dies auch auf die Referenzen angewandt</span>
+
+<span class="c1">// =&gt; Besser keine Objekte mit Spread-Syntax duplizieren!</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Die Spread-Syntax erzeugt <strong>flache</strong> Kopien, d.h. nur Referenzen werden
+erzeugt.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_16.html" class="btn btn-neutral float-left" title="Ternärer / conditional Operator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_18.html" class="btn btn-neutral float-right" title="Rest-Parameter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

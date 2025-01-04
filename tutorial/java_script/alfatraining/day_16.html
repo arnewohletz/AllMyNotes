@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ternärer / conditional Operator &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Arrow-Function" href="day_17.html" />
+    <link rel="prev" title="Timing" href="day_15.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regulare-ausdrucke">Reguläre Ausdrücke</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#methoden-des-regexp-objekts">Methoden des RegExp Objekts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methoden-vom-datentyp-string-fur-die-arbeit-mit-regexp">Methoden vom Datentyp String für die Arbeit mit RegExp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#definition-eines-musters">Definition eines Musters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Ternärer / conditional Operator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_16.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ternarer-conditional-operator">
+<h1>Ternärer / conditional Operator<a class="headerlink" href="#ternarer-conditional-operator" title="Link to this heading"></a></h1>
+<p>Alternative zu kurzen if-else Anweisungen.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>optional assignment = (expression) ? if expression true : if expression false
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Problem hier: taxRate kann keine Konstante sein</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;books&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">taxRate</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;books&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.07</span><span class="p">;</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.19</span><span class="p">;</span>
+
+<span class="c1">// Lösung</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">TAX_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;books&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.07</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1.19</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">TAX_RATE</span><span class="p">);</span>
+
+<span class="c1">// Andere Beispiele</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span><span class="w"> </span><span class="nx">userAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">33</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">userAge</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;verkauft&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;zu jung&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Mann = 0, Frau = 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hallo </span><span class="si">${</span><span class="nx">gender</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Frau&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Herr&quot;</span><span class="si">}</span><span class="sb"> Jones`</span><span class="p">);</span>
+
+<span class="c1">// Mehrere Variablen gleichzeitig ändern</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">jessyPromille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.52</span><span class="p">,</span><span class="w"> </span><span class="nx">panic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="p">(</span><span class="nx">jessyPromille</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4.5</span><span class="p">)</span>
+<span class="w">    </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="nx">panic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">jessyPromille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">panic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">jessyPromille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.5</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jessyPromille</span><span class="p">,</span><span class="w"> </span><span class="nx">panic</span><span class="p">);</span>
+
+<span class="c1">// Mehrere Bedingungen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Cool&quot;</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;OK&quot;</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Einfach Jessy&quot;</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Keine Ahnung&quot;</span>
+<span class="p">)</span>
+
+<span class="c1">// Variablen neuen Wert zuweisen, wenn nicht vorhanden</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myVar</span><span class="p">;</span>
+<span class="nx">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">myVar</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">myVar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Neuer Wert&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="regulare-ausdrucke">
+<h1>Reguläre Ausdrücke<a class="headerlink" href="#regulare-ausdrucke" title="Link to this heading"></a></h1>
+<p>Es gibt zwei Möglichkeiten zum Erstellen einer Regex:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// über Konstruktor</span>
+<span class="c1">// nutzen wenn Regex erst zur Laufzeit erstellt wird</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">);</span>
+
+<span class="c1">// über Literal-Schreibweise (deutlich performanter)</span>
+<span class="c1">// wenn Zeichenkette feststeht und nicht zur Laufzeit erstellt werden muss</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/abc/</span><span class="p">;</span>
+</pre></div>
+</div>
+<section id="methoden-des-regexp-objekts">
+<h2>Methoden des RegExp Objekts<a class="headerlink" href="#methoden-des-regexp-objekts" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Methoden des RegExp-Objekts</span>
+<span class="cm">    test()      - prüft auf Vorkommen des Zeichenmusters im String</span>
+<span class="cm">                - Rückgabe = boolean</span>
+
+<span class="cm">    exec()      - sucht erstes Vorkommen des Musters im String</span>
+<span class="cm">                - Rückgabe:</span>
+<span class="cm">                    - Fund</span>
+<span class="cm">                    - index-Position des Fundes</span>
+<span class="cm">                    - durchsuchter String</span>
+
+<span class="cm">    toString()  - gibt Zeichenmuster als String zurück</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">myString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica und Luke sind Helden des Marvel-Universums&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/essi/</span><span class="p">,</span><span class="w"> </span><span class="nx">regExp4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/uce/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">myString</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">myString</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</section>
+<section id="methoden-vom-datentyp-string-fur-die-arbeit-mit-regexp">
+<h2>Methoden vom Datentyp String für die Arbeit mit RegExp<a class="headerlink" href="#methoden-vom-datentyp-string-fur-die-arbeit-mit-regexp" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Methoden vom Datentyp String für die Arbeit mit RegExp</span>
+<span class="cm">    (Methoden gelten auch für reguläre Strings)</span>
+
+<span class="cm">    replace()       - ersetzt Vorkommen eines Zeichenmusters im String mit Teilstring</span>
+
+<span class="cm">    search()        - sucht Vorkommen eines Zeichenmusters im String</span>
+<span class="cm">                    - Rückgabe</span>
+<span class="cm">                        - Index-Position des ersten Fundes</span>
+<span class="cm">                        - Ohne Fund: -1</span>
+
+<span class="cm">    match()         - sucht Vorkommen eines Zeichenmusters im String</span>
+<span class="cm">                    - Rückgabe: alle Funde als Array</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Entdecke Sie bei Eduscho neben Kaffee und Reisen auch &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="s2">&quot;Toilettenpapier, Öl und Mehl, Eduscho - den lob ich mir!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">oldBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/Eduscho/g</span><span class="p">;</span><span class="w">      </span><span class="c1">// g --&gt; alle Vorkommen werden ersetzt</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tchibo&quot;</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm">    [string].replace(zeichenmuster, ersetzung)</span>
+<span class="cm">    arbeitet mit Strings und RegEx</span>
+<span class="cm">    ersetzt 1. Vorkommen und bricht ab</span>
+<span class="cm">    mit global flag (g) hinter RegExp alle Vorkommen ersetzen</span>
+<span class="cm">*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">oldBrand</span><span class="p">,</span><span class="w"> </span><span class="nx">newBrand</span><span class="p">));</span>
+
+<span class="cm">/*</span>
+<span class="cm">    [string].replaceAll(zeichenmuster, ersetzung)</span>
+<span class="cm">    bei Arbeit mit String-Übergabe werden alle Vorkommen ersetzt</span>
+<span class="cm">    bei Übergabe einer RegExp muss flag &#39;g&#39; gesetzt sein</span>
+<span class="cm">*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">&quot;Eduscho&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tchibo&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="nx">oldBrand</span><span class="p">,</span><span class="w"> </span><span class="nx">newBrand</span><span class="p">));</span>
+
+<span class="cm">/*</span>
+<span class="cm">    [string].search(zeichenmuster)</span>
+<span class="cm">    kann auch mit Strings arbeiten - werden in RegExp umgewandelt</span>
+<span class="cm">    liefert index-position des 1. Fundes</span>
+<span class="cm">    ohne Fund Rückgabe -1</span>
+<span class="cm">*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">oldBrand</span><span class="p">));</span><span class="w"> </span><span class="c1">// 17</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;Kaffee&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 31</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;Tee&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;Tchibo&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+
+<span class="cm">/*</span>
+<span class="cm">    [string].match(zeichenmuster)</span>
+<span class="cm">    kann auch mit Strings arbeiten - werden in RegExp umgewandelt</span>
+<span class="cm">    nach 1. Fund Abbruch - mit global flag Ermittlung aller Funde</span>
+<span class="cm">    Rückgabe = Fund als Array</span>
+<span class="cm">    ohne Fund - Rückgabe null</span>
+<span class="cm">*/</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="s2">&quot;Eduscho&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Eduscho/</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Eduscho/g</span><span class="p">));</span><span class="w">   </span><span class="c1">// alle Matches</span>
+
+<span class="c1">// Bei einem Fund kann über .index die Indexposition ausgelesen werden</span>
+<span class="c1">// geht nicht bei mehreren Funden (global-flag)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Eduscho/</span><span class="p">).</span><span class="nx">index</span><span class="p">);</span><span class="w">   </span><span class="c1">// 17</span>
+</pre></div>
+</div>
+</section>
+<section id="definition-eines-musters">
+<h2>Definition eines Musters<a class="headerlink" href="#definition-eines-musters" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Definition eines Musters</span>
+
+<span class="cm">    Ausdruck        Bedeutung</span>
+
+<span class="cm">    u               das Zeichen &quot;u&quot;</span>
+<span class="cm">    essi            die Zeichenfolge &quot;essi&quot;</span>
+<span class="cm">    .               beliebiges Zeichen (kein Zeilenumbruch)</span>
+<span class="cm">    a|b             das Zeichen &quot;a&quot; oder &quot;b&quot;</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/J.../</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessi&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jo&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Zeichenklasse</span>
+
+<span class="cm">    einfache Klasse     [xyz]       &quot;x&quot; || &quot;y&quot; || &quot;z&quot;</span>
+<span class="cm">    Negation            [^xyz]      &quot;kein &quot;x&quot;, &quot;y&quot; oder &quot;z&quot;</span>
+<span class="cm">    Bereich             [a-zA-Z]    alle Zeichen im Bereich a-z und A-Z</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/[0-9][0-9][0-9]/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica4567&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;1234567890&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+
+<span class="cm">/*</span>
+<span class="cm">    vordefinierte Zeichenklassen</span>
+
+<span class="cm">    \w      Wortzeichen         =&gt; ersetzt [a-zA-Z]</span>
+<span class="cm">    \W      kein Wortzeichen</span>
+<span class="cm">    \s      Leerzeichen</span>
+<span class="cm">    \S      kein Leerzeichen</span>
+<span class="cm">    \d      Ziffer 0-9          =&gt; ersetzt [0-9]</span>
+<span class="cm">    \D      keine Ziffer</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/[A-Z]\w\w\w\w\w\w\s[A-Z]\w\w/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Luke Cage&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// true</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Position / Begrenzung</span>
+
+<span class="cm">    ^       Anfang einer Zeichenkette (Muster muss am Anfang der Zeichenkette stehen)</span>
+<span class="cm">    $       Ende einer Zeichenkette (Muster muss am Ende der Zeichenkette stehen)</span>
+<span class="cm">    \b      Wortgrenze (Muster muss am Anfang oder Ende eines Wortes stehen)</span>
+<span class="cm">    \B      keine Wortgrenze (Muster muss sich innerhalb eines Wortes befinden)</span>
+
+<span class="cm">    wenn Suchmuster und String komplett übereinstimmen sollen ^ und $ setzen (/^...$/)</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^J/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Luke Jones&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;  Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/[.]png$/</span><span class="p">;</span><span class="w">  </span><span class="c1">// oder /\.png$/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp5</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.png&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp5</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.png.jpg&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^J\w\w\w\w$/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessi&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jo&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\bess\b/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp7</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp7</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Ich ess Blumen&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\bEs\B/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp8</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Er Sie Es&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp8</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Essig Essenz&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\Bess\B/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp9</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Ich ess Blumen&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp9</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+
+
+<span class="cm">/*</span>
+<span class="cm">    Quantifizierer</span>
+
+<span class="cm">    Definieren wie oft Zeichen oder Zeichenklasse im String vorkommt,</span>
+<span class="cm">    damit er von der RegExp akzeptiert wird</span>
+
+<span class="cm">    Stehen hinter Zeichen / Zeichenklasse</span>
+
+<span class="cm">    ?       - kann einmal vorkommen oder nicht vorkommen</span>
+<span class="cm">    *       - kann beliebig oft oder nicht vorkommen</span>
+<span class="cm">    +       - muss mindestens ein Mal vorkommen</span>
+<span class="cm">    {n}     - muss genau n Mal vorkommen</span>
+<span class="cm">    {n,}    - muss mindestens n Mal vorkommen</span>
+<span class="cm">    {n,z}   - muss zwischen n und z Mal vorkommen</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\.jpe?g$/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.jpeg&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.jpg&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.jpdg&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/abc*d/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abcccccccccccd&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abed&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp12</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\s+/</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica                 Jones&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;JessicaJones&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+
+
+<span class="cm">/*</span>
+<span class="cm">    Flags</span>
+
+<span class="cm">    g       global          - alle Vorkommen ermitteln</span>
+<span class="cm">    i       insensitive     - case-insensitive arbeiten</span>
+<span class="cm">    m       multiline       - auf mehrere Zeilen anwenden (bei mehrzeiligem String)</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp13</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^multi/m</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp13</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;single\nmulti&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+
+<span class="cm">/*</span>
+<span class="cm">    [RegExp].exec()</span>
+
+<span class="cm">    Rückgabe:</span>
+<span class="cm">        - Array mit</span>
+<span class="cm">            1. Zeichenkette, die auf RegExp passt</span>
+<span class="cm">            2. index:   index-Position</span>
+<span class="cm">            3. input    durchsuchter String</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Entdecke Sie bei Eduscho neben Kaffee und Reisen auch &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="s2">&quot;Toilettenpapier, Öl und Mehl, Eduscho - den lob ich mir!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">oldBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/Eduscho/g</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldBrand</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">desc</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span><span class="w">        </span><span class="c1">// nur erstes Match, trotz global flag (g)</span>
+
+<span class="c1">// zum Ermitteln aller Matches muss exec() erneut ausgeführt werden</span>
+<span class="c1">// durch das global-Flag (g) wird die aktuelle Position der Prüfung gemerkt</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">// output != null</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;an index-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">index</span><span class="p">);</span><span class="w">  </span><span class="c1">// 17 + 84</span>
+<span class="w">    </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldBrand</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">desc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// oder kürzer</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newOutput</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">newOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldBrand</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">desc</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newOutput</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;an Index-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">newOutput</span><span class="p">.</span><span class="nx">index</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Gruppierungen</span>
+
+<span class="cm">    um im Fund auf Bestandteile des Fundes, die wir als Gruppe definiert</span>
+<span class="cm">    haben, zugreifen</span>
+
+<span class="cm">    werden in () definiert</span>
+
+<span class="cm">    Vorteil: können im Rückgabe-Array von exec leichter auf Gruppen zugreifen</span>
+
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp14</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(\d{4})-(\d{2})-(\d{2})/</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2024-12-10 11:52:00&quot;</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regExp14</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">    </span><span class="c1">// Array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w">     </span><span class="c1">// 2024-12-10   --&gt; alle Gruppen (gesamtes Match)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">     </span><span class="c1">// 2024     --&gt; erste Gruppe</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span><span class="w">     </span><span class="c1">// 12       --&gt; zweite Gruppe</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">[</span><span class="mf">3</span><span class="p">]);</span><span class="w">     </span><span class="c1">// 10       --&gt; dritte Gruppe</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">index</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">result</span><span class="p">[</span><span class="mf">3</span><span class="p">]</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">result</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">result</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w">  </span><span class="c1">// 10.12.2024</span>
+
+<span class="c1">// Keys für Gruppen-Matches definieren --&gt; (?&lt;key_name&gt;expression)</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp15</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})/</span><span class="p">;</span>
+
+<span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regExp15</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">groups</span><span class="p">.</span><span class="nx">year</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w">   </span><span class="c1">// 2024</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">groups</span><span class="p">.</span><span class="nx">day</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">groups</span><span class="p">.</span><span class="nx">month</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">groups</span><span class="p">.</span><span class="nx">year</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_15.html" class="btn btn-neutral float-left" title="Timing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_17.html" class="btn btn-neutral float-right" title="Arrow-Function" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

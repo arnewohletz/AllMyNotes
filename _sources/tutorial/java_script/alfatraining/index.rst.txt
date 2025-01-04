@@ -28,3 +28,20 @@ JavaScript (alfatraining)
     day_06.rst
     day_07.rst
     day_08.rst
+    day_09.rst
+    day_10.rst
+    day_11.rst
+    day_12.rst
+    day_13.rst
+    day_14.rst
+    day_15.rst
+    day_16.rst
+    day_17.rst
+    day_18.rst
+    day_19.rst
+    day_20.rst
+    day_21.rst
+    day_22.rst
+    day_23.rst
+    day_24.rst
+    day_25.rst

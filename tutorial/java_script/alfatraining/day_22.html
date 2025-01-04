@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-Routing &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Event-Emitter" href="day_23.html" />
+    <link rel="prev" title="Node.JS" href="day_21.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Post-Routing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_22.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="post-routing">
+<h1>Post-Routing<a class="headerlink" href="#post-routing" title="Link to this heading"></a></h1>
+<p>siehe <code class="docutils literal notranslate"><span class="pre">Tag_22/NodeJS/05</span> <span class="pre">express-server_body_parser/</span></code>.</p>
+</section>
+<section id="promise">
+<h1>Promise<a class="headerlink" href="#promise" title="Link to this heading"></a></h1>
+<p>siehe <code class="docutils literal notranslate"><span class="pre">Tag_22/NodeJS/06</span> <span class="pre">Promise</span></code>.</p>
+</section>
+<section id="fetch-api">
+<h1>Fetch API<a class="headerlink" href="#fetch-api" title="Link to this heading"></a></h1>
+<p>siehe <code class="docutils literal notranslate"><span class="pre">Tag_22/NodeJS/07-1-Fetch</span> <span class="pre">API</span></code>.</p>
+<p>Über AJAX neue Daten nachladen: siehe <code class="docutils literal notranslate"><span class="pre">Tag_22/07-2-Fetch</span> <span class="pre">API</span></code>.</p>
+</section>
+<section id="ejs-template-engine">
+<h1>EJS Template Engine<a class="headerlink" href="#ejs-template-engine" title="Link to this heading"></a></h1>
+<p>EJS … Embedded JS –&gt; <a class="reference external" href="https://ejs.co/">https://ejs.co/</a></p>
+<p>Template enthält Platzhalter. Jede konkrete Seite aus diesem Template füllt diese
+Platzhalter mit konkreten Daten.</p>
+<p>siehe <code class="docutils literal notranslate"><span class="pre">Tag_22/NodeJS/08</span> <span class="pre">ejs-template-engine</span></code></p>
+</section>
+<section id="arbeiten-mit-datenbanken">
+<h1>Arbeiten mit Datenbanken<a class="headerlink" href="#arbeiten-mit-datenbanken" title="Link to this heading"></a></h1>
+<p>Hier: SQLite  (nicht für den Produktiv-Betrieb gedacht, sondern für Entwicklung)
+-&gt; kann später leicht auf Produktivdatenbank (wie MySQL) umstellbar</p>
+<p>Sequelize ist eine ORM, über die mit einer Datenbank interagiert werden kann:
+<a class="reference external" href="https://sequelize.org/">https://sequelize.org/</a></p>
+<p>siehe <code class="docutils literal notranslate"><span class="pre">Tag_22/NodeJS/09</span> <span class="pre">Sequelize</span></code></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_21.html" class="btn btn-neutral float-left" title="Node.JS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_23.html" class="btn btn-neutral float-right" title="Event-Emitter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

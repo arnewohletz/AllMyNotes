@@ -1,0 +1,662 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jQuery &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Durch DOM navigieren" href="day_14.html" />
+    <link rel="prev" title="Datenübertragung an Server" href="day_12.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">jQuery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selektoren">Selektoren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aufruf-von-jquery-funktionen">Aufruf von jQuery Funktionen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auf-html-attribute-zugreifen">Auf HTML-Attribute zugreifen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selektion-eingrenzen">Selektion eingrenzen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elemente-oder-dom-strings-im-dom-integrieren">Elemente oder DOM-Strings im DOM integrieren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-styles-setzen-auslesen">Inline-Styles setzen &amp; auslesen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#element-klassen">Element-Klassen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effekte">Effekte</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eigene-effekte-erzeugen">Eigene Effekte erzeugen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">jQuery</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_13.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jquery">
+<h1>jQuery<a class="headerlink" href="#jquery" title="Link to this heading"></a></h1>
+<p>Bibliothek für JavaScript zur Vereinfachung (nutzt selbst JavaScript).
+Mittlerweile durch Aufgreifen in ES6 immer weniger im Einsatz. Der Einsatz von
+jQuery schafft viele Möglichkeiten, geht aber zu Lasten der Performance. Es
+muss stets die gesamte Library geladen werden, obwohl meistens nur kleine Teile
+der Bibliothek verwendet wird.</p>
+<p>Es konnte sogar fertige Programme (Plugins) in ein JavaScript eingefügt werden.
+Möglichkeit, diese ohne viel Aufwand einzusetzen. Es gab jedoch Inkompatibilitäten,
+wenn mehrere Plugins gleichzeitig verwendet wurden.</p>
+<p>jQuery besteht rein aus Funktionen welche Objekte zurückgeben. Die Aufrufe lassen
+sich verketten.</p>
+<p><code class="docutils literal notranslate"><span class="pre">*.min.js</span></code> ist eine minimierte Version der Bibliothek, die vom Browser schneller
+zu Laden ist. jQuery arbeitet im <strong>strikten Modus</strong>, <code class="docutils literal notranslate"><span class="pre">&quot;use</span> <span class="pre">strict&quot;</span></code> muss also
+beim Einsatz also nicht mehr selbst angegeben werden (gilt global).</p>
+<p>jQuery ist <strong>abwärtskompatibel</strong>, man versucht also auch ältere JavaScript
+Versionen unterstützen (man sieht daher oft ältere Syntax z.B. <code class="docutils literal notranslate"><span class="pre">var</span></code> im Code).</p>
+<p>Integration von jQuery in HTML:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- ... --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./libs/jquery-3.7.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>jQuery sollte <strong>nicht</strong> innerhalb des <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> geladen werden, sondern stets
+im <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>jQuery sollte stets auf dem eigenen Server liegen und nicht von einem
+externen Server geladen werden. Generell sollten alle externen Bibliotheken
+stets auf dem eigenen Server bereitgestellt werden, damit keine Zugriffe
+auf Bibliotheksseiten und Verletzung des Datenschutzes passieren (oder, falls
+dies nicht möglich ist, sollte der Nutzer zuerst um Erlaubnis gefragt werden).</p>
+</div>
+<section id="selektoren">
+<h2>Selektoren<a class="headerlink" href="#selektoren" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jQuery()</span></code></p></li>
+</ul>
+<p>Beide arbeiten gleich, jedoch ist das <code class="docutils literal notranslate"><span class="pre">$</span></code> häufig von anderen Frameworks bereits
+in Verwendung und erzeugt einen Konflikt bei dem Versuch der Mehrfachverwendung.</p>
+<p>Der <strong>konfliktlose Modus</strong> ermöglicht über</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">jQuery</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>dass das Dollarzeichen <strong>nicht</strong> mehr eingesetzt werden kann.</p>
+</section>
+<section id="aufruf-von-jquery-funktionen">
+<h2>Aufruf von jQuery Funktionen<a class="headerlink" href="#aufruf-von-jquery-funktionen" title="Link to this heading"></a></h2>
+<p>Wird jQuery eingesetzt, muss sich der JS-Code innerhalb einer jQuery Funktion
+befinden.</p>
+<p><strong>Alter Weg</strong> (vor HTML 5): einleitender Handler, der darauf wartet, dass DOM fertig geladen</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">jQuery</span><span class="o">-</span><span class="nx">Statements</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Neuer Weg:</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">jQuery</span><span class="p">(</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Beispiel (über <code class="docutils literal notranslate"><span class="pre">$()</span></code>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_llink&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">));</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Elemente werden in einem “jQuery”-Objekt zurückgegeben.</p>
+</section>
+<section id="auf-html-attribute-zugreifen">
+<h2>Auf HTML-Attribute zugreifen<a class="headerlink" href="#auf-html-attribute-zugreifen" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].attr()</span></code> lässt sich auf ein Attribut eines HTML Elements zugreifen.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Der Rückgabewert eines Queries ist ein Object, welcher potentiell mehrere
+dem Query zutreffende HTML Elemente enthalten könnte. Die selektierten
+Elementen befinden mit nummerierten String Keys in (“0”, “1”, … - das erste
+Match hat die “0”). Beim Zugriff über <code class="docutils literal notranslate"><span class="pre">[0]</span></code> wird die Zahl in einen String
+implizit umgewandelt und auf das Element zugegriffen.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_llink&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// das Objekt wird zurückgegeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">]);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// auf HTML-Attribute zugreifen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Attribut ausgeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ab jetzt mit jQuery&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Attribut setzen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span>
+
+<span class="c1">// mehrere Attribute gleichzeitig verändern</span>
+<span class="w">    </span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;jQuery&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">href</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https:/jquery.com&quot;</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].removeAttr()</span></code> wird ein Attribut entfernt:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Attribute entfernen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Selektion wird im Objekt zurückgegeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].html()</span></code> wird auf den HTML-Inhalt (inkl. Markups) eines Elements
+zugegriffen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zugriff auf Content</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contentH1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
+
+<span class="c1">// lesend wird NUR Content des 1. selektierten Elements zurückgegeben</span>
+<span class="c1">// es hat sich erwiesen das mehr i.d.R. nicht gebraucht wird</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contentP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// Hey</span>
+
+<span class="c1">// Beim Schreiben werden ALLE selektierten Elemente überschrieben</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; Hey</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// alle p-Elemente --&gt; Hey</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Die <strong>jQuery-Methoden sind auf Ebene des Objekts</strong>, nicht auf den Elementen
+innerhalb des Objekts. Sind mehrere Elemente im Objekt, werden diese in jQuery
+in einer Schleife durchlaufen –&gt; es bedarf keiner Schleife in JavaScript
+um z.B. alle Elemente zu überschreiben.</p>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].text()</span></code> wird auf den HTML-Text (ohne Markups) eines Elements
+zugegriffen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Content ohne Markups</span>
+<span class="c1">// lesend werden ALLE selektierten Elements zurückgegeben (im Gegensatz zu .html())</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;&lt;b&gt;Content ohne Markups&lt;(p&gt;&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span>
+
+<span class="c1">// ebenso schreibend!</span>
+</pre></div>
+</div>
+</section>
+<section id="selektion-eingrenzen">
+<h2>Selektion eingrenzen<a class="headerlink" href="#selektion-eingrenzen" title="Link to this heading"></a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>Ältere jQuery-Versionen</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:first          1. Element
+:last           letztes Element
+:even           alle Elemente an geraden index-Positionen
+:odd            alle Element an ungerade index-Positionen
+:eq(index)      Element an übergebener index-Position
+:lt(index)      Elemente mit niedrigeren als übergebener index-Position
+:gt(index)      Elemente mit höherer als übergebener index-Position
+
+:nth-of-type(position)      Element an Position index + 1
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">$(&quot;&lt;tag&gt;:&lt;Eingrenzung&gt;&quot;)</span></code> lässt sich die Selektion eingrenzen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Selektion eingrenzen</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p:first&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p:first&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<p>Mittlerweile bietet jQuery Selektions-Methoden.</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].first()</span></code> lässt sich nur das erste Element im Objekt ausgeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].last()</span></code> lässt sich nur das letzte Element im Objekt ausgeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">last</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].eq(index)</span></code> wird Element an index-Position zurückgegeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].even(index)</span></code> werden alle Elemente an geraden index-Position zurückgegeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">even</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].odd(index)</span></code> werden alle Elemente an ungeraden index-Position zurückgegeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">odd</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].&lt;some_selector&gt;.end()</span></code> wird eine Unterselektion aufgehoben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].has(selector)</span></code> werden nur die Elemente einer Selektion zurückgegeben,
+welche einem weiteren Selektor entsprechen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt li-Elemente zurück, welche ul-Kinder haben</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].filter(selector)</span></code> lassen sich die Elemente im Objekt filtern:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;.firstElement&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].not(selector)</span></code> lassen sich Elemente filtern, welche das Kriterium
+<strong>nicht</strong> erfüllen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">not</span><span class="p">(</span><span class="s2">&quot;.firstElement&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].slice(startIndex,</span> <span class="pre">endIndex)</span></code> wird ein Objekt zurückgegeben welches
+nur ein Teil der ursprünglichen Menge an Elementen hat. Der <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> ist
+in der Rückgabe <strong>nicht</strong> enthalten:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">4</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="elemente-oder-dom-strings-im-dom-integrieren">
+<h2>Elemente oder DOM-Strings im DOM integrieren<a class="headerlink" href="#elemente-oder-dom-strings-im-dom-integrieren" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].&lt;INTEGRATION_METHOD&gt;</span></code> wird ein weiteres HTML-Element an einer Stelle
+in <strong>allen</strong> Elementen im Objekt angewandt:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.before()</span></code>: Das Element wird außerhalb des Elements <strong>vor</strong> das selektierte Element gestellt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.prepend()</span></code>: Das Element wird an den Anfang des selektierten Element gestellt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>: Das Element wird an das Ende des selektierten Element gestellt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.after()</span></code>: Das Element wird außerhalb des Elements <strong>nach</strong> das selektierte Element gestellt</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Elemente || DOM-Strings im DOM integrieren</span>
+<span class="c1">// Hint: Methoden werden auf ALLE Elemente im Objekt angewandt!</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.element&quot;</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;before Text&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;prepend Text&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;append Text&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;after Text&lt;/p&gt;&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="inline-styles-setzen-auslesen">
+<h2>Inline-Styles setzen &amp; auslesen<a class="headerlink" href="#inline-styles-setzen-auslesen" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].css(&quot;some-style&quot;)</span></code> können Inline-Styles aus dem <strong>ERSTEN</strong> Element
+im Objekt ausgelesen werden. Wenn ein expliziter Style dafür vorliegt, wird dieser
+zurückgegeben, ansonsten der berechnete Style.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Style des 1. Elementes wird ermittelt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;font-size&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;16px&quot;</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].css(&quot;some-style&quot;,</span> <span class="pre">&quot;some-value&quot;)</span></code> wird ein Inline-Style an <strong>ALLE</strong>
+Elemente im Objekts zugewiesen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Einen Style setzen</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// rgb(0, 0, 255)&quot;</span>
+
+<span class="c1">// Mehrere Styles setzen</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;font-size&quot;</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;20px&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w">            </span><span class="s2">&quot;10px 20px&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">border</span><span class="o">:</span><span class="w">             </span><span class="s2">&quot;1px solid green&quot;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="element-klassen">
+<h2>Element-Klassen<a class="headerlink" href="#element-klassen" title="Link to this heading"></a></h2>
+<p>Alle unten stehende Methoden (bis auf <code class="docutils literal notranslate"><span class="pre">hasClass()</span></code>) geben das neue Objekt zurück.</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].addClass()</span></code> lassen sich auf <strong>alle</strong> Elemente im Objekt ein
+weiterer Klassennamen anfügen (arbeitetet im Hintergrund mit <code class="docutils literal notranslate"><span class="pre">classList.add()</span></code>).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].removeClass()</span></code> wird ein Klassennamen für <strong>alle</strong> Elemente im Objekt
+entfernen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].toggleClass()</span></code> wird ein Klassennamen für <strong>alle</strong> Elemente im Objekt
+falls nicht vorhanden, hinzugefügt, ansonsten entfernt:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].hasClass()</span></code> wird je Element im Objekt <strong>ein Boolean</strong> zurückgegeben,
+welcher besagt ob dieses Element eine Klasse hat oder nicht (jQuery handelt die
+Schleife):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">))</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Hier wird für alle p-Elemente ermittelt ob sie die Klasse <code class="docutils literal notranslate"><span class="pre">&quot;fehler&quot;</span></code> haben.
+Falls ja, wird diese über <code class="docutils literal notranslate"><span class="pre">toggleClass()</span></code> entfernt.</p>
+</section>
+<section id="events">
+<h2>Events<a class="headerlink" href="#events" title="Link to this heading"></a></h2>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].on(&quot;event&quot;,</span> <span class="pre">function)</span></code> wird ein Event-Listener registriert.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Da hat was geklickt!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Event-Handler werden NICHT überschreiben (wirkungslos)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Da hat doch wirklich was geklickt!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Früher gab es <code class="docutils literal notranslate"><span class="pre">mouseover</span></code> und <code class="docutils literal notranslate"><span class="pre">mouseout</span></code>, statt der neueren <code class="docutils literal notranslate"><span class="pre">on</span></code> Funktion.</p>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].off(&quot;event&quot;)</span></code> werden <strong>alle</strong> Event-Listener, welche auf diesem
+Event registrieren, entfernt (de-registriert).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Bei JavaScript ist das nicht möglich, weil hier eine Referenz auf das Element
+mit übergeben werden muss. Bei jQuery verzichtet man auf diese Referenz und
+wendet die De-Registrierung auf alle Elemente im Objekt an.</p>
+</div>
+<p>Um auf <code class="docutils literal notranslate"><span class="pre">this</span></code> zuzugreifen, muss es zunächst in ein Objekt überführt werden
+(über <code class="docutils literal notranslate"><span class="pre">$(this)</span></code>), um mit jQuery-Methoden zu arbeiten:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/2.jpg&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseout&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/1.jpg&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Verkettung von jQuery-Methoden</strong></p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">on</span></code> Methode liefert abermals das veränderte Objekt zurück, so dass direkt
+mit dieser Selektion weitergearbeitet werden kann:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/2.jpg&quot;</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseout&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/1.jpg&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="effekte">
+<h2>Effekte<a class="headerlink" href="#effekte" title="Link to this heading"></a></h2>
+<p>Effekte werden innerhalb einer Funktion eines Event-Listerners definiert.</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].hide()</span></code> Methode lässt sich ein Element ausblenden:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bild-ausblenden&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// deaktivieren des Standard-Verhaltens (springt zum Seitenstart)</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Es lässt sich ein Argument in <code class="docutils literal notranslate"><span class="pre">hide()</span></code> übergeben, welcher die Geschwindigkeit
+des Ausblendens regelt (gleiches gilt für <code class="docutils literal notranslate"><span class="pre">show()</span></code>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span><span class="w">  </span><span class="c1">// sofortiges Ausblenden (&quot;kein Effekt&quot;)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">&quot;fast&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// schnelles Ausblenden</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// langsames Ausblenden</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="mf">5000</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5000 ms</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].show()</span></code> Methode lässt sich ein Element ausblenden:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bild-einblenden&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// deaktivieren des Standard-Verhaltens (springt zum Seitenstart)</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Weitere Effekte: fadeIn(), fadeOut(), slideUp(), slideDown()</p>
+<section id="eigene-effekte-erzeugen">
+<h3>Eigene Effekte erzeugen<a class="headerlink" href="#eigene-effekte-erzeugen" title="Link to this heading"></a></h3>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].animate(object,</span> <span class="pre">time)</span></code> wird definiert, wie das Objekt am Ende des
+Effekts aussehen soll. Vom derzeitigen Zustand wird der Übergang von jQuery berechnet.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#animate&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">width</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;450px&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">fontSize</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;4em&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">opacity</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;50%&quot;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2500</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Dieser Effekt wendet mehrere CSS-Styles auf die Elemente an, innerhalb einer Zeit
+von 2500 ms.</p>
+<p>Über Style-Objekte lassen sich ebenfalls Animationen definieren. Hier wird das
+Objekt aus dem sichtbaren Bereich entfernt und innerhalb von 5 Sekunden von links
+in den sichtbaren Bereich verschoben.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">styleStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w">           </span><span class="s2">&quot;relative&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">left</span><span class="o">:</span><span class="w">               </span><span class="s2">&quot;-2000px&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">opacity</span><span class="o">:</span><span class="w">            </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">color</span><span class="o">:</span><span class="w">              </span><span class="s2">&quot;#fff&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w">            </span><span class="s2">&quot;10px 20px&quot;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styleEnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">left</span><span class="o">:</span><span class="w">               </span><span class="mf">0</span><span class="p">,</span><span class="w">  </span><span class="c1">// &quot;0px&quot;</span>
+<span class="w">    </span><span class="nx">opacity</span><span class="o">:</span><span class="w">            </span><span class="mf">1</span>
+<span class="p">};</span>
+
+<span class="c1">// Start and End in one line</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.element&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="nx">styleStart</span><span class="p">).</span><span class="nx">animate</span><span class="p">(</span><span class="nx">styleEnd</span><span class="p">,</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_12.html" class="btn btn-neutral float-left" title="Datenübertragung an Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_14.html" class="btn btn-neutral float-right" title="Durch DOM navigieren" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

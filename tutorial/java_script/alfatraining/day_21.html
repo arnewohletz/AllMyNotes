@@ -1,0 +1,666 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Node.JS &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Post-Routing" href="day_22.html" />
+    <link rel="prev" title="Datenstrukturen Map und Set" href="day_20.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Node.JS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gleichzeitige-ausfuhrung">Gleichzeitige Ausführung</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#javascript-bevorzugt-asynchrone-programmierung">JavaScript bevorzugt asynchrone Programmierung</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multithreading">Multithreading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#node-standardbibliothek">Node-Standardbibliothek</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#beispiel-fs-modul">Beispiel: fs-Modul</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#npm">npm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eigene-module-schreiben">Eigene Module schreiben</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vom-modul-zum-npm-paket">Vom Modul zum npm-Paket</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#der-eigene-server">Der eigene Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#express">Express</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#routing">Routing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#middleware">Middleware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Node.JS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_21.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="node-js">
+<h1>Node.JS<a class="headerlink" href="#node-js" title="Link to this heading"></a></h1>
+<p>Datei ausführen:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>node &lt;dateiname&gt;
+</pre></div>
+</div>
+<p>Öffne Node.js REPL (read eval print loop):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>node
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>können hier JS-Code eingeben, der direkt ausgeführt wird, ähnlich wie
+in Entwicklerkonsolen der Webbrowser</p></li>
+<li><p>REPL verlassen durch Eingabe von .exit</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>mit <code class="docutils literal notranslate"><span class="pre">require(…)</span></code> importiert Node.js Module</p>
+</div>
+<section id="gleichzeitige-ausfuhrung">
+<h2>Gleichzeitige Ausführung<a class="headerlink" href="#gleichzeitige-ausfuhrung" title="Link to this heading"></a></h2>
+<p>Node.js versucht jede Anweisung so schnell wie möglich auszuführen.
+Programm enthält aber auch viele Anweisungen, die langsam sind (bsw. Einlesen
+einer Datei). Bei synchronen Methoden laufen im Hintergrund Anweisungen, die
+warten müssen</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>d.h. Anweisung blockiert weitere Ausführung des Programms</p></li>
+<li><p>Programm läuft nicht 100% effizient, wenn es dauernd warten muss</p></li>
+<li><p>und wenn noch weitere Dateien eingelesen werden sollen…</p></li>
+</ul>
+</div></blockquote>
+<p>Um möglichst effizient zu arbeiten, sollte Programm sofort damit beginnen.
+In der Informatik zwei gibt Ansätze, die Problem lösen:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asynchrone Programmierung und</p></li>
+<li><p>Multithreading</p></li>
+</ul>
+</div></blockquote>
+<section id="javascript-bevorzugt-asynchrone-programmierung">
+<h3>JavaScript bevorzugt asynchrone Programmierung<a class="headerlink" href="#javascript-bevorzugt-asynchrone-programmierung" title="Link to this heading"></a></h3>
+<p>Dabei wird einer Anweisung Code mitgegeben, der ausgeführt werden soll,
+sobald Anweisung das gewünschte Ergebnis erhalten hat. Mitgegebener Code wird
+also asynchron »irgendwann später« ausgeführt JavaScript-Programm läuft
+immer in einem einzelnen Thread ab. Callbacks kommen in Reihenfolge ihres
+Auftretens in Warteschlange -  werden erst ausgeführt, wenn nichts weiteres
+zu tun ist.</p>
+</section>
+<section id="multithreading">
+<h3>Multithreading<a class="headerlink" href="#multithreading" title="Link to this heading"></a></h3>
+<p>Alternative zu asynchroner Programmierung nutzt Tatsache, dass moderne
+Betriebssysteme mehrere Dinge gleichzeitig machen können (Multitasking).
+Programm startet einfach weiteren »Neben-Task«, der sich im Hintergrund um
+möglicherweise langsame, blockierende Anweisung kümmert. Technisch wird dieser
+»Neben-Task« meist als sogenannter Thread implementiert – man spricht von
+Multithreading. Die Kunst besteht darin, Threads korrekt zu koordinieren
+wenn mehrere Threads dieselben Variablen gleichzeitig (oder zeitlich
+verschränkt) unkoordiniert verändern, führt das zu Fehlern, die sehr schwer zu
+finden sind. Selbst dort, wo Einlesen der Datei unabhängig von Berechnung ist,
+könnte Lösung mit Multithreading-Ansatz problematisch sein. Reihenfolge der
+Ausgabe könnte sich willkürlich ändern, je nachdem, ob Haupt-Thread oder
+Neben-Thread schneller war Programm reagiert nicht mehr vorhersehbar und kann
+nicht zuverlässig getestet werden. Asynchroner Ansatz in dieser Hinsicht robuster!</p>
+</section>
+</section>
+<section id="node-standardbibliothek">
+<h2>Node-Standardbibliothek<a class="headerlink" href="#node-standardbibliothek" title="Link to this heading"></a></h2>
+<p>Bibliothek definiert gut dokumentierte Schnittstelle (engl. interface) mit
+Angaben zu Funktionsaufrufen. So eine Schnittstelle wird häufig API (engl.
+application programming interface) genannt.</p>
+<p>Standard-Module (Auswahl):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Modul</p></th>
+<th class="head"><p>Zweck</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>buffer</p></td>
+<td><p>Buffer</p></td>
+</tr>
+<tr class="row-odd"><td><p>console</p></td>
+<td><p>Ausgabe/Debugging in die Eingabeaufforderung (z.B.console.log(…))</p></td>
+</tr>
+<tr class="row-even"><td><p>crypto</p></td>
+<td><p>Kryptographie</p></td>
+</tr>
+<tr class="row-odd"><td><p>fs</p></td>
+<td><p>Dateisystemzugriff</p></td>
+</tr>
+<tr class="row-even"><td><p>os</p></td>
+<td><p>Interaktion mit dem Betriebssystem</p></td>
+</tr>
+<tr class="row-odd"><td><p>stream</p></td>
+<td><p>Datenströme</p></td>
+</tr>
+<tr class="row-even"><td><p>zlib</p></td>
+<td><p>Datenkomprimierung</p></td>
+</tr>
+</tbody>
+</table>
+<p>jedes Modul hat Stabilitätswert:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>beschreibt Stabilität der Schnittstelle</p></li>
+<li><p>Bereich geht von 0 (sehr instabil) zu 3 (sehr stabil)</p></li>
+</ul>
+</div></blockquote>
+<p>Module mit Werten 2-3 ruhig verwenden ohne Angst zu haben, dass zukünftige
+Version der Standardbibliothek die Schnittstelle so ändert, dass Code nicht
+mehr funktioniert.</p>
+<p><strong>Buffer</strong> = beliebige Folge von Bytes
+Unterschied zu Strings: Strings enthalten druckbare Bytes (also Zeichen), die
+bestimmtem Encoding folgen (bsw. UTF8) Buffer enthalten beliebige Daten:
+gzip-komprimierte Daten, Bilder, Messdaten eines Sensors oder …</p>
+<p><strong>Stream-API</strong> ist sehr komfortabel</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>pipe(…)-Funktion erlaubt es, Streams zu verbinden (daher der Name
+»pipe«, englisch für Röhre)</p></li>
+<li><p>Eingabestrom wird damit an Ausgabestrom angesteckt und pipe(…) kümmert
+sich darum, benötigte Callbacks zu erstellen</p></li>
+</ul>
+</div></blockquote>
+<section id="beispiel-fs-modul">
+<h3>Beispiel: fs-Modul<a class="headerlink" href="#beispiel-fs-modul" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://nodejs.org/docs/latest/api/fs.html#file-system">https://nodejs.org/docs/latest/api/fs.html#file-system</a></p>
+<ul class="simple">
+<li><p>Beinhaltet etwa 100 Funktionen</p></li>
+<li><p>Name steht für Dateisystem (engl.filesystem)</p></li>
+<li><p>Modul enthält Funktionen zum Umgang mit Dateien - bsw. Funktion fs.readFileSync(…)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">fs.readFileSync(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>liest eine Datei ein (blockierende Variante)</p></li>
+<li><p>Beispiel:  const data = fs.readFileSync(“products.csv”, “UTF8”);</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fs.readFile(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>liest eine Datei ein (asynchrone Variante)</p></li>
+<li><p>Beispiel:  const data = fs.readFile( “products.csv”, “UTF8”, (error, data) =&gt; console.log(data) );</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fs.writeFileSync(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>schreibt Daten in eine Datei (blockierende Variante)</p></li>
+<li><p>bereits vorhandene Daten werden überschrieben</p></li>
+</ul>
+<p>Beispiel:</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fs.writeFile(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>schreibt Daten in eine Datei (asynchrone Variante)</p></li>
+<li><p>bereits vorhandene Daten werden überschrieben</p></li>
+</ul>
+<p>Beispiel:</p>
+</div></blockquote>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;UTF8&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">fs.statSync(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ermittelt Infos zur Datei (blockierende Variante)</p></li>
+</ul>
+<p>Beispiel:</p>
+</div></blockquote>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">statSync</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; size in bytes</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">fs.stat(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ermittelt Infos zur Datei (asynchrone Variante)</p></li>
+<li><p>Beispiel:  fs.stat(“hello.txt”,  (error, stats) =&gt; console.log(stats.size) ); // =&gt; size in bytes</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fs.unlinkSync(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>löscht eine Datei (blockierende Variante)</p></li>
+<li><p>Beispiel:  fs.unlinkSync(“hello.txt”);</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fs.unlink(…)</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>löscht eine Datei (asynchrone Variante)</p></li>
+<li><p>Beispiel:  fs.unlink(“hello.txt”, error =&gt; { if (error) console.log(“Error: “ + error);});</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="npm">
+<h2>npm<a class="headerlink" href="#npm" title="Link to this heading"></a></h2>
+<p>Sammlung von Modulen für node.js auf <a class="reference external" href="http://www.npmjs.com">http://www.npmjs.com</a>
+Die meisten Module sind unter freizügigen Open Source-Lizenz verfügbar - dürfen
+diese Module somit uneingeschränkt einsetzen.</p>
+<p>Validator-Modul (<a class="reference external" href="https://www.npmjs.com/package/validator">https://www.npmjs.com/package/validator</a>)
+Kann Daten aller Art validieren (Zahlen in verschiedenen Formaten, komplexere Daten,
+wie Datumsangaben, Kreditkartennummern oder ISBNs).</p>
+<p>validator-Modul mit npm installieren:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>npm install validator@12
+</pre></div>
+</div>
+<p>Weist npm an, neueste Version des validator-Moduls mit Hauptversion 12 zu installieren.
+Ohne Angabe <code class="docutils literal notranslate"><span class="pre">&#64;12</span></code> würde npm einfach neueste Version installieren.
+Meist besser an einer Hauptversion festzuhalten, da sich Teile eines Moduls in
+zukünftigen Hauptversionen ändern können - evtl. gibt es bestimmte Modulfunktion
+in Folgeversion nicht mehr.</p>
+<p>Node.JS Module müssen mit Semantic Versioning benannt sein (<a class="reference external" href="http://semver.org/">http://semver.org/</a>).</p>
+<p><strong>Module für eigene Projekte</strong></p>
+<p>Installierte Module sollten als Abhängigkeit im Projekt eingebracht werden.
+Nicht besonders praktisch, Module vorzuinstallieren und zusammen mit Software zu
+veröffentlichen wäre z.B. mühsam, Module aktuell zu halten. außerdem nicht
+garantiert, dass npm beim Installieren nicht gewisse Schritte ausführt, die
+vom Betriebssystem abhängen. besser, dem Programm Anweisungen beizulegen, welche
+Module(in welchen Versionen) benötigt werden, um Programm zum Laufen zu bringen.</p>
+<p>Abhängigkeiten in <code class="docutils literal notranslate"><span class="pre">package.json</span></code> Datei listen:</p>
+<p>Wenn package.json im Verzeichnis liegt und im selben Verzeichnis Befehl
+npm install ausgeführt wird, installiert npm automatisch abhängige Module
+(in den richtigen Versionen).</p>
+<p><strong>Anwendungsmöglichkeiten des npm-Befehls</strong></p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">Modul&#64;Version</span></code></p></td>
+<td><p>installiere Modul in der Version</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span> <span class="pre">Modul&#64;Version</span></code></p></td>
+<td><p>entferne Modul in der Version</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span> <span class="pre">Modul</span></code></p></td>
+<td><p>update Modul auf die neueste Version</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">init</span></code></p></td>
+<td><p>erstelle package.json-Datei  (Befehl fragt Eigenschaften ab)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">init</span> <span class="pre">--yes</span></code></p></td>
+<td><p>erstellt eine package.json-Datei  (Befehl setzt Default-Werte)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">list</span></code></p></td>
+<td><p>listet alle installierten Module auf</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">search</span> <span class="pre">Suchbegriff</span></code></p></td>
+<td><p>suche Module</p></td>
+<td><p>deren Name Suchbegriff enthält</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>, <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span></code> und <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span></code> kennen Option –global
+(oder kurz: -g). Mit dieser Option handeln Befehle im Installationsverzeichnis
+von Node.js selbst - Module werden global installiert, entfernt oder aktualisiert
+diese Option mit Vorsicht verwenden - evtl. werden Module von anderen Programmen
+noch gebraucht?</p>
+</div>
+</section>
+<section id="eigene-module-schreiben">
+<h2>Eigene Module schreiben<a class="headerlink" href="#eigene-module-schreiben" title="Link to this heading"></a></h2>
+<p>Sammlung an JavaScript-Funktionen lässt sich einfach in Node.js-Modul verwandeln.
+Funktionen, die dem Aufrufer des Moduls zur Verfügung gestellt werden sollen,
+müssen zu vordefiniertem Objekt mit treffendem Namen exports hinzugefügt werden.
+Modul kann dann mit</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="sb">``</span><span class="nx">require</span><span class="p">(.</span><span class="o">/</span><span class="nx">moduldatei</span><span class="p">.</span><span class="nx">js</span><span class="p">)</span><span class="sb">``</span>
+</pre></div>
+</div>
+<p>eingebunden werden.</p>
+<p>Schreibweise ./moduldatei.js forciert Einbinden des Moduls aus aktuellem Verzeichnis
+bei Zuweisung mit require(…) auch möglich, zu entscheiden, nur auf bestimmte
+Funktion zuzugreifen:</p>
+<section id="vom-modul-zum-npm-paket">
+<h3>Vom Modul zum npm-Paket<a class="headerlink" href="#vom-modul-zum-npm-paket" title="Link to this heading"></a></h3>
+<p>Wenn Modul öfter verwendet oder auf npmjs.com veröffentlicht werden soll, npm-Paket erstellen.</p>
+<p>Dazu Verzeichnis erstellen mit:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Namen des Moduls gefolgt von &#64;-Zeichen und Versionsnummer bsw. <code class="docutils literal notranslate"><span class="pre">namesmodule&#64;0.0.1</span></code></p></li>
+<li><p>dort hinein kommt Code des Moduls sowie eine <code class="docutils literal notranslate"><span class="pre">package.json</span></code>, die Modul beschreibt</p></li>
+</ul>
+</div></blockquote>
+<p>Wichtige Eigenschaft ist “main” - hier wird Einsprungpunkt definiert, also Datei mit
+exports-Definitionen. Modul darf auch aus mehreren Dateien bestehen, gibt aber immer
+genau einen Einsprungpunkt. Die Felder <code class="docutils literal notranslate"><span class="pre">keywords</span></code>, <code class="docutils literal notranslate"><span class="pre">author</span></code> und <code class="docutils literal notranslate"><span class="pre">license</span></code>
+ausfüllen, wenn Modul veröffentlicht werden soll wenn Modul weitere Module benötigt,
+diese über dependencies-Eigenschaft deklarieren.</p>
+<p><strong>Installation über</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>npm install pfad/zum/Modul/modul
+</pre></div>
+</div>
+<p>Darauf achten, dass im Projekt eine <code class="docutils literal notranslate"><span class="pre">package.json</span></code> liegt, um Abhängigkeiten
+automatisch hinzugefügt zu bekommen</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Pfad in <code class="docutils literal notranslate"><span class="pre">package.json</span></code> muss angepasst werden, wenn Modul aus Ordner von
+Rechner installiert wurde - relative Pfade sind nicht erlaubt!</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">npm</span></code> muss am Argument erkennen können, dass es sich um Verzeichnis handelt.
+<code class="docutils literal notranslate"><span class="pre">npm</span></code> geht so vor, dass es im Zweifelsfall probiert, Argument als lokales
+Verzeichnis zu öffnen. Dort sucht es nach <code class="docutils literal notranslate"><span class="pre">package.json</span></code> — falls das nicht
+klappt, wird auf <a class="reference external" href="http://www.npmjs.com">http://www.npmjs.com</a> gesucht.</p>
+<p>Deinstallieren über: <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span> <span class="pre">name_des_moduls</span></code></p>
+<dl class="simple">
+<dt>Wenn wir modul im Ordner ausgeliefert bekommen reicht Dank <code class="docutils literal notranslate"><span class="pre">package.json</span></code></dt><dd><p>ein <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>, um es zu installieren und Anwendung zum Laufen zu bringen.</p>
+</dd>
+</dl>
+<p><strong>npm-Pakete veröffentlichen</strong></p>
+<p>npm macht es leicht, Pakete direkt auf npmjs.com oder eigenem Webserver zu veröffentlichen.</p>
+<p>Dazu npm-Modul-Verzeichnis als TGZ-Datei archivieren und auf npm oder Webserver laden.</p>
+<p>Befehl unter OS X und Linux, um TGZ-Datei zu erstellen:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tar zcf namesmodule@0.0.1.tgz namesmodule@0.0.1
+</pre></div>
+</div>
+<p>Unter Windows eines der bekannten Archivprogramme benutzen oder innerhalb des
+Modul-Ordners <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">pack</span></code> nutzen =&gt; liest package.json aus und nutzt Name und Version.</p>
+<p>Modul dann installieren mit:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>npm i namesmodul (Hosting bei npm)
+</pre></div>
+</div>
+<p>oder</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>npm i http://www.domain.de/namesmodule@0.0.1.tgz
+</pre></div>
+</div>
+</section>
+</section>
+<section id="der-eigene-server">
+<h2>Der eigene Server<a class="headerlink" href="#der-eigene-server" title="Link to this heading"></a></h2>
+<section id="express">
+<h3>Express<a class="headerlink" href="#express" title="Link to this heading"></a></h3>
+<p>Mit http-Moduls einen Webserver programmieren = viel zu aufwändig, denn es gibt
+zu viele Details des HTTP-Protokolls, die programmiert werden müssten. Das
+Webserver-Framework Express (<a class="reference external" href="https://expressjs.com/">https://expressjs.com/</a>) vereinfacht Arbeit wesentlich.
+Open Source Software Express unterstützt uns bei Auslieferung von Dateien, dem
+Routing, dem View-Rendering und ist modular erweiterbar Code ist wesentlich
+flexibler und ausbaufähig:</p>
+<p>eigentliche Arbeit des Verarbeitens einer Anfrage erfolgt mit get(…)-Methode
+- weisen damit Express an, GET-Anfrage auf URL-Pfad / mit Callback im zweiten
+Argument zu beantworten. Antwort-Objekt <code class="docutils literal notranslate"><span class="pre">res</span></code> besitzt hier eine send(…)-Methode,
+die bereits passende Default-HTTP-Header setzt nur Seiteninhalt muss noch übergeben werden</p>
+</section>
+<section id="routing">
+<h3>Routing<a class="headerlink" href="#routing" title="Link to this heading"></a></h3>
+<p>Zuordnen von Pfaden wie <code class="docutils literal notranslate"><span class="pre">/</span></code> oder <code class="docutils literal notranslate"><span class="pre">/seite.html</span></code> zu Callbacks nennt Express <em>Routing</em>.
+Können mit <code class="docutils literal notranslate"><span class="pre">app.get()</span></code> mehrere Routen definieren. Ganze Seite so zu routen,
+wäre nicht sehr wartungsfreundlicher Ansatz. Express hat eingebaute Funktion
+<code class="docutils literal notranslate"><span class="pre">express.static(…)</span></code>, die automatisch alle Dateien aus Verzeichnis bereitstellt.
+Mit Aufruf von <code class="docutils literal notranslate"><span class="pre">express.static(…)</span></code> wird Name des Verzeichnisses übergeben,
+in dem Dateien liegen. Express stellt alle Dateien im angegebenen Verzeichnis,
+inkl. Unterverzeichnissen, über HTTP bereit. Die Notwendigkeit, einzelne Routen
+zu definieren, entfällt. <code class="docutils literal notranslate"><span class="pre">express.static(…)</span></code> und Routen lassen sich kombinieren.
+Bei Konflikt - gerouteter Pfad identisch mit existierender Datei - ermittelt
+Express Vorrang aus Reihenfolge der Aufrufe im JavaScript-Code, wobei erster Aufruf gewinnt.</p>
+</section>
+<section id="middleware">
+<h3>Middleware<a class="headerlink" href="#middleware" title="Link to this heading"></a></h3>
+<p>Funktionalität von Express lässt sich durch Middleware erweitern.</p>
+<p>Middleware = wesentlicher Bestandteil von Express</p>
+<p>Dies sind Funktionen, die für Verarbeitung von Anfragen hintereinandergeschaltet
+werden können und dabei unterschiedliche Funktionalitäten wie beispielsweise
+Parsen von Cookies oder auch komplexere Themen wie Sicherheit und Zugriffskontrolle
+implementieren. Jede Middleware-Funktion hat Zugriff auf Anfrageobjekt (Request-Objekt),
+Antwortobjekt (Response-Objekt) und auf jeweils nächste Middleware-Funktion wird
+mit <code class="docutils literal notranslate"><span class="pre">app.use(…)</span></code> geladen mit Aufruf next() wird Abarbeitung weitergegeben hat
+keinen einfluss auf app.get() -&gt; wird davor ausgeführt.</p>
+<p><strong>Beispiel für Verwendung:</strong></p>
+<p>Nutzung des Middleware-Package body-parser : <a class="reference external" href="https://github.com/expressjs/body-parser">https://github.com/expressjs/body-parser</a>
+Um Inhalt einer HTTP-Anfrage zu parsen - beispielsweise um POST Inhalte abzufangen.
+Geparster Inhalt ist innerhalb der Callback-Funktion über Eigenschaft <code class="docutils literal notranslate"><span class="pre">body</span></code>
+des Anfrageobjekts erreichbar. Um Middleware-Funktion zu verwenden, auch hier
+Übergabe des entsprechenden Aufrufs an Methode <code class="docutils literal notranslate"><span class="pre">use()</span></code> am Anwendungsobjekt.
+extended-Angabe in <code class="docutils literal notranslate"><span class="pre">bodyParser.urlencoded</span></code> erlaubt zu wählen, ob URL-codierte
+Daten mit Querystring-Bibliothek (false) oder qs-Bibliothek (true) analysiert
+werden sollen
+“erweiterte” Syntax ermöglicht Codierung umfangreicher Objekte und Arrays ins
+URL-codierte Format, wodurch JSON-ähnliche Erfahrung mit URL-Codierung ermöglicht
+wird.</p>
+<p>Liste der Middleware Module auf Express-Seite: <a class="reference external" href="http://expressjs.com/en/resources/middleware.html">http://expressjs.com/en/resources/middleware.html</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_20.html" class="btn btn-neutral float-left" title="Datenstrukturen Map und Set" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_22.html" class="btn btn-neutral float-right" title="Post-Routing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,698 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenstrukturen Map und Set &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Node.JS" href="day_21.html" />
+    <link rel="prev" title="Object.create()" href="day_19.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Datenstrukturen Map und Set</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#map">Map</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#konvertierungen">Konvertierungen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vorteil-map-keys">Vorteil: Map-keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methoden">Methoden</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#set">Set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Konvertierungen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Methoden</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#beispiel-duplikate-aus-array-entfernen">Beispiel: Duplikate aus Array entfernen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Datenstrukturen Map und Set</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_20.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="datenstrukturen-map-und-set">
+<h1>Datenstrukturen Map und Set<a class="headerlink" href="#datenstrukturen-map-und-set" title="Link to this heading"></a></h1>
+<p>Seit ES6 verfügbar. Im Vergleich zu Objekten, sind die Key-Value Paare in einer Map
+in einer <strong>festen Reihenfolge</strong>. Ein Set kann nur <strong>einmalige</strong> Werte enthalten.</p>
+<section id="map">
+<h2>Map<a class="headerlink" href="#map" title="Link to this heading"></a></h2>
+<p>Geordnete Sammlung von Schlüssel-Wert Paaren.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Erzeugung über Konstruktor-Funktion</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span><span class="w">  </span><span class="c1">// leere Map</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">);</span>
+
+<span class="c1">// Eintrag hinzufügen</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">);</span><span class="w">      </span><span class="c1">// Index-Position 0</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;lastName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jones&quot;</span><span class="p">);</span>
+<span class="nx">myMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36</span><span class="p">);</span>
+
+<span class="c1">// Anzahl der Einträge ermitteln mit .size</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm">    Map mit Werten erzeugen</span>
+
+<span class="cm">    new Map([</span>
+<span class="cm">        [key, value],</span>
+<span class="cm">        [key, value]</span>
+<span class="cm">    ])</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">heldenStaerke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">([</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">42</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">63</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heldenStaerke</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heldenStaerke</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+</pre></div>
+</div>
+<section id="konvertierungen">
+<h3>Konvertierungen<a class="headerlink" href="#konvertierungen" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// I) Object -&gt; Map</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span>
+<span class="p">};</span>
+
+<span class="c1">// Grundlage = Object-Function entries()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">userMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
+
+<span class="c1">// II) Map -&gt; Object  (über Object.fromEntries())</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">userObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObj</span><span class="p">);</span>
+
+<span class="c1">// III) Map -&gt; Array</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">userArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userArr</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="vorteil-map-keys">
+<h3>Vorteil: Map-keys<a class="headerlink" href="#vorteil-map-keys" title="Link to this heading"></a></h3>
+<p>Als Key wird jeder beliebige Datentype akzeptiert (im Unterschied zu Objekte,
+welche nur String &amp; Symbol akzeptieren). Die einzige Bedingung ist, dass
+Schlüsselwerte einzigartig sein müssen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;String-Schlüssel&quot;</span><span class="p">);</span>
+<span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Number-Schlüssel&quot;</span><span class="p">);</span>
+<span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;überschreibender Number-Schlüssel&quot;</span><span class="p">);</span>
+<span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2. String Schlüssel&quot;</span><span class="p">);</span>
+<span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Boolean-Schlüssel&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
+
+<span class="c1">// Limits in Objekten</span>
+<span class="c1">// --&gt; im Objekt werden Number-Schlüssel zu Strings konvertiert</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">keyObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Eins&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;wahr&quot;</span><span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keyObj</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keyObj</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">keyObj</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]);</span><span class="w">   </span><span class="c1">// true</span>
+
+<span class="c1">// --&gt; im Objekt werden Objekt-Schlüssel als Typen-String konvertiert</span>
+<span class="c1">//      --&gt; nicht möglich einzigartigee Objekte abzulegen!!</span>
+<span class="nx">keyObj</span><span class="p">[</span><span class="nx">user</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Object-Key&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keyObj</span><span class="p">);</span>
+
+<span class="c1">// bei Map ist das möglich</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">jessyMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+<span class="nx">jessyMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy datas&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jessyMap</span><span class="p">);</span>
+
+<span class="nx">jessyMap</span><span class="p">.</span><span class="nx">set</span><span class="p">({},</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">);</span><span class="w">      </span><span class="c1">// Neues Objekt wird erzeugt und referenziert</span>
+<span class="nx">jessyMap</span><span class="p">.</span><span class="nx">set</span><span class="p">({},</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// Neues Objekt wird erzeugt und referenziert</span>
+<span class="c1">// zweites Objekt überschreibt das erste NICHT, da es Referenzen zu zwei</span>
+<span class="c1">// UNTERSCHIEDLICHEN (leeren) Objekten sind:</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({}</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">{});</span><span class="w"> </span><span class="c1">// false</span>
+
+<span class="c1">// Konstruktor Map() gibt Maß zurück, Methoden lassen sich direkt aufrufen</span>
+<span class="c1">// --&gt; Verkettung</span>
+<span class="c1">// gleiches gilt für die set() Methode</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroStrongness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">42</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">63</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="methoden">
+<h3>Methoden<a class="headerlink" href="#methoden" title="Link to this heading"></a></h3>
+<p>Struktur bietet eine Menge an Methoden und integrierte Iteratoren, so dass wir
+direkt mit Entries arbeiten können.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">creatures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">([</span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;Hero&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jesscia Jones&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;Human&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Lutz Maier&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;Tiere&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Lucy, the cat&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;Ghost&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Michael Jackson&quot;</span><span class="p">]</span>
+<span class="p">]);</span>
+
+<span class="c1">// [Map].get(key)  - gibt value-Wert zurück</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Hero&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// &quot;Jessica Jones&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Inhuman&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// undefined</span>
+
+<span class="c1">// [Map].has(key)  - gibt boolean zurück, ob key-Eintrag vorhanden ist</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;Human&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;Inhuman&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
+
+<span class="c1">// [Map].delete(key) - prüft ob Eintrag vorhanden, falls ja, löscht Eintrag</span>
+<span class="c1">// gibt boolean zurück, ob Eintrag vorhanden</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;Inhuman&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false (nicht vorhanden)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;Human&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;Human&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false (bereits gelöscht)</span>
+
+<span class="c1">// [Map].clear() - Map leeren (alle Einträge löschen)</span>
+<span class="c1">// creatures.clear();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">   </span><span class="c1">// 0</span>
+
+<span class="c1">// Maps besitzen integrierte Iteratoren</span>
+<span class="c1">// Methoden geben Map-Iterator zurück</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creatures</span><span class="p">.</span><span class="nx">keys</span><span class="p">());</span>
+
+<span class="c1">// über keys iterieren</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">creatures</span><span class="p">.</span><span class="nx">keys</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// über values iterieren</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">creatures</span><span class="p">.</span><span class="nx">values</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// entries -&gt; Standard-Iterator</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">creatures</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// integriertes forEach</span>
+<span class="c1">// [Map].forEach( (value, key, map) =&gt; {} )</span>
+<span class="nx">creatures</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">map</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Loops durch eine Map sind performanter als durch Objekte.
+Eine Umwandlung eines Objekts in eine Map.</p>
+</div>
+</section>
+</section>
+<section id="set">
+<h2>Set<a class="headerlink" href="#set" title="Link to this heading"></a></h2>
+<p>Sammlung von eindeutigen Werten.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Erzeugung über Konstruktor-Funktion Set()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mySet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span><span class="w">  </span><span class="c1">// leeres Set</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySet</span><span class="p">);</span>
+
+<span class="c1">// Einträge hinzufügen</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Jessy&quot;</span><span class="p">);</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Luke&quot;</span><span class="p">);</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Thor&quot;</span><span class="p">);</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Elektra&quot;</span><span class="p">);</span>
+<span class="nx">mySet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Thor&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// doppelte Einträge werden nicht akzeptiert</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySet</span><span class="p">);</span>
+
+<span class="c1">// Ermittlung der Anzahl der Einträge über .size</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySet</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+
+<span class="c1">// Set mit Werten erstellen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">([</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined, Einträge werden als key = value gespeichert, nicht über Index</span>
+</pre></div>
+</div>
+<section id="id1">
+<h3>Konvertierungen<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set -&gt; Array</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">heroSet</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroArr</span><span class="p">)</span>
+
+<span class="c1">// Array -&gt; Set - durch Übergabe des Arrays an Konstruktor-Funktion</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Methoden<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set-Methoden</span>
+
+<span class="c1">// [Set].has(key) - prüft, ob Eintrag im Set vorhanden</span>
+<span class="c1">// Rückgabe: boolean</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;Thor&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;Loki&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+
+<span class="c1">// [Set].delete(key) - prüft ob Eintrag vorhanden, falls ja, löscht diesen</span>
+<span class="c1">// Rückgabe: boolean (ob Key vor dem Löschen vorhanden war)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;Loki&quot;</span><span class="p">));</span><span class="w">        </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;Thor&quot;</span><span class="p">));</span><span class="w">        </span><span class="c1">// true</span>
+
+<span class="c1">// [Set].clear()  - löscht alle Einträge aus dem Set</span>
+<span class="c1">// heroSet.clear();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">);</span><span class="w">   </span><span class="c1">// leeres Set</span>
+
+<span class="c1">// keys(), values() und entries() sind vorhanden</span>
+<span class="c1">// zur Erstellung von Set-Iteratoren</span>
+<span class="c1">// values() = Default-Iterator</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroSet</span><span class="p">.</span><span class="nx">values</span><span class="p">());</span><span class="w">      </span><span class="c1">// Set Iterator</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">heroSet</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+
+<span class="c1">// integriertes forEach()</span>
+<span class="c1">// [Set].forEach( (value, key, set) ) = {} )</span>
+<span class="nx">heroSet</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">set</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">set</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Rückgabe von Set() und add() = Set</span>
+<span class="c1">// so ist Verkettung möglich</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroesSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Nebula&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Elektra&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="beispiel-duplikate-aus-array-entfernen">
+<h3>Beispiel: Duplikate aus Array entfernen<a class="headerlink" href="#beispiel-duplikate-aus-array-entfernen" title="Link to this heading"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Beispiel: Duplikate aus Array entfernen</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numberArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">11</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">53</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">53</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">9</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">numberSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">numberArr</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numberSet</span><span class="p">);</span><span class="w">     </span><span class="c1">// Duplikate wurden entfernt</span>
+
+<span class="c1">// Set in Array umwandeln</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">uniqueArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">numberSet</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">uniqueArr</span><span class="p">);</span>
+
+<span class="c1">// Zusammengefasst und kürzer</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">uniqueNumberArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">numberArr</span><span class="p">)];</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="iteratoren">
+<h1>Iteratoren<a class="headerlink" href="#iteratoren" title="Link to this heading"></a></h1>
+<p>Iteratoren sind Objekte, welche Methoden implementieren, die den “nächsten” Eintrag
+einer iterablen Datenstruktur (z.B. ein Array) als Objekt mit den Attributen <code class="docutils literal notranslate"><span class="pre">value</span></code>
+(Wert) und <code class="docutils literal notranslate"><span class="pre">done</span></code> (boolean, Kette am Ende?) zurückgibt.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">);</span><span class="w">      </span><span class="c1">// Array Iterator</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// Object { value: &quot;Jessica&quot;,  done: false (Ende noch nicht erreicht) }</span>
+<span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// &quot;Luke&quot;</span>
+<span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// &quot;Daredevil&quot;</span>
+<span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// &quot;Elektra&quot;</span>
+<span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// &quot;Thor&quot;</span>
+<span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// &quot;Thor&quot;</span>
+<span class="nx">iteratorReturnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iteratorReturnObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// value : undefined, done: true ---&gt; heroes Array am Ende</span>
+
+<span class="c1">// eigenen Iterator erstellen</span>
+<span class="c1">// um eigenes Iterationsverhalten zu erzeugen</span>
+
+<span class="c1">// Aufgabe: Array in umgekehrter Reihenfolge durchlaufen (statt mit for-loop)</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">createIterator</span><span class="w"> </span><span class="p">(</span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">next</span><span class="o">:</span><span class="w">   </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">counter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">done</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="nx">counter</span><span class="o">--</span><span class="p">],</span>
+<span class="w">                    </span><span class="nx">done</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// Iterator erzeugen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">ownIterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createIterator</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Odin&quot;</span>
+<span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Thor&quot;</span>
+<span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Elektra&quot;</span>
+<span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Daredevil&quot;</span>
+<span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Luke&quot;</span>
+<span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Jessica&quot;</span>
+<span class="nx">heroInObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ownIterator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroInObject</span><span class="p">);</span><span class="w">      </span><span class="c1">// value: undefined, done: true</span>
+</pre></div>
+</div>
+</section>
+<section id="generatoren">
+<h1>Generatoren<a class="headerlink" href="#generatoren" title="Link to this heading"></a></h1>
+<p>Generatoren erlauben es, im Gegensatz zu Iteratoren, über for-Schleifen zu
+iterieren.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generator-Function erstellen</span>
+<span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">myGeneratorFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="s2">&quot;Schritt 1&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="s2">&quot;Schritt 2&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Step 3&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// beim Aufruf der Generator-Function wird das Generator-Objekt erzeugt</span>
+<span class="c1">// Generartor wird zurückgegeben - Funktion selbst nicht abgearbeitet</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myGenerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myGeneratorFunc</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myGenerator</span><span class="p">);</span><span class="w">      </span><span class="c1">// Generator { constructor: Iterator() }</span>
+
+<span class="c1">// ermöglicht, mehrere Generatoren auf Grundlage einer Generator-Function zu erzeugen</span>
+<span class="c1">// Generatoren zeigen alle das gleichen Iterations-Verhalten</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">aufruf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myGenerator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aufruf</span><span class="p">);</span><span class="w">        </span><span class="c1">// Object { value: &quot;Schritt 1&quot;, done: false }</span>
+<span class="nx">aufruf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myGenerator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aufruf</span><span class="p">);</span><span class="w">        </span><span class="c1">// Object { value: &quot;Schritt 2&quot;, done: false }</span>
+<span class="nx">aufruf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myGenerator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">aufruf</span><span class="p">);</span><span class="w">        </span><span class="c1">// Object { value: undefined, done: true }</span>
+<span class="c1">// weitere Aufrufe von next() können zu TypeError führen</span>
+
+<span class="cm">/*</span>
+<span class="cm">    next()  - ähnlich wie bei Iteratoren</span>
+<span class="cm">            - liefert Object mit Properties:</span>
+<span class="cm">                - value:    Rückgabe von yield</span>
+<span class="cm">                - done:     boolean, ob Ende der Generator-Funktion erreicht ist</span>
+<span class="cm">    durch Aufruf von next() am Generator wird Generator-Funktion abgearbeitet</span>
+<span class="cm">    bis zur Unterbrechung durch ein &#39;yield&#39;. Dort wird beim nächsten Aufruf</span>
+<span class="cm">    wieder eingesetzt und weiter abgearbeitet.</span>
+<span class="cm">*/</span>
+
+<span class="c1">// über Generatoren iterieren</span>
+<span class="c1">// möglich, da Generator = Spezialfall eines Iterators</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mySecondGenerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myGeneratorFunc</span><span class="p">();</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">mySecondGenerator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;aus for-Schleife&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// unendlichen Generator erstellen</span>
+<span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">restart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">restart</span><span class="p">)</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">myCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">  </span><span class="c1">// Object { value: 11, done: false }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">  </span><span class="c1">// Object { value: 2, done: false }</span>
+
+<span class="c1">// das &#39;true&#39; wird als Ausgabe für &#39;yield count&#39; gesetzt, wird als &#39;restart&#39;</span>
+<span class="c1">// zugewiesen, welcher daraufhin den counter auf 0 setzt.</span>
+<span class="c1">// &#39;yield&#39; ist ebenso der EINSTIEGSPUNKT für den nächsten Aufruf von &#39;next()&#39;</span>
+<span class="c1">// ein Wert, der über &#39;next(einWert)&#39; übergeben wird, wird als der Rückgabewert</span>
+<span class="c1">// des yield-statements gesetzt</span>
+
+
+<span class="c1">// Generatoren als Iterator nutzen</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">counting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">    </span><span class="o">*</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">start</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">yield</span><span class="w"> </span><span class="nx">start</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// the *[Symbol.iterator]</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">counting</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">25</span><span class="p">))</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="module">
+<h1>Module<a class="headerlink" href="#module" title="Link to this heading"></a></h1>
+<p>Seit ES6 verfügbar. Alles JS-Module laufen im strikten Modus (<code class="docutils literal notranslate"><span class="pre">&quot;use</span> <span class="pre">strict&quot;;</span></code>
+ist nicht mehr nötig).</p>
+<p>Vor ES6: <code class="docutils literal notranslate"><span class="pre">common.js</span></code> war eine Bestrebung, Modulunterstützung zu integrieren.
+Wird nicht mehr oft verwendet.</p>
+<p>Siehe Anwendung in <code class="docutils literal notranslate"><span class="pre">Tag_20/module/</span></code> Dateien.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_19.html" class="btn btn-neutral float-left" title="Object.create()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_21.html" class="btn btn-neutral float-right" title="Node.JS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

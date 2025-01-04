@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJAX &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="JSON Requests" href="day_11.html" />
+    <link rel="prev" title="DOM Operationen" href="day_09.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AJAX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interaktion-im-web-ohne-ajax">Interaktion im Web ohne Ajax</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#klassisches-modell-mit-eigenstandigen-adressierbaren-dokumenten">Klassisches Modell mit eigenständigen, adressierbaren Dokumenten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#besonderheiten-bei-ajax">Besonderheiten bei Ajax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zuganglichkeit-von-ajax-anwendungen">Zugänglichkeit von Ajax-Anwendungen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#einsatzgebiete">Einsatzgebiete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-aktionen-ohne-antwort-daten">Server-Aktionen ohne Antwort-Daten</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#xml">XML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#umwandlung-xml-string-zu-xml-dom-xml-dokument">Umwandlung XML-String zu XML-DOM (XML-Dokument)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umwandlung-xml-dokument-in-xml-string">Umwandlung XML-Dokument in XML-String</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#xmlhttprequest">XMLHttpRequest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anfrage-senden">Anfrage senden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#antwort-weiterverarbeiten">Antwort weiterverarbeiten</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">AJAX</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_10.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ajax">
+<h1>AJAX<a class="headerlink" href="#ajax" title="Link to this heading"></a></h1>
+<p>Begriff Ajax wurde 2005 von Jesse James Garrett geprägt.</p>
+<p>Ajax steht als Abkürzung für <strong>Asynchronous JavaScript and XML</strong> (asynchrones JavaScript
+und XML) doch Ajax-Anwendungen nicht asynchron im Sinne, dass Kommunikation mit
+Server völlig losgelöst von Benutzereingaben stattfindet. Auch XML nicht
+zwangsläufig Übertragungsformat für Daten zwischen Client und Server.</p>
+<p>„Ajax“ =&gt; JavaScript-gestützter Datenaustausch mit Webserver im Hintergrund.</p>
+<ul class="simple">
+<li><p>XML =&gt; ein mögliches, aber nicht zentrales Übertragungsformat</p></li>
+<li><p>asynchron =&gt; JavaScript-Ausführung blockiert beim Warten auf Server-Antwort
+nicht Browser, JavaScript-Ereignisse werden gefeuert, wenn Server-Antwort eingetroffen</p></li>
+<li><p>funktioniert also über selbsterzeugte HTTP-Anfragen, Server-Antwort steht Script
+zur Verfügung</p></li>
+<li><p>neu = asynchrone Kommunikation im Hintergrund</p></li>
+</ul>
+<section id="interaktion-im-web-ohne-ajax">
+<h2>Interaktion im Web ohne Ajax<a class="headerlink" href="#interaktion-im-web-ohne-ajax" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Anwender aktiviert Link oder sendet Formular ab</p></li>
+<li><p>Browser sendet entsprechende HTTP-Anfrage an Webserver</p></li>
+<li><p>Webserver antwortet, indem er üblicherweise HTML-Dokument zurückliefert,
+das Browser verarbeitet und anstelle des alten anzeigt</p></li>
+<li><p>ohne Ajax muss immer neues, vollständiges HTML-Dokument vom Server geladen werden</p></li>
+<li><p>Ajax durchbricht Prinzip und ändert damit Bedienung von Webseiten und Aufbau
+von Webanwendungen grundlegend</p></li>
+<li><p>werden nur kleine Datenportionen mit Webserver ausgetauscht -gerade benötigte
+Daten nachgeladen, dem Server ausgewählte Änderungen mitgeteilt</p></li>
+<li><p>im Extremfall kommt Single Page Application heraus</p></li>
+<li><p>besteht nur aus einem ursprünglichen HTML-Dokument</p></li>
+<li><p>restlicher Datenaustausch mit Webserver läuft per JavaScript im Hintergrund:
+über DOM-Schnittstelle wird Dokument nach Belieben umgestaltet</p></li>
+<li><p>Dokument reagiert auf Benutzereingaben, übersendet diese gegebenenfalls an
+Server, lädt im Hintergrund Inhalte vom Server nach und montiert sie ins
+bestehende Dokument</p></li>
+</ul>
+</section>
+</section>
+<section id="vor-und-nachteile-von-ajax">
+<h1>Vor- und Nachteile von Ajax<a class="headerlink" href="#vor-und-nachteile-von-ajax" title="Link to this heading"></a></h1>
+<section id="klassisches-modell-mit-eigenstandigen-adressierbaren-dokumenten">
+<h2>Klassisches Modell mit eigenständigen, adressierbaren Dokumenten<a class="headerlink" href="#klassisches-modell-mit-eigenstandigen-adressierbaren-dokumenten" title="Link to this heading"></a></h2>
+<p>Herkömmliches Modell funktioniert nach Grundsatz »Stop and Go«:</p>
+<ol class="arabic simple">
+<li><p>Anwender klickt auf Link oder Absende-Button eines Formulars und muss warten</p></li>
+<li><p>Browser übermittelt Anfrage an den Webserver</p></li>
+<li><p>Webserver speichert gegebenenfalls Änderungen ab und generiert neues, vollständiges Dokument</p></li>
+<li><p>Wenn Dokument zum Client-Rechner übertragen wurde und Browser es vollständig
+dargestellt hat, kann Anwender in Webanwendung weiterarbeiten</p></li>
+<li><p>Browser zeigt Reihe von eigenständigen HTML-Dokumenten (Ressourcen) an, die
+alle eindeutige, gleichbleibende Adresse (URL) besitzen</p></li>
+</ol>
+<p>Dokumente sind unabhängig von JavaScript lesbar, verlinkbar, durch Suchmaschinen
+indizierbar, problemlos abspeicherbar.</p>
+</section>
+<section id="besonderheiten-bei-ajax">
+<h2>Besonderheiten bei Ajax<a class="headerlink" href="#besonderheiten-bei-ajax" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Mit Ajax Server-Anfragen im Hintergrund, ohne dass Dokument ausgewechselt wird</p></li>
+<li><p>Warten auf Server-Antwort fällt ganz weg oder wird extrem verkürzt</p></li>
+<li><p>gibt keine vollständigen, adressierbaren Dokumente mehr, die in Webanwendungen
+bestimmten Punkt und Status markieren</p></li>
+<li><p>Zurück-Funktion des Browsers funktioniert bei Verwendung von Ajax nicht mehr wie gewohnt</p></li>
+</ul>
+</section>
+<section id="zuganglichkeit-von-ajax-anwendungen">
+<h2>Zugänglichkeit von Ajax-Anwendungen<a class="headerlink" href="#zuganglichkeit-von-ajax-anwendungen" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Großer Teil der Datenverarbeitung vom Server-Rechner auf Client-Rechner (Browser) verlagert</p></li>
+<li><p>Verlauf, den bisher Browser automatisch zur Verfügung stellte, müssen in
+Ajax-Anwendungen nachgebaut werden, z.B. indem jeder Status Adresse bekommt,
+damit Zurück-Navigation funktioniert</p></li>
+</ul>
+</section>
+<section id="einsatzgebiete">
+<h2>Einsatzgebiete<a class="headerlink" href="#einsatzgebiete" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Einsatz von Ajax als Zusatzfunktionalität</p></li>
+<li><p>Wenn JavaScript verfügbar, genießt Anwender gewissen Extra-Komfort in Bedienung</p></li>
+<li><p>Wenn JavaScript nicht aktiv oder Ajax nicht verfügbar, kann Website trotzdem
+ohne funktionale Einschränkungen benutzt werden</p></li>
+<li><p>Nachladen von Inhalten auf Benutzerwunsch (z.B. beim Klicken oder Überfahren mit Maus)</p></li>
+<li><p>Automatische Vervollständigung (Autocomplete und Suche bei der Eingabe)</p></li>
+</ul>
+</section>
+<section id="server-aktionen-ohne-antwort-daten">
+<h2>Server-Aktionen ohne Antwort-Daten<a class="headerlink" href="#server-aktionen-ohne-antwort-daten" title="Link to this heading"></a></h2>
+<p>Einfache Formulare, die per Ajax automatisch abgesendet werden:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Kommentarfunktion</p></li>
+<li><p>Bewertungen mit einfacher Skala (z.B. 1-5 Sterne)</p></li>
+<li><p>Abstimmungen</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Listen-Funktionen wie Markieren, Ausblenden, Löschen usw.</p></li>
+<li><p>Blättern und Seitennavigation</p></li>
+<li><p>Wechsel zwischen Lese- und Editier-Modus bei Formularen</p></li>
+<li><p>Regelmäßige Aktualisierungen vom Server (Liveticker, E-Mail, Chats)</p></li>
+<li><p>verwendete Dateiformate für Übertragung: HTML, XML und JSON</p></li>
+</ul>
+</section>
+</section>
+<section id="xml">
+<h1>XML<a class="headerlink" href="#xml" title="Link to this heading"></a></h1>
+<p>Das XML Format wird in JavaScript hauptsächlich für Ajax angewandt.</p>
+<p>XML-Dokument hat strikte Regeln für Aufbau, dadurch sehr einfach, DOM (Document
+Object Model) zu nutzen. Auch hier in Knoten denken und in Hierarchie navigieren.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">xmlString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;&lt;artists&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;&lt;artist name=&quot;Kyuss&quot;&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;&lt;albums&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39; &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39; &lt;title&gt;Wretch&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39; &lt;year&gt;1991&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39; &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39; &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;   &lt;title&gt;Blues for the Red Sun&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;    &lt;year&gt;1992&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;   &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;   &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;    &lt;title&gt;Welcome to Sky Valley&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;    &lt;year&gt;1994&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;  &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;  &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;   &lt;title&gt;...And the Circus Leaves Town&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;  &lt;year&gt;1995&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;  &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;  &lt;/albums&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;&lt;/artist&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">&#39;&lt;/artists&gt;&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xmlString</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Der XML-String wird als <code class="docutils literal notranslate"><span class="pre">XMLDocument</span></code> Datentyp implizit umgewandelt, welcher
+die gleichen Methoden wie <code class="docutils literal notranslate"><span class="pre">Document</span></code> bietet. Der Aufbau von XML ist sehr ähnlich
+dem von HTML und die DOM-API für HTML lässt sich ebenfalls auf XML anwenden.</p>
+<section id="umwandlung-xml-string-zu-xml-dom-xml-dokument">
+<h2>Umwandlung XML-String zu XML-DOM (XML-Dokument)<a class="headerlink" href="#umwandlung-xml-string-zu-xml-dom-xml-dokument" title="Link to this heading"></a></h2>
+<p>Über das <code class="docutils literal notranslate"><span class="pre">DOMParser</span></code> Objekt lässt sich mit der <code class="docutils literal notranslate"><span class="pre">.parseFromString()</span></code> Methode
+ein XML-String in ein XML-DOM Objekt umwandeln.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">parserObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DOMParser</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">xmlDoc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parserObj</span><span class="p">.</span><span class="nx">parseFromString</span><span class="p">(</span><span class="nx">xmlString</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xmlDoc</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Hierauf lassen sich sämtliche DOM-Methoden des <code class="docutils literal notranslate"><span class="pre">Documents</span></code> (HTML-DOM) ebenfalls
+nutzen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Methoden vom DOM-Zugriff integriert/nutzbar</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myArtist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xmlDoc</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;artist&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Es ist kein Zugriff per IDL möglich, da sich das XML-Document nicht im
+(herkömmlichen) DOM befindet:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// kein IDL-Zugriff, da document nicht im DOM</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">                 </span><span class="c1">// undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Kyuss</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="umwandlung-xml-dokument-in-xml-string">
+<h2>Umwandlung XML-Dokument in XML-String<a class="headerlink" href="#umwandlung-xml-dokument-in-xml-string" title="Link to this heading"></a></h2>
+<p>Über das <code class="docutils literal notranslate"><span class="pre">XMLSerializer</span></code> Objekt lässt sich über die <code class="docutils literal notranslate"><span class="pre">.serializeToString()</span></code>
+Methode ein XML-Dokument in einen XML-String umwandeln.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">serializerObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLSerializer</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myXMLStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">serializerObj</span><span class="p">.</span><span class="nx">serializeToString</span><span class="p">(</span><span class="nx">xmlDoc</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myXMLStr</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="xmlhttprequest">
+<h1>XMLHttpRequest<a class="headerlink" href="#xmlhttprequest" title="Link to this heading"></a></h1>
+<p>Über einen <code class="docutils literal notranslate"><span class="pre">XMLHttpRequest</span></code> wird verwendet, um Anfragen vom Client an den Server
+zu schicken, bei welchem Daten angefordert werden. Diese Daten können im XML Format
+zurückgegeben werden, müssen jedoch nicht.</p>
+<section id="anfrage-senden">
+<h2>Anfrage senden<a class="headerlink" href="#anfrage-senden" title="Link to this heading"></a></h2>
+<p>Zum Senden einer Anfrage wird zunächst das XMLHttpRequest-Object (XHR) erstellt:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1. XHR-Object erstellen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">xhr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Daraufhin wird ein Event-Handler erzeugt, welcher auf die Server-Antwort wartet:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 2. Event-Handler erstellen</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// feuert, wenn Server-Antwort vollständig eingetroffen</span>
+<span class="w">    </span><span class="c1">// response muss nicht zwingend angefragte Daten enthalten</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Server hat mit &quot;OK&quot; (Status 200) geantwortet</span>
+<span class="w">    </span><span class="c1">// https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</span>
+<span class="w">    </span><span class="c1">// https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</span>
+<span class="w">    </span><span class="c1">// Daten wurden ordnungsgemäß übermittelt und können jetzt verarbeitet werden</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hier wird der <code class="docutils literal notranslate"><span class="pre">onload</span></code> Event Handler einer Funktion zugewiesen, welche den
+Status <em>200</em> (OK) setzt und das XMLHttpRequest Objekt in die Konsole geloggt.
+Die Funktion wird folglich nach Abschließen der Anfrage d.h. dem Erhalt der
+Server-Antwort ausgelöst.</p>
+</div>
+<p>Als nächstes muss über <code class="docutils literal notranslate"><span class="pre">.open()</span></code> die HTTP-Anfrage formuliert werden.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. HTTP-Anfrage formulieren</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./artists.xml&quot;</span><span class="p">);</span>
+<span class="c1">// xhr.open(&quot;POST&quot;, &quot;./script.php&quot;);</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hier wird ein XML-Dokument über die GET-Methode angefordert.</p>
+</div>
+<p>Die Anfrage lässt sich weiterhin konfigurieren. Hier wird über <code class="docutils literal notranslate"><span class="pre">.responseType</span></code>
+der Rückgabetyp der Daten definiert, in diesem Fall <code class="docutils literal notranslate"><span class="pre">&quot;document&quot;</span></code>, was entweder
+einem HTML oder einem XML-Dokument entspricht.</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.setRequestHeader()</span></code> lässt sich ein Text an das Ende einer Headers anhängen.
+In diesem Fall wird an den <code class="docutils literal notranslate"><span class="pre">&quot;Accept&quot;</span></code> Feld der Wert <code class="docutils literal notranslate"><span class="pre">&quot;text/xml&quot;</span></code> angehängt,
+was dem Server mitteilt, dass der Client Antworten des Mimetypes <code class="docutils literal notranslate"><span class="pre">text/xml</span></code>,
+also einen XML String, akzeptiert. Wird er nicht definiert, werden die Antwortdaten
+als String gespeichert.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 4. Anfrage konfigurieren</span>
+<span class="c1">// Wie sollen Antwort-Daten vorliegen?</span>
+<span class="c1">// xhr.responseType = &quot;&quot;;  // Antwort als String (default)</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;document&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// geparstes Document (HTML || XML)</span>
+<span class="c1">// xhr.responseType = &quot;json&quot;;      // geparste JS-Daten, wenn Browser es kann</span>
+
+<span class="c1">// Request-Header konfigurieren</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Accept&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Die Anfrage wird zuletzt mit <code class="docutils literal notranslate"><span class="pre">.send()</span></code> ausgeführt.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 5. Anfrage senden</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="c1">// xhr.send(data);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">);</span><span class="w">  </span><span class="c1">// Daten vom Server noch nicht da</span>
+</pre></div>
+</div>
+<p>Zusätzlich lassen sich weitere Event-Listener dem XMLHTTPRequest anhängen, z.B.
+um wie hier, den aktuellen Status des Requests anzuzeigen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Laden der Daten vom Server abgeschlossen!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;progress&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fortschritt beim Laden der Daten vom Server!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fehler beim Laden der Daten vom Server!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Timeout beim Laden der Daten vom Server!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="antwort-weiterverarbeiten">
+<h2>Antwort weiterverarbeiten<a class="headerlink" href="#antwort-weiterverarbeiten" title="Link to this heading"></a></h2>
+<p>Hat man über einen <code class="docutils literal notranslate"><span class="pre">XMLHTTPRequest</span></code> ein Antwort-Objekt mit vom Server erhalten, lässt
+sich der HTML oder XML Inhalt über das <code class="docutils literal notranslate"><span class="pre">.responseXML</span></code> Attribut auslesen.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#browser&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">xhr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ooops&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">xml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">allBrowser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xml</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;browser&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allBrowser</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">outputFunc</span><span class="p">(</span><span class="nx">allBrowser</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Beachte, dass der Rückgabewert von <code class="docutils literal notranslate"><span class="pre">.responseXML</span></code> ein Dokument ist. Damit lässt
+sich weiterarbeiten, wie mit dem DOM.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_09.html" class="btn btn-neutral float-left" title="DOM Operationen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_11.html" class="btn btn-neutral float-right" title="JSON Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

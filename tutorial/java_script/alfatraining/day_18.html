@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rest-Parameter &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/thebelab-helper.js"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="next" title="Object.create()" href="day_19.html" />
+    <link rel="prev" title="Arrow-Function" href="day_17.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript (alfatraining)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day_01.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#strict-mode">Strict-Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#kommentare">Kommentare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#schreibregeln-konventionen">Schreibregeln &amp; Konventionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#vordefinierte-funktionen">Vordefinierte Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_01.html#variablen">Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html">Konstanten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentypen">Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#operatoren">Operatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#typenkonvertierung">Typenkonvertierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#datentyp-ermitteln">Datentyp ermitteln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_02.html#beispielobjekt-math">Beispielobjekt: Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html">Kontroll- / Steuerstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_03.html#strings">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html">Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#schleifensteuerung">Schleifensteuerung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#funktionen">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_04.html#arrays">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_05.html">Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html">JSON - JavaScript Notation Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#web-storage">Web Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#debugger">Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_06.html#windows-objekt">Windows-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html">DOM - Document Object Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_07.html#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html">Break: Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_08.html#dom-navigation">DOM-Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html">DOM Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#html-template-verwenden">HTML Template verwenden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#dom-elemente-uber-adjacent-methoden-platzieren">DOM Elemente über Adjacent-Methoden platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_09.html#neue-es6-methoden-zum-platzieren">Neue ES6 Methoden zum Platzieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html">AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#vor-und-nachteile-von-ajax">Vor- und Nachteile von Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xml">XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_10.html#xmlhttprequest">XMLHttpRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html">JSON Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#ubungen">Übungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#objekt-funktionen">Objekt-Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#formdata-object">FormData-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#datentyp-symbol">Datentyp: Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_15.html#template-string">Template String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html">Ternärer / conditional Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_16.html#regulare-ausdrucke">Reguläre Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html">Arrow-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#higher-order-functions">Higher Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_17.html#spread-syntax">Spread-Syntax</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Rest-Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events-und-event-object">Events und Event-Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#destructuring">Destructuring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#array-destructuring">Array-Destructuring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objekt-destructuring">Objekt-Destructuring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kombination-array-und-object-destructuring">Kombination Array- und Object-Destructuring</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#factory-function">Factory-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#prototype-einem-objekt-zuordnen">Prototype einem Objekt zuordnen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_19.html#klassensyntax">Klassensyntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html">Datenstrukturen Map und Set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#iteratoren">Iteratoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#generatoren">Generatoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_20.html#module">Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_21.html">Node.JS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html">Post-Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#promise">Promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#fetch-api">Fetch API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#ejs-template-engine">EJS Template Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_22.html#arbeiten-mit-datenbanken">Arbeiten mit Datenbanken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_23.html">Event-Emitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_24.html">React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_25.html">Vue.JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/vscode_extensions.html">Visual Studio Code extensions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
+      <li class="breadcrumb-item active">Rest-Parameter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/java_script/alfatraining/day_18.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rest-parameter">
+<h1>Rest-Parameter<a class="headerlink" href="#rest-parameter" title="Link to this heading"></a></h1>
+<p>Der Rest-Parameter umfasst alle Argumente innerhalb einer Funktion, die NICHT als
+Parameter in der Funktionsdeklaration erfasst wurden (sogenannte <em>überzählige</em>
+Argumente).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Übergabe von Argumenten an eine Funktion</strong></p>
+<p>Was passiert mit <em>überzähligen</em> Argumenten?</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Übergabe von Argumenten an Funktion</span>
+<span class="c1">// was passiert mit überzähligen Argumenten</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">jessyDatas</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span><span class="w">   </span><span class="c1">// arguments = Arguments Objekt -&gt; enthält alle übergebenen Argumente</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">arg</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">arguments</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mf">3</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="nx">jessyDatas</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Dragonroad 66&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">165</span><span class="p">,</span><span class="w"> </span><span class="mf">65</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Seit ES6 verfügbar. Enthält <strong>nur</strong> die <em>überzähligen</em> Parameter.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    Rest-Parameter seit ES6</span>
+<span class="cm">    ...params - Syntax fasst zusammen</span>
+<span class="cm">    nimmt überzählige Argumente auf (die nicht von Parametern aufgefangen wurden)</span>
+<span class="cm">    liefert Array mit überzähligen Argumenten</span>
+<span class="cm">*/</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">jessyDatas2</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span><span class="w">   </span><span class="c1">// params = Arguments Objekt -&gt; enthält nur überzählige Argumente</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">params</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="nx">arg</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nx">jessyDatas2</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Dragonroad 66&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">165</span><span class="p">,</span><span class="w"> </span><span class="mf">65</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(...</span><span class="nx">params</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;0&#39; ist Initialwert</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">));</span><span class="w">  </span><span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">));</span><span class="w">  </span><span class="c1">// 45</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">floskel</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">heroes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">    </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">floskel</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">hero</span><span class="si">}</span><span class="sb">`</span><span class="p">));</span>
+<span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Heyho&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">];</span>
+<span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">heroArr</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="events-und-event-object">
+<h1>Events und Event-Object<a class="headerlink" href="#events-und-event-object" title="Link to this heading"></a></h1>
+<p>Events durchlaufen drei Phasen:</p>
+<ol class="arabic simple">
+<li><p>Capturing-Phase (Window –&gt; Target)</p></li>
+<li><p>Target-Phase</p></li>
+<li><p>Bubbling-Phase (Target –&gt; Document): Standardmäßig wird hier auf Event reagiert</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[element].addEventListener(
+    event,          Event-Type
+    function,       aufzurufende Funktion
+    useCapture      Phase der Aktivierung (default = false)
+)
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">bodyTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+<span class="nx">bodyTag</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Body hat in Bubbling-Phase reagiert&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">bodyTag</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Body hat in Target-Phase reagiert&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">link_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;nav li:first-of-type a&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">link_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;nav li:last-of-type a&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">link_1</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">link_2</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+
+<span class="cm">/*</span>
+<span class="cm">    event.preventDefault()</span>
+<span class="cm">    unterdrückt Standardverhalten von Links, Formularen etc.</span>
+
+<span class="cm">    event.stopPropagation()</span>
+<span class="cm">    unterbindet Weitergabe des Events - Eventfluss wird unterbrochen</span>
+<span class="cm">*/</span>
+
+<span class="nx">link_1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Event hat Link 1 in Target-Phase erreicht&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">item_1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Event hat Item 1 erreicht&quot;</span><span class="p">));</span>
+
+<span class="nx">link_2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Event hat Link 2 in Target-Phase erreicht&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">item_2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Event hat Item 2 erreicht&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm">    generelle Eigenschaften des Event-Objektes</span>
+<span class="cm">    [event].type            - Event-Typ</span>
+<span class="cm">    [event].target          - Element, auf dem Event ausgeführt werden (alternativ zu &#39;this&#39;)</span>
+<span class="cm">    [event].currentTarget   - Element, auf dem Handler registriert wurde</span>
+<span class="cm">    [event].timeStamp       - Zeitpunkt des Ereignisses</span>
+<span class="cm">    [event].eventPhase      - Ereignisphasen (1,2,3)</span>
+
+<span class="cm">    [event].cancelable      - true / false</span>
+<span class="cm">    Abfrage geeignet, um herauszufinden, ob ein Ereignis, das mit Standardaktion</span>
+<span class="cm">    verbunden, dieses durch Aufruf von preventDefault() unterbrochen werden kann</span>
+<span class="cm">*/</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">liste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#liste&quot;</span><span class="p">);</span>
+
+<span class="c1">// &quot;click&quot; reagiert NUR auf die linke Maustaste</span>
+<span class="nx">liste</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mousedown&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Event-Objekt</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Event, das direkt vom Ereignis betroffen</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span><span class="w">  </span><span class="c1">// li-Element</span>
+
+<span class="w">    </span><span class="c1">// Element, auf dem Event registriert wurde</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">);</span><span class="w">   </span><span class="c1">// ul (Parent)</span>
+
+<span class="w">    </span><span class="c1">// Event-Phase ermitteln</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">eventPhase</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">phaseObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Capturing -Phase&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Target-Phase&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bubbling-Phase&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">phaseObj</span><span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">eventPhase</span><span class="p">]);</span>
+
+<span class="w">    </span><span class="c1">//  Maustaste, die gedrückt wurde</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">mouseObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="mf">0</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Linke Maustaste&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mittlere Maustaste&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Rechte Maustaste&quot;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mouseObj</span><span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="p">]);</span>
+
+<span class="w">    </span><span class="c1">// Kontextmenü unterdrücken (Bei Klick mit rechter Maustaste)</span>
+<span class="w">    </span><span class="nx">liste</span><span class="p">.</span><span class="nx">oncontextmenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// return false;    // hier auch möglich</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">});</span>
+
+<span class="c1">// Tastatur-Ereignisse</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#field&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">keyPressFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">which</span><span class="p">);</span><span class="w">  </span><span class="c1">// Tastatur-Code der Taste</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">shiftKey</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">which</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mit Umschalttaste&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">field</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPressFunc</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">klicker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bildschirm-X-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">screenX</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bildschirm-Y-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">screenY</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Browser-X-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Browser-Y-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">clientY</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">klicker</span><span class="p">;</span>
+
+<span class="c1">// window-scroll-Ereignis</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;scroll&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scrollX</span><span class="p">,</span><span class="w"> </span><span class="nx">scrollY</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="cm">/*</span>
+<span class="cm">    EventListener und once</span>
+<span class="cm">    EventListener hat zusätzliche Option once diese entfernt Event-Listener automatisch nach</span>
+<span class="cm">    1. Auftreten des Events</span>
+
+<span class="cm">            [elem].addEventListener(event, function,  {once: true});</span>
+
+<span class="cm">    Aufräumen und Ausschalten des Listeners erfolgt automatische</span>
+<span class="cm">    das hält Code übersichtlicher und Speicherverwaltung effizienter</span>
+<span class="cm">    -&gt; alle Variablen die zum callback gehören werden vom garbage collector gelöscht</span>
+
+<span class="cm">    Event-Listener wird automatisch gelöscht, sofern dieser nicht mehr gebraucht wird.</span>
+<span class="cm">*/</span>
+
+<span class="nx">liste</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mousedown&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;einmaliges Ereignis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">eventPhase</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nx">once</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">capture</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="destructuring">
+<h1>Destructuring<a class="headerlink" href="#destructuring" title="Link to this heading"></a></h1>
+<p>Werte aus Arrays und Objekten extrahieren und in passende Variablen / Konstanten
+überführen. Prinzip des Destructuring (destrukturierende Anweisung) ermöglicht es,
+Werte, die in Objekten oder Arrays hinterlegt sind, relative einfach an
+Variablen / Konstanten zuzuweisen.</p>
+<section id="array-destructuring">
+<h2>Array-Destructuring<a class="headerlink" href="#array-destructuring" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">];</span>
+
+<span class="c1">// ohne Destructuring</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hero_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hero_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hero_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">[</span><span class="mf">2</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hero_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">[</span><span class="mf">3</span><span class="p">];</span>
+
+<span class="c1">// Array auf Grundlage von Variablen erstellen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">heroArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">hero_1</span><span class="p">,</span><span class="w"> </span><span class="nx">hero_2</span><span class="p">,</span><span class="w"> </span><span class="nx">hero_3</span><span class="p">,</span><span class="w"> </span><span class="nx">hero_4</span><span class="p">];</span>
+
+<span class="c1">// mit Destructuring</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">,</span><span class="w"> </span><span class="nx">three</span><span class="p">,</span><span class="w"> </span><span class="nx">four</span><span class="p">,</span><span class="w"> </span><span class="nx">five</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">five</span><span class="p">);</span><span class="w">  </span><span class="c1">// undefined, da überzählig</span>
+
+<span class="c1">// Destructuring ür Funktions-Parameter nutzen</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getNames</span><span class="w"> </span><span class="p">([</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">,</span><span class="w"> </span><span class="nx">three</span><span class="p">,</span><span class="w"> </span><span class="nx">four</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">three</span><span class="p">,</span><span class="w"> </span><span class="nx">four</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">getNames</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
+
+<span class="c1">// bei existierenden Variablen entfällt &#39;let&#39;</span>
+<span class="c1">// Arbeit mit default-Werten ist möglich</span>
+<span class="p">[</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">,</span><span class="w"> </span><span class="nx">three</span><span class="p">,</span><span class="w"> </span><span class="nx">four</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;a hero&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">five</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;no hero&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroArr</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">four</span><span class="p">);</span><span class="w">  </span><span class="c1">// Elektra</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">five</span><span class="p">);</span><span class="w">  </span><span class="c1">// no hero</span>
+
+<span class="c1">// nur bestimmte Werte extrahieren</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">myHero1</span><span class="p">,,,</span><span class="nx">myHero4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myHero1</span><span class="p">,</span><span class="w"> </span><span class="nx">myHero4</span><span class="p">);</span>
+
+<span class="c1">// Werte aus mehrdimensionalen Arrays überführen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">,</span><span class="mf">9</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">d</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">g</span><span class="p">,</span><span class="nx">h</span><span class="p">,</span><span class="nx">i</span><span class="p">]</span>
+<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">coords</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1 5 9</span>
+</pre></div>
+</div>
+</section>
+<section id="objekt-destructuring">
+<h2>Objekt-Destructuring<a class="headerlink" href="#objekt-destructuring" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">favHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jones&quot;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="nx">firstFromObj</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">   </span><span class="nx">lastFromObj</span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">favHero</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstFromObj</span><span class="p">,</span><span class="w"> </span><span class="nx">lastFromObj</span><span class="p">);</span>
+
+<span class="c1">// einfacher, wenn key-Bezeichner = Variablen-Bezeichner</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lastName</span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">favHero</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">);</span>
+
+<span class="c1">// Werte aus geschachtelten Objekten</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">jessyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">postCode</span><span class="o">:</span><span class="w">   </span><span class="mf">111</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">street</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Dragonroad 66&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">city</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Hells Kitchen&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="nx">heroFirst</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">postCode</span><span class="o">:</span><span class="w">   </span><span class="nx">zip</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">street</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">number</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">city</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jessyData</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroFirst</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">zip</span><span class="p">,</span><span class="w"> </span><span class="nx">street</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span><span class="w">    </span><span class="c1">// undefined, da keine Entsprechung im Objekt</span>
+
+<span class="c1">// &#39;let&#39; entfällt, wenn Variable bereits vorhanden</span>
+<span class="p">({</span><span class="nx">firstName</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jessyData</span><span class="p">);</span><span class="w">  </span><span class="c1">// runde Klammern notwendig, damit Destructuring erkannt wird</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="kombination-array-und-object-destructuring">
+<h2>Kombination Array- und Object-Destructuring<a class="headerlink" href="#kombination-array-und-object-destructuring" title="Link to this heading"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">jessyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">postCode</span><span class="o">:</span><span class="w">   </span><span class="mf">111</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">street</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Dragonroad 66&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">city</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Hells Kitchen&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;0172-567894321&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;999-66339955&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">phone</span><span class="o">:</span><span class="w">  </span><span class="p">[</span><span class="nx">mobile</span><span class="p">,</span><span class="w"> </span><span class="nx">office</span><span class="p">]</span>
+<span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jessyData</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">,</span><span class="w"> </span><span class="nx">mobile</span><span class="p">,</span><span class="w"> </span><span class="nx">office</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">marvelHeroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">contact</span><span class="o">:</span><span class="w">    </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">mail</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;odin@valhalla.org&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">phone</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;534698721&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">contact</span><span class="o">:</span><span class="w">    </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">mail</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;thor@valhalla.org&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">phone</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;534698721&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Luki&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">contact</span><span class="o">:</span><span class="w">    </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">mail</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;loki@valhalla.org&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">phone</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;534698721&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="c1">// Destructuring in for-Schleife nutzen</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">contact</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mail</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">marvelHeroes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">mail</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Destructuring für Parameter einer Funktion nutzen</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">chefchen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">contact</span><span class="o">:</span><span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">mail</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;odin@valhalla.org&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">phone</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;534698721&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">heroMail</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">contact</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mail</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mail</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">heroMail</span><span class="p">(</span><span class="nx">chefchen</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="factory-function">
+<h1>Factory-Function<a class="headerlink" href="#factory-function" title="Link to this heading"></a></h1>
+<p>Über eine Factory-Funktion kann ein Objekt als Rückgabewert einer Funktion
+definiert werden. Dazu muss das Objekt in runde Klammern <code class="docutils literal notranslate"><span class="pre">()</span></code> geschrieben
+werden, damit die Objektklammern (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) nicht als Funktions-Klammern
+fehlinterpretiert werden bzw. der Interpreter diese eindeutig als Objekt-Klammern
+erfassen kann:</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Die Factory-Funktion definiert, wie ein Objekt aussehen soll. Sie gibt das
+Objekt beim Aufruf mit den definierten Argumenten aufgerufen wird, zurück.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// runde Klammern nötig, damit {} als Objekt-Klammern und nicht als Funktions-Klammern</span>
+<span class="c1">// interpretiert werden</span>
+<span class="c1">// hier: implizit wird erstelltes Objekt zurückgegeben</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">createUserObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">avatar</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">    </span><span class="nx">user</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">avatar</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">setName</span><span class="p">(</span><span class="nx">newName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newName</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createUserObj</span><span class="p">(</span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;jessy_avatar.png&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">user2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createUserObj</span><span class="p">(</span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;luke_face.jpg&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user1</span><span class="p">.</span><span class="nx">setName</span><span class="p">(</span><span class="s2">&quot;Pinky&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// überschreibt Namen</span>
+</pre></div>
+</div>
+</section>
+<section id="construktor-function">
+<h1>Construktor-Function<a class="headerlink" href="#construktor-function" title="Link to this heading"></a></h1>
+<p>Sollten IMMER mit Großbuchstaben beginnen. Muss mit <code class="docutils literal notranslate"><span class="pre">new</span></code> aufgerufen werden: erstellt
+ein neues Objekt und gibt es zurück.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Item</span><span class="w"> </span><span class="p">(</span><span class="nx">prodName</span><span class="p">,</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">,</span><span class="w"> </span><span class="nx">prodCat</span><span class="p">,</span><span class="w"> </span><span class="nx">prodQty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodName</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodCat</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodQty</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">shortPrint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w">  </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">price</span><span class="si">}</span><span class="sb"> EUR`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">};</span>
+<span class="c1">// Instanziieren</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">prod_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Item</span><span class="p">(</span><span class="s2">&quot;Talisker&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">49.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Whiskey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">prod_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Item</span><span class="p">(</span><span class="s2">&quot;Chivas Regal&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">29.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Office Drinks&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_1</span><span class="p">.</span><span class="nx">shortPrint</span><span class="p">());</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">prod_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Item</span><span class="p">(</span><span class="s2">&quot;Talisker Limited Edition&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">359.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HomeDrinks&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">);</span>
+<span class="nx">prod_3</span><span class="p">.</span><span class="nx">slogan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">msg</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_3</span><span class="p">.</span><span class="nx">slogan</span><span class="p">(</span><span class="s2">&quot;in der limitierten Sonderauflage&quot;</span><span class="p">));</span>
+<span class="c1">// console.log(prod_2.slogan(&quot;in der limitierten Sonderauflage&quot;));   // geht nicht!</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">.prototype</span></code> lassen sich Attribute, also Funktionen oder Variablen an
+Objekte hinzufügen, welche auf alle, auch bereits instantiierten, Instanzen
+eines Objekt angewendet werden:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Nachträgliche Funktion für alle Objekt-Instanzen definieren (auch wenn Objekte schon</span>
+<span class="c1">// instantiiert)</span>
+<span class="nx">Item</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slogan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">msg</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_2</span><span class="p">.</span><span class="nx">slogan</span><span class="p">(</span><span class="s2">&quot;in der limitierten Sonderauflage&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// das geht!</span>
+
+<span class="c1">// prototype war lange Zeit wichtig, um Browser neue Methoden beizubringen</span>
+<span class="c1">// mittlerweile nicht mehr so bedeutend, da alle Browser auf ähnlichem Stand sind</span>
+</pre></div>
+</div>
+<p>Über <code class="docutils literal notranslate"><span class="pre">instanceof</span></code> kann geprüft werden ob ein Objekt sich von einem anderen Objekt
+ableitet, d.h. ob sich die Prototypenkette des einen Objekts in dem zweiten wiederfindet.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// instanceof-Operator  (in gleicher Prototypenkette wie ...)</span>
+<span class="c1">// prüfen ob ein Objekt von einem anderen ableitet - diesen als Prototypen haben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_2</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Item</span><span class="p">);</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_2</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nb">Object</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prod_2</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nb">Array</span><span class="p">);</span><span class="w">   </span><span class="c1">// false</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day_17.html" class="btn btn-neutral float-left" title="Arrow-Function" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_19.html" class="btn btn-neutral float-right" title="Object.create()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Jan 04, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
