@@ -34,9 +34,9 @@ iTerm does not feature shortcuts for moving word-by-word or to the end or beginn
     +-----------------------+----------------------+-----------+--------------------------------+
     | :kbd:`Alt + Del->`    | Send Escape Sequence | d         | Delete right standing word     |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Left`     | Send Escape Sequence | OH        | Move to beginning of the row   |
+    | :kbd:`Cmd + Left`     | Send Hex Code        | 0x01      | Move to beginning of the row   |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Right`    | Send Escape Sequence | OF        | Move to end of the row         |
+    | :kbd:`Cmd + Right`    | Send Hex Code        | 0x05      | Move to end of the row         |
     +-----------------------+----------------------+-----------+--------------------------------+
     | :kbd:`Cmd + Del<-` \* | Send Hex Code        | 0x18 0x7f | Delete current row             |
     +-----------------------+----------------------+-----------+--------------------------------+
