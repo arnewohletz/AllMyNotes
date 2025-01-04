@@ -77,19 +77,19 @@ Von einem selektierten Element kann man zu verbundenen Elementen gehen, wie
 .. csv-table:: Übersicht - Knoten können auch Text und Kommentarknoten sein!
     :header: Traversal, Beschreibung
 
-    parentNode, Verweis auf Eltern-Knoten des aktuellen Knotens
-    parentElement, Verweis auf Eltern-Element des aktuellen Knotens
+    ``parentNode``, Verweis auf Eltern-Knoten des aktuellen Knotens
+    ``parentElement``, Verweis auf Eltern-Element des aktuellen Knotens
 
-    childNodes, alle Kind-Knoten eines Elementes (auch Text- und Kommentar-Knoten)
-    children, alle Kind-Elemente eines Knotens
-    childElementCount, Anzahl der Kind-Elemente
+    ``childNodes``, alle Kind-Knoten eines Elementes (auch Text- und Kommentar-Knoten)
+    ``children``, alle Kind-Elemente eines Knotens
+    ``childElementCount``, Anzahl der Kind-Elemente
 
-    firstChild, Verweis auf ersten Kind-Knoten
-    lastChild, Verweis auf letzten Kind-Knoten
-    firstElementChild, Verweis auf erstes Knd-Element
-    lastElementChild, Verweis aus letztes Kind-Element
+    ``firstChild``, Verweis auf ersten Kind-Knoten
+    ``lastChild``, Verweis auf letzten Kind-Knoten
+    ``firstElementChild``, Verweis auf erstes Knd-Element
+    ``lastElementChild``, Verweis aus letztes Kind-Element
 
-    previousSibling, Verweis auf vorhergehenden Geschwister-Knoten
-    nextSibling, Verweis auf nachfolgenden Geschwister-Knoten
-    previousElementSibling, Verweis auf vorhergehendes Geschwister-Element
-    nextElementSibling, Verweis auf nachfolgendes Geschwister-Element
+    ``previousSibling``, Verweis auf vorhergehenden Geschwister-Knoten
+    ``nextSibling``, Verweis auf nachfolgenden Geschwister-Knoten
+    ``previousElementSibling``, Verweis auf vorhergehendes Geschwister-Element
+    ``nextElementSibling``, Verweis auf nachfolgendes Geschwister-Element
