@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Magic Tricks on Testing (Sandy Metz) &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
@@ -186,43 +186,43 @@ a method is called from the perspective of the OUT:</p>
 <h2>Example module<a class="headerlink" href="#example-module" title="Link to this heading"></a></h2>
 <p>This module feature three object, <code class="docutils literal notranslate"><span class="pre">Wheel</span></code>, <code class="docutils literal notranslate"><span class="pre">Gear</span></code> and <code class="docutils literal notranslate"><span class="pre">Observer</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">class</span> <span class="nc">Wheel</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Wheel</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rim</span><span class="p">,</span> <span class="n">tire</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rim</span><span class="p">,</span> <span class="n">tire</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rim</span> <span class="o">=</span> <span class="n">rim</span>  <span class="c1"># diameter of wheel rim</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tire</span> <span class="o">=</span> <span class="n">tire</span>  <span class="c1"># diameter of tire</span>
 
-    <span class="k">def</span> <span class="nf">diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rim</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tire</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Observer</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Observer</span><span class="p">:</span>
     <span class="c1"># e.g. writes data into the database</span>
 
-    <span class="k">def</span> <span class="nf">changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="c1"># update database</span>
         <span class="k">return</span> <span class="kc">True</span>
 
 
-<span class="k">class</span> <span class="nc">Gear</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Gear</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chainring</span><span class="p">,</span> <span class="n">cog</span><span class="p">,</span> <span class="n">wheel</span><span class="p">,</span> <span class="n">observer</span><span class="o">=</span><span class="n">Observer</span><span class="p">()):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chainring</span><span class="p">,</span> <span class="n">cog</span><span class="p">,</span> <span class="n">wheel</span><span class="p">,</span> <span class="n">observer</span><span class="o">=</span><span class="n">Observer</span><span class="p">()):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chainring</span> <span class="o">=</span> <span class="n">chainring</span>  <span class="c1"># length of chain ring</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cog</span> <span class="o">=</span> <span class="n">cog</span>  <span class="c1"># amount of cogs on wheel</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wheel</span> <span class="o">=</span> <span class="n">wheel</span>  <span class="c1"># Wheel instance</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observer</span> <span class="o">=</span> <span class="n">observer</span>  <span class="c1"># Observer instance</span>
 
-    <span class="k">def</span> <span class="nf">gear_inches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gear_inches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ratio</span><span class="p">()</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wheel</span><span class="o">.</span><span class="n">diameter</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">chainring</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cog</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">set_cog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cog</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_cog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cog</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cog</span> <span class="o">=</span> <span class="n">cog</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_changed</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">observer</span><span class="o">.</span><span class="n">changed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chainring</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cog</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -236,20 +236,20 @@ methods to return the correct value. So, we write one or multiple tests for it, 
 the returned value.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">diameter(self)</span></code> method in <code class="docutils literal notranslate"><span class="pre">Wheel</span></code> is a subject to incoming queries, so we write a
 test for it, asserting to the return value:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WheelTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">WheelTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
 <span class="c1"># GOOD: Test incoming query</span>
-<span class="k">def</span> <span class="nf">test_calculates_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_calculates_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">wheel</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
     <span class="c1"># assert the return value</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">wheel</span><span class="o">.</span><span class="n">diameter</span><span class="p">(),</span> <span class="mi">29</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The same applies to the <code class="docutils literal notranslate"><span class="pre">gear_inches(self)</span></code> method in <code class="docutils literal notranslate"><span class="pre">Gear</span></code>, so we write another test:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
 <span class="c1"># GOOD: Test incoming query</span>
-<span class="k">def</span> <span class="nf">test_calculates_gear_inches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_calculates_gear_inches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
     <span class="c1"># assert the return value</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">gear</span><span class="o">.</span><span class="n">gear_inches</span><span class="p">(),</span> <span class="mf">137.1</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
@@ -266,12 +266,12 @@ asserting towards these side-effects.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">set_cog(self)</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Gear</span></code> class is a subject to incoming commands, as
 it changes the objects state (side-effect), but does not return a value. Consequentially,
 we write a unit test for it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
 <span class="c1"># ...</span>
 
 <span class="c1"># GOOD: Test incoming command</span>
-<span class="k">def</span> <span class="nf">test_set_cog</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_set_cog</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
     <span class="n">gear</span><span class="o">.</span><span class="n">set_cog</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
     <span class="c1"># assert the direct public side effect</span>
@@ -293,12 +293,12 @@ redundant, since the method is already covered by the <code class="docutils lite
 method, since <code class="docutils literal notranslate"><span class="pre">gear_inches(self)</span></code> is calling <code class="docutils literal notranslate"><span class="pre">_ratio(self)</span></code>. No additional test is
 necessary.</p>
 <p>This test is redundant:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
 <span class="c1"># ...</span>
 
 <span class="c1"># BAD: redundant test</span>
-<span class="k">def</span> <span class="nf">test_calculates_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_calculates_ratio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
 <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">gear</span><span class="o">.</span><span class="n">_ratio</span><span class="p">(),</span> <span class="mf">4.7</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 </pre></div>
@@ -314,12 +314,12 @@ this test breaks, so there is a maintenance effort for a test of no value.</p>
 Therefore asserting the return value of an outgoing query is already covered
 by the tests of that other object.</p>
 <p>Don’t write tests for it, since they are redundant:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
 <span class="c1"># ...</span>
 
 <span class="c1"># BAD: test outgoing queries -&gt; redundant test</span>
-<span class="k">def</span> <span class="nf">test_calculate_gear_inches_outgoing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_calculate_gear_inches_outgoing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
 <span class="n">diameter</span> <span class="o">=</span> <span class="n">gear</span><span class="o">.</span><span class="n">wheel</span><span class="o">.</span><span class="n">diameter</span><span class="p">()</span>
 <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
@@ -337,12 +337,12 @@ that outgoing command messages are sent, on other words, that these OUT methods 
 been called.</p>
 <p>Testing an outgoing command against a real interface, which relies on a chain of
 events is not a good idea, since it easily breaks for reasons out of the unit tests scope.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="c1"># ...</span>
 
     <span class="c1"># BAD: test against real interface (here: set_cog(27) calls an Observer instance)</span>
-    <span class="k">def</span> <span class="nf">test_saves_changed_cog_in_db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_saves_changed_cog_in_db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="n">chainring</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="n">cog</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">wheel</span><span class="o">=</span><span class="n">Wheel</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
                     <span class="n">observer</span><span class="o">=</span><span class="n">Observer</span><span class="p">())</span>
         <span class="n">gear</span><span class="o">.</span><span class="n">set_cog</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
@@ -351,12 +351,12 @@ events is not a good idea, since it easily breaks for reasons out of the unit te
 <p>Therefore instead of calling the real interface, use a <strong>mock</strong> object, which the internal outgoing
 command method calls instead, to have a stable edge. Remember: A mock is a test
 double which promises to have the same API as the real object (must stay in-sync).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">mock</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unittest</span><span class="w"> </span><span class="kn">import</span> <span class="n">mock</span>
 
-<span class="k">class</span> <span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GearTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="c1"># GOOD: test against a mock, instead of a real out-of-scope interface</span>
-    <span class="k">def</span> <span class="nf">test_notifies_observers_when_cogs_changes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_notifies_observers_when_cogs_changes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;unittest_magic_tricks.Observer&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockObserver</span><span class="p">:</span>
             <span class="n">wheel</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="n">rim</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">tire</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
@@ -402,7 +402,7 @@ which breaks subsequent tests from failing.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

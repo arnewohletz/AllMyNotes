@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PyScript &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
@@ -227,16 +227,16 @@ The reason is that JavaScript doesn’t recognize Python functions, only JavaScr
 for example Python functions cannot be passed to <code class="code highlight javascript docutils literal highlight-javascript"><span class="nx">addEventListener</span><span class="p">()</span></code>.
 For this, pyodide offers the function <code class="code highlight python docutils literal highlight-python"><span class="n">create_proxy</span><span class="p">()</span></code> to wrap a Python
 function into a JavaScript function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyodide</span> <span class="kn">import</span> <span class="n">create_proxy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyodide</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_proxy</span>
 
-<span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">button_clicked</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">textContent</span><span class="p">)</span>
 
 <span class="n">js_button_clicked</span> <span class="o">=</span> <span class="n">create_proxy</span><span class="p">(</span><span class="n">key_clicked</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The proxy function can the be used by other DOM objects:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">document</span><span class="p">,</span> <span class="n">console</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">document</span><span class="p">,</span> <span class="n">console</span>
 
 <span class="o">...</span>
 
@@ -256,11 +256,11 @@ for this.</p>
 <p>Since Ajax calls are asynchronous by nature, <code class="code highlight python docutils literal highlight-python"><span class="n">pyfetch</span><span class="p">()</span></code> can only be called from
 within asynchronous functions (<code class="code highlight python docutils literal highlight-python"><span class="k">async</span> <span class="k">def</span></code>). As those don’t block the code, calling
 <code class="code highlight python docutils literal highlight-python"><span class="k">await</span></code> to wait for the response is fine:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyodide.http</span> <span class="kn">import</span> <span class="n">pyfetch</span>
-<span class="kn">from</span> <span class="nn">pyodide</span> <span class="kn">import</span> <span class="n">JsException</span>
-<span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">console</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyodide.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyfetch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyodide</span><span class="w"> </span><span class="kn">import</span> <span class="n">JsException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">console</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">load_resource</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">load_resource</span><span class="p">():</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">wait</span> <span class="n">pytech</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;/some/url/containing/resources.txt&quot;</span><span class="p">,</span>
                                <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
@@ -276,7 +276,7 @@ within asynchronous functions (<code class="code highlight python docutils liter
 <p>The <code class="code highlight python docutils literal highlight-python"><span class="n">JsException</span></code> is the base class of any JavaScript error, which is encapsulated
 by PyScript. Using a more specific exception type is possible.</p>
 <p>The resources can now be further processed, like here using <code class="code highlight python docutils literal highlight-python"><span class="n">pick_data</span><span class="p">()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">pick_data</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">pick_data</span><span class="p">():</span>
     <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">load_resource</span><span class="p">()</span>
     <span class="n">data_value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value: </span><span class="si">{</span><span class="n">dat_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -287,8 +287,8 @@ defined as an asynchronous function, as it needs to wait for <code class="code h
 <p>In call those methods in a way, that they don’t block the code, an old JavaScript trick
 can be applied:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">js</span> <span class="kn">import</span> <span class="n">setTimeout</span>
-<span class="kn">from</span> <span class="nn">pyodide</span> <span class="kn">import</span> <span class="n">create_proxy</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">js</span><span class="w"> </span><span class="kn">import</span> <span class="n">setTimeout</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyodide</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_proxy</span>
 <span class="o">...</span>
 <span class="n">setTimeout</span><span class="p">(</span><span class="n">create_proxy</span><span class="p">(</span><span class="n">load_resource</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -336,7 +336,7 @@ on the page. No import statement is necessary:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

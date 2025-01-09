@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create a new directive &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
@@ -251,10 +251,10 @@ admonition, which is used like this:</p>
 <p>In here, we import the necessary base classes for both our custom admonition
 directive and our custom admonition node:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">docutils.parsers.rst.directives.admonitions</span> <span class="kn">import</span> <span class="n">BaseAdmonition</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">docutils.nodes</span> <span class="kn">import</span> <span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span>
-<span class="linenos">3</span><span class="kn">from</span> <span class="nn">sphinx.application</span> <span class="kn">import</span> <span class="n">Sphinx</span>
-<span class="linenos">4</span><span class="kn">from</span> <span class="nn">sphinx.util.typing</span> <span class="kn">import</span> <span class="n">ExtensionMetadata</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span><span class="w"> </span><span class="nn">docutils.parsers.rst.directives.admonitions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseAdmonition</span>
+<span class="linenos">2</span><span class="kn">from</span><span class="w"> </span><span class="nn">docutils.nodes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span>
+<span class="linenos">3</span><span class="kn">from</span><span class="w"> </span><span class="nn">sphinx.application</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sphinx</span>
+<span class="linenos">4</span><span class="kn">from</span><span class="w"> </span><span class="nn">sphinx.util.typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtensionMetadata</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -263,11 +263,11 @@ directive and our custom admonition node:</p>
 directive class, where both <code class="code highlight python docutils literal highlight-python"><span class="n">Admonition</span></code> and <code class="code highlight python docutils literal highlight-python"><span class="n">Element</span></code> will be the parents
 of our <code class="code highlight python docutils literal highlight-python"><span class="n">waiting</span></code> node class:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 7</span><span class="k">class</span> <span class="nc">waiting</span><span class="p">(</span><span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 7</span><span class="k">class</span><span class="w"> </span><span class="nc">waiting</span><span class="p">(</span><span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
 <span class="linenos"> 8</span>    <span class="k">pass</span>
 <span class="linenos"> 9</span>
 <span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">class</span> <span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
+<span class="linenos">11</span><span class="k">class</span><span class="w"> </span><span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
 <span class="linenos">12</span>    <span class="k">pass</span>
 </pre></div>
 </div>
@@ -285,14 +285,14 @@ node class and the directive or role element class, check out these modules</p>
 except inheriting from the standard <em>docutils</em> class(es) (defined in <code class="docutils literal notranslate"><span class="pre">docutils.nodes</span></code>).</p>
 <p>Let’s continue with the implementation of the <code class="docutils literal notranslate"><span class="pre">WaitingAdmonition</span></code> class:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">11</span><span class="k">class</span> <span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">11</span><span class="k">class</span><span class="w"> </span><span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
 <span class="linenos">12</span>    <span class="n">required_arguments</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="linenos">13</span>    <span class="n">final_argument_whitespace</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="linenos">14</span>    <span class="n">has_content</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="linenos">15</span>
 <span class="linenos">16</span>    <span class="n">node_class</span> <span class="o">=</span> <span class="n">waiting</span>
 <span class="linenos">17</span>
-<span class="linenos">18</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">18</span>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">19</span>        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
 <span class="linenos">20</span>        <span class="n">waiting_node</span> <span class="o">=</span> <span class="n">waiting</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
 <span class="linenos">21</span>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">nested_parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_offset</span><span class="p">,</span>
@@ -340,7 +340,7 @@ will be defined next.</p>
 transform the associated directive into one or more nodes.</p>
 <p>Additional arguments are defined in the <code class="docutils literal notranslate"><span class="pre">rst.Directive</span></code> docstring:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">docutils.parsers</span> <span class="kn">import</span> <span class="n">rst</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">docutils.parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">rst</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">rst</span><span class="o">.</span><span class="n">Directive</span><span class="o">.</span><span class="vm">__doc__</span>
 </pre></div>
 </div>
@@ -390,10 +390,10 @@ defines what nodes to insert <strong>after</strong> any further nested nodes (se
 methods may simply call the predefined Sphinx <code class="docutils literal notranslate"><span class="pre">sphinx.writers.html5.HTML5Translator</span></code>
 methods for visiting and departing from admonition nodes:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">visit_admonition</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">depart_admonition</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -414,14 +414,14 @@ which obscures the existence of this custom admonition (we could have used a
 warning admonition, in that case).</p>
 <p>For this reason, we will define a custom body for the <em>waiting</em> node:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">26</span><span class="k">def</span> <span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">26</span><span class="k">def</span><span class="w"> </span><span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
 <span class="linenos">27</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;div class=</span><span class="se">\&quot;</span><span class="s2">admonition waiting</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">28</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;p class=</span><span class="se">\&quot;</span><span class="s2">admonition-title</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">29</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">30</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">31</span>
 <span class="linenos">32</span>
-<span class="linenos">33</span><span class="k">def</span> <span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">33</span><span class="k">def</span><span class="w"> </span><span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
 <span class="linenos">34</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -475,7 +475,7 @@ not possible in HTML, so the paragraph is closed, before another one is opened.<
 <p>Last but not least, both the defined <em>waiting</em> admonition and the <em>waiting</em> node
 must be registered in Sphinx, so they are known to the Sphinx builder:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">37</span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">37</span><span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
 <span class="linenos">38</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">waiting</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">visit_waiting_node</span><span class="p">,</span> <span class="n">depart_waiting_node</span><span class="p">))</span>
 <span class="linenos">39</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;waiting&#39;</span><span class="p">,</span> <span class="n">WaitingAdmonition</span><span class="p">)</span>
 <span class="linenos">40</span>
@@ -505,28 +505,28 @@ as the extensions metadata. For more info, see <a class="reference external" hre
 </dl>
 <p>This concludes the definition of the <em>waiting</em> admonition.</p>
 <p>This is the entire content of the <code class="docutils literal notranslate"><span class="pre">waiting_admonition.py</span></code> module:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">docutils.parsers.rst.directives.admonitions</span> <span class="kn">import</span> <span class="n">BaseAdmonition</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">docutils.nodes</span> <span class="kn">import</span> <span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span>
-<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">sphinx.application</span> <span class="kn">import</span> <span class="n">Sphinx</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span><span class="w"> </span><span class="nn">docutils.parsers.rst.directives.admonitions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseAdmonition</span>
+<span class="linenos"> 2</span><span class="kn">from</span><span class="w"> </span><span class="nn">docutils.nodes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span>
+<span class="linenos"> 3</span><span class="kn">from</span><span class="w"> </span><span class="nn">sphinx.application</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sphinx</span>
 <span class="linenos"> 4</span>
 <span class="linenos"> 5</span><span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 6</span>    <span class="kn">from</span> <span class="nn">sphinx.util.typing</span> <span class="kn">import</span> <span class="n">ExtensionMetadata</span>
+<span class="linenos"> 6</span>    <span class="kn">from</span><span class="w"> </span><span class="nn">sphinx.util.typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtensionMetadata</span>
 <span class="linenos"> 7</span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
 <span class="linenos"> 8</span>    <span class="n">ExtensionMetadata</span> <span class="o">=</span> <span class="s1">&#39;ExtensionMetadataType&#39;</span>   <span class="c1"># Sphinx &lt;7.3</span>
 <span class="linenos"> 9</span>
 <span class="linenos">10</span>
-<span class="linenos">11</span><span class="k">class</span> <span class="nc">waiting</span><span class="p">(</span><span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
+<span class="linenos">11</span><span class="k">class</span><span class="w"> </span><span class="nc">waiting</span><span class="p">(</span><span class="n">Admonition</span><span class="p">,</span> <span class="n">Element</span><span class="p">):</span>
 <span class="linenos">12</span>    <span class="k">pass</span>
 <span class="linenos">13</span>
 <span class="linenos">14</span>
-<span class="linenos">15</span><span class="k">class</span> <span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
+<span class="linenos">15</span><span class="k">class</span><span class="w"> </span><span class="nc">WaitingAdmonition</span><span class="p">(</span><span class="n">BaseAdmonition</span><span class="p">):</span>
 <span class="linenos">16</span>    <span class="n">required_arguments</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="linenos">17</span>    <span class="n">final_argument_whitespace</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="linenos">18</span>    <span class="n">has_content</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="linenos">19</span>
 <span class="linenos">20</span>    <span class="n">node_class</span> <span class="o">=</span> <span class="n">waiting</span>
 <span class="linenos">21</span>
-<span class="linenos">22</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">22</span>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">23</span>        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
 <span class="linenos">24</span>        <span class="n">waiting_node</span> <span class="o">=</span> <span class="n">waiting</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
 <span class="linenos">25</span>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">nested_parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_offset</span><span class="p">,</span>
@@ -534,18 +534,18 @@ as the extensions metadata. For more info, see <a class="reference external" hre
 <span class="linenos">27</span>        <span class="k">return</span> <span class="p">[</span><span class="n">waiting_node</span><span class="p">]</span>
 <span class="linenos">28</span>
 <span class="linenos">29</span>
-<span class="linenos">30</span><span class="k">def</span> <span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">30</span><span class="k">def</span><span class="w"> </span><span class="nf">visit_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
 <span class="linenos">31</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;div class=</span><span class="se">\&quot;</span><span class="s2">admonition waiting</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">32</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;p class=</span><span class="se">\&quot;</span><span class="s2">admonition-title</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">33</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">34</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">35</span>
 <span class="linenos">36</span>
-<span class="linenos">37</span><span class="k">def</span> <span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+<span class="linenos">37</span><span class="k">def</span><span class="w"> </span><span class="nf">depart_waiting_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
 <span class="linenos">38</span>    <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">)</span>
 <span class="linenos">39</span>
 <span class="linenos">40</span>
-<span class="linenos">41</span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExtensionMetadata</span><span class="p">:</span>
+<span class="linenos">41</span><span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExtensionMetadata</span><span class="p">:</span>
 <span class="linenos">42</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">waiting</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">visit_waiting_node</span><span class="p">,</span> <span class="n">depart_waiting_node</span><span class="p">))</span>
 <span class="linenos">43</span>    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;waiting&#39;</span><span class="p">,</span> <span class="n">WaitingAdmonition</span><span class="p">)</span>
 <span class="linenos">44</span>
@@ -568,8 +568,8 @@ Under the <code class="code highlight python docutils literal highlight-python">
 <p>Make sure, the <code class="docutils literal notranslate"><span class="pre">source/_ext/</span></code> directory is added to the interpreter’s
 PYTHONPATH. Add the following line near the top of the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/_ext&#39;</span><span class="p">)</span>
 </pre></div>
@@ -647,7 +647,7 @@ are overridden by the theme’s own, more specific, CSS rules.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Command Pattern &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
@@ -281,80 +281,80 @@ way to structure and application, instead of just executing things</p></li>
 but instead create multiple <em>Invoker</em> classes, which all assign commands differently. It
 also ensures, that Invokers cannot be instantiated without specifying all required commands.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 
 
 <span class="c1"># Receiver</span>
-<span class="k">class</span> <span class="nc">FancyLight</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FancyLight</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="nf">turn_on</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">turn_on</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Switching on ...&quot;</span><span class="p">)</span>
         <span class="k">return</span>
 
-    <span class="k">def</span> <span class="nf">turn_off</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">turn_off</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Switching off ...&quot;</span><span class="p">)</span>
         <span class="k">return</span>
 
 
-<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Command</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
 
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">pass</span>
 
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">unexecute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unexecute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">pass</span>
 
 
 <span class="c1"># Concrete Commands</span>
-<span class="k">class</span> <span class="nc">TurnOnCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TurnOnCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">light</span><span class="p">:</span> <span class="n">FancyLight</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">light</span><span class="p">:</span> <span class="n">FancyLight</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">light</span> <span class="o">=</span> <span class="n">light</span>
 
-    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">turn_on</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">unexecute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unexecute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">turn_off</span><span class="p">()</span>
 
 
-<span class="k">class</span> <span class="nc">TurnOffCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TurnOffCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">light</span><span class="p">:</span> <span class="n">FancyLight</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">light</span><span class="p">:</span> <span class="n">FancyLight</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">light</span> <span class="o">=</span> <span class="n">light</span>
 
-    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">turn_off</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">unexecute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unexecute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">turn_on</span><span class="p">()</span>
 
 
 <span class="c1"># Invoker</span>
-<span class="k">class</span> <span class="nc">SuperRemoteControl</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SuperRemoteControl</span><span class="p">:</span>
     <span class="n">_turn_on</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">_turn_off</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">_light_state</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">_last_command</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">turn_on_command</span><span class="p">,</span> <span class="n">turn_off_command</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">turn_on_command</span><span class="p">,</span> <span class="n">turn_off_command</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_light_state</span> <span class="o">=</span> <span class="s2">&quot;off&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_turn_on</span> <span class="o">=</span> <span class="n">turn_on_command</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_turn_off</span> <span class="o">=</span> <span class="n">turn_off_command</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_command</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="c1"># Not needed as directly assigned in constructor (dependency injection)</span>
-    <span class="k">def</span> <span class="nf">set_turn_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="n">Command</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_turn_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="n">Command</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_turn_on</span> <span class="o">=</span> <span class="n">command</span>
 
     <span class="c1"># Not needed as directly assigned in constructor (dependency injection)</span>
-    <span class="k">def</span> <span class="nf">set_turn_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="n">Command</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_turn_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="n">Command</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_turn_off</span> <span class="o">=</span> <span class="n">command</span>
 
-    <span class="k">def</span> <span class="nf">press_onoff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">press_onoff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_light_state</span> <span class="o">==</span> <span class="s2">&quot;off&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_turn_on</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_light_state</span> <span class="o">=</span> <span class="s2">&quot;on&quot;</span>
@@ -364,7 +364,7 @@ also ensures, that Invokers cannot be instantiated without specifying all requir
             <span class="bp">self</span><span class="o">.</span><span class="n">_light_state</span> <span class="o">=</span> <span class="s2">&quot;off&quot;</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_last_command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_turn_off</span>
 
-    <span class="k">def</span> <span class="nf">press_undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">press_undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_command</span><span class="o">.</span><span class="n">unexecute</span><span class="p">()</span>
 
 
@@ -400,7 +400,7 @@ also ensures, that Invokers cannot be instantiated without specifying all requir
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

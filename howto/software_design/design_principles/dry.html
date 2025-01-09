@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DRY &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
@@ -201,7 +201,7 @@ bmi subject5 = 28
 </pre></div>
 </div>
 <p>First let’s remove the duplication of calculating the BMI for various subjects:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">bmi_calc</span><span class="p">(</span><span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span><span class="w"> </span><span class="nf">bmi_calc</span><span class="p">(</span><span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
 <span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate BMI from weight in kg and height in meters&quot;&quot;&quot;</span>
 <span class="linenos"> 3</span>    <span class="n">bmi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">weight_kg</span> <span class="o">/</span> <span class="n">height_m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="linenos"> 4</span>    <span class="k">return</span> <span class="n">bmi</span>
@@ -234,7 +234,7 @@ the calculation for each subject. If the calculation method changes, there is no
 only one place (the <em>bmi_calc()</em> method) to adapt the code.</p>
 <p>To improve it further, let’s move the print statement to the function as well, since
 it is duplicated for each subject:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">bmi_calc</span><span class="p">(</span><span class="n">sub_num</span><span class="p">,</span> <span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span><span class="w"> </span><span class="nf">bmi_calc</span><span class="p">(</span><span class="n">sub_num</span><span class="p">,</span> <span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
 <span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate BMI from weight in kg and height in meters&quot;&quot;&quot;</span>
 <span class="linenos"> 3</span>    <span class="n">bmi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">weight_kg</span> <span class="o">/</span> <span class="n">height_m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="linenos"> 4</span>    <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_num</span><span class="p">)</span>
@@ -256,7 +256,7 @@ it is duplicated for each subject:</p>
 </div>
 <p>To improve it even more let’s remove calling each subject individually and move them
 all to a list and iterate over it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">bmi_calc</span><span class="p">(</span><span class="n">sub_num</span><span class="p">,</span> <span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span><span class="w"> </span><span class="nf">bmi_calc</span><span class="p">(</span><span class="n">sub_num</span><span class="p">,</span> <span class="n">weight_kg</span><span class="p">,</span> <span class="n">height_m</span><span class="p">):</span>
 <span class="linenos"> 2</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate BMI from weight in kg and height in meters&quot;&quot;&quot;</span>
 <span class="linenos"> 3</span>    <span class="n">bmi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">weight_kg</span> <span class="o">/</span> <span class="n">height_m</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="linenos"> 4</span>    <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_num</span><span class="p">)</span>
@@ -284,7 +284,7 @@ must not repeat what is happening in the function.</p>
 <h2>Duplication in Data<a class="headerlink" href="#duplication-in-data" title="Link to this heading"></a></h2>
 <p>The attributes of a class must not depend on each other in a way, that if one
 data value changes, another attribute has to be manually adapted.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Line</span> <span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Line</span> <span class="p">{</span>
     <span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
     <span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
     <span class="n">double</span> <span class="n">length</span><span class="p">;</span>
@@ -294,12 +294,12 @@ data value changes, another attribute has to be manually adapted.</p>
 <p>This is a violation of DRY. The length derives from the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> attributes.
 If the start or the end Point changes, the length must change as well. It’s better to make
 length a function:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Line</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Line</span> <span class="p">{</span>
     <span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
     <span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">double</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -332,7 +332,7 @@ length a function:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

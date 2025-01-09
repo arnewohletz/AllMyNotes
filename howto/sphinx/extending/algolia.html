@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add Algolia DocSearch engine &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
@@ -467,10 +467,10 @@ on other Sphinx themes.</p>
 </div>
 <p>To fix this issue, put this code into a Python script (e.g. <code class="docutils literal notranslate"><span class="pre">fix_docsearch_jupyter.py</span></code>)
 which is located in a directory, that is listed in the systems PATH variable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sphinx.application</span> <span class="kn">import</span> <span class="n">Sphinx</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sphinx.application</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sphinx</span>
 
 
-<span class="k">def</span> <span class="nf">add_docsearch_js</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">templatename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">doctree</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_docsearch_js</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">templatename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">doctree</span><span class="p">):</span>
     <span class="n">docsearch_script</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@docsearch/js@3&quot;&gt;&lt;/script&gt;</span>
 <span class="s2">    &quot;&quot;&quot;</span>
@@ -480,7 +480,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
         <span class="n">context</span><span class="p">[</span><span class="s2">&quot;metatags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">docsearch_script</span>
 
 
-<span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;html-page-context&quot;</span><span class="p">,</span> <span class="n">add_docsearch_js</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -488,8 +488,8 @@ which is located in a directory, that is listed in the systems PATH variable.</p
 <li><p>Save the above code in <code class="docutils literal notranslate"><span class="pre">source/_ext/fix_docsearch_jupyter.py</span></code> (create file and directory).</p></li>
 <li><p>Open your <code class="docutils literal notranslate"><span class="pre">source/conf.py</span></code> file and add these lines near the top:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/_ext&#39;</span><span class="p">)</span>
 </pre></div>
@@ -525,7 +525,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>

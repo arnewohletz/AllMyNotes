@@ -12,7 +12,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strategy Pattern &mdash; All-My-Notes  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
@@ -298,29 +298,29 @@ of it themselves</p></li>
 <p>Taking it one step further, it is also possible to refrain from using actual <em>Clients</em>, but
 instead instantiate the <em>Context</em> class (here: Duck) <strong>with</strong> passing the wanted behavior into
 the constructor (<em>dependency injection</em>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 
-<span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">fly_behavior</span><span class="p">:</span> <span class="n">FlyBehavior</span><span class="p">,</span>
                  <span class="n">quack_behavior</span><span class="p">:</span> <span class="n">QuackBehavior</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fly_behavior</span> <span class="o">=</span> <span class="n">fly_behavior</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">quack_behavior</span> <span class="o">=</span> <span class="n">quack_behavior</span>
 
-    <span class="k">def</span> <span class="nf">fly</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fly</span><span class="p">():</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fly_behavior</span><span class="o">.</span><span class="n">fly</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">quack</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">():</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">quack_behavior</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
 
-<span class="k">class</span> <span class="nc">FlyBehavior</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FlyBehavior</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">fly</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fly</span><span class="p">():</span>
         <span class="k">pass</span>
 
-<span class="k">class</span> <span class="nc">QuackBehavior</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">QuackBehavior</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">quack</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">():</span>
         <span class="k">pass</span>
 
 <span class="c1"># some classes implementing FlyBehavior &amp; QuackBehavior</span>
@@ -348,7 +348,7 @@ the constructor (<em>dependency injection</em>):</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jan 04, 2025</span>.
+        <span class="update_date">Jan 09, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2024, Arne Wohletz.</p>
