@@ -122,10 +122,10 @@ Python
 
 Robot Framework
 ---------------
-* `RobotFramework Language Server`_: VSCode extension support for Robot Framework
+* `RoboCode - Robot Framework Support`_: Robot Framework IntelliSense, linting, test
+  execution and debugging, code formatting, refactoring, and many more
 
-
-.. _RobotFramework Language Server: https://marketplace.visualstudio.com/items?itemName=robocorp.robotframework-lsp
+.. _RoboCode - Robot Framework Support: https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode
 
 Rust
 ----
