@@ -11,7 +11,7 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SCP &mdash; All-My-Notes  documentation</title>
+  <title>Scale Java Applications for 4K displays &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
@@ -40,8 +40,8 @@
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="next" title="SSH" href="ssh/index.html" />
-    <link rel="prev" title="Netcat" href="netcat.html" /> 
+    <link rel="next" title="Get missing drivers" href="drivers.html" />
+    <link rel="prev" title="Linux" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -75,18 +75,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../firefox/index.html">Firefox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../games/index.html">Games</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Network</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG - GNU Privacy Guard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="netcat.html">Netcat</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">SCP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssh/index.html">SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ssl.html">SSL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zscaler.html">Zscaler</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scale Java Applications for 4K displays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-desktop-launcher-files">On *.desktop launcher files</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">Get missing drivers </a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_usb.html">Install Linux on USB flash drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tree.html">tree - Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
@@ -128,10 +128,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Network</a></li>
-      <li class="breadcrumb-item active">SCP</li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Scale Java Applications for 4K displays</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/howto/network/scp.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/howto/linux/4k_scale.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -139,46 +139,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="scp">
-<h1>SCP<a class="headerlink" href="#scp" title="Link to this heading"></a></h1>
-<p class="rubric">Prerequisites</p>
-<ul class="simple">
-<li><p>SSH Client is installed on local machine</p></li>
-<li><p>SSH Server is installed on remote machine</p></li>
-</ul>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>If the remote system name is unknown, you may also use its IP address.</p>
-</div>
-<p class="rubric">Copy files from remote server to local drive</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>&lt;remote_username&gt;@&lt;remote_machine_name&gt;:&lt;/remote/source/file&gt;<span class="w"> </span>&lt;/local/target/directory/&gt;
+  <section id="scale-java-applications-for-4k-displays">
+<h1>Scale Java Applications for 4K displays<a class="headerlink" href="#scale-java-applications-for-4k-displays" title="Link to this heading"></a></h1>
+<p>Java applications often don’t scale to higher resolutions (above Full-HD), making
+them barely readable on 4k resolutions. Generally, running an application with the
+additional <code class="docutils literal notranslate"><span class="pre">JAVA-OPTS=&quot;-Dsun.java2d.uiScale=2&quot;</span></code> environment variable scales the
+application (here: at a factor of 2). Depending on how the application is launched,
+the steps on adding this variable are different.</p>
+<section id="on-desktop-launcher-files">
+<h2>On *.desktop launcher files<a class="headerlink" href="#on-desktop-launcher-files" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Open the directory of the original <code class="docutils literal notranslate"><span class="pre">*.desktop</span></code> file.</p></li>
+<li><p>Create a copy of it, naming it something like <code class="docutils literal notranslate"><span class="pre">&lt;original_name&gt;_4k.desktop</span></code>.</p></li>
+<li><p>Open it in an editor and adjust the <code class="docutils literal notranslate"><span class="pre">Exec=</span></code> statement adding the needed
+environment variable. For example, change</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=soapui-launcher.sh. org.soapui.SoapUI
 </pre></div>
 </div>
-<p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>root@AECG111416:/tmp/test.txt<span class="w"> </span>/home/arnewohletz/docs/
+</div></blockquote>
+<p>into</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exec=env JAVA-OPTS=&quot;-Dsun.java2d.uiScale=2&quot; /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=soapui-launcher.sh. org.soapui.SoapUI
 </pre></div>
 </div>
-<p class="rubric">Copy files from local drive to remote server</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>&lt;/local/source/file&gt;<span class="w"> </span>&lt;remote_username&gt;@&lt;remote_machine_name&gt;:&lt;/remote/target/directory&gt;
-</pre></div>
-</div>
-<p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>scp<span class="w"> </span>/home/arnewohletz/docs/test_local.txt<span class="w"> </span>root@AECG111416:/tmp/
-</pre></div>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Alternatively, you can use SFTP to copy files from and to a remote target. The basic copy
-command is analog to SCP. Simply exchange <code class="docutils literal notranslate"><span class="pre">scp</span></code> with <code class="docutils literal notranslate"><span class="pre">sftp</span></code>.</p>
-</div>
+</div></blockquote>
+</li>
+<li><p>Now run the new launcher file and the application should scale accordingly.</p></li>
+</ol>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="netcat.html" class="btn btn-neutral float-left" title="Netcat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ssh/index.html" class="btn btn-neutral float-right" title="SSH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="drivers.html" class="btn btn-neutral float-right" title="Get missing drivers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
