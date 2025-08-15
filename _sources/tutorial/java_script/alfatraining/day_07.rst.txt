@@ -103,7 +103,7 @@ oder ausgeblendete Inhalte.
     console.log(headLine.textContent); // Achtung: Hallo Welt!!! mit             Zusatz unsichtbar
 
 .. TODO: // .innerText = gerenderter Content (keine ausgeblendeten Elemente, keine Markups -> Users)
-// .textContent = AM PERFORMANTESTEN: so wie im Inspektor (mit doppelten Leerzeichen, mit ausgeblendeten Inhalte, aber keine Markups)
+    // .textContent = AM PERFORMANTESTEN: so wie im Inspektor (mit doppelten Leerzeichen, mit ausgeblendeten Inhalte, aber keine Markups)
 
 
 .. hint::
@@ -474,7 +474,7 @@ DOMContentLoaded Event Listener
 ```````````````````````````````
 .. TODO: EventListener für DOMContentLoaded event dokumentieren
 
-Feuert etwas früher, wie ``load``event. Siehe Dokumentation.
+Feuert etwas früher, wie ``load`` event. Siehe Dokumentation.
 
 Event-Handler
 -------------

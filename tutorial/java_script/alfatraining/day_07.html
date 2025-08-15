@@ -18,6 +18,8 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
@@ -38,6 +40,8 @@
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
       <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="next" title="Break: Übungsaufgaben" href="day_08.html" />
@@ -326,7 +330,6 @@ oder ausgeblendete Inhalte.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span><span class="w"> </span><span class="c1">// Achtung: Hallo Welt!!! mit             Zusatz unsichtbar</span>
 </pre></div>
 </div>
-<p>// .textContent = AM PERFORMANTESTEN: so wie im Inspektor (mit doppelten Leerzeichen, mit ausgeblendeten Inhalte, aber keine Markups)</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><code class="docutils literal notranslate"><span class="pre">.innerText</span></code> und <code class="docutils literal notranslate"><span class="pre">.textContent</span></code> sind performanter, als <code class="docutils literal notranslate"><span class="pre">.innerHTML</span></code>,
@@ -675,7 +678,7 @@ a different element).</p>
 </div>
 <section id="domcontentloaded-event-listener">
 <h3>DOMContentLoaded Event Listener<a class="headerlink" href="#domcontentloaded-event-listener" title="Link to this heading"></a></h3>
-<p>Feuert etwas früher, wie <a href="#id2"><span class="problematic" id="id3">``</span></a>load``event. Siehe Dokumentation.</p>
+<p>Feuert etwas früher, wie <code class="docutils literal notranslate"><span class="pre">load</span></code> event. Siehe Dokumentation.</p>
 </section>
 </section>
 <section id="event-handler">
@@ -748,7 +751,7 @@ verknüpften Resources (CSS, Bilder, usw.) aufgerufen.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Jul 17, 2025</span>.
+        <span class="update_date">Aug 15, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>
