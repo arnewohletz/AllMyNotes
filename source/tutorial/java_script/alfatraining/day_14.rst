@@ -93,9 +93,9 @@ GET Requests
 * ``url`` ist die aufzurufende URL
 * ``dataType`` ist der zu erwartende Rückgabedatentyp
 * ``success`` ist die Handlung, welche bei erfolgreicher Ausführung (200)
-durchgeführt werden soll
+  durchgeführt werden soll
 * ``error`` ist die Handlung, welche bei nicht-erfolgreicher Ausführung
-durchgeführt werden soll
+  durchgeführt werden soll
 
 **2. Möglichkeit**
 

@@ -50,11 +50,9 @@ Definition
     :align: center
 
     classDiagram
-        Target<--Client : HAS-A
-        Target<|--Adapter : implements
-        Adapter<--Adaptee : HAS-A
-        class Client {
-        }
+        Target <-- Client : HAS-A
+        Target <|-- Adapter : implements
+        Adapter <-- Adaptee : HAS-A
         class Target {
             <<Interface>>
             +request()
