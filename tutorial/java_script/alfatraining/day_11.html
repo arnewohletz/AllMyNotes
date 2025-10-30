@@ -117,11 +117,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#verlaufshistorie">Verlaufshistorie</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#verlaufseintrage-erstellen">Verlaufseinträge erstellen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#durch-verlaufseintrage-navigieren">Durch Verlaufseinträge navigieren</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -138,7 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -351,23 +352,24 @@ Verlaufseintrag erstellt.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Durch Verlaufseinträge navigieren
-–——————————–
-Über popstate-Ereignis</p>
+</section>
+<section id="durch-verlaufseintrage-navigieren">
+<h2>Durch Verlaufseinträge navigieren<a class="headerlink" href="#durch-verlaufseintrage-navigieren" title="Link to this heading"></a></h2>
+<p>Über popstate-Ereignis</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>wird immer bei Navigation durch <code class="docutils literal notranslate"><span class="pre">history</span></code> ausgelöst</p></li>
 <li><p>gibt state-object zurück, das mit <code class="docutils literal notranslate"><span class="pre">pushState</span></code> übergeben wurde</p></li>
 </ul>
 </div></blockquote>
-<p>Der <code class="docutils literal notranslate"><span class="pre">state</span></code> Objekt ist Teil des <code class="docutils literal notranslate"><span class="pre">event</span></code> Objekts, welches in jeden Event-Handler
+<p>Der <code class="docutils literal notranslate"><span class="pre">state</span></code> Objekt ist Teil des <code class="docutils literal notranslate"><span class="pre">event</span></code> Objekts, welches in jeder Event-Handler
 Funktion verfügbar ist.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">onpopstate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Event-Objekt ist in jeder Event-Handler Funktion verfügbar</span>
 
 <span class="w">    </span><span class="c1">// Das State-Objekt wird ebenfalls als Teil des Event-Objects übergeben</span>
 <span class="w">    </span><span class="c1">// Muss ausgelesen werden</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt das</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt state zum Zeitpunkt des Events wieder</span>
 
 <span class="w">    </span><span class="c1">// für ersten Aufruf einer Seite wird KEIN state Objekt in der History</span>
 <span class="w">    </span><span class="c1">// gespeichert, da dies der erste Aufruf ist (das event.state Objekt ist &#39;null&#39;).</span>
@@ -385,7 +387,7 @@ Funktion verfügbar ist.</p>
 <p class="admonition-title">Hint</p>
 <p><strong>Zweigleisig fahren</strong></p>
 <p>Es bietet sich an, beide Möglichkeiten für das Laden von neuen Inhalten zu
-implementieren (per AJAX UND per JavaScript):</p>
+implementieren (per Ajax <strong>UND</strong> per JavaScript):</p>
 <ul class="simple">
 <li><p>Bei AJAX: nicht lesbar für Suchmaschinen</p></li>
 <li><p>Bei JavaScript: geht nicht, wenn Nutzer JavaScript deaktiviert</p></li>
@@ -408,7 +410,7 @@ implementieren (per AJAX UND per JavaScript):</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

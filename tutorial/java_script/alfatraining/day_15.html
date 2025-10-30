@@ -45,7 +45,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="next" title="Ternärer / conditional Operator" href="day_16.html" />
-    <link rel="prev" title="Durch DOM navigieren" href="day_14.html" /> 
+    <link rel="prev" title="jQuery: Durch DOM navigieren" href="day_14.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Timing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#timeout">timeout</a></li>
@@ -139,7 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -252,12 +252,12 @@
 </div>
 <p>Alle Timeouts werden beim Laden des Skripts registriert. Der Zeitpunkt des Timeout
 wird also stets vom Laden des Skriptes gerechnet und <strong>nicht</strong> vom vorangegangenen
-Timout aus gerechnet. Funktionen kommen auf den Stack und werden beim Eintritt ihres
+Timeout aus gerechnet. Funktionen kommen auf den Stack und werden beim Eintritt ihres
 Timeouts ausgeführt, das Skript setzt derweil fort.</p>
 </section>
 <section id="interval">
 <h2>Interval<a class="headerlink" href="#interval" title="Link to this heading"></a></h2>
-<p>Zyklisches Ausführen einer Funktion.</p>
+<p>Zyklisches, wiederholendes Ausführen einer Funktion.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> wird ein Intervall gesetzt. Hier wird die aktuelle Zeit
 jede Sekunde aktualisiert:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">intervalId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -298,7 +298,8 @@ wird die Ausführung beim Render-Prozess getätigt.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><strong>Funktion beim Deklarieren sofort einmalig ausführen</strong></p>
-<p>Über EFI:</p>
+<p>Über <a class="reference internal" href="day_04.html#javascript-iife-immediately-invoked-function-expression"><span class="std std-ref">IIFE</span></a>
+(Immediately Invoked Function Expression):</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">runCat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
@@ -326,13 +327,16 @@ aktuellen Dokument.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Hyperreferenz der Seite auslesen</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
 
-<span class="c1">// queryString</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+<span class="c1">// queryString (&lt;my_url&gt;?param1=foo -&gt; ?1=foo)</span>
+<span class="w">    </span><span class="c1">// if current location is https://example.com</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span><span class="w">  </span><span class="c1">//&lt;empty string&gt;</span>
+<span class="w">    </span><span class="c1">// if current location is https://example.com?q=123</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;?q=123&quot;</span>
 
-<span class="c1">// hashTag</span>
+<span class="c1">// hashTag (&lt;my_url&gt;#mytag -&gt; #mytag)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
 
-<span class="c1">// Dateienpfad</span>
+<span class="c1">// Dateienpfad -&gt; relativer Pfad der HTML</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">);</span>
 
 <span class="c1">// Hostname / Domain</span>
@@ -400,12 +404,22 @@ gewünschten Objekts als Array [key, value] zurückgegeben:</p>
 <p>Iteriert über <strong>Keys</strong> eines Objekts:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">];</span>
 
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">      </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">            </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;Dragonroad 66, Hell&#39;s Kitchen&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">getFullName</span><span class="o">:</span><span class="w">    </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="p">};</span>
+
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">heroes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">heroes</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">heroes</span><span class="p">[</span><span class="nx">index</span><span class="p">]);</span><span class="w">    </span><span class="c1">// 0 Jessica -&gt; 1 Luke -&gt; ...</span>
 <span class="p">}</span>
 <span class="k">for</span><span class="w">  </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">      </span><span class="c1">// undefined  --&gt; es gibt kein Attribute &#39;key&#39;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span><span class="w">   </span><span class="c1">// OK: lastName Jones -&gt; firstName Jessica -&gt; ...</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">      </span><span class="c1">// NOK: undefined  --&gt; es gibt kein Attribute &#39;key&#39;</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">key</span><span class="p">);</span><span class="w">    </span><span class="c1">// string</span>
 <span class="p">}</span>
 </pre></div>
@@ -413,16 +427,16 @@ gewünschten Objekts als Array [key, value] zurückgegeben:</p>
 </section>
 <section id="for-of-schleife">
 <h2>for-of Schleife<a class="headerlink" href="#for-of-schleife" title="Link to this heading"></a></h2>
-<p>Iteriert über einen <strong>Values</strong>. Hierfür benötigt das Objekt einen Iterator, wie
-z.B. das Array-Objekt dies hat:</p>
+<p>Iteriert über <strong>Values</strong> eines Objekts. Hierfür benötigt das Objekt einen Iterator,
+wie z.B. das Array-Objekt dies hat:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">heroes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span><span class="w">  </span><span class="c1">// Jessica 0 -&gt; Luke 1 -&gt; ...</span>
 <span class="p">}</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// lastName -&gt; firstName -&gt; ...</span>
 <span class="p">}</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">entry</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ &quot;lastName&quot;, &quot;Jones&quot; ] -&gt; [ &quot;firstName&quot;, &quot;Jessica&quot; ] -&gt; ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -456,9 +470,17 @@ da ansonsten Änderung über diese weiterhin möglich sind.</p>
 <h2>Objekt duplizieren<a class="headerlink" href="#objekt-duplizieren" title="Link to this heading"></a></h2>
 <p>Neue Methode von 2022. Über <code class="docutils literal notranslate"><span class="pre">structuredClone()</span></code> wird ein Objekt vollständig,
 jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">clonedHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">structuredClone</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">marvelHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w">    </span><span class="mf">36</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;angry&quot;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">clonedHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">structuredClone</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">);</span>
 <span class="nx">clonedHero</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Luke Cage&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clonedHero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clonedHero</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Luke Cage</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Jessica Jones</span>
 </pre></div>
 </div>
 <p>Andere Möglichkeiten: Prototyping oder JSON (Methoden werden hier ebenfalls ignoriert).</p>
@@ -478,6 +500,7 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="p">};</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">who</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// &#39;this&#39; referenziert das Objekt auf dem die &#39;output&#39;-Methode aufgerufen wird</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">who</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">[</span><span class="nx">who</span><span class="p">];</span>
 <span class="p">}</span>
 
@@ -487,11 +510,11 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="w">    </span><span class="nx">katze</span><span class="o">:</span><span class="w"> </span><span class="nx">cat</span><span class="p">,</span><span class="w">   </span><span class="c1">// alter Weg weiterhin möglich</span>
 <span class="w">    </span><span class="nx">dog</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">hero</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">output</span>
+<span class="w">    </span><span class="nx">output</span><span class="w">  </span><span class="c1">// auch mit Funktionen möglich</span>
 <span class="p">};</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">&quot;katze&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// hero is Jessica</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">&quot;katze&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// katze is Lucy</span>
 </pre></div>
 </div>
 </section>
@@ -556,7 +579,7 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 </div>
 </section>
 <section id="datentyp-symbol">
-<h1>Datentyp: Symbol<a class="headerlink" href="#datentyp-symbol" title="Link to this heading"></a></h1>
+<span id="javascript-datatype-symbol"></span><h1>Datentyp: Symbol<a class="headerlink" href="#datentyp-symbol" title="Link to this heading"></a></h1>
 <p>Datentyp wird bei Webseiten-Programmierung kaum eingesetzt. Seit ES6 verfügbar.
 Symbole sind <strong>immer einzigartig</strong> - gleichen sich nicht untereinander. Sie können
 beim Erzeugen eine Beschreibung erhalten. Erzeugte Symbole werden im Symbolregister
@@ -626,7 +649,7 @@ Ausdrücke eingefügt werden.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="day_14.html" class="btn btn-neutral float-left" title="Durch DOM navigieren" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day_14.html" class="btn btn-neutral float-left" title="jQuery: Durch DOM navigieren" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="day_16.html" class="btn btn-neutral float-right" title="Ternärer / conditional Operator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -635,7 +658,7 @@ Ausdrücke eingefügt werden.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

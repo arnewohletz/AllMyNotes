@@ -480,7 +480,7 @@ Event-Handler
 -------------
 Ist eine Eigenschaft eines Elements, welche direkt **einer** Funktion
 zugewiesen werden kann. Diese wird ebenfalls beim Eintreten des Ereignisses
-ausgeführt. Es gibt hier nur eine Funktion. Sobald die Eigenschaft einer anderen
+ausgeführt. Es gibt hier **nur eine Funktion**. Sobald die Eigenschaft einer anderen
 Funktion zugewiesen wird, wird die bisherige Zuweisung überschrieben.
 
 .. note::

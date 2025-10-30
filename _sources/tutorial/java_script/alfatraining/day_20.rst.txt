@@ -19,7 +19,7 @@ Geordnete Sammlung von Schlüssel-Wert Paaren.
     myMap.set("age", 36);
 
     // Anzahl der Einträge ermitteln mit .size
-    console.log(myMap.size);
+    console.log(myMap.size);   // 3
 
     /*
         Map mit Werten erzeugen
@@ -38,7 +38,7 @@ Geordnete Sammlung von Schlüssel-Wert Paaren.
     ])
 
     console.log(heldenStaerke);
-    console.log(heldenStaerke.size);
+    console.log(heldenStaerke.size);   // 4
 
 Konvertierungen
 ```````````````
@@ -55,19 +55,19 @@ Konvertierungen
     console.log(Object.entries(user));
 
     let userMap = new Map(Object.entries(user));
-    console.log(userMap);
+    console.log(userMap);   // Map(3) { firstName → "Jessica", lastName → "Jones", age → 36 }
 
     // II) Map -> Object  (über Object.fromEntries())
     let userObj = Object.fromEntries(userMap);
-    console.log(userObj);
+    console.log(userObj);   // Object { firstName: "Jessica", lastName: "Jones", age: 36 }
 
     // III) Map -> Array
     let userArr = Array.from(userMap);
-    console.log(userArr);
+    console.log(userArr);   // Array(3) [ 0 : Array [ "firstName", "Jessica" ], 1: ... ]
 
 Vorteil: Map-keys
 `````````````````
-Als Key wird jeder beliebige Datentype akzeptiert (im Unterschied zu Objekte,
+Als Key wird jeder beliebige Datentyp akzeptiert (im Unterschied zu Objekten,
 welche nur String & Symbol akzeptieren). Die einzige Bedingung ist, dass
 Schlüsselwerte einzigartig sein müssen.
 
@@ -87,7 +87,7 @@ Schlüsselwerte einzigartig sein müssen.
     console.log(keyObj[1] === keyObj["1"]);   // true
 
     // --> im Objekt werden Objekt-Schlüssel als Typen-String konvertiert
-    //      --> nicht möglich einzigartigee Objekte abzulegen!!
+    //      --> nicht möglich einzigartige Objekte abzulegen!!
     keyObj[user] = "Object-Key";
     console.log(keyObj);
 
@@ -238,8 +238,8 @@ Methoden
     // integriertes forEach()
     // [Set].forEach( (value, key, set) ) = {} )
     heroSet.forEach( (value, key, set) => {
-        console.log(value, key);
-        console.log(set);
+        console.log(value, key);    // Jessica Jessica -> Luke Luke -> ...
+        console.log(set);   //  [ "Jessica", "Luke", ... ] -> [ "Jessica", "Luke", ... ] -> ...
     });
 
     // Rückgabe von Set() und add() = Set
@@ -352,7 +352,7 @@ iterieren.
     }
 
     // beim Aufruf der Generator-Function wird das Generator-Objekt erzeugt
-    // Generartor wird zurückgegeben - Funktion selbst nicht abgearbeitet
+    // Generator wird zurückgegeben - Funktion selbst nicht abgearbeitet
     let myGenerator = myGeneratorFunc();
     console.log(myGenerator);      // Generator { constructor: Iterator() }
 
@@ -396,6 +396,9 @@ iterieren.
     }
 
     let myCounter = counter();
+    console.log(myCounter.next());      // Object { value: 1, done: false }
+    console.log(myCounter.next());      // Object { value: 2, done: false }
+    console.log(myCounter.next());      // ...
     console.log(myCounter.next());
     console.log(myCounter.next());
     console.log(myCounter.next());
@@ -403,15 +406,13 @@ iterieren.
     console.log(myCounter.next());
     console.log(myCounter.next());
     console.log(myCounter.next());
-    console.log(myCounter.next());
-    console.log(myCounter.next());
-    console.log(myCounter.next());
-    console.log(myCounter.next());  // Object { value: 11, done: false }
-    console.log(myCounter.next(true));
-    console.log(myCounter.next());  // Object { value: 2, done: false }
+    console.log(myCounter.next());      // Object { value: 11, done: false }
+    console.log(myCounter.next(true));  // (XXX): Object { value: 1, done: false }
+    console.log(myCounter.next());      // Object { value: 2, done: false }
 
-    // das 'true' wird als Ausgabe für 'yield count' gesetzt, wird als 'restart'
-    // zugewiesen, welcher daraufhin den counter auf 0 setzt.
+    // (XXX): Das 'true' wird als Ausgabe für 'yield count' des VORHERIGEN next()
+    // Aufrufs gesetzt. Dadurch wird beim Aufruf 'restart' der Wert 'true' zugewiesen
+    // und dadurch der count auf '0' gesetzt.
     // 'yield' ist ebenso der EINSTIEGSPUNKT für den nächsten Aufruf von 'next()'
     // ein Wert, der über 'next(einWert)' übergeben wird, wird als der Rückgabewert
     // des yield-statements gesetzt

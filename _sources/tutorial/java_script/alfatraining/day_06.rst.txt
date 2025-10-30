@@ -22,6 +22,13 @@ eigens geschriebenen JSON Strings jedoch selbst gemacht werden.
 
 .. code-block:: javascript
 
+    let product = {
+        name:       "SingleMalt",
+        category:   ["Whiskey", "Office Drinks"],
+        price:     29.99,
+        inStock:    500
+    }
+
     // Daten serialisieren
     let jsonStr = JSON.stringify(product);
     console.log(jsonStr);
@@ -57,9 +64,15 @@ Im Firefox unter :menuselection:`Web Tools --> Storage --> Cookies`.
     // Neuer Cookies (hier: nur über admin path) -> wird im Browser nur im /admin Pfad angezeigt
     document.cookie = "user=Elektra; path=/admin";
 
+.. hint::
+
+    Wenn ein Cookie nur im ``/admin`` Pfad existiert, so wird nur bei URL Anfragen
+    welche diesen Pfad enthalten (z.B. ``<IP_ADRESSE>/admin/<optional>/<deeper>/<path>``)
+    angefügt.
+
 Das ``sameSite=strict`` Cookie Attribut wird Cookie nur gesendet, wenn man sich auf der
 gleichen Domain befindet (nicht, wenn Seite aus anderer Domain heraus angefordert wird).
-Dies verhindert, dass korrumpierte Cookies, nicht ausgelesen wird.
+Dies verhindert, dass korrumpierte Cookies nicht ausgelesen werden.
 
 .. note::
 
@@ -88,7 +101,7 @@ Dies verhindert, dass korrumpierte Cookies, nicht ausgelesen wird.
         * Must be used with the ``Secure`` flag (i.e., only over HTTPS) in
           modern browsers to avoid being rejected.
         * Allows cookies to work with third-party integrations but may expose
-          them to CSRF risks.
+          them to CSRF (Cross Site Request Forgery) risks.
 
 .. code-block:: javascript
 
@@ -200,9 +213,9 @@ moderne Alternative.
 
 Daten werden in zwei verschiedenen Storage-Objekte (Datenbanken) abgelegt:
 
-* Local Storage (``window.sessionStorage``) -> speichert Daten über aktuelle Sitzung
+* Session Storage (``window.sessionStorage``) -> speichert Daten über aktuelle Sitzung
   hinaus (Daten auch von anderen Tabs heraus verfügbar)
-* Session Storage (``window.localStorage``) -> Daten bleiben nur in aktueller Sitzung
+* Local Storage (``window.localStorage``) -> Daten bleiben nur in aktueller Sitzung
   (nur innerhalb eines Tabs)
 
 Beide verfügen über die gleichen Methoden und Eigenschaften.
@@ -312,7 +325,7 @@ Zum Auslesen, muss der Wert wieder in ein Objekt überführt werden
 
 Prüfen ob Storage verfügbar
 ---------------------------
-Bei Zugriff auf Storage ohne das dieser vorhanden ist, wirft Fehler.
+Bei Zugriff auf Storage, ohne dass dieser vorhanden ist, wirft Fehler.
 
 .. code-block:: javascript
 

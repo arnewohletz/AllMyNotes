@@ -124,7 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -141,7 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -303,7 +303,8 @@ Bedingung erfüllt ist.</p>
 <p>Würde zuerst auf n &lt; 1000 geprüft, wäre die Kondition erfüllt und die Prüfung
 ist beendet. Allerdings könnte die Antwort genauer sein.</p>
 </div>
-<p><strong>Einfache Prüfung</strong> (Sonderfälle abfangen): gilt für null, NaN, 0, “”, undefined</p>
+<p><strong>Einfache Prüfung</strong> (Sonderfälle abfangen): gilt für <code class="docutils literal notranslate"><span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">undefined</span></code>:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// hier: undefined wird als &#39;false&#39; interpretiert</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">inputVar</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">inputVar</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Korrekt&quot;</span><span class="p">);</span>
@@ -334,28 +335,31 @@ ist beendet. Allerdings könnte die Antwort genauer sein.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">||</span></code> Oder-Operator:</p>
 <blockquote>
 <div><p>Bedingung_1 || Bedingung_2</p>
-<p>false || false =&gt; false
-true || true =&gt; true
-true || false =&gt; true
-false || true =&gt; true</p>
+<ul class="simple">
+<li><p>false || false =&gt; false</p></li>
+<li><p>true || true =&gt; true</p></li>
+<li><p>true || false =&gt; true</p></li>
+<li><p>false || true =&gt; true</p></li>
+</ul>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> Und-Operator:</p>
 <blockquote>
 <div><p>Bedingung_1 &amp;&amp; Bedingung_2</p>
-<p>false &amp;&amp; false =&gt; false
-true &amp;&amp; true =&gt; true
-true &amp;&amp; false =&gt; false
-false &amp;&amp; true =&gt; false</p>
+<ul class="simple">
+<li><p>false &amp;&amp; false =&gt; false</p></li>
+<li><p>true &amp;&amp; true =&gt; true</p></li>
+<li><p>true &amp;&amp; false =&gt; false</p></li>
+<li><p>false &amp;&amp; true =&gt; false</p></li>
+</ul>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">!</span></code> Not-Operator: Verkehrt den Wahrheitswert</p>
 <blockquote>
 <div><p>!Bedingung</p>
-<p>!true =&gt; false
-!false =&gt; true</p>
-</div></blockquote>
-</li>
+<ul class="simple">
+<li><p>!true =&gt; false</p></li>
+<li><p>!false =&gt; true</p></li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
 
@@ -376,14 +380,12 @@ false &amp;&amp; true =&gt; false</p>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">userInput</span><span class="p">))</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
 </pre></div>
 </div>
-<ul>
+</div></blockquote>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">??</span></code> Null-ish Operator</p>
 <blockquote>
 <div><p>Steht zwischen 2 Operanden; wenn 1. Operand <strong>null || undefined</strong>,
 wird 2. Operator genutzt.</p>
-</div></blockquote>
-</li>
-</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">number</span><span class="p">;</span><span class="w">  </span><span class="c1">// undefined</span>
 <span class="nx">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
 <span class="nx">number</span><span class="w"> </span><span class="o">??=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w">  </span><span class="c1">// Kurzschreibweise für obige Zeile</span>
@@ -394,6 +396,9 @@ wird 2. Operator genutzt.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ul>
 </section>
 <section id="switch-kontrollstruktur">
 <h2>switch Kontrollstruktur<a class="headerlink" href="#switch-kontrollstruktur" title="Link to this heading"></a></h2>
@@ -532,7 +537,7 @@ entsprechend in Kleinbuchstaben.</p>
 </section>
 <section id="teil-strings">
 <h2>Teil-Strings<a class="headerlink" href="#teil-strings" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">slice(startIndex,</span> <span class="pre">endIndex)</span></code> (endIndex ist in Rückgabe <strong>nicht</strong> enthalten und
+<p><code class="docutils literal notranslate"><span class="pre">.slice(startIndex,</span> <span class="pre">endIndex)</span></code> (<code class="docutils literal notranslate"><span class="pre">endIndex</span></code> ist in Rückgabe <strong>nicht</strong> enthalten und
 ist optional, kann auch höher sein als Länge des Strings -&gt; String wird bis zum
 Ende ausgegeben).</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
@@ -556,7 +561,7 @@ Ende ausgegeben).</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mf">14</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">20</span><span class="p">));</span><span class="w"> </span><span class="c1">// &lt;empty string&gt;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">substring()</span></code> funktioniert ähnlich wie <code class="docutils literal notranslate"><span class="pre">slice</span></code>, erlaubt jedoch den Start- und
+<p><code class="docutils literal notranslate"><span class="pre">.substring()</span></code> funktioniert ähnlich wie <code class="docutils literal notranslate"><span class="pre">slice</span></code>, erlaubt jedoch den Start- und
 EndIndex zu vertauschen -&gt; es kann keine versehentliche Verwechslung passieren
 wie bei <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mozilla&quot;</span>
@@ -661,7 +666,7 @@ Ende des Strings an.</p>
 </section>
 <section id="ausdrucke-in-strings-konvertieren">
 <h2>Ausdrücke in Strings konvertieren<a class="headerlink" href="#ausdrucke-in-strings-konvertieren" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">.toString</span></code> existiert in fast allen Datentypen, jedoch nicht in <code class="docutils literal notranslate"><span class="pre">undefined</span></code>
+<p><code class="docutils literal notranslate"><span class="pre">.toString()</span></code> existiert in fast allen Datentypen, jedoch nicht in <code class="docutils literal notranslate"><span class="pre">undefined</span></code>
 oder <code class="docutils literal notranslate"><span class="pre">null</span></code>. Hier besser den String-Konstruktor verwenden, um Type Error zu
 vermeiden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">//  Ausdrücke in String konvertieren</span>
@@ -704,7 +709,7 @@ vermeiden.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

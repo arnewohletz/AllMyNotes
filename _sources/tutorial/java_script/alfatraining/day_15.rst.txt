@@ -29,12 +29,12 @@ timeout
 
 Alle Timeouts werden beim Laden des Skripts registriert. Der Zeitpunkt des Timeout
 wird also stets vom Laden des Skriptes gerechnet und **nicht** vom vorangegangenen
-Timout aus gerechnet. Funktionen kommen auf den Stack und werden beim Eintritt ihres
+Timeout aus gerechnet. Funktionen kommen auf den Stack und werden beim Eintritt ihres
 Timeouts ausgeführt, das Skript setzt derweil fort.
 
 Interval
 --------
-Zyklisches Ausführen einer Funktion.
+Zyklisches, wiederholendes Ausführen einer Funktion.
 
 Über ``setInterval()`` wird ein Intervall gesetzt. Hier wird die aktuelle Zeit
 jede Sekunde aktualisiert:
@@ -82,7 +82,8 @@ wird die Ausführung beim Render-Prozess getätigt.
 
     **Funktion beim Deklarieren sofort einmalig ausführen**
 
-    Über EFI:
+    Über :ref:`IIFE <javascript_iife_immediately_invoked_function_expression>`
+    (Immediately Invoked Function Expression):
 
     .. code-block:: javascript
 
@@ -115,13 +116,16 @@ aktuellen Dokument.
     // Hyperreferenz der Seite auslesen
     console.log(location.href);
 
-    // queryString
-    console.log(location.search);
+    // queryString (<my_url>?param1=foo -> ?1=foo)
+        // if current location is https://example.com
+    console.log(location.search);  //<empty string>
+        // if current location is https://example.com?q=123
+    console.log(location.search);  // "?q=123"
 
-    // hashTag
+    // hashTag (<my_url>#mytag -> #mytag)
     console.log(location.hash);
 
-    // Dateienpfad
+    // Dateienpfad -> relativer Pfad der HTML
     console.log(location.pathname);
 
     // Hostname / Domain
@@ -198,30 +202,40 @@ Iteriert über **Keys** eines Objekts:
 
     let heroes = ["Jessica", "Luke", "Daredevil", "Elektra", "Odin"];
 
+    let user = {
+        lastName:       "Jones",
+        firstName:      "Jessica",
+        age:            36,
+        address:        "Dragonroad 66, Hell's Kitchen",
+        getFullName:    function() {
+                            return this.firstName + " " + this.lastName;
+                        }
+    };
+
     for (let index in heroes) {
-        console.log(index, heroes[index]);
+        console.log(index, heroes[index]);    // 0 Jessica -> 1 Luke -> ...
     }
     for  (let key in user) {
-        console.log(key, user[key]);
-        console.log(user.key);      // undefined  --> es gibt kein Attribute 'key'
+        console.log(key, user[key]);   // OK: lastName Jones -> firstName Jessica -> ...
+        console.log(user.key);      // NOK: undefined  --> es gibt kein Attribute 'key'
         console.log(typeof key);    // string
     }
 
 for-of Schleife
 ---------------
-Iteriert über einen **Values**. Hierfür benötigt das Objekt einen Iterator, wie
-z.B. das Array-Objekt dies hat:
+Iteriert über **Values** eines Objekts. Hierfür benötigt das Objekt einen Iterator,
+wie z.B. das Array-Objekt dies hat:
 
 .. code-block:: javascript
 
     for (let value of heroes) {
-        console.log(value, heroes.indexOf(value));
+        console.log(value, heroes.indexOf(value));  // Jessica 0 -> Luke 1 -> ...
     }
     for (let key of Object.keys(user)) {
-        console.log(value);
+        console.log(key);  // lastName -> firstName -> ...
     }
     for (let entry of Object.entries(user)) {
-        console.log(entry);
+        console.log(entry);  // [ "lastName", "Jones" ] -> [ "firstName", "Jessica" ] -> ...
     }
 
 Objekt einfrieren
@@ -258,9 +272,17 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:
 
 .. code-block:: javascript
 
+    const marvelHero = {
+            name:   "Jessica Jones",
+            age:    36,
+            status: "angry"
+        };
+
     let clonedHero = structuredClone(marvelHero);
     clonedHero.name = "Luke Cage"
     console.log(clonedHero);
+    console.log(clonedHero.name);  // Luke Cage
+    console.log(marvelHero.name);  // Jessica Jones
 
 Andere Möglichkeiten: Prototyping oder JSON (Methoden werden hier ebenfalls ignoriert).
 
@@ -282,6 +304,7 @@ Es gibt eine alte und neue Möglichkeit:
     };
 
     let output = function(who) {
+        // 'this' referenziert das Objekt auf dem die 'output'-Methode aufgerufen wird
         return who + " is " + this[who];
     }
 
@@ -291,11 +314,11 @@ Es gibt eine alte und neue Möglichkeit:
         katze: cat,   // alter Weg weiterhin möglich
         dog,
         hero,
-        output
+        output  // auch mit Funktionen möglich
     };
     console.log(myNewObject);
-    console.log(myNewObject.output("hero"));
-    console.log(myNewObject.output("katze"));
+    console.log(myNewObject.output("hero"));    // hero is Jessica
+    console.log(myNewObject.output("katze"));   // katze is Lucy
 
 FormData-Object
 ===============
@@ -356,6 +379,8 @@ FormData-Object
 
         // WICHTIG! Formular nicht absenden
         return false;
+
+.. _javascript_datatype_symbol:
 
 Datentyp: Symbol
 ================

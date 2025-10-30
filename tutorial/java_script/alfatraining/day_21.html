@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -147,6 +147,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#beispiel-fs-modul">Beispiel: fs-Modul</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#import-export-commonjs-vs-ecmascript-module-es">Import/Export: CommonJS vs. ECMAScript Module (ES)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standardmodule-einbinden">Standardmodule einbinden</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#npm">npm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#eigene-module-schreiben">Eigene Module schreiben</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#vom-modul-zum-npm-paket">Vom Modul zum npm-Paket</a></li>
@@ -252,12 +254,12 @@ in Entwicklerkonsolen der Webbrowser</p></li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>mit <code class="docutils literal notranslate"><span class="pre">require(…)</span></code> importiert Node.js Module</p>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">require(…)</span></code> importiert Node.js Module.</p>
 </div>
 <section id="gleichzeitige-ausfuhrung">
 <h2>Gleichzeitige Ausführung<a class="headerlink" href="#gleichzeitige-ausfuhrung" title="Link to this heading"></a></h2>
 <p>Node.js versucht jede Anweisung so schnell wie möglich auszuführen.
-Programm enthält aber auch viele Anweisungen, die langsam sind (bsw. Einlesen
+Programm enthält aber auch viele Anweisungen, die langsam sind (z.B. Einlesen
 einer Datei). Bei synchronen Methoden laufen im Hintergrund Anweisungen, die
 warten müssen</p>
 <blockquote>
@@ -349,7 +351,7 @@ Version der Standardbibliothek die Schnittstelle so ändert, dass Code nicht
 mehr funktioniert.</p>
 <p><strong>Buffer</strong> = beliebige Folge von Bytes
 Unterschied zu Strings: Strings enthalten druckbare Bytes (also Zeichen), die
-bestimmtem Encoding folgen (bsw. UTF8) Buffer enthalten beliebige Daten:
+bestimmtem Encoding folgen (bsw. UTF-8) Buffer enthalten beliebige Daten:
 gzip-komprimierte Daten, Bilder, Messdaten eines Sensors oder …</p>
 <p><strong>Stream-API</strong> ist sehr komfortabel</p>
 <blockquote>
@@ -436,13 +438,133 @@ sich darum, benötigte Callbacks zu erstellen</p></li>
 </div></blockquote>
 </section>
 </section>
+<section id="import-export-commonjs-vs-ecmascript-module-es">
+<h2>Import/Export: CommonJS vs. ECMAScript Module (ES)<a class="headerlink" href="#import-export-commonjs-vs-ecmascript-module-es" title="Link to this heading"></a></h2>
+<p>NodeJS verwendet standardmäßig das <em>CommonJS</em> Modulformat.</p>
+<p>Bei der Verwendung von Modulen mit NodeJS ist es wichtig zu erkennen, ob es sich
+bei einem lokalen JavaScript-Datei um ein <em>CommonJS</em> Modul oder ein <em>ECMAScript</em> Module handelt.
+Diese unterscheiden sich beispielsweise in der Art, wie deren Methoden exportiert und
+importiert werden.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Die folgenden Beispiele beschränken sich auf <strong>lokale Module</strong>, welche <strong>nicht</strong>
+per <code class="docutils literal notranslate"><span class="pre">npm</span></code> installiert wurden. Hierfür die
+<a class="reference internal" href="#alfaview-javascript-create-own-modules"><span class="std std-ref">Beschreibung unten</span></a> lesen.</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// CommonJS (nur default export)</span>
+<span class="c1">// ========</span>
+<span class="c1">// module.js</span>
+<span class="c1">// ---------</span>
+<span class="c1">// Definition</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// Export</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// init.js</span>
+<span class="c1">// -------</span>
+<span class="c1">// 1) Named Import</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./module.js&quot;</span><span class="p">);</span>
+<span class="c1">// Verwendung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubleVal</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">   </span><span class="c1">// 4</span>
+
+<span class="c1">// 2) Default Import</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./module.js&quot;</span><span class="p">)</span>
+<span class="c1">// Verwendung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">doubleVal</span><span class="p">(</span><span class="mf">2</span><span class="p">))</span><span class="w">    </span><span class="c1">// 4</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Da NodeJS standardmäßig mit CommonJS Module arbeitet, muss für die Einbindung
+von ECMAScript Module entweder</p>
+<ul>
+<li><p>Module mit dem Suffix <code class="docutils literal notranslate"><span class="pre">.mjs</span></code> enden (statt <code class="docutils literal notranslate"><span class="pre">.js</span></code>) <strong>oder</strong></p></li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">package.json</span></code> der Typ auf <code class="docutils literal notranslate"><span class="pre">module</span></code> geändert werden (CommonJS: <code class="docutils literal notranslate"><span class="pre">commonjs</span></code>):</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Wichtig</strong>: Für den <em>Named Export / Import</em> <strong>muss</strong> <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;module&quot;</span></code> gesetzt sein!</p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ES Module - Default Export</span>
+<span class="c1">// ==========================</span>
+<span class="c1">// module.mjs</span>
+<span class="c1">// ----------</span>
+<span class="c1">// Definition</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// Export</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// init.js</span>
+<span class="c1">// -------</span>
+<span class="c1">// Import (nur default import möglich)</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">module</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./module.js&quot;</span><span class="p">;</span>
+<span class="c1">// Verwendung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">doubleVal</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">   </span><span class="c1">// 4</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ES Module - Named Export (benötigt &quot;type&quot;: &quot;module&quot;)</span>
+<span class="c1">// ====================================================</span>
+<span class="c1">// module.mjs</span>
+<span class="c1">// ----------</span>
+<span class="c1">// Definition + Export</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// init.js</span>
+<span class="c1">// -------</span>
+<span class="c1">// 1) Named import</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">doubleVal</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./module.js&quot;</span><span class="p">;</span>
+<span class="c1">// Verwendung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubleVal</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">   </span><span class="c1">// 4</span>
+
+<span class="c1">// 2) Default import</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./myModule.js&quot;</span><span class="p">)</span>
+<span class="c1">// Verwendung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myModule</span><span class="p">.</span><span class="nx">doubleVal</span><span class="p">(</span><span class="mf">2</span><span class="p">))</span><span class="w">    </span><span class="c1">// 4</span>
+</pre></div>
+</div>
+</section>
+<section id="standardmodule-einbinden">
+<h2>Standardmodule einbinden<a class="headerlink" href="#standardmodule-einbinden" title="Link to this heading"></a></h2>
+<p>Auch hier ist der Typ des Projekts entscheidend. Standardmodule können über das
+<code class="docutils literal notranslate"><span class="pre">require</span></code> statement in CommonJS Module importiert werden. Bei ECMAScript Modulen
+hingegen werden diese über das <code class="docutils literal notranslate"><span class="pre">import</span></code> statement importiert.</p>
+<p>CommonJS Module (mit <code class="docutils literal notranslate"><span class="pre">require</span></code>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">);</span>
+<span class="c1">// importiert fs-Standartmodul aus nodeJS Bibliothek</span>
+<span class="c1">// fs stellt uns Methoden zur Arbeit mit FileSystem zur Verfügung</span>
+
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;UTF8&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>ECMAScript Module (<code class="docutils literal notranslate"><span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;module&quot;</span></code> - mit <code class="docutils literal notranslate"><span class="pre">import</span></code>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Import</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;fs&quot;</span><span class="p">;</span>
+<span class="c1">// importiert fs-Standartmodul aus nodeJS Bibliothek</span>
+<span class="c1">// fs stellt uns Methoden zur Arbeit mit FileSystem zur Verfügung</span>
+
+<span class="c1">// Verwendung</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;UTF8&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
 <section id="npm">
 <h2>npm<a class="headerlink" href="#npm" title="Link to this heading"></a></h2>
-<p>Sammlung von Modulen für node.js auf <a class="reference external" href="http://www.npmjs.com">http://www.npmjs.com</a>
+<p>Sammlung von Modulen für node.js auf <a class="reference external" href="http://www.npmjs.com">http://www.npmjs.com</a>.
 Die meisten Module sind unter freizügigen Open Source-Lizenz verfügbar - dürfen
 diese Module somit uneingeschränkt einsetzen.</p>
 <p>Validator-Modul (<a class="reference external" href="https://www.npmjs.com/package/validator">https://www.npmjs.com/package/validator</a>)
-Kann Daten aller Art validieren (Zahlen in verschiedenen Formaten, komplexere Daten,
+kann Daten aller Art validieren (Zahlen in verschiedenen Formaten, komplexere Daten,
 wie Datumsangaben, Kreditkartennummern oder ISBNs).</p>
 <p>validator-Modul mit npm installieren:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>npm install validator@12
@@ -500,20 +622,70 @@ npm install ausgeführt wird, installiert npm automatisch abhängige Module
 </table>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>, <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span></code> und <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span></code> kennen Option –global
-(oder kurz: -g). Mit dieser Option handeln Befehle im Installationsverzeichnis
+<p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code>, <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">uninstall</span></code> und <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">update</span></code> kennen Option <code class="docutils literal notranslate"><span class="pre">--global</span></code>
+(oder kurz: <code class="docutils literal notranslate"><span class="pre">-g</span></code>). Mit dieser Option handeln Befehle im Installationsverzeichnis
 von Node.js selbst - Module werden global installiert, entfernt oder aktualisiert
 diese Option mit Vorsicht verwenden - evtl. werden Module von anderen Programmen
 noch gebraucht?</p>
 </div>
 </section>
 <section id="eigene-module-schreiben">
-<h2>Eigene Module schreiben<a class="headerlink" href="#eigene-module-schreiben" title="Link to this heading"></a></h2>
+<span id="alfaview-javascript-create-own-modules"></span><h2>Eigene Module schreiben<a class="headerlink" href="#eigene-module-schreiben" title="Link to this heading"></a></h2>
 <p>Sammlung an JavaScript-Funktionen lässt sich einfach in Node.js-Modul verwandeln.
 Funktionen, die dem Aufrufer des Moduls zur Verfügung gestellt werden sollen,
-müssen zu vordefiniertem Objekt mit treffendem Namen exports hinzugefügt werden.
-Modul kann dann mit</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="sb">``</span><span class="nx">require</span><span class="p">(.</span><span class="o">/</span><span class="nx">moduldatei</span><span class="p">.</span><span class="nx">js</span><span class="p">)</span><span class="sb">``</span>
+müssen zu vordefiniertem Objekt mit treffendem Namen <code class="docutils literal notranslate"><span class="pre">export</span></code> (ECMAScripts)
+oder <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> (CommonJS) hinzugefügt werden.</p>
+<p><strong>ECMAScript Module</strong> (Projekt <code class="docutils literal notranslate"><span class="pre">package.json</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;module&quot;</span></code>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// namesmodule/index.js</span>
+<span class="c1">// --------------------</span>
+<span class="c1">// call &#39;shorter&#39; method for each element in shortNames array</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">shortNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namesArr</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">namesArr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">shorter</span><span class="p">(</span><span class="nx">name</span><span class="p">));</span>
+
+<span class="c1">// convert name string, e.g. Arne Franz Wohletz -&gt; A. F. Wohletz</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">shorter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namesStr</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">tokenArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namesStr</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenArr</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">tokenArr</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">firstName</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">firstName</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;. &quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">lastName</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// export shortNames function (allows import in other modules)</span>
+<span class="hll"><span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="nx">shortNames</span><span class="p">}</span>
+</span>
+<span class="c1">// myproject/index.js</span>
+<span class="c1">// ------------------</span>
+<span class="c1">// Import</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shortNames</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;namesmodul&quot;</span><span class="p">;</span>
+<span class="c1">// Verwendung</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shortNames</span><span class="p">([</span><span class="s2">&quot;Rainer Maria Rilke&quot;</span><span class="p">]));</span><span class="w">    </span><span class="c1">// [ &#39;R. M. Rilke&#39; ]</span>
+</pre></div>
+</div>
+<p><strong>CommonJS</strong> (Projekt <code class="docutils literal notranslate"><span class="pre">package.json</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;commonjs&quot;</span></code>):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// call &#39;shorter&#39; method for each element in shortNames array</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">shortNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namesArr</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">namesArr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">shorter</span><span class="p">(</span><span class="nx">name</span><span class="p">));</span>
+
+<span class="c1">// convert name string, e.g. Arne Franz Wohletz -&gt; A. F. Wohletz</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">shorter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namesStr</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">tokenArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namesStr</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tokenArr</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">tokenArr</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">firstName</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">firstName</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;. &quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">lastName</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// export shortNames function (allows import in other modules)</span>
+<span class="hll"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shortNames</span><span class="w"> </span><span class="p">};</span>
+</span>
+<span class="c1">// myproject/index.js</span>
+<span class="c1">// ------------------</span>
+<span class="c1">// 1) Named import</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">shortNames</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;namesmodul&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">shortNames</span><span class="p">([</span><span class="s2">&quot;Rainer Maria Rilke&quot;</span><span class="p">]));</span><span class="w">    </span><span class="c1">// [ &#39;R. M. Rilke&#39; ]</span>
+
+<span class="c1">// 2) default export</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">myModule</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;namesmodul&quot;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myModule</span><span class="p">.</span><span class="nx">shortNames</span><span class="p">([</span><span class="s2">&quot;Rainer Maria Rilke&quot;</span><span class="p">]));</span><span class="w">    </span><span class="c1">// [ &#39;R. M. Rilke&#39; ]</span>
 </pre></div>
 </div>
 <p>eingebunden werden.</p>
@@ -558,7 +730,7 @@ klappt, wird auf <a class="reference external" href="http://www.npmjs.com">http:
 <p><strong>npm-Pakete veröffentlichen</strong></p>
 <p>npm macht es leicht, Pakete direkt auf npmjs.com oder eigenem Webserver zu veröffentlichen.</p>
 <p>Dazu npm-Modul-Verzeichnis als TGZ-Datei archivieren und auf npm oder Webserver laden.</p>
-<p>Befehl unter OS X und Linux, um TGZ-Datei zu erstellen:</p>
+<p>Befehl unter MacOS und Linux, um TGZ-Datei zu erstellen:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tar zcf namesmodule@0.0.1.tgz namesmodule@0.0.1
 </pre></div>
 </div>
@@ -643,7 +815,7 @@ wird.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

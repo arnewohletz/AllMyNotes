@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -132,7 +132,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -267,10 +267,10 @@ Argumente).</p>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">floskel</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">heroes</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
 <span class="w">    </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">floskel</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">hero</span><span class="si">}</span><span class="sb">`</span><span class="p">));</span>
-<span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Heyho&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span>
+<span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Heyho&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// Heyho Jessy -&gt; Heyho Luke -&gt; ...</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">heroArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">];</span>
-<span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">heroArr</span><span class="p">);</span>
+<span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">heroArr</span><span class="p">);</span><span class="w">   </span><span class="c1">// Hi Jessy -&gt; Hi Luke -&gt; ...</span>
 </pre></div>
 </div>
 </section>
@@ -278,17 +278,47 @@ Argumente).</p>
 <h1>Events und Event-Object<a class="headerlink" href="#events-und-event-object" title="Link to this heading"></a></h1>
 <p>Events durchlaufen drei Phasen:</p>
 <ol class="arabic simple">
-<li><p>Capturing-Phase (Window –&gt; Target)</p></li>
+<li><p>Capturing-Phase (Window –&gt; Target / “from top down to target”)</p></li>
 <li><p>Target-Phase</p></li>
-<li><p>Bubbling-Phase (Target –&gt; Document): Standardmäßig wird hier auf Event reagiert</p></li>
+<li><p>Bubbling-Phase (Target –&gt; Document / “from bottom up to document”):
+Standardmäßig wird hier auf Event reagiert</p></li>
 </ol>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[element].addEventListener(
     event,          Event-Type
     function,       aufzurufende Funktion
-    useCapture      Phase der Aktivierung (default = false)
+    useCapture      Phase der Aktivierung bei Elementen welche höher in DOM sind als Target
+                    true: Event wird bereits in Capturing-Phase ausgelöst
+                    false: Event wird erst in Bubbling-Phase ausgelöst
+                    (Default: false)
 )
 </pre></div>
 </div>
+<p>Beispiel:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                 | |  / \
+-----------------| |--| |-----------------
+| element1       | |  | |                |
+|   -------------| |--| |-----------     |
+|   |element2    \ /  | |          |     |
+|   --------------------------------     |
+|        W3C event model                 |
+------------------------------------------
+</pre></div>
+</div>
+<p>Bei Klick auf <code class="docutils literal notranslate"><span class="pre">element2</span></code> wird bei</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">element1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">doSomething2</span><span class="p">,</span><span class="kc">true</span><span class="p">)</span>
+<span class="nx">element2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">doSomething</span><span class="p">,</span><span class="kc">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>das Event auf <code class="docutils literal notranslate"><span class="pre">element1</span></code> bereits in der Capturing-Phase, also <strong>vor</strong> <code class="docutils literal notranslate"><span class="pre">element2</span></code>
+ausgeführt, sprich, <code class="docutils literal notranslate"><span class="pre">doSomething2</span></code> erfolgt vor <code class="docutils literal notranslate"><span class="pre">doSomething</span></code>.</p>
+<p>Bei</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">element1</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">doSomething2</span><span class="p">,</span><span class="kc">false</span><span class="p">)</span>
+<span class="nx">element2</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="nx">doSomething</span><span class="p">,</span><span class="kc">false</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>hingegen durchläuft das Event <code class="docutils literal notranslate"><span class="pre">element1</span></code> ohne das der Handler reagiert, es wird
+daraufhin zuerst <code class="docutils literal notranslate"><span class="pre">doSomething</span></code> ausgeführt, dann beginnt die Bubbling-Phase, erst
+dann wird bei Wieder-Hochlaufen <code class="docutils literal notranslate"><span class="pre">doSomething2</span></code> ausgeführt.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">bodyTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
 <span class="nx">bodyTag</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Body hat in Bubbling-Phase reagiert&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 <span class="nx">bodyTag</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Body hat in Target-Phase reagiert&quot;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
@@ -337,7 +367,7 @@ Argumente).</p>
 <span class="nx">liste</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;mousedown&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// Event-Objekt</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span><span class="w">     </span><span class="c1">//  mousedown { target: li, buttons: 1, ... }</span>
 
 <span class="w">    </span><span class="c1">// Event, das direkt vom Ereignis betroffen</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span><span class="w">  </span><span class="c1">// li-Element</span>
@@ -346,7 +376,7 @@ Argumente).</p>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">);</span><span class="w">   </span><span class="c1">// ul (Parent)</span>
 
 <span class="w">    </span><span class="c1">// Event-Phase ermitteln</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">eventPhase</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">eventPhase</span><span class="p">);</span><span class="w">  </span><span class="c1">// 3 --&gt; Bubbling-Phase</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">phaseObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Capturing -Phase&quot;</span><span class="p">,</span>
@@ -363,7 +393,7 @@ Argumente).</p>
 <span class="w">        </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mittlere Maustaste&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Rechte Maustaste&quot;</span>
 <span class="w">    </span><span class="p">};</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mouseObj</span><span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="p">]);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mouseObj</span><span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">button</span><span class="p">]);</span><span class="w">  </span><span class="c1">// z.B. 0 --&gt; Linke Maustaste</span>
 
 <span class="w">    </span><span class="c1">// Kontextmenü unterdrücken (Bei Klick mit rechter Maustaste)</span>
 <span class="w">    </span><span class="nx">liste</span><span class="p">.</span><span class="nx">oncontextmenu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -397,8 +427,8 @@ Argumente).</p>
 
 <span class="cm">/*</span>
 <span class="cm">    EventListener und once</span>
-<span class="cm">    EventListener hat zusätzliche Option once diese entfernt Event-Listener automatisch nach</span>
-<span class="cm">    1. Auftreten des Events</span>
+<span class="cm">    EventListener hat zusätzliche Option &#39;once&#39; - diese entfernt Event-Listener</span>
+<span class="cm">    automatisch nach 1. Auftreten des Events</span>
 
 <span class="cm">            [elem].addEventListener(event, function,  {once: true});</span>
 
@@ -439,7 +469,7 @@ Variablen / Konstanten zuzuweisen.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">five</span><span class="p">);</span><span class="w">  </span><span class="c1">// undefined, da überzählig</span>
 
-<span class="c1">// Destructuring ür Funktions-Parameter nutzen</span>
+<span class="c1">// Destructuring für Funktions-Parameter nutzen</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">getNames</span><span class="w"> </span><span class="p">([</span><span class="nx">one</span><span class="p">,</span><span class="w"> </span><span class="nx">two</span><span class="p">,</span><span class="w"> </span><span class="nx">three</span><span class="p">,</span><span class="w"> </span><span class="nx">four</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">three</span><span class="p">,</span><span class="w"> </span><span class="nx">four</span><span class="p">);</span>
 <span class="p">};</span>
@@ -483,14 +513,14 @@ Variablen / Konstanten zuzuweisen.</p>
 <span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="nx">firstFromObj</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">   </span><span class="nx">lastFromObj</span>
 <span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">favHero</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstFromObj</span><span class="p">,</span><span class="w"> </span><span class="nx">lastFromObj</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstFromObj</span><span class="p">,</span><span class="w"> </span><span class="nx">lastFromObj</span><span class="p">);</span><span class="w">     </span><span class="c1">// Jessica Jones</span>
 
 <span class="c1">// einfacher, wenn key-Bezeichner = Variablen-Bezeichner</span>
 <span class="kd">let</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">firstName</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">lastName</span>
 <span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">favHero</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">);</span><span class="w">      </span><span class="c1">// Jessica Jones</span>
 
 <span class="c1">// Werte aus geschachtelten Objekten</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">jessyData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -512,7 +542,7 @@ Variablen / Konstanten zuzuweisen.</p>
 <span class="w">        </span><span class="nx">city</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jessyData</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroFirst</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">zip</span><span class="p">,</span><span class="w"> </span><span class="nx">street</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroFirst</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">zip</span><span class="p">,</span><span class="w"> </span><span class="nx">street</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">);</span><span class="w">     </span><span class="c1">// Jessica 36 111 Dragonroad 66 Hells Kitchen</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span><span class="w">    </span><span class="c1">// undefined, da keine Entsprechung im Objekt</span>
 
 <span class="c1">// &#39;let&#39; entfällt, wenn Variable bereits vorhanden</span>
@@ -543,7 +573,7 @@ Variablen / Konstanten zuzuweisen.</p>
 <span class="w">    </span><span class="nx">phone</span><span class="o">:</span><span class="w">  </span><span class="p">[</span><span class="nx">mobile</span><span class="p">,</span><span class="w"> </span><span class="nx">office</span><span class="p">]</span>
 <span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jessyData</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">,</span><span class="w"> </span><span class="nx">mobile</span><span class="p">,</span><span class="w"> </span><span class="nx">office</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">,</span><span class="w"> </span><span class="nx">mobile</span><span class="p">,</span><span class="w"> </span><span class="nx">office</span><span class="p">);</span><span class="w">  </span><span class="c1">// Jessica Hells Kitchen 0172-567894321 999-66339955</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">marvelHeroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
@@ -571,7 +601,7 @@ Variablen / Konstanten zuzuweisen.</p>
 
 <span class="c1">// Destructuring in for-Schleife nutzen</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">contact</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mail</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">marvelHeroes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">mail</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">mail</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="p">);</span><span class="w">   </span><span class="c1">//  Odin odin@valhalla.org 534698721 -&gt; ...</span>
 <span class="p">}</span>
 
 <span class="c1">// Destructuring für Parameter einer Funktion nutzen</span>
@@ -584,7 +614,7 @@ Variablen / Konstanten zuzuweisen.</p>
 <span class="p">};</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">heroMail</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">contact</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mail</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mail</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mail</span><span class="p">);</span><span class="w">  </span><span class="c1">// odin@valhalla.org</span>
 <span class="p">}</span>
 <span class="nx">heroMail</span><span class="p">(</span><span class="nx">chefchen</span><span class="p">);</span>
 </pre></div>
@@ -624,8 +654,8 @@ Objekt beim Aufruf mit den definierten Argumenten aufgerufen wird, zurück.</p>
 </pre></div>
 </div>
 </section>
-<section id="construktor-function">
-<h1>Construktor-Function<a class="headerlink" href="#construktor-function" title="Link to this heading"></a></h1>
+<section id="constructor-function">
+<h1>Constructor-Function<a class="headerlink" href="#constructor-function" title="Link to this heading"></a></h1>
 <p>Sollten IMMER mit Großbuchstaben beginnen. Muss mit <code class="docutils literal notranslate"><span class="pre">new</span></code> aufgerufen werden: erstellt
 ein neues Objekt und gibt es zurück.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Item</span><span class="w"> </span><span class="p">(</span><span class="nx">prodName</span><span class="p">,</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">,</span><span class="w"> </span><span class="nx">prodCat</span><span class="p">,</span><span class="w"> </span><span class="nx">prodQty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -692,7 +722,7 @@ ableitet, d.h. ob sich die Prototypenkette des einen Objekts in dem zweiten wied
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

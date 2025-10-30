@@ -125,7 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -142,7 +142,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -282,7 +282,7 @@ Textinhalt und aller möglichen Child-Nodes) mit dupliziert.</p>
 als letzter Kind-Knoten eines Eltern-Knotens verschoben werden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
 <span class="c1">// zweites Element (CSS zählt von 1)</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li:nth-of-type(2&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li:nth-of-type(2)&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span><span class="w">  </span><span class="c1">// letztes Element</span>
 </pre></div>
@@ -291,7 +291,7 @@ als letzter Kind-Knoten eines Eltern-Knotens verschoben werden.</p>
 <section id="knoten-loschen">
 <h2>Knoten löschen<a class="headerlink" href="#knoten-loschen" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[node].remove()</span></code> wird ein Element aus dem DOM gelöscht und die Referenz
-auf das Element im Speicher zurückgegeben. Jedoch verbleiben mögliche Referenzen
+auf das Element im Speicher zurückgegeben. Jedoch bleiben mögliche Referenzen
 im Speicher erhalten.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">delItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
@@ -407,21 +407,13 @@ angrenzenden Knoten verschoben.</p>
 Element an eine benachbarte Position des <code class="docutils literal notranslate"><span class="pre">target_element</span></code> eingefügt. Dabei wird
 die bisherige Position des Elements, sofern im DOM vorhanden, verlassen, das
 Element also verschoben.</p>
-<p>Folgende “position” sind möglich:</p>
-<dl class="field-list simple">
-<dt class="field-odd">beforebegin<span class="colon">:</span></dt>
-<dd class="field-odd"><p>fdfdfd</p>
-</dd>
-<dt class="field-even">afterbegin<span class="colon">:</span></dt>
-<dd class="field-even"><p>dffdfd</p>
-</dd>
-<dt class="field-odd">beforeend<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dsfdsfdsf</p>
-</dd>
-<dt class="field-even">afterend<span class="colon">:</span></dt>
-<dd class="field-even"><p>fsdfsdfsdf</p>
-</dd>
-</dl>
+<p>Folgende “position” Werte sind möglich:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;beforebegin&quot;</span></code>: Vor dem <code class="docutils literal notranslate"><span class="pre">[target_element]</span></code> selbst</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;afterend&quot;</span></code>: Nach dem <code class="docutils literal notranslate"><span class="pre">[target_element]</span></code> selbst</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;beforeend&quot;</span></code>:Direkt innerhalb dem <code class="docutils literal notranslate"><span class="pre">[target_element]</span></code>, vor dessen ersten Kind</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;afterbegin&quot;</span></code>: Direkt innerhalb dem <code class="docutils literal notranslate"><span class="pre">[target_element]</span></code>, nach dessen letzten Kind</p></li>
+</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
@@ -440,15 +432,16 @@ Element also verschoben.</p>
 Übergabe in <code class="docutils literal notranslate"><span class="pre">insertAdjacentElement()</span></code> verschoben, <strong>keine zusätzliches Element</strong>
 eingefügt.</p>
 </div>
-<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].insertAdjacentHTML()</span></code> lässt sich <strong>DOM-String</strong> (mit HTML-Markup) an
-eine bestimmte Stelle innerhalb eines <em>target_element</em> einfügen:</p>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[elem].insertAdjacentHTML()</span></code> lässt sich ein <strong>DOM-String</strong> (mit HTML-Markup)
+an eine bestimmte Stelle innerhalb eines <em>target_element</em> einfügen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
+
 <span class="kd">const</span><span class="w"> </span><span class="nx">domString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;li class=\&quot;domString\&quot;&gt;8&lt;/li&gt;&quot;</span><span class="p">;</span>
 
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforebegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;afterbegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforeend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;afterend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforebegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;afterbegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforeend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;afterend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -466,7 +459,9 @@ z.B. <code class="docutils literal notranslate"><span class="pre">insertAdjacent
 <p>Über <code class="docutils literal notranslate"><span class="pre">insertAdjacentText(&quot;position&quot;,</span> <span class="pre">string)</span></code> lässt sich ein <strong>Text</strong> (ohne Markup,
 wird nicht gerendert) an eine bestimmte Stelle innerhalb eines <em>target_elements</em>
 eingefügt:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Hint: &lt;b&gt; Tags werden NICHT gerendert</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
+
+<span class="c1">// Hint: &lt;b&gt; Tags werden NICHT gerendert</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Kleiner Text im &lt;b&gt;Schnee&lt;b&gt;&quot;</span>
 
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">&quot;beforebegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
@@ -482,8 +477,14 @@ eingefügt:</p>
 <h2>Mehrere Objekte als Kind-Objekte platzieren<a class="headerlink" href="#mehrere-objekte-als-kind-objekte-platzieren" title="Link to this heading"></a></h2>
 <p>Seit ES6, lassen sich über <code class="docutils literal notranslate"><span class="pre">[node].prepend(1+</span> <span class="pre">elem/string)</span></code> und
 <code class="docutils literal notranslate"><span class="pre">[node].append(1+</span> <span class="pre">elem/string)</span></code> <strong>mehrere Objekte</strong> mit einem Aufruf im DOM platzieren.
-Außerdem lassen sich auch auch Strings platzieren (jedoch <strong>keine</strong> DOM-Strings),
+Außerdem lassen sich auch Strings platzieren (jedoch <strong>keine</strong> DOM-Strings),
 nicht nur Knoten. Beide Methoden haben keinen Rückgabewert.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[node].prepend(1+</span> <span class="pre">elem/string)</span></code>: add node objects <strong>before the first child</strong>
+of the <code class="docutils literal notranslate"><span class="pre">[node]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[node].append(1+</span> <span class="pre">elem/string)</span></code>: add node objects <strong>after the last child</strong>
+of the <code class="docutils literal notranslate"><span class="pre">[node]</span></code></p></li>
+</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;container&quot;</span><span class="p">;</span>
@@ -508,6 +509,10 @@ nicht nur Knoten. Beide Methoden haben keinen Rückgabewert.</p>
 <code class="docutils literal notranslate"><span class="pre">[target_element].after(1+</span> <span class="pre">elem/string)</span></code> lassen sich Element oder Strings
 (abermals <strong>keine DOM-Strings</strong> erlaubt) auf der gleichen Ebene vor und nach
 einem <em>target_element</em> platzieren.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[target_element].before(1+</span> <span class="pre">elem/string)</span></code>: add elements to the same level <strong>before</strong> this element</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[target_element].after(1+</span> <span class="pre">elem/string)</span></code>: add elements to the same level <strong>after</strong> this element</p></li>
+</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">targetElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">item_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
@@ -559,6 +564,11 @@ einfügen.</p>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">textNode</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>Wird als</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Text im Schneeregen
+</pre></div>
+</div>
+<p>in HTML eingebunden (keine Tags).</p>
 </section>
 <section id="kommentar-knoten-erzeugen">
 <h2>Kommentar-Knoten erzeugen<a class="headerlink" href="#kommentar-knoten-erzeugen" title="Link to this heading"></a></h2>
@@ -590,7 +600,7 @@ erzeugen.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

@@ -4,14 +4,14 @@ Begriff Ajax wurde 2005 von Jesse James Garrett geprägt.
 
 Ajax steht als Abkürzung für **Asynchronous JavaScript and XML** (asynchrones JavaScript
 und XML) doch Ajax-Anwendungen nicht asynchron im Sinne, dass Kommunikation mit
-Server völlig losgelöst von Benutzereingaben stattfindet. Auch XML nicht
-zwangsläufig Übertragungsformat für Daten zwischen Client und Server.
+Server völlig losgelöst von Benutzereingaben stattfindet. Auch ist XML nicht
+zwangsläufig das Übertragungsformat für Daten zwischen Client und Server.
 
 „Ajax“ => JavaScript-gestützter Datenaustausch mit Webserver im Hintergrund.
 
 * XML => ein mögliches, aber nicht zentrales Übertragungsformat
-* asynchron => JavaScript-Ausführung blockiert beim Warten auf Server-Antwort
-  nicht Browser, JavaScript-Ereignisse werden gefeuert, wenn Server-Antwort eingetroffen
+* asynchron => JavaScript-Ausführung **blockiert** beim Warten auf Server-Antwort
+  **nicht** Browser, JavaScript-Ereignisse werden gefeuert, wenn Server-Antwort eingetroffen
 * funktioniert also über selbsterzeugte HTTP-Anfragen, Server-Antwort steht Script
   zur Verfügung
 * neu = asynchrone Kommunikation im Hintergrund
@@ -25,8 +25,8 @@ Interaktion im Web ohne Ajax
 * ohne Ajax muss immer neues, vollständiges HTML-Dokument vom Server geladen werden
 * Ajax durchbricht Prinzip und ändert damit Bedienung von Webseiten und Aufbau
   von Webanwendungen grundlegend
-* werden nur kleine Datenportionen mit Webserver ausgetauscht -gerade benötigte
-  Daten nachgeladen, dem Server ausgewählte Änderungen mitgeteilt
+* werden nur kleine Datenportionen mit Webserver ausgetauscht - gerade benötigte
+  Daten werden nachgeladen, dem Server ausgewählte Änderungen mitgeteilt
 * im Extremfall kommt Single Page Application heraus
 * besteht nur aus einem ursprünglichen HTML-Dokument
 * restlicher Datenaustausch mit Webserver läuft per JavaScript im Hintergrund:
@@ -64,7 +64,7 @@ Zugänglichkeit von Ajax-Anwendungen
 -----------------------------------
 * Großer Teil der Datenverarbeitung vom Server-Rechner auf Client-Rechner (Browser) verlagert
 * Verlauf, den bisher Browser automatisch zur Verfügung stellte, müssen in
-  Ajax-Anwendungen nachgebaut werden, z.B. indem jeder Status Adresse bekommt,
+  Ajax-Anwendungen nachgebaut werden, z.B. indem jeder Status eine Adresse bekommt,
   damit Zurück-Navigation funktioniert
 
 Einsatzgebiete
@@ -237,7 +237,7 @@ als String gespeichert.
     // Wie sollen Antwort-Daten vorliegen?
     // xhr.responseType = "";  // Antwort als String (default)
     xhr.responseType = "document";  // geparstes Document (HTML || XML)
-    // xhr.responseType = "json";      // geparste JS-Daten, wenn Browser es kann
+    // xhr.responseType = "json";      // geparste JSON-Daten, wenn Browser es kann
 
     // Request-Header konfigurieren
     xhr.setRequestHeader("Accept", "text/xml");
@@ -296,5 +296,5 @@ sich der HTML oder XML Inhalt über das ``.responseXML`` Attribut auslesen.
         outputFunc(allBrowser);
     };
 
-Beachte, dass der Rückgabewert von ``.responseXML`` ein Dokument ist. Damit lässt
+Beachte, dass der Rückgabewert von ``.responseXML`` vom Typ *Document* ist. Damit lässt
 sich weiterarbeiten, wie mit dem DOM.

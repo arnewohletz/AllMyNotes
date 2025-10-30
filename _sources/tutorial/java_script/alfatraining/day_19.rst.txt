@@ -84,7 +84,7 @@ nicht gesetzt werden, gilt der Default.
     // Objekt auf Grundlage des Prototypen erstellen
     let hero = Object.create(heroActions, {
         name:   {
-            // initialer Wert der Eigenschaft
+            // initialer Wert der Eigenschaft (propertiesObject)
             value:          "Jessica",
             writable:       true,   // Eigenschaft ist überschreibbar
             enumerable:     true,   // Eigenschaft ist iterierbar
@@ -104,7 +104,7 @@ nicht gesetzt werden, gilt der Default.
     // delete hero.age;   // TypeError: property "age" is non-configurable and can't be deleted
     // delete hero.address;  // TypeError: property "address" is non-configurable and can't be deleted
     hero.address = "Alexanderplatz 111, Berlin";  // OK
-    console.log(hero);
+    console.log(hero);  // object
 
     for (let key in hero) {
         console.log(key);  // nur 'name' und 'getHeroDatas' (Rest nicht iterierbar)
@@ -118,6 +118,20 @@ nicht gesetzt werden, gilt der Default.
 
 Neue Properties in Prototypen definieren
 ========================================
+``Object.prototype`` wird um weitere Attribute (hier: Funktionen) erweitert.
+
+.. important::
+
+    Jedes Objekt in JavaScript besitzt eine eingebaute Eigenschaft, die **prototype** genannt wird.
+    Dieser ``prototype`` ist selbst wieder ein Objekt, und hat daher ebenfalls einen eigenen ``prototype``.
+    So entsteht eine sogenannte Prototype-Kette (prototype chain).
+
+    Die Kette endet, sobald ein ``prototype`` erreicht wird, dessen eigener ``prototype`` den Wert *null* hat.
+
+    Prototypen erlauben die Vererbung von Properties in JavaScript. Wenn ein Property
+    eines Objekts aufgerufen wird, wird entlang der Prototype-Kette nach diesem
+    Property gesucht und das erste gefundene Match verwendet.
+
 .. code-block:: javascript
 
     Object.prototype.print = function() {
@@ -140,6 +154,7 @@ Neue Properties in Prototypen definieren
         return this;
     };
 
+    // ... und mit off() de-registrieren
     Node.prototype.off = function (event, fn) {
         this.removeEventListener(event, fn);
         return this;
@@ -179,7 +194,7 @@ Objekt zuzuweisen.
     // Füge 'heroActions' unter Prototypenn von 'heroDatas' hinzu
     Object.setPrototypeOf(heroDatas, heroActions);
 
-    console.log(heroDatas.getHeroDatas());
+    console.log(heroDatas.getHeroDatas());  // Jessica Jones (36 wohnt in Dragonraod 66)
 
 Klassensyntax
 =============
@@ -190,7 +205,7 @@ JS macht kein "richtiges" OOP, es fühlt sich aber so an.
     class Product {
 
         // constructor = Herzstück der Klasse
-        // wird beim Instaniziieren zuerst ausgeführt
+        // wird beim Instanziieren zuerst ausgeführt
         constructor(prodName, prodPrice, prodCat, prodQty) {
             this.name = prodName;
             this._price = prodPrice;  // '_' um Property nicht mit Setter zu verwechseln
@@ -239,19 +254,19 @@ JS macht kein "richtiges" OOP, es fühlt sich aber so an.
     // newProd.addQty(100);
     // newProd.subQty(500);
     // ... muss nun als Eigenschaft verändert werden
-    newProd.subItem = 250;
-    newProd.addItem = 100;
-    newProd.subItem = 500;
+    newProd.subQty = 250;       // 500 - 250 -> 250
+    newProd.addQty = 100;       // 250 + 100 -> 150
+    newProd.subQty = 500;       // 350 - 500 -> -150: checkQty verhindert Abzug von 500 Stück
     console.log(newProd);
-    console.log(newProd.shortPrint);
+    console.log(newProd.shortPrint);    // Talisker: 49.99 EUR (350 Stück auf Lager)
 
     /*
-        Bezeichner für Getter und Setter müssen sich von Eigeschaften unterscheiden,
+        Bezeichner für Getter und Setter müssen sich von Eigenschaften unterscheiden,
         damit es nicht zu Endlos-Rekursionen, Stack-Überlauf und letztlich
         Programmabsturz kommt
 
-        oft werden Eigenschaften, auf die nicht direkt zugregriffen werden soll,
-        mit '_' geprefixt - dannn sind Zugriffsmethoden vorhanden!
+        oft werden Eigenschaften, auf die nicht direkt zugegriffen werden soll,
+        mit '_' geprefixt - dann sind Zugriffsmethoden vorhanden!
 
         Jede Klasse in eigenem Skript verorten!
     */
@@ -279,6 +294,7 @@ Eigenschaftsattribute für Properties setzen
     Object.defineProperty(newProd, "desc", {
         value: "Best Quality Whiskey",
         enumerable: true
+        // defineProperty: writable standardmäßig auf false -> read-only
     });
 
     // newProd.desc = "BliBlaBlub";  // TypeError: "desc" is read-only
@@ -307,7 +323,7 @@ Instanz eines Objekts hinzugefügt:
 
     console.log(newProd);
     newProd.quality = "Finest";
-    console.log(newProd.quality);
+    console.log(newProd.quality);   // Finest
 
 Kind-Klasse erstellen (Klassen erweitern)
 -----------------------------------------
@@ -454,11 +470,11 @@ zurückgeben:
 
     let myDog = new Dog("Snoopy");
     myDog.name = "Leika";
-    console.log(myDog.name);
+    console.log(myDog.name);    // Leika
 
-    console.log(Object.getOwnPropertySymbols(myDog));
+    console.log(Object.getOwnPropertySymbols(myDog));   // [ Symbol("dogname") ]
     myDog[Object.getOwnPropertySymbols(myDog)[0]] = "Moja";
-    console.log(myDog.name);
+    console.log(myDog.name);    // Moja
 
 Seit ES10 ist es möglich mit ``#`` eine private Eigenschaft zu definieren:
 
@@ -473,7 +489,7 @@ Seit ES10 ist es möglich mit ``#`` eine private Eigenschaft zu definieren:
 
         constructor(count = 0) {
             this.#initialCount = count;
-            this.reset(count);
+            this.reset(count);  // --> #count = 0
         }
 
         reset(value = this.#initialCount) {
@@ -493,15 +509,15 @@ Seit ES10 ist es möglich mit ``#`` eine private Eigenschaft zu definieren:
         }
     }
 
-    let myAnimals = new HomeAnimals();
+    let myAnimals = new HomeAnimals();      // myAnimals.#count = 0
     console.log(myAnimals);
 
-    myAnimals.addAnimal(3);
-    myAnimals.addAnimal();
-    myAnimals.reset(2);
-    myAnimals.subAnimal();
+    myAnimals.addAnimal(3);     // myAnimals.#count = 3
+    myAnimals.addAnimal();      // myAnimals.#count = 4
+    myAnimals.reset(2);         // myAnimals.#count = 2
+    myAnimals.subAnimal();      // myAnimals.#count = 1
 
-    console.log(myAnimals.actCount);
+    console.log(myAnimals.actCount);    // 1
 
     console.log(myAnimals["#anzahl"]);    // undefined --> da private Eigenschaft
     console.log(HomeAnimals["#anzahl"]);    // undefined --> da private Eigenschaft

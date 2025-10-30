@@ -59,14 +59,14 @@ als letzter Kind-Knoten eines Eltern-Knotens verschoben werden.
 
     const unorderedList = document.querySelector("ul");
     // zweites Element (CSS zählt von 1)
-    let item = unorderedList.querySelector("li:nth-of-type(2");
+    let item = unorderedList.querySelector("li:nth-of-type(2)");
     console.log(item);
     unorderedList.appendChild(item);  // letztes Element
 
 Knoten löschen
 --------------
 Über ``[node].remove()`` wird ein Element aus dem DOM gelöscht und die Referenz
-auf das Element im Speicher zurückgegeben. Jedoch verbleiben mögliche Referenzen
+auf das Element im Speicher zurückgegeben. Jedoch bleiben mögliche Referenzen
 im Speicher erhalten.
 
 .. code-block:: javascript
@@ -194,17 +194,12 @@ Element an eine benachbarte Position des ``target_element`` eingefügt. Dabei wi
 die bisherige Position des Elements, sofern im DOM vorhanden, verlassen, das
 Element also verschoben.
 
-Folgende "position" sind möglich:
+Folgende "position" Werte sind möglich:
 
-.. TODO: Nachtragen!!!
-
-:beforebegin: fdfdfd
-
-:afterbegin: dffdfd
-
-:beforeend: dsfdsfdsf
-
-:afterend: fsdfsdfsdf
+* ``"beforebegin"``: Vor dem ``[target_element]`` selbst
+* ``"afterend"``: Nach dem ``[target_element]`` selbst
+* ``"beforeend"``:Direkt innerhalb dem ``[target_element]``, vor dessen ersten Kind
+* ``"afterbegin"``: Direkt innerhalb dem ``[target_element]``, nach dessen letzten Kind
 
 .. code-block:: javascript
 
@@ -225,18 +220,19 @@ Folgende "position" sind möglich:
     Übergabe in ``insertAdjacentElement()`` verschoben, **keine zusätzliches Element**
     eingefügt.
 
-Über ``[elem].insertAdjacentHTML()`` lässt sich **DOM-String** (mit HTML-Markup) an
-eine bestimmte Stelle innerhalb eines *target_element* einfügen:
+Über ``[elem].insertAdjacentHTML()`` lässt sich ein **DOM-String** (mit HTML-Markup)
+an eine bestimmte Stelle innerhalb eines *target_element* einfügen:
 
 .. code-block:: javascript
 
     const unorderedList = document.querySelector("ul");
+
     const domString = "<li class=\"domString\">8</li>";
 
-    unorderedList.insertAdjacentHTML("beforebegin", item);
-    unorderedList.insertAdjacentHTML("afterbegin", item);
-    unorderedList.insertAdjacentHTML("beforeend", item);
-    unorderedList.insertAdjacentHTML("afterend", item);
+    unorderedList.insertAdjacentHTML("beforebegin", domString);
+    unorderedList.insertAdjacentHTML("afterbegin", domString);
+    unorderedList.insertAdjacentHTML("beforeend", domString);
+    unorderedList.insertAdjacentHTML("afterend", domString);
 
 .. important::
 
@@ -256,6 +252,8 @@ eingefügt:
 
 .. code-block:: javascript
 
+    const unorderedList = document.querySelector("ul");
+
     // Hint: <b> Tags werden NICHT gerendert
     const myStr = "Kleiner Text im <b>Schnee<b>"
 
@@ -270,8 +268,13 @@ Mehrere Objekte als Kind-Objekte platzieren
 -------------------------------------------
 Seit ES6, lassen sich über ``[node].prepend(1+ elem/string)`` und
 ``[node].append(1+ elem/string)`` **mehrere Objekte** mit einem Aufruf im DOM platzieren.
-Außerdem lassen sich auch auch Strings platzieren (jedoch **keine** DOM-Strings),
+Außerdem lassen sich auch Strings platzieren (jedoch **keine** DOM-Strings),
 nicht nur Knoten. Beide Methoden haben keinen Rückgabewert.
+
+* ``[node].prepend(1+ elem/string)``: add node objects **before the first child**
+  of the ``[node]``
+* ``[node].append(1+ elem/string)``: add node objects **after the last child**
+  of the ``[node]``
 
 .. code-block:: javascript
 
@@ -298,6 +301,9 @@ Erlaubt es, direkt um ein Objekt *herum* zu arbeiten.
 ``[target_element].after(1+ elem/string)`` lassen sich Element oder Strings
 (abermals **keine DOM-Strings** erlaubt) auf der gleichen Ebene vor und nach
 einem *target_element* platzieren.
+
+* ``[target_element].before(1+ elem/string)``: add elements to the same level **before** this element
+* ``[target_element].after(1+ elem/string)``: add elements to the same level **after** this element
 
 .. code-block:: javascript
 
@@ -352,6 +358,14 @@ Text-Knoten erzeugen
     // Text Knoten erstellen
     let textNode = document.createTextNode("Text im Schneeregen");
     unorderedList.before(textNode);
+
+Wird als
+
+.. code-block:: html
+
+    Text im Schneeregen
+
+in HTML eingebunden (keine Tags).
 
 Kommentar-Knoten erzeugen
 -------------------------

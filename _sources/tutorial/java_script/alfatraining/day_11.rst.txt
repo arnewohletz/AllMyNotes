@@ -121,7 +121,7 @@ Seiten im Browser zugegriffen werden.
     * ``history.go(3)``: Drei Seiten voran gehen
 
 Verlaufseinträge erstellen
----------------------------
+--------------------------
 Über ``history.pushState( state-object, title, relative-URL)`` wird ein neuer
 Verlaufseintrag erstellt.
 
@@ -139,13 +139,13 @@ Verlaufseintrag erstellt.
     )
 
 Durch Verlaufseinträge navigieren
-–--------------------------------
+---------------------------------
 Über popstate-Ereignis
 
     * wird immer bei Navigation durch ``history`` ausgelöst
     * gibt state-object zurück, das mit ``pushState`` übergeben wurde
 
-Der ``state`` Objekt ist Teil des ``event`` Objekts, welches in jeden Event-Handler
+Der ``state`` Objekt ist Teil des ``event`` Objekts, welches in jeder Event-Handler
 Funktion verfügbar ist.
 
 .. code-block:: javascript
@@ -155,7 +155,7 @@ Funktion verfügbar ist.
 
         // Das State-Objekt wird ebenfalls als Teil des Event-Objects übergeben
         // Muss ausgelesen werden
-        console.log(event.state);  // gibt das
+        console.log(event.state);  // gibt state zum Zeitpunkt des Events wieder
 
         // für ersten Aufruf einer Seite wird KEIN state Objekt in der History
         // gespeichert, da dies der erste Aufruf ist (das event.state Objekt ist 'null').
@@ -173,7 +173,7 @@ Funktion verfügbar ist.
     **Zweigleisig fahren**
 
     Es bietet sich an, beide Möglichkeiten für das Laden von neuen Inhalten zu
-    implementieren (per AJAX UND per JavaScript):
+    implementieren (per Ajax **UND** per JavaScript):
 
     * Bei AJAX: nicht lesbar für Suchmaschinen
     * Bei JavaScript: geht nicht, wenn Nutzer JavaScript deaktiviert

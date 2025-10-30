@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -244,7 +244,7 @@ in einer <strong>festen Reihenfolge</strong>. Ein Set kann nur <strong>einmalige
 <span class="nx">myMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">36</span><span class="p">);</span>
 
 <span class="c1">// Anzahl der Einträge ermitteln mit .size</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myMap</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">   </span><span class="c1">// 3</span>
 
 <span class="cm">/*</span>
 <span class="cm">    Map mit Werten erzeugen</span>
@@ -263,7 +263,7 @@ in einer <strong>festen Reihenfolge</strong>. Ein Set kann nur <strong>einmalige
 <span class="p">])</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heldenStaerke</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heldenStaerke</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heldenStaerke</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">   </span><span class="c1">// 4</span>
 </pre></div>
 </div>
 <section id="konvertierungen">
@@ -279,21 +279,21 @@ in einer <strong>festen Reihenfolge</strong>. Ein Set kann nur <strong>einmalige
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">userMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span><span class="w">   </span><span class="c1">// Map(3) { firstName → &quot;Jessica&quot;, lastName → &quot;Jones&quot;, age → 36 }</span>
 
 <span class="c1">// II) Map -&gt; Object  (über Object.fromEntries())</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">userObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObj</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObj</span><span class="p">);</span><span class="w">   </span><span class="c1">// Object { firstName: &quot;Jessica&quot;, lastName: &quot;Jones&quot;, age: 36 }</span>
 
 <span class="c1">// III) Map -&gt; Array</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">userArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">userMap</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userArr</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userArr</span><span class="p">);</span><span class="w">   </span><span class="c1">// Array(3) [ 0 : Array [ &quot;firstName&quot;, &quot;Jessica&quot; ], 1: ... ]</span>
 </pre></div>
 </div>
 </section>
 <section id="vorteil-map-keys">
 <h3>Vorteil: Map-keys<a class="headerlink" href="#vorteil-map-keys" title="Link to this heading"></a></h3>
-<p>Als Key wird jeder beliebige Datentype akzeptiert (im Unterschied zu Objekte,
+<p>Als Key wird jeder beliebige Datentyp akzeptiert (im Unterschied zu Objekten,
 welche nur String &amp; Symbol akzeptieren). Die einzige Bedingung ist, dass
 Schlüsselwerte einzigartig sein müssen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">userMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;String-Schlüssel&quot;</span><span class="p">);</span>
@@ -310,7 +310,7 @@ Schlüsselwerte einzigartig sein müssen.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keyObj</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">keyObj</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">]);</span><span class="w">   </span><span class="c1">// true</span>
 
 <span class="c1">// --&gt; im Objekt werden Objekt-Schlüssel als Typen-String konvertiert</span>
-<span class="c1">//      --&gt; nicht möglich einzigartigee Objekte abzulegen!!</span>
+<span class="c1">//      --&gt; nicht möglich einzigartige Objekte abzulegen!!</span>
 <span class="nx">keyObj</span><span class="p">[</span><span class="nx">user</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Object-Key&quot;</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">keyObj</span><span class="p">);</span>
 
@@ -459,8 +459,8 @@ Eine Umwandlung eines Objekts in eine Map.</p>
 <span class="c1">// integriertes forEach()</span>
 <span class="c1">// [Set].forEach( (value, key, set) ) = {} )</span>
 <span class="nx">heroSet</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">set</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">set</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">);</span><span class="w">    </span><span class="c1">// Jessica Jessica -&gt; Luke Luke -&gt; ...</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">set</span><span class="p">);</span><span class="w">   </span><span class="c1">//  [ &quot;Jessica&quot;, &quot;Luke&quot;, ... ] -&gt; [ &quot;Jessica&quot;, &quot;Luke&quot;, ... ] -&gt; ...</span>
 <span class="p">});</span>
 
 <span class="c1">// Rückgabe von Set() und add() = Set</span>
@@ -573,7 +573,7 @@ iterieren.</p>
 <span class="p">}</span>
 
 <span class="c1">// beim Aufruf der Generator-Function wird das Generator-Objekt erzeugt</span>
-<span class="c1">// Generartor wird zurückgegeben - Funktion selbst nicht abgearbeitet</span>
+<span class="c1">// Generator wird zurückgegeben - Funktion selbst nicht abgearbeitet</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">myGenerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myGeneratorFunc</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myGenerator</span><span class="p">);</span><span class="w">      </span><span class="c1">// Generator { constructor: Iterator() }</span>
 
@@ -617,6 +617,9 @@ iterieren.</p>
 <span class="p">}</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">myCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">      </span><span class="c1">// Object { value: 1, done: false }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">      </span><span class="c1">// Object { value: 2, done: false }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">      </span><span class="c1">// ...</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
@@ -624,15 +627,13 @@ iterieren.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">  </span><span class="c1">// Object { value: 11, done: false }</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">  </span><span class="c1">// Object { value: 2, done: false }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">      </span><span class="c1">// Object { value: 11, done: false }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w">  </span><span class="c1">// (XXX): Object { value: 1, done: false }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span><span class="w">      </span><span class="c1">// Object { value: 2, done: false }</span>
 
-<span class="c1">// das &#39;true&#39; wird als Ausgabe für &#39;yield count&#39; gesetzt, wird als &#39;restart&#39;</span>
-<span class="c1">// zugewiesen, welcher daraufhin den counter auf 0 setzt.</span>
+<span class="c1">// (XXX): Das &#39;true&#39; wird als Ausgabe für &#39;yield count&#39; des VORHERIGEN next()</span>
+<span class="c1">// Aufrufs gesetzt. Dadurch wird beim Aufruf &#39;restart&#39; der Wert &#39;true&#39; zugewiesen</span>
+<span class="c1">// und dadurch der count auf &#39;0&#39; gesetzt.</span>
 <span class="c1">// &#39;yield&#39; ist ebenso der EINSTIEGSPUNKT für den nächsten Aufruf von &#39;next()&#39;</span>
 <span class="c1">// ein Wert, der über &#39;next(einWert)&#39; übergeben wird, wird als der Rückgabewert</span>
 <span class="c1">// des yield-statements gesetzt</span>
@@ -675,7 +676,7 @@ Wird nicht mehr oft verwendet.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

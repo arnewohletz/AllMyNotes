@@ -11,7 +11,7 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Durch DOM navigieren &mdash; All-My-Notes  documentation</title>
+  <title>jQuery: Durch DOM navigieren &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Durch DOM navigieren</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">jQuery: Durch DOM navigieren</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#traversal-methoden">Traversal-Methoden</a></li>
 </ul>
 </li>
@@ -137,7 +137,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -213,7 +213,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">JavaScript (alfatraining)</a></li>
-      <li class="breadcrumb-item active">Durch DOM navigieren</li>
+      <li class="breadcrumb-item active">jQuery: Durch DOM navigieren</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/tutorial/java_script/alfatraining/day_14.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -223,10 +223,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="durch-dom-navigieren">
-<h1>Durch DOM navigieren<a class="headerlink" href="#durch-dom-navigieren" title="Link to this heading"></a></h1>
+  <section id="jquery-durch-dom-navigieren">
+<h1>jQuery: Durch DOM navigieren<a class="headerlink" href="#jquery-durch-dom-navigieren" title="Link to this heading"></a></h1>
 <section id="traversal-methoden">
 <h2>Traversal-Methoden<a class="headerlink" href="#traversal-methoden" title="Link to this heading"></a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Liefert das jQuery <code class="docutils literal notranslate"><span class="pre">$(&quot;&quot;)</span></code> <strong>mehrere</strong> Objekte zurück, so werden die Methoden
+stets auf <strong>alle</strong> diese Elemente angewandt und <strong>alle</strong> daraus resultierenden
+Objekte zurückgegeben.</p>
+</div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].children()</span></code> wird ein Objekt mit allen Kindelementen geliefert:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">children</span><span class="p">());</span><span class="w">        </span><span class="c1">// alle Kind-Elemente</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// 1. Link im Article</span>
@@ -239,12 +245,13 @@ Kind-Elemente im <em>object</em> zurückgegeben:</p>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].parents()</span></code> werden alle Elternelemente <strong>aller</strong>
 Kind-Elemente im <em>object</em> zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parents</span><span class="p">());</span><span class="w">          </span><span class="c1">// alle Elternelemente</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parents</span><span class="p">());</span><span class="w">          </span><span class="c1">// alle Elternelemente (bis einschl. &lt;html&gt;)</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].parentsUntil(selector)</span></code> werden alle Elternelemente <strong>aller</strong>
 Kind-Elemente bis zum <em>selector</em> (exclusive) im <em>object</em> zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle Elternelemente bis excl. übergebenen Selektor</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// alle Elternelemente bis EXCLUSIVE dem übergebenen Selektor (hier: &lt;body&gt;)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].closest(selector)</span></code> wird das 1. Elternelemente welches die
@@ -256,12 +263,13 @@ Bedingung erfüllt im <em>object</em> zurückgegeben:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Geschwisterelemente</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">siblings</span><span class="p">());</span><span class="w">    </span><span class="c1">// alle Geschwisterelemente</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">());</span><span class="w">        </span><span class="c1">// direkt folgendes Geschwisterelement</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// direkt folgendes Geschwisterelement, welches Bedingung erfüllt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// direkt folgendes Geschwisterelement, sofern es Bedingung erfüllt</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">());</span><span class="w">     </span><span class="c1">// alle folgenden Geschwisterelemente</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle folgenden Geschwisterelemente, welche Bedingung erfüllen</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">nextUntil</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle folgenden Geschwisterelemente bis excl. übergebenen Selektor</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prev</span><span class="p">());</span><span class="w">        </span><span class="c1">// direkt vorhergehendes Geschwisterelement</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// direkt vorhergehendes Geschwisterelement, sofern es Bedingung erfüllt</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prevAll</span><span class="p">())</span><span class="w">      </span><span class="c1">// alle vorhergehenden Geschwisterelemente</span>
 </pre></div>
 </div>
@@ -342,7 +350,7 @@ durchgeführt werden soll</p></li>
 endlos scrollen).</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><strong>Zu ``dom_helper.js``</strong></p>
+<p><strong>Zu</strong> <code class="docutils literal notranslate"><span class="pre">dom_helper.js</span></code></p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem.method].prototype</span></code> lassen sich bereits definierte Elemente und
 deren Methoden überschreiben.</p>
 <p>Das prototyping kann zu Fehlern in Browsern führen, welche diese Funktion nicht
@@ -366,7 +374,7 @@ umgegangen wird.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

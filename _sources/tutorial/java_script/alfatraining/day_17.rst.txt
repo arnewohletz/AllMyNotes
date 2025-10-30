@@ -3,7 +3,7 @@ Arrow-Function
 Verkürzte Schreibweise einer Funktion. Seit ES6 verfügbar.
 
 * Schlüsselwort function entfällt
-* dafür wird fat arrow gesetzt
+* dafür wird fat arrow (``=>``) gesetzt
 * wenn nur ein Parameter übergeben wird, können () entfallen
 
 Syntax:
@@ -29,9 +29,9 @@ regulärer definierten Funktionen:
 .. code-block:: javascript
 
     /*
-        Schlüsselwort this
+        Schlüsselwort 'this'
 
-        mit this spricht man innerhalb einer Objektmethode (oder Konstruktor)
+        mit 'this' spricht man innerhalb einer Objektmethode (oder Konstruktor)
         die jeweilige Objektinstanz an => das aktuelle Objekt / dieses Objekt (Kontext-Objekt)
 
         this = impliziter Parameter von Funktionen
@@ -46,16 +46,26 @@ regulärer definierten Funktionen:
         firstName:  "Jessica",
         age:        36,
         myMethod () {
-            console.log(this);
+            console.log(this);  // Object {firstName: "Jessica", ...}
         }
     };
 
     person_1.myMethod();
 
     function myNewFunc() {
-        console.log(this);
+        console.log(this);  // undefined
     }
     myNewFunc(); // undefined
+
+
+.. important::
+
+    Arrow Funktionen haben **kein** eigenes Bindung für 'this' (ebenso 'arguments'
+    und 'super') und sollten daher **nicht** für Methoden von Objekten verwendet werden.
+
+    **Keine Arrow-Funktionen innerhalb von Objekten verwenden**
+
+.. code-block:: javascript
 
     /*
         this befindet sich in Funktion außerhalb eines Objektes
@@ -70,9 +80,9 @@ regulärer definierten Funktionen:
     let getName2 = () => this.firstName;
     /*
         mit arrow-Function referenziert this das Objekt, in dem Funktion definiert wurde
-        im stricten Modus -> this = undefined
+        im strikten Modus -> this = undefined
 
-        Kontext-Objekt von this = Objekt, in dem Funktion definert ist
+        Kontext-Objekt von this = Objekt, in dem Funktion definiert ist
         nicht Kontext, in dem sie aufgerufen wird
     */
 
@@ -114,7 +124,7 @@ regulärer definierten Funktionen:
             myInnerFunc();
         }
     };
-    person_4.myFunc();  // object
+    person_4.myFunc();  // Object { firstName: "Elektra", ... }
 
     /*
         um Bezug zum Objekt wieder herzustellen => arrow-Function nutzen
@@ -134,7 +144,7 @@ regulärer definierten Funktionen:
     /*
         Zusammenfassung - Kontakt mit this
 
-        wann noemale Funktion - wann arrow-Function?
+        wann normale Funktion - wann arrow-Function?
         - im Raum außerhalb von Objekten => funktionsdeklaration oder funktionsausdruck
         - in callback => arrow-function
         - innerhalb von objekt-Methoden => arrow-function
@@ -159,18 +169,30 @@ Funktionen können als Argumente an andere Funktionen übergeben werden
     function giveName () {
         return "Jessica";
     }
-    sayHello(giveName);
-    sayHello(function() {return "Luke";});
-    sayHello(() => "Odin");
+    sayHello(giveName);     // Hallo Jessica
+    sayHello(function() {return "Luke";});    // Hallo Luke
+    sayHello(() => "Odin");     // Hallo Odin
 
     let logHello = function (callbackfunction) {
         callbackfunction("Hallo Duda");
     };
-    logHello(function(text) {console.log(text);});
+    logHello(function(text) {console.log(text);});  // Hallo Duda
 
 sort()
 ------
 Sortiert anhand der UTF16-Zeichentabelle.
+
+.. code-block:: javascript
+
+    let heroes = ["Jessy", "Elektra", "Loki", "Thor"];
+    console.log(heroes.sort());   // [ "Elektra", "Jessy", "Loki", "Thor" ]
+
+``[Array].sort(compareFn)`` erlaubt eine Sortierfunktion, welche zwei Argumente (a und b)
+benötigt. Rückgabewerte:
+
+    * negativer Wert => a kommt vor b
+    * positiver Wert => b kommt vor a
+    * 0 oder NaN 0 => a und b sind identisch
 
 .. code-block:: javascript
 
@@ -180,7 +202,7 @@ Sortiert anhand der UTF16-Zeichentabelle.
         console.log(`${a} - ${b} = ${a - b}`);
         return a - b;
     };
-    console.log(numbers.sort(numberCheck));
+    console.log(numbers.sort(numberCheck)); //  [ 1, 3, 5, 6, 10, 11, ... ]
 
     /*
         sort() = higher order
@@ -193,19 +215,20 @@ Sortiert anhand der UTF16-Zeichentabelle.
 
     heroes = ["Jessica", "Luke", "Odin (Chef)", "Thor", "Elektra"];
 
+    // Regel: Chef nach vorne, Rest alphabetisch
     let isChef = hero => hero.endsWith("(Chef)");
     let sortHeroes = (hero1, hero2) => {
-        if (isChef(hero1)) return - 1;  // Chef schon vorne --> nicht sortieren
+        if (isChef(hero1)) return -1;  // Chef schon vorne --> nicht sortieren
         if (isChef(hero2)) return 1;    // Chef hinten --> nach vorne sortieren
         return (hero1 > hero2) ? 1 : -1;
         // ist hero1 hinter hero2 --> nicht sortieren, daher positiv
         // ansonsten --> sortiere, daher negativ
     };
-    console.log(heroes.sort(sortHeroes));
+    console.log(heroes.sort(sortHeroes));   // [ "Odin (Chef)", "Elektra", "Jessica", "Luke", "Thor" ]
 
 forEach()
 ---------
-Als Ersatz für eine for Schleife für Arrays.
+Als Ersatz für eine for-Schleife für Arrays.
 
 .. code-block:: javascript
 
@@ -216,8 +239,8 @@ Als Ersatz für eine for Schleife für Arrays.
 
         übergibt an callback:
             1. Array-Element
-            2. index-Position
-            3. Ursprungsarray
+            2. index-Position   --> optional
+            3. Ursprungsarray   --> optional
 
         erwartet keinen Rückgabewert von callback
         lässt sich auf NodeList anwenden - aber nicht auf HTMLCollection
@@ -225,18 +248,21 @@ Als Ersatz für eine for Schleife für Arrays.
 
     let jahresZeiten = ["Frühling", "Sommer", "Herbst", "Winter", "Eiszeit"];
 
+    // array element, index-position, ursprungsarray
     jahresZeiten.forEach( (elem, index, array) => {
-        console.log(index, elem);
-        console.log(array);
+        console.log(index, elem);   // 0 Frühling -> 1 Sommer -> ...
+        console.log(array);  // [ "Frühling", "Sommer", "Herbst", "Winter", "Eiszeit" ]
     });
 
+    // nur array element
     let numbers = [1,5,99,11,22,20,3,10,62,63,6,600], sum = 0;
     numbers.forEach( zahl => sum += zahl);
     console.log(sum);  // 902
 
+    // array element, index position
     let paraList = document.querySelectorAll("p");
     console.log(paraList);
-    paraList.forEach( (tag, i) => console.log(i, tag.textContent));
+    paraList.forEach( (tag, i) => console.log(i, tag.textContent)); // 0 text -> 1 text -> ...
 
 map()
 -----
@@ -272,12 +298,13 @@ jedes Element durch eine Callback-Funktion verändert werden kann.
     };
 
     let passwordArray = heroes.map(makePassword);
-    console.log(passwordArray);
+    console.log(passwordArray);     // [ "0acisseJ7", "1ekuL4", ... ]
 
-    // oder...
+    // oder... (mit Arrow-Function)
 
+    let numbers = [1,5,99,11,22,20,3,10,62,63,6,600]
     let squares = numbers.map( zahl => Math.pow(zahl, 2) );
-    console.log(squares);
+    console.log(squares);   // [ 1, 25, 9801, ... ]
 
 filter()
 --------
@@ -304,10 +331,10 @@ Mit ``.filter()`` lassen sich Einträge in einem Array filtern.
 
     let heroes = ["Jessica", "Luke", "Odin", "Thor", "Elektra", "Nebula"];
     let avengers = heroes.filter( hero => hero.length > 4 );
-    console.log(avengers);
+    console.log(avengers);      // [ "Jessica", "Elektra", "Nebula" ]
 
     let filtered = [1,42,52,53,62,99,111,7,9,3].filter( zahl => zahl > 9);
-    console.log(filtered);
+    console.log(filtered);  // [ 42, 52, 53, 62, 99, 111 ]
 
 reduce()
 --------
@@ -335,16 +362,16 @@ Reduziert Elemente eines Arrays auf einen einzelnen Wert.
         return a + b;
     };
     let total = numbers.reduce(add);
-    console.log(total);
+    console.log(total);     // OK: 355
 
     let sum = array => array.reduce(add);
-    console.log(sum([52,63,41,11]));
+    console.log(sum([52,63,41,11]));    // OK: 167
     console.log(sum([52]));   // 52 wird zurückgegeben
     // console.log(sum([]));  // Uncaught TypeError: reduce of empty array with no initial value
 
     /*
         Initialwert kann als 2. Argument an reduce() übergeben werden
-        Wert muss zzur Reduktion passen
+        Wert muss zur Reduktion passen
         dient der Vermeidung von TypeError bei Übergabe eines leeren Arrays
     */
     let sumWithInitial = array => array.reduce(add, 0);
@@ -378,7 +405,7 @@ Array prüfen
 
 Elemente finden
 ---------------
-Über ``find()``, ``findIndex()`` sowie ``findLast()``, ``findLasstIndex()``
+Über ``find()``, ``findIndex()`` sowie ``findLast()``, ``findLastIndex()``
 lassen sich Elemente in einem Array finden.
 
 .. code-block:: javascript
@@ -386,7 +413,7 @@ lassen sich Elemente in einem Array finden.
     let numbers = [21,42,3,10,9];
     let even = zahl => {
         console.log(zahl, !(zahl % 2));
-        return !(zahl % 2);
+        return !(zahl % 2);     // even: !0 --> true; odd: !1 --> false
     };
 
     /*
@@ -474,7 +501,7 @@ da hier Referenzen übergeben werden.
             city:   "Hells Kitchen"
         }
     };
-    const myUser2 = {...myUser};
+    const myUser2 = {...myUser};       // Vorsicht: myUser2 referenziert Attribute von myUser (keine Kopie)!
     myUser2.name = "Luke"
 
     const myUser3 = JSON.parse(JSON.stringify(myUser));

@@ -124,7 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -141,7 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -245,7 +245,14 @@ werden). Gleiches gilt für String Werte.</p>
 Anführungszeichen werden bei definierten Objekten automatisch gesetzt. Dies muss bei
 eigens geschriebenen JSON Strings jedoch selbst gemacht werden.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">JSON.parse()</span></code> wird ein JSON String in ein JS Objekt überführt.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Daten serialisieren</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;SingleMalt&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">category</span><span class="o">:</span><span class="w">   </span><span class="p">[</span><span class="s2">&quot;Whiskey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Office Drinks&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w">     </span><span class="mf">29.99</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">inStock</span><span class="o">:</span><span class="w">    </span><span class="mf">500</span>
+<span class="p">}</span>
+
+<span class="c1">// Daten serialisieren</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">jsonStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">product</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonStr</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">jsonStr</span><span class="p">);</span><span class="w"> </span><span class="c1">// string</span>
@@ -278,9 +285,15 @@ die Anfrage, der Server antwortet immer (notfalls mit Error).</p>
 <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user=Elektra; path=/admin&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Wenn ein Cookie nur im <code class="docutils literal notranslate"><span class="pre">/admin</span></code> Pfad existiert, so wird nur bei URL Anfragen
+welche diesen Pfad enthalten (z.B. <code class="docutils literal notranslate"><span class="pre">&lt;IP_ADRESSE&gt;/admin/&lt;optional&gt;/&lt;deeper&gt;/&lt;path&gt;</span></code>)
+angefügt.</p>
+</div>
 <p>Das <code class="docutils literal notranslate"><span class="pre">sameSite=strict</span></code> Cookie Attribut wird Cookie nur gesendet, wenn man sich auf der
 gleichen Domain befindet (nicht, wenn Seite aus anderer Domain heraus angefordert wird).
-Dies verhindert, dass korrumpierte Cookies, nicht ausgelesen wird.</p>
+Dies verhindert, dass korrumpierte Cookies nicht ausgelesen werden.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>From ChatGPT on ``sameSite``</strong>:</p>
@@ -312,7 +325,7 @@ user clicks a link to the site) but not with embedded resources
 <li><p>Must be used with the <code class="docutils literal notranslate"><span class="pre">Secure</span></code> flag (i.e., only over HTTPS) in
 modern browsers to avoid being rejected.</p></li>
 <li><p>Allows cookies to work with third-party integrations but may expose
-them to CSRF risks.</p></li>
+them to CSRF (Cross Site Request Forgery) risks.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -424,9 +437,9 @@ das Lesen und Schreiben etwas umständlich. Daher bietet der <em>Web Storage</em
 moderne Alternative.</p>
 <p>Daten werden in zwei verschiedenen Storage-Objekte (Datenbanken) abgelegt:</p>
 <ul class="simple">
-<li><p>Local Storage (<code class="docutils literal notranslate"><span class="pre">window.sessionStorage</span></code>) -&gt; speichert Daten über aktuelle Sitzung
+<li><p>Session Storage (<code class="docutils literal notranslate"><span class="pre">window.sessionStorage</span></code>) -&gt; speichert Daten über aktuelle Sitzung
 hinaus (Daten auch von anderen Tabs heraus verfügbar)</p></li>
-<li><p>Session Storage (<code class="docutils literal notranslate"><span class="pre">window.localStorage</span></code>) -&gt; Daten bleiben nur in aktueller Sitzung
+<li><p>Local Storage (<code class="docutils literal notranslate"><span class="pre">window.localStorage</span></code>) -&gt; Daten bleiben nur in aktueller Sitzung
 (nur innerhalb eines Tabs)</p></li>
 </ul>
 <p>Beide verfügen über die gleichen Methoden und Eigenschaften.</p>
@@ -517,7 +530,7 @@ dürfen, sollte diese im Backend (z.B. einer Datenbank) gespeichert werden.</p>
 </section>
 <section id="prufen-ob-storage-verfugbar">
 <h2>Prüfen ob Storage verfügbar<a class="headerlink" href="#prufen-ob-storage-verfugbar" title="Link to this heading"></a></h2>
-<p>Bei Zugriff auf Storage ohne das dieser vorhanden ist, wirft Fehler.</p>
+<p>Bei Zugriff auf Storage, ohne dass dieser vorhanden ist, wirft Fehler.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Prüfen ob Storage verfügbar</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">Storage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;undefined&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Storage Constructor Funktion verfügbar?</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Storage</span><span class="p">);</span><span class="w">  </span><span class="c1">// umfasst beide Storages</span>
@@ -642,7 +655,7 @@ verfügbar.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

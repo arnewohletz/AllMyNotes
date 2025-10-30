@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -139,7 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -230,7 +230,7 @@
 <p>Verkürzte Schreibweise einer Funktion. Seit ES6 verfügbar.</p>
 <ul class="simple">
 <li><p>Schlüsselwort function entfällt</p></li>
-<li><p>dafür wird fat arrow gesetzt</p></li>
+<li><p>dafür wird fat arrow (<code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>) gesetzt</p></li>
 <li><p>wenn nur ein Parameter übergeben wird, können () entfallen</p></li>
 </ul>
 <p>Syntax:</p>
@@ -248,9 +248,9 @@ des Statements implizit zurückgegeben:</p>
 <p>Das Schlüsselort <code class="docutils literal notranslate"><span class="pre">this</span></code> verhält sich in Arrow-Funktions anders, als in
 regulärer definierten Funktionen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
-<span class="cm">    Schlüsselwort this</span>
+<span class="cm">    Schlüsselwort &#39;this&#39;</span>
 
-<span class="cm">    mit this spricht man innerhalb einer Objektmethode (oder Konstruktor)</span>
+<span class="cm">    mit &#39;this&#39; spricht man innerhalb einer Objektmethode (oder Konstruktor)</span>
 <span class="cm">    die jeweilige Objektinstanz an =&gt; das aktuelle Objekt / dieses Objekt (Kontext-Objekt)</span>
 
 <span class="cm">    this = impliziter Parameter von Funktionen</span>
@@ -265,18 +265,25 @@ regulärer definierten Funktionen:</p>
 <span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">myMethod</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w">  </span><span class="c1">// Object {firstName: &quot;Jessica&quot;, ...}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
 
 <span class="nx">person_1</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">();</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">myNewFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w">  </span><span class="c1">// undefined</span>
 <span class="p">}</span>
 <span class="nx">myNewFunc</span><span class="p">();</span><span class="w"> </span><span class="c1">// undefined</span>
-
-<span class="cm">/*</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Arrow Funktionen haben <strong>kein</strong> eigenes Bindung für ‘this’ (ebenso ‘arguments’
+und ‘super’) und sollten daher <strong>nicht</strong> für Methoden von Objekten verwendet werden.</p>
+<p><strong>Keine Arrow-Funktionen innerhalb von Objekten verwenden</strong></p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">    this befindet sich in Funktion außerhalb eines Objektes</span>
 <span class="cm">    daher bezieht sich this auf umliegenden Raum und hat kein Kontext-Objekt =&gt; undefined</span>
 <span class="cm">    ohne strikten Modus wird window-Object referenziert</span>
@@ -289,9 +296,9 @@ regulärer definierten Funktionen:</p>
 <span class="kd">let</span><span class="w"> </span><span class="nx">getName2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="p">;</span>
 <span class="cm">/*</span>
 <span class="cm">    mit arrow-Function referenziert this das Objekt, in dem Funktion definiert wurde</span>
-<span class="cm">    im stricten Modus -&gt; this = undefined</span>
+<span class="cm">    im strikten Modus -&gt; this = undefined</span>
 
-<span class="cm">    Kontext-Objekt von this = Objekt, in dem Funktion definert ist</span>
+<span class="cm">    Kontext-Objekt von this = Objekt, in dem Funktion definiert ist</span>
 <span class="cm">    nicht Kontext, in dem sie aufgerufen wird</span>
 <span class="cm">*/</span>
 
@@ -333,7 +340,7 @@ regulärer definierten Funktionen:</p>
 <span class="w">        </span><span class="nx">myInnerFunc</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
-<span class="nx">person_4</span><span class="p">.</span><span class="nx">myFunc</span><span class="p">();</span><span class="w">  </span><span class="c1">// object</span>
+<span class="nx">person_4</span><span class="p">.</span><span class="nx">myFunc</span><span class="p">();</span><span class="w">  </span><span class="c1">// Object { firstName: &quot;Elektra&quot;, ... }</span>
 
 <span class="cm">/*</span>
 <span class="cm">    um Bezug zum Objekt wieder herzustellen =&gt; arrow-Function nutzen</span>
@@ -353,7 +360,7 @@ regulärer definierten Funktionen:</p>
 <span class="cm">/*</span>
 <span class="cm">    Zusammenfassung - Kontakt mit this</span>
 
-<span class="cm">    wann noemale Funktion - wann arrow-Function?</span>
+<span class="cm">    wann normale Funktion - wann arrow-Function?</span>
 <span class="cm">    - im Raum außerhalb von Objekten =&gt; funktionsdeklaration oder funktionsausdruck</span>
 <span class="cm">    - in callback =&gt; arrow-function</span>
 <span class="cm">    - innerhalb von objekt-Methoden =&gt; arrow-function</span>
@@ -377,26 +384,39 @@ regulärer definierten Funktionen:</p>
 <span class="kd">function</span><span class="w"> </span><span class="nx">giveName</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">sayHello</span><span class="p">(</span><span class="nx">giveName</span><span class="p">);</span>
-<span class="nx">sayHello</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">;});</span>
-<span class="nx">sayHello</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span>
+<span class="nx">sayHello</span><span class="p">(</span><span class="nx">giveName</span><span class="p">);</span><span class="w">     </span><span class="c1">// Hallo Jessica</span>
+<span class="nx">sayHello</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">;});</span><span class="w">    </span><span class="c1">// Hallo Luke</span>
+<span class="nx">sayHello</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// Hallo Odin</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">logHello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">callbackfunction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">callbackfunction</span><span class="p">(</span><span class="s2">&quot;Hallo Duda&quot;</span><span class="p">);</span>
 <span class="p">};</span>
-<span class="nx">logHello</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);});</span>
+<span class="nx">logHello</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);});</span><span class="w">  </span><span class="c1">// Hallo Duda</span>
 </pre></div>
 </div>
 <section id="sort">
 <h2>sort()<a class="headerlink" href="#sort" title="Link to this heading"></a></h2>
 <p>Sortiert anhand der UTF16-Zeichentabelle.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Loki&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">sort</span><span class="p">());</span><span class="w">   </span><span class="c1">// [ &quot;Elektra&quot;, &quot;Jessy&quot;, &quot;Loki&quot;, &quot;Thor&quot; ]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[Array].sort(compareFn)</span></code> erlaubt eine Sortierfunktion, welche zwei Argumente (a und b)
+benötigt. Rückgabewerte:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>negativer Wert =&gt; a kommt vor b</p></li>
+<li><p>positiver Wert =&gt; b kommt vor a</p></li>
+<li><p>0 oder NaN 0 =&gt; a und b sind identisch</p></li>
+</ul>
+</div></blockquote>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">600</span><span class="p">];</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">numberCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
 <span class="p">};</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">numberCheck</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">numberCheck</span><span class="p">));</span><span class="w"> </span><span class="c1">//  [ 1, 3, 5, 6, 10, 11, ... ]</span>
 
 <span class="cm">/*</span>
 <span class="cm">    sort() = higher order</span>
@@ -409,21 +429,22 @@ regulärer definierten Funktionen:</p>
 
 <span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin (Chef)&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">];</span>
 
+<span class="c1">// Regel: Chef nach vorne, Rest alphabetisch</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">isChef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;(Chef)&quot;</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">sortHeroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">hero1</span><span class="p">,</span><span class="w"> </span><span class="nx">hero2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isChef</span><span class="p">(</span><span class="nx">hero1</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Chef schon vorne --&gt; nicht sortieren</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isChef</span><span class="p">(</span><span class="nx">hero1</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Chef schon vorne --&gt; nicht sortieren</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isChef</span><span class="p">(</span><span class="nx">hero2</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">    </span><span class="c1">// Chef hinten --&gt; nach vorne sortieren</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">hero1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">hero2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// ist hero1 hinter hero2 --&gt; nicht sortieren, daher positiv</span>
 <span class="w">    </span><span class="c1">// ansonsten --&gt; sortiere, daher negativ</span>
 <span class="p">};</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">sortHeroes</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">sortHeroes</span><span class="p">));</span><span class="w">   </span><span class="c1">// [ &quot;Odin (Chef)&quot;, &quot;Elektra&quot;, &quot;Jessica&quot;, &quot;Luke&quot;, &quot;Thor&quot; ]</span>
 </pre></div>
 </div>
 </section>
 <section id="foreach">
 <h2>forEach()<a class="headerlink" href="#foreach" title="Link to this heading"></a></h2>
-<p>Als Ersatz für eine for Schleife für Arrays.</p>
+<p>Als Ersatz für eine for-Schleife für Arrays.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">    ersetzt for-Schleife für Arrays</span>
 <span class="cm">    durchläuft Array Element für Element</span>
@@ -431,8 +452,8 @@ regulärer definierten Funktionen:</p>
 
 <span class="cm">    übergibt an callback:</span>
 <span class="cm">        1. Array-Element</span>
-<span class="cm">        2. index-Position</span>
-<span class="cm">        3. Ursprungsarray</span>
+<span class="cm">        2. index-Position   --&gt; optional</span>
+<span class="cm">        3. Ursprungsarray   --&gt; optional</span>
 
 <span class="cm">    erwartet keinen Rückgabewert von callback</span>
 <span class="cm">    lässt sich auf NodeList anwenden - aber nicht auf HTMLCollection</span>
@@ -440,18 +461,21 @@ regulärer definierten Funktionen:</p>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">jahresZeiten</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Frühling&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Sommer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Herbst&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Winter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Eiszeit&quot;</span><span class="p">];</span>
 
+<span class="c1">// array element, index-position, ursprungsarray</span>
 <span class="nx">jahresZeiten</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">elem</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">elem</span><span class="p">);</span><span class="w">   </span><span class="c1">// 0 Frühling -&gt; 1 Sommer -&gt; ...</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ &quot;Frühling&quot;, &quot;Sommer&quot;, &quot;Herbst&quot;, &quot;Winter&quot;, &quot;Eiszeit&quot; ]</span>
 <span class="p">});</span>
 
+<span class="c1">// nur array element</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">600</span><span class="p">],</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">zahl</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span><span class="w">  </span><span class="c1">// 902</span>
 
+<span class="c1">// array element, index position</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">paraList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">paraList</span><span class="p">);</span>
-<span class="nx">paraList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="p">.</span><span class="nx">textContent</span><span class="p">));</span>
+<span class="nx">paraList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nx">tag</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="p">.</span><span class="nx">textContent</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0 text -&gt; 1 text -&gt; ...</span>
 </pre></div>
 </div>
 </section>
@@ -486,12 +510,13 @@ jedes Element durch eine Callback-Funktion verändert werden kann.</p>
 <span class="p">};</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">passwordArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">makePassword</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">passwordArray</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">passwordArray</span><span class="p">);</span><span class="w">     </span><span class="c1">// [ &quot;0acisseJ7&quot;, &quot;1ekuL4&quot;, ... ]</span>
 
-<span class="c1">// oder...</span>
+<span class="c1">// oder... (mit Arrow-Function)</span>
 
+<span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">600</span><span class="p">]</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">zahl</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squares</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">squares</span><span class="p">);</span><span class="w">   </span><span class="c1">// [ 1, 25, 9801, ... ]</span>
 </pre></div>
 </div>
 </section>
@@ -517,10 +542,10 @@ jedes Element durch eine Callback-Funktion verändert werden kann.</p>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nebula&quot;</span><span class="p">];</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">avengers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">heroes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">hero</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">avengers</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">avengers</span><span class="p">);</span><span class="w">      </span><span class="c1">// [ &quot;Jessica&quot;, &quot;Elektra&quot;, &quot;Nebula&quot; ]</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">52</span><span class="p">,</span><span class="mf">53</span><span class="p">,</span><span class="mf">62</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">111</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">9</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">9</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">filtered</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ 42, 52, 53, 62, 99, 111 ]</span>
 </pre></div>
 </div>
 </section>
@@ -547,16 +572,16 @@ jedes Element durch eine Callback-Funktion verändert werden kann.</p>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span><span class="w">     </span><span class="c1">// OK: 355</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">([</span><span class="mf">52</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">41</span><span class="p">,</span><span class="mf">11</span><span class="p">]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">([</span><span class="mf">52</span><span class="p">,</span><span class="mf">63</span><span class="p">,</span><span class="mf">41</span><span class="p">,</span><span class="mf">11</span><span class="p">]));</span><span class="w">    </span><span class="c1">// OK: 167</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">([</span><span class="mf">52</span><span class="p">]));</span><span class="w">   </span><span class="c1">// 52 wird zurückgegeben</span>
 <span class="c1">// console.log(sum([]));  // Uncaught TypeError: reduce of empty array with no initial value</span>
 
 <span class="cm">/*</span>
 <span class="cm">    Initialwert kann als 2. Argument an reduce() übergeben werden</span>
-<span class="cm">    Wert muss zzur Reduktion passen</span>
+<span class="cm">    Wert muss zur Reduktion passen</span>
 <span class="cm">    dient der Vermeidung von TypeError bei Übergabe eines leeren Arrays</span>
 <span class="cm">*/</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">sumWithInitial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
@@ -592,12 +617,12 @@ jedes Element durch eine Callback-Funktion verändert werden kann.</p>
 </section>
 <section id="elemente-finden">
 <h2>Elemente finden<a class="headerlink" href="#elemente-finden" title="Link to this heading"></a></h2>
-<p>Über <code class="docutils literal notranslate"><span class="pre">find()</span></code>, <code class="docutils literal notranslate"><span class="pre">findIndex()</span></code> sowie <code class="docutils literal notranslate"><span class="pre">findLast()</span></code>, <code class="docutils literal notranslate"><span class="pre">findLasstIndex()</span></code>
+<p>Über <code class="docutils literal notranslate"><span class="pre">find()</span></code>, <code class="docutils literal notranslate"><span class="pre">findIndex()</span></code> sowie <code class="docutils literal notranslate"><span class="pre">findLast()</span></code>, <code class="docutils literal notranslate"><span class="pre">findLastIndex()</span></code>
 lassen sich Elemente in einem Array finden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">21</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">9</span><span class="p">];</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">zahl</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">zahl</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nx">zahl</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">     </span><span class="c1">// even: !0 --&gt; true; odd: !1 --&gt; false</span>
 <span class="p">};</span>
 
 <span class="cm">/*</span>
@@ -683,7 +708,7 @@ da hier Referenzen übergeben werden.</p>
 <span class="w">        </span><span class="nx">city</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Hells Kitchen&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">myUser2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">myUser</span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myUser2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{...</span><span class="nx">myUser</span><span class="p">};</span><span class="w">       </span><span class="c1">// Vorsicht: myUser2 referenziert Attribute von myUser (keine Kopie)!</span>
 <span class="nx">myUser2</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">myUser3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">myUser</span><span class="p">));</span>
@@ -728,7 +753,7 @@ erzeugt.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

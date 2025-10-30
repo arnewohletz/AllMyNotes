@@ -110,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -302,7 +302,7 @@ nicht gesetzt werden, gilt der Default.</p>
 <span class="c1">// Objekt auf Grundlage des Prototypen erstellen</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">heroActions</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// initialer Wert der Eigenschaft</span>
+<span class="w">        </span><span class="c1">// initialer Wert der Eigenschaft (propertiesObject)</span>
 <span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">writable</span><span class="o">:</span><span class="w">       </span><span class="kc">true</span><span class="p">,</span><span class="w">   </span><span class="c1">// Eigenschaft ist überschreibbar</span>
 <span class="w">        </span><span class="nx">enumerable</span><span class="o">:</span><span class="w">     </span><span class="kc">true</span><span class="p">,</span><span class="w">   </span><span class="c1">// Eigenschaft ist iterierbar</span>
@@ -322,7 +322,7 @@ nicht gesetzt werden, gilt der Default.</p>
 <span class="c1">// delete hero.age;   // TypeError: property &quot;age&quot; is non-configurable and can&#39;t be deleted</span>
 <span class="c1">// delete hero.address;  // TypeError: property &quot;address&quot; is non-configurable and can&#39;t be deleted</span>
 <span class="nx">hero</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alexanderplatz 111, Berlin&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// OK</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hero</span><span class="p">);</span><span class="w">  </span><span class="c1">// object</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">hero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// nur &#39;name&#39; und &#39;getHeroDatas&#39; (Rest nicht iterierbar)</span>
@@ -338,6 +338,17 @@ nicht gesetzt werden, gilt der Default.</p>
 </section>
 <section id="neue-properties-in-prototypen-definieren">
 <h1>Neue Properties in Prototypen definieren<a class="headerlink" href="#neue-properties-in-prototypen-definieren" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Object.prototype</span></code> wird um weitere Attribute (hier: Funktionen) erweitert.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Jedes Objekt in JavaScript besitzt eine eingebaute Eigenschaft, die <strong>prototype</strong> genannt wird.
+Dieser <code class="docutils literal notranslate"><span class="pre">prototype</span></code> ist selbst wieder ein Objekt, und hat daher ebenfalls einen eigenen <code class="docutils literal notranslate"><span class="pre">prototype</span></code>.
+So entsteht eine sogenannte Prototype-Kette (prototype chain).</p>
+<p>Die Kette endet, sobald ein <code class="docutils literal notranslate"><span class="pre">prototype</span></code> erreicht wird, dessen eigener <code class="docutils literal notranslate"><span class="pre">prototype</span></code> den Wert <em>null</em> hat.</p>
+<p>Prototypen erlauben die Vererbung von Properties in JavaScript. Wenn ein Property
+eines Objekts aufgerufen wird, wird entlang der Prototype-Kette nach diesem
+Property gesucht und das erste gefundene Match verwendet.</p>
+</div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;print-function&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
 <span class="p">}</span>
@@ -358,6 +369,7 @@ nicht gesetzt werden, gilt der Default.</p>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
 <span class="p">};</span>
 
+<span class="c1">// ... und mit off() de-registrieren</span>
 <span class="nx">Node</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
@@ -396,7 +408,7 @@ Objekt zuzuweisen.</p>
 <span class="c1">// Füge &#39;heroActions&#39; unter Prototypenn von &#39;heroDatas&#39; hinzu</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">heroDatas</span><span class="p">,</span><span class="w"> </span><span class="nx">heroActions</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroDatas</span><span class="p">.</span><span class="nx">getHeroDatas</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroDatas</span><span class="p">.</span><span class="nx">getHeroDatas</span><span class="p">());</span><span class="w">  </span><span class="c1">// Jessica Jones (36 wohnt in Dragonraod 66)</span>
 </pre></div>
 </div>
 </section>
@@ -406,7 +418,7 @@ Objekt zuzuweisen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// constructor = Herzstück der Klasse</span>
-<span class="w">    </span><span class="c1">// wird beim Instaniziieren zuerst ausgeführt</span>
+<span class="w">    </span><span class="c1">// wird beim Instanziieren zuerst ausgeführt</span>
 <span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">prodName</span><span class="p">,</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">,</span><span class="w"> </span><span class="nx">prodCat</span><span class="p">,</span><span class="w"> </span><span class="nx">prodQty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodName</span><span class="p">;</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;_&#39; um Property nicht mit Setter zu verwechseln</span>
@@ -455,19 +467,19 @@ Objekt zuzuweisen.</p>
 <span class="c1">// newProd.addQty(100);</span>
 <span class="c1">// newProd.subQty(500);</span>
 <span class="c1">// ... muss nun als Eigenschaft verändert werden</span>
-<span class="nx">newProd</span><span class="p">.</span><span class="nx">subItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">250</span><span class="p">;</span>
-<span class="nx">newProd</span><span class="p">.</span><span class="nx">addItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
-<span class="nx">newProd</span><span class="p">.</span><span class="nx">subItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span>
+<span class="nx">newProd</span><span class="p">.</span><span class="nx">subQty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">250</span><span class="p">;</span><span class="w">       </span><span class="c1">// 500 - 250 -&gt; 250</span>
+<span class="nx">newProd</span><span class="p">.</span><span class="nx">addQty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w">       </span><span class="c1">// 250 + 100 -&gt; 150</span>
+<span class="nx">newProd</span><span class="p">.</span><span class="nx">subQty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span><span class="w">       </span><span class="c1">// 350 - 500 -&gt; -150: checkQty verhindert Abzug von 500 Stück</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">shortPrint</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">shortPrint</span><span class="p">);</span><span class="w">    </span><span class="c1">// Talisker: 49.99 EUR (350 Stück auf Lager)</span>
 
 <span class="cm">/*</span>
-<span class="cm">    Bezeichner für Getter und Setter müssen sich von Eigeschaften unterscheiden,</span>
+<span class="cm">    Bezeichner für Getter und Setter müssen sich von Eigenschaften unterscheiden,</span>
 <span class="cm">    damit es nicht zu Endlos-Rekursionen, Stack-Überlauf und letztlich</span>
 <span class="cm">    Programmabsturz kommt</span>
 
-<span class="cm">    oft werden Eigenschaften, auf die nicht direkt zugregriffen werden soll,</span>
-<span class="cm">    mit &#39;_&#39; geprefixt - dannn sind Zugriffsmethoden vorhanden!</span>
+<span class="cm">    oft werden Eigenschaften, auf die nicht direkt zugegriffen werden soll,</span>
+<span class="cm">    mit &#39;_&#39; geprefixt - dann sind Zugriffsmethoden vorhanden!</span>
 
 <span class="cm">    Jede Klasse in eigenem Skript verorten!</span>
 <span class="cm">*/</span>
@@ -494,6 +506,7 @@ Objekt zuzuweisen.</p>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Best Quality Whiskey&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">enumerable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="c1">// defineProperty: writable standardmäßig auf false -&gt; read-only</span>
 <span class="p">});</span>
 
 <span class="c1">// newProd.desc = &quot;BliBlaBlub&quot;;  // TypeError: &quot;desc&quot; is read-only</span>
@@ -521,7 +534,7 @@ Instanz eines Objekts hinzugefügt:</p>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
 <span class="nx">newProd</span><span class="p">.</span><span class="nx">quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Finest&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">quality</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">quality</span><span class="p">);</span><span class="w">   </span><span class="c1">// Finest</span>
 </pre></div>
 </div>
 </section>
@@ -665,11 +678,11 @@ zurückgeben:</p>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s2">&quot;Snoopy&quot;</span><span class="p">);</span>
 <span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Leika&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">    </span><span class="c1">// Leika</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">));</span><span class="w">   </span><span class="c1">// [ Symbol(&quot;dogname&quot;) ]</span>
 <span class="nx">myDog</span><span class="p">[</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">)[</span><span class="mf">0</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Moja&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">    </span><span class="c1">// Moja</span>
 </pre></div>
 </div>
 <p>Seit ES10 ist es möglich mit <code class="docutils literal notranslate"><span class="pre">#</span></code> eine private Eigenschaft zu definieren:</p>
@@ -682,7 +695,7 @@ zurückgeben:</p>
 
 <span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">#initialCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; #count = 0</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">reset</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">#initialCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -702,15 +715,15 @@ zurückgeben:</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myAnimals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HomeAnimals</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myAnimals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HomeAnimals</span><span class="p">();</span><span class="w">      </span><span class="c1">// myAnimals.#count = 0</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">);</span>
 
-<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">addAnimal</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
-<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">addAnimal</span><span class="p">();</span>
-<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
-<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">subAnimal</span><span class="p">();</span>
+<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">addAnimal</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span><span class="w">     </span><span class="c1">// myAnimals.#count = 3</span>
+<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">addAnimal</span><span class="p">();</span><span class="w">      </span><span class="c1">// myAnimals.#count = 4</span>
+<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w">         </span><span class="c1">// myAnimals.#count = 2</span>
+<span class="nx">myAnimals</span><span class="p">.</span><span class="nx">subAnimal</span><span class="p">();</span><span class="w">      </span><span class="c1">// myAnimals.#count = 1</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">.</span><span class="nx">actCount</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">.</span><span class="nx">actCount</span><span class="p">);</span><span class="w">    </span><span class="c1">// 1</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">[</span><span class="s2">&quot;#anzahl&quot;</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined --&gt; da private Eigenschaft</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">HomeAnimals</span><span class="p">[</span><span class="s2">&quot;#anzahl&quot;</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined --&gt; da private Eigenschaft</span>
@@ -732,7 +745,7 @@ zurückgeben:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

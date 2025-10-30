@@ -120,7 +120,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -137,7 +137,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -318,8 +318,18 @@ aus Versehen vergisst.</p>
 </pre></div>
 </div>
 <p>Dadurch sollten alle Elemente im DOM sein.</p>
-<p>Mehrere Skript-Tags mit Dateien in ein HTML Seite einfügen
-* werden in dieser Reihenfolge angearbeitet -&gt; darauf achten</p>
+<p>Mehrere Skript-Tags mit Dateien in ein HTML Seite einfügen:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    // the entire body
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script_1.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script_2.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script_3.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Dabei werden in dieser Reihenfolge abgearbeitet -&gt; darauf achten</p>
 </section>
 </section>
 </section>
@@ -351,14 +361,18 @@ aus Versehen vergisst.</p>
 </section>
 <section id="schreibregeln-konventionen">
 <h1>Schreibregeln &amp; Konventionen<a class="headerlink" href="#schreibregeln-konventionen" title="Link to this heading"></a></h1>
-<p>Bei JavaScript
-- gilt case sensitive (username != USERNAME)
-- beginnt Zählung bei 0
-- gilt englische Schreibweise (Dezimaltrennzeichen = <code class="docutils literal notranslate"><span class="pre">.</span></code> nicht <code class="docutils literal notranslate"><span class="pre">,</span></code>)</p>
-<p>Nicht relevant für Interpreter, aber Programmierer, dient der Lesbarkeit von Code
-- ein Statement pro Zeile
-- jede Zeile mit Semikolon beendet (obwohl nicht notwendig)
-- Bezeichner sollten sprechend sein (keine Chiffren)</p>
+<p>Bei JavaScript</p>
+<ul class="simple">
+<li><p>gilt case sensitive (username != USERNAME)</p></li>
+<li><p>beginnt Zählung bei 0</p></li>
+<li><p>gilt englische Schreibweise (Dezimaltrennzeichen = <code class="docutils literal notranslate"><span class="pre">.</span></code> nicht <code class="docutils literal notranslate"><span class="pre">,</span></code>)</p></li>
+</ul>
+<p>Nicht relevant für Interpreter, aber Programmierer, dient der Lesbarkeit von Code</p>
+<ul class="simple">
+<li><p>ein Statement pro Zeile</p></li>
+<li><p>jede Zeile mit Semikolon beenden (obwohl nicht notwendig)</p></li>
+<li><p>Bezeichner sollten sprechend sein (keine Chiffren)</p></li>
+</ul>
 <p><strong>Regeln für Bezeichner</strong></p>
 <ul class="simple">
 <li><p>beginnt mit einem Buchstaben, Underscore, Dollar-Zeichen oder Hashtag (jedoch haben
@@ -375,7 +389,14 @@ diese oft andere Konventionen)</p></li>
 <li><p>für Konstruktor-Funktionen: upper camel case (UpperCamelCase)</p></li>
 <li><p>für Konstanten zur Konfiguration: screaming snake case (SCREAMING_SNAKE_CASE)</p></li>
 </ul>
-<p>Anweisungsblöcke {} -&gt; Interpreter weiß, dass alle Anweisungen gemeinsam ausgeführt werden müssen</p>
+<p>Anweisungsblöcke {} zum Gruppieren mehrerer Anweisungen:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>-&gt; Interpreter weiß, dass alle Anweisungen gemeinsam ausgeführt werden müssen</p>
 </section>
 <section id="vordefinierte-funktionen">
 <h1>Vordefinierte Funktionen<a class="headerlink" href="#vordefinierte-funktionen" title="Link to this heading"></a></h1>
@@ -408,7 +429,13 @@ diese oft andere Konventionen)</p></li>
 <li><p>Initialisierung -&gt; erfolgt durch Interpreter (erzeugt sie im Speicher)</p></li>
 <li><p>Zuweisung -&gt; Wert wird an Variable übergeben</p></li>
 </ol>
-<p>Generell sollten möglichst wenig Variable im globalen Scope definiert werden.</p>
+<p>Generell sollten möglichst wenig Variablen im globalen Scope definiert werden.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>“Hoisting” bedeutet, dass in der Funktion alle Variablen im lokalen Gültigkeitsbereich
+der Funktion bereits <strong>alle Deklarationen</strong> zu Beginn der Funktion stattfinden (Variable
+ist <code class="docutils literal notranslate"><span class="pre">undefined</span></code>), jedoch die Initialisierung erst in der entsprechenden Zeile.</p>
+</div>
 <p>Alter Weg (ES5): mit <code class="docutils literal notranslate"><span class="pre">var</span></code></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variablen unterliegen dem &quot;Hoisting&quot;</span>
 <span class="c1">// https://de.wikipedia.org/wiki/Hoisting</span>
@@ -468,7 +495,7 @@ diese oft andere Konventionen)</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

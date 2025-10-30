@@ -27,7 +27,16 @@ Primitive data types (Wert wird übergeben):
 * string -> Zeichenketten
 * boolean -> true/false
 * bigint -> große Zahlen
-* symbol -> ES6: unique
+* symbol -> ES6: unique Symbol object (wird in globaler Symbol Registry gespeichert):
+
+    .. code-block:: javascript
+
+        const s = Symbol("foo")
+        console.log(Symbol.for("foo"))      // Symbol("foo")
+        console.log(Symbol.keyFor(Symbol.for("foo")) === "foo")     // true
+
+    Siehe auch :ref:`javascript_datatype_symbol`.
+
 * undefined -> nicht belegte Variable
 * null -> leerer Objektzeiger  (wird als Typ 'object' ausgegeben -> Known Bug)
 
@@ -88,15 +97,15 @@ Gekennzeichnet durch ``""``, ``''`` oder ``\`\```.
 
 Wahrheitswerte (boolean)
 ------------------------
-Es gibt nur ``true``und ``false``.
+Es gibt nur ``true`` und ``false``.
 
-Ansonsten ``undefined``für nicht zugewiesene Variable oder ``null`` für ein nicht
+Ansonsten ``undefined`` für nicht zugewiesene Variable oder ``null`` für ein nicht
 vorhandenes Objekt.
 
 .. warning::
 
-    ``null`` ist kein 'object' Typ, obwohl so vom Interpreter behauptet, sondern
-    ein eigener Objekttyp. Nicht mehr zu behebender Fehler in JavaSript.
+    ``null`` bedeutet nicht kein 'object' Typ, obwohl so vom Interpreter behauptet,
+    sondern ist ein eigener Objekttyp. Nicht mehr zu behebender Fehler in JavaScript.
 
 BigInt
 ------
@@ -162,7 +171,7 @@ Inkrement / Dekrement Operator
         Inkrement- / Dekrement-Operator
 
         Operator    Beispiel    Interpretation
-        ++          a = ++b     a = b + 1; a = b
+        ++          a = ++b     b = b + 1; a = b
         ++          a = b++     a = b; b = b + 1
         --          a = --b     b = b - 1; a = b
         --          a = b--     a = b; b = b - 1
@@ -175,6 +184,11 @@ Inkrement / Dekrement Operator
     a = 1;
     console.log(++a); // 2
     console.log(a); // 2
+
+.. hint::
+
+    * Inkrement/Dekrement **vor** der Variablen: Inkrement/Dekrement **vor** Zuweisung
+    * Inkrement/Dekrement **nach** der Variablen: Inkrement/Dekrement **nach** Zuweisung
 
 Verkettungs-Operator (+)
 ------------------------
@@ -200,14 +214,14 @@ Verkettung von Strings:
 
 Relationale Operatoren
 ----------------------
-``<``  kleiner als
-``>``  größer als
-``<=`` kleiner gleich
-``>=`` größer gleich
-``==`` gleich (Datentyp wird implizit konvertiert)
-``===`` gleich (Datentyp wird **nicht** verändert, daher wird Typengleichheit mit geprüft)
-``!=``  ungleich (Datentyp wird implizit konvertiert)
-``!==`` ungleich (Datentyp wird **nicht** verändert, daher wird Typengleichheit mit geprüft)
+* ``<``  kleiner als
+* ``>``  größer als
+* ``<=`` kleiner gleich
+* ``>=`` größer gleich
+* ``==`` gleich (Datentyp wird implizit konvertiert)
+* ``===`` gleich (Datentyp wird **nicht** verändert, daher wird Typengleichheit mit geprüft)
+* ``!=``  ungleich (Datentyp wird implizit konvertiert)
+* ``!==`` ungleich (Datentyp wird **nicht** verändert, daher wird Typengleichheit mit geprüft)
 
 Rückgabe ist stets ein boolean (true/false).
 
@@ -330,7 +344,7 @@ Zur Prüfung ob eine Variable eine Number ist oder nicht (``isNaN()``).
 
     /*
         isNaN() liefert true, wenn Konvertierung gescheitert (wenn NaN)
-        isNaN() liefert false, wenn Konvertierung in nubmer erfolgreich
+        isNaN() liefert false, wenn Konvertierung in Number erfolgreich
     */
 
     console.log(isNaN("42"));        // false

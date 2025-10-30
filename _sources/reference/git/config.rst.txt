@@ -55,7 +55,7 @@ end with a ``\`` to be continued in the next line. Commands are separated with `
 
 .. code-block:: ini
 
-    my-more-complex-alias = "!f(){
+    my-more-complex-alias = "!f(){\
         echo 'Hello there';\
         echo 'Have a nice day';\
     }; f"

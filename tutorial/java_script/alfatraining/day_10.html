@@ -128,7 +128,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -145,7 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -236,13 +236,13 @@
 <p>Begriff Ajax wurde 2005 von Jesse James Garrett geprägt.</p>
 <p>Ajax steht als Abkürzung für <strong>Asynchronous JavaScript and XML</strong> (asynchrones JavaScript
 und XML) doch Ajax-Anwendungen nicht asynchron im Sinne, dass Kommunikation mit
-Server völlig losgelöst von Benutzereingaben stattfindet. Auch XML nicht
-zwangsläufig Übertragungsformat für Daten zwischen Client und Server.</p>
+Server völlig losgelöst von Benutzereingaben stattfindet. Auch ist XML nicht
+zwangsläufig das Übertragungsformat für Daten zwischen Client und Server.</p>
 <p>„Ajax“ =&gt; JavaScript-gestützter Datenaustausch mit Webserver im Hintergrund.</p>
 <ul class="simple">
 <li><p>XML =&gt; ein mögliches, aber nicht zentrales Übertragungsformat</p></li>
-<li><p>asynchron =&gt; JavaScript-Ausführung blockiert beim Warten auf Server-Antwort
-nicht Browser, JavaScript-Ereignisse werden gefeuert, wenn Server-Antwort eingetroffen</p></li>
+<li><p>asynchron =&gt; JavaScript-Ausführung <strong>blockiert</strong> beim Warten auf Server-Antwort
+<strong>nicht</strong> Browser, JavaScript-Ereignisse werden gefeuert, wenn Server-Antwort eingetroffen</p></li>
 <li><p>funktioniert also über selbsterzeugte HTTP-Anfragen, Server-Antwort steht Script
 zur Verfügung</p></li>
 <li><p>neu = asynchrone Kommunikation im Hintergrund</p></li>
@@ -257,8 +257,8 @@ das Browser verarbeitet und anstelle des alten anzeigt</p></li>
 <li><p>ohne Ajax muss immer neues, vollständiges HTML-Dokument vom Server geladen werden</p></li>
 <li><p>Ajax durchbricht Prinzip und ändert damit Bedienung von Webseiten und Aufbau
 von Webanwendungen grundlegend</p></li>
-<li><p>werden nur kleine Datenportionen mit Webserver ausgetauscht -gerade benötigte
-Daten nachgeladen, dem Server ausgewählte Änderungen mitgeteilt</p></li>
+<li><p>werden nur kleine Datenportionen mit Webserver ausgetauscht - gerade benötigte
+Daten werden nachgeladen, dem Server ausgewählte Änderungen mitgeteilt</p></li>
 <li><p>im Extremfall kommt Single Page Application heraus</p></li>
 <li><p>besteht nur aus einem ursprünglichen HTML-Dokument</p></li>
 <li><p>restlicher Datenaustausch mit Webserver läuft per JavaScript im Hintergrund:
@@ -301,7 +301,7 @@ bestimmten Punkt und Status markieren</p></li>
 <ul class="simple">
 <li><p>Großer Teil der Datenverarbeitung vom Server-Rechner auf Client-Rechner (Browser) verlagert</p></li>
 <li><p>Verlauf, den bisher Browser automatisch zur Verfügung stellte, müssen in
-Ajax-Anwendungen nachgebaut werden, z.B. indem jeder Status Adresse bekommt,
+Ajax-Anwendungen nachgebaut werden, z.B. indem jeder Status eine Adresse bekommt,
 damit Zurück-Navigation funktioniert</p></li>
 </ul>
 </section>
@@ -463,7 +463,7 @@ als String gespeichert.</p>
 <span class="c1">// Wie sollen Antwort-Daten vorliegen?</span>
 <span class="c1">// xhr.responseType = &quot;&quot;;  // Antwort als String (default)</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;document&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// geparstes Document (HTML || XML)</span>
-<span class="c1">// xhr.responseType = &quot;json&quot;;      // geparste JS-Daten, wenn Browser es kann</span>
+<span class="c1">// xhr.responseType = &quot;json&quot;;      // geparste JSON-Daten, wenn Browser es kann</span>
 
 <span class="c1">// Request-Header konfigurieren</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Accept&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span><span class="p">);</span>
@@ -518,7 +518,7 @@ sich der HTML oder XML Inhalt über das <code class="docutils literal notranslat
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>Beachte, dass der Rückgabewert von <code class="docutils literal notranslate"><span class="pre">.responseXML</span></code> ein Dokument ist. Damit lässt
+<p>Beachte, dass der Rückgabewert von <code class="docutils literal notranslate"><span class="pre">.responseXML</span></code> vom Typ <em>Document</em> ist. Damit lässt
 sich weiterarbeiten, wie mit dem DOM.</p>
 </section>
 </section>
@@ -536,7 +536,7 @@ sich weiterarbeiten, wie mit dem DOM.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

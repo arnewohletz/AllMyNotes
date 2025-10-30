@@ -129,7 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -146,7 +146,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -257,12 +257,21 @@
 <section id="datentypen">
 <h1>Datentypen<a class="headerlink" href="#datentypen" title="Link to this heading"></a></h1>
 <p>Primitive data types (Wert wird übergeben):</p>
-<ul class="simple">
+<ul>
 <li><p>number -&gt; Zahlen (Integer und Float)</p></li>
 <li><p>string -&gt; Zeichenketten</p></li>
 <li><p>boolean -&gt; true/false</p></li>
 <li><p>bigint -&gt; große Zahlen</p></li>
-<li><p>symbol -&gt; ES6: unique</p></li>
+<li><p>symbol -&gt; ES6: unique Symbol object (wird in globaler Symbol Registry gespeichert):</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">))</span><span class="w">      </span><span class="c1">// Symbol(&quot;foo&quot;)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">keyFor</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="p">)</span><span class="w">     </span><span class="c1">// true</span>
+</pre></div>
+</div>
+<p>Siehe auch <a class="reference internal" href="day_15.html#javascript-datatype-symbol"><span class="std std-ref">Datentyp: Symbol</span></a>.</p>
+</div></blockquote>
+</li>
 <li><p>undefined -&gt; nicht belegte Variable</p></li>
 <li><p>null -&gt; leerer Objektzeiger  (wird als Typ ‘object’ ausgegeben -&gt; Known Bug)</p></li>
 </ul>
@@ -321,13 +330,13 @@ Variablen (dynamische Typenkonvertierung).</p>
 </section>
 <section id="wahrheitswerte-boolean">
 <h2>Wahrheitswerte (boolean)<a class="headerlink" href="#wahrheitswerte-boolean" title="Link to this heading"></a></h2>
-<p>Es gibt nur <code class="docutils literal notranslate"><span class="pre">true``und</span> <span class="pre">``false</span></code>.</p>
-<p>Ansonsten <code class="docutils literal notranslate"><span class="pre">undefined``für</span> <span class="pre">nicht</span> <span class="pre">zugewiesene</span> <span class="pre">Variable</span> <span class="pre">oder</span> <span class="pre">``null</span></code> für ein nicht
+<p>Es gibt nur <code class="docutils literal notranslate"><span class="pre">true</span></code> und <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Ansonsten <code class="docutils literal notranslate"><span class="pre">undefined</span></code> für nicht zugewiesene Variable oder <code class="docutils literal notranslate"><span class="pre">null</span></code> für ein nicht
 vorhandenes Objekt.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><code class="docutils literal notranslate"><span class="pre">null</span></code> ist kein ‘object’ Typ, obwohl so vom Interpreter behauptet, sondern
-ein eigener Objekttyp. Nicht mehr zu behebender Fehler in JavaSript.</p>
+<p><code class="docutils literal notranslate"><span class="pre">null</span></code> bedeutet nicht kein ‘object’ Typ, obwohl so vom Interpreter behauptet,
+sondern ist ein eigener Objekttyp. Nicht mehr zu behebender Fehler in JavaScript.</p>
 </div>
 </section>
 <section id="bigint">
@@ -391,7 +400,7 @@ nie notwendig.</p>
 <span class="cm">    Inkrement- / Dekrement-Operator</span>
 
 <span class="cm">    Operator    Beispiel    Interpretation</span>
-<span class="cm">    ++          a = ++b     a = b + 1; a = b</span>
+<span class="cm">    ++          a = ++b     b = b + 1; a = b</span>
 <span class="cm">    ++          a = b++     a = b; b = b + 1</span>
 <span class="cm">    --          a = --b     b = b - 1; a = b</span>
 <span class="cm">    --          a = b--     a = b; b = b - 1</span>
@@ -405,6 +414,13 @@ nie notwendig.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">++</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
 </pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>Inkrement/Dekrement <strong>vor</strong> der Variablen: Inkrement/Dekrement <strong>vor</strong> Zuweisung</p></li>
+<li><p>Inkrement/Dekrement <strong>nach</strong> der Variablen: Inkrement/Dekrement <strong>nach</strong> Zuweisung</p></li>
+</ul>
 </div>
 </section>
 <section id="verkettungs-operator">
@@ -430,14 +446,16 @@ konvertiert (implizite Typenumwandlung).</p>
 </section>
 <section id="relationale-operatoren">
 <h2>Relationale Operatoren<a class="headerlink" href="#relationale-operatoren" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>  kleiner als
-<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>  größer als
-<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner gleich
-<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer gleich
-<code class="docutils literal notranslate"><span class="pre">==</span></code> gleich (Datentyp wird implizit konvertiert)
-<code class="docutils literal notranslate"><span class="pre">===</span></code> gleich (Datentyp wird <strong>nicht</strong> verändert, daher wird Typengleichheit mit geprüft)
-<code class="docutils literal notranslate"><span class="pre">!=</span></code>  ungleich (Datentyp wird implizit konvertiert)
-<code class="docutils literal notranslate"><span class="pre">!==</span></code> ungleich (Datentyp wird <strong>nicht</strong> verändert, daher wird Typengleichheit mit geprüft)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>  kleiner als</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>  größer als</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> kleiner gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> größer gleich</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> gleich (Datentyp wird implizit konvertiert)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">===</span></code> gleich (Datentyp wird <strong>nicht</strong> verändert, daher wird Typengleichheit mit geprüft)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>  ungleich (Datentyp wird implizit konvertiert)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!==</span></code> ungleich (Datentyp wird <strong>nicht</strong> verändert, daher wird Typengleichheit mit geprüft)</p></li>
+</ul>
 <p>Rückgabe ist stets ein boolean (true/false).</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// true (string wird implizit konvertiert)</span>
@@ -552,7 +570,7 @@ Ausdruck kann alles mögliche sein (muss in Klammern übergeben wird)</p>
 <p>Zur Prüfung ob eine Variable eine Number ist oder nicht (<code class="docutils literal notranslate"><span class="pre">isNaN()</span></code>).</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">    isNaN() liefert true, wenn Konvertierung gescheitert (wenn NaN)</span>
-<span class="cm">    isNaN() liefert false, wenn Konvertierung in nubmer erfolgreich</span>
+<span class="cm">    isNaN() liefert false, wenn Konvertierung in Number erfolgreich</span>
 <span class="cm">*/</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">));</span><span class="w">        </span><span class="c1">// false</span>
@@ -631,7 +649,7 @@ Ausdruck kann alles mögliche sein (muss in Klammern übergeben wird)</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

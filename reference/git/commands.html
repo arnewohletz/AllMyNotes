@@ -332,13 +332,9 @@ checked out and not <em>master</em> (the main branch).</p>
 <p>Copy those lines into <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>:</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[alias]</span>
 <span class="w">    </span><span class="c1"># Delete all local branches but master and the current one, but only if they are fully merged with master</span>
-<span class="w">    </span><span class="na">br-delete-useless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="err">!f(){\</span>
-<span class="w">        </span><span class="na">git branch | grep -v &quot;master&quot; | grep -v ^* | xargs git branch -d;\</span>
-<span class="w">    </span><span class="na">}; f&quot;</span>
+<span class="w">    </span><span class="na">br-delete-useless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){ git branch | grep -v \&quot;</span><span class="na">master\&quot; | grep -v ^* | xargs git branch -d; }; f&quot;</span>
 <span class="w">    </span><span class="c1"># Delete all local branches but master and the current one</span>
-<span class="w">    </span><span class="na">br-delete-useless-force</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="err">!f(){\</span>
-<span class="w">        </span><span class="na">git branch | grep -v &quot;master&quot; | grep -v ^* | xargs git branch -D;\</span>
-<span class="w">    </span><span class="na">}; f&quot;</span>
+<span class="w">    </span><span class="na">br-delete-useless-force</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){ git branch | grep -v \&quot;</span><span class="na">master\&quot; | grep -v ^* | xargs git branch -D; }; f&quot;</span>
 </pre></div>
 </div>
 <p>This enables those two git aliases:</p>
@@ -784,7 +780,7 @@ in upstream/master are replayed on top of that other branch:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

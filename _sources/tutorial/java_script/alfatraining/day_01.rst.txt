@@ -105,8 +105,20 @@ aus Versehen vergisst.
 
 Dadurch sollten alle Elemente im DOM sein.
 
-Mehrere Skript-Tags mit Dateien in ein HTML Seite einfügen
-* werden in dieser Reihenfolge angearbeitet -> darauf achten
+Mehrere Skript-Tags mit Dateien in ein HTML Seite einfügen:
+
+.. code-block:: html
+
+    <html>
+    <body>
+        // the entire body
+        <script src="script_1.js"></script>
+        <script src="script_2.js"></script>
+        <script src="script_3.js"></script>
+    </body>
+    </html>
+
+Dabei werden in dieser Reihenfolge abgearbeitet -> darauf achten
 
 Strict-Mode
 ===========
@@ -139,13 +151,15 @@ Kommentare
 Schreibregeln & Konventionen
 ============================
 Bei JavaScript
+
 - gilt case sensitive (username != USERNAME)
 - beginnt Zählung bei 0
 - gilt englische Schreibweise (Dezimaltrennzeichen = ``.`` nicht ``,``)
 
 Nicht relevant für Interpreter, aber Programmierer, dient der Lesbarkeit von Code
+
 - ein Statement pro Zeile
-- jede Zeile mit Semikolon beendet (obwohl nicht notwendig)
+- jede Zeile mit Semikolon beenden (obwohl nicht notwendig)
 - Bezeichner sollten sprechend sein (keine Chiffren)
 
 **Regeln für Bezeichner**
@@ -164,7 +178,16 @@ Nicht relevant für Interpreter, aber Programmierer, dient der Lesbarkeit von Co
 - für Konstruktor-Funktionen: upper camel case (UpperCamelCase)
 - für Konstanten zur Konfiguration: screaming snake case (SCREAMING_SNAKE_CASE)
 
-Anweisungsblöcke {} -> Interpreter weiß, dass alle Anweisungen gemeinsam ausgeführt werden müssen
+Anweisungsblöcke {} zum Gruppieren mehrerer Anweisungen:
+
+.. code-block:: javascript
+
+    if (true) {
+      var x = 2;
+      let y = 2;
+    }
+
+-> Interpreter weiß, dass alle Anweisungen gemeinsam ausgeführt werden müssen
 
 Vordefinierte Funktionen
 ========================
@@ -196,7 +219,13 @@ Variablen
 2) Initialisierung -> erfolgt durch Interpreter (erzeugt sie im Speicher)
 3) Zuweisung -> Wert wird an Variable übergeben
 
-Generell sollten möglichst wenig Variable im globalen Scope definiert werden.
+Generell sollten möglichst wenig Variablen im globalen Scope definiert werden.
+
+.. hint::
+
+    "Hoisting" bedeutet, dass in der Funktion alle Variablen im lokalen Gültigkeitsbereich
+    der Funktion bereits **alle Deklarationen** zu Beginn der Funktion stattfinden (Variable
+    ist ``undefined``), jedoch die Initialisierung erst in der entsprechenden Zeile.
 
 Alter Weg (ES5): mit ``var``
 

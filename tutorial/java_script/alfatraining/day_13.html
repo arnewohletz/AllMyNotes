@@ -44,7 +44,7 @@
       <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="next" title="Durch DOM navigieren" href="day_14.html" />
+    <link rel="next" title="jQuery: Durch DOM navigieren" href="day_14.html" />
     <link rel="prev" title="Datenübertragung an Server" href="day_12.html" /> 
 </head>
 
@@ -124,7 +124,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -141,7 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -233,7 +233,7 @@
 Mittlerweile durch Aufgreifen in ES6 immer weniger im Einsatz. Der Einsatz von
 jQuery schafft viele Möglichkeiten, geht aber zu Lasten der Performance. Es
 muss stets die gesamte Library geladen werden, obwohl meistens nur kleine Teile
-der Bibliothek verwendet wird.</p>
+der Bibliothek verwendet werden.</p>
 <p>Es konnte sogar fertige Programme (Plugins) in ein JavaScript eingefügt werden.
 Möglichkeit, diese ohne viel Aufwand einzusetzen. Es gab jedoch Inkompatibilitäten,
 wenn mehrere Plugins gleichzeitig verwendet wurden.</p>
@@ -243,7 +243,7 @@ sich verketten.</p>
 zu Laden ist. jQuery arbeitet im <strong>strikten Modus</strong>, <code class="docutils literal notranslate"><span class="pre">&quot;use</span> <span class="pre">strict&quot;</span></code> muss also
 beim Einsatz also nicht mehr selbst angegeben werden (gilt global).</p>
 <p>jQuery ist <strong>abwärtskompatibel</strong>, man versucht also auch ältere JavaScript
-Versionen unterstützen (man sieht daher oft ältere Syntax z.B. <code class="docutils literal notranslate"><span class="pre">var</span></code> im Code).</p>
+Versionen zu unterstützen (man sieht daher oft ältere Syntax z.B. <code class="docutils literal notranslate"><span class="pre">var</span></code> im Code).</p>
 <p>Integration von jQuery in HTML:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="cm">&lt;!-- ... --&gt;</span>
@@ -329,19 +329,19 @@ implizit umgewandelt und auf das Element zugegriffen.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].removeAttr()</span></code> wird ein Attribut entfernt:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Attribute entfernen</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Selektion wird im Objekt zurückgegeben</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// undefined</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].html()</span></code> wird auf den HTML-Inhalt (inkl. Markups) eines Elements
 zugegriffen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zugriff auf Content</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">contentH1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span><span class="w">   </span><span class="c1">// &quot;Inhaltsverzeichnis&quot;</span>
 
 <span class="c1">// lesend wird NUR Content des 1. selektierten Elements zurückgegeben</span>
 <span class="c1">// es hat sich erwiesen das mehr i.d.R. nicht gebraucht wird</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">contentP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// Hey</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Hey&quot;</span>
 
 <span class="c1">// Beim Schreiben werden ALLE selektierten Elemente überschrieben</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; Hey</span>
@@ -360,7 +360,7 @@ zugegriffen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Content ohne Markups</span>
 <span class="c1">// lesend werden ALLE selektierten Elements zurückgegeben (im Gegensatz zu .html())</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;&lt;b&gt;Content ohne Markups&lt;(p&gt;&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span><span class="w">  </span><span class="c1">// &quot;&lt;b&gt;Content ohne Markups&lt;p&gt;HeyHeyHeyHeyHey&quot;</span>
 
 <span class="c1">// ebenso schreibend!</span>
 </pre></div>
@@ -411,9 +411,19 @@ zugegriffen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">odd</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Über <code class="docutils literal notranslate"><span class="pre">[object].&lt;some_selector&gt;.end()</span></code> wird eine Unterselektion aufgehoben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">();</span>
+<p>Über <code class="docutils literal notranslate"><span class="pre">[object].&lt;some_selector&gt;.end()</span></code> wird eine Unterselektion aufgehoben und
+der vorherige Selektion von zutreffenden Elementen zurückgegeben:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">();</span><span class="w">   </span><span class="c1">// gibt alle &lt;p&gt; Elemente zurück (hebt first() Selektion auf</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">is</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)));</span><span class="w">  </span><span class="c1">// true</span>
+
+<span class="c1">// Kann auch verkettet werden</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">last</span><span class="p">();</span><span class="w">   </span><span class="c1">// gibt letztes &lt;p&gt; Elemente zurück</span>
 </pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">[match_result].is(selector)</span></code> Methode vergleicht die Elemente von <em>match_result</em>
+zu denen eines <em>selector</em>.</p>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].has(selector)</span></code> werden nur die Elemente einer Selektion zurückgegeben,
 welche einem weiteren Selektor entsprechen:</p>
@@ -631,7 +641,7 @@ in den sichtbaren Bereich verschoben.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="day_12.html" class="btn btn-neutral float-left" title="Datenübertragung an Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="day_14.html" class="btn btn-neutral float-right" title="Durch DOM navigieren" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="day_14.html" class="btn btn-neutral float-right" title="jQuery: Durch DOM navigieren" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -639,7 +649,7 @@ in den sichtbaren Bereich verschoben.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

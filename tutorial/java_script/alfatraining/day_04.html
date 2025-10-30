@@ -135,7 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_11.html#verlaufshistorie">Verlaufshistorie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_12.html">Datenübertragung an Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_13.html">jQuery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_14.html">Durch DOM navigieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_14.html">jQuery: Durch DOM navigieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_14.html#jquery-mit-ajax">jQuery mit AJAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html">Timing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_15.html#location-objekt">Location-Objekt</a></li>
@@ -152,7 +152,7 @@
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#events-und-event-object">Events und Event-Object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#destructuring">Destructuring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_18.html#factory-function">Factory-Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="day_18.html#construktor-function">Construktor-Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day_18.html#constructor-function">Constructor-Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html">Object.create()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#eigenschaftsattribute">Eigenschaftsattribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="day_19.html#neue-properties-in-prototypen-definieren">Neue Properties in Prototypen definieren</a></li>
@@ -274,8 +274,8 @@ sollte man jedoch nicht.</p>
 <section id="do-while-loop">
 <h2>do-while-loop<a class="headerlink" href="#do-while-loop" title="Link to this heading"></a></h2>
 <p>Die Schleife wird stets 1x durchgeführt, bevor eine Bedingung geprüft wird.
-Eignet sich für Nutzerabfragen. Es muss sichergestellt sein, dass der erste
-Durchlauf nicht bereits zu einem Fehler führt.</p>
+Eignet sich für Nutzerabfragen. Achtung: Es muss sichergestellt sein, dass der
+erste Durchlauf nicht bereits zu einem Fehler führt.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">    fußgesteuerte do...while Schleife</span>
 
@@ -288,7 +288,7 @@ Durchlauf nicht bereits zu einem Fehler führt.</p>
 <span class="kd">let</span><span class="w"> </span><span class="nx">answer</span><span class="p">;</span>
 
 <span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="nx">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Die Antwort auf alle Fragen des Universums: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Die Antwort auf alle Fragen des Universums: &quot;</span><span class="p">);</span>
 <span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">answer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">SOLUTION</span><span class="p">)</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Great!&quot;</span><span class="p">);</span>
@@ -356,8 +356,11 @@ Durchlauf nicht bereits zu einem Fehler führt.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In for Schleif springt Interpreter zur Befehlsfolge (z.B. i++)
-In while Schleife sprint Interpreter zur Bedingungsprüfung (was nach <code class="docutils literal notranslate"><span class="pre">while</span></code> steht)</p>
+<p>Nach einem Schleifendurchlauf springt der Interpreter:</p>
+<ul class="simple">
+<li><p>in der for-Schleife zur Befehlsfolge (z.B. i++)</p></li>
+<li><p>in der while-Schleife zur Bedingungsprüfung (was nach <code class="docutils literal notranslate"><span class="pre">while</span></code> steht)</p></li>
+</ul>
 </section>
 <section id="funktionen">
 <h1>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading"></a></h1>
@@ -369,28 +372,31 @@ In while Schleife sprint Interpreter zur Bedingungsprüfung (was nach <code clas
 seiner Deklaration aufgerufen werden.</p>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">Deklaration:</span>
+
 <span class="cm">function bezeichner (parameter) {</span>
-<span class="cm">        Statements;</span>
-<span class="cm">        return Rückgabewert;</span>
-<span class="cm">    }</span>
+<span class="cm">    Statements;</span>
+<span class="cm">    return Rückgabewert;</span>
+<span class="cm">}</span>
 
-<span class="cm">    Aufruf:</span>
-<span class="cm">    bezeichner (argumente);</span>
+<span class="cm">Aufruf:</span>
+<span class="cm">bezeichner (argumente);</span>
 
-<span class="cm">    Argumente / Parameter / return = optional</span>
-<span class="cm">    Parameter = funktionsgebundene Variablen</span>
-<span class="cm">    return beendet Funktion und kann Wert aus Funktion heraus zurückgeben</span>
-<span class="cm">    return ersetzt Funktionsaufruf</span>
+<span class="cm">argumente / parameter / return = optional</span>
+<span class="cm">Parameter = funktionsgebundene Variablen</span>
+<span class="cm">return beendet Funktion und kann Wert aus Funktion heraus zurückgeben</span>
+<span class="cm">return ersetzt Funktionsaufruf</span>
 
-<span class="cm">    kann vor Deklaration aufgerufen werden - unterliegt Hoisting</span>
+<span class="cm">kann vor Deklaration aufgerufen werden - unterliegt Hoisting</span>
 <span class="cm">*/</span>
 
-<span class="nx">myFunc</span><span class="p">();</span>
+<span class="nx">myFunc</span><span class="p">();</span><span class="w">       </span><span class="c1">// &#39;Guten Tag&#39;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">myFunc</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Guten Tag&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">myFunc</span><span class="p">();</span>
+<span class="nx">myFunc</span><span class="p">();</span><span class="w">       </span><span class="c1">// &#39;Guten Tag&#39;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">());</span>
@@ -434,9 +440,9 @@ seiner Deklaration aufgerufen werden.</p>
 <h2>Funktionsausdruck<a class="headerlink" href="#funktionsausdruck" title="Link to this heading"></a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Funktionsausdrücke unterliegen nicht dem Hoisting, d.h. die Deklaration muss
+<p>Funktionsausdrücke unterliegen <strong>nicht</strong> dem Hoisting, d.h. die Deklaration muss
 <strong>vor</strong> dem ersten Aufruf im Skript erfolgen.</p>
-<p>Daher ist der Funktionsausdruck generell performanter.</p>
+<p>Daher ist der Funktionsausdruck generell <strong>performanter</strong>.</p>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">    let bezeichner = function (parameter) {</span>
@@ -450,7 +456,7 @@ seiner Deklaration aufgerufen werden.</p>
 <span class="cm">    ist performanter</span>
 <span class="cm">*/</span>
 
-<span class="c1">// square(3);</span>
+<span class="c1">// square(3);      // ReferenceError - Deklaration nicht gefunden</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span>
@@ -484,7 +490,7 @@ seiner Deklaration aufgerufen werden.</p>
 </div>
 </section>
 <section id="iife-immediately-invoked-function-expression">
-<h2>IIFE (immediately invoked function expression)<a class="headerlink" href="#iife-immediately-invoked-function-expression" title="Link to this heading"></a></h2>
+<span id="javascript-iife-immediately-invoked-function-expression"></span><h2>IIFE (immediately invoked function expression)<a class="headerlink" href="#iife-immediately-invoked-function-expression" title="Link to this heading"></a></h2>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Sind derzeit nicht mehr allzu verbreitet. Wurden früher verwendet, um Variablen
@@ -552,8 +558,6 @@ Index   Element
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">newFilledArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newFilledArr</span><span class="p">);</span>
-
-<span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>Das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">new</span></code> sorgt dafür, dass das ein neues Array erstellt und
@@ -564,7 +568,9 @@ zurückgegeben wird.</p>
 <ul class="simple">
 <li><p>Über den Index</p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// [array].length um Anzahl der Elemente im Array zu ermitteln</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">];</span>
+
+<span class="c1">// [array].length um Anzahl der Elemente im Array zu ermitteln</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 
 <span class="c1">// Zugriff über Property Access</span>
@@ -587,7 +593,9 @@ in einem Array gezählt wird, zugegriffen wird.</p>
 <ul class="simple">
 <li><p>Über <code class="docutils literal notranslate"><span class="pre">.at()</span></code></p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zugriff über [array].at(index)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">];</span>
+
+<span class="c1">// Zugriff über [array].at(index)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -665,8 +673,8 @@ ab Position mit <code class="docutils literal notranslate"><span class="pre">ind
 <li><p>(index) –&gt; Entferne alle Element ab <code class="docutils literal notranslate"><span class="pre">index</span></code> bis Ende</p></li>
 <li><p>(index, anzahl_elemente) –&gt; Entfernt ab <code class="docutils literal notranslate"><span class="pre">index</span></code> die nächsten
 <code class="docutils literal notranslate"><span class="pre">anzahl_elemente</span></code></p></li>
-<li><p>(index, anzahl_elemente, 1+_element) –&gt; Ersetzt (entfernt und fügt ein)
-ab <code class="docutils literal notranslate"><span class="pre">index</span></code> die nächsten <code class="docutils literal notranslate"><span class="pre">anzahl_elemente</span></code> mit <code class="docutils literal notranslate"><span class="pre">1+element</span></code> (item1,
+<li><p>(index, anzahl_elemente, 1+ elemente) –&gt; Ersetzt (entfernt und fügt ein)
+ab <code class="docutils literal notranslate"><span class="pre">index</span></code> die nächsten <code class="docutils literal notranslate"><span class="pre">anzahl_elemente</span></code> mit <code class="docutils literal notranslate"><span class="pre">1+</span> <span class="pre">elemente</span></code> (item1,
 item2, …, itemN)</p></li>
 </ul>
 <p>Die entfernten Elemente werden als Array zurückgegeben. Wurde kein Element
@@ -710,8 +718,10 @@ entfernt wird ein leeres Array zurückgegeben.</p>
 </section>
 <section id="array-kopieren">
 <h2>Array kopieren<a class="headerlink" href="#array-kopieren" title="Link to this heading"></a></h2>
-<p>Die <code class="docutils literal notranslate"><span class="pre">.slice()</span></code> Methode gibt eine Kopie eines Arrays zurück. Das originale Array
-wird bei Veränderungen der Kopie <strong>nicht</strong> verändert.</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">.slice([startIndex],</span> <span class="pre">[endindex])</span></code> Methode gibt eine Kopie eines Arrays zurück.
+Das originale Array wird bei Veränderungen der Kopie <strong>nicht</strong> verändert.</p>
+<p><code class="docutils literal notranslate"><span class="pre">startIndex</span></code> und <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> sind optional. Element an der Stelle <code class="docutils literal notranslate"><span class="pre">endIndex</span></code>
+<strong>nicht</strong> inkludiert.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Ein Array kann <strong>nicht</strong> über Zuweisung einer zweiten Variablen kopiert werden,
@@ -730,14 +740,15 @@ Array. Eine Änderung über eine Variable wirkt sich daher auf beide Variablen a
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">());</span>
 
 <span class="c1">// Kopie ab startIndex</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">      </span><span class="c1">// [ &quot;Daredevil&quot;, &quot;Elektra&quot;, &quot;Nebula&quot; ]</span>
 
 <span class="c1">// Kopie ab startIndex bis exclusive endIndex</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">4</span><span class="p">));</span><span class="w">    </span><span class="c1">// [ &quot;Daredevil&quot;, &quot;Elektra&quot; ]</span>
 
-<span class="c1">// arbeit mit negat. Werten ist möglich</span>
+<span class="c1">// arbeit mit negativen Werten ist möglich</span>
 <span class="c1">// Ermittlung der index-Position durch Zählung vom Ende her</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">));</span>
+<span class="c1">// hier: alle Elemente ab 2. Position bis exklusive letzter</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">));</span><span class="w">   </span><span class="c1">//  [ &quot;Luke Cage&quot;, &quot;Daredevil&quot;, &quot;Elektra&quot; ]</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroes</span><span class="p">);</span>
 </pre></div>
@@ -799,7 +810,10 @@ stets Komma als Separator verwendet.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> nutzt ASCII Zeichentabelle zur Sortierung:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sort()</span></code> nutzt ASCII Zeichentabellenindex zur Sortierung und geht dabei
+vergleicht stets Zeichen an gleicher Indexposition:</p>
+<p>Zahlen &lt; Großbuchstaben &lt; Kleinbuchstaben</p>
+<p>Integer-Werte werden implizit zu String konvertiert (z.B. 1 –&gt; “1”):</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mf">2</span><span class="p">,</span><span class="mf">42</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">104</span><span class="p">,</span><span class="mf">99</span><span class="p">,</span><span class="mf">22</span><span class="p">,</span><span class="mf">65</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">,</span><span class="mf">52</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">sort</span><span class="p">());</span><span class="w">  </span><span class="c1">// Funktioniert nicht</span>
 </pre></div>
 </div>
@@ -887,7 +901,7 @@ innenliegende Arrays mit abgeflacht werden.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Aug 15, 2025</span>.
+        <span class="update_date">Oct 30, 2025</span>.
       </div>
     
     <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>

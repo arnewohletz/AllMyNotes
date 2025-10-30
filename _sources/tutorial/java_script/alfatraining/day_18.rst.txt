@@ -53,26 +53,64 @@ Seit ES6 verfügbar. Enthält **nur** die *überzähligen* Parameter.
 
     let greeting = (floskel, ...heroes) =>
         heroes.forEach(hero => console.log(`${floskel} ${hero}`));
-    greeting("Heyho", "Jessy", "Luke", "Thor", "Odin");
+    greeting("Heyho", "Jessy", "Luke", "Thor", "Odin");     // Heyho Jessy -> Heyho Luke -> ...
 
     let heroArr = ["Jessy", "Luke", "Thor", "Odin", "Elektra"];
-    greeting("Hi", ...heroArr);
+    greeting("Hi", ...heroArr);   // Hi Jessy -> Hi Luke -> ...
 
 Events und Event-Object
 =======================
 Events durchlaufen drei Phasen:
 
-#. Capturing-Phase (Window --> Target)
+#. Capturing-Phase (Window --> Target / "from top down to target")
 #. Target-Phase
-#. Bubbling-Phase (Target --> Document): Standardmäßig wird hier auf Event reagiert
+#. Bubbling-Phase (Target --> Document / "from bottom up to document"):
+   Standardmäßig wird hier auf Event reagiert
 
 .. code-block:: none
 
     [element].addEventListener(
         event,          Event-Type
         function,       aufzurufende Funktion
-        useCapture      Phase der Aktivierung (default = false)
+        useCapture      Phase der Aktivierung bei Elementen welche höher in DOM sind als Target
+                        true: Event wird bereits in Capturing-Phase ausgelöst
+                        false: Event wird erst in Bubbling-Phase ausgelöst
+                        (Default: false)
     )
+
+Beispiel:
+
+.. code-block:: none
+
+                     | |  / \
+    -----------------| |--| |-----------------
+    | element1       | |  | |                |
+    |   -------------| |--| |-----------     |
+    |   |element2    \ /  | |          |     |
+    |   --------------------------------     |
+    |        W3C event model                 |
+    ------------------------------------------
+
+Bei Klick auf ``element2`` wird bei
+
+.. code-block:: javascript
+
+    element1.addEventListener('click',doSomething2,true)
+    element2.addEventListener('click',doSomething,false)
+
+das Event auf ``element1`` bereits in der Capturing-Phase, also **vor** ``element2``
+ausgeführt, sprich, ``doSomething2`` erfolgt vor ``doSomething``.
+
+Bei
+
+.. code-block:: javascript
+
+    element1.addEventListener('click',doSomething2,false)
+    element2.addEventListener('click',doSomething,false)
+
+hingegen durchläuft das Event ``element1`` ohne das der Handler reagiert, es wird
+daraufhin zuerst ``doSomething`` ausgeführt, dann beginnt die Bubbling-Phase, erst
+dann wird bei Wieder-Hochlaufen ``doSomething2`` ausgeführt.
 
 .. code-block:: javascript
 
@@ -124,7 +162,7 @@ Events durchlaufen drei Phasen:
     liste.addEventListener("mousedown", (event) => {
 
         // Event-Objekt
-        console.log(event);
+        console.log(event);     //  mousedown { target: li, buttons: 1, ... }
 
         // Event, das direkt vom Ereignis betroffen
         console.log(event.target);  // li-Element
@@ -133,7 +171,7 @@ Events durchlaufen drei Phasen:
         console.log(event.currentTarget);   // ul (Parent)
 
         // Event-Phase ermitteln
-        console.log(event.eventPhase);
+        console.log(event.eventPhase);  // 3 --> Bubbling-Phase
 
         let phaseObj = {
             1: "Capturing -Phase",
@@ -150,7 +188,7 @@ Events durchlaufen drei Phasen:
             1: "Mittlere Maustaste",
             2: "Rechte Maustaste"
         };
-        console.log(mouseObj[event.button]);
+        console.log(mouseObj[event.button]);  // z.B. 0 --> Linke Maustaste
 
         // Kontextmenü unterdrücken (Bei Klick mit rechter Maustaste)
         liste.oncontextmenu = function(event) {
@@ -184,8 +222,8 @@ Events durchlaufen drei Phasen:
 
     /*
         EventListener und once
-        EventListener hat zusätzliche Option once diese entfernt Event-Listener automatisch nach
-        1. Auftreten des Events
+        EventListener hat zusätzliche Option 'once' - diese entfernt Event-Listener
+        automatisch nach 1. Auftreten des Events
 
                 [elem].addEventListener(event, function,  {once: true});
 
@@ -227,7 +265,7 @@ Array-Destructuring
     console.log(one, two);
     console.log(five);  // undefined, da überzählig
 
-    // Destructuring ür Funktions-Parameter nutzen
+    // Destructuring für Funktions-Parameter nutzen
     function getNames ([one, two, three, four]) {
         console.log(three, four);
     };
@@ -271,14 +309,14 @@ Objekt-Destructuring
         firstName:  firstFromObj,
         lastName:   lastFromObj
     } = favHero;
-    console.log(firstFromObj, lastFromObj);
+    console.log(firstFromObj, lastFromObj);     // Jessica Jones
 
     // einfacher, wenn key-Bezeichner = Variablen-Bezeichner
     let {
         firstName,
         lastName
     } = favHero;
-    console.log(firstName, lastName);
+    console.log(firstName, lastName);      // Jessica Jones
 
     // Werte aus geschachtelten Objekten
     let jessyData = {
@@ -300,7 +338,7 @@ Objekt-Destructuring
             city
         }
     } = jessyData;
-    console.log(heroFirst, age, zip, street, city);
+    console.log(heroFirst, age, zip, street, city);     // Jessica 36 111 Dragonroad 66 Hells Kitchen
     console.log(number);    // undefined, da keine Entsprechung im Objekt
 
     // 'let' entfällt, wenn Variable bereits vorhanden
@@ -331,7 +369,7 @@ Kombination Array- und Object-Destructuring
         phone:  [mobile, office]
     } = jessyData;
 
-    console.log(firstName, city, mobile, office);
+    console.log(firstName, city, mobile, office);  // Jessica Hells Kitchen 0172-567894321 999-66339955
 
     let marvelHeroes = [
         {
@@ -359,7 +397,7 @@ Kombination Array- und Object-Destructuring
 
     // Destructuring in for-Schleife nutzen
     for (let { name, contact: { mail, phone } } of marvelHeroes) {
-        console.log(name, mail, phone);
+        console.log(name, mail, phone);   //  Odin odin@valhalla.org 534698721 -> ...
     }
 
     // Destructuring für Parameter einer Funktion nutzen
@@ -372,7 +410,7 @@ Kombination Array- und Object-Destructuring
     };
 
     function heroMail( { contact: { mail } } ) {
-        console.log(mail);
+        console.log(mail);  // odin@valhalla.org
     }
     heroMail(chefchen);
 
@@ -410,7 +448,7 @@ erfassen kann:
     console.log(user2);
     console.log(user1.setName("Pinky"));    // überschreibt Namen
 
-Construktor-Function
+Constructor-Function
 ====================
 Sollten IMMER mit Großbuchstaben beginnen. Muss mit ``new`` aufgerufen werden: erstellt
 ein neues Objekt und gibt es zurück.

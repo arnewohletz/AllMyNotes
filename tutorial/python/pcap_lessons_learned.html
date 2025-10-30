@@ -1,0 +1,1848 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCAP - Lessons learned &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/thebelab-helper.js"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="next" title="PyScript" href="pyscript.html" />
+    <link rel="prev" title="Machine Learning" href="machine_learning.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install/index.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_setup.html">New Project Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flask/index.html">Flask - Set up a web application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine Learning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PCAP - Lessons learned</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#name-mangling">Name mangling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-module-methods">Some module methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-platform">module: platform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-math">module: math</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-random">module: random</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-methods">List methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-comprehension">List comprehension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tuple">Tuple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dictionary">Dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bytearray">Bytearray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-keywords">Built-in keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-functions">Built-in functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#os-module">os module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datetime-module">datetime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calendar-module">calendar module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loops">loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-exceptions">Some exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#try-except">try-except</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assert-expression-expression">assert expression[, expression]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-class">Object &lt;–&gt; Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inheritance">Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-resolution-order">Method Resolution Order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generators">Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strings">Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyscript.html">PyScript </a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python</a></li>
+      <li class="breadcrumb-item active">PCAP - Lessons learned</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorial/python/pcap_lessons_learned.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pcap-lessons-learned">
+<h1>PCAP - Lessons learned<a class="headerlink" href="#pcap-lessons-learned" title="Link to this heading"></a></h1>
+<section id="name-mangling">
+<h2>Name mangling<a class="headerlink" href="#name-mangling" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Name mangling only for PRIVATE INSTANCE variables defined INSIDE the
+class definition, which are</p>
+<ul>
+<li><p>instance variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">__hidden_instvar</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">_A__hidden_instvar</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>class variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
+    <span class="n">__hidden_classvar</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">_A__hidden_classvar</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Name mangling NOT for private instance variables defined OUTSIDE the
+class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">__hidden</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">__hidden</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>Name mangling applies also to PRIVATE METHODS of a class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_obj</span><span class="o">.</span><span class="n">_MyObjClass__hidden_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>If private instance is defined in parent class, then</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_subclass_instance</span><span class="o">.</span><span class="n">_ParentClass__private_instance_variable</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="ascii">
+<h2>ASCII<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ASCII: Basic punctuation and symbols (e.g. Space !$%&amp;()+-.*/) –&gt;
+Numbers (0-9) –&gt; Big letters (A-Z) –&gt; Small letters (a-z)</p></li>
+<li><p>code points use upper 128 slots for special characters (lower 128
+slots are fix)</p></li>
+</ul>
+</section>
+<section id="some-module-methods">
+<h2>Some module methods<a class="headerlink" href="#some-module-methods" title="Link to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(arg1,</span> <span class="pre">arg2,</span> <span class="pre">…,</span> <span class="pre">sep='</span> <span class="pre">',</span> <span class="pre">end='\n')</span></code> –&gt; prints
+arguments on console.</p>
+<ul class="simple">
+<li><p>sep defaults to <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code>. If sep=None, default is used</p></li>
+<li><p>end defaults to <code class="docutils literal notranslate"><span class="pre">\n</span></code>. If end=None, default is used</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(x)</span></code> –&gt; returns a range object (iterable), containing elements
+from 0 to x-1 (x itself is excluded), may be put into a list</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted_list</span> <span class="pre">=</span> <span class="pre">sorted([iterable],</span> <span class="pre">key)</span></code> -&gt; creates a NEW iterable
+with the sorted order. The previous iterable remains unchanged. ‘key’
+is a function (often: lambda), into which each iterable element is fed
+-&gt; return value is used for sorting</p></li>
+</ul>
+</section>
+<section id="module-platform">
+<h2>module: platform<a class="headerlink" href="#module-platform" title="Link to this heading"></a></h2>
+<ul>
+<li><p>platform.platform(): Returns a single string identifying the
+underlying platform</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">()</span>
+<span class="go">&#39;macOS-26.0-arm64-arm-64bit-Mach-O&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>platform.machine(): Returns the machine type, e.g. ‘AMD64’. An empty
+string is returned if the value cannot be determined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">()</span>
+<span class="go">&#39;arm64&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>platform.processor(): Returns the (real) processor name, e.g. ‘amdk6’.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">()</span>
+<span class="go">&#39;arm&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>platform.system(): Returns the system/OS name, such as ‘Linux’,
+‘Darwin’, ‘Java’, ‘Windows’. An empty string is returned if the value
+cannot be determined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+<span class="go">&#39;Darwin&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>platform.version(): Returns the system’s release version, e.g. ‘#3 on
+degas’. An empty string is returned if the value cannot be determined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
+<span class="go">&#39;Darwin Kernel Version 25.0.0: Mon Aug 25 21:17:54 PDT 2025; root:xnu-12377.1.9~3/RELEASE_ARM64_T6041&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>platform.python_implementation(): Returns a string identifying the
+Python implementation. Possible return values are: ‘CPython’,
+‘IronPython’, ‘Jython’, ‘PyPy’.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">python_implementation</span><span class="p">()</span>
+<span class="go">&#39;CPython&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>platform.python_version_tuple(): Returns the Python version as tuple
+(major, minor, patchlevel) of strings.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">python_version_tuple</span><span class="p">()</span>
+<span class="go">(&#39;3&#39;, &#39;13&#39;, &#39;7&#39;)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="module-math">
+<h2>module: math<a class="headerlink" href="#module-math" title="Link to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.trunc(x)</span></code>: Return x with the fractional part removed as integer
+e.g. <code class="docutils literal notranslate"><span class="pre">math.trunc(1.4)</span></code> -&gt; 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.exp(x)</span></code>: Returns the value of e^x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.log(x,</span> <span class="pre">[base])</span></code>: Returns the logarithm of x at base (default: e):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">2.302585092994046</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="mf">2.302585092994046</span><span class="p">)</span>
+<span class="go">10.000000000000</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.pow(x,</span> <span class="pre">y)</span></code>: returns x^y (as float), i.e</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">100.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">**</span><span class="mi">2</span>   <span class="c1"># same as</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.ceil(x)</span></code>: the ceiling of x (the smallest integer greater than or
+equal to x)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="go">-4</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.floor(x)</span></code>: the floor of x (the largest integer less than or equal
+to x)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="go">-5</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.factorial(x)</span></code>: returns x! (x has to be an integral and not a
+negative, if so raises ValueError)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">120     (5 * 4 * 3 * 2 * 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">ValueError</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(x)</span></code>: Return the square root of x.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">ValueError</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.hypot(x:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">float,</span> <span class="pre">y:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">float)</span></code>: Returns the length of
+the hypotenuse:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">5.830951894845301</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="module-random">
+<h2>module: random<a class="headerlink" href="#module-random" title="Link to this heading"></a></h2>
+<p>The seed value (default: current time -&gt; no repetition for consecutive
+runs) - determines the first random number - generates a new seed (to
+calculate the next random number)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">random.random()</span></code> –&gt; Return a random floating-point number X in the
+range 0.0 &lt;= X &lt; 1.0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.sample(list,</span> <span class="pre">k)</span></code> –&gt; return list of k UNIQUE elements from list:</p>
+<ul>
+<li><p>k must not be larger than len(list) –&gt; ValueError</p></li>
+<li><p>if number of unique elements in list is less than ‘k’, duplicate
+elements are returned</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.randint(a,</span> <span class="pre">b)</span></code> –&gt; return random integer N where a &lt;= N &lt;= b
+(both a and b are included)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.randrange(a,</span> <span class="pre">b,</span> <span class="pre">[step])</span></code> –&gt; return random integer N where a &lt;= N
+&lt; b (a is included, b is excluded), optional [step] define stepwidth</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.choice(sequence)</span></code> –&gt; returns one item from a sequence (list,
+tuple, set)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.choices(list,</span> <span class="pre">k=5)</span></code> –&gt; return list of k elements from list -
+elements may NOT be UNIQUE, hence elements may be returned MORE THAN
+ONCE</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.seed()</span></code> –&gt; Initialize the random number generator. If seed() is
+passed an integer, each run produces the same values</p></li>
+</ul>
+</section>
+<section id="list-methods">
+<h2>List methods<a class="headerlink" href="#list-methods" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[list].sort(key</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x[1])</span></code> … sorts a list according to
+return value of key function and compares value via ‘&lt;’ (here: the
+second character of each list entry is used, which requires
+<a class="reference internal" href="#list"><span class="std std-ref">list</span></a> to contains strings of at least two character length)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[list].insert(i,</span> <span class="pre">x)</span></code> … Insert a new item with value x in the array
+BEFORE position i. Negative values are treated as being relative to
+the end of the array. e.g. my_list = [1,2,3] -&gt; my_list.insert(-1, 4)
+–&gt; [1,2,4,3]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[list].pop(i)</span></code> … removes the element at index position i from
+<a class="reference internal" href="#list"><span class="std std-ref">list</span></a> and returns it</p></li>
+</ul>
+</section>
+<section id="list-comprehension">
+<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Double for-statements in list comprehension results in a list
+containing lists, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_l</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_l</span>
+<span class="go">[[0, 1, 2, 3], [3, 4, 5, 6], [6, 7, 8, 9]]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Multiple conditions can be added:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number from 0 to 19 must have modulo of 0 for both 2 and 5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_list</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Both these work and do the same thing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>A list comprehension becomes a generator when used inside round
+brackets (), not square brackets []:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">my_gen</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="list">
+<h2>List<a class="headerlink" href="#list" title="Link to this heading"></a></h2>
+<ul>
+<li><p>lists are MUTABLE</p></li>
+<li><p>list support the <code class="docutils literal notranslate"><span class="pre">del</span></code> statement to remove an item:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span>
+<span class="go">[1,2]</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[list].remove(x)</span></code> … removes first occurence of x in
+<a class="reference internal" href="#list"><span class="std std-ref">list</span></a></p></li>
+</ul>
+</section>
+<section id="tuple">
+<h2>Tuple<a class="headerlink" href="#tuple" title="Link to this heading"></a></h2>
+<ul>
+<li><p>tuples are IMMUTABLE (so, no adding or removing elements)</p></li>
+<li><p>tuples use round brackets ‘(’ and ‘)’, e.g. (1,2,3)</p></li>
+<li><p>tuples can be created via</p>
+<ul>
+<li><p>with braces: my_tuple = (1,2,3)</p></li>
+<li><p>without braces (ending with a comma): my_tuple = 1,</p></li>
+<li><p>with ‘tuple(iterable)’ method: tuple([1,2,3]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">([</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;ABC&quot;</span><span class="p">])</span>   <span class="c1"># OK - use list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">((</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;ABC&quot;</span><span class="p">))</span>   <span class="c1"># OK - use tuple</span>
+<span class="go">(&#39;12&#39;, 2, &#39;ABC&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ABC&#39;</span><span class="p">)</span>   <span class="c1"># NOK --&gt; ValueError, as tuple requires ITERABLE as SINGLE ARGUMENT</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>a single value tuple always ends with a comma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+<span class="go">(3,)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="set">
+<h2>Set<a class="headerlink" href="#set" title="Link to this heading"></a></h2>
+<ul>
+<li><p>sets are MUTABLE</p></li>
+<li><p>sets use curly braces <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>, e.g. {1,2,3}</p></li>
+<li><p>sets only contain unique items - if equal value are passed in, only
+one instance remains, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">{&#39;a&#39;, &#39;b&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span>
+<span class="go">{1,2,3}</span>
+</pre></div>
+</div>
+</li>
+<li><p>can be created via</p>
+<ul>
+<li><p>with braces: my_set = {1,2,3}</p></li>
+<li><p>with ‘set(iterable)’ method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>    <span class="c1"># OK - use list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>    <span class="c1"># OK - use tuple</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span>    <span class="c1"># OK - use set</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="k">as</span> <span class="nb">set</span> <span class="n">requires</span> <span class="n">ITERABLE</span> <span class="k">as</span> <span class="n">SINGLE</span> <span class="n">ARGUMENT</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#set"><span class="std std-ref">set</span></a>.remove(x) -&gt; removes first occurence of x in
+<a class="reference internal" href="#set"><span class="std std-ref">set</span></a></p></li>
+</ul>
+</section>
+<section id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading"></a></h2>
+<ul>
+<li><p>dictionaries use curly braces ‘{’ and ‘}’ containing key-value pairs,
+separated by commas. The key value pair consists of a key and a value,
+separated by colon ‘:’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">{&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+</pre></div>
+</div>
+</li>
+<li><p>keys must be hashable, therefor must be IMMUTABLE.</p>
+<p>Allowed types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">int</span>
+<span class="o">-</span> <span class="nb">float</span>
+<span class="o">-</span> <span class="nb">str</span>
+<span class="o">-</span> <span class="nb">tuple</span>
+<span class="o">-</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+<p>NOT allowed types:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">list</span>
+<span class="o">-</span> <span class="nb">dict</span>
+<span class="o">-</span> <span class="nb">set</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_dict.keys()</span></code> … returns list of all keys in my_dict</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_dict.values()</span></code> … returns list of all valules in my_dict</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_dict.items()</span></code> … returns list of tuples, each tuple being a key,
+value pair</p></li>
+</ul>
+</section>
+<section id="bytearray">
+<h2>Bytearray<a class="headerlink" href="#bytearray" title="Link to this heading"></a></h2>
+<ul>
+<li><p>List-like array containing only integer numbers from 0 to 255 (2^8
+values) -&gt; TypeError, when adding different type -&gt; ValueError, when
+passing integer outside of range</p></li>
+<li><p>Does NOT have a fix length</p></li>
+<li><p>Create via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">byarr</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span> <span class="c1"># empty</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">byarr</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># size of 10, filled with zeros (\x00)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Read binary data from file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bd</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Alternative:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">bf</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="built-in-keywords">
+<h2>Built-in keywords<a class="headerlink" href="#built-in-keywords" title="Link to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">global</span></code>: inside a local scope allows</p>
+<ul class="simple">
+<li><p>referencing an existing variable in the global scope</p></li>
+<li><p>making a local variable accessible outside of the local scope</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;R2D2&#39;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">y</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">my_func</span><span class="p">(</span><span class="s1">&#39;C3PO&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>–&gt; Here ‘print(y)’ references the global variable ‘y’ which has been
+altered inside the my_func() function</p>
+</li>
+</ul>
+</section>
+<section id="built-in-functions">
+<h2>Built-in functions<a class="headerlink" href="#built-in-functions" title="Link to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(str)</span></code> also consideres escape characters
+(i.e. <code class="docutils literal notranslate"><span class="pre">len(&quot;\n&quot;)</span> <span class="pre">=</span> <span class="pre">1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issubclass(class,</span> <span class="pre">classinfo)</span></code> … is class a (direct, indirect, or
+virtual) subclass of classinfo (true/false)? indirect means: if C is a
+subclass of B and B is a sublass of A (A &lt;– B &lt;– C), then C is also a
+subclass of A, so issubclass(C, A) returns True</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(object,</span> <span class="pre">classinfo)</span></code> … is object an instance of classinfo
+(true/false) OR a (direct, indirect, or virtual) subclass thereof?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">=</span> <span class="pre">open(file,</span> <span class="pre">mode)</span></code> … create file input-output stream (file
+object), which is iterable (returning the file content line by line),
+e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="go">This is a line</span>
+<span class="go">This is another line</span>
+</pre></div>
+</div>
+<ul>
+<li><p>mode:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> … file MUST exist (read only)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r+</span></code> … file MUST exist AND is writable (read and write)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> … file may exist, if not is created (write only)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w+</span></code> … file may exist, if not is created (write and read)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> … file may exist, if not is created (write only, appends at
+end of file)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a+</span></code> … file may exist, if not is created (read and write,
+appends at end of file): careful, pointer is at end of file, so
+before reading move it to begin position via file.seek(0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> … file MUST NOT exist (exclusive creation mode, create
+only): if already exists, raises IOError with e.errno ==
+errno.EEXIST</p></li>
+</ul>
+<p>CAREFUL: reading or writing from/to file, if mode doesn’t allow
+this, raises an io.UnsupportedOperation error</p>
+</li>
+<li><p>important errnos (assigned to all IOError instance’s <code class="docutils literal notranslate"><span class="pre">errno</span></code>
+attribute):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.EEXIST</span></code> … File already exists</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.ENOENT</span></code> … File does not exist</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.EACCES</span></code> … Permission denied: happens if writing to file
+opened in read-only mode OR file is opened in write-mode but has
+read-only atttribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.EBADF</span></code> … Bad file number: happens if operate with an
+unopened stream</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.EFBIG</span></code> … File too large (for memory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.EISDIR</span></code> … Is a directory: when you try to treat a
+directory name as the name of an ordinary file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.EMFILE</span></code> … Too many open files (simultaneously open more
+streams than acceptable for your operating system)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errno.ENOSPC</span></code> … No space left on device (e.g. hard disk)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Read content from file stream:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">file.read(b)</span></code> -&gt; str … returns first b bytes of file as
+single string. If b is omitted, negative or None, the full content
+is returned</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">=</span> <span class="pre">file.readline(b)</span></code> -&gt; str … returns first b bytes of the
+next line from file. If b is omitted, negative or exceeds byte
+length of the line, the full line is read</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">=</span> <span class="pre">file.readlines(b)</span></code> -&gt; list[str] … read and return a list
+of FULL lines from the stream. ‘b’ can be specified to control the
+number of lines read: no more lines will be read if the total size
+(in bytes/ 8 bit characters like ASCII) of all lines so far exceeds
+‘b’. If ‘b’ &lt;= 0 or ‘b’ = None, ALL LINES are read.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file.readinto(my_bytearray)</span></code> … read out bytes from file into
+precreated bytearray</p></li>
+</ul>
+</li>
+<li><p>Write content to file stream:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">file.write(string</span> <span class="pre">|</span> <span class="pre">bytearray)</span></code> … write string characters or
+bytearray to file – IMPORTANT: write() returns the number of
+characters written to file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file.writelines([list</span> <span class="pre">of</span> <span class="pre">lines])</span></code> … writes list of strings to
+file WITHOUT line separator (should be added at the end of each
+line)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter(function,</span> <span class="pre">iterable)</span></code> -&gt; takes each element of iterable and
+puts it into ‘function’, returns a filter object.</p>
+<ul>
+<li><p>If function is a lambda e.g. lambda x: x**2, then x is the passed in
+element from iterable</p></li>
+<li><p>If function returns a falsy (e.g. ““,[], {}, 0, None, False) the
+element is filtered out from iterable</p></li>
+<li><p>For reuse, filter object must be put into iterable construtor, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">98</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="n">list1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filtered</span>
+<span class="go">&lt;filter object at 0x105d4be80&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list2</span>
+<span class="go">[6, 33, 78, 42]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map(function,</span> <span class="pre">iterable,</span> <span class="pre">iterables*)</span></code> … supplies each element of
+‘iterable’ to the passed ‘function’ and returns it. If additional
+‘iterables*’ are passed, ‘function’ must accept just as many
+iterables as arguments</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">[1, 4, 9]</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id(obj)</span></code> … returns the unique id of an object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hasattr(object/class,</span> <span class="pre">attr_name:</span> <span class="pre">str)</span></code> … determines if an OBJECT or
+a CLASS has the attribute name, which are</p>
+<ul class="simple">
+<li><p>instance variables: objects only</p></li>
+<li><p>class variables: class + objects</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max(iterable)</span></code> … returns the largest item in an iterable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum(iterable)</span></code> … returns sum of all elements of iterable (iterable
+must contain integers or floats)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int(number:</span> <span class="pre">int|float|str)</span></code> … converts ‘number’ to an integer.
+Number must be</p>
+<ul class="simple">
+<li><p>an integer e.g. int(3) -&gt; 3</p></li>
+<li><p>a floating point number (decimal places are trimmed) -&gt; int(3.7) -&gt;
+3</p></li>
+<li><p>a string which contains a string representation of an INTEGER e.g
+int(“3”) -&gt; 3 (floats are NOT allowed, e.g. int(“3.5”) –&gt;
+ValueError)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="os-module">
+<h2>os module<a class="headerlink" href="#os-module" title="Link to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.mkdir(&quot;/dir&quot;)</span></code> … creates a directory at given path (NO recursive
+creation) If path already exists a FileExistsError is raised. If
+parent path is not found a FileNotFoundError is raised.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.makedirs(&quot;/some/path&quot;)</span></code> … creates a directory path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.chdir(&quot;some/path&quot;)</span></code> … sets current working directory to given
+path. If directory does not exist, raises FileNotFoundError</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code> … returns a list with all directories within the
+current working directory (without ‘.’ or ‘..’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.uname()</span></code> … provides current operating system information as an
+object with these attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sysname</span> <span class="o">-</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">name</span>
+<span class="n">nodename</span> <span class="o">-</span> <span class="n">name</span> <span class="n">of</span> <span class="n">machine</span> <span class="n">on</span> <span class="n">network</span> <span class="p">(</span><span class="n">implementation</span><span class="o">-</span><span class="n">defined</span><span class="p">)</span>
+<span class="n">release</span> <span class="o">-</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">release</span>
+<span class="n">version</span> <span class="o">-</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">version</span>
+<span class="n">machine</span> <span class="o">-</span> <span class="n">hardware</span> <span class="n">identifier</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.name</span></code> … returns OS system name (e.g. ‘posix’, ‘nt’ , ‘java’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.system(shell_command:</span> <span class="pre">str)</span></code> … execute a shell command</p></li>
+</ul>
+</section>
+<section id="datetime-module">
+<h2>datetime module<a class="headerlink" href="#datetime-module" title="Link to this heading"></a></h2>
+<ul>
+<li><p>date objects:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.date(year,</span> <span class="pre">month,</span> <span class="pre">day)</span></code> … all items must be given,
+otherwise ValueError</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1992</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date_1</span>
+<span class="go">datetime.date(1992, 1, 16)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">date_1</span><span class="p">)</span>
+<span class="go">1992-01-16</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.fromtimestamp(timestamp)</span></code> … create from timestamp</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.fromisoformat('iso-date-format-string')</span></code> … from iso
+format string</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2019-11-04&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">1992</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="o">...</span> <span class="n">replace</span> <span class="n">date</span> <span class="n">values</span>
+<span class="n">d</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">...</span> <span class="n">get</span> <span class="n">weekday</span> <span class="n">integer</span> <span class="p">(</span><span class="mi">0</span> <span class="k">for</span> <span class="n">Monday</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>time objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">...</span> <span class="n">create</span> <span class="n">time</span> <span class="nb">object</span> <span class="p">(</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">millisecond</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">14:53:20.000001</span>
+</pre></div>
+</div>
+<p>Methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">ctime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  <span class="o">...</span> <span class="n">convert</span> <span class="n">time</span> <span class="n">epoch</span> <span class="n">to</span> <span class="n">string</span>
+<span class="go">&#39;Wed Oct 15 13:11:20 2025&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">...</span> <span class="n">returns</span> <span class="n">struct_time</span> <span class="nb">object</span> <span class="p">(</span><span class="n">contain</span> <span class="n">tm_</span><span class="o">*</span> <span class="n">attributes</span> <span class="k">for</span> <span class="n">time</span> <span class="n">values</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">...</span> <span class="n">retuns</span> <span class="n">struct_time</span> <span class="nb">object</span> <span class="p">(</span><span class="n">contain</span> <span class="n">tm_</span><span class="o">*</span> <span class="n">attributes</span> <span class="k">for</span> <span class="n">time</span> <span class="n">values</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>  <span class="o">...</span> <span class="n">convert</span> <span class="n">struct_time</span> <span class="n">to</span> <span class="n">string</span>
+<span class="go">&#39;Wed Oct 15 13:11:20 2025&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="o">...</span> <span class="n">convert</span> <span class="n">struct_time</span> <span class="n">to</span> <span class="n">epoch</span> <span class="n">time</span> <span class="p">(</span><span class="k">as</span> <span class="nb">float</span><span class="p">)</span>
+<span class="go">1760523080.0</span>
+</pre></div>
+</div>
+</li>
+<li><p>datetime.datetime objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>  <span class="o">...</span> <span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span> <span class="nb">min</span><span class="p">,</span> <span class="n">sec</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">...</span> <span class="n">get</span> <span class="n">date</span>
+<span class="go">datetime.date(2019, 11, 27)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">...</span> <span class="n">get</span> <span class="n">time</span>
+<span class="go">datetime.time(11, 27, 22)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span> <span class="o">...</span> <span class="n">get</span> <span class="n">timestamp</span>
+<span class="go">1574850442.0</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>  <span class="o">...</span> <span class="k">return</span> <span class="n">current</span> <span class="n">date</span> <span class="ow">and</span> <span class="n">time</span> <span class="k">as</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span> <span class="nb">object</span>
+<span class="go">datetime.datetime(2025, 10, 15, 13, 20, 20, 52509)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">...</span> <span class="o">*</span><span class="n">same</span><span class="o">*</span>
+<span class="go">datetime.datetime(2025, 10, 15, 13, 20, 20, 52509)</span>
+</pre></div>
+</div>
+</li>
+<li><p>date and time formatting:</p>
+<p><code class="docutils literal notranslate"><span class="pre">strftime</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.datetime.strftime(date:</span> <span class="pre">date|datetime,</span> <span class="pre">format:</span> <span class="pre">str)</span></code> …
+returns string of ‘date’ in given ‘format’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date_1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1992</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">date_1</span><span class="p">,</span> <span class="s1">&#39;%y/%B/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">&#39;92/January/16&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime_1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">datetime_1</span><span class="p">,</span> <span class="s1">&#39;%y/%B/</span><span class="si">%d</span><span class="s1"> - %H:%M:%S&#39;</span><span class="p">)</span>
+<span class="go">&#39;19/November/27 - 11:27:22&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time.strftime(format:</span> <span class="pre">str,</span> <span class="pre">[struct_time])</span></code> … returns string of
+‘time’ in given ‘format’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span>
+<span class="go">&#39;2025/10/15 11:56:27&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">strptime</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime.datetime.strptime(datetime:</span> <span class="pre">str,</span> <span class="pre">format:</span> <span class="pre">str)</span></code> … returns
+datetime object for ‘datetime’ string in given ‘format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2019/11/04 14:53:00&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">))</span>
+<span class="go">datetime.datetime(2019, 11, 4, 14, 53)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time.strptime(datetime:</span> <span class="pre">str,</span> <span class="pre">format:</span> <span class="pre">str)</span></code> … returns struct_time
+object for ‘datetime’ string in given ‘format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2019/11/04 14:53:00&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="go">time.struct_time(tm_year=2019, tm_mon=11, tm_mday=4, tm_hour=14, tm_min=53, tm_sec=0, tm_wday=0, tm_yday=308, tm_isdst=-1)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Format Codes:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>%a</p></td>
+<td><p>Abbreviated weekday name</p></td>
+<td><p>Sun, Mon, …</p></td>
+</tr>
+<tr class="row-odd"><td><p>%A</p></td>
+<td><p>Full weekday name</p></td>
+<td><p>Sunday, Monday, …</p></td>
+</tr>
+<tr class="row-even"><td><p>%w</p></td>
+<td><p>Weekday as number (0=Sunday,
+6=Saturday)</p></td>
+<td><p>0–6</p></td>
+</tr>
+<tr class="row-odd"><td><p>%d</p></td>
+<td><p>Day of the month, zero-padded</p></td>
+<td><p>01–31</p></td>
+</tr>
+<tr class="row-even"><td><p>%b</p></td>
+<td><p>Abbreviated month name</p></td>
+<td><p>Jan, Feb, …</p></td>
+</tr>
+<tr class="row-odd"><td><p>%B</p></td>
+<td><p>Full month name</p></td>
+<td><p>January, February, …</p></td>
+</tr>
+<tr class="row-even"><td><p>%m</p></td>
+<td><p>Month as number (zero-padded)</p></td>
+<td><p>01–12</p></td>
+</tr>
+<tr class="row-odd"><td><p>%y</p></td>
+<td><p>Year without century</p></td>
+<td><p>00–99</p></td>
+</tr>
+<tr class="row-even"><td><p>%Y</p></td>
+<td><p>Year with century</p></td>
+<td><p>2025</p></td>
+</tr>
+<tr class="row-odd"><td><p>%H</p></td>
+<td><p>Hour (24-hour clock, zero-padded)</p></td>
+<td><p>00–23</p></td>
+</tr>
+<tr class="row-even"><td><p>%I</p></td>
+<td><p>Hour (12-hour clock, zero-padded)</p></td>
+<td><p>01–12</p></td>
+</tr>
+<tr class="row-odd"><td><p>%p</p></td>
+<td><p>AM/PM</p></td>
+<td><p>AM, PM</p></td>
+</tr>
+<tr class="row-even"><td><p>%M</p></td>
+<td><p>Minute, zero-padded</p></td>
+<td><p>00–59</p></td>
+</tr>
+<tr class="row-odd"><td><p>%S</p></td>
+<td><p>Second, zero-padded</p></td>
+<td><p>00–59</p></td>
+</tr>
+<tr class="row-even"><td><p>%f</p></td>
+<td><p>Microsecond, zero-padded</p></td>
+<td><p>000000–999999</p></td>
+</tr>
+<tr class="row-odd"><td><p>%z</p></td>
+<td><p>UTC offset in ±HHMM format</p></td>
+<td><p>+0200</p></td>
+</tr>
+<tr class="row-even"><td><p>%Z</p></td>
+<td><p>Time zone name</p></td>
+<td><p>UTC, CET, …</p></td>
+</tr>
+<tr class="row-odd"><td><p>%j</p></td>
+<td><p>Day of the year, zero-padded</p></td>
+<td><p>001–366</p></td>
+</tr>
+<tr class="row-even"><td><p>%U</p></td>
+<td><p>Week number (Sunday as first day)</p></td>
+<td><p>00–53</p></td>
+</tr>
+<tr class="row-odd"><td><p>%W</p></td>
+<td><p>Week number (Monday as first day)</p></td>
+<td><p>00–53</p></td>
+</tr>
+<tr class="row-even"><td><p>%c</p></td>
+<td><p>Locale’s date and time
+representation</p></td>
+<td><p>Tue Oct 1 08:30:00 2025</p></td>
+</tr>
+<tr class="row-odd"><td><p>%x</p></td>
+<td><p>Locale’s date representation</p></td>
+<td><p>10/01/25</p></td>
+</tr>
+<tr class="row-even"><td><p>%X</p></td>
+<td><p>Locale’s time representation</p></td>
+<td><p>08:30:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>%%</p></td>
+<td><p>A literal ‘%’ character</p></td>
+<td><p>%</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Date &amp; time operations:</p>
+<ul>
+<li><p>substraction –&gt; timedelta object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">-</span> <span class="n">date</span> <span class="o">--&gt;</span> <span class="n">timedelta</span>
+<span class="n">datetime</span> <span class="o">-</span> <span class="n">datetime</span> <span class="o">--&gt;</span> <span class="n">timedelta</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">d1</span> <span class="o">-</span> <span class="n">d2</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">366</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="o">-</span> <span class="n">d2</span><span class="p">)</span>
+<span class="mi">366</span> <span class="n">days</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">41242</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="o">-</span> <span class="n">d2</span><span class="p">)</span>
+<span class="mi">11</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">22</span>
+</pre></div>
+</div>
+<p>Prints days, if timedelta &gt; 24 hours:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d3</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">-</span> <span class="n">d3</span>
+<span class="go">datetime.timedelta(days=10565)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d1</span> <span class="o">-</span> <span class="n">d3</span><span class="p">)</span>
+<span class="go">10565 days, 0:00:00</span>
+</pre></div>
+</div>
+</li>
+<li><p>create timedelta objects –&gt; addition –&gt; date/datetime objects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">+</span> <span class="n">timedelta</span> <span class="o">--&gt;</span> <span class="n">date</span>
+<span class="n">timedate</span> <span class="o">+</span> <span class="n">timedelta</span> <span class="o">--&gt;</span> <span class="n">datetime</span>
+<span class="n">timedelta</span> <span class="o">+</span> <span class="n">timedelta</span> <span class="o">--&gt;</span> <span class="n">timedelta</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">delta2</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta2</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">53</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta2</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">delta</span> <span class="o">+</span> <span class="n">delta2</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">48</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">21600</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="calendar-module">
+<h2>calendar module<a class="headerlink" href="#calendar-module" title="Link to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">calendar.setfirstweekday(calendar.SUNDAY)</span></code> … set first weekday to
+sunday</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calendar.weekday(2020,</span> <span class="pre">12,24)</span></code> … return weekday index of given date
+(e.g. 3 for 4th day of the week –&gt; Thursday)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calendar.weekheader(width)</span></code> … prints the weekday names at a width
+of ‘width’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calendar</span><span class="o">.</span><span class="n">weekheader</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;Mo Tu We Th Fr Sa Su&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calendar.isleap(2020)</span></code> … return boolean if year is a leap year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calendar.leapdays(2010,</span> <span class="pre">2021)</span></code> … return amount of leap years
+between 2010 and 2020 ([end] is NOT included)</p></li>
+</ul>
+<p>Calendar methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="n">Calendar</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">SUNDAY</span><span class="p">)</span> <span class="o">...</span> <span class="n">create</span> <span class="n">calendar</span> <span class="k">with</span> <span class="n">first</span> <span class="n">week</span> <span class="n">day</span> <span class="ow">is</span> <span class="n">sunday</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">Monday</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">weekday</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">iterweekdays</span><span class="p">():</span>        <span class="o">...</span> <span class="k">return</span> <span class="n">iterator</span> <span class="k">for</span> <span class="n">weekday</span> <span class="n">numbers</span> <span class="k">for</span> <span class="n">one</span> <span class="n">week</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">weekday</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="go">6 0 1 2 3 4 5</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">itermonthdates</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>   <span class="o">...</span> <span class="k">return</span> <span class="n">iterator</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">days</span> <span class="ow">in</span> <span class="s1">&#39;month&#39;</span> <span class="ow">in</span> <span class="s1">&#39;year&#39;</span> <span class="k">as</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span> <span class="n">objects</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="go">2019-10-28 2019-10-29 2019-10-30 2019-10-31 2019-11-01 ... 2019-11-30 2019-12-01</span>
+
+<span class="go">IMPORTANT: always returns entire weeks if it contains at least one day within given month</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">monthdays2calendar</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>     <span class="o">...</span> <span class="n">returns</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">full</span> <span class="n">weeks</span><span class="p">,</span> <span class="n">containing</span> <span class="n">tuples</span> <span class="n">of</span> <span class="p">(</span><span class="n">day_number</span><span class="p">,</span> <span class="n">weekday_number</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">[(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 5), (2, 6)]</span>
+<span class="go">...</span>
+<span class="go">[(31, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6)]</span>
+
+<span class="go">IMPORTANT: day_number == 0 means, the day is outside of the month, first day of the month starts with 1</span>
+</pre></div>
+</div>
+</section>
+<section id="loops">
+<h2>loops<a class="headerlink" href="#loops" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code> … skips current loop and continues to the next</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code> … ends loop (IMPORTANT: ‘else’ blocks are NOT executed if
+loop ends with ‘break’)</p></li>
+</ul>
+<p>while-else:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">[</span><span class="n">condition</span><span class="p">]:</span>
+    <span class="o">//</span> <span class="n">do</span> <span class="n">something</span>
+    <span class="k">if</span> <span class="p">[</span><span class="n">condition</span><span class="p">]:</span>
+        <span class="k">break</span>    <span class="o">//</span> <span class="n">end</span> <span class="n">loop</span> <span class="p">(</span><span class="n">even</span> <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="n">still</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="o">//</span> <span class="nb">next</span> <span class="n">cycle</span>
+    <span class="o">//</span> <span class="n">unreachable</span> <span class="n">code</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">code</span> <span class="n">executed</span> <span class="k">if</span> <span class="s1">&#39;break&#39;</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">happen</span>
+    <span class="o">//</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">executed</span> <span class="k">if</span> <span class="k">while</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">entered</span>
+</pre></div>
+</div>
+<p>for-else:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">[</span><span class="n">elem</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]:</span>
+    <span class="o">//</span> <span class="n">do</span> <span class="n">something</span>
+    <span class="k">if</span> <span class="p">[</span><span class="n">condition</span><span class="p">]:</span>
+        <span class="k">break</span>    <span class="o">//</span> <span class="n">end</span> <span class="n">loop</span> <span class="p">(</span><span class="n">even</span> <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="n">still</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="o">//</span> <span class="nb">next</span> <span class="n">cycle</span>
+    <span class="o">//</span> <span class="n">unreachable</span> <span class="n">code</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">code</span> <span class="n">executed</span> <span class="k">if</span> <span class="s1">&#39;break&#39;</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">happen</span>
+    <span class="o">//</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">executed</span> <span class="k">if</span> <span class="k">for</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">entered</span>
+</pre></div>
+</div>
+</section>
+<section id="some-exceptions">
+<h2>Some exceptions<a class="headerlink" href="#some-exceptions" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">BaseException</span>
+   <span class="o">+---</span><span class="ne">Exception</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ArithmeticError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">FloatingPointError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">OverflowError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ZeroDivisionError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">AssertionError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">AttributeError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ImportError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ModuleNotFoundError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="n">ZipImportError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">LookupError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">IndexError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">KeyError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="n">CodecRegistryError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">MemoryError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">OSError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ConnectionError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">FileExistsError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">FileNotFoundError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">TimeoutError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="n">UnsupportedOperation</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ReferenceError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">RuntimeError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">SyntaxError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">IndentationError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">SystemError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">TypeError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="ne">ValueError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">UnicodeError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">UnicodeDecodeError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">UnicodeEncodeError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="ne">UnicodeTranslateError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="n">UnsupportedOperation</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="n">InterpreterError</span>
+   <span class="o">|</span>   <span class="o">|</span>   <span class="o">+---</span><span class="n">InterpreterNotFoundError</span>
+   <span class="o">|</span>   <span class="o">+---</span><span class="n">ClassFoundException</span>
+   <span class="o">+---</span><span class="ne">KeyboardInterrupt</span>
+</pre></div>
+</div>
+<p>IMPORTANT: A SyntaxError is raised even BEFORE the code is run</p>
+</section>
+<section id="try-except">
+<h2>try-except<a class="headerlink" href="#try-except" title="Link to this heading"></a></h2>
+<ul>
+<li><p>following syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">do</span> <span class="n">something</span> <span class="n">which</span> <span class="n">might</span> <span class="k">raise</span> <span class="n">error</span>
+<span class="k">except</span> <span class="p">[</span><span class="n">some_error_type</span><span class="p">]:</span>
+    <span class="o">//</span> <span class="n">handle</span> <span class="n">error</span>
+<span class="k">except</span> <span class="p">[(</span><span class="n">some_other_error_type</span><span class="p">,</span> <span class="n">yet_another_error_type</span><span class="p">)]:</span>
+    <span class="o">//</span> <span class="n">handle</span> <span class="n">these</span> <span class="n">other</span> <span class="n">errors</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">handle</span> <span class="n">every</span> <span class="n">other</span> <span class="n">error</span> <span class="p">(</span><span class="n">must</span> <span class="n">come</span> <span class="n">last</span><span class="p">,</span> <span class="n">otherwise</span> <span class="o">--&gt;</span> <span class="ne">SyntaxError</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">execute</span> <span class="n">only</span> <span class="k">if</span> <span class="n">no</span> <span class="n">exception</span> <span class="n">occured</span> <span class="p">(</span><span class="n">no</span> <span class="k">except</span><span class="o">-</span><span class="n">block</span> <span class="n">was</span> <span class="n">executed</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">always</span> <span class="n">executed</span> <span class="n">regardless</span> <span class="n">error</span> <span class="ow">is</span> <span class="n">raised</span> <span class="ow">or</span> <span class="ow">not</span>
+</pre></div>
+</div>
+</li>
+<li><p>a SyntaxError is already raised BEFORE runtime, so</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">ArithmeticError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ArithmeticError&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Misc. Error&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>raises a SyntaxError for ‘func(x=1,4)’ (positional argument follows
+keyword argument), but does NOT enter the bare except clause, printing
+“Misc Error”</p>
+</li>
+<li><p>general ‘except’ MUST be the LAST except statement, otherwise raises
+SyntaxError:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 1&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 2&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 3&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">SyntaxError</span>
+</pre></div>
+</div>
+</li>
+<li><p>Exceptions save its constructor arguments in the ‘args’ attribute,
+which is a tuple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;This is bad&quot;</span><span class="p">,</span> <span class="s2">&quot;very bad&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+
+<span class="go">&lt;class &#39;tuple&#39;&gt;</span>
+<span class="go">(&#39;This is bad&#39;, &#39;very bad&#39;)</span>
+</pre></div>
+</div>
+<p>Important: The order in which the arguments are put into the
+exception’s constructur is the order of the ‘args’ tuple</p>
+</li>
+<li><p>uses braces to handle multiple exception types in one statement, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">do</span> <span class="n">something</span> <span class="n">risky</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ArithmeticError</span><span class="p">,</span> <span class="ne">LookupError</span><span class="p">):</span>
+    <span class="o">//</span> <span class="n">handle</span> <span class="n">it</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="assert-expression-expression">
+<h2>assert expression[, expression]<a class="headerlink" href="#assert-expression-expression" title="Link to this heading"></a></h2>
+<ul>
+<li><p>a failed assert always raises an AssertionError (hence it must be put
+into try-except structure)</p></li>
+<li><p>assert fails for 0, False, ““, [], {}, () (a.k.a falsy)</p></li>
+<li><p>optional second expression [, expression] is passed to raised
+exception:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;this is bad&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="go">this is bad</span>
+</pre></div>
+</div>
+<p>–&gt; prints “this is bad” to console, not the Exception e</p>
+</li>
+</ul>
+</section>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h2>
+<p>Arithmetic:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> … addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> … substraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> … multiplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> … division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> … modulus (2 % 2 = 0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> … exponentiation (<code class="docutils literal notranslate"><span class="pre">2**3</span> <span class="pre">=</span> <span class="pre">8</span></code>) – Careful: strings like ‘2’ are
+NOT transformed to integers: <code class="docutils literal notranslate"><span class="pre">'2'**3</span></code> –&gt; TypeError</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> … floor division:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">--&gt;</span>   <span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="n">dann</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="p">,</span>
+<span class="o">-</span><span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">--&gt;</span>  <span class="o">-</span><span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.5</span> <span class="n">dann</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="mi">4</span>
+<span class="mi">5</span> <span class="o">//</span> <span class="mf">2.0</span> <span class="o">--&gt;</span> <span class="mf">2.0</span> <span class="p">(</span><span class="n">floor</span> <span class="n">division</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">cast</span> <span class="n">result</span> <span class="n">into</span> <span class="n">integer</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Comparison:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> … equals:</p>
+<p>Careful:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">objA</span> <span class="o">==</span> <span class="n">objB</span> <span class="o">--&gt;</span> <span class="n">compares</span> <span class="n">the</span> <span class="n">string</span> <span class="n">representation</span> <span class="n">of</span> <span class="n">two</span> <span class="n">objects</span>
+<span class="n">objA</span> <span class="ow">is</span> <span class="n">objB</span> <span class="o">--&gt;</span> <span class="n">compares</span> <span class="n">identity</span> <span class="n">of</span> <span class="n">two</span> <span class="n">objects</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="k">if</span> <span class="n">both</span> <span class="n">point</span> <span class="n">to</span> <span class="n">same</span> <span class="nb">object</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> … not equals</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> / <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> … value comparison - does only work for two objects of
+the SAME TYPE (e.g. not for string and integer)</p></li>
+</ul>
+<p>Identity:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code> … True, if both variables point to same object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> … True, if both variables point to different objects</p></li>
+</ul>
+<p>Logical:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>: [statement_a] and [statement_b] -&gt; returns True, if both
+statments are True</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code>: [statement_a] or [statement_b] -&gt; returns True, if any
+statments is True</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>: not([statement_a] and [statement_b]) -&gt; reverses the result
+(e.g. True –&gt; False)</p></li>
+</ul>
+<p>Bitwise:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code> … bitwise XOR: compares each bit, set it to 1 if only one is 1,
+otherwise 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">^</span> <span class="mi">3</span><span class="p">:</span>  <span class="mi">0000</span> <span class="mi">0110</span>
+        <span class="mi">0000</span> <span class="mi">0011</span>
+        <span class="o">---------</span>
+        <span class="mi">0000</span> <span class="mi">0101</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code> … bitwise or: compares each bit, sets it to 1 if one or both are
+1, otherwise 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">|</span> <span class="mi">3</span><span class="p">:</span>  <span class="mi">0000</span> <span class="mi">0110</span>
+        <span class="mi">0000</span> <span class="mi">0011</span>
+        <span class="o">---------</span>
+        <span class="mi">0000</span> <span class="mi">0111</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. … bitwise and: compare each bit, sets it to 1 if both are 1,
+otherwise 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">&amp;</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">0000</span> <span class="mi">0110</span>
+
+        <span class="mi">0000</span> <span class="mi">0011</span>
+        <span class="o">---------</span>
+        <span class="mi">0000</span> <span class="mi">0010</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> … bitwise LEFT shift:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="mi">0000</span> <span class="mi">0001</span>
+         <span class="mi">0000</span> <span class="mi">0010</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> … bitwise RIGHT shift:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">0000</span> <span class="mi">1000</span>
+        <span class="mi">0000</span> <span class="mi">0100</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Important: If shift exceeds right limit, e.g. 8 &gt;&gt; 5, the 1-bits “move
+out-of-scope” the bit-values all become zero:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">0000</span> <span class="mi">1000</span>
+        <span class="mi">0000</span> <span class="mi">0000</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Order of precedence (highest to lowest):</p>
+<ul>
+<li><p>parentheses: (…)</p></li>
+<li><p>exponentiation: **</p></li>
+<li><p>unary + / - (signs, e.g. -4)</p></li>
+<li><p>Multiplication, Division, Floor Division, Modulus (left to right):
+<code class="docutils literal notranslate"><span class="pre">*</span>&#160; <span class="pre">/</span>&#160; <span class="pre">//</span>&#160; <span class="pre">%</span></code></p></li>
+<li><p>binary + / - (addition, subtraction)</p></li>
+<li><p>(all bitwise operations follow here)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;</span>  <span class="o">&gt;&gt;</span>
+<span class="o">&amp;</span>
+<span class="o">^</span>
+<span class="o">|</span>
+</pre></div>
+</div>
+</li>
+<li><p>Comparing / identity / membership operators (within section, all
+equal):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">in</span>
+<span class="ow">not</span> <span class="ow">in</span>
+<span class="ow">is</span>
+<span class="ow">is</span> <span class="ow">not</span>
+<span class="o">==</span>
+<span class="o">!=</span>
+<span class="o">&lt;=</span>
+<span class="o">&gt;=</span>
+<span class="o">&lt;</span>
+<span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>(boolean operations follow here)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="n">x</span>
+<span class="ow">and</span>
+<span class="ow">or</span>
+</pre></div>
+</div>
+<ul>
+<li><p>IMPORTANT: ‘and’ is evaluated BEFORE ‘or’</p></li>
+<li><p>IMPORTANT: ‘and’ exactly means: “Return the first falsy value, or
+the last value if none are falsy.”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">0</span> <span class="ow">and</span> <span class="mi">100</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">and</span> <span class="mi">99</span>
+<span class="go">99</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="object-class">
+<h2>Object &lt;–&gt; Class<a class="headerlink" href="#object-class" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Only for Classes (NOT for objects): <code class="docutils literal notranslate"><span class="pre">__bases__</span></code>, <code class="docutils literal notranslate"><span class="pre">__name__</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__bases__</span></code> returns a tuple containing the types of all direct
+superclasses</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> returns the name of the class as string</p></li>
+</ul>
+</li>
+<li><p>For Classes AND objects: <code class="docutils literal notranslate"><span class="pre">__dict__</span></code>, <code class="docutils literal notranslate"><span class="pre">__module__</span></code> (name of module)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__dict__</span></code> returns a dictionary containing key-value pairs of all
+attributes of the class/object, which includes:</p>
+<ul>
+<li><p>object only: INSTANCE VARIABLES (including hidden ones, like
+self.__hidden)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">constructor</span> <span class="p">(</span><span class="n">hidden</span> <span class="n">ones</span> <span class="n">via</span> <span class="n">name</span> <span class="n">mangling</span><span class="p">:</span> <span class="n">myobj</span><span class="o">.</span><span class="n">_Classname__defined_in_constructor</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">defined</span> <span class="n">outside</span> <span class="n">constructor</span> <span class="p">(</span><span class="n">hidden</span> <span class="n">ones</span> <span class="n">without</span> <span class="n">name</span> <span class="n">mangling</span><span class="p">:</span> <span class="n">myobj</span><span class="o">.</span><span class="n">__defined_outside_constructor</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>class only:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* CLASS VARIABLES (CAREFUL: class variables from parent classes are NOT listed here, though present from inheritance)
+* methods (e.g. &#39;mymethod&#39; : function MyClass.mymethod at ...)
+* special methods. e.g.
+
+    * ``__dict__`` (&#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;C&#39; objects&gt;)
+    * ``__doc__`` (e.g. &#39;__doc__&#39;: None)
+    * ``__module__`` (e.g. &#39;__module__&#39;: &#39;__main__&#39;)
+    * ``__init__`` (e.g. &#39;__init__&#39;: &lt;function C.__init__ at ...)
+</pre></div>
+</div>
+</li>
+<li><p>Name mangling needed:</p>
+<ul class="simple">
+<li><p>Yes, for hidden instances variables defined INSIDE of the CLASS
+DEFINITION</p></li>
+<li><p>No, for hidden instance variables defines OUTSIDE of the CLASS
+DEFINITION (e.g. my_object.__new_attr = 0 –&gt; __new_attr)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Call the parent class’ constructor - methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Alpha</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">val</span>
+</pre></div>
+</div>
+<ul>
+<li><p>reference parent class by name (needs passing subclass as ‘self’)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Beta</span><span class="p">(</span><span class="n">Alpha</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">Alpha</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># ParentClass.__init__(self) requires &#39;self&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>reference parent class by super() (does NOT need ‘self’)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Beta</span><span class="p">(</span><span class="n">Alpha</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">super()</span></code> itself does NOT take any arguments and references the
+nearest superclass of the class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code> does NOT require ‘self’ to be passed</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading"></a></h2>
+<p>Python looks for object components (attributes, methods) in the
+following order:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">inside</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">itself</span><span class="p">;</span>
+<span class="mf">2.</span> <span class="ow">in</span> <span class="n">its</span> <span class="n">superclasses</span><span class="p">,</span> <span class="kn">from</span><span class="w"> </span><span class="nn">bottom</span> <span class="n">to</span> <span class="n">top</span><span class="p">;</span>
+<span class="mf">3.</span> <span class="k">if</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="k">class</span><span class="w"> </span><span class="nc">on</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">inheritance</span> <span class="n">path</span><span class="p">,</span> <span class="n">Python</span> <span class="n">scans</span> <span class="n">them</span> <span class="kn">from</span><span class="w"> </span><span class="nn">left</span> <span class="n">to</span> <span class="n">right</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="method-resolution-order">
+<h2>Method Resolution Order<a class="headerlink" href="#method-resolution-order" title="Link to this heading"></a></h2>
+<p>Rule: If a class inherits from multiple parent classes, the order in
+which they are declared from left to right must match the order of
+inheritance, so that it’s methods are resolved in a consistent way.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Top</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">m_top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Middle</span><span class="p">(</span><span class="n">Top</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">m_middle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;middle&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Bottom</span><span class="p">(</span><span class="n">Top</span><span class="p">,</span> <span class="n">Middle</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">m_bottom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
+
+
+<span class="nb">object</span> <span class="o">=</span> <span class="n">Bottom</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This WON’T WORK, because</p>
+<ul class="simple">
+<li><p>‘Middle’ sets the resolution order Middle –&gt; Top</p></li>
+<li><p>but ‘Bottom’ set the order Bottom –&gt; Top –&gt; Middle (Bottom –&gt; Top –&gt;
+Middle means, search for method in ‘Bottom’ first, if not found, got
+to ‘Top’, last go to ‘Middle’)</p></li>
+</ul>
+</section>
+<section id="generators">
+<h2>Generators<a class="headerlink" href="#generators" title="Link to this heading"></a></h2>
+<p>Basic structure (Example):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyGenerator</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>     <span class="c1"># could also return a different generator class (then __next__(self) must not be implemented here)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numbers</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">numbers</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">MyGenerator</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">yield</span></code>: Advantage is that ‘MyGenerator’ instance maintains its
+state (here: value of <code class="docutils literal notranslate"><span class="pre">i</span></code>) after returning a value</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyGenerator</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numbers</span><span class="p">)):</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">numbers</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">MyGenerator</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Strings are IMMUTABLE !!!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ABC&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="go">TypeError</span>
+</pre></div>
+</div>
+</li>
+<li><p>String literals (e.g. <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>)</p>
+<ul class="simple">
+<li><p>MUST always be complete, e.g. <code class="docutils literal notranslate"><span class="pre">'\'</span></code> is not a valid string –&gt;
+SyntaxError</p></li>
+<li><p>count as one string character (e.g. <code class="docutils literal notranslate"><span class="pre">len('\n')</span> <span class="pre">--&gt;</span> <span class="pre">1</span></code>)</p></li>
+</ul>
+</li>
+<li><p>chr(index_number) –&gt; returns character at index position (UTF-8)</p></li>
+<li><p>ord(single_character_string) –&gt; returns index number of character
+(UTF-8)</p></li>
+<li><p>Two strings of the SAME VALUE will point to the SAME OBJECT only if:</p>
+<ul class="simple">
+<li><p>those are short (less than 20 characters)</p></li>
+<li><p>do not contain any whitespace, punctuation or most special
+characters</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>Slicing: string[start:end:stepwidth]</p>
+<ul>
+<li><p>Defaults start + end:</p>
+<ul class="simple">
+<li><p>if stepwidth &gt; 0: start = 0, end = len(str)</p></li>
+<li><p>if stepwidth &lt; 0: start = len(str), end=0</p></li>
+</ul>
+</li>
+<li><p>Default stepwidth: 1 (cannot be 0 –&gt; ValueError)</p></li>
+<li><p>[end] index is NOT included in result</p></li>
+<li><p>[end] can be outside of length of the string, DOES NOT raise error
+(e.g IndexError).</p>
+<ul>
+<li><p>if end &gt; len(str) the end border is the LAST character</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="go">hello</span>
+</pre></div>
+</div>
+</li>
+<li><p>negative stepwidth: if -end &lt; -len(str), end border is the FIRST
+character (there no character left from the first character)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;olleh&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>no matter which [stepwidth], the FIRST (if positive stepwidth) or
+the LAST (if negative stepwidth) is always included</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="mi">10000</span><span class="p">]</span>
+<span class="go">&#39;h&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">10000</span><span class="p">]</span>
+<span class="go">&#39;o&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>sliced string is built up character per character (for negative
+[stepwidth], the highest index comes first)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">fdb</span>
+</pre></div>
+</div>
+</li>
+<li><p>if [start] left from [end] (range: right direction) but [stepwidth]
+is negative (left direction) -&gt; <strong>empty string</strong> is returned</p></li>
+<li><p>if [start] right from [end] (range: left direction) but [stepwidth]
+is positive (right direction) -&gt; <strong>empty string</strong> is returned</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">....</span> <span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">[</span><span class="n">stepwidth</span><span class="p">]</span>
+<span class="o">-----------------&gt;</span>   <span class="o">&lt;----------</span>
+
+<span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">....</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">[</span><span class="n">stepwidth</span><span class="p">]</span>
+<span class="o">&lt;-----------------</span>   <span class="o">----------&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># range left direction &amp; stepwith right direction</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># range right direction &amp; stepwidth left direction</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p>Methods:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.index(&quot;r&quot;)</span></code> raises ValueError, NOT return False or -1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;find&quot;.find(&quot;in&quot;,1,3)</span></code> searches for “in” within index 1 to 3
+(exclusive), returns the lowest index where “in” is found or -1 (not
+found).</p>
+<ul>
+<li><p>index range MUST completely contain searched term i.e.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;find&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;in&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;find&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;in&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>index numbers can be negative but range must be from left to right:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; &quot;find&quot;.find(&quot;in&quot;,-4,-1)
+1
+&gt;&gt;&gt; “find”.find(“in”,-1,-4)
+-1
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;find&quot;.rfind(&quot;in&quot;,1,3)</span></code> does same as ‘find’, but returns highest
+found occurences index number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;.capitalize()</span></code> returns “Hello world” (only the first
+character is capitalized, all others lower case)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;.title()</span></code> returns “Hello World” (first letter of each
+word is capitalized, all others lower case)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;I know noTHING&quot;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="go">&#39;I Know Nothing&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.isalpha()</span></code> returns True if string only contains letter A-Z
+and a-z</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.isdigit()</span></code> returns True if string only contains letter 0-9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.isalnum()</span></code> returns True if string only contains letters
+A-Z, a-z and 0-9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.isspace()</span></code> returns True if string consists only of
+whitespace characters (<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">',</span> <span class="pre">'\n',</span> <span class="pre">'\t',</span> <span class="pre">'\n'</span> <span class="pre">or</span> <span class="pre">'\r'</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.islower()</span></code> returns True if all characters are lower case
+alphabetic</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.isupper()</span></code> returns True if all characters are upper case
+alphabetic</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.count(&quot;l&quot;)</span></code> counts the occurences of the search string “l”
+inside the string, here returns 2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.center(10)</span></code> returns a string being centered within the
+specified width (here: 10), so ” hello ” (if space cannot be equally
+divided, the extra space is put AFTER the string, here 2 before and 3
+after the string)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.strip()</span></code> removes all leading and trailing whitespace
+characters from string (combines <code class="docutils literal notranslate"><span class="pre">lstrip()</span></code> and <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;[separator_string]&quot;.join([iterable])</span></code> –&gt; generates single string
+out of list of strings ([iterable]), putting [separator_string]
+between each element</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="go">&quot;a b c&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.replace(&quot;e&quot;,</span> <span class="pre">&quot;a&quot;,</span> <span class="pre">count=None:</span> <span class="pre">int)</span></code> –&gt; returns new string
+where all occurences of “e” are replaced with “a” –&gt; “hallo” if
+‘count’ is given, the only the first ‘count’ occurences are replaced</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;foo</span> <span class="pre">bar\nfoo&quot;.split()</span></code> splits a string at each WHITESPACE
+character (<code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">',</span> <span class="pre">'\n',</span> <span class="pre">'\t',</span> <span class="pre">'\n'</span> <span class="pre">or</span> <span class="pre">'\r'</span></code>) and returns in in a list
+–&gt; [“foo”, “bar”, “foo”] –&gt; the split character itself is removed, for
+example “foobar”.split(“b”) returns [“foo”, “ar”]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.swapcase()</span></code> changes the case of each string character:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;I know nothing&quot;</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+<span class="go">&#39;i KNOW NOTHING&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.endswith(&quot;lo&quot;)</span></code> returns True if string ends with substring</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="machine_learning.html" class="btn btn-neutral float-left" title="Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pyscript.html" class="btn btn-neutral float-right" title="PyScript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">Oct 30, 2025</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
