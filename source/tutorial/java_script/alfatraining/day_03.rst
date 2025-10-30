@@ -79,7 +79,8 @@ Bedingung erfüllt ist.
     Würde zuerst auf n < 1000 geprüft, wäre die Kondition erfüllt und die Prüfung
     ist beendet. Allerdings könnte die Antwort genauer sein.
 
-**Einfache Prüfung** (Sonderfälle abfangen): gilt für null, NaN, 0, "", undefined
+**Einfache Prüfung** (Sonderfälle abfangen): gilt für ``null``, ``NaN``, ``0``,
+``""``, ``undefined``:
 
 .. code-block:: javascript
 
@@ -111,62 +112,62 @@ Logische Operatoren
 
     Bedingung_1 || Bedingung_2
 
-    false || false => false
-    true || true => true
-    true || false => true
-    false || true => true
+    - false || false => false
+    - true || true => true
+    - true || false => true
+    - false || true => true
 
 * ``&&`` Und-Operator:
 
     Bedingung_1 && Bedingung_2
 
-    false && false => false
-    true && true => true
-    true && false => false
-    false && true => false
+    - false && false => false
+    - true && true => true
+    - true && false => false
+    - false && true => false
 
 * ``!`` Not-Operator: Verkehrt den Wahrheitswert
 
     !Bedingung
 
-    !true => false
-    !false => true
+    - !true => false
+    - !false => true
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    let a = 10, b = 100;
+        let a = 10, b = 100;
 
-    if (a < 1 || b > 20) console.log("wahr");
-    else console.log("unwahr");
+        if (a < 1 || b > 20) console.log("wahr");
+        else console.log("unwahr");
 
-    if (a < 10 || a > 50) console.log("wahr");
-    else console.log("unwahr");
+        if (a < 10 || a > 50) console.log("wahr");
+        else console.log("unwahr");
 
-    if (a > 0 && a < 11) console.log("wahr");
-    else console.log("unwahr");
+        if (a > 0 && a < 11) console.log("wahr");
+        else console.log("unwahr");
 
-    if (a > 9 && b > 9) console.log("wahr");
-    else console.log("unwahr");
+        if (a > 9 && b > 9) console.log("wahr");
+        else console.log("unwahr");
 
-    let userInput = "42";
-    userInput = "Elektra";
-    if (!isNaN(userInput)) console.log(Number(userInput) + 10);
+        let userInput = "42";
+        userInput = "Elektra";
+        if (!isNaN(userInput)) console.log(Number(userInput) + 10);
 
 * ``??`` Null-ish Operator
 
     Steht zwischen 2 Operanden; wenn 1. Operand **null || undefined**,
     wird 2. Operator genutzt.
 
-.. code-block:: javascript
+    .. code-block:: javascript
 
-    let number;  // undefined
-    number = number ?? 42;
-    number ??= 42;  // Kurzschreibweise für obige Zeile
-    console.log(number); // 42
+        let number;  // undefined
+        number = number ?? 42;
+        number ??= 42;  // Kurzschreibweise für obige Zeile
+        console.log(number); // 42
 
-    number = 10;
-    number = number ?? 42;
-    console.log(number); // 10
+        number = 10;
+        number = number ?? 42;
+        console.log(number); // 10
 
 switch Kontrollstruktur
 -----------------------
@@ -313,7 +314,7 @@ entsprechend in Kleinbuchstaben.
 
 Teil-Strings
 ------------
-``slice(startIndex, endIndex)`` (endIndex ist in Rückgabe **nicht** enthalten und
+``.slice(startIndex, endIndex)`` (``endIndex`` ist in Rückgabe **nicht** enthalten und
 ist optional, kann auch höher sein als Länge des Strings -> String wird bis zum
 Ende ausgegeben).
 
@@ -339,7 +340,7 @@ Ende ausgegeben).
     // sonst <emoty string>
     console.log(obst.slice(-14, -20)); // <empty string>
 
-``substring()`` funktioniert ähnlich wie ``slice``, erlaubt jedoch den Start- und
+``.substring()`` funktioniert ähnlich wie ``slice``, erlaubt jedoch den Start- und
 EndIndex zu vertauschen -> es kann keine versehentliche Verwechslung passieren
 wie bei ``slice``.
 
@@ -454,7 +455,7 @@ Ende des Strings an.
 
 Ausdrücke in Strings konvertieren
 ---------------------------------
-``.toString`` existiert in fast allen Datentypen, jedoch nicht in ``undefined``
+``.toString()`` existiert in fast allen Datentypen, jedoch nicht in ``undefined``
 oder ``null``. Hier besser den String-Konstruktor verwenden, um Type Error zu
 vermeiden.
 

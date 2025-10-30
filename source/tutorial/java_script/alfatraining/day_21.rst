@@ -18,12 +18,12 @@ Datei ausführen:
 
 .. hint::
 
-    mit ``require(…)`` importiert Node.js Module
+    Mit ``require(…)`` importiert Node.js Module.
 
 Gleichzeitige Ausführung
 ------------------------
 Node.js versucht jede Anweisung so schnell wie möglich auszuführen.
-Programm enthält aber auch viele Anweisungen, die langsam sind (bsw. Einlesen
+Programm enthält aber auch viele Anweisungen, die langsam sind (z.B. Einlesen
 einer Datei). Bei synchronen Methoden laufen im Hintergrund Anweisungen, die
 warten müssen
 
@@ -93,7 +93,7 @@ mehr funktioniert.
 
 **Buffer** = beliebige Folge von Bytes
 Unterschied zu Strings: Strings enthalten druckbare Bytes (also Zeichen), die
-bestimmtem Encoding folgen (bsw. UTF8) Buffer enthalten beliebige Daten:
+bestimmtem Encoding folgen (bsw. UTF-8) Buffer enthalten beliebige Daten:
 gzip-komprimierte Daten, Bilder, Messdaten eines Sensors oder ...
 
 **Stream-API** ist sehr komfortabel
@@ -171,14 +171,140 @@ https://nodejs.org/docs/latest/api/fs.html#file-system
     * löscht eine Datei (asynchrone Variante)
     * Beispiel:  fs.unlink("hello.txt", error => { if (error) console.log("Error: " + error);});
 
+Import/Export: CommonJS vs. ECMAScript Module (ES)
+--------------------------------------------------
+NodeJS verwendet standardmäßig das *CommonJS* Modulformat.
+
+Bei der Verwendung von Modulen mit NodeJS ist es wichtig zu erkennen, ob es sich
+bei einem lokalen JavaScript-Datei um ein *CommonJS* Modul oder ein *ECMAScript* Module handelt.
+Diese unterscheiden sich beispielsweise in der Art, wie deren Methoden exportiert und
+importiert werden.
+
+.. important::
+
+    Die folgenden Beispiele beschränken sich auf **lokale Module**, welche **nicht**
+    per ``npm`` installiert wurden. Hierfür die
+    :ref:`Beschreibung unten <alfaview_javascript_create_own_modules>` lesen.
+
+.. code-block:: javascript
+
+    // CommonJS (nur default export)
+    // ========
+    // module.js
+    // ---------
+    // Definition
+    const doubleVal = (val) => {
+        return val * 2;
+    };
+    // Export
+    module.exports = { doubleVal };
+
+    // init.js
+    // -------
+    // 1) Named Import
+    const { doubleVal } = require("./module.js");
+    // Verwendung
+    console.log(doubleVal(2));   // 4
+
+    // 2) Default Import
+    const module = require("./module.js")
+    // Verwendung
+    console.log(module.doubleVal(2))    // 4
+
+.. important::
+
+    Da NodeJS standardmäßig mit CommonJS Module arbeitet, muss für die Einbindung
+    von ECMAScript Module entweder
+
+    * Module mit dem Suffix ``.mjs`` enden (statt ``.js``) **oder**
+    * in ``package.json`` der Typ auf ``module`` geändert werden (CommonJS: ``commonjs``):
+
+        .. code-block:: json
+
+            "type": "module"
+
+    **Wichtig**: Für den *Named Export / Import* **muss** ``"type": "module"`` gesetzt sein!
+
+.. code-block:: javascript
+
+    // ES Module - Default Export
+    // ==========================
+    // module.mjs
+    // ----------
+    // Definition
+    const doubleVal = (val) => {
+        return val * 2;
+    };
+    // Export
+    export { doubleVal }
+
+    // init.js
+    // -------
+    // Import (nur default import möglich)
+    import module from "./module.js";
+    // Verwendung
+    console.log(module.doubleVal(2));   // 4
+
+.. code-block:: javascript
+
+    // ES Module - Named Export (benötigt "type": "module")
+    // ====================================================
+    // module.mjs
+    // ----------
+    // Definition + Export
+    export const doubleVal = (val) => {
+        return val * 2;
+    };
+
+    // init.js
+    // -------
+    // 1) Named import
+    import { doubleVal } from "./module.js";
+    // Verwendung
+    console.log(doubleVal(2));   // 4
+
+    // 2) Default import
+    const myModule = require("./myModule.js")
+    // Verwendung
+    console.log(myModule.doubleVal(2))    // 4
+
+Standardmodule einbinden
+------------------------
+Auch hier ist der Typ des Projekts entscheidend. Standardmodule können über das
+``require`` statement in CommonJS Module importiert werden. Bei ECMAScript Modulen
+hingegen werden diese über das ``import`` statement importiert.
+
+CommonJS Module (mit ``require``):
+
+.. code-block:: javascript
+
+    const fs = require("fs");
+    // importiert fs-Standartmodul aus nodeJS Bibliothek
+    // fs stellt uns Methoden zur Arbeit mit FileSystem zur Verfügung
+
+    fs.writeFile("hello.txt", data, "UTF8", error => { if (error) console.log("Error: " + error); } );
+
+ECMAScript Module (``"type": "module"`` - mit ``import``):
+
+.. code-block:: javascript
+
+    // Import
+    import fs from "fs";
+    // importiert fs-Standartmodul aus nodeJS Bibliothek
+    // fs stellt uns Methoden zur Arbeit mit FileSystem zur Verfügung
+
+    // Verwendung
+    const data = "Hello World";
+    fs.writeFile("hello.txt", data, "UTF8", error => { if (error) console.log("Error: " + error); } );
+
 npm
 ---
-Sammlung von Modulen für node.js auf http://www.npmjs.com
+Sammlung von Modulen für node.js auf http://www.npmjs.com.
 Die meisten Module sind unter freizügigen Open Source-Lizenz verfügbar - dürfen
 diese Module somit uneingeschränkt einsetzen.
 
 Validator-Modul (https://www.npmjs.com/package/validator)
-Kann Daten aller Art validieren (Zahlen in verschiedenen Formaten, komplexere Daten,
+kann Daten aller Art validieren (Zahlen in verschiedenen Formaten, komplexere Daten,
 wie Datumsangaben, Kreditkartennummern oder ISBNs).
 
 validator-Modul mit npm installieren:
@@ -224,23 +350,81 @@ npm install ausgeführt wird, installiert npm automatisch abhängige Module
 
 .. hint::
 
-    ``npm install``, ``npm uninstall`` und ``npm update`` kennen Option --global
-    (oder kurz: -g). Mit dieser Option handeln Befehle im Installationsverzeichnis
+    ``npm install``, ``npm uninstall`` und ``npm update`` kennen Option ``--global``
+    (oder kurz: ``-g``). Mit dieser Option handeln Befehle im Installationsverzeichnis
     von Node.js selbst - Module werden global installiert, entfernt oder aktualisiert
     diese Option mit Vorsicht verwenden - evtl. werden Module von anderen Programmen
     noch gebraucht?
 
+.. _alfaview_javascript_create_own_modules:
 
 Eigene Module schreiben
 -----------------------
 Sammlung an JavaScript-Funktionen lässt sich einfach in Node.js-Modul verwandeln.
 Funktionen, die dem Aufrufer des Moduls zur Verfügung gestellt werden sollen,
-müssen zu vordefiniertem Objekt mit treffendem Namen exports hinzugefügt werden.
-Modul kann dann mit
+müssen zu vordefiniertem Objekt mit treffendem Namen ``export`` (ECMAScripts)
+oder ``module.exports`` (CommonJS) hinzugefügt werden.
+
+**ECMAScript Module** (Projekt ``package.json``: ``"type": "module"``):
 
 .. code-block:: javascript
+    :emphasize-lines: 15
 
-    ``require(./moduldatei.js)``
+    // namesmodule/index.js
+    // --------------------
+    // call 'shorter' method for each element in shortNames array
+    const shortNames = namesArr => namesArr.map(name => shorter(name));
+
+    // convert name string, e.g. Arne Franz Wohletz -> A. F. Wohletz
+    const shorter = namesStr => {
+        let tokenArr = namesStr.trim().split(/\s+/);
+        let lastName = tokenArr.pop();
+        return tokenArr
+                .map(firstName => firstName.charAt(0).toUpperCase() + ". ")
+                .join("") + lastName;
+    };
+    // export shortNames function (allows import in other modules)
+    export {shortNames}
+
+    // myproject/index.js
+    // ------------------
+    // Import
+    import { shortNames } from "namesmodul";
+    // Verwendung
+    console.log(shortNames(["Rainer Maria Rilke"]));    // [ 'R. M. Rilke' ]
+
+
+**CommonJS** (Projekt ``package.json``: ``"type": "commonjs"``):
+
+.. code-block:: javascript
+    :emphasize-lines: 13
+
+    // call 'shorter' method for each element in shortNames array
+    const shortNames = namesArr => namesArr.map(name => shorter(name));
+
+    // convert name string, e.g. Arne Franz Wohletz -> A. F. Wohletz
+    const shorter = namesStr => {
+        let tokenArr = namesStr.trim().split(/\s+/);
+        let lastName = tokenArr.pop();
+        return tokenArr
+                .map(firstName => firstName.charAt(0).toUpperCase() + ". ")
+                .join("") + lastName;
+    };
+    // export shortNames function (allows import in other modules)
+    module.exports = { shortNames };
+
+    // myproject/index.js
+    // ------------------
+    // 1) Named import
+    import { shortNames } from "namesmodul";
+
+    console.log(shortNames(["Rainer Maria Rilke"]));    // [ 'R. M. Rilke' ]
+
+    // 2) default export
+    import myModule from "namesmodul";
+
+    console.log(myModule.shortNames(["Rainer Maria Rilke"]));    // [ 'R. M. Rilke' ]
+
 
 eingebunden werden.
 
@@ -297,7 +481,7 @@ npm macht es leicht, Pakete direkt auf npmjs.com oder eigenem Webserver zu verö
 
 Dazu npm-Modul-Verzeichnis als TGZ-Datei archivieren und auf npm oder Webserver laden.
 
-Befehl unter OS X und Linux, um TGZ-Datei zu erstellen:
+Befehl unter MacOS und Linux, um TGZ-Datei zu erstellen:
 
 .. code-block:: none
 

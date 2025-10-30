@@ -1,7 +1,14 @@
-Durch DOM navigieren
---------------------
+jQuery: Durch DOM navigieren
+----------------------------
 Traversal-Methoden
 ``````````````````
+
+.. attention::
+
+    Liefert das jQuery ``$("")`` **mehrere** Objekte zurück, so werden die Methoden
+    stets auf **alle** diese Elemente angewandt und **alle** daraus resultierenden
+    Objekte zurückgegeben.
+
 Über ``[object].children()`` wird ein Objekt mit allen Kindelementen geliefert:
 
 .. code-block:: javascript
@@ -21,14 +28,15 @@ Kind-Elemente im *object* zurückgegeben:
 
 .. code-block:: javascript
 
-    console.log($("li").parents());          // alle Elternelemente
+    console.log($("li").parents());          // alle Elternelemente (bis einschl. <html>)
 
 Über ``[object].parentsUntil(selector)`` werden alle Elternelemente **aller**
 Kind-Elemente bis zum *selector* (exclusive) im *object* zurückgegeben:
 
 .. code-block:: javascript
 
-    console.log($("li").parentsUntil("body"));  // alle Elternelemente bis excl. übergebenen Selektor
+    // alle Elternelemente bis EXCLUSIVE dem übergebenen Selektor (hier: <body>)
+    console.log($("li").parentsUntil("body"));
 
 Über ``[object].closest(selector)`` wird das 1. Elternelemente welches die
 Bedingung erfüllt im *object* zurückgegeben:
@@ -44,12 +52,13 @@ Für Geschisterelemente:
     // Geschwisterelemente
     console.log($("ul").siblings());    // alle Geschwisterelemente
     console.log($("ul").next());        // direkt folgendes Geschwisterelement
-    console.log($("ul").next("a"));     // direkt folgendes Geschwisterelement, welches Bedingung erfüllt
+    console.log($("ul").next("a"));     // direkt folgendes Geschwisterelement, sofern es Bedingung erfüllt
     console.log($("ul").nextAll());     // alle folgenden Geschwisterelemente
     console.log($("ul").nextAll("a"));  // alle folgenden Geschwisterelemente, welche Bedingung erfüllen
     console.log($("ul").nextUntil("a"));  // alle folgenden Geschwisterelemente bis excl. übergebenen Selektor
 
     console.log($("ul").prev());        // direkt vorhergehendes Geschwisterelement
+    console.log($("ul").prev("h2"));    // direkt vorhergehendes Geschwisterelement, sofern es Bedingung erfüllt
     console.log($("ul").prevAll())      // alle vorhergehenden Geschwisterelemente
 
 Beispiel:
@@ -139,7 +148,7 @@ endlos scrollen).
 
 .. hint::
 
-    **Zu ``dom_helper.js``**
+    **Zu** ``dom_helper.js``
 
     Über ``[elem.method].prototype`` lassen sich bereits definierte Elemente und
     deren Methoden überschreiben.

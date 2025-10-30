@@ -86,7 +86,7 @@ Von einem selektierten Element kann man zu verbundenen Elementen gehen, wie
 
     ``firstChild``, Verweis auf ersten Kind-Knoten
     ``lastChild``, Verweis auf letzten Kind-Knoten
-    ``firstElementChild``, Verweis auf erstes Knd-Element
+    ``firstElementChild``, Verweis auf erstes Kind-Element
     ``lastElementChild``, Verweis aus letztes Kind-Element
 
     ``previousSibling``, Verweis auf vorhergehenden Geschwister-Knoten

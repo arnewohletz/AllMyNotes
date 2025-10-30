@@ -4,7 +4,7 @@ Bibliothek für JavaScript zur Vereinfachung (nutzt selbst JavaScript).
 Mittlerweile durch Aufgreifen in ES6 immer weniger im Einsatz. Der Einsatz von
 jQuery schafft viele Möglichkeiten, geht aber zu Lasten der Performance. Es
 muss stets die gesamte Library geladen werden, obwohl meistens nur kleine Teile
-der Bibliothek verwendet wird.
+der Bibliothek verwendet werden.
 
 Es konnte sogar fertige Programme (Plugins) in ein JavaScript eingefügt werden.
 Möglichkeit, diese ohne viel Aufwand einzusetzen. Es gab jedoch Inkompatibilitäten,
@@ -18,7 +18,7 @@ zu Laden ist. jQuery arbeitet im **strikten Modus**, ``"use strict"`` muss also
 beim Einsatz also nicht mehr selbst angegeben werden (gilt global).
 
 jQuery ist **abwärtskompatibel**, man versucht also auch ältere JavaScript
-Versionen unterstützen (man sieht daher oft ältere Syntax z.B. ``var`` im Code).
+Versionen zu unterstützen (man sieht daher oft ältere Syntax z.B. ``var`` im Code).
 
 Integration von jQuery in HTML:
 
@@ -123,7 +123,7 @@ Auf HTML-Attribute zugreifen
 
     // Attribute entfernen
     console.log(link.removeAttr("title"));  // Selektion wird im Objekt zurückgegeben
-    console.log(link.attr("title"));
+    console.log(link.attr("title"));  // undefined
 
 Über ``[elem].html()`` wird auf den HTML-Inhalt (inkl. Markups) eines Elements
 zugegriffen:
@@ -132,12 +132,12 @@ zugegriffen:
 
     // Zugriff auf Content
     let contentH1 = $("h2").html();
-    console.log(contentH1);
+    console.log(contentH1);   // "Inhaltsverzeichnis"
 
     // lesend wird NUR Content des 1. selektierten Elements zurückgegeben
     // es hat sich erwiesen das mehr i.d.R. nicht gebraucht wird
     let contentP = $("p").html();
-    console.log(contentP);  // Hey
+    console.log(contentP);  // "Hey"
 
     // Beim Schreiben werden ALLE selektierten Elemente überschrieben
     $("h1").html(contentP);  // --> Hey
@@ -158,7 +158,7 @@ zugegriffen:
     // Content ohne Markups
     // lesend werden ALLE selektierten Elements zurückgegeben (im Gegensatz zu .html())
     $("p").first().text("<b>Content ohne Markups<(p>");
-    console.log($("p").text());
+    console.log($("p").text());  // "<b>Content ohne Markups<p>HeyHeyHeyHeyHey"
 
     // ebenso schreibend!
 
@@ -221,11 +221,21 @@ Mittlerweile bietet jQuery Selektions-Methoden.
 
     $("p").odd();
 
-Über ``[object].<some_selector>.end()`` wird eine Unterselektion aufgehoben:
+Über ``[object].<some_selector>.end()`` wird eine Unterselektion aufgehoben und
+der vorherige Selektion von zutreffenden Elementen zurückgegeben:
 
 .. code-block:: javascript
 
-    $("p").first().end();
+    $("p").first().end();   // gibt alle <p> Elemente zurück (hebt first() Selektion auf
+    console.log($("p").first().end().is($("p")));  // true
+
+    // Kann auch verkettet werden
+    $("p").first().end().last();   // gibt letztes <p> Elemente zurück
+
+.. hint::
+
+    Die ``[match_result].is(selector)`` Methode vergleicht die Elemente von *match_result*
+    zu denen eines *selector*.
 
 Über ``[object].has(selector)`` werden nur die Elemente einer Selektion zurückgegeben,
 welche einem weiteren Selektor entsprechen:

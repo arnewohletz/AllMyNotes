@@ -35,8 +35,8 @@ Zählerschleife mit for (Initialisierung; Bedingung; Befehlsfolge)
 do-while-loop
 -------------
 Die Schleife wird stets 1x durchgeführt, bevor eine Bedingung geprüft wird.
-Eignet sich für Nutzerabfragen. Es muss sichergestellt sein, dass der erste
-Durchlauf nicht bereits zu einem Fehler führt.
+Eignet sich für Nutzerabfragen. Achtung: Es muss sichergestellt sein, dass der
+erste Durchlauf nicht bereits zu einem Fehler führt.
 
 .. code-block:: javascript
 
@@ -52,7 +52,7 @@ Durchlauf nicht bereits zu einem Fehler führt.
     let answer;
 
     do {
-    answer = prompt("Die Antwort auf alle Fragen des Universums: ");
+        answer = prompt("Die Antwort auf alle Fragen des Universums: ");
     } while (answer != SOLUTION)
 
     console.log("Great!");
@@ -119,8 +119,10 @@ Vorzeitiger Abbruch einer Schleife (z.B. wenn Bedingung erfüllt ist).
         console.log(result);
     }
 
-In for Schleif springt Interpreter zur Befehlsfolge (z.B. i++)
-In while Schleife sprint Interpreter zur Bedingungsprüfung (was nach ``while`` steht)
+Nach einem Schleifendurchlauf springt der Interpreter:
+
+* in der for-Schleife zur Befehlsfolge (z.B. i++)
+* in der while-Schleife zur Bedingungsprüfung (was nach ``while`` steht)
 
 Funktionen
 ==========
@@ -135,28 +137,31 @@ Funktionsdeklaration
 .. code-block:: javascript
 
     /*
+
+    Deklaration:
+
     function bezeichner (parameter) {
-            Statements;
-            return Rückgabewert;
-        }
+        Statements;
+        return Rückgabewert;
+    }
 
-        Aufruf:
-        bezeichner (argumente);
+    Aufruf:
+    bezeichner (argumente);
 
-        Argumente / Parameter / return = optional
-        Parameter = funktionsgebundene Variablen
-        return beendet Funktion und kann Wert aus Funktion heraus zurückgeben
-        return ersetzt Funktionsaufruf
+    argumente / parameter / return = optional
+    Parameter = funktionsgebundene Variablen
+    return beendet Funktion und kann Wert aus Funktion heraus zurückgeben
+    return ersetzt Funktionsaufruf
 
-        kann vor Deklaration aufgerufen werden - unterliegt Hoisting
+    kann vor Deklaration aufgerufen werden - unterliegt Hoisting
     */
 
-    myFunc();
+    myFunc();       // 'Guten Tag'
 
     function myFunc () {
         console.log("Guten Tag");
     }
-    myFunc();
+    myFunc();       // 'Guten Tag'
 
     console.log(myFunc);
     console.log(myFunc());
@@ -198,10 +203,10 @@ Funktionsausdruck
 -----------------
 .. important::
 
-    Funktionsausdrücke unterliegen nicht dem Hoisting, d.h. die Deklaration muss
+    Funktionsausdrücke unterliegen **nicht** dem Hoisting, d.h. die Deklaration muss
     **vor** dem ersten Aufruf im Skript erfolgen.
 
-    Daher ist der Funktionsausdruck generell performanter.
+    Daher ist der Funktionsausdruck generell **performanter**.
 
 .. code-block:: javascript
 
@@ -217,7 +222,7 @@ Funktionsausdruck
         ist performanter
     */
 
-    // square(3);
+    // square(3);      // ReferenceError - Deklaration nicht gefunden
 
     let square = function(a) {
         return (a * a);
@@ -248,6 +253,9 @@ Zur Vermeidung von ``undefined`` für beim Funktionsaufruf nicht übergebenen Ar
     console.log(multiply(5));
     console.log(multiply(5,10));
     console.log(multiply(5,10,14,22,42));
+
+
+.. _javascript_iife_immediately_invoked_function_expression:
 
 IIFE (immediately invoked function expression)
 ----------------------------------------------
@@ -325,8 +333,6 @@ Arrays erzeugen
     let newFilledArr = new Array(2,3,4,5,true, "Jessy");
     console.log(newFilledArr);
 
-    let heroes = ["Jessica", "Luke", "Daredevil"];
-
 Das Schlüsselwort ``new`` sorgt dafür, dass das ein neues Array erstellt und
 zurückgegeben wird.
 
@@ -335,6 +341,8 @@ Arrays abfragen
 * Über den Index
 
 .. code-block:: javascript
+
+    let heroes = ["Jessica", "Luke", "Daredevil"];
 
     // [array].length um Anzahl der Elemente im Array zu ermitteln
     console.log(heroes.length);
@@ -359,6 +367,8 @@ Arrays abfragen
 * Über ``.at()``
 
 .. code-block:: javascript
+
+    let heroes = ["Jessica", "Luke", "Daredevil"];
 
     // Zugriff über [array].at(index)
     console.log(heroes.at(1));
@@ -434,8 +444,8 @@ Arrays manipulieren
     - (index) --> Entferne alle Element ab ``index`` bis Ende
     - (index, anzahl_elemente) --> Entfernt ab ``index`` die nächsten
       ``anzahl_elemente``
-    - (index, anzahl_elemente, 1+_element) --> Ersetzt (entfernt und fügt ein)
-      ab ``index`` die nächsten ``anzahl_elemente`` mit ``1+element`` (item1,
+    - (index, anzahl_elemente, 1+ elemente) --> Ersetzt (entfernt und fügt ein)
+      ab ``index`` die nächsten ``anzahl_elemente`` mit ``1+ elemente`` (item1,
       item2, ..., itemN)
 
     Die entfernten Elemente werden als Array zurückgegeben. Wurde kein Element
@@ -478,8 +488,11 @@ Array prüfen
 
 Array kopieren
 --------------
-Die ``.slice()`` Methode gibt eine Kopie eines Arrays zurück. Das originale Array
-wird bei Veränderungen der Kopie **nicht** verändert.
+Die ``.slice([startIndex], [endindex])`` Methode gibt eine Kopie eines Arrays zurück.
+Das originale Array wird bei Veränderungen der Kopie **nicht** verändert.
+
+``startIndex`` und ``endIndex`` sind optional. Element an der Stelle ``endIndex``
+**nicht** inkludiert.
 
 .. important::
 
@@ -502,14 +515,15 @@ wird bei Veränderungen der Kopie **nicht** verändert.
     console.log(heroes.slice());
 
     // Kopie ab startIndex
-    console.log(heroes.slice(2));
+    console.log(heroes.slice(2));      // [ "Daredevil", "Elektra", "Nebula" ]
 
     // Kopie ab startIndex bis exclusive endIndex
-    console.log(heroes.slice(2,4));
+    console.log(heroes.slice(2,4));    // [ "Daredevil", "Elektra" ]
 
-    // arbeit mit negat. Werten ist möglich
+    // arbeit mit negativen Werten ist möglich
     // Ermittlung der index-Position durch Zählung vom Ende her
-    console.log(heroes.slice(1,-1));
+    // hier: alle Elemente ab 2. Position bis exklusive letzter
+    console.log(heroes.slice(1,-1));   //  [ "Luke Cage", "Daredevil", "Elektra" ]
 
     console.log(heroes);
 
@@ -575,7 +589,12 @@ Elemente sortieren
 
 .. important::
 
-    ``sort()`` nutzt ASCII Zeichentabelle zur Sortierung:
+    ``sort()`` nutzt ASCII Zeichentabellenindex zur Sortierung und geht dabei
+    vergleicht stets Zeichen an gleicher Indexposition:
+
+    Zahlen < Großbuchstaben < Kleinbuchstaben
+
+    Integer-Werte werden implizit zu String konvertiert (z.B. 1 --> "1"):
 
     .. code-block:: javascript
 

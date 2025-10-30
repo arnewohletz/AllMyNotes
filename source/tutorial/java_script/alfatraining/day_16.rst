@@ -30,7 +30,7 @@ Alternative zu kurzen if-else Anweisungen.
     (jessyPromille > 4.5)
         ? (panic = true, jessyPromille = 2.5)
         : (panic = false, jessyPromille = 6.5)
-    console.log(jessyPromille, panic);
+    console.log(jessyPromille, panic);  // 2.5 true
 
     // Mehrere Bedingungen
     let hero = "Daredevil";
@@ -39,7 +39,7 @@ Alternative zu kurzen if-else Anweisungen.
         : (hero == "Daredevil") ? "OK"
         : (hero == "Jessy") ? "Einfach Jessy"
         : "Keine Ahnung"
-    )
+    )   // "OK"
 
     // Variablen neuen Wert zuweisen, wenn nicht vorhanden
     let myVar;
@@ -109,10 +109,11 @@ Methoden vom Datentyp String für die Arbeit mit RegExp
     /*
         [string].replace(zeichenmuster, ersetzung)
         arbeitet mit Strings und RegEx
-        ersetzt 1. Vorkommen und bricht ab
+        String: ersetzt 1. Vorkommen und bricht ab
+        RegEx: ersetzt alle Vorkommen sofern Regex mit '/g' endet
         mit global flag (g) hinter RegExp alle Vorkommen ersetzen
     */
-    console.log(desc.replace(oldBrand, newBrand));
+    console.log(desc.replace(oldBrand, newBrand));  // Entdecke Sie bei Tchibo neben Kaffee und Reisen auch Toilettenpapier, Öl und Mehl, Tchibo - den lob ich mir!
 
     /*
         [string].replaceAll(zeichenmuster, ersetzung)

@@ -23,7 +23,7 @@ Erstellung
 
 Eigenschaften definieren
 ------------------------
-Über Komma-separiertes, key-value Paare. Das Kontext- Schlüsselwort ``this``
+Über Komma-separierte, key-value Paare. Das Kontext- Schlüsselwort ``this``
 erlaubt den Zugriff auf das derzeitige Objekt.
 
 .. code-block:: javascript

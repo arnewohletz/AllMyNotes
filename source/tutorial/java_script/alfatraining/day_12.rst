@@ -1,5 +1,10 @@
 Datenübertragung an Server
 ==========================
+.. attention::
+
+    Die Informationen sind etwas löchrig und es fehlt auch etwas von den
+    erzeugten Dateien. Falls nötig, besser noch anderswo nachschlagen.
+
 .. hint::
 
     Die Beispielaufgaben hier werden über den XAMPP Apache Server gehostet.
