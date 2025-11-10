@@ -5,6 +5,7 @@ Python
     :maxdepth: 1
 
 
+    certificates.rst
     cheat_sheets/index.rst
     class_and_static_methods.ipynb
     iterators.rst

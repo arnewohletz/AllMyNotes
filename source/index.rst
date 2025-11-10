@@ -14,6 +14,7 @@ Table of Contents
     tutorial/java_script/alfatraining/index.rst
     tutorial/jenkins/index.rst
     tutorial/python/index.rst
+    tutorial/react/udemy_ultimate_course/index.rst
     tutorial/shell_scripting/index.rst
 
 .. toctree::
@@ -43,6 +44,7 @@ Table of Contents
     reference/conda_commands.rst
     reference/docker/index.rst
     reference/git/index.rst
+    reference/java/index.rst
     reference/kubernetes.rst
     reference/linux/index.rst
     reference/logitech_k860.rst
