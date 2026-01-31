@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('.') + '/_ext')
 # -- Project information -----------------------------------------------------
 
 project = 'All-My-Notes'
-copyright = '2021-2025, Arne Wohletz'
+copyright = '2021-2026, Arne Wohletz'
 author = 'Arne Wohletz'
 version = 'stable'
 
@@ -39,7 +39,7 @@ extensions = [
     'sphinx_gitstamp',
     'sphinx_tabs.tabs',
     'sphinxcontrib.bibtex',
-    'sphinxcontrib.images',
+    'sphinxcontrib.images', # works, but conflicts with jupyter_sphinx + nbsphinx :-(
     'sphinxcontrib.mermaid',
     'sphinxemoji.sphinxemoji',
     'unicode_guilabel',
