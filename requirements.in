@@ -1,8 +1,10 @@
+docutils<0.22  # must pin due to https://github.com/executablebooks/sphinx-tabs/issues/212
 ipykernel
 jupyter-sphinx
-nbsphinx==0.9.7     # enforce latest version, sphinx>=8.2 uses 0.9.6 (nbsphinx currently does not support 8.2)
+nbsphinx
 retry2
-sphinx==8.2.3   # enforce latest version, as nbsphinx==0.9.7 otherwise enforces <8.2
+roman-numerals==4.0.0  # must pin due to https://github.com/sphinx-doc/sphinx/issues/14186
+sphinx
 sphinx-copybutton
 sphinx-design
 sphinx-docsearch
