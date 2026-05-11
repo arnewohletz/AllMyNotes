@@ -1,3 +1,5 @@
+.. _javascript_alfaview_ternary_operator:
+
 Ternärer / conditional Operator
 ===============================
 Alternative zu kurzen if-else Anweisungen.

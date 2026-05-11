@@ -58,6 +58,8 @@ Seit ES6 verfügbar. Enthält **nur** die *überzähligen* Parameter.
     let heroArr = ["Jessy", "Luke", "Thor", "Odin", "Elektra"];
     greeting("Hi", ...heroArr);   // Hi Jessy -> Hi Luke -> ...
 
+.. _tutorial_javascript_alfatraining_events:
+
 Events und Event-Object
 =======================
 Events durchlaufen drei Phasen:
