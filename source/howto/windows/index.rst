@@ -8,3 +8,4 @@ Windows
     clean_disk_space.rst
     power_shell_processes.rst
     wimage.rst
+    install_native_zsh.rst
