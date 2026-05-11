@@ -13,14 +13,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intersphinx &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
       <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=0bd54598" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -29,12 +29,12 @@
       <script src="../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -71,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/jenkins/index.html">Jenkins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/react/udemy_ultimate_course/index.html">The Ultimate React Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/shell_scripting/index.html">Shell Scripting</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How-To</span></p>
@@ -118,6 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reference/conda_commands.html">conda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reference/docker/index.html">Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/java/index.html">Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reference/kubernetes.html">Kubectl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reference/linux/index.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
@@ -165,8 +167,8 @@ contain all navigable references of that Sphinx documentation.</p>
 <section id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>First, add the extension to your extensions variable:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="o">...</span>
     <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span>
@@ -177,8 +179,8 @@ contain all navigable references of that Sphinx documentation.</p>
 <p>As the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx">official documentation</a> explains, each
 external documentation to be used by intersphinx must be declared in the
 <code class="docutils literal notranslate"><span class="pre">intersphinx_mapping</span></code> config value. This can be done in the following ways:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1"># use default objects.inv (here: https:/example.url/objects.inv)</span>
     <span class="s1">&#39;basic_external_doc&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https:/example.url&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
@@ -249,16 +251,16 @@ be resolved by intersphinx)</p>
 </pre></div>
 </div>
 <p>Examples:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">For a label (<code class="docutils literal notranslate"><span class="pre">:ref:</span></code>)</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">For a label (<code class="docutils literal notranslate"><span class="pre">:ref:</span></code>)</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="na">:ref:</span><span class="nv">`some_external_reference_target_label`</span>
 <span class="na">:external:ref:</span><span class="nv">`some_external_reference_target_label`</span>
 :external+basic_external_doc<span class="na">:ref:</span><span class="nv">`some_external_reference_target_label`</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">For a document (<code class="docutils literal notranslate"><span class="pre">:doc:</span></code>)</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">For a document (<code class="docutils literal notranslate"><span class="pre">:doc:</span></code>)</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="na">:doc:</span><span class="nv">`some/external/document`</span>
 <span class="na">:external:doc:</span><span class="nv">`some/external/document`</span>
 :external+basic_external_doc<span class="na">:doc:</span><span class="nv">`some/external/document`</span>
@@ -273,8 +275,8 @@ Sphinx does not search for external documents when using just <code class="docut
 requires using the <a class="reference external" href="intersphinx_external_role">external</a> role.
 To disable this restriction, define the <code class="docutils literal notranslate"><span class="pre">intersphinx_disabled_reftypes</span></code>
 in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, making sure, <code class="docutils literal notranslate"><span class="pre">std:doc</span></code> is not listed, for example:</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_disabled_reftypes</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
@@ -316,14 +318,14 @@ hence these two lines</p>
 <p>behave exactly the same. References to all non-standard domains, for example the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/domains/python.html#the-python-domain">Python domain</a>, must be explicitly mentioned:</p>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">This is OK</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
+<div><div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">This is OK</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="na">:external:py:class:</span><span class="nv">`Foo`</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">This may not work!</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">This may not work!</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="na">:external:class:</span><span class="nv">`Foo`</span>
 </pre></div>
 </div>
@@ -332,8 +334,8 @@ hence these two lines</p>
 <p>The only exception is, if the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-primary_domain">primary domain</a> is set to that particular domain.
 For example:</p>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
+<div><div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id12" title="Link to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">primary_domain</span> <span class="o">=</span> <span class="s1">&#39;cpp&#39;</span>
 </pre></div>
 </div>
@@ -400,10 +402,10 @@ Both are part of the <a class="reference external" href="https://www.sphinx-doc.
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 30, 2025</span>.
+        <span class="update_date">May 11, 2026</span>.
       </div>
     
-    <p>&#169; Copyright 2021-2025, Arne Wohletz.</p>
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
 
   </div>
 

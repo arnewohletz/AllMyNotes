@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Pattern: A Custom Provider and Hook &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/thebelab-helper.js"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="next" title="Thinking in React: Advanced State Management" href="226_advanced_state_management.html" />
+    <link rel="prev" title="Creating and providing a context" href="223_224_implementing_context.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">The Ultimate React Course</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-3-first-look">Chapter 3: First Look</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-5-components-props-and-jsx">Chapter 5: Components, Props and JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-6-state-events-and-forms-interactive-components">Chapter 6: State, Events and Forms: Interactive Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-7-thinking-react-state-management">Chapter 7: Thinking React: State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-10-thinking-in-react-components-composition-and-reusability">Chapter 10: Thinking in React: Components, Composition and Reusability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-11-how-react-works-behind-the-scenes">Chapter 11: How React works behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-12-effects-and-data-fetching">Chapter 12: Effects and Data Fetching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-13-custom-hooks-refs-and-more-state">Chapter 13: Custom Hooks, Refs and More State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-16-the-advanced-usereducer-hook">Chapter 16: The Advanced useReducer Hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-17-react-router-building-single-page-applications-spa">Chapter 17: React Router - Building Single-Page Applications (SPA)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#chapter-18-advanced-state-management-the-context-api">Chapter 18: Advanced State Management: The Context API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="222_context_api.html">What is the Context API?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="223_224_implementing_context.html">Creating and providing a context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="223_224_implementing_context.html#consuming-the-context">Consuming the context</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced Pattern: A Custom Provider and Hook</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#custom-provider">Custom Provider</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-hook">Custom Hook</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="226_advanced_state_management.html">Thinking in React: Advanced State Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="227_228_create_consume_cities_context.html">Creating a CitiesContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="227_228_create_consume_cities_context.html#consuming-the-citiescontext">Consuming the CitiesContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="229_finish_city_view.html">Finish the city view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="230_231_232_233_implementing_a_map.html">Include a map using the Leaflet library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="334_fetching_city_data_in_form.html">Fetching city data in the form</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">The Ultimate React Course</a></li>
+      <li class="breadcrumb-item active">Advanced Pattern: A Custom Provider and Hook</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/tutorial/react/udemy_ultimate_course/18_context_api/225_custom_provider_and_hook.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-pattern-a-custom-provider-and-hook">
+<h1>Advanced Pattern: A Custom Provider and Hook<a class="headerlink" href="#advanced-pattern-a-custom-provider-and-hook" title="Link to this heading"></a></h1>
+<section id="custom-provider">
+<h2>Custom Provider<a class="headerlink" href="#custom-provider" title="Link to this heading"></a></h2>
+<p>Using the regular context provider and hook is perfectly fine, though created customized
+versions may improve the structure, cleaning up the <code class="docutils literal notranslate"><span class="pre">App</span></code> component.</p>
+<p>The idea is to move all state and <em>state-updating</em> logic into the Provider, so
+only a refactoring of the existing functionality.</p>
+<p>For this, we create <code class="docutils literal notranslate"><span class="pre">PostContext.js</span></code>, containing a <code class="docutils literal notranslate"><span class="pre">PostProvider</span></code> class and
+put all the required content here:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">faker</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@faker-js/faker&quot;</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1">// 1) Create new context</span>
+<span class="hll"><span class="linenos"> 5</span><span class="kd">const</span><span class="w"> </span><span class="nx">PostContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">();</span>
+</span><span class="linenos"> 6</span>
+<span class="hll"><span class="linenos"> 7</span><span class="kd">function</span><span class="w"> </span><span class="nx">createRandomPost</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos"> 8</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">faker</span><span class="p">.</span><span class="nx">hacker</span><span class="p">.</span><span class="nx">adjective</span><span class="p">()</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">faker</span><span class="p">.</span><span class="nx">hacker</span><span class="p">.</span><span class="nx">noun</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">faker</span><span class="p">.</span><span class="nx">hacker</span><span class="p">.</span><span class="nx">phrase</span><span class="p">(),</span>
+<span class="linenos">11</span><span class="w">  </span><span class="p">};</span>
+<span class="linenos">12</span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="hll"><span class="linenos">14</span><span class="kd">function</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos">15</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">posts</span><span class="p">,</span><span class="w"> </span><span class="nx">setPosts</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">({</span><span class="w"> </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">createRandomPost</span><span class="p">()),</span>
+<span class="linenos">17</span><span class="w">  </span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchQuery</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="w">  </span><span class="c1">// Derived state. These are the posts that will actually be displayed</span>
+<span class="linenos">21</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">searchedPosts</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">22</span><span class="w">    </span><span class="nx">searchQuery</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
+<span class="linenos">23</span><span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="nx">posts</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">post</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="linenos">24</span><span class="w">          </span><span class="sb">`</span><span class="si">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">body</span><span class="si">}</span><span class="sb">`</span>
+<span class="linenos">25</span><span class="w">            </span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
+<span class="linenos">26</span><span class="w">            </span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchQuery</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()),</span>
+<span class="linenos">27</span><span class="w">        </span><span class="p">)</span>
+<span class="linenos">28</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="nx">posts</span><span class="p">;</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleAddPost</span><span class="p">(</span><span class="nx">post</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">    </span><span class="nx">setPosts</span><span class="p">((</span><span class="nx">posts</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">post</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">posts</span><span class="p">]);</span>
+<span class="linenos">32</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleClearPosts</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">35</span><span class="w">    </span><span class="nx">setPosts</span><span class="p">([]);</span>
+<span class="linenos">36</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="linenos">39</span><span class="w">    </span><span class="c1">// 2) Provide value to child components</span>
+<span class="hll"><span class="linenos">40</span><span class="w">    </span><span class="p">&lt;</span><span class="nt">PostContext</span><span class="p">.</span><span class="na">Provider</span>
+</span><span class="linenos">41</span><span class="w">      </span><span class="na">value</span><span class="o">=</span><span class="p">{{</span>
+<span class="linenos">42</span><span class="w">        </span><span class="nx">posts</span><span class="o">:</span><span class="w"> </span><span class="nx">searchedPosts</span><span class="p">,</span>
+<span class="linenos">43</span><span class="w">        </span><span class="nx">onAddPost</span><span class="o">:</span><span class="w"> </span><span class="nx">handleAddPost</span><span class="p">,</span>
+<span class="linenos">44</span><span class="w">        </span><span class="nx">onClearPosts</span><span class="o">:</span><span class="w"> </span><span class="nx">handleAddPost</span><span class="p">,</span>
+<span class="linenos">45</span><span class="w">        </span><span class="nx">searchQuery</span><span class="p">,</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nx">setSearchQuery</span><span class="p">,</span>
+<span class="linenos">47</span><span class="w">      </span><span class="p">}}</span>
+<span class="hll"><span class="linenos">48</span><span class="w">    </span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">PostContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
+</span><span class="linenos">49</span><span class="w">  </span><span class="p">);</span>
+<span class="linenos">50</span><span class="p">}</span>
+<span class="linenos">51</span>
+<span class="hll"><span class="linenos">52</span><span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">PostContext</span><span class="w"> </span><span class="p">};</span>
+</span></pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">line 5<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Create the <code class="docutils literal notranslate"><span class="pre">PostContext</span></code> as a regular Context (as before).</p>
+</dd>
+<dt class="field-even">line 7-12<span class="colon">:</span></dt>
+<dd class="field-even"><p>Copy of the <code class="docutils literal notranslate"><span class="pre">createRandomPost()</span></code> method (original stays in <code class="docutils literal notranslate"><span class="pre">App.js</span></code> as it
+it also needed there -&gt; usually, this should be moved to separate file).</p>
+</dd>
+<dt class="field-odd">line 14<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Declaration of <code class="docutils literal notranslate"><span class="pre">PostProvider</span></code>. It requires the <code class="docutils literal notranslate"><span class="pre">children</span></code> property, because
+it will contain all JSX of the component which uses it, e.g.:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span>
+<span class="w">        </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setIsFakeDark</span><span class="p">((</span><span class="nx">isFakeDark</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">isFakeDark</span><span class="p">)}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn-fake-dark-mode&quot;</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">isFakeDark</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;☀️&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;🌙&quot;</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">PostProvider</span><span class="p">&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">Main</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">Archive</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">Footer</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="hll"><span class="w">      </span><span class="p">&lt;/</span><span class="nt">PostProvider</span><span class="p">&gt;</span>
+</span><span class="w">    </span><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PostProvider</span></code> only encloses the components that actually need it,
+excluding the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element.</p>
+</div>
+</dd>
+<dt class="field-even">line 15-36<span class="colon">:</span></dt>
+<dd class="field-even"><p>All state updating logic functions of <code class="docutils literal notranslate"><span class="pre">PostProvider</span></code>.</p>
+</dd>
+<dt class="field-odd">line 40-48<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">PostContext</span></code> must return its <code class="docutils literal notranslate"><span class="pre">Provider</span></code> (as before) passing the <code class="docutils literal notranslate"><span class="pre">value</span></code>
+object. Also, it must pass down the <code class="docutils literal notranslate"><span class="pre">children</span></code> property, which contains all the
+JSX that the component wraps into the <code class="docutils literal notranslate"><span class="pre">PostContext</span></code> (see example on comment to
+line 14).</p>
+</dd>
+<dt class="field-even">line 52<span class="colon">:</span></dt>
+<dd class="field-even"><p>Both the <code class="docutils literal notranslate"><span class="pre">PostProvider</span></code> and the <code class="docutils literal notranslate"><span class="pre">PostContext</span></code> must be exported, as they both
+used in <code class="docutils literal notranslate"><span class="pre">App.js</span></code>.</p>
+<p>As before, <code class="docutils literal notranslate"><span class="pre">PostContext</span></code> is used to access the contents of <code class="docutils literal notranslate"><span class="pre">value</span></code>, whereas
+<code class="docutils literal notranslate"><span class="pre">&lt;PostProvider&gt;</span></code> is used instead of <code class="docutils literal notranslate"><span class="pre">&lt;PostContext.Provider&gt;</span></code> inside the
+JSX of the top level component (here: <code class="docutils literal notranslate"><span class="pre">App</span></code>).</p>
+</dd>
+</dl>
+</section>
+<section id="custom-hook">
+<h2>Custom Hook<a class="headerlink" href="#custom-hook" title="Link to this heading"></a></h2>
+<p>So far, we consume the context by calling the <code class="docutils literal notranslate"><span class="pre">useContext()</span></code> method, e.g.:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">onClearPosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">PostContext</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">useContext()</span></code> call be refactored into a custom hook. This is <strong>common pattern</strong>
+to put it into the same file as the custom provider (here <code class="docutils literal notranslate"><span class="pre">PostContext.js</span></code>):</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* my custom provider stuff */</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">PostContext</span><span class="p">);</span>
+</span><span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">context</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="hll"><span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">usePosts</span><span class="w"> </span><span class="p">};</span>
+</span></pre></div>
+</div>
+<p>The new <code class="docutils literal notranslate"><span class="pre">usePosts</span></code> hook then replaces the <code class="docutils literal notranslate"><span class="pre">useContext</span></code> hook (in <code class="docutils literal notranslate"><span class="pre">Apps.js</span></code>):</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">usePosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./PostContext&quot;</span><span class="p">;</span>
+</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Header</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">onClearPosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">();</span>
+</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Results</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">onClearPosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">();</span>
+</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">{</span><span class="cm">/* more components now using usePosts() */</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Finally, we want to prevent the usage of <code class="docutils literal notranslate"><span class="pre">usePosts()</span></code> in components, which don’t
+have access to the respective context provider (here <code class="docutils literal notranslate"><span class="pre">PostsProvider</span></code>), such as
+the <code class="docutils literal notranslate"><span class="pre">&lt;App&gt;</span></code> component in our example:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">();</span>
+</span><span class="hll"><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span><span class="w">     </span><span class="c1">// prints &#39;undefined&#39;</span>
+</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span>
+<span class="w">        </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setIsFakeDark</span><span class="p">((</span><span class="nx">isFakeDark</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">isFakeDark</span><span class="p">)}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn-fake-dark-mode&quot;</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">isFakeDark</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;☀️&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;🌙&quot;</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">PostProvider</span><span class="p">&gt;</span>
+</span><span class="w">        </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Main</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Archive</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Footer</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="hll"><span class="w">      </span><span class="p">&lt;/</span><span class="nt">PostProvider</span><span class="p">&gt;</span>
+</span><span class="w">    </span><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Calling the <code class="docutils literal notranslate"><span class="pre">usePosts()</span></code> method returns an <code class="docutils literal notranslate"><span class="pre">undefined</span></code> because the required
+<code class="docutils literal notranslate"><span class="pre">PostProvider</span></code> (or previously <code class="docutils literal notranslate"><span class="pre">PostContext.Provider</span></code> before using our custom provider)
+is not available, only for its subcomponents as seen in the component tree:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>App
+└── PostProvider
+    └── Context.Provider
+        ├── Header
+        ├── Main
+        └── ...
+</pre></div>
+</div>
+<p>To prevent that, let’s add a check to <code class="docutils literal notranslate"><span class="pre">usePosts()</span></code> and throw an error in case
+of misuse (so the developers knows it right away):</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">PostContext</span><span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span>
+</span><span class="hll"><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;PostContext was used outside of the PostProvider&quot;</span><span class="p">);</span>
+</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">context</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="223_224_implementing_context.html" class="btn btn-neutral float-left" title="Creating and providing a context" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="226_advanced_state_management.html" class="btn btn-neutral float-right" title="Thinking in React: Advanced State Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 11, 2026</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

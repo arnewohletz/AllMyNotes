@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Initializing State With a Callback (Lazy Initial State) &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/thebelab-helper.js"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="next" title="Summary useState" href="164_summary_useState.html" />
+    <link rel="prev" title="More Details on useState" href="162_more_details_usestate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">The Ultimate React Course</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-3-first-look">Chapter 3: First Look</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-5-components-props-and-jsx">Chapter 5: Components, Props and JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-6-state-events-and-forms-interactive-components">Chapter 6: State, Events and Forms: Interactive Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-7-thinking-react-state-management">Chapter 7: Thinking React: State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-10-thinking-in-react-components-composition-and-reusability">Chapter 10: Thinking in React: Components, Composition and Reusability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-11-how-react-works-behind-the-scenes">Chapter 11: How React works behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-12-effects-and-data-fetching">Chapter 12: Effects and Data Fetching</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#chapter-13-custom-hooks-refs-and-more-state">Chapter 13: Custom Hooks, Refs and More State</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="160_react_hooks_rules.html">React Hooks and their rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="162_more_details_usestate.html">More Details on useState</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Initializing State With a Callback (Lazy Initial State)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#save-data-in-localstorage">Save data in localStorage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load-data-from-localstorage">Load data from localStorage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="164_summary_useState.html">Summary useState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="165_166_167_how_not_select_dom_elements.html">How NOT to select a DOM elements in React</a></li>
+<li class="toctree-l3"><a class="reference internal" href="165_166_167_how_not_select_dom_elements.html#introducing-another-hook-useref">Introducing another hook: useRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="165_166_167_how_not_select_dom_elements.html#select-dom-elements-via-ref">Select DOM elements via Ref</a></li>
+<li class="toctree-l3"><a class="reference internal" href="168_persists_data_with_refs.html">Refs to persist data between renders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="169_170_171_172_custom_hooks.html">What are custom hooks? When to create one?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-16-the-advanced-usereducer-hook">Chapter 16: The Advanced useReducer Hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-17-react-router-building-single-page-applications-spa">Chapter 17: React Router - Building Single-Page Applications (SPA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-18-advanced-state-management-the-context-api">Chapter 18: Advanced State Management: The Context API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">The Ultimate React Course</a></li>
+      <li class="breadcrumb-item active">Initializing State With a Callback (Lazy Initial State)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/tutorial/react/udemy_ultimate_course/13_custom_hooks_refs_more_state/163_initialize_state_with_callback.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="initializing-state-with-a-callback-lazy-initial-state">
+<h1>Initializing State With a Callback (Lazy Initial State)<a class="headerlink" href="#initializing-state-with-a-callback-lazy-initial-state" title="Link to this heading"></a></h1>
+<section id="save-data-in-localstorage">
+<h2>Save data in localStorage<a class="headerlink" href="#save-data-in-localstorage" title="Link to this heading"></a></h2>
+<p>We want to persist data into the <em>local storage</em>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The <em>local storage</em> is a key-value pair storage inside the browser, which is
+specific to a URL.</p>
+</div>
+<p>Two places to do that:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>inside the handler function (here: <code class="docutils literal notranslate"><span class="pre">handleAddWatched(movie)</span></code></p></li>
+<li><p>inside an effect function (here: called whenever the <code class="docutils literal notranslate"><span class="pre">watched</span></code> state variable
+is updated</p></li>
+</ol>
+</div></blockquote>
+<p><strong>Inside handler function</strong></p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleAddWatched</span><span class="p">(</span><span class="nx">movie</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setWatched</span><span class="p">((</span><span class="nx">watched</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([...</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">movie</span><span class="p">]));</span>
+
+<span class="hll"><span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[...</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">movie</span><span class="p">]);</span>
+</span><span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>at the time of saving the updated <code class="docutils literal notranslate"><span class="pre">watched</span></code> to the local storage, the variabel
+hasn’t been updated yet (still without the new <code class="docutils literal notranslate"><span class="pre">movie</span></code>, hence it is in <em>stale state</em>),
+so we must create the array to be stored manually via <code class="code highlight javascript docutils literal highlight-javascript"><span class="p">[...</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">movie</span><span class="p">]</span></code></p></li>
+<li><p>the local storage cannot store arrays, but needs a string type, so we convert the
+array to a string via <code class="code highlight javascript docutils literal highlight-javascript"><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">()</span></code></p></li>
+</ul>
+<p><strong>Inside an effect function</strong></p>
+<p>This way, we can reuse that effect function at various occurrences.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">useEffect</span><span class="p">(</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">watched</span><span class="p">));</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">watched</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>at the point of calling the effect function, the <code class="docutils literal notranslate"><span class="pre">watched</span></code> state variable has
+<strong>already been updated</strong>, so no need to manually create it</p></li>
+<li><p>when refreshing the page, the localStorage’s watched variable becomes an empty array,
+it is the default value of <code class="docutils literal notranslate"><span class="pre">watched</span></code></p></li>
+</ul>
+</section>
+<section id="load-data-from-localstorage">
+<h2>Load data from localStorage<a class="headerlink" href="#load-data-from-localstorage" title="Link to this heading"></a></h2>
+<p>Next up, we want to restore the watched movies from localStorage.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">storedValue</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul>
+<li><p>Define a callback function as the default value of the <code class="docutils literal notranslate"><span class="pre">watched</span></code> state variable</p></li>
+<li><p>This function is <strong>only called on initial render</strong> (just like the default value is
+only set during initial render)</p></li>
+<li><p>you <strong>must not</strong> use a function call, e.g.</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// this is not good</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>React would call this function <strong>on every re-render</strong>, though ignoring its value.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The function <strong>must</strong> be pure JavaScript (no JSX) and <strong>must not</strong> receive any arguments!</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>Use effects over handler functions</strong></p>
+<p>Thanks to the nature of effects, when <strong>deleting an item</strong> from the <code class="docutils literal notranslate"><span class="pre">watched</span></code> state variable,
+the effect function we previously defined would run. If we had used the <em>handler function</em>
+<code class="docutils literal notranslate"><span class="pre">handleAddWatched</span></code>, we’d also have to manually delete the item from <code class="docutils literal notranslate"><span class="pre">watched</span></code> within
+the <code class="docutils literal notranslate"><span class="pre">handleDeleteWatched</span></code> handler function.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="162_more_details_usestate.html" class="btn btn-neutral float-left" title="More Details on useState" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="164_summary_useState.html" class="btn btn-neutral float-right" title="Summary useState" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 11, 2026</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

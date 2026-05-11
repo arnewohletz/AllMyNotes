@@ -106,6 +106,9 @@ Bedingung erfüllt ist.
     if (userInput) console.log("Danke für " + userInput);
     else console.log("Oje");
 
+
+.. _javascript_alfatraining_logic_operators:
+
 Logische Operatoren
 -------------------
 * ``||`` Oder-Operator:
@@ -119,12 +122,26 @@ Logische Operatoren
 
 * ``&&`` Und-Operator:
 
-    Bedingung_1 && Bedingung_2
+    Bedingung_1 && Bedingung_2 [&& Bedingung_3 ...]
 
     - false && false => false
     - true && true => true
     - true && false => false
     - false && true => false
+
+    .. hint::
+
+        Der ``&&`` bewertet von links nach rechts. Es wird stets der Wert der ersten
+        Bedingung welche ein `falsy`_ ergibt zurückgegeben. Sofern alle Bedingungen
+        ein `truthy`_ zurückgeben, wird der Wert der **letzten Bedingung** zurückgegeben:
+
+        .. code-block:: javascript
+
+            console.log(100 < 1000 && "a" < "z" && "All good");
+            All good
+
+.. _falsy: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+.. _truthy: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
 
 * ``!`` Not-Operator: Verkehrt den Wahrheitswert
 

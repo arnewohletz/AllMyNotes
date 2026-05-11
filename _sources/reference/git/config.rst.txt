@@ -53,7 +53,7 @@ To create a more complex, multiline script, the script is put into a function
 (here: ``f()``), which is eventually called. Inside the function, lines have to
 end with a ``\`` to be continued in the next line. Commands are separated with ``;``:
 
-.. code-block:: ini
+.. code-block:: none
 
     my-more-complex-alias = "!f(){\
         echo 'Hello there';\

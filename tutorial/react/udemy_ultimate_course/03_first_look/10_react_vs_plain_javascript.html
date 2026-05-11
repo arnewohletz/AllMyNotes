@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React vs. plain JavaScript &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/thebelab-helper.js"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="next" title="What is React?" href="11_what_is_react.html" />
+    <link rel="prev" title="Why Do Front-End Frameworks Exist?" href="09_why_frontend_frameworks_exist.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">The Ultimate React Course</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#chapter-3-first-look">Chapter 3: First Look</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="09_why_frontend_frameworks_exist.html">Why Do Front-End Frameworks Exist?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">React vs. plain JavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11_what_is_react.html">What is React?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13_pure_react.html">Pure React</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16_setup_new_react_project.html">Setup a new React project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-5-components-props-and-jsx">Chapter 5: Components, Props and JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-6-state-events-and-forms-interactive-components">Chapter 6: State, Events and Forms: Interactive Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-7-thinking-react-state-management">Chapter 7: Thinking React: State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-10-thinking-in-react-components-composition-and-reusability">Chapter 10: Thinking in React: Components, Composition and Reusability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-11-how-react-works-behind-the-scenes">Chapter 11: How React works behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-12-effects-and-data-fetching">Chapter 12: Effects and Data Fetching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-13-custom-hooks-refs-and-more-state">Chapter 13: Custom Hooks, Refs and More State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-16-the-advanced-usereducer-hook">Chapter 16: The Advanced useReducer Hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-17-react-router-building-single-page-applications-spa">Chapter 17: React Router - Building Single-Page Applications (SPA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-18-advanced-state-management-the-context-api">Chapter 18: Advanced State Management: The Context API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">The Ultimate React Course</a></li>
+      <li class="breadcrumb-item active">React vs. plain JavaScript</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/tutorial/react/udemy_ultimate_course/03_first_look/10_react_vs_plain_javascript.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="react-vs-plain-javascript">
+<h1>React vs. plain JavaScript<a class="headerlink" href="#react-vs-plain-javascript" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://www.udemy.com/course/the-ultimate-react-course/learn/lecture/37350394#overview">https://www.udemy.com/course/the-ultimate-react-course/learn/lecture/37350394#overview</a></p>
+<p>Comparing <code class="docutils literal notranslate"><span class="pre">App.js</span></code> with <code class="docutils literal notranslate"><span class="pre">vanilla-JS.html</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">App.js</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-react notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">advice</span><span class="p">,</span><span class="w"> </span><span class="nx">setAdvice</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getAdvice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://api.adviceslip.com/advice&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">setAdvice</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">slip</span><span class="p">.</span><span class="nx">advice</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setCount</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">getAdvice</span><span class="p">();</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;{</span><span class="nx">advice</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">getAdvice</span><span class="p">}&gt;</span><span class="nx">Get</span><span class="w"> </span><span class="nx">advice</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Message</span><span class="w"> </span><span class="na">count</span><span class="o">=</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Message</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="nx">You</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">read</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;{</span><span class="nx">props</span><span class="p">.</span><span class="nx">count</span><span class="p">}&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">pieces</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">advice</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">vanilla-JS.html</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;ie=edge&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Vanilla JS Advice<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;advice&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn&quot;</span><span class="p">&gt;</span>Get advice<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You have read <span class="p">&lt;</span><span class="nt">strong</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;count&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> pieces of advice<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="c1">// Manually selecting DOM elements (which require a class or ID in markup)</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">adviceEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.advice&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">btnEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.btn&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">countEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.count&quot;</span><span class="p">);</span>
+
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">getAdvice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://api.adviceslip.com/advice&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Updating values</span>
+<span class="w">        </span><span class="nx">advice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">slip</span><span class="p">.</span><span class="nx">advice</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Manually updating DOM elements</span>
+<span class="w">        </span><span class="nx">countEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">adviceEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">advice</span><span class="p">;</span>
+<span class="w">      </span><span class="p">};</span>
+
+<span class="w">      </span><span class="c1">// Setting initial values</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nx">advice</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">getAdvice</span><span class="p">();</span>
+
+<span class="w">      </span><span class="c1">// Attaching an event listener</span>
+<span class="w">      </span><span class="nx">btnEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">getAdvice</span><span class="p">);</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Context:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Plain JavaScript: JS code is embedded inside HTML (HTML is the driver)</p></li>
+<li><p>React: JS code contains HTML elements (JS is the driver)</p></li>
+</ul>
+</div></blockquote>
+<p>State:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Plain JavaScript: state is saved inside JavaScript code</p></li>
+<li><p>React: saved inside Application state variables</p></li>
+</ul>
+</div></blockquote>
+<p>UI Update:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Plain JavaScript: must manually update changed DOM elements</p></li>
+<li><p>React: automatically updates components which alter its state</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Main difference is that React handles keeping UI in sync with the state
+whereas when using plain JavaScript, the UI has be manually updated and JS
+must manage the state.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="09_why_frontend_frameworks_exist.html" class="btn btn-neutral float-left" title="Why Do Front-End Frameworks Exist?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="11_what_is_react.html" class="btn btn-neutral float-right" title="What is React?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 11, 2026</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

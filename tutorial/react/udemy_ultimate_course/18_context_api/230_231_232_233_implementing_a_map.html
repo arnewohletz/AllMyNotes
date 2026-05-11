@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Include a map using the Leaflet library &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/thebelab-helper.js"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="next" title="Fetching city data in the form" href="334_fetching_city_data_in_form.html" />
+    <link rel="prev" title="Finish the city view" href="229_finish_city_view.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">The Ultimate React Course</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-3-first-look">Chapter 3: First Look</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-5-components-props-and-jsx">Chapter 5: Components, Props and JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-6-state-events-and-forms-interactive-components">Chapter 6: State, Events and Forms: Interactive Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-7-thinking-react-state-management">Chapter 7: Thinking React: State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-10-thinking-in-react-components-composition-and-reusability">Chapter 10: Thinking in React: Components, Composition and Reusability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-11-how-react-works-behind-the-scenes">Chapter 11: How React works behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-12-effects-and-data-fetching">Chapter 12: Effects and Data Fetching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-13-custom-hooks-refs-and-more-state">Chapter 13: Custom Hooks, Refs and More State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-16-the-advanced-usereducer-hook">Chapter 16: The Advanced useReducer Hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-17-react-router-building-single-page-applications-spa">Chapter 17: React Router - Building Single-Page Applications (SPA)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#chapter-18-advanced-state-management-the-context-api">Chapter 18: Advanced State Management: The Context API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="222_context_api.html">What is the Context API?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="223_224_implementing_context.html">Creating and providing a context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="223_224_implementing_context.html#consuming-the-context">Consuming the context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="225_custom_provider_and_hook.html">Advanced Pattern: A Custom Provider and Hook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="226_advanced_state_management.html">Thinking in React: Advanced State Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="227_228_create_consume_cities_context.html">Creating a CitiesContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="227_228_create_consume_cities_context.html#consuming-the-citiescontext">Consuming the CitiesContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="229_finish_city_view.html">Finish the city view</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Include a map using the Leaflet library</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#display-city-markers-on-map">Display city markers on map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interacting-with-the-map">Interacting with the map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-map-position-with-geolocation">Setting map position with geolocation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="334_fetching_city_data_in_form.html">Fetching city data in the form</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">The Ultimate React Course</a></li>
+      <li class="breadcrumb-item active">Include a map using the Leaflet library</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/tutorial/react/udemy_ultimate_course/18_context_api/230_231_232_233_implementing_a_map.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="include-a-map-using-the-leaflet-library">
+<h1>Include a map using the Leaflet library<a class="headerlink" href="#include-a-map-using-the-leaflet-library" title="Link to this heading"></a></h1>
+<p>Install <code class="docutils literal notranslate"><span class="pre">react-leaflet</span></code> and <code class="docutils literal notranslate"><span class="pre">leaflet</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ npm i react-leaflet leaflet
+
+.. hint::
+
+    `Leaflet`_ is the most popular JavaScript library for implementing maps.
+    `React Leaflet`_ is built on top of Leaflet.
+</pre></div>
+</div>
+<p>On the <a class="reference external" href="https://react-leaflet.js.org/docs/start-installation/">Installation</a> page refers to <a class="reference external" href="https://leafletjs.com/examples/quick-start/">Leaflet’s Quick Start Guide</a>, which states
+that the following CSS code must be added to the project’s main CSS file (<code class="docutils literal notranslate"><span class="pre">index.css</span></code>):</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nt">link</span><span class="w"> </span><span class="nt">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nt">href</span><span class="o">=</span><span class="s2">&quot;https://unpkg.com/leaflet@1.9.4/dist/leaflet.css&quot;</span>
+<span class="nt">integrity</span><span class="o">=</span><span class="s2">&quot;sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=&quot;</span>
+<span class="nt">crossorigin</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Next, we take the sample code from <a class="reference external" href="https://react-leaflet.js.org/">React Leaflet</a> main page and copy it into our
+<em>Map</em> component:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">,</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Map.module.css&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MapContainer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-leaflet/MapContainer&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TileLayer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-leaflet/TileLayer&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Marker</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-leaflet/Marker&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Popup</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-leaflet/Popup&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">mapPosition</span><span class="p">,</span><span class="w"> </span><span class="nx">setMapPosition</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">MapContainer</span>
+<span class="w">        </span><span class="na">center</span><span class="o">=</span><span class="p">{</span><span class="nx">mapPosition</span><span class="p">}</span>
+<span class="w">        </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">13</span><span class="p">}</span>
+<span class="w">        </span><span class="na">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">map</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">TileLayer</span>
+<span class="w">          </span><span class="na">attribution</span><span class="o">=</span><span class="s">&#39;&amp;copy; &lt;a href=&quot;https://www.openstreetmap.fr/hot/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;</span>
+<span class="w">          </span><span class="na">url</span><span class="o">=</span><span class="s">&quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;</span>
+<span class="w">        </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Marker</span><span class="w"> </span><span class="na">position</span><span class="o">=</span><span class="p">{</span><span class="nx">mapPosition</span><span class="p">}&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">Popup</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="nx">A</span><span class="w"> </span><span class="nx">pretty</span><span class="w"> </span><span class="nx">CSS3</span><span class="w"> </span><span class="nx">popup</span><span class="p">.</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">br</span><span class="w"> </span><span class="p">/&gt;</span><span class="w"> </span><span class="nx">Easily</span><span class="w"> </span><span class="nx">customizable</span><span class="p">.</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">Popup</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">Marker</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">MapContainer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">..</span><span class="w"> </span><span class="nx">hint</span><span class="o">::</span>
+
+<span class="w">    </span><span class="nx">By</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">so</span><span class="w"> </span><span class="nx">we</span><span class="w"> </span><span class="nx">assign</span><span class="w"> </span><span class="nx">our</span><span class="w"> </span><span class="nx">CSS</span><span class="w"> </span><span class="kd">class</span>
+<span class="w">    </span><span class="sb">``</span><span class="nx">map</span><span class="sb">``</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="sb">``</span><span class="p">&lt;</span><span class="nt">MapContainer</span><span class="p">&gt;</span><span class="sb">``</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">appropriate</span><span class="w"> </span><span class="nx">rule</span>
+<span class="w">    </span><span class="nx">defined</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">fix</span><span class="w"> </span><span class="nx">that</span><span class="p">.</span>
+</pre></div>
+</div>
+<section id="display-city-markers-on-map">
+<h2>Display city markers on map<a class="headerlink" href="#display-city-markers-on-map" title="Link to this heading"></a></h2>
+<p>The <em>CitiesContext</em> provides us the coordinates of our cities as global state.
+We use it to create a marker on the map for each city, while also making the
+<em>Popup</em> element on each marker show some meaningful data:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCities</span><span class="p">();</span>
+</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">mapPosition</span><span class="p">,</span><span class="w"> </span><span class="nx">setMapPosition</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">MapContainer</span>
+<span class="w">        </span><span class="na">center</span><span class="o">=</span><span class="p">{</span><span class="nx">mapPosition</span><span class="p">}</span>
+<span class="w">        </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">13</span><span class="p">}</span>
+<span class="w">        </span><span class="na">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">map</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">TileLayer</span>
+<span class="w">          </span><span class="na">attribution</span><span class="o">=</span><span class="s">&#39;&amp;copy; &lt;a href=&quot;https://www.openstreetmap.fr/hot/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;</span>
+<span class="w">          </span><span class="na">url</span><span class="o">=</span><span class="s">&quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;</span>
+<span class="w">        </span><span class="p">/&gt;</span>
+<span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">cities</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">city</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span class="w">          </span><span class="p">&lt;</span><span class="nt">Marker</span>
+<span class="hll"><span class="w">            </span><span class="na">position</span><span class="o">=</span><span class="p">{[</span><span class="nx">city</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">city</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">lng</span><span class="p">]}</span>
+</span><span class="hll"><span class="w">            </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">city</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+</span><span class="w">          </span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Popup</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">              </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;{</span><span class="nx">city</span><span class="p">.</span><span class="nx">emoji</span><span class="p">}&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span class="hll"><span class="w">              </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;{</span><span class="nx">city</span><span class="p">.</span><span class="nx">cityName</span><span class="p">}&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span class="w">            </span><span class="p">&lt;/</span><span class="nt">Popup</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">Marker</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">        </span><span class="p">))}</span>
+</span><span class="w">      </span><span class="p">&lt;/</span><span class="nt">MapContainer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;Popup&gt;</span></code> elements receive a classname from Leaflet that you can use to
+customize its style, for example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">global</span><span class="o">(</span><span class="p">.</span><span class="nc">leaflet-popup</span><span class="w"> </span><span class="p">.</span><span class="nc">leaflet-popup-content-wrapper</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--color-dark--</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--color-light--</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding-right</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">:global(...)</span></code> operator is used to make the style apply to <strong>all</strong> components
+which may use this class, not just the one component the CSS module is assigned
+to. Without it, in our case, the rules will not apply to any of the <code class="docutils literal notranslate"><span class="pre">&lt;Popup&gt;</span></code>
+elements.</p>
+<p>As mentioned in <a class="reference internal" href="../17_react_router/208_209_styling_in_react.html#tutorial-react-ultimate-use-css-modules"><span class="std std-ref">Using CSS modules</span></a>, by default
+the compiler attaches a random ID to the classname of the CSS rule as well as
+the rendered component, effectively preventing the style to apply to any other
+equally named rules in other component’s CSS classes. Using <code class="docutils literal notranslate"><span class="pre">:global</span></code> prevent
+this <em>mangling</em>, applying the style to all other components assigned to this class
+(here: <code class="docutils literal notranslate"><span class="pre">.leaflet-popup</span> <span class="pre">.leaflet-popup-content-wrapper</span></code>).</p>
+</div>
+</section>
+<section id="interacting-with-the-map">
+<h2>Interacting with the map<a class="headerlink" href="#interacting-with-the-map" title="Link to this heading"></a></h2>
+<p>First, we’ll use the latitude and longitude from the URL, which is to center the map
+to the currently selected city:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCities</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">mapPosition</span><span class="p">,</span><span class="w"> </span><span class="nx">setMapPosition</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapLng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">MapContainer</span>
+<span class="hll"><span class="w">        </span><span class="na">center</span><span class="o">=</span><span class="p">{[</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">]}</span>
+</span><span class="w">        </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
+<span class="w">        </span><span class="na">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">map</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">MapContainer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>But when selecting a different city, the map does not update, as the <code class="docutils literal notranslate"><span class="pre">mapLat</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mapLng</span></code> are not reactive, so not updating after selecting another city.</p>
+<p><em>react-leaflet</em> provides a <code class="docutils literal notranslate"><span class="pre">useMap</span></code> hook (<a class="reference external" href="https://react-leaflet.js.org/docs/api-map/#usemap">https://react-leaflet.js.org/docs/api-map/#usemap</a>),
+which returns a <code class="docutils literal notranslate"><span class="pre">Map</span></code> component. We will use it to create a custom Map component,
+which uses <code class="docutils literal notranslate"><span class="pre">mapLat</span></code> and <code class="docutils literal notranslate"><span class="pre">mapLng</span></code> as state:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useMap</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-leaflet/hooks&#39;</span>
+</span>
+<span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCities</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">mapPosition</span><span class="p">,</span><span class="w"> </span><span class="nx">setMapPosition</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapLng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">MapContainer</span>
+<span class="w">        </span><span class="na">center</span><span class="o">=</span><span class="p">{[</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">]}</span>
+<span class="w">        </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
+<span class="w">        </span><span class="na">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">map</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">ChangeCenter</span><span class="w"> </span><span class="na">position</span><span class="o">=</span><span class="p">{[</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">]}</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="w">      </span><span class="p">&lt;/</span><span class="nt">MapContainer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">ChangeCenter</span><span class="p">({</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMap</span><span class="p">();</span>
+</span><span class="hll"><span class="w">  </span><span class="nx">map</span><span class="p">.</span><span class="nx">setView</span><span class="p">(</span><span class="nx">position</span><span class="p">);</span>
+</span><span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>Although the <code class="docutils literal notranslate"><span class="pre">ChangeCenter</span></code> does not return any JSX (<code class="docutils literal notranslate"><span class="pre">null</span></code>, which is a valid
+return value), it makes the <code class="docutils literal notranslate"><span class="pre">mapLat</span></code> and <code class="docutils literal notranslate"><span class="pre">mapLng</span></code> become state variables of the
+<code class="docutils literal notranslate"><span class="pre">ChangeCenter</span></code>, which is rendered by <code class="docutils literal notranslate"><span class="pre">Map</span></code>.</p>
+<p>The problem is, that <code class="docutils literal notranslate"><span class="pre">mapLat</span></code> and <code class="docutils literal notranslate"><span class="pre">mapLng</span></code> are <strong>not</strong> remembered, as the URL
+does not include them when going back to the <code class="docutils literal notranslate"><span class="pre">/cities</span></code> endpoint. We want them to
+stay saved inside the <code class="docutils literal notranslate"><span class="pre">mapPosition</span></code>. For this, we create an effect, which runs
+whenever either <code class="docutils literal notranslate"><span class="pre">mapLat</span></code> or <code class="docutils literal notranslate"><span class="pre">mapLng</span></code> changes (if those exits, so are not <code class="docutils literal notranslate"><span class="pre">null</span></code>),
+updating the <code class="docutils literal notranslate"><span class="pre">mapPosition</span></code> state:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="hll"><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
+</span><span class="hll"><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mapLat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">)</span><span class="w"> </span><span class="nx">setMapPosition</span><span class="p">([</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">]);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">},</span>
+</span><span class="hll"><span class="w">    </span><span class="p">[</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">],</span>
+</span><span class="hll"><span class="w">  </span><span class="p">);</span>
+</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">MapContainer</span>
+<span class="hll"><span class="w">        </span><span class="na">center</span><span class="o">=</span><span class="p">{</span><span class="nx">mapPosition</span><span class="p">}</span>
+</span><span class="w">        </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
+<span class="w">        </span><span class="na">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">map</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ChangeCenter</span><span class="w"> </span><span class="na">position</span><span class="o">=</span><span class="p">{[</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">]}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">MapContainer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The last feature we want is to display the form whenever we click on some point
+on the map. As the <code class="docutils literal notranslate"><span class="pre">&lt;MapContainer&gt;</span></code> component does <strong>not</strong> include a <code class="docutils literal notranslate"><span class="pre">onClick</span></code>
+handler, we must create yet another custom component, which provides the functionality.
+For this, we use the <code class="docutils literal notranslate"><span class="pre">useMapEvents</span></code> hook from <em>leaflet-react</em>:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useMap</span><span class="p">,</span><span class="w"> </span><span class="nx">useMapEvents</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-leaflet/hooks&quot;</span><span class="p">;</span>
+</span>
+<span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">MapContainer</span>
+<span class="w">        </span><span class="na">center</span><span class="o">=</span><span class="p">{</span><span class="nx">mapPosition</span><span class="p">}</span>
+<span class="w">        </span><span class="na">zoom</span><span class="o">=</span><span class="p">{</span><span class="mf">6</span><span class="p">}</span>
+<span class="w">        </span><span class="na">scrollWheelZoom</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">map</span><span class="p">}</span>
+<span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ChangeCenter</span><span class="w"> </span><span class="na">position</span><span class="o">=</span><span class="p">{[</span><span class="nx">mapLat</span><span class="p">,</span><span class="w"> </span><span class="nx">mapLng</span><span class="p">]}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">DetectClick</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="w">      </span><span class="p">&lt;/</span><span class="nt">MapContainer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">DetectClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+</span><span class="hll"><span class="w">  </span><span class="nx">useMapEvents</span><span class="p">({</span><span class="w"> </span><span class="nx">click</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">navigate</span><span class="p">(</span><span class="sb">`form`</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+</span><span class="hll"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>We move the <code class="docutils literal notranslate"><span class="pre">useNavigate()</span></code> hook from the <em>&lt;Map&gt;</em> component into the <em>&lt;DetectClick&gt;</em>
+component, as we want to navigate to the form at the event of a click.</p>
+<p>As we want the form to have the position information of the current click. For this,
+we will include this information in the <code class="docutils literal notranslate"><span class="pre">/form</span></code> URL so the form can read it
+(it is far more less work than saving the position in a temporary global variable):</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">DetectClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">useMapEvents</span><span class="p">({</span>
+<span class="hll"><span class="w">    </span><span class="nx">click</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">navigate</span><span class="p">(</span><span class="sb">`form/?lat=</span><span class="si">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lat</span><span class="si">}</span><span class="sb">&amp;lng=</span><span class="si">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">lng</span><span class="si">}</span><span class="sb">`</span><span class="p">),</span>
+</span><span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The event-object provides the <code class="docutils literal notranslate"><span class="pre">latlng</span></code> property, containing the latitude and
+longitude of the click. The data will be written into the form later.</p>
+</section>
+<section id="setting-map-position-with-geolocation">
+<h2>Setting map position with geolocation<a class="headerlink" href="#setting-map-position-with-geolocation" title="Link to this heading"></a></h2>
+<p>Modern browsers natively support provision of the current geolocation, using the
+<code class="code highlight javascript docutils literal highlight-javascript"><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span></code> attribute. Previously, we defined the custom
+<code class="docutils literal notranslate"><span class="pre">useGeolocation</span></code> hook in a challenge:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="hll"><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useGeolocation</span><span class="p">(</span><span class="nx">defaultPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsLoading</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">position</span><span class="p">,</span><span class="w"> </span><span class="nx">setPosition</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="nx">defaultPosition</span><span class="p">);</span>
+</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">getPosition</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">setError</span><span class="p">(</span><span class="s2">&quot;Your browser does not support geolocation&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span>
+<span class="w">      </span><span class="p">(</span><span class="nx">pos</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">setPosition</span><span class="p">({</span>
+<span class="w">          </span><span class="nx">lat</span><span class="o">:</span><span class="w"> </span><span class="nx">pos</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">lng</span><span class="o">:</span><span class="w"> </span><span class="nx">pos</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">,</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">setError</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">position</span><span class="p">,</span><span class="w"> </span><span class="nx">getPosition</span><span class="w"> </span><span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The only difference is that we add the <code class="docutils literal notranslate"><span class="pre">default_position</span></code> argument to be the
+initial <code class="docutils literal notranslate"><span class="pre">position</span></code>.</p>
+<p>We can now use the hook to be called inside the <em>&lt;Map&gt;</em> component, adding a button,
+which triggers the hook’s <code class="docutils literal notranslate"><span class="pre">getPosition</span></code> function:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Button&quot;</span><span class="p">;</span>
+</span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useGeolocation</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../hooks/useGeolocation&quot;</span><span class="p">;</span>
+</span>
+<span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCities</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">mapPosition</span><span class="p">,</span><span class="w"> </span><span class="nx">setMapPosition</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">isLoading</span><span class="o">:</span><span class="w"> </span><span class="nx">isLoadingPosition</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="nx">geolocationPosition</span><span class="p">,</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">getPosition</span><span class="p">,</span>
+</span><span class="hll"><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useGeolocation</span><span class="p">();</span>
+</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapLat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mapLng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}&gt;</span>
+<span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;position&quot;</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">getPosition</span><span class="p">}&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">isLoadingPosition</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Loading...&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Use your position&quot;</span><span class="p">}</span>
+</span><span class="hll"><span class="w">      </span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+</span><span class="w">      </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The state is already set, now this state is supposed to navigate to the map to
+this position by updating the <code class="docutils literal notranslate"><span class="pre">mapPosition</span></code> state. As we use our custom hook,
+we create another effect to do that:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+
+<span class="hll"><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
+</span><span class="hll"><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">geolocationPosition</span><span class="p">)</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">setMapPosition</span><span class="p">([</span><span class="nx">geolocationPosition</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">geolocationPosition</span><span class="p">.</span><span class="nx">lng</span><span class="p">]);</span>
+</span><span class="hll"><span class="w">    </span><span class="p">},</span>
+</span><span class="hll"><span class="w">    </span><span class="p">[</span><span class="nx">geolocationPosition</span><span class="p">],</span>
+</span><span class="hll"><span class="w">  </span><span class="p">);</span>
+</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="p">..</span><span class="w"> </span><span class="nx">hint</span><span class="o">::</span>
+
+<span class="w">    </span><span class="nx">Generally</span><span class="p">,</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">recommended</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">little</span><span class="w"> </span><span class="nx">effects</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">possible</span><span class="p">,</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">each</span>
+<span class="w">    </span><span class="nx">forces</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">re</span><span class="o">-</span><span class="nx">render</span><span class="p">.</span><span class="w"> </span><span class="nx">More</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">next</span><span class="w"> </span><span class="nx">chapter</span><span class="p">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="229_finish_city_view.html" class="btn btn-neutral float-left" title="Finish the city view" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="334_fetching_city_data_in_form.html" class="btn btn-neutral float-right" title="Fetching city data in the form" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 11, 2026</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

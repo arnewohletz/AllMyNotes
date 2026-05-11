@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading questions from Fake API &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/thebelab-helper.js"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="next" title="Displaying Questions" href="194_display_question.html" />
+    <link rel="prev" title="Managing State with useReducer" href="188_manage_state_with_usereducer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">The Ultimate React Course</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-3-first-look">Chapter 3: First Look</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-5-components-props-and-jsx">Chapter 5: Components, Props and JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-6-state-events-and-forms-interactive-components">Chapter 6: State, Events and Forms: Interactive Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-7-thinking-react-state-management">Chapter 7: Thinking React: State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-10-thinking-in-react-components-composition-and-reusability">Chapter 10: Thinking in React: Components, Composition and Reusability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-11-how-react-works-behind-the-scenes">Chapter 11: How React works behind the scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-12-effects-and-data-fetching">Chapter 12: Effects and Data Fetching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-13-custom-hooks-refs-and-more-state">Chapter 13: Custom Hooks, Refs and More State</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#chapter-16-the-advanced-usereducer-hook">Chapter 16: The Advanced useReducer Hook</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="186_187_usereducer_hook.html">Yet another hook: useReducer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="186_187_usereducer_hook.html#managing-related-pieces-of-state">Managing related pieces of state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="188_manage_state_with_usereducer.html">Managing State with useReducer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Loading questions from Fake API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handling-loading-error-and-ready-status">Handling Loading, Error and Ready Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-new-quiz">Start new quiz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="194_display_question.html">Displaying Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="195_handling_answers.html">Handling answers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="200_set_up_timer_with_useeffect.html">Setting up a timer with useEffect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="201_usestate_vs_usereducer.html">useState vs useReducer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-17-react-router-building-single-page-applications-spa">Chapter 17: React Router - Building Single-Page Applications (SPA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-18-advanced-state-management-the-context-api">Chapter 18: Advanced State Management: The Context API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">The Ultimate React Course</a></li>
+      <li class="breadcrumb-item active">Loading questions from Fake API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/tutorial/react/udemy_ultimate_course/16_advanced_usereducer_hook/191_192_193_loading_questions_fake_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="loading-questions-from-fake-api">
+<h1>Loading questions from Fake API<a class="headerlink" href="#loading-questions-from-fake-api" title="Link to this heading"></a></h1>
+<p>Instead of loading data from a “real” API, we want to serve data (here: quiz questions)
+from a JSON file.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li><p>JSON file containing questions. Here in this form (excerpt):</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;questions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;question&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Which is the most popular JavaScript framework?&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Angular&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;React&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Svelte&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Vue&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;correctOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;points&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;question&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Which company invented React?&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Google&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Netflix&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Facebook&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;correctOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;points&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ol class="arabic">
+<li><p>Place file somewhere within your React project (e.g. <code class="docutils literal notranslate"><span class="pre">data/questions.json</span></code>).</p></li>
+<li><p>Install the <a class="reference external" href="https://www.npmjs.com/package/json-server">json-server</a> NPM package:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ npm install json-server
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Add a launch command to the <code class="docutils literal notranslate"><span class="pre">&quot;scripts&quot;</span></code> section of your <code class="docutils literal notranslate"><span class="pre">packages.json</span></code> file
+(adjust port number to your liking):</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts start&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts build&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts test&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts eject&quot;</span><span class="p">,</span>
+<span class="hll"><span class="w">    </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;json-server --watch data/questions.json --port 8000&quot;</span>
+</span><span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Start the server:</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ npm run server
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Access the served file in the browser (here: <code class="docutils literal notranslate"><span class="pre">http://localhost:8000/questions</span></code>).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server uses the JSON’s root keys (here: <code class="docutils literal notranslate"><span class="pre">questions</span></code>) as endpoints,
+which will display the entire content of this key (here, the array).</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Add data loading to project</strong></p>
+<ol class="arabic">
+<li><p>Define a effect, which loads the data from the fake API</p></li>
+<li><p>Define a default <em>reducer</em>, which will manage the state</p>
+<blockquote>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span><span class="w"> </span><span class="nx">initialState</span><span class="p">);</span>
+</span>
+<span class="hll"><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;http://localhost:8000/questions&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</span><span class="hll"><span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dataReceived&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}))</span>
+</span><span class="hll"><span class="w">      </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dataFailed&quot;</span><span class="w"> </span><span class="p">}));</span>
+</span><span class="hll"><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Main</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="mf">1</span><span class="o">/</span><span class="mf">15</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Question</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Main</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Define the <code class="docutils literal notranslate"><span class="pre">initialState</span></code> and the <code class="docutils literal notranslate"><span class="pre">reducer()</span></code> function:</p>
+<blockquote>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">  </span><span class="c1">// questions is empty array before those are fetched from JSON file</span>
+<span class="hll"><span class="w">  </span><span class="nx">questions</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span class="w">  </span><span class="c1">// instead of isLoading, isError, ... we have a status with those values:</span>
+<span class="w">  </span><span class="c1">// &quot;loading&quot;, &quot;error&quot;, &quot;ready&quot;, &quot;active&quot;, &quot;finished&quot;</span>
+<span class="hll"><span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+</span><span class="p">};</span>
+<span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dataReceived&quot;</span><span class="o">:</span>
+</span><span class="w">      </span><span class="c1">// reducer allows for setting multiple state at once (here: questions + status)</span>
+<span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">questions</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dataFailed&quot;</span><span class="o">:</span>
+</span><span class="w">      </span><span class="c1">// in case of an error during fetching data</span>
+<span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Action unknown&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>the initial state will contain the <code class="docutils literal notranslate"><span class="pre">questions</span></code> array and the <code class="docutils literal notranslate"><span class="pre">status</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">reducer</span></code> again contains a switch-statement, returning the new state
+for the types <code class="docutils literal notranslate"><span class="pre">&quot;dataReceived&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;dataFailed&quot;</span></code> (and a default error
+for unhandled action types), being able to <strong>set multiple state variables at once</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="handling-loading-error-and-ready-status">
+<h1>Handling Loading, Error and Ready Status<a class="headerlink" href="#handling-loading-error-and-ready-status" title="Link to this heading"></a></h1>
+<p>Using <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring#object_destructuring">nested destructuring</a>, we can declare the <code class="docutils literal notranslate"><span class="pre">questions</span></code> and <code class="docutils literal notranslate"><span class="pre">status</span></code> state
+variables right inside the <code class="docutils literal notranslate"><span class="pre">useReducer</span></code> statement:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">questions</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span><span class="w"> </span><span class="nx">initialState</span><span class="p">);</span>
+</span><span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and use the <code class="docutils literal notranslate"><span class="pre">status</span></code> to load some conditional JSX:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">questions</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span><span class="w"> </span><span class="nx">initialState</span><span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">numQuestions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">questions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Main</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Loader</span><span class="w"> </span><span class="p">/&gt;}</span>
+</span><span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Error</span><span class="w"> </span><span class="p">/&gt;}</span>
+</span><span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">StartScreen</span><span class="w"> </span><span class="p">/&gt;}</span>
+</span><span class="w">      </span><span class="p">&lt;/</span><span class="nt">Main</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and including a new component <code class="docutils literal notranslate"><span class="pre">StartScreen</span></code> which receives the <code class="docutils literal notranslate"><span class="pre">numQuestions</span></code>:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">StartScreen</span><span class="p">({</span><span class="w"> </span><span class="nx">numQuestions</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;start&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">Quiz</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">numQuestions</span><span class="p">}</span><span class="w"> </span><span class="nx">questions</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">mastery</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-ui&quot;</span><span class="p">&gt;</span><span class="nx">Let</span><span class="w"> </span><span class="nx">us</span><span class="w"> </span><span class="nx">start</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">StartScreen</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="start-new-quiz">
+<h1>Start new quiz<a class="headerlink" href="#start-new-quiz" title="Link to this heading"></a></h1>
+<p>In order to start a quiz, a question must be displayed. So adding another conditional
+rendering using a new <code class="docutils literal notranslate"><span class="pre">Question</span></code> component:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">questions</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span><span class="w"> </span><span class="nx">initialState</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">numQuestions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">questions</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+<span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Main</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Loader</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Error</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+</span><span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">StartScreen</span><span class="w"> </span><span class="na">numQuestions</span><span class="o">=</span><span class="p">{</span><span class="nx">numQuestions</span><span class="p">}</span><span class="w"> </span><span class="na">dispatch</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="hll"><span class="w">        </span><span class="p">)}</span>
+</span><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Question</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Main</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>we pass the <code class="docutils literal notranslate"><span class="pre">dispatch</span></code> function as prop, since the <code class="docutils literal notranslate"><span class="pre">Question</span></code> component
+needs to call it, changing the <code class="docutils literal notranslate"><span class="pre">status</span></code> state when clicking the <em>Start</em>-Button</p></li>
+</ul>
+<p>Next we need an additional handler inside the <code class="docutils literal notranslate"><span class="pre">reducer</span></code> function naming the
+<em>action</em> <code class="docutils literal notranslate"><span class="pre">&quot;start&quot;</span></code>:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dataReceived&quot;</span><span class="o">:</span>
+<span class="w">      </span><span class="c1">// reducer allows for setting multiple state at once (here: questions + status)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">questions</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dataFailed&quot;</span><span class="o">:</span>
+<span class="w">      </span><span class="c1">// in case of an error during fetching data</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;start&quot;</span><span class="o">:</span>
+</span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Action unknown&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">StartScreen</span></code> component, the button needs to call the <code class="docutils literal notranslate"><span class="pre">dispatch</span></code> function
+with the new type:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">StartScreen</span><span class="p">({</span><span class="w"> </span><span class="nx">numQuestions</span><span class="p">,</span><span class="w"> </span><span class="nx">dispatch</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;start&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">Quiz</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">numQuestions</span><span class="p">}</span><span class="w"> </span><span class="nx">questions</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">mastery</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-ui&quot;</span>
+<span class="hll"><span class="w">        </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;start&quot;</span><span class="w"> </span><span class="p">})}</span>
+</span><span class="w">      </span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Let</span><span class="w"> </span><span class="nx">us</span><span class="w"> </span><span class="nx">start</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">StartScreen</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>And finally, creating the new <code class="docutils literal notranslate"><span class="pre">Question</span></code> component:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Question</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Question</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Question</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="188_manage_state_with_usereducer.html" class="btn btn-neutral float-left" title="Managing State with useReducer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="194_display_question.html" class="btn btn-neutral float-right" title="Displaying Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 11, 2026</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

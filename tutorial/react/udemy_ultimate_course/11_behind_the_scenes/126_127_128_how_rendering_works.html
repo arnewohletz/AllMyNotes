@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    
+    <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How rendering works &mdash; All-My-Notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/thebelab-helper.js"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f0731925"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="next" title="How diffing works" href="129_130_how_diffing_works.html" />
+    <link rel="prev" title="Components, Instances and Elements" href="124_125_component_instance_element.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/symbola" type="text/css"/>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a><div id="docsearch"></div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../java_script/alfatraining/index.html">JavaScript (alfatraining)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">The Ultimate React Course</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-3-first-look">Chapter 3: First Look</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-5-components-props-and-jsx">Chapter 5: Components, Props and JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-6-state-events-and-forms-interactive-components">Chapter 6: State, Events and Forms: Interactive Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-7-thinking-react-state-management">Chapter 7: Thinking React: State Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-10-thinking-in-react-components-composition-and-reusability">Chapter 10: Thinking in React: Components, Composition and Reusability</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#chapter-11-how-react-works-behind-the-scenes">Chapter 11: How React works behind the scenes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="124_125_component_instance_element.html">Components, Instances and Elements</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How rendering works</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#trigger">Trigger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#render-phase">Render Phase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commit-phase">Commit Phase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#browser-paint">Browser Paint</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="129_130_how_diffing_works.html">How diffing works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="129_130_how_diffing_works.html#the-key-prop">The key prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="134_render_logic.html">Rules for Render Logic: Pure Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="135_136_state_update_batching.html">State Update Batching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="137_how_events_work.html">How Events Works in React</a></li>
+<li class="toctree-l3"><a class="reference internal" href="138_framework_vs_library.html">Framework vs. Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="139_practical_summary.html">Practical summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-12-effects-and-data-fetching">Chapter 12: Effects and Data Fetching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-13-custom-hooks-refs-and-more-state">Chapter 13: Custom Hooks, Refs and More State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-16-the-advanced-usereducer-hook">Chapter 16: The Advanced useReducer Hook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-17-react-router-building-single-page-applications-spa">Chapter 17: React Router - Building Single-Page Applications (SPA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#chapter-18-advanced-state-management-the-context-api">Chapter 18: Advanced State Management: The Context API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../shell_scripting/index.html">Shell Scripting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/firefox/index.html">Firefox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/games/index.html">Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/jenkins/index.html">Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/macos/index.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/shell_scripting/index.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/software_design/index.html">Software Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/testing/index.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/windows/index.html">Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/coding_fonts.html">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/conda_commands.html">conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/docker/index.html">Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/java/index.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/kubernetes.html">Kubectl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/logitech_k860.html">Logitech K860 - Special keys </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/network/index.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/pycharm/index.html">Pycharm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/rst_sphinx.html">reStructuredText &amp; Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/shell_scripting.html">Shell Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/sqlite/index.html">SQLite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/vs_code/index.html">VS Code</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">All-My-Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">The Ultimate React Course</a></li>
+      <li class="breadcrumb-item active">How rendering works</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/tutorial/react/udemy_ultimate_course/11_behind_the_scenes/126_127_128_how_rendering_works.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-rendering-works">
+<h1>How rendering works<a class="headerlink" href="#how-rendering-works" title="Link to this heading"></a></h1>
+<p>Rendering happens inside React, it is <strong>not</strong> about displaying elements
+on the screen, hence does <strong>not</strong> produce visual changes.</p>
+<figure class="align-default" id="id1">
+<img alt="../../../../_images/rendering_phases.jpg" src="../../../../_images/rendering_phases.jpg" />
+<figcaption>
+<p><span class="caption-text">How components are displayed on the screen</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="trigger">
+<h2>Trigger<a class="headerlink" href="#trigger" title="Link to this heading"></a></h2>
+<p>Two situations trigger a render:</p>
+<ol class="arabic simple">
+<li><p><strong>Initial render</strong> of application</p></li>
+<li><p><strong>State is updated</strong> in one or more component instances (<strong>re-render</strong>)</p></li>
+</ol>
+<ul class="simple">
+<li><p>The render process is triggered for the <strong>entire application</strong> (not just a single component).</p></li>
+<li><p>A render is <strong>not</strong> triggered immediately but <strong>scheduled</strong> when the JS engine has
+some “free time”.</p></li>
+</ul>
+</section>
+<section id="render-phase">
+<h2>Render Phase<a class="headerlink" href="#render-phase" title="Link to this heading"></a></h2>
+<p>Rendering is <strong>not</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>updating the screen / DOM</p></li>
+<li><p>completely discarding the old view (DOM)</p></li>
+</ul>
+</div></blockquote>
+<p>Rendering is</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Call component functions, which produce React Elements</p></li>
+<li><p>These are put into the <strong>virtual DOM</strong></p></li>
+</ol>
+</div></blockquote>
+<p>The virtual DOM is a React Element tree, containing all elements of all instances
+in the component tree. Creating a React Element tree is “cheap”, as it is “only”
+generating a JavaScript object.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>React officially does no longer uses the term <em>virtual DOM</em>, but calls it
+React Element Tree.</p>
+<p>The <em>virtual DOM</em> has nothing to do with the <em>shadow DOM</em>.</p>
+</div>
+<p>On <em>initial render</em> the element tree is initially created (by calling each instance’s
+rendering methods).</p>
+<p>On <em>re-render</em> the changed element is re-rendered, creating a <strong>new React Element Tree</strong>.
+The re-render also applies to <strong>all child components</strong> of the changed element, no
+matter if those haven’t changed (React doesn’t know that).</p>
+<figure class="align-default" id="id2">
+<img alt="../../../../_images/react_element_tree.jpg" src="../../../../_images/react_element_tree.jpg" />
+<figcaption>
+<p><span class="caption-text">Initial Rendering &amp; Re-Render</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The new <em>virtual DOM</em> is then reconciled using the <em>React Fiber</em>, which is a
+<a class="reference external" href="https://www.geeksforgeeks.org/reactjs/reactjs-reconciliation/">reconciler</a> tool. It forms the <strong>Fibre tree</strong> out of the React Element Tree.
+On <em>initial rendering</em> a initial fibre tree is created. On <em>re-render</em> a new
+fibre tree is created from the changed React Element Tree and the existing Fibre
+tree via <em>diffing</em>. This generates an <strong>updated Fibre tree</strong>.</p>
+<figure class="align-default" id="id3">
+<img alt="../../../../_images/render_phase.jpg" src="../../../../_images/render_phase.jpg" />
+<figcaption>
+<p><span class="caption-text">Render Phase</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Why not update the entire DOM whenever a state change happens?</p>
+<ol class="arabic simple">
+<li><p>writing to the DOM is (relatively) <strong>slow</strong>: cannot write the entire <em>virtual DOM</em>
+to the actual DOM on each re-render</p></li>
+<li><p>usually only a <strong>small part of the DOM</strong> needs to be updated (React tries to
+<strong>reuse</strong> as much of the existing DOM as possible)</p></li>
+</ol>
+<p>Reconciliation:</p>
+<blockquote>
+<div><p>Deciding which DOM elements actually need to be inserted, deleted or updated,
+in order to reflect the latest changes.</p>
+<p>The <em>reconciler</em> is the “heart” of React, allowing us to never touch the
+actual DOM.</p>
+</div></blockquote>
+<p>Fibre:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Creates a <em>fibre tree</em> out of the React element tree</p></li>
+<li><p>Fibre tree: internal tree that has a “fibre” for each component instance
+and also DOM elements (like <code class="docutils literal notranslate"><span class="pre">h3</span></code> and <code class="docutils literal notranslate"><span class="pre">button</span></code>)</p></li>
+<li><p>Fibers are <strong>not</strong> re-created on every render (never destroyed)</p></li>
+<li><p>Fibers allow storing <em>state</em>, <em>props</em>, <em>side effects</em>, <em>hooks</em></p></li>
+<li><p>Each fibre contains a <em>queue of work</em>, which is filled with tasks during the
+reconciliation, that fibre is supposed to do, like updating state, updating refs,
+running side effect, DOM updates (a fibre therefor is also defined as <em>unit of work</em>)</p></li>
+<li><p>Fibre tree relations differ: first child has connection to parents, all other
+children only to the previous sibling –&gt; <em>linked list</em> structure (allows
+faster processing)</p></li>
+<li><p>As fibres are <em>queues of work</em>, they can be executed <strong>asynchronously</strong> –&gt;
+rendering process can be split into chunks, tasks can be prioritized and
+work can be <strong>paused</strong>, <strong>reused</strong> or <strong>thrown away</strong> (happens behind-the-scenes)</p></li>
+<li><p>asynchronous work allows for <strong>concurrent features</strong> like <code class="docutils literal notranslate"><span class="pre">Suspense</span></code> or
+transitions. Also, long renders <strong>won’t block</strong> the JS engine</p></li>
+</ul>
+<figure class="align-default" id="id4">
+<img alt="../../../../_images/fiber.jpg" src="../../../../_images/fiber.jpg" />
+<figcaption>
+<p><span class="caption-text">Fibre</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p>Example:</p>
+<figure class="align-default" id="id5">
+<img alt="../../../../_images/reconciliation_example.jpg" src="../../../../_images/reconciliation_example.jpg" />
+<figcaption>
+<p><span class="caption-text">Reconciliation in Action</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>On state change (<code class="docutils literal notranslate"><span class="pre">showModal</span> <span class="pre">=</span> <span class="pre">false</span></code>):</p>
+<ol class="arabic">
+<li><p>React generates a <em>new virtual DOM</em> (re-render)</p></li>
+<li><p>Fibre navigates over the <em>current fibre tree</em> and compares it to the <em>new virtual DOM</em>
+(diffing) producing a <em>updated fibre tree</em> (called <code class="docutils literal notranslate"><span class="pre">WorkInProgress</span></code>) (reconciliation)</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><em>Diffing</em> is the process of comparing elements based on their position in the tree.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>All marked-for-change elements are put in a <strong>list of effects</strong> (this will be
+used in the <em>Commit</em> phase to mutate the DOM)</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <em>list of effects</em> are be consumed by <a class="reference external" href="https://react.dev/reference/react-dom">ReactDOM</a>  library in the <em>Commit</em> phase.
+Alternatively, it can also be fed to a different <strong>renderers</strong> (though they don’t
+render, but commit) for a different <em>platform</em> (“hosts”), which is not part of this
+course. An example is <a class="reference external" href="https://reactnative.dev/">React Native</a> for building iOS and Android apps, <a class="reference external" href="https://www.remotion.dev/">Remotion</a>
+to create videos or other renderers for Word, PDF or Figma documents.</p>
+<p>That is why we import both React and ReactDom inside the <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-dom/client&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="commit-phase">
+<h2>Commit Phase<a class="headerlink" href="#commit-phase" title="Link to this heading"></a></h2>
+<p>The <em>list of effects</em> is by React to write to the DOM, insert, delete and update
+DOM elements (it “flushes” to the DOM).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This phase is executed by the <a class="reference external" href="https://react.dev/reference/react-dom">ReactDOM</a> library, not React itself (which never
+touches the DOM).</p>
+</div>
+<p><strong>Commit is synchronous</strong>: DOM is updated in one go, can’t be interrupted. Necessary
+to not show partial results, ensuring consistency of the UI -&gt; it’s the main reason
+why <em>rendering</em> and <em>commit</em> are separate phases.</p>
+<p>After commit phase completes, the <code class="docutils literal notranslate"><span class="pre">workInProgress</span></code> fibre tree becomes the <code class="docutils literal notranslate"><span class="pre">current</span></code>
+tree <strong>for the next cycle</strong>.</p>
+</section>
+<section id="browser-paint">
+<h2>Browser Paint<a class="headerlink" href="#browser-paint" title="Link to this heading"></a></h2>
+<p>The browser notices DOM changes and repaints the screen. Is done entirely by the
+browser.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="124_125_component_instance_element.html" class="btn btn-neutral float-left" title="Components, Instances and Elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="129_130_how_diffing_works.html" class="btn btn-neutral float-right" title="How diffing works" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+      <div class="lastupdate">
+        This page was last updated on
+        <span class="update_date">May 11, 2026</span>.
+      </div>
+    
+    <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
+
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
