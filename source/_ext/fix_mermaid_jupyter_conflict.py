@@ -10,6 +10,11 @@ This is a custom Sphinx extension that uses the app object to add custom HTML to
 We use the `html-page-context` event to modify the context of each HTML page before it is rendered,
 allowing for the injection of custom scripts. The function `add_mermaid_js` adds the Mermaid.js
 script tags to the HTML context.
+
+UPDATE 2026/06:
+Extension is not needed anymore. Issue between jupyther and mermaid seem fixed now.
+Tested with jupyter-sphinx==0.5.3, nbsphinx==0.9.8 and sphinxcontrib-mermaid==2.0.2.
+Will keep this file as reference but disabled extension in conf.py.
 """
 from sphinx.application import Sphinx
 

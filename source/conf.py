@@ -29,7 +29,6 @@ version = 'stable'
 # the 'fix_mermaid_jupyter_conflict' extension (found in source/_ext directory)
 extensions = [
     'fix_docsearch_not_found_error',
-    'fix_mermaid_jupyter_conflict',
     'jupyter_sphinx',
     'nbsphinx',
     'sphinx_copybutton',
@@ -123,6 +122,9 @@ except locale.Error:
     locale.setlocale(locale.LC_TIME, '')
 
 gitstamp_fmt = "%b %d, %Y"   # Date format for git timestamps
+
+# sphinxcontrib.mermaid
+mermaid_dark_theme = "default"
 
 # -- Options for HTML output -------------------------------------------------
 
