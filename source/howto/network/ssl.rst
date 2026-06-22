@@ -39,7 +39,7 @@ Resolve SSL issues
     #. Open the webpage of the remote git service (for example
        ``https://github.com``).
     #. `Find out the ROOT CA certificate`_ used by the website.
-    #. Open the certificate manager (:kbd:`Win + R`, type ``certmgr.msc`` and
+    #. Open the certificate manager (:kbd:`Win+R`, type ``certmgr.msc`` and
        confirm).
     #. Under *Trusted Root Certification Authorities / Certificates*, check if
        if the certificate of the website is listed (it shouldn't).

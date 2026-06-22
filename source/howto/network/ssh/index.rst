@@ -7,7 +7,7 @@ SSH
 
     * Windows: In Explorer, select the *View* pane and check *Hidden items*
     * Linux (Ubuntu): In File Manager, select *View / Show Hidden Files*
-    * macOS: In Finder, hit :kbd:`Shift` + :kbd:`Cmd` + :kbd:`.` to show/hide hidden
+    * macOS: In Finder, hit :kbd:`Shift+Cmd +.` to show/hide hidden
       directories and files.
 
 .. toctree::

@@ -22,7 +22,7 @@ Inside the new screen start the HTTP server via
   from 0 to 1023 are reserved for system services) and 65535
   (as long as no other service already uses that port)
 
-To switch back to the original window, type :kbd:`Ctrl + A` followed by a
+To switch back to the original window, type :kbd:`Ctrl+A` followed by a
 simple :kbd:`d` (for detach). See :ref:`screen reference <gnu_screen_reference>`
 for more info.
 
