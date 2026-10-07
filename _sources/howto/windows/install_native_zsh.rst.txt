@@ -204,8 +204,8 @@ until a pressed character appeared on the terminal.
         # zsh-autosuggestions
         source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#. If you start the *git-bash* now, you will notice that :kbd:`Ctrl + Left` or
-   :kbd:`Ctrl + Right` no longer jump back and forth to the next or previous
+#. If you start the *git-bash* now, you will notice that :kbd:`Ctrl+Left` or
+   :kbd:`Ctrl+Right` no longer jump back and forth to the next or previous
    entered word in the current line. To fix that, we create a new file ``~/.bindings``
    and put in this content:
 
@@ -220,10 +220,10 @@ until a pressed character appeared on the terminal.
 
    This will enable the following shortcuts:
 
-    * :kbd:`Ctrl + Left`: Jump to beginning of previous word
-    * :kbd:`Ctrl + Right`: Jump to beginning of next word
-    * :kbd:`Alt + Left`: Jump to beginning of the line
-    * :kbd:`Alt + Right`: Jump to end of the line
+    * :kbd:`Ctrl+Left`: Jump to beginning of previous word
+    * :kbd:`Ctrl+Right`: Jump to beginning of next word
+    * :kbd:`Alt+Left`: Jump to beginning of the line
+    * :kbd:`Alt+Right`: Jump to end of the line
 
    Open ``.zshrc`` and add this line:
 

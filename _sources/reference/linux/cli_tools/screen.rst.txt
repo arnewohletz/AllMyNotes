@@ -24,7 +24,7 @@ Switch between original window and screens
 ------------------------------------------
 Screen --> Original (Detach)
 ````````````````````````````
-To switch back to the original window, type :kbd:`Ctrl + A` followed by a
+To switch back to the original window, type :kbd:`Ctrl+A` followed by a
 :kbd:`d` (for detach).
 
 Original --> Screen (Re-attach)
@@ -48,7 +48,7 @@ The status shows *ATTACHED* if the screen in attached to your terminal, or
 
 Kill a screen
 -------------
-To kill the currently attached screen, type :kbd:`Ctrl + A` followed by a
+To kill the currently attached screen, type :kbd:`Ctrl+A` followed by a
 :kbd:`k` (for kill).
 
 Alternatively, while not being detached to any screen, kill a screen via

@@ -26,21 +26,21 @@ iTerm does not feature shortcuts for moving word-by-word or to the end or beginn
     +-----------------------+----------------------+-----------+--------------------------------+
     | Key Mapping           | Action               | Value     | Does what?                     |
     +=======================+======================+===========+================================+
-    | :kbd:`Alt + Left`     | Send Escape Sequence | b         | Jump one word to the left      |
+    | :kbd:`Alt+Left`       | Send Escape Sequence | b         | Jump one word to the left      |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Alt + Right`    | Send Escape Sequence | f         | Jump one word to the right     |
+    | :kbd:`Alt+Right`      | Send Escape Sequence | f         | Jump one word to the right     |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Alt + Del<-`    | Send Hex Code        | 0x17      | Delete left standing word      |
+    | :kbd:`Alt+Del<-`      | Send Hex Code        | 0x17      | Delete left standing word      |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Alt + Del->`    | Send Escape Sequence | d         | Delete right standing word     |
+    | :kbd:`Alt+Del->`      | Send Escape Sequence | d         | Delete right standing word     |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Left`     | Send Hex Code        | 0x01      | Move to beginning of the row   |
+    | :kbd:`Cmd+Left`       | Send Hex Code        | 0x01      | Move to beginning of the row   |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Right`    | Send Hex Code        | 0x05      | Move to end of the row         |
+    | :kbd:`Cmd+Right`      | Send Hex Code        | 0x05      | Move to end of the row         |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Del<-` \* | Send Hex Code        | 0x18 0x7f | Delete current row             |
+    | :kbd:`Cmd+Del<-` \*   | Send Hex Code        | 0x18 0x7f | Delete current row             |
     +-----------------------+----------------------+-----------+--------------------------------+
-    | :kbd:`Cmd + Del->`    | Send Hex Code        | 0x0b      | Delete everything after cursor |
+    | :kbd:`Cmd+Del->`      | Send Hex Code        | 0x0b      | Delete everything after cursor |
     +-----------------------+----------------------+-----------+--------------------------------+
 
     \* need to add this to your `~/.zshrc` or `~/.zprofile` to make it work:
