@@ -49,6 +49,7 @@ Table of Contents
     reference/linux/index.rst
     reference/logitech_k860.rst
     reference/network/index.rst
+    reference/oh-my-zsh.rst
     reference/others/index.rst
     reference/pycharm/index.rst
     reference/python/index.rst
