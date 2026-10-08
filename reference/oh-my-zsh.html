@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
     
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coding fonts &mdash; All-My-Notes  documentation</title>
+  <title>Oh-My-Zsh - Commands &mdash; All-My-Notes  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
@@ -41,8 +41,8 @@
       <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="next" title="conda" href="conda_commands.html" />
-    <link rel="prev" title="Install zsh (without WSL)" href="../howto/windows/install_native_zsh.html" /> 
+    <link rel="next" title="Others" href="others/index.html" />
+    <link rel="prev" title="HTTPS - How does it work?" href="network/https.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,7 +90,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Coding fonts </a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding_fonts.html">Coding fonts </a></li>
 <li class="toctree-l1"><a class="reference internal" href="conda_commands.html">conda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docker/index.html">Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git/index.html">git</a></li>
@@ -99,7 +99,10 @@
 <li class="toctree-l1"><a class="reference internal" href="linux/index.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logitech_k860.html">Logitech K860 - Special keys </a></li>
 <li class="toctree-l1"><a class="reference internal" href="network/index.html">Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oh-my-zsh.html">Oh-My-Zsh - Commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Oh-My-Zsh - Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plugins">Plugins</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="others/index.html">Others</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pycharm/index.html">Pycharm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python/index.html">Python</a></li>
@@ -123,9 +126,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Coding fonts </li>
+      <li class="breadcrumb-item active">Oh-My-Zsh - Commands</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/reference/coding_fonts.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/reference/oh-my-zsh.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -133,43 +136,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="coding-fonts">
-<h1>Coding fonts <a class="footnote-reference brackets" href="#footcite-coding-font" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#coding-fonts" title="Link to this heading"></a></h1>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>To install these fonts via <a class="reference external" href="https://brew.sh/">Homebrew</a>, first run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>tap<span class="w"> </span>homebrew/cask-fonts
+  <section id="oh-my-zsh-commands">
+<h1>Oh-My-Zsh - Commands<a class="headerlink" href="#oh-my-zsh-commands" title="Link to this heading"></a></h1>
+<section id="plugins">
+<h2>Plugins<a class="headerlink" href="#plugins" title="Link to this heading"></a></h2>
+<p>List all enabled plugins</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ echo $plugins
 </pre></div>
 </div>
-</div>
-<p><strong>B612 Mono</strong> (<a class="reference external" href="https://b612-font.com/">https://b612-font.com/</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>font-b612
+<p>List all available built-in plugins</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ omz plugin list
 </pre></div>
 </div>
-<p>👍 👍 <strong>Iosevka Mono</strong> (<a class="reference external" href="https://github.com/be5invis/Iosevka">https://github.com/be5invis/Iosevka</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>font-iosevska
+<p>Enable and disable a plugin</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ omz plugin enable &lt;plugin&gt;
+$ omz plugin disable &lt;plugin&gt;
 </pre></div>
 </div>
-<p>👍 <strong>Sudo</strong> (<a class="reference external" href="https://github.com/jenskutilek/sudo-font">https://github.com/jenskutilek/sudo-font</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>font-sudo
+<p>Get plugin information</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ omz plugin info &lt;plugin&gt;
 </pre></div>
 </div>
-<div class="docutils container" id="id2">
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="footcite-coding-font" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Philipp Ascany. Choosing the best coding font for programming. 2023. URL: <a class="reference external" href="https://realpython.com/coding-font/">https://realpython.com/coding-font/</a> (visited on 2023-09-07).</p>
-</aside>
-</aside>
-</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../howto/windows/install_native_zsh.html" class="btn btn-neutral float-left" title="Install zsh (without WSL)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="conda_commands.html" class="btn btn-neutral float-right" title="conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="network/https.html" class="btn btn-neutral float-left" title="HTTPS - How does it work?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="others/index.html" class="btn btn-neutral float-right" title="Others" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

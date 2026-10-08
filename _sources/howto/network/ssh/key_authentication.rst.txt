@@ -182,12 +182,28 @@ Server: Set-up key authentication
                 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
                 ssh-add -l >/dev/null || ssh-add
 
-
         In case you are using a private key using a different name and/or path, you must pass it:
 
         .. code-block:: bash
 
             $ ssh-add /path/to/custom_private_key_file
+
+    .. hint::
+
+        On Windows, in case you see this message:
+
+        .. code-block:: none
+
+            Error connecting to agent: No such file or directory
+
+        you must manually start the SSH Agent Service first via
+
+        .. code-block:: none
+
+            powershell.exe Set-Service -Name ssh-agent -StartupType Manual
+            powershell.exe Start-Service ssh-agent
+
+        from an administrator shell.
 
 #. On the **client**, open the public key file (e.g. id_ed25519.pub) and copy the entire content into the
    ``authorized_keys`` file on the **server** (should be a single line starting with *ssh-rsa* and ending
