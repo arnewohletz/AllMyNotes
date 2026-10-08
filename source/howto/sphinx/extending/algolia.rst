@@ -191,7 +191,7 @@ Algolia Config File: https://docsearch.algolia.com/docs/legacy/config-file/
 Algolia self run DocSearch: https://docsearch.algolia.com/docs/legacy/run-your-own/
 
 Use a sitemap.xml: https://docsearch.algolia.com/docs/legacy/tips/
-Tutorial: https://brunoscheufler.com/blog/2021-08-08-setting-up-algolia-docsearch-with-nextjs
+Tutorial: https://brunoscheufler.com/2021-08-08-setting-up-algolia-docsearch-with-nextjs
 Tutorial 2: https://www.howtocode.io/posts/algolia/how-to-setup-algolia-doc-search
 
 Maybe switch to v3: https://docsearch.algolia.com/docs/what-is-docsearch/

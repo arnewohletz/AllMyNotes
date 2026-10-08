@@ -319,7 +319,7 @@ Meist besser an einer Hauptversion festzuhalten, da sich Teile eines Moduls in
 zukünftigen Hauptversionen ändern können - evtl. gibt es bestimmte Modulfunktion
 in Folgeversion nicht mehr.
 
-Node.JS Module müssen mit Semantic Versioning benannt sein (http://semver.org/).
+Node.JS Module müssen mit Semantic Versioning benannt sein (https://semver.org/).
 
 **Module für eigene Projekte**
 

@@ -1,12 +1,12 @@
 Customize via settings.json
 ===========================
 VS-Code puts every change to the default configuration in a ``settings.json`` file.
-Multiple configurations may exists, which which override each other. The order
-is defined in the `VS settings precendence`_. The order, from most general to
+Multiple configurations may exists, which override each other. The order
+is defined in the `VS settings precedence`_. The order, from most general to
 most specific, where more general settings get overwritten by more specifics settings,
 is:
 
-#. Default settings  --> not configured (has no ``settings.json`` file)
+#. Default settings --> not configured (has no ``settings.json`` file)
 #. User settings --> defined in each profile (``Code/User/profiles/<profile ID>/settings.json``)
 #. Remote settings --> applied to a remote machine
 #. Workspace settings --> applied to opened folder or workspace (``<workspace>/.vscode/settings.json``)
@@ -52,4 +52,4 @@ profile.
     to all profiles from the settings menu. Click the gear button and select
     ``Apply Settings to all Profiles``.
 
-.. _VS settings precendence: https://code.visualstudio.com/docs/getstarted/settings#_settings-precedence
+.. _VS settings precedence: https://code.visualstudio.com/docs/configure/settings#_settings-precedence
