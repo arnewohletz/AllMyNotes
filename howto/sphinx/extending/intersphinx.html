@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -169,7 +169,7 @@ contain all navigable references of that Sphinx documentation.</p>
 <div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="o">...</span>
-    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span>
+    <span class="s1">'sphinx.ext.intersphinx'</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -181,12 +181,12 @@ external documentation to be used by intersphinx must be declared in the
 <div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1"># use default objects.inv (here: https:/example.url/objects.inv)</span>
-    <span class="s1">&#39;basic_external_doc&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https:/example.url&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="s1">'basic_external_doc'</span><span class="p">:</span> <span class="p">(</span><span class="s1">'https:/example.url'</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
     <span class="c1"># use custom objects file (here: https:/example.url/custom-inv.txt)</span>
-    <span class="s1">&#39;custom_objects_file_doc&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https:/example.url&#39;</span><span class="p">,</span> <span class="s1">&#39;custom-inv.txt&#39;</span><span class="p">)</span>
+    <span class="s1">'custom_objects_file_doc'</span><span class="p">:</span> <span class="p">(</span><span class="s1">'https:/example.url'</span><span class="p">,</span> <span class="s1">'custom-inv.txt'</span><span class="p">)</span>
     <span class="c1"># multiple objects files (iterated from left to right, use first valid one)</span>
     <span class="c1"># here: local objects file --(if not found)--&gt; default</span>
-    <span class="s1">&#39;basic_with_local_objects_file_doc&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https:/example.url&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;../local/objects.inv&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="s1">'basic_with_local_objects_file_doc'</span><span class="p">:</span> <span class="p">(</span><span class="s1">'https:/example.url'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'../local/objects.inv'</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -334,7 +334,7 @@ For example:</p>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text">conf.py</span><a class="headerlink" href="#id12" title="Link to this code"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">primary_domain</span> <span class="o">=</span> <span class="s1">&#39;cpp&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">primary_domain</span> <span class="o">=</span> <span class="s1">'cpp'</span>
 </pre></div>
 </div>
 </div>
@@ -400,7 +400,7 @@ Both are part of the <a class="reference external" href="https://www.sphinx-doc.
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

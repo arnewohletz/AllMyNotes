@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -158,12 +158,12 @@ the <em>git bash</em>.</p></li>
 <li><p>Set up new profile in Terminal and use as default. In <code class="docutils literal notranslate"><span class="pre">settings.json</span></code>, for example:</p>
 <blockquote>
 <div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;commandline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{648d1200-3839-452b-81d5-a7d238447a6c}&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;git bash&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;startingDirectory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%USERPROFILE%&quot;</span>
+<span class="w">    </span><span class="nt">"commandline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:\\Program Files\\Git\\bin\\bash.exe"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{648d1200-3839-452b-81d5-a7d238447a6c}"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git bash"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startingDirectory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%USERPROFILE%"</span>
 <span class="p">},</span>
 </pre></div>
 </div>
@@ -186,7 +186,7 @@ the <em>git bash</em>.</p></li>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Enable starship.rs
 # ------------------
-eval &quot;$(starship init zsh | sed &#39;s|/c/Program Files/starship/bin/starship.exe|starship|g&#39;)&quot;
+eval "$(starship init zsh | sed 's|/c/Program Files/starship/bin/starship.exe|starship|g')"
 </pre></div>
 </div>
 <p>to your <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;USERNAME&gt;\.zshrc</span></code> (create it, if not already existing)</p>
@@ -263,12 +263,12 @@ via the internal tool.</p>
 <li><p>Set up new profile in Terminal and use as default. In <code class="docutils literal notranslate"><span class="pre">settings.json</span></code>, for example:</p>
 <blockquote>
 <div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;commandline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{648d1200-3839-452b-81d5-a7d238447a6c}&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;git bash&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;startingDirectory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%USERPROFILE%&quot;</span>
+<span class="w">    </span><span class="nt">"commandline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:\\Program Files\\Git\\bin\\bash.exe"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{648d1200-3839-452b-81d5-a7d238447a6c}"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git bash"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startingDirectory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%USERPROFILE%"</span>
 <span class="p">},</span>
 </pre></div>
 </div>
@@ -311,7 +311,7 @@ for serious software development.</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># replace bash prompt with zsh-compatible version
 setopt prompt_subst
-PROMPT=$&#39;%{\e]0;%n@%m:%~\a%}%F{green}%n%F{red}@%F{yellow}%m %F{magenta}${MSYSTEM} %F{yellow}%~%F{cyan} %f%{%}&#39;
+PROMPT=$'%{\e]0;%n@%m:%~\a%}%F{green}%n%F{red}@%F{yellow}%m %F{magenta}${MSYSTEM} %F{yellow}%~%F{cyan} %f%{%}'
 </pre></div>
 </div>
 </div></blockquote>
@@ -327,9 +327,9 @@ suggests to add this to your <code class="docutils literal notranslate"><span cl
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-RPROMPT=&#39;${vcs_info_msg_0_}&#39;
-# PROMPT=&#39;${vcs_info_msg_0_}%# &#39;
-zstyle &#39;:vcs_info:git:*&#39; formats &#39;%b&#39;
+RPROMPT='${vcs_info_msg_0_}'
+# PROMPT='${vcs_info_msg_0_}%# '
+zstyle ':vcs_info:git:*' formats '%b'
 </pre></div>
 </div>
 </div></blockquote>
@@ -364,10 +364,10 @@ and put in this content:</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>set enable-bracketed-paste Off
 
-bindkey &#39;^[[1;5C&#39; forward-word
-bindkey &#39;^[[1;5D&#39; backward-word
-bindkey &#39;^[[1;3D&#39; beginning-of-line
-bindkey &#39;^[[1;3C&#39; end-of-line
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;3D' beginning-of-line
+bindkey '^[[1;3C' end-of-line
 </pre></div>
 </div>
 </div></blockquote>
@@ -397,9 +397,9 @@ directory:</p>
 <blockquote>
 <div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-activate Python venv if .venv directory exists</span>
 <span class="k">function</span><span class="w"> </span>cd<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">builtin</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">builtin</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VIRTUAL_ENV</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$VIRTUAL_ENV</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="c1">## If env folder is found then activate the vitualenv</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span>./.venv<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span><span class="nb">source</span><span class="w"> </span>./.venv/Scripts/activate
@@ -408,8 +408,8 @@ directory:</p>
 <span class="w">    </span><span class="c1">## check the current folder belong to earlier VIRTUAL_ENV folder</span>
 <span class="w">    </span><span class="c1"># if yes then do nothing</span>
 <span class="w">    </span><span class="c1"># else deactivate</span>
-<span class="w">      </span><span class="nv">parentdir</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VIRTUAL_ENV</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span>/<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$parentdir</span><span class="s2">&quot;</span>/*<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="nv">parentdir</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">"</span><span class="nv">$VIRTUAL_ENV</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">"</span>/<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$parentdir</span><span class="s2">"</span>/*<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span>deactivate
 <span class="w">      </span><span class="k">fi</span>
 <span class="w">  </span><span class="k">fi</span>
@@ -422,7 +422,7 @@ directory:</p>
 in this setup otherwise, such as <code class="docutils literal notranslate"><span class="pre">$HOSTNAME</span></code>:</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Manually defining env variables
-export SHELL=&quot;/usr/bin/zsh&quot;
+export SHELL="/usr/bin/zsh"
 export HOSTNAME=$(/usr/bin/hostname)
 export USER=$USERNAME
 </pre></div>
@@ -446,7 +446,7 @@ export USER=$USERNAME
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

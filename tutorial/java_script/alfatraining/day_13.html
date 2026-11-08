@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -247,7 +247,7 @@ Versionen zu unterstützen (man sieht daher oft ältere Syntax z.B. <code class=
 <p>Integration von jQuery in HTML:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="cm">&lt;!-- ... --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./libs/jquery-3.7.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"./libs/jquery-3.7.1.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -289,8 +289,8 @@ befinden.</p>
 </div>
 <p>Beispiel (über <code class="docutils literal notranslate"><span class="pre">$()</span></code>):</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_llink&quot;</span><span class="p">));</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#url_llink"</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#url_link"</span><span class="p">));</span>
 <span class="p">})</span>
 </pre></div>
 </div>
@@ -307,45 +307,45 @@ Elementen befinden mit nummerierten String Keys in (“0”, “1”, … - das 
 Match hat die “0”). Beim Zugriff über <code class="docutils literal notranslate"><span class="pre">[0]</span></code> wird die Zahl in einen String
 implizit umgewandelt und auf das Element zugegriffen.</p>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_llink&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// das Objekt wird zurückgegeben</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">]);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#url_llink"</span><span class="p">));</span><span class="w">  </span><span class="c1">// das Objekt wird zurückgegeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#url_link"</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#url_link"</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#url_link"</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#url_link"</span><span class="p">)[</span><span class="mf">0</span><span class="p">]);</span>
 </pre></div>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// auf HTML-Attribute zugreifen</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#url_link&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Attribut ausgeben</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ab jetzt mit jQuery&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Attribut setzen</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">"#url_link"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"title"</span><span class="p">));</span><span class="w">  </span><span class="c1">// Attribut ausgeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Ab jetzt mit jQuery"</span><span class="p">));</span><span class="w">  </span><span class="c1">// Attribut setzen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"title"</span><span class="p">));</span>
 
 <span class="c1">// mehrere Attribute gleichzeitig verändern</span>
 <span class="w">    </span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;jQuery&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">href</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https:/jquery.com&quot;</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"jQuery"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">href</span><span class="o">:</span><span class="w"> </span><span class="s2">"https:/jquery.com"</span>
 <span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].removeAttr()</span></code> wird ein Attribut entfernt:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Attribute entfernen</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Selektion wird im Objekt zurückgegeben</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">"title"</span><span class="p">));</span><span class="w">  </span><span class="c1">// Selektion wird im Objekt zurückgegeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"title"</span><span class="p">));</span><span class="w">  </span><span class="c1">// undefined</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].html()</span></code> wird auf den HTML-Inhalt (inkl. Markups) eines Elements
 zugegriffen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Zugriff auf Content</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">contentH1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span><span class="w">   </span><span class="c1">// &quot;Inhaltsverzeichnis&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contentH1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span><span class="w">   </span><span class="c1">// "Inhaltsverzeichnis"</span>
 
 <span class="c1">// lesend wird NUR Content des 1. selektierten Elements zurückgegeben</span>
 <span class="c1">// es hat sich erwiesen das mehr i.d.R. nicht gebraucht wird</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">contentP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Hey&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contentP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// "Hey"</span>
 
 <span class="c1">// Beim Schreiben werden ALLE selektierten Elemente überschrieben</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; Hey</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// alle p-Elemente --&gt; Hey</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; Hey</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentP</span><span class="p">);</span><span class="w">  </span><span class="c1">// alle p-Elemente --&gt; Hey</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -359,8 +359,8 @@ um z.B. alle Elemente zu überschreiben.</p>
 zugegriffen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Content ohne Markups</span>
 <span class="c1">// lesend werden ALLE selektierten Elements zurückgegeben (im Gegensatz zu .html())</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;&lt;b&gt;Content ohne Markups&lt;(p&gt;&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span><span class="w">  </span><span class="c1">// &quot;&lt;b&gt;Content ohne Markups&lt;p&gt;HeyHeyHeyHeyHey&quot;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="s2">"&lt;b&gt;Content ohne Markups&lt;(p&gt;"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span><span class="w">  </span><span class="c1">// "&lt;b&gt;Content ohne Markups&lt;p&gt;HeyHeyHeyHeyHey"</span>
 
 <span class="c1">// ebenso schreibend!</span>
 </pre></div>
@@ -384,40 +384,40 @@ zugegriffen:</p>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">$(&quot;&lt;tag&gt;:&lt;Eingrenzung&gt;&quot;)</span></code> lässt sich die Selektion eingrenzen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Selektion eingrenzen</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p:first&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p:first&quot;</span><span class="p">));</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p:first"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p:first"</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <p>Mittlerweile bietet jQuery Selektions-Methoden.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].first()</span></code> lässt sich nur das erste Element im Objekt ausgeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">html</span><span class="p">(</span><span class="nx">contentH1</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].last()</span></code> lässt sich nur das letzte Element im Objekt ausgeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">last</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">last</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].eq(index)</span></code> wird Element an index-Position zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].even(index)</span></code> werden alle Elemente an geraden index-Position zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">even</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">even</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].odd(index)</span></code> werden alle Elemente an ungeraden index-Position zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">odd</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">odd</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].&lt;some_selector&gt;.end()</span></code> wird eine Unterselektion aufgehoben und
 der vorherige Selektion von zutreffenden Elementen zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">();</span><span class="w">   </span><span class="c1">// gibt alle &lt;p&gt; Elemente zurück (hebt first() Selektion auf</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">is</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)));</span><span class="w">  </span><span class="c1">// true</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">();</span><span class="w">   </span><span class="c1">// gibt alle &lt;p&gt; Elemente zurück (hebt first() Selektion auf</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">is</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">)));</span><span class="w">  </span><span class="c1">// true</span>
 
 <span class="c1">// Kann auch verkettet werden</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">last</span><span class="p">();</span><span class="w">   </span><span class="c1">// gibt letztes &lt;p&gt; Elemente zurück</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">last</span><span class="p">();</span><span class="w">   </span><span class="c1">// gibt letztes &lt;p&gt; Elemente zurück</span>
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -427,22 +427,22 @@ zu denen eines <em>selector</em>.</p>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].has(selector)</span></code> werden nur die Elemente einer Selektion zurückgegeben,
 welche einem weiteren Selektor entsprechen:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt li-Elemente zurück, welche ul-Kinder haben</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">has</span><span class="p">(</span><span class="s2">"#"</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt li-Elemente zurück, welche ul-Kinder haben</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].filter(selector)</span></code> lassen sich die Elemente im Objekt filtern:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;.firstElement&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">".firstElement"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].not(selector)</span></code> lassen sich Elemente filtern, welche das Kriterium
 <strong>nicht</strong> erfüllen:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">not</span><span class="p">(</span><span class="s2">&quot;.firstElement&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">not</span><span class="p">(</span><span class="s2">".firstElement"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].slice(startIndex,</span> <span class="pre">endIndex)</span></code> wird ein Objekt zurückgegeben welches
 nur ein Teil der ursprünglichen Menge an Elementen hat. Der <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> ist
 in der Rückgabe <strong>nicht</strong> enthalten:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">4</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">4</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -458,11 +458,11 @@ in <strong>allen</strong> Elementen im Objekt angewandt:</p>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Elemente || DOM-Strings im DOM integrieren</span>
 <span class="c1">// Hint: Methoden werden auf ALLE Elemente im Objekt angewandt!</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.element&quot;</span><span class="p">);</span>
-<span class="nx">elem</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;before Text&lt;/p&gt;&quot;</span><span class="p">);</span>
-<span class="nx">elem</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;prepend Text&lt;/p&gt;&quot;</span><span class="p">);</span>
-<span class="nx">elem</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;append Text&lt;/p&gt;&quot;</span><span class="p">);</span>
-<span class="nx">elem</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;after Text&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">".element"</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="s2">"&lt;p&gt;before Text&lt;/p&gt;"</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">"&lt;p&gt;prepend Text&lt;/p&gt;"</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;p&gt;append Text&lt;/p&gt;"</span><span class="p">);</span>
+<span class="nx">elem</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="s2">"&lt;p&gt;after Text&lt;/p&gt;"</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -472,21 +472,21 @@ in <strong>allen</strong> Elementen im Objekt angewandt:</p>
 im Objekt ausgelesen werden. Wenn ein expliziter Style dafür vorliegt, wird dieser
 zurückgegeben, ansonsten der berechnete Style.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Style des 1. Elementes wird ermittelt</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;font-size&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;16px&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">));</span><span class="w">  </span><span class="c1">// "16px"</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].css(&quot;some-style&quot;,</span> <span class="pre">&quot;some-value&quot;)</span></code> wird ein Inline-Style an <strong>ALLE</strong>
 Elemente im Objekts zugewiesen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Einen Style setzen</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// rgb(0, 0, 255)&quot;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"background-color"</span><span class="p">,</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"background-color"</span><span class="p">));</span><span class="w">  </span><span class="c1">// rgb(0, 0, 255)"</span>
 
 <span class="c1">// Mehrere Styles setzen</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;font-size&quot;</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;20px&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w">            </span><span class="s2">&quot;10px 20px&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">border</span><span class="o">:</span><span class="w">             </span><span class="s2">&quot;1px solid green&quot;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w">    </span><span class="s2">"orange"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"font-size"</span><span class="o">:</span><span class="w">        </span><span class="s2">"20px"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w">            </span><span class="s2">"10px 20px"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">border</span><span class="o">:</span><span class="w">             </span><span class="s2">"1px solid green"</span>
 <span class="p">})</span>
 </pre></div>
 </div>
@@ -496,23 +496,23 @@ Elemente im Objekts zugewiesen:</p>
 <p>Alle unten stehende Methoden (bis auf <code class="docutils literal notranslate"><span class="pre">hasClass()</span></code>) geben das neue Objekt zurück.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].addClass()</span></code> lassen sich auf <strong>alle</strong> Elemente im Objekt ein
 weiterer Klassennamen anfügen (arbeitetet im Hintergrund mit <code class="docutils literal notranslate"><span class="pre">classList.add()</span></code>).</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">"fehler"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].removeClass()</span></code> wird ein Klassennamen für <strong>alle</strong> Elemente im Objekt
 entfernen:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">"fehler"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].toggleClass()</span></code> wird ein Klassennamen für <strong>alle</strong> Elemente im Objekt
 falls nicht vorhanden, hinzugefügt, ansonsten entfernt:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">"fehler"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].hasClass()</span></code> wird je Element im Objekt <strong>ein Boolean</strong> zurückgegeben,
 welcher besagt ob dieses Element eine Klasse hat oder nicht (jQuery handelt die
 Schleife):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">))</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;fehler&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">"fehler"</span><span class="p">))</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">"fehler"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Hier wird für alle p-Elemente ermittelt ob sie die Klasse <code class="docutils literal notranslate"><span class="pre">&quot;fehler&quot;</span></code> haben.
@@ -521,13 +521,13 @@ Falls ja, wird diese über <code class="docutils literal notranslate"><span clas
 <section id="events">
 <h2>Events<a class="headerlink" href="#events" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].on(&quot;event&quot;,</span> <span class="pre">function)</span></code> wird ein Event-Listener registriert.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Da hat was geklickt!&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Da hat was geklickt!"</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Event-Handler werden NICHT überschreiben (wirkungslos)</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Da hat doch wirklich was geklickt!&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Da hat doch wirklich was geklickt!"</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -537,7 +537,7 @@ Falls ja, wird diese über <code class="docutils literal notranslate"><span clas
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].off(&quot;event&quot;)</span></code> werden <strong>alle</strong> Event-Listener, welche auf diesem
 Event registrieren, entfernt (de-registriert).</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">"click"</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -548,11 +548,11 @@ wendet die De-Registrierung auf alle Elemente im Objekt an.</p>
 </div>
 <p>Um auf <code class="docutils literal notranslate"><span class="pre">this</span></code> zuzugreifen, muss es zunächst in ein Objekt überführt werden
 (über <code class="docutils literal notranslate"><span class="pre">$(this)</span></code>), um mit jQuery-Methoden zu arbeiten:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/2.jpg&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mouseover"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./img/2.jpg"</span><span class="p">);</span>
 <span class="p">});</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseout&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/1.jpg&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mouseout"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./img/1.jpg"</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -561,10 +561,10 @@ wendet die De-Registrierung auf alle Elemente im Objekt an.</p>
 <p><strong>Verkettung von jQuery-Methoden</strong></p>
 <p>Die <code class="docutils literal notranslate"><span class="pre">on</span></code> Methode liefert abermals das veränderte Objekt zurück, so dass direkt
 mit dieser Selektion weitergearbeitet werden kann:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/2.jpg&quot;</span><span class="p">);</span>
-<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseout&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./img/1.jpg&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mouseover"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./img/2.jpg"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"mouseout"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"src"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./img/1.jpg"</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -574,23 +574,23 @@ mit dieser Selektion weitergearbeitet werden kann:</p>
 <h2>Effekte<a class="headerlink" href="#effekte" title="Link to this heading"></a></h2>
 <p>Effekte werden innerhalb einer Funktion eines Event-Listerners definiert.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].hide()</span></code> Methode lässt sich ein Element ausblenden:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bild-ausblenden&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"#bild-ausblenden"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// deaktivieren des Standard-Verhaltens (springt zum Seitenstart)</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>Es lässt sich ein Argument in <code class="docutils literal notranslate"><span class="pre">hide()</span></code> übergeben, welcher die Geschwindigkeit
 des Ausblendens regelt (gleiches gilt für <code class="docutils literal notranslate"><span class="pre">show()</span></code>):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span><span class="w">  </span><span class="c1">// sofortiges Ausblenden (&quot;kein Effekt&quot;)</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">&quot;fast&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// schnelles Ausblenden</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// langsames Ausblenden</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="mf">5000</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5000 ms</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span><span class="w">  </span><span class="c1">// sofortiges Ausblenden ("kein Effekt")</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">"fast"</span><span class="p">);</span><span class="w">  </span><span class="c1">// schnelles Ausblenden</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">"slow"</span><span class="p">);</span><span class="w">  </span><span class="c1">// langsames Ausblenden</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="mf">5000</span><span class="p">);</span><span class="w">  </span><span class="c1">// 5000 ms</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].show()</span></code> Methode lässt sich ein Element ausblenden:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#bild-einblenden&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.bild&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"#bild-einblenden"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">".bild"</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// deaktivieren des Standard-Verhaltens (springt zum Seitenstart)</span>
 <span class="p">});</span>
 </pre></div>
@@ -600,11 +600,11 @@ des Ausblendens regelt (gleiches gilt für <code class="docutils literal notrans
 <h3>Eigene Effekte erzeugen<a class="headerlink" href="#eigene-effekte-erzeugen" title="Link to this heading"></a></h3>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].animate(object,</span> <span class="pre">time)</span></code> wird definiert, wie das Objekt am Ende des
 Effekts aussehen soll. Vom derzeitigen Zustand wird der Übergang von jQuery berechnet.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#animate&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">width</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;450px&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">fontSize</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;4em&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">opacity</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;50%&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"#animate"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">width</span><span class="o">:</span><span class="w">          </span><span class="s2">"450px"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">fontSize</span><span class="o">:</span><span class="w">       </span><span class="s2">"4em"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">opacity</span><span class="o">:</span><span class="w">        </span><span class="s2">"50%"</span>
 <span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2500</span><span class="p">)</span>
 <span class="p">})</span>
 </pre></div>
@@ -615,21 +615,21 @@ von 2500 ms.</p>
 Objekt aus dem sichtbaren Bereich entfernt und innerhalb von 5 Sekunden von links
 in den sichtbaren Bereich verschoben.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">styleStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w">           </span><span class="s2">&quot;relative&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">left</span><span class="o">:</span><span class="w">               </span><span class="s2">&quot;-2000px&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w">           </span><span class="s2">"relative"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">left</span><span class="o">:</span><span class="w">               </span><span class="s2">"-2000px"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">opacity</span><span class="o">:</span><span class="w">            </span><span class="mf">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">color</span><span class="o">:</span><span class="w">              </span><span class="s2">&quot;#fff&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w">            </span><span class="s2">&quot;10px 20px&quot;</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w">    </span><span class="s2">"blue"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">color</span><span class="o">:</span><span class="w">              </span><span class="s2">"#fff"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">padding</span><span class="o">:</span><span class="w">            </span><span class="s2">"10px 20px"</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">styleEnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">left</span><span class="o">:</span><span class="w">               </span><span class="mf">0</span><span class="p">,</span><span class="w">  </span><span class="c1">// &quot;0px&quot;</span>
+<span class="w">    </span><span class="nx">left</span><span class="o">:</span><span class="w">               </span><span class="mf">0</span><span class="p">,</span><span class="w">  </span><span class="c1">// "0px"</span>
 <span class="w">    </span><span class="nx">opacity</span><span class="o">:</span><span class="w">            </span><span class="mf">1</span>
 <span class="p">};</span>
 
 <span class="c1">// Start and End in one line</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.element&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="nx">styleStart</span><span class="p">).</span><span class="nx">animate</span><span class="p">(</span><span class="nx">styleEnd</span><span class="p">,</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".element"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="nx">styleStart</span><span class="p">).</span><span class="nx">animate</span><span class="p">(</span><span class="nx">styleEnd</span><span class="p">,</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -649,7 +649,7 @@ in den sichtbaren Bereich verschoben.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

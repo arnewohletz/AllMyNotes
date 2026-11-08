@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -156,30 +156,30 @@ defining functions to be called from within step definitions. It is written in
 <h2>A basic pipeline<a class="headerlink" href="#a-basic-pipeline" title="Link to this heading"></a></h2>
 <p>A basic structure of a Jenkinsfile using a <em>declarative pipeline</em> may look like this:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_CHOICES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">,</span>
-<span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span>
-<span class="o">].</span><span class="na">join</span><span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="s2">"CNTTS"</span><span class="o">,</span>
+<span class="w">    </span><span class="s2">"CNTTS-VVT"</span>
+<span class="o">].</span><span class="na">join</span><span class="o">(</span><span class="s2">"\n"</span><span class="o">)</span>
 
 <span class="kd">final</span><span class="w"> </span><span class="kt">def</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_SUFFIX_MAP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cntts&quot;</span><span class="o">,</span>
-<span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;vvt&quot;</span>
+<span class="w">    </span><span class="s2">"CNTTS"</span><span class="o">:</span><span class="w"> </span><span class="s2">"cntts"</span><span class="o">,</span>
+<span class="w">    </span><span class="s2">"CNTTS-VVT"</span><span class="o">:</span><span class="w"> </span><span class="s2">"vvt"</span>
 <span class="o">]</span>
 
 <span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="s1">&#39;linux-jenkins&#39;</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="s1">'linux-jenkins'</span>
 <span class="w">    </span><span class="o">}</span>
 
 <span class="w">    </span><span class="n">options</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">timeout</span><span class="o">(</span><span class="nl">time:</span><span class="w"> </span><span class="mi">10</span><span class="o">,</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="s1">&#39;MINUTES&#39;</span><span class="o">)</span>
+<span class="w">        </span><span class="n">timeout</span><span class="o">(</span><span class="nl">time:</span><span class="w"> </span><span class="mi">10</span><span class="o">,</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="s1">'MINUTES'</span><span class="o">)</span>
 <span class="w">        </span><span class="n">timestamps</span><span class="o">()</span>
 <span class="w">    </span><span class="o">}</span>
 
 <span class="w">    </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="n">choice</span><span class="o">(</span>
-<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT&#39;</span><span class="o">,</span>
-<span class="w">            </span><span class="nl">choices:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_CHOICES}&quot;</span><span class="o">,</span>
-<span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s2">&quot;Product to be built.&quot;</span>
+<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'PRODUCT'</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">choices:</span><span class="w"> </span><span class="s2">"${PRODUCT_CHOICES}"</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s2">"Product to be built."</span>
 <span class="w">        </span><span class="o">)</span>
 <span class="w">    </span><span class="o">}</span>
 
@@ -206,7 +206,7 @@ build parameters.</p>
 <p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#environment">environment</a> section allows for defining environment variables, only existing
 within the scope of the file. Example:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">REPO_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://aac-srv-bitbucket-coretech.cerence.net/scm/trng21/cerence_neural_tts.git&quot;</span>
+<span class="w">    </span><span class="n">REPO_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://aac-srv-bitbucket-coretech.cerence.net/scm/trng21/cerence_neural_tts.git"</span>
 <span class="w">    </span><span class="n">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_SUFFIX_MAP</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">PRODUCT_CHOICES</span><span class="o">)</span>
 <span class="o">}</span>
 </pre></div>
@@ -214,7 +214,7 @@ within the scope of the file. Example:</p>
 <p>The <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#matrix-stages">stages</a> section expects one or more <code class="docutils literal notranslate"><span class="pre">stage</span></code> sections. Those are made up of
 one or more``steps`` sections. Example:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Do something meaningful&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Do something meaningful'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
 <span class="w">            </span><span class="o">...</span>
 <span class="w">        </span><span class="o">}</span>
@@ -230,10 +230,10 @@ running shell scripts via the <a class="reference external" href="https://www.je
 <blockquote>
 <div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s1">'''</span>
 <span class="s1">            ls -l | grep foo</span>
-<span class="s1">            echo &quot;All done&quot;</span>
-<span class="s1">        &#39;&#39;&#39;</span>
+<span class="s1">            echo "All done"</span>
+<span class="s1">        '''</span>
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
@@ -271,27 +271,27 @@ key-value pairs.</p>
 <p>Local variables are those declared within the Jenkinsfile. This can happen in
 the <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#environment">environment</a> section as a simple declaration:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">FOO</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span>
+<span class="w">    </span><span class="n">FOO</span><span class="o">=</span><span class="s2">"bar"</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 <p>or within the <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#script">script</a> section:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="n">scripts</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">env</span><span class="o">.</span><span class="na">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span>
+<span class="w">        </span><span class="n">env</span><span class="o">.</span><span class="na">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bar"</span>
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 <p>Another way is to define local variables at the top of the file. Those can then
 be accessed in any pipeline step:</p>
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CREDENTIAL_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tts_rd_jenkins&#39;</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CREDENTIAL_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'tts_rd_jenkins'</span>
 
 <span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
 <span class="o">...</span>
 <span class="w">    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="n">checkout</span><span class="o">(</span><span class="n">some_url</span><span class="o">,</span><span class="w"> </span><span class="n">some_branch</span><span class="o">,</span><span class="w"> </span><span class="nl">user:</span><span class="w"> </span><span class="s2">&quot;${CREDENTIAL_KEY}&quot;</span><span class="o">)</span>
+<span class="w">            </span><span class="n">checkout</span><span class="o">(</span><span class="n">some_url</span><span class="o">,</span><span class="w"> </span><span class="n">some_branch</span><span class="o">,</span><span class="w"> </span><span class="nl">user:</span><span class="w"> </span><span class="s2">"${CREDENTIAL_KEY}"</span><span class="o">)</span>
 <span class="w">        </span><span class="o">}</span>
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
@@ -366,7 +366,7 @@ a <em>bad substitution</em> error report by the shell.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -174,16 +174,16 @@ For example, the <code class="docutils literal notranslate"><span class="pre">&l
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">closeHour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">22</span><span class="p">;</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isOpen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">openHour</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">closeHour</span><span class="p">;</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"footer"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">{</span><span class="nx">isOpen</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
-<span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;order&quot;</span><span class="p">&gt;</span>
-</span><span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">We</span><span class="s1">&#39;re open until {closeHour}:00. Come visit us or order online.&lt;/p&gt;</span>
-</span><span class="hll"><span class="s1">          &lt;button className=&quot;btn&quot;&gt;Order&lt;/button&gt;</span>
+<span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"order"</span><span class="p">&gt;</span>
+</span><span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">We</span><span class="s1">'re open until {closeHour}:00. Come visit us or order online.&lt;/p&gt;</span>
+</span><span class="hll"><span class="s1">          &lt;button className="btn"&gt;Order&lt;/button&gt;</span>
 </span><span class="hll"><span class="s1">        &lt;/div&gt;</span>
 </span><span class="s1">      ) : (</span>
-<span class="s1">        &lt;div className=&quot;order&quot;&gt;</span>
+<span class="s1">        &lt;div className="order"&gt;</span>
 <span class="s1">          &lt;p&gt;</span>
-<span class="s1">            We&#39;</span><span class="nx">re</span><span class="w"> </span><span class="nx">happy</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="p">{</span><span class="nx">openHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">{</span><span class="nx">closeHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span>
+<span class="s1">            We'</span><span class="nx">re</span><span class="w"> </span><span class="nx">happy</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="p">{</span><span class="nx">openHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">{</span><span class="nx">closeHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span>
 <span class="w">          </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">)}</span>
@@ -194,11 +194,11 @@ For example, the <code class="docutils literal notranslate"><span class="pre">&l
 <p>so the <em>order</em> part is supposed to be moved to a new <code class="docutils literal notranslate"><span class="pre">Order</span></code> component component:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Order</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;order&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"order"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="nx">We</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">open</span><span class="w"> </span><span class="nx">until</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">closeHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span><span class="p">.</span><span class="w"> </span><span class="nx">Come</span><span class="w"> </span><span class="nx">visit</span><span class="w"> </span><span class="nx">us</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="nx">online</span><span class="p">.</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn&quot;</span><span class="p">&gt;</span><span class="nx">Order</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"btn"</span><span class="p">&gt;</span><span class="nx">Order</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
@@ -212,11 +212,11 @@ component element:</p>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">closeHour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">22</span><span class="p">;</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isOpen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">openHour</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">closeHour</span><span class="p">;</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"footer"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">{</span><span class="nx">isOpen</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
 <span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">Order</span><span class="w"> </span><span class="na">closeHour</span><span class="o">=</span><span class="p">{</span><span class="nx">closeHour</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 </span><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;order&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"order"</span><span class="p">&gt;</span>
 <span class="w">          </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">            </span><span class="nx">We</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">happy</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="p">{</span><span class="nx">openHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">{</span><span class="nx">closeHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span>
 <span class="w">          </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -243,7 +243,7 @@ component element:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

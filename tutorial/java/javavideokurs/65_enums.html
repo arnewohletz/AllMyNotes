@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -210,13 +210,13 @@ einer Klasse erzeugt werden können, ohne dass der Konstruktor auf
 private gesetzt werden muss. Statt:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Wochentag</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">MONTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;MONTAG&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">DIENSTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;DIENSTAG&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">MITTWOCH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;MITTWOCH&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">DONNERSTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;DONNERSTAG&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">FREITAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;FREITAG&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">SAMSTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;SAMSTAG&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">SONNTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;SONNTAG&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">MONTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"MONTAG"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">DIENSTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"DIENSTAG"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">MITTWOCH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"MITTWOCH"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">DONNERSTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"DONNERSTAG"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">FREITAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"FREITAG"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">SAMSTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"SAMSTAG"</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="n">SONNTAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">(</span><span class="s">"SONNTAG"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 
@@ -243,7 +243,7 @@ private gesetzt werden muss. Statt:</p>
 <li><p>Enums sind komplexe Datentypen (Objekte) und erben von der Klasse Object</p></li>
 <li><p>Eine Konstante in einem Enum, welche ein Objekt referenziert weist
 diesem Objekt stets die finale Variable name vom Typ String zu, die
-gleichzeitig ihr eigener Name ist (hier: MONTAG, …): <code class="code highlight java docutils literal highlight-java"><span class="n">MONTAG</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MONTAG&quot;</span></code></p></li>
+gleichzeitig ihr eigener Name ist (hier: MONTAG, …): <code class="code highlight java docutils literal highlight-java"><span class="n">MONTAG</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"MONTAG"</span></code></p></li>
 <li><p>Die toString() Methode wird in einem Enum stets automatisch so
 überschrieben, dass sie den Namen einer Instanz als String zurückgibt:</p>
 <blockquote>
@@ -273,19 +273,19 @@ verwendet werden (geht sonst bei komplexen Datentypen nicht):</p>
 <blockquote>
 <div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="k">case</span><span class="w"> </span><span class="n">MONTAG</span><span class="p">:</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Schlimm!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Schlimm!"</span><span class="p">);</span>
 <span class="w">    </span><span class="k">break</span><span class="p">;</span>
 <span class="k">case</span><span class="w"> </span><span class="n">FREITAG</span><span class="p">:</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;TOLL!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"TOLL!"</span><span class="p">);</span>
 <span class="w">    </span><span class="k">break</span><span class="p">;</span>
 <span class="k">case</span><span class="w"> </span><span class="n">SAMSTAG</span><span class="p">:</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;SUPER!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SUPER!"</span><span class="p">);</span>
 <span class="w">    </span><span class="k">break</span><span class="p">;</span>
 <span class="k">case</span><span class="w"> </span><span class="n">SONNTAG</span><span class="p">:</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ziemlich gut.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ziemlich gut."</span><span class="p">);</span>
 <span class="w">    </span><span class="k">break</span><span class="p">;</span>
 <span class="k">default</span><span class="p">:</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;So la la&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"So la la"</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -309,7 +309,7 @@ Beginn des Enums Instanzen dieses erzeugt werden.</p></li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">MONTAG</span><span class="p">(</span><span class="s">&quot;MONDAY&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">DIENSTAG</span><span class="p">(</span><span class="s">&quot;TUESDAY&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MONTAG</span><span class="p">(</span><span class="s">"MONDAY"</span><span class="p">),</span><span class="w"> </span><span class="n">DIENSTAG</span><span class="p">(</span><span class="s">"TUESDAY"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">inEnglish</span><span class="p">;</span>
 
@@ -330,7 +330,7 @@ Beginn des Enums Instanzen dieses erzeugt werden.</p></li>
 <p><span class="ulined">oder</span></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Wochentag</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">MONTAG</span><span class="p">(</span><span class="s">&quot;MONDAY&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">DIENSTAG</span><span class="p">(</span><span class="s">&quot;TUESDAY&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MONTAG</span><span class="p">(</span><span class="s">"MONDAY"</span><span class="p">),</span><span class="w"> </span><span class="n">DIENSTAG</span><span class="p">(</span><span class="s">"TUESDAY"</span><span class="p">);</span>
 
 <span class="p">}</span>
 <span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">inEnglish</span><span class="p">;</span>
@@ -368,7 +368,7 @@ Enum definiert werden.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

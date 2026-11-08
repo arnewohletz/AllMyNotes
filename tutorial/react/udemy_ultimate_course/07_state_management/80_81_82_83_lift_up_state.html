@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -170,7 +170,7 @@
 <p>In the <em>travel-list</em> application, we define an empty Array to be the initial value
 of the <code class="docutils literal notranslate"><span class="pre">items</span></code> state variable:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Form</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">setDescription</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">setDescription</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">quantity</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuantity</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">setItems</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
 </span></pre></div>
@@ -222,7 +222,7 @@ becomes <code class="docutils literal notranslate"><span class="pre">onAddItems<
 </div>
 <p>… and accepting the props in the components:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">Form</span><span class="p">({</span><span class="w"> </span><span class="nx">onAddItems</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">setDescription</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">setDescription</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">quantity</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuantity</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -235,13 +235,13 @@ becomes <code class="docutils literal notranslate"><span class="pre">onAddItems<
 </span>
 <span class="w">    </span><span class="c1">// set back input fields to original state</span>
 <span class="w">    </span><span class="nx">setQuantity</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">setDescription</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setDescription</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">PackingList</span><span class="p">({</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;list&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"list"</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 </span><span class="w">          </span><span class="p">&lt;</span><span class="nt">Item</span><span class="w"> </span><span class="na">item</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="sb">`item_</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">        </span><span class="p">))}</span>
@@ -293,7 +293,7 @@ the function to each <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">PackingList</span><span class="p">({</span><span class="w"> </span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">onDeleteItem</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;list&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"list"</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">          </span><span class="p">&lt;</span><span class="nt">Item</span>
 <span class="w">            </span><span class="na">item</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span>
@@ -312,7 +312,7 @@ property of the delete button. Though this <strong>won’t work</strong>:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Item</span><span class="p">({</span><span class="w"> </span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">onDeleteItem</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;line-through&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s2">"line-through"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}}&gt;</span>
 <span class="w">        </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onDeleteItem</span><span class="p">}&gt;</span><span class="nx">X</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -326,7 +326,7 @@ the <strong>event object</strong>. So instead, a new function must be defined li
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Item</span><span class="p">({</span><span class="w"> </span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">onDeleteItem</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;line-through&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s2">"line-through"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}}&gt;</span>
 <span class="w">        </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">onDeleteItem</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">)}&gt;</span><span class="nx">X</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -362,13 +362,13 @@ and use it as follows:</p>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">input</span>
-<span class="w">        </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
+<span class="w">        </span><span class="na">type</span><span class="o">=</span><span class="s">"checkbox"</span>
 <span class="w">        </span><span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="p">}</span>
 <span class="hll"><span class="w">        </span><span class="na">onChange</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">          </span><span class="nx">onToggleItem</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
 </span><span class="hll"><span class="w">        </span><span class="p">}}</span>
 </span><span class="w">      </span><span class="p">&gt;&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;line-through&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">packed</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s2">"line-through"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}}&gt;</span>
 <span class="w">        </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">description</span><span class="p">}</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">onDeleteItem</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">)}&gt;</span><span class="nx">X</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -393,7 +393,7 @@ and use it as follows:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

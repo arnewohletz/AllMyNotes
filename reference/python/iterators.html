@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -272,8 +272,8 @@ set to the next item manually.</p>
 </dl>
 <p>List comprehension statements can be transformed into a generator expression by
 replacing the square brackets:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poem_file</span> <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">]</span> <span class="c1"># list comprehension</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poem_file</span> <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># generator expression</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poem_file</span> <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">]</span> <span class="c1"># list comprehension</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poem_file</span> <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span> <span class="c1"># generator expression</span>
 </pre></div>
 </div>
 <p>Both generators functions and generator expressions return an iterator object.
@@ -342,9 +342,9 @@ an Iterable <em>Team</em> class, which contains of <em>Member</em> objects, whic
 
 
 <span class="n">team</span> <span class="o">=</span> <span class="n">Team</span><span class="p">()</span>
-<span class="n">team</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">Member</span><span class="p">(</span><span class="s2">&quot;Frank&quot;</span><span class="p">))</span>
-<span class="n">team</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">Member</span><span class="p">(</span><span class="s2">&quot;Lucy&quot;</span><span class="p">))</span>
-<span class="n">team</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">Member</span><span class="p">(</span><span class="s2">&quot;Ole&quot;</span><span class="p">))</span>
+<span class="n">team</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">Member</span><span class="p">(</span><span class="s2">"Frank"</span><span class="p">))</span>
+<span class="n">team</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">Member</span><span class="p">(</span><span class="s2">"Lucy"</span><span class="p">))</span>
+<span class="n">team</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">Member</span><span class="p">(</span><span class="s2">"Ole"</span><span class="p">))</span>
 
 <span class="n">team_iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">team</span><span class="p">)</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -380,7 +380,7 @@ Ole
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

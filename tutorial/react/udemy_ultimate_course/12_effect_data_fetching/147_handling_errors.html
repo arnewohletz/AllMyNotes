@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -179,13 +179,13 @@ of an error)</p></li>
 </div></blockquote>
 </li>
 </ol>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;38602acf&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"38602acf"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">movies</span><span class="p">,</span><span class="w"> </span><span class="nx">setMovies</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsLoading</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 </span>
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchMovies</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -195,7 +195,7 @@ of an error)</p></li>
 </span><span class="hll"><span class="w">          </span><span class="sb">`http://www.omdbapi.com/?apikey=</span><span class="si">${</span><span class="nx">KEY</span><span class="si">}</span><span class="sb">&amp;s=goldeneye`</span>
 </span><span class="hll"><span class="w">        </span><span class="p">);</span>
 </span><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span>
-</span><span class="hll"><span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong with fetching movies&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"Something went wrong with fetching movies"</span><span class="p">);</span>
 </span><span class="hll"><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
 </span><span class="hll"><span class="w">        </span><span class="nx">setMovies</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Search</span><span class="p">);</span>
 </span><span class="hll"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -222,7 +222,7 @@ of an error)</p></li>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">Box</span><span class="p">&gt;</span>
 <span class="w">          </span><span class="p">&lt;&gt;</span>
 <span class="w">            </span><span class="p">&lt;</span><span class="nt">WatchedSummary</span><span class="w"> </span><span class="na">watched</span><span class="o">=</span><span class="p">{</span><span class="nx">watched</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
-<span class="w">            </span><span class="p">&lt;</span><span class="nt">WatchedMovieList</span><span class="w"> </span><span class="na">watched</span><span class="o">=</span><span class="p">{</span><span class="nx">watched</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;{</span><span class="s2">&quot; &quot;</span><span class="p">}</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">WatchedMovieList</span><span class="w"> </span><span class="na">watched</span><span class="o">=</span><span class="p">{</span><span class="nx">watched</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;{</span><span class="s2">" "</span><span class="p">}</span>
 <span class="w">          </span><span class="p">&lt;/&gt;</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">Main</span><span class="p">&gt;</span>
@@ -236,14 +236,14 @@ of an error)</p></li>
 <li><p>define another condition if API returns zero result (here: return {<code class="docutils literal notranslate"><span class="pre">data.Response</span> <span class="pre">===</span> <span class="pre">false</span></code>}
 throwing another error</p></li>
 </ol>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;38602acf&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gdgdfgdfgdf&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"38602acf"</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"gdgdfgdfgdf"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">movies</span><span class="p">,</span><span class="w"> </span><span class="nx">setMovies</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsLoading</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchMovies</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -253,12 +253,12 @@ throwing another error</p></li>
 <span class="w">          </span><span class="sb">`http://www.omdbapi.com/?apikey=</span><span class="si">${</span><span class="nx">KEY</span><span class="si">}</span><span class="sb">&amp;s=</span><span class="si">${</span><span class="nx">query</span><span class="si">}</span><span class="sb">`</span>
 <span class="w">        </span><span class="p">);</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Something went wrong with fetching movies&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"Something went wrong with fetching movies"</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Response</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;No matching movies found&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Response</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"False"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"No matching movies found"</span><span class="p">);</span>
 </span><span class="hll"><span class="w">        </span><span class="p">}</span>
 </span><span class="w">        </span><span class="nx">setMovies</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Search</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -285,7 +285,7 @@ throwing another error</p></li>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">Box</span><span class="p">&gt;</span>
 <span class="w">          </span><span class="p">&lt;&gt;</span>
 <span class="w">            </span><span class="p">&lt;</span><span class="nt">WatchedSummary</span><span class="w"> </span><span class="na">watched</span><span class="o">=</span><span class="p">{</span><span class="nx">watched</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
-<span class="w">            </span><span class="p">&lt;</span><span class="nt">WatchedMovieList</span><span class="w"> </span><span class="na">watched</span><span class="o">=</span><span class="p">{</span><span class="nx">watched</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;{</span><span class="s2">&quot; &quot;</span><span class="p">}</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">WatchedMovieList</span><span class="w"> </span><span class="na">watched</span><span class="o">=</span><span class="p">{</span><span class="nx">watched</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;{</span><span class="s2">" "</span><span class="p">}</span>
 <span class="w">          </span><span class="p">&lt;/&gt;</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">Main</span><span class="p">&gt;</span>
@@ -294,7 +294,7 @@ throwing another error</p></li>
 <span class="p">}</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">ErrorMessage</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;{</span><span class="nx">message</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"error"</span><span class="p">&gt;{</span><span class="nx">message</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -313,7 +313,7 @@ throwing another error</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

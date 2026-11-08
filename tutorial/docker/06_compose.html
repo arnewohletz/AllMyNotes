@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -216,7 +216,7 @@ docker file (but might be one level higher)</p></li>
 </div><p>defines a volume to be exposed (here the current directory ‘.’ is exposed in ‘/app’.
 Note that ‘.’ can be used instead of $PWD as in the docker CLI command, even on Windows)</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>volumes:
-  - &#39;redis:/data&#39;
+  - 'redis:/data'
 </pre></div>
 </div>
 <p>exposes a named volume ‘redis’ inside ‘/data’</p>
@@ -250,8 +250,8 @@ dependencies can be added)</p>
 </pre>
 </div><p>is better to manage different sets of variables e.g.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>env_file:
-  - &#39;.env&#39;
-  - &#39;.env_production&#39;
+  - '.env'
+  - '.env_production'
 </pre></div>
 </div>
 <p>in which case, that ladder file overrides present key-values of the first file</p>
@@ -392,8 +392,8 @@ docker-compose <span style="color:red;">rm</span>
 <p>Add <em>both</em> a <strong>build</strong> and a <strong>image</strong> property to a service:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
   some_service:
-    build: &#39;.&#39;
-    image: &#39;wohletzar/some_service:1.0&#39;
+    build: '.'
+    image: 'wohletzar/some_service:1.0'
 </pre></div>
 </div>
 <p>When running docker-compose build, both images are created (build version is created
@@ -497,7 +497,7 @@ Accessing the files via a volume property does not work</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

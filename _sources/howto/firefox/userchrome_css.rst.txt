@@ -158,8 +158,12 @@ Application Menu
 
     /*Decrease app menu size*/
     :root {
-        --arrowpanel-menuitem-padding-block: 2px !important;
-        --arrowpanel-menutiem-padding-inline: 2px !important;
+      /* before v153:
+      --arrowpanel-menuitem-padding-block: 2px !important;
+      --arrowpanel-menutiem-padding-inline: 2px !important;
+      */
+      --panel-menuitem-padding-block: 2px !important;
+      --panel-menuitem-padding-inline: 2px !important;
     }
 
 Toolbar bookmark popup menu

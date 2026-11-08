@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -174,7 +174,7 @@ component C.</p>
 <div><p>Instead of “hardcoding” the inner component into the outer component, like this:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Modal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;modal&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"modal"</span><span class="p">&gt;</span>
 <span class="w">            </span><span class="p">&lt;</span><span class="nt">Success</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">)</span>
@@ -190,7 +190,7 @@ the <code class="docutils literal notranslate"><span class="pre">Success</span><
 it inside the JSX:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Modal</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;modal&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"modal"</span><span class="p">&gt;</span>
 <span class="w">            </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">)</span>
@@ -227,7 +227,7 @@ it inside the JSX:</p>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">NavBar</span><span class="p">({</span><span class="w"> </span><span class="nx">movies</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">nav</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;nav-bar&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">nav</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"nav-bar"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Logo</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Search</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">NumResults</span><span class="w"> </span><span class="na">movies</span><span class="o">=</span><span class="p">{</span><span class="nx">movies</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
@@ -237,7 +237,7 @@ it inside the JSX:</p>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">NumResults</span><span class="p">({</span><span class="w"> </span><span class="nx">movies</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;num-results&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"num-results"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="nx">Found</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;{</span><span class="nx">movies</span><span class="p">.</span><span class="nx">length</span><span class="p">}&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">results</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
@@ -261,12 +261,12 @@ inside <code class="docutils literal notranslate"><span class="pre">NavBar</span
 <span class="p">}</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">NavBar</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">nav</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;nav-bar&quot;</span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">nav</span><span class="p">&gt;;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">nav</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"nav-bar"</span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">nav</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">NumResults</span><span class="p">({</span><span class="w"> </span><span class="nx">movies</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;num-results&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"num-results"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="nx">Found</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;{</span><span class="nx">movies</span><span class="p">.</span><span class="nx">length</span><span class="p">}&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">results</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
@@ -294,7 +294,7 @@ inside a parent component’s JSX.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

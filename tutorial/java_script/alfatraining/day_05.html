@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -250,14 +250,14 @@
 <p>Über Komma-separierte, key-value Paare. Das Kontext- Schlüsselwort <code class="docutils literal notranslate"><span class="pre">this</span></code>
 erlaubt den Zugriff auf das derzeitige Objekt.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">mainTitle</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;JavaScript&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">subTitle</span><span class="o">:</span><span class="w">           </span><span class="s2">&quot;kurz und gut&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w">             </span><span class="s2">&quot;Anfänger und Fortgeschrittene&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">mainTitle</span><span class="o">:</span><span class="w">          </span><span class="s2">"JavaScript"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">subTitle</span><span class="o">:</span><span class="w">           </span><span class="s2">"kurz und gut"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w">             </span><span class="s2">"Anfänger und Fortgeschrittene"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w">              </span><span class="mf">49.99</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Händler Preis&quot;</span><span class="o">:</span><span class="w">    </span><span class="mf">19.99</span><span class="p">,</span><span class="w">  </span><span class="c1">// key als String angelegt</span>
+<span class="w">    </span><span class="s2">"Händler Preis"</span><span class="o">:</span><span class="w">    </span><span class="mf">19.99</span><span class="p">,</span><span class="w">  </span><span class="c1">// key als String angelegt</span>
 <span class="w">    </span><span class="nx">showTitle</span><span class="o">:</span><span class="w">          </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                            </span><span class="c1">// console.log(book.mainTitle);  // nicht so</span>
-<span class="w">                            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">subTitle</span><span class="p">);</span><span class="w">  </span><span class="c1">// nutze &#39;this&#39;</span>
+<span class="w">                            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">subTitle</span><span class="p">);</span><span class="w">  </span><span class="c1">// nutze 'this'</span>
 <span class="w">                        </span><span class="p">}</span>
 <span class="p">};</span>
 
@@ -279,18 +279,18 @@ erlaubt den Zugriff auf das derzeitige Objekt.</p>
 <p>Wenn der Bezeichner als String vorliegt oder als String angelegt wurde, ist
 der Zugriff über die Punktnotation nicht möglich. Hier muss über den
 <em>Property Access</em> erfolgen</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// geht nicht!!</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">[</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// OK! Über Property Access</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="s2">"Händler Preis"</span><span class="p">);</span><span class="w"> </span><span class="c1">// geht nicht!!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">[</span><span class="s2">"Händler Preis"</span><span class="p">]);</span><span class="w"> </span><span class="c1">// OK! Über Property Access</span>
 </pre></div>
 </div>
 </section>
 <section id="eigenschaft-andern">
 <h2>Eigenschaft ändern<a class="headerlink" href="#eigenschaft-andern" title="Link to this heading"></a></h2>
 <p>Genauso wie auslesen über Punktnotation oder Property Access.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Python&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Python&quot;</span>
-<span class="nx">book</span><span class="p">[</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30.00</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">[</span><span class="s2">&quot;Händler Preis&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 30.00</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Python"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">.</span><span class="nx">mainTitle</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Python"</span>
+<span class="nx">book</span><span class="p">[</span><span class="s2">"Händler Preis"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30.00</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">book</span><span class="p">[</span><span class="s2">"Händler Preis"</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 30.00</span>
 </pre></div>
 </div>
 </section>
@@ -314,11 +314,11 @@ der Zugriff über die Punktnotation nicht möglich. Hier muss über den
 <section id="objektdefinition-in-es6">
 <h2>Objektdefinition in ES6<a class="headerlink" href="#objektdefinition-in-es6" title="Link to this heading"></a></h2>
 <p>In ES6 können Variablen als gleichnamige Eigenschaften in Objekte eingefügt werden.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42.99</span><span class="p">,</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Office Drinks&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42.99</span><span class="p">,</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Office Drinks"</span><span class="p">;</span>
 
 <span class="c1">// ES5</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">product_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Talisker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">"Talisker"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">prince</span><span class="o">:</span><span class="w">     </span><span class="nx">price</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">cat</span><span class="o">:</span><span class="w">        </span><span class="nx">cat</span>
 <span class="p">}</span>
@@ -326,7 +326,7 @@ der Zugriff über die Punktnotation nicht möglich. Hier muss über den
 
 <span class="c1">// ES6</span>
 <span class="kd">let</span><span class="w">  </span><span class="nx">product_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Glenfiddich&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Glenfiddich"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">price</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">cat</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">sellerPrice</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">price</span><span class="w"> </span><span class="o">-</span><span class="mf">15</span><span class="p">)</span>
@@ -375,7 +375,7 @@ der Zugriff über die Punktnotation nicht möglich. Hier muss über den
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">today</span><span class="p">);</span>
 
 <span class="c1">// Datum mit Date-String erzeugen</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;Dec 24 2024 20:30:00&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">"Dec 24 2024 20:30:00"</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2024</span><span class="p">,</span><span class="mf">11</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2024</span><span class="p">,</span><span class="mf">11</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">19</span><span class="p">,</span><span class="mf">23</span><span class="p">,</span><span class="mf">15</span><span class="p">));</span>
 
@@ -404,29 +404,29 @@ der Zugriff über die Punktnotation nicht möglich. Hier muss über den
 <span class="kd">let</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">();</span><span class="w">  </span><span class="c1">// formatierte Zeitausgabe</span>
-<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// deutsche Schreibweise</span>
-<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;ko-KR&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">//koreanische Scrheibweise</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">"de-DE"</span><span class="p">);</span><span class="w">  </span><span class="c1">// deutsche Schreibweise</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">"ko-KR"</span><span class="p">);</span><span class="w">  </span><span class="c1">//koreanische Scrheibweise</span>
 
-<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">weekday</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;long&quot;</span><span class="p">});</span><span class="w">  </span><span class="c1">// nur Wochentag in Langform (z.B. Freitag)</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">"de-DE"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">weekday</span><span class="o">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">});</span><span class="w">  </span><span class="c1">// nur Wochentag in Langform (z.B. Freitag)</span>
 
 <span class="c1">// Datumsausgabe parametrisieren</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">OPTIONS</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">weekday</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;long&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">month</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;long&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">day</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;numeric&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">minute</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">second</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span>
+<span class="w">    </span><span class="nx">weekday</span><span class="o">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">month</span><span class="o">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">day</span><span class="o">:</span><span class="w"> </span><span class="s2">"numeric"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="s2">"numeric"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s2">"2-digit"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">minute</span><span class="o">:</span><span class="w"> </span><span class="s2">"2-digit"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">second</span><span class="o">:</span><span class="w"> </span><span class="s2">"2-digit"</span>
 <span class="p">}</span>
-<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">OPTIONS</span><span class="p">);</span><span class="w"> </span><span class="c1">// z.B. Freitag, 15. November 2024 um 12:19:51</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">"de-DE"</span><span class="p">,</span><span class="w"> </span><span class="nx">OPTIONS</span><span class="p">);</span><span class="w"> </span><span class="c1">// z.B. Freitag, 15. November 2024 um 12:19:51</span>
 
 <span class="c1">// nur Datum-Strings erhalten</span>
 <span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
 <span class="c1">// nur Uhrzeit erhalten</span>
 <span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span>
 <span class="c1">// nur Stunde erhalten</span>
-<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">(</span><span class="s2">&quot;de-DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2-digit&quot;</span><span class="p">});</span><span class="w"> </span><span class="c1">// z.B. 12 Uhr</span>
+<span class="nx">formatedDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">(</span><span class="s2">"de-DE"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s2">"2-digit"</span><span class="p">});</span><span class="w"> </span><span class="c1">// z.B. 12 Uhr</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formatedDate</span><span class="p">);</span>
 </pre></div>
@@ -447,7 +447,7 @@ der Zugriff über die Punktnotation nicht möglich. Hier muss über den
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

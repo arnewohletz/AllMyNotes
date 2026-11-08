@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -298,7 +298,7 @@ eines Sets zugleich verwendet werden)</p></li>
 </ul>
 </div></blockquote>
 <p>Duplikate können auch nicht als neues Objekt ins Set geschrieben werden
-(<code class="code highlight java docutils literal highlight-java"><span class="n">add</span><span class="p">.(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;cxc&quot;</span><span class="p">)</span></code>). Dann wäre die Gleichheit per == zwar nicht
+(<code class="code highlight java docutils literal highlight-java"><span class="n">add</span><span class="p">.(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">(</span><span class="s">"cxc"</span><span class="p">)</span></code>). Dann wäre die Gleichheit per == zwar nicht
 gegeben, aber es würden dann zwei String Objekte mit dem gleichen Inhalt
 existieren und die Gleichheit per equals ist gegeben.</p>
 <ul class="simple">
@@ -344,8 +344,8 @@ Aufruf) anhand seines hashCodes sehr lange, als wenn dieser einzigartig ist</p>
 <p>Methoden:</p>
 <ul class="simple">
 <li><p><code class="code highlight java docutils literal highlight-java"><span class="n">put</span><span class="p">(</span><span class="n">K</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: fügt ein Element mit dem Wert value und dem
-Schlüssel key in die Map ein: <code class="code highlight java docutils literal highlight-java"><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;BMW&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span></code></p></li>
-<li><p><code class="code highlight java docutils literal highlight-java"><span class="n">get</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">key</span><span class="p">)</span></code>: erwartet einen Schlüssel: <code class="code highlight java docutils literal highlight-java"><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;BMW&quot;</span><span class="p">);</span></code></p></li>
+Schlüssel key in die Map ein: <code class="code highlight java docutils literal highlight-java"><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"BMW"</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span></code></p></li>
+<li><p><code class="code highlight java docutils literal highlight-java"><span class="n">get</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">key</span><span class="p">)</span></code>: erwartet einen Schlüssel: <code class="code highlight java docutils literal highlight-java"><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"BMW"</span><span class="p">);</span></code></p></li>
 </ul>
 <p>Unterschiede von HashMap und TreeMap ebenso wie bei HashSet und TreeSet</p>
 <div class="admonition-faustregel admonition">
@@ -381,7 +381,7 @@ bietet Methoden zum Verwalten einer Collection, z.B.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

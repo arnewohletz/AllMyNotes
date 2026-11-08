@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -241,7 +241,7 @@ werden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 2. Event-Handler</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Allgemeiner Verarbeitungsfehler&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Allgemeiner Verarbeitungsfehler"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -252,20 +252,20 @@ werden.</p>
 <p>Eine Fallunterscheidung kann dafür sorgen, dass beide Varianten unterstützt werden:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Fähigkeitenweiche (modern &lt;-&gt; alt)</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">jsonData</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">jsonData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"json"</span><span class="p">)</span><span class="w"> </span><span class="nx">jsonData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
 <span class="k">else</span><span class="w"> </span><span class="p">(</span><span class="nx">jsonData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Als nächstes muss über <code class="docutils literal notranslate"><span class="pre">.open()</span></code> die HTTP-Anfrage formuliert werden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. Anfrage formulieren</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./artists.json&quot;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./artists.json"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Die Anfrage lässt sich weiterhin konfigurieren. Hier wird über <code class="docutils literal notranslate"><span class="pre">.responseType</span></code>
 der Rückgabetyp der Daten definiert, in diesem Fall <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code>, was einem
 JSON-Dokument entspricht.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 4. Anfrage konfigurieren</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">;</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json"</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Die Anfrage wird zuletzt mit <code class="docutils literal notranslate"><span class="pre">.send()</span></code> ausgeführt.</p>
@@ -372,13 +372,13 @@ Funktion verfügbar ist.</p>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt state zum Zeitpunkt des Events wieder</span>
 
 <span class="w">    </span><span class="c1">// für ersten Aufruf einer Seite wird KEIN state Objekt in der History</span>
-<span class="w">    </span><span class="c1">// gespeichert, da dies der erste Aufruf ist (das event.state Objekt ist &#39;null&#39;).</span>
+<span class="w">    </span><span class="c1">// gespeichert, da dies der erste Aufruf ist (das event.state Objekt ist 'null').</span>
 <span class="w">    </span><span class="c1">// In diesem Fall wird die Hauptseite (index.html) geladen</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">loadContent</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pageID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.html&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">loadContent</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pageID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">".html"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">loadContent</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">loadContent</span><span class="p">(</span><span class="s2">"index.html"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -410,7 +410,7 @@ implementieren (per Ajax <strong>UND</strong> per JavaScript):</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

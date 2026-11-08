@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -177,11 +177,11 @@ shell script this enables us to use commands directly, without having to use the
 absolute paths:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># use binary commands directly</span>
 <span class="nv">match</span><span class="o">=</span><span class="k">$(</span>pcregrep<span class="w"> </span>-o1<span class="w"> </span><span class="nv">$update_version_regex</span><span class="w"> </span><span class="nv">$tmp_file</span><span class="k">)</span>
-say<span class="w"> </span><span class="s2">&quot;This worked just fine&quot;</span>
+say<span class="w"> </span><span class="s2">"This worked just fine"</span>
 
 <span class="c1"># instead of requiring its absolute path</span>
 <span class="nv">match</span><span class="o">=</span><span class="k">$(</span>/usr/local/bin/pcregrep<span class="w"> </span>-o1<span class="w"> </span><span class="nv">$update_version_regex</span><span class="w"> </span><span class="nv">$tmp_file</span><span class="k">)</span>
-/usr/bin/say<span class="w"> </span><span class="s2">&quot;This worked as well, but is longer and system dependent&quot;</span>
+/usr/bin/say<span class="w"> </span><span class="s2">"This worked as well, but is longer and system dependent"</span>
 </pre></div>
 </div>
 <p>macOS uses a tool called <em>path_helper</em> to feed some entries to the PATH variable.
@@ -220,9 +220,9 @@ agent directory):</p>
 </pre></div>
 </div>
 <p>Add in the following content:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="linenos"> 2</span><span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
-<span class="linenos"> 3</span><span class="nt">&lt;plist</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos"> 2</span><span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="linenos"> 3</span><span class="nt">&lt;plist</span><span class="w"> </span><span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
 <span class="linenos"> 4</span><span class="w">    </span><span class="nt">&lt;dict&gt;</span>
 <span class="linenos"> 5</span><span class="w">        </span><span class="nt">&lt;key&gt;</span>Label<span class="nt">&lt;/key&gt;</span>
 <span class="linenos"> 6</span><span class="w">        </span><span class="nt">&lt;string&gt;</span>MY_SCRIPT_NAME<span class="nt">&lt;/string&gt;</span>
@@ -299,7 +299,7 @@ to the *.plist require a reload (<em>unload</em> then again <em>load</em>) to th
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

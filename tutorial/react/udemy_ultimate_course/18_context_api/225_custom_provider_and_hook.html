@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -173,8 +173,8 @@ versions may improve the structure, cleaning up the <code class="docutils litera
 only a refactoring of the existing functionality.</p>
 <p>For this, we create <code class="docutils literal notranslate"><span class="pre">PostContext.js</span></code>, containing a <code class="docutils literal notranslate"><span class="pre">PostProvider</span></code> class and
 put all the required content here:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">faker</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@faker-js/faker&quot;</span><span class="p">;</span>
-<span class="linenos"> 2</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">faker</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@faker-js/faker"</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="c1">// 1) Create new context</span>
 <span class="hll"><span class="linenos"> 5</span><span class="kd">const</span><span class="w"> </span><span class="nx">PostContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">();</span>
@@ -190,7 +190,7 @@ put all the required content here:</p>
 </span><span class="linenos">15</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">posts</span><span class="p">,</span><span class="w"> </span><span class="nx">setPosts</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span>
 <span class="linenos">16</span><span class="w">    </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">({</span><span class="w"> </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">createRandomPost</span><span class="p">()),</span>
 <span class="linenos">17</span><span class="w">  </span><span class="p">);</span>
-<span class="linenos">18</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchQuery</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchQuery</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="linenos">19</span>
 <span class="linenos">20</span><span class="w">  </span><span class="c1">// Derived state. These are the posts that will actually be displayed</span>
 <span class="linenos">21</span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">searchedPosts</span><span class="w"> </span><span class="o">=</span>
@@ -246,9 +246,9 @@ it will contain all JSX of the component which uses it, e.g.:</p>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span>
 <span class="w">        </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setIsFakeDark</span><span class="p">((</span><span class="nx">isFakeDark</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">isFakeDark</span><span class="p">)}</span>
-<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn-fake-dark-mode&quot;</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">"btn-fake-dark-mode"</span>
 <span class="w">      </span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">isFakeDark</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;☀️&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;🌙&quot;</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">isFakeDark</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"☀️"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"🌙"</span><span class="p">}</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">PostProvider</span><span class="p">&gt;</span>
 </span><span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
@@ -306,7 +306,7 @@ to put it into the same file as the custom provider (here <code class="docutils 
 </span></pre></div>
 </div>
 <p>The new <code class="docutils literal notranslate"><span class="pre">usePosts</span></code> hook then replaces the <code class="docutils literal notranslate"><span class="pre">useContext</span></code> hook (in <code class="docutils literal notranslate"><span class="pre">Apps.js</span></code>):</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">usePosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./PostContext&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PostProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">usePosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./PostContext"</span><span class="p">;</span>
 </span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
@@ -332,7 +332,7 @@ have access to the respective context provider (here <code class="docutils liter
 the <code class="docutils literal notranslate"><span class="pre">&lt;App&gt;</span></code> component in our example:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">();</span>
-</span><span class="hll"><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span><span class="w">     </span><span class="c1">// prints &#39;undefined&#39;</span>
+</span><span class="hll"><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span><span class="w">     </span><span class="c1">// prints 'undefined'</span>
 </span>
 <span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
 
@@ -340,9 +340,9 @@ the <code class="docutils literal notranslate"><span class="pre">&lt;App&gt;</sp
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span>
 <span class="w">        </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setIsFakeDark</span><span class="p">((</span><span class="nx">isFakeDark</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">isFakeDark</span><span class="p">)}</span>
-<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn-fake-dark-mode&quot;</span>
+<span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="s">"btn-fake-dark-mode"</span>
 <span class="w">      </span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">isFakeDark</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;☀️&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;🌙&quot;</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">isFakeDark</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"☀️"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"🌙"</span><span class="p">}</span>
 <span class="w">      </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">PostProvider</span><span class="p">&gt;</span>
 </span><span class="w">        </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
@@ -371,7 +371,7 @@ of misuse (so the developers knows it right away):</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">usePosts</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">PostContext</span><span class="p">);</span>
 <span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span>
-</span><span class="hll"><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;PostContext was used outside of the PostProvider&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"PostContext was used outside of the PostProvider"</span><span class="p">);</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">context</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -392,7 +392,7 @@ of misuse (so the developers knows it right away):</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

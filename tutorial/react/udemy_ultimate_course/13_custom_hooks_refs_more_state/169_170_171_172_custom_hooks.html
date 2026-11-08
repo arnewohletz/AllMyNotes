@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -221,7 +221,7 @@
 as object (also as array is possible) and accept in custom hook call:</p>
 <blockquote>
 <div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">selectedId</span><span class="p">,</span><span class="w"> </span><span class="nx">setSelectedId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">movies</span><span class="p">,</span><span class="w"> </span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMovies</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
 </span>
@@ -238,7 +238,7 @@ hooks calls (move it to beginning of custom hook function):</p>
 <div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useMovies</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">movies</span><span class="p">,</span><span class="w"> </span><span class="nx">setMovies</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsLoading</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -252,7 +252,7 @@ hooks calls (move it to beginning of custom hook function):</p>
 <p>only calling, if <code class="docutils literal notranslate"><span class="pre">callback</span></code> is passed.</p>
 <p>and inside <code class="docutils literal notranslate"><span class="pre">App.js</span></code> call custom hook receiving its returned object values:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">selectedId</span><span class="p">,</span><span class="w"> </span><span class="nx">setSelectedId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">movies</span><span class="p">,</span><span class="w"> </span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMovies</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">handleCloseMovie</span><span class="p">);</span>
 </span>
@@ -285,11 +285,11 @@ to local storage, into its own custom hook (<code class="docutils literal notran
 <li><p>Copy code for reading <code class="docutils literal notranslate"><span class="pre">watched</span></code> state variable into local storage into new file
 <code class="docutils literal notranslate"><span class="pre">useLocalStorageState.js</span></code>:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">"watched"</span><span class="p">));</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">storedValue</span><span class="p">;</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
@@ -299,11 +299,11 @@ to local storage, into its own custom hook (<code class="docutils literal notran
 </li>
 <li><p>Make names more generic:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">));</span>
+</span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">"watched"</span><span class="p">));</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">storedValue</span><span class="p">;</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
@@ -313,17 +313,17 @@ to local storage, into its own custom hook (<code class="docutils literal notran
 </li>
 <li><p>Also add code from <code class="docutils literal notranslate"><span class="pre">App</span></code> for saving data to local storage and fix name, imports:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 </span>
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">storedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">"watched"</span><span class="p">));</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">storedValue</span><span class="p">;</span>
 <span class="w">  </span><span class="p">});</span>
 
 <span class="hll"><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
 </span><span class="hll"><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">      </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;watched&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</span><span class="hll"><span class="w">      </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">"watched"</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
 </span><span class="hll"><span class="w">    </span><span class="p">},</span>
 </span><span class="hll"><span class="w">    </span><span class="p">[</span><span class="nx">value</span><span class="p">]</span>
 </span><span class="hll"><span class="w">  </span><span class="p">);</span>
@@ -338,7 +338,7 @@ to local storage, into its own custom hook (<code class="docutils literal notran
 </li>
 <li><p>Adapt hardcoded localStorage <code class="docutils literal notranslate"><span class="pre">key</span></code> to another argument value:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="hll"><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -360,7 +360,7 @@ to local storage, into its own custom hook (<code class="docutils literal notran
 <li><p>Set a return value (here, return <code class="docutils literal notranslate"><span class="pre">value</span></code> state variable and its setter, allows
 for consumers of the custom hook to pass it any state variable):</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -383,7 +383,7 @@ for consumers of the custom hook to pass it any state variable):</p>
 </li>
 <li><p>Fix problem: return initial state, if no data for key in local storage:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -407,10 +407,10 @@ for consumers of the custom hook to pass it any state variable):</p>
 <li><p>Call the <code class="docutils literal notranslate"><span class="pre">useLocalStorageState()</span></code> function from <code class="docutils literal notranslate"><span class="pre">App</span></code>:</p>
 <blockquote>
 <div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">setQuery</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">selectedId</span><span class="p">,</span><span class="w"> </span><span class="nx">setSelectedId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">movies</span><span class="p">,</span><span class="w"> </span><span class="nx">isLoading</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMovies</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
-<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">([],</span><span class="w"> </span><span class="s2">&quot;watched&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">watched</span><span class="p">,</span><span class="w"> </span><span class="nx">setWatched</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useLocalStorageState</span><span class="p">([],</span><span class="w"> </span><span class="s2">"watched"</span><span class="p">);</span>
 </span>
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
@@ -433,20 +433,20 @@ As it uses a <code class="docutils literal notranslate"><span class="pre">useEff
 <ol class="arabic">
 <li><p>Move effect code into separate function <code class="docutils literal notranslate"><span class="pre">useKey()</span></code>:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useKey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="kd">function</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Escape&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Escape"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nx">onCloseMovie</span><span class="p">();</span>
-<span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Closing&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Closing"</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
-<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">      </span><span class="p">};</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">[</span><span class="nx">onCloseMovie</span><span class="p">]</span>
@@ -458,7 +458,7 @@ As it uses a <code class="docutils literal notranslate"><span class="pre">useEff
 </li>
 <li><p>Add arguments: <code class="docutils literal notranslate"><span class="pre">key</span></code> on which to react and <code class="docutils literal notranslate"><span class="pre">action</span></code> on which function to run:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="hll"><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useKey</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
@@ -466,12 +466,12 @@ As it uses a <code class="docutils literal notranslate"><span class="pre">useEff
 <span class="w">      </span><span class="kd">function</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">key</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">          </span><span class="nx">action</span><span class="p">();</span>
-</span><span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Closing&quot;</span><span class="p">);</span>
+</span><span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Closing"</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}</span>
-<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">      </span><span class="p">};</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="hll"><span class="w">    </span><span class="p">[</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">]</span>
@@ -487,13 +487,13 @@ As it uses a <code class="docutils literal notranslate"><span class="pre">useEff
 </li>
 <li><p>Call <code class="docutils literal notranslate"><span class="pre">useKey</span></code> from <code class="docutils literal notranslate"><span class="pre">MovieDetails</span></code>:</p>
 <blockquote>
-<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./useKey&quot;</span><span class="p">;</span>
+<div><div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./useKey"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">MovieDetails</span><span class="p">({</span><span class="w"> </span><span class="nx">selectedId</span><span class="p">,</span><span class="w"> </span><span class="nx">onCloseMovie</span><span class="p">,</span><span class="w"> </span><span class="nx">onAddWatched</span><span class="p">,</span><span class="w"> </span><span class="nx">watched</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
-<span class="w">  </span><span class="nx">useKey</span><span class="p">(</span><span class="s2">&quot;Escape&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onCloseMovie</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">useKey</span><span class="p">(</span><span class="s2">"Escape"</span><span class="p">,</span><span class="w"> </span><span class="nx">onCloseMovie</span><span class="p">);</span>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
@@ -509,10 +509,10 @@ hitting “Enter”:</p>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
-<span class="w">  </span><span class="nx">useKey</span><span class="p">(</span><span class="s2">&quot;Enter&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">useKey</span><span class="p">(</span><span class="s2">"Enter"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">activeElement</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">inputElement</span><span class="p">.</span><span class="nx">current</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">inputElement</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
-<span class="w">    </span><span class="nx">setQuery</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setQuery</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="p">});</span>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
@@ -533,13 +533,13 @@ of our <code class="docutils literal notranslate"><span class="pre">useKey</span
 <span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">activeElement</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">inputElement</span><span class="p">.</span><span class="nx">current</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">          </span><span class="k">return</span><span class="p">;</span>
 </span><span class="hll"><span class="w">        </span><span class="p">}</span>
-</span><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Enter&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Enter"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">          </span><span class="nx">inputElement</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
-</span><span class="hll"><span class="w">          </span><span class="nx">setQuery</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">          </span><span class="nx">setQuery</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 </span><span class="hll"><span class="w">        </span><span class="p">}</span>
 </span><span class="w">      </span><span class="p">}</span>
-<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">[</span><span class="nx">setQuery</span><span class="p">]</span>
 <span class="w">  </span><span class="p">);</span>
@@ -566,7 +566,7 @@ of our <code class="docutils literal notranslate"><span class="pre">useKey</span
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

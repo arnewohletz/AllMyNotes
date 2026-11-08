@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -223,7 +223,7 @@
 Damit lassen sich eigene Events erstellen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Event-Emitter</span>
 
-<span class="k">import</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;events&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"events"</span><span class="p">;</span>
 
 <span class="c1">// Emitter erstellen</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">emitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">EventEmitter</span><span class="p">();</span>
@@ -231,27 +231,27 @@ Damit lassen sich eigene Events erstellen.</p>
 <span class="c1">// Event mit on() registrieren</span>
 <span class="c1">// 1. Arg: Event-Name</span>
 <span class="c1">// 2. Arg: Callback (mit oder ohne Parameter)</span>
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;heroComesIn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"heroComesIn"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hallo </span><span class="si">${</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">. Schön, dass du da bist!`</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="c1">// mehrere Reaktionen auf Ereignis registrierbar (wird ebenfalls ausgeführt)</span>
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;heroComesIn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"heroComesIn"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hallo </span><span class="si">${</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">. Was willst du trinken?`</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// mit once() Ereignis registrieren, dass nach dem 1. Eintreten automatisch deregistriert wird</span>
 <span class="c1">// (nur bei ersten Mal ausgeführt wird)</span>
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;heroGoesOut&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">firstName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">"heroGoesOut"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">firstName</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Bis bald, </span><span class="si">${</span><span class="nx">firstName</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">})</span>
 
 <span class="c1">// Ereignis auslösen mit emit()</span>
 <span class="c1">// emit(event, argumente für callback)</span>
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;heroComesIn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jones&quot;</span><span class="p">);</span>
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;heroComesIn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cage&quot;</span><span class="p">);</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"heroComesIn"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jones"</span><span class="p">);</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"heroComesIn"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Luke"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cage"</span><span class="p">);</span>
 
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;heroGoesOut&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jones&quot;</span><span class="p">);</span>
-<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;heroGoesOut&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cage&quot;</span><span class="p">);</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"heroGoesOut"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jones"</span><span class="p">);</span>
+<span class="nx">emitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"heroGoesOut"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Luke"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cage"</span><span class="p">);</span>
 
 <span class="cm">/*</span>
 <span class="cm">    Alternative zu on(): addListener</span>
@@ -303,7 +303,7 @@ z.B. über das TCP/IP Protokoll (nutzen Server untereinander).</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

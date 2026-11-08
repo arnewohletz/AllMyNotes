@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -301,10 +301,10 @@ zunächst die Eingaben zu prüfen, ob diese nicht bereits im JSON vorhanden sind
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">xhr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
 <span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Gesendete Daten:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Gesendete Daten:"</span><span class="p">,</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
 <span class="w">    </span><span class="p">};</span>
-<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./script.php&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./script.php"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -316,19 +316,19 @@ diese Daten aus dem Browser-Cache kommen. Zum <strong>Deaktivieren des Caches</s
 eine Server-Anfrage, kann über <code class="docutils literal notranslate"><span class="pre">.setRequestHeader()</span></code> eine entsprechende
 Option im Request-Header übergeben werden:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">submitFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// console.log(&quot;Hallo Welt&quot;);</span>
+<span class="w">    </span><span class="c1">// console.log("Hallo Welt");</span>
 
 <span class="w">    </span><span class="c1">// JSON Datei mit AJAX laden</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">xhr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
 <span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">jsonData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span><span class="w">  </span><span class="c1">// schon als Objekt geparst</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Daten-Empfang:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">jsonData</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Daten-Empfang:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">jsonData</span><span class="p">);</span>
 <span class="w">        </span><span class="nx">checkData</span><span class="p">(</span><span class="nx">jsonData</span><span class="p">);</span>
 <span class="w">    </span><span class="p">};</span>
-<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./artists.json&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">;</span>
-<span class="hll"><span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Cache-Control&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;no-cache&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./artists.json"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json"</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Cache-Control"</span><span class="p">,</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">);</span>
 </span><span class="w">    </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
 <span class="p">};</span>
 </pre></div>
@@ -350,7 +350,7 @@ Option im Request-Header übergeben werden:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

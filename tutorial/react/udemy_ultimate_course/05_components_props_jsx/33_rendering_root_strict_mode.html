@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -170,14 +170,14 @@
 be the root JavaScript file:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">src/index.js</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-<span class="linenos">2</span><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-dom/client&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
+<span class="linenos">2</span><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-dom/client"</span><span class="p">;</span>
 <span class="linenos">3</span>
 <span class="linenos">4</span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">5</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="w"> </span><span class="nx">React</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
 <span class="linenos">6</span><span class="p">}</span>
 <span class="linenos">7</span>
-<span class="linenos">8</span><span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#root&quot;</span><span class="p">));</span>
+<span class="linenos">8</span><span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#root"</span><span class="p">));</span>
 <span class="linenos">9</span><span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">App</span><span class="w"> </span><span class="p">/&gt;);</span>
 </pre></div>
 </div>
@@ -191,7 +191,7 @@ be the root JavaScript file:</p>
 as every component, must start in upper-case.</p>
 </dd>
 <dt class="field-odd">line 8<span class="colon">:</span></dt>
-<dd class="field-odd"><p>create a React Component from the <code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;root&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code> element on <code class="docutils literal notranslate"><span class="pre">public/index.html</span></code></p>
+<dd class="field-odd"><p>create a React Component from the <code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"root"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code> element on <code class="docutils literal notranslate"><span class="pre">public/index.html</span></code></p>
 </dd>
 <dt class="field-even">line 9<span class="colon">:</span></dt>
 <dd class="field-even"><p>render a <code class="code highlight html docutils literal highlight-html"><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span></code> component into the <code class="docutils literal notranslate"><span class="pre">root</span></code> component</p>
@@ -227,7 +227,7 @@ as every component, must start in upper-case.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

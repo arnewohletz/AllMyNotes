@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -158,33 +158,33 @@ content of the file and a detailed explanations of the meaning of each file.</p>
 <section id="global-variables">
 <h2>Global variables<a class="headerlink" href="#global-variables" title="Link to this heading"></a></h2>
 <p>This section defines global variables, which are visible within the entire Jenkinsfile.</p>
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nd">@Library</span><span class="o">(</span><span class="s1">&#39;tts_shared&#39;</span><span class="o">)</span><span class="w"> </span><span class="n">_</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nd">@Library</span><span class="o">(</span><span class="s1">'tts_shared'</span><span class="o">)</span><span class="w"> </span><span class="n">_</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1">// --------------------------------------------------------------------------------------------------------------------</span>
 <span class="linenos"> 4</span><span class="c1">//</span>
 <span class="linenos"> 5</span><span class="c1">// Constants</span>
 <span class="linenos"> 6</span><span class="c1">//</span>
 <span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ARTIFACTORY_SOURCE_REPO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tts-release/com/cerence&#39;</span>
-<span class="linenos"> 9</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CREDENTIAL_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tts_rd_jenkins_writer&#39;</span>
+<span class="linenos"> 8</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ARTIFACTORY_SOURCE_REPO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'tts-release/com/cerence'</span>
+<span class="linenos"> 9</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CREDENTIAL_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'tts_rd_jenkins_writer'</span>
 <span class="linenos">10</span>
-<span class="linenos">11</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_METAPACKAGE_REPO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cerence_neural_tts&quot;</span>
-<span class="linenos">12</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_METAPACKAGE_REPO_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://aac-srv-bitbucket.coretech.cerence.net/scm/trng21/cerence_neural_tts.git&#39;</span>
+<span class="linenos">11</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_METAPACKAGE_REPO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cerence_neural_tts"</span>
+<span class="linenos">12</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_METAPACKAGE_REPO_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://aac-srv-bitbucket.coretech.cerence.net/scm/trng21/cerence_neural_tts.git'</span>
 <span class="linenos">13</span>
 <span class="linenos">14</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PRODUCT_CHOICES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="linenos">15</span><span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">,</span>
-<span class="linenos">16</span><span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span>
-<span class="linenos">17</span><span class="o">].</span><span class="na">join</span><span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span>
+<span class="linenos">15</span><span class="w">    </span><span class="s2">"CNTTS"</span><span class="o">,</span>
+<span class="linenos">16</span><span class="w">    </span><span class="s2">"CNTTS-VVT"</span>
+<span class="linenos">17</span><span class="o">].</span><span class="na">join</span><span class="o">(</span><span class="s2">"\n"</span><span class="o">)</span>
 <span class="linenos">18</span>
 <span class="linenos">19</span><span class="kd">final</span><span class="w"> </span><span class="kt">def</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-<span class="linenos">20</span><span class="w">    </span><span class="s2">&quot;CNTTS&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cntts&quot;</span><span class="o">,</span>
-<span class="linenos">21</span><span class="w">    </span><span class="s2">&quot;CNTTS-VVT&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;vvt&quot;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="s2">"CNTTS"</span><span class="o">:</span><span class="w"> </span><span class="s2">"cntts"</span><span class="o">,</span>
+<span class="linenos">21</span><span class="w">    </span><span class="s2">"CNTTS-VVT"</span><span class="o">:</span><span class="w"> </span><span class="s2">"vvt"</span>
 <span class="linenos">22</span><span class="o">]</span>
 <span class="linenos">23</span>
-<span class="linenos">24</span><span class="c1">// separate multiple email recipients with &#39;;&#39;</span>
-<span class="linenos">25</span><span class="c1">// use the empty string &#39;&#39; to avoid sending email notifications</span>
-<span class="linenos">26</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NOTIFY_ON_FAILURE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;alberto.pettarin@cerence.com;stefaan.willems@cerence.com;rahul.ranjan@cerence.com&#39;</span>
-<span class="linenos">27</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NOTIFY_ON_SUCCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="linenos">24</span><span class="c1">// separate multiple email recipients with ';'</span>
+<span class="linenos">25</span><span class="c1">// use the empty string '' to avoid sending email notifications</span>
+<span class="linenos">26</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NOTIFY_ON_FAILURE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'alberto.pettarin@cerence.com;stefaan.willems@cerence.com;rahul.ranjan@cerence.com'</span>
+<span class="linenos">27</span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NOTIFY_ON_SUCCESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span>
 <span class="linenos">28</span>
 <span class="linenos">29</span><span class="c1">// --------------------------------------------------------------------------------------------------------------------</span>
 </pre></div>
@@ -203,7 +203,7 @@ is defined (here: <em>tts_shared</em>) under which is can be imported.</p>
 <dd class="field-odd"><p>Definition of constant values, which are available for the entire Jenkinsfile.
 As the Jenkinsfile follows the Groovy syntax (which itself derives from the Java syntax),
 variables at the top-level must be declared in the following manner:</p>
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">VARIABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;some_value&quot;</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">VARIABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"some_value"</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">final</span></code> keyword defines, that this variable a constant.</p>
@@ -237,37 +237,37 @@ pipeline jobs more easily.</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">31</span><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">32</span>
 <span class="linenos">33</span><span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">34</span><span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="s1">&#39;ci-cntts-test&#39;</span>
+<span class="linenos">34</span><span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="s1">'ci-cntts-test'</span>
 <span class="linenos">35</span><span class="w">    </span><span class="o">}</span>
 <span class="linenos">36</span>
 <span class="linenos">37</span><span class="w">    </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">38</span><span class="w">        </span><span class="n">choice</span><span class="o">(</span>
-<span class="linenos">39</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT&#39;</span><span class="o">,</span>
-<span class="linenos">40</span><span class="w">            </span><span class="nl">choices:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_CHOICES}&quot;</span><span class="o">,</span>
-<span class="linenos">41</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Product, whose product meta-package is promoted and uploaded to AF&#39;</span>
+<span class="linenos">39</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'PRODUCT'</span><span class="o">,</span>
+<span class="linenos">40</span><span class="w">            </span><span class="nl">choices:</span><span class="w"> </span><span class="s2">"${PRODUCT_CHOICES}"</span><span class="o">,</span>
+<span class="linenos">41</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Product, whose product meta-package is promoted and uploaded to AF'</span>
 <span class="linenos">42</span><span class="w">        </span><span class="o">)</span>
 <span class="linenos">43</span><span class="w">        </span><span class="n">string</span><span class="o">(</span>
-<span class="linenos">44</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;SUBTASK_ID&#39;</span><span class="o">,</span>
-<span class="linenos">45</span><span class="w">            </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">&#39;READER-XXXX&#39;</span><span class="o">,</span>
-<span class="linenos">46</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Jira sub-task, which covers this release\&#39;s promotion of the product metapackage (e.g. READER-1234)&#39;</span>
+<span class="linenos">44</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'SUBTASK_ID'</span><span class="o">,</span>
+<span class="linenos">45</span><span class="w">            </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">'READER-XXXX'</span><span class="o">,</span>
+<span class="linenos">46</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Jira sub-task, which covers this release\'s promotion of the product metapackage (e.g. READER-1234)'</span>
 <span class="linenos">47</span><span class="w">        </span><span class="o">)</span>
 <span class="linenos">48</span><span class="w">        </span><span class="n">gitParameter</span><span class="o">(</span>
-<span class="linenos">49</span><span class="w">            </span><span class="nl">branch:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">,</span>
-<span class="linenos">50</span><span class="w">            </span><span class="nl">branchFilter:</span><span class="w"> </span><span class="s1">&#39;origin/release/.*&#39;</span><span class="o">,</span>
-<span class="linenos">51</span><span class="w">            </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">,</span>
-<span class="linenos">52</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Release branch (in cerence_neural_tts repo) to get development metapackage version from (default: NONE).&#39;</span><span class="o">,</span>
-<span class="linenos">53</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE&#39;</span><span class="o">,</span>
+<span class="linenos">49</span><span class="w">            </span><span class="nl">branch:</span><span class="w"> </span><span class="s1">''</span><span class="o">,</span>
+<span class="linenos">50</span><span class="w">            </span><span class="nl">branchFilter:</span><span class="w"> </span><span class="s1">'origin/release/.*'</span><span class="o">,</span>
+<span class="linenos">51</span><span class="w">            </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">''</span><span class="o">,</span>
+<span class="linenos">52</span><span class="w">            </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Release branch (in cerence_neural_tts repo) to get development metapackage version from (default: NONE).'</span><span class="o">,</span>
+<span class="linenos">53</span><span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE'</span><span class="o">,</span>
 <span class="linenos">54</span><span class="w">            </span><span class="nl">quickFilterEnabled:</span><span class="w"> </span><span class="kc">true</span><span class="o">,</span>
-<span class="linenos">55</span><span class="w">            </span><span class="nl">selectedValue:</span><span class="w"> </span><span class="s1">&#39;DEFAULT&#39;</span><span class="o">,</span>
-<span class="linenos">56</span><span class="w">            </span><span class="nl">sortMode:</span><span class="w"> </span><span class="s1">&#39;ASCENDING&#39;</span><span class="o">,</span>
-<span class="linenos">57</span><span class="w">            </span><span class="nl">type:</span><span class="w"> </span><span class="s1">&#39;PT_BRANCH&#39;</span><span class="o">,</span>
-<span class="linenos">58</span><span class="w">            </span><span class="nl">useRepository:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_METAPACKAGE_REPO_URL}&quot;</span><span class="o">,</span>
-<span class="linenos">59</span><span class="w">            </span><span class="nl">listSize:</span><span class="w"> </span><span class="s1">&#39;10&#39;</span>
+<span class="linenos">55</span><span class="w">            </span><span class="nl">selectedValue:</span><span class="w"> </span><span class="s1">'DEFAULT'</span><span class="o">,</span>
+<span class="linenos">56</span><span class="w">            </span><span class="nl">sortMode:</span><span class="w"> </span><span class="s1">'ASCENDING'</span><span class="o">,</span>
+<span class="linenos">57</span><span class="w">            </span><span class="nl">type:</span><span class="w"> </span><span class="s1">'PT_BRANCH'</span><span class="o">,</span>
+<span class="linenos">58</span><span class="w">            </span><span class="nl">useRepository:</span><span class="w"> </span><span class="s2">"${PRODUCT_METAPACKAGE_REPO_URL}"</span><span class="o">,</span>
+<span class="linenos">59</span><span class="w">            </span><span class="nl">listSize:</span><span class="w"> </span><span class="s1">'10'</span>
 <span class="linenos">60</span><span class="w">        </span><span class="o">)</span>
 <span class="linenos">61</span><span class="w">    </span><span class="o">}</span>
 <span class="linenos">62</span>
 <span class="linenos">63</span><span class="w">    </span><span class="n">options</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">64</span><span class="w">        </span><span class="n">timeout</span><span class="o">(</span><span class="nl">time:</span><span class="w"> </span><span class="mi">5</span><span class="o">,</span><span class="w"> </span><span class="nl">unit:</span><span class="w"> </span><span class="s1">&#39;MINUTES&#39;</span><span class="o">)</span>
+<span class="linenos">64</span><span class="w">        </span><span class="n">timeout</span><span class="o">(</span><span class="nl">time:</span><span class="w"> </span><span class="mi">5</span><span class="o">,</span><span class="w"> </span><span class="nl">unit:</span><span class="w"> </span><span class="s1">'MINUTES'</span><span class="o">)</span>
 <span class="linenos">65</span><span class="w">        </span><span class="n">timestamps</span><span class="o">()</span>
 <span class="linenos">66</span><span class="w">    </span><span class="o">}</span>
 </pre></div>
@@ -305,12 +305,12 @@ sections expect any available parameter, namely</p>
 <div><p>It may be used to not run certain <em>stages</em>, if the parameter is set to <em>false</em>:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="n">booleanParam</span><span class="o">(</span>
-<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;DO_SOMETHING&#39;</span><span class="o">,</span>
+<span class="w">        </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'DO_SOMETHING'</span><span class="o">,</span>
 <span class="w">        </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="kc">false</span><span class="o">,</span>
-<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s1">&#39;Select me, if you want to do something&#39;</span>
+<span class="w">        </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Select me, if you want to do something'</span>
 <span class="o">}</span>
 
-<span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Do something if not skipped&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="n">stage</span><span class="o">(</span><span class="s1">'Do something if not skipped'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="n">when</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="n">expression</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">DO_SOMETHING</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">}</span>
 <span class="w">    </span><span class="o">}</span>
@@ -333,15 +333,15 @@ printed in the log output)</p></li>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">properties</span><span class="o">([</span>
 <span class="w">    </span><span class="n">parameters</span><span class="o">([</span>
 <span class="w">        </span><span class="n">choice</span><span class="o">(</span>
-<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;PRODUCT&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'PRODUCT'</span><span class="o">,</span>
 <span class="w">            </span><span class="c1">// ... other parameter settings</span>
 <span class="w">        </span><span class="o">),</span>
 <span class="w">        </span><span class="n">string</span><span class="o">(</span>
-<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;SUBTASK_ID&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">name:</span><span class="w"> </span><span class="s1">'SUBTASK_ID'</span><span class="o">,</span>
 <span class="w">            </span><span class="c1">// ... other parameter settings</span>
 <span class="w">        </span><span class="o">),</span>
 <span class="w">        </span><span class="n">gitParameter</span><span class="o">(</span>
-<span class="w">            </span><span class="nl">branch:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">,</span>
+<span class="w">            </span><span class="nl">branch:</span><span class="w"> </span><span class="s1">''</span><span class="o">,</span>
 <span class="w">            </span><span class="c1">// ... other parameter settings</span>
 <span class="w">        </span><span class="o">)</span>
 <span class="w">    </span><span class="o">])</span>
@@ -377,16 +377,16 @@ The <code class="docutils literal notranslate"><span class="pre">timestamps()</s
 <p>Pipelines are divided into <em>stages</em>. Unless defined as <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/syntax/#parallel">parallel</a>,
 all stages are executed in the specified order.</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">68</span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">69</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Checkout product repo release branch&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">69</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Checkout product repo release branch'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">70</span><span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">71</span><span class="w">            </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">72</span><span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;echo Checkout repository&#39;</span>
-<span class="linenos">73</span><span class="w">                </span><span class="n">checkout</span><span class="o">([</span><span class="n">$class</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GitSCM&#39;</span><span class="o">,</span>
-<span class="linenos">74</span><span class="w">                    </span><span class="nl">branches:</span><span class="w"> </span><span class="o">[[</span><span class="nl">name:</span><span class="w"> </span><span class="s2">&quot;${params.PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE}&quot;</span><span class="w"> </span><span class="o">]],</span>
-<span class="linenos">75</span><span class="w">                    </span><span class="nl">extensions:</span><span class="w"> </span><span class="o">[[</span><span class="n">$class</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RelativeTargetDirectory&#39;</span><span class="o">,</span><span class="w"> </span><span class="nl">relativeTargetDir:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_METAPACKAGE_REPO}&quot;</span><span class="o">]],</span>
+<span class="linenos">72</span><span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'echo Checkout repository'</span>
+<span class="linenos">73</span><span class="w">                </span><span class="n">checkout</span><span class="o">([</span><span class="n">$class</span><span class="o">:</span><span class="w"> </span><span class="s1">'GitSCM'</span><span class="o">,</span>
+<span class="linenos">74</span><span class="w">                    </span><span class="nl">branches:</span><span class="w"> </span><span class="o">[[</span><span class="nl">name:</span><span class="w"> </span><span class="s2">"${params.PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE}"</span><span class="w"> </span><span class="o">]],</span>
+<span class="linenos">75</span><span class="w">                    </span><span class="nl">extensions:</span><span class="w"> </span><span class="o">[[</span><span class="n">$class</span><span class="o">:</span><span class="w"> </span><span class="s1">'RelativeTargetDirectory'</span><span class="o">,</span><span class="w"> </span><span class="nl">relativeTargetDir:</span><span class="w"> </span><span class="s2">"${PRODUCT_METAPACKAGE_REPO}"</span><span class="o">]],</span>
 <span class="linenos">76</span><span class="w">                    </span><span class="nl">userRemoteConfigs:</span><span class="w"> </span><span class="o">[[</span>
-<span class="linenos">77</span><span class="w">                        </span><span class="nl">url:</span><span class="w"> </span><span class="s2">&quot;${PRODUCT_METAPACKAGE_REPO_URL}&quot;</span><span class="o">,</span>
-<span class="linenos">78</span><span class="w">                        </span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s2">&quot;${CREDENTIAL_KEY}&quot;</span>
+<span class="linenos">77</span><span class="w">                        </span><span class="nl">url:</span><span class="w"> </span><span class="s2">"${PRODUCT_METAPACKAGE_REPO_URL}"</span><span class="o">,</span>
+<span class="linenos">78</span><span class="w">                        </span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s2">"${CREDENTIAL_KEY}"</span>
 <span class="linenos">79</span><span class="w">                    </span><span class="o">]]</span>
 <span class="linenos">80</span><span class="w">                </span><span class="o">])</span>
 <span class="linenos">81</span><span class="w">            </span><span class="o">}</span>
@@ -427,44 +427,44 @@ defines those variables, becomes necessary. Note, that here, each environment va
 must be added to the <a class="reference external" href="https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables">env</a> object. Variables defined in the
 <em>environment</em> sections are automatically added to the <em>env</em> object.</p>
 <blockquote>
-<div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 84</span><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;Configure environment variables&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 84</span><span class="n">stage</span><span class="o">(</span><span class="s2">"Configure environment variables"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos"> 85</span><span class="w">    </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos"> 86</span><span class="w">        </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos"> 87</span><span class="w">            </span><span class="c1">// Input validation</span>
 <span class="linenos"> 88</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(!(</span><span class="n">params</span><span class="o">.</span><span class="na">SUBTASK_ID</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s">/READER-\d+/</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos"> 89</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ABORTED&#39;</span>
-<span class="linenos"> 90</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">&quot;The entered SUBTASK_ID must match READER-[0-9]+ (e.g. READER-1234)&quot;</span>
+<span class="linenos"> 89</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ABORTED'</span>
+<span class="linenos"> 90</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">"The entered SUBTASK_ID must match READER-[0-9]+ (e.g. READER-1234)"</span>
 <span class="linenos"> 91</span><span class="w">            </span><span class="o">}</span>
 <span class="linenos"> 92</span>
 <span class="linenos"> 93</span><span class="w">            </span><span class="c1">// Product variables</span>
 <span class="linenos"> 94</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">NTTS_PRODUCT_PREFIX_SUFFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PRODUCT_CHOICES_TO_PREFIX_SUFFIX_MAP</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">PRODUCT</span><span class="o">)</span>
 <span class="linenos"> 95</span>
-<span class="linenos"> 96</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos"> 96</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">"""</span>
 <span class="linenos"> 97</span><span class="s2">                cd ${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${NTTS_PRODUCT_PREFIX_SUFFIX};</span>
-<span class="linenos"> 98</span><span class="s2">                python3 -c &quot;from src.neuraltts.products.${NTTS_PRODUCT_PREFIX_SUFFIX}.__version__ import __version__;print(__version__)&quot;</span>
-<span class="linenos"> 99</span><span class="s2">                &quot;&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="linenos"> 98</span><span class="s2">                python3 -c "from src.neuraltts.products.${NTTS_PRODUCT_PREFIX_SUFFIX}.__version__ import __version__;print(__version__)"</span>
+<span class="linenos"> 99</span><span class="s2">                """</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
 <span class="linenos">100</span>
-<span class="linenos">101</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_PRODUCT_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;yq &#39;.product.version&#39; $WORKSPACE/$PRODUCT_METAPACKAGE_REPO/docker/&quot;$NTTS_PRODUCT_PREFIX_SUFFIX&quot;_build_deps.yaml&quot;&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="linenos">101</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_PRODUCT_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">"""yq '.product.version' $WORKSPACE/$PRODUCT_METAPACKAGE_REPO/docker/"$NTTS_PRODUCT_PREFIX_SUFFIX"_build_deps.yaml"""</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
 <span class="linenos">102</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_PRODUCT_VERSION</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">103</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ABORTED&#39;</span>
-<span class="linenos">104</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">&quot;The product version (${env.CURRENT_PRODUCT_VERSION}) and product metapackage version (${env.CURRENT_METAPACKAGE_VERSION}) are not identical. Make sure both versions match and then retry.&quot;&quot;&quot;</span>
+<span class="linenos">103</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ABORTED'</span>
+<span class="linenos">104</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">"The product version (${env.CURRENT_PRODUCT_VERSION}) and product metapackage version (${env.CURRENT_METAPACKAGE_VERSION}) are not identical. Make sure both versions match and then retry."""</span>
 <span class="linenos">105</span><span class="w">            </span><span class="o">}</span>
-<span class="linenos">106</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(!</span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s1">&#39;dev&#39;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">107</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ABORTED&#39;</span>
-<span class="linenos">108</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">&quot;This release branch ($PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE) already uses a promoted (non-dev) metapackage version for ${env.PRODUCT}: ${env.CURRENT_METAPACKAGE_VERSION}. Pipeline run was aborted.&quot;</span>
+<span class="linenos">106</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(!</span><span class="n">env</span><span class="o">.</span><span class="na">CURRENT_METAPACKAGE_VERSION</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s1">'dev'</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">107</span><span class="w">                </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ABORTED'</span>
+<span class="linenos">108</span><span class="w">                </span><span class="n">error</span><span class="w"> </span><span class="s2">"This release branch ($PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE) already uses a promoted (non-dev) metapackage version for ${env.PRODUCT}: ${env.CURRENT_METAPACKAGE_VERSION}. Pipeline run was aborted."</span>
 <span class="linenos">109</span><span class="w">            </span><span class="o">}</span>
 <span class="linenos">110</span>
-<span class="linenos">111</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTED_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;$CURRENT_METAPACKAGE_VERSION&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s1">&#39;.dev&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+<span class="linenos">111</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTED_METAPACKAGE_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"$CURRENT_METAPACKAGE_VERSION"</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s1">'.dev'</span><span class="o">,</span><span class="w"> </span><span class="s1">''</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
 <span class="linenos">112</span>
 <span class="linenos">113</span><span class="w">            </span><span class="c1">// Paths</span>
-<span class="linenos">114</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">MAKEFILE_DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${WORKSPACE}/pipelines/common/promote_product_metapackage&quot;</span>
-<span class="linenos">115</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">METAPACKAGE_SETUP_PY_FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/setup.py&quot;</span>
-<span class="linenos">116</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">METAPACKAGE_VERSION_FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/src/neuraltts/products/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/__version__.py&quot;</span>
-<span class="linenos">117</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PRODUCT_DESCRIPTORS_DIR_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/docker&quot;</span>
+<span class="linenos">114</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">MAKEFILE_DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"${WORKSPACE}/pipelines/common/promote_product_metapackage"</span>
+<span class="linenos">115</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">METAPACKAGE_SETUP_PY_FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/setup.py"</span>
+<span class="linenos">116</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">METAPACKAGE_VERSION_FILE_PATH</span><span class="w"> </span><span class="o">=</span><span class="s2">"${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/meta/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/src/neuraltts/products/${env.NTTS_PRODUCT_PREFIX_SUFFIX}/__version__.py"</span>
+<span class="linenos">117</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PRODUCT_DESCRIPTORS_DIR_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}/docker"</span>
 <span class="linenos">118</span>
 <span class="linenos">119</span><span class="w">            </span><span class="c1">// Git branches</span>
-<span class="linenos">120</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTION_RELEASE_BRANCH_LOCAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;$PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE&quot;</span><span class="o">.</span><span class="na">replaceFirst</span><span class="o">(</span><span class="s2">&quot;origin/&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="o">)</span>
-<span class="linenos">121</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTION_PULL_REQUEST_BRANCH_LOCAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;feature/${params.SUBTASK_ID}_promote_product_metapackage_${params.PRODUCT}_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;$PROMOTED_METAPACKAGE_VERSION&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s1">&#39;.&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="o">)</span>
+<span class="linenos">120</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTION_RELEASE_BRANCH_LOCAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"$PRODUCT_METAPACKAGE_REPO_CHECKOUT_SOURCE"</span><span class="o">.</span><span class="na">replaceFirst</span><span class="o">(</span><span class="s2">"origin/"</span><span class="o">,</span><span class="w"> </span><span class="s2">""</span><span class="o">)</span>
+<span class="linenos">121</span><span class="w">            </span><span class="n">env</span><span class="o">.</span><span class="na">PROMOTION_PULL_REQUEST_BRANCH_LOCAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"feature/${params.SUBTASK_ID}_promote_product_metapackage_${params.PRODUCT}_"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"$PROMOTED_METAPACKAGE_VERSION"</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s1">'.'</span><span class="o">,</span><span class="w"> </span><span class="s1">'-'</span><span class="o">)</span>
 <span class="linenos">122</span><span class="w">        </span><span class="o">}</span>
 <span class="linenos">123</span><span class="w">    </span><span class="o">}</span>
 <span class="linenos">124</span><span class="o">}</span>
@@ -492,13 +492,13 @@ assigned to a variable.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">'''</span></code> specifically, if your script requires to use variables literally:</p>
 <blockquote>
 <div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">VAR</span><span class="o">=</span><span class="s2">&quot;global_value&quot;</span>
+<span class="w">    </span><span class="n">VAR</span><span class="o">=</span><span class="s2">"global_value"</span>
 
 <span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s1">'''</span>
 <span class="s1">            VAR=local_value</span>
 <span class="s1">            echo $VAR</span>
-<span class="s1">        &#39;&#39;&#39;</span>
+<span class="s1">        '''</span>
 </pre></div>
 </div>
 <p>which prints <code class="docutils literal notranslate"><span class="pre">local_var</span></code>, as $VAR is not replaced by the environmental value.</p>
@@ -506,13 +506,13 @@ assigned to a variable.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> specifically, if your script requires variables to be interpolated by their actual value:</p>
 <blockquote>
 <div><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">VAR</span><span class="o">=</span><span class="s2">&quot;global_value&quot;</span>
+<span class="w">    </span><span class="n">VAR</span><span class="o">=</span><span class="s2">"global_value"</span>
 
 <span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="n">sh</span><span class="w"> </span><span class="s2">"""</span>
 <span class="s2">            VAR=local_value</span>
 <span class="s2">            echo $VAR</span>
-<span class="s2">        &quot;&quot;&quot;</span>
+<span class="s2">        """</span>
 </pre></div>
 </div>
 <p>which prints <code class="docutils literal notranslate"><span class="pre">global_var</span></code>, as $VAR is replaced by the environmental value.</p>
@@ -549,17 +549,17 @@ with a substitute (here: <code class="docutils literal notranslate"><span class=
 <h2>Stage - Execute Makefile target<a class="headerlink" href="#stage-execute-makefile-target" title="Link to this heading"></a></h2>
 <p>More complex logic is advised to be moved into shell script. Furthermore, such
 shell script can be executed via a Makefile target.</p>
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">128</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;Get latest compatible metapackage dependencies from AF&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">128</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s2">"Get latest compatible metapackage dependencies from AF"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">129</span><span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">130</span><span class="w">            </span><span class="n">dir</span><span class="o">(</span><span class="s2">&quot;${MAKEFILE_DIR}&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">130</span><span class="w">            </span><span class="n">dir</span><span class="o">(</span><span class="s2">"${MAKEFILE_DIR}"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">131</span><span class="w">                </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">132</span><span class="w">                    </span><span class="n">sh</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos">132</span><span class="w">                    </span><span class="n">sh</span><span class="w"> </span><span class="s2">"""</span>
 <span class="linenos">133</span><span class="s2">                        CURRENT_METAPACKAGE_VERSION=${CURRENT_METAPACKAGE_VERSION} \</span>
 <span class="linenos">134</span><span class="s2">                        NTTS_PRODUCT_PREFIX_SUFFIX=${NTTS_PRODUCT_PREFIX_SUFFIX} \</span>
 <span class="linenos">135</span><span class="s2">                        ARTIFACTORY_SOURCE_REPO=${ARTIFACTORY_SOURCE_REPO} \</span>
 <span class="linenos">136</span><span class="s2">                        JFROG_HOME=${JFROG_HOME} \</span>
 <span class="linenos">137</span><span class="s2">                        make pull-python-dependencies</span>
-<span class="linenos">138</span><span class="s2">                    &quot;&quot;&quot;</span>
+<span class="linenos">138</span><span class="s2">                    """</span>
 <span class="linenos">139</span><span class="w">                </span><span class="o">}</span>
 <span class="linenos">140</span><span class="w">            </span><span class="o">}</span>
 <span class="linenos">141</span><span class="w">        </span><span class="o">}</span>
@@ -590,12 +590,12 @@ to keep a Jenkinsfile simpler and to allow reuse but other pipeline. Simpler scr
 can still be defined within the Jenkinsfile itself.</p>
 <p>It follows the <a class="reference external" href="https://groovy-lang.org/syntax.html">Groovy syntax</a>, while also supporting <a class="reference external" href="https://www.jenkins.io/doc/pipeline/steps/">additional steps</a>
 provided by Jenkins.</p>
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">183</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;Push promotion changes to remote and create pull request&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="linenos">183</span><span class="w">    </span><span class="n">stage</span><span class="o">(</span><span class="s2">"Push promotion changes to remote and create pull request"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">184</span><span class="w">        </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">185</span><span class="w">            </span><span class="n">dir</span><span class="o">(</span><span class="s2">&quot;${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">185</span><span class="w">            </span><span class="n">dir</span><span class="o">(</span><span class="s2">"${WORKSPACE}/${PRODUCT_METAPACKAGE_REPO}"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">186</span><span class="w">                </span><span class="n">script</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">187</span><span class="w">                    </span><span class="n">withCredentials</span><span class="o">([</span><span class="n">gitUsernamePassword</span><span class="o">(</span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s2">&quot;${CREDENTIAL_KEY}&quot;</span><span class="o">)])</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">188</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">create_pull_request_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos">187</span><span class="w">                    </span><span class="n">withCredentials</span><span class="o">([</span><span class="n">gitUsernamePassword</span><span class="o">(</span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s2">"${CREDENTIAL_KEY}"</span><span class="o">)])</span><span class="w"> </span><span class="o">{</span>
+<span class="linenos">188</span><span class="w">                        </span><span class="kt">def</span><span class="w"> </span><span class="n">create_pull_request_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sh</span><span class="o">(</span><span class="nl">script:</span><span class="w"> </span><span class="s2">"""</span>
 <span class="linenos">189</span><span class="s2">                            PROMOTED_METAPACKAGE_VERSION=${PROMOTED_METAPACKAGE_VERSION} \</span>
 <span class="linenos">190</span><span class="s2">                            NTTS_PRODUCT_PREFIX_SUFFIX=${NTTS_PRODUCT_PREFIX_SUFFIX} \</span>
 <span class="linenos">191</span><span class="s2">                            PROMOTION_PULL_REQUEST_BRANCH_LOCAL=${PROMOTION_PULL_REQUEST_BRANCH_LOCAL} \</span>
@@ -605,7 +605,7 @@ provided by Jenkins.</p>
 <span class="linenos">195</span><span class="s2">                            CURRENT_BUILD_URL=${currentBuild.getAbsoluteUrl()} \</span>
 <span class="linenos">196</span><span class="s2">                            MAKEFILE_DIR=${MAKEFILE_DIR} \</span>
 <span class="linenos">197</span><span class="s2">                            make -f ${MAKEFILE_DIR}/Makefile push-promotion-changes-to-remote-and-create-pull-request</span>
-<span class="linenos">198</span><span class="s2">                            &quot;&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
+<span class="linenos">198</span><span class="s2">                            """</span><span class="o">,</span><span class="w"> </span><span class="nl">returnStdout:</span><span class="w"> </span><span class="kc">true</span><span class="o">)</span>
 <span class="linenos">199</span>
 <span class="linenos">200</span><span class="w">                        </span><span class="cm">/* Determine pull request URL and use as job description</span>
 <span class="linenos">201</span><span class="cm">                        Note: an already existing PR is updated, if pipeline runs successfully</span>
@@ -620,13 +620,13 @@ provided by Jenkins.</p>
 <span class="linenos">210</span><span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">new_match</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">211</span><span class="w">                            </span><span class="n">pull_request_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_match</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span>
 <span class="linenos">212</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span>
-<span class="linenos">213</span><span class="w">                            </span><span class="s2">&quot;&quot;&quot;Pull request created: &lt;a href=&quot;${pull_request_url}&quot;&gt;${pull_request_url}&lt;/a&gt;&quot;&quot;&quot;</span>
+<span class="linenos">213</span><span class="w">                            </span><span class="s2">"""Pull request created: &lt;a href="${pull_request_url}"&gt;${pull_request_url}&lt;/a&gt;"""</span>
 <span class="linenos">214</span><span class="w">                        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">existing_match</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">215</span><span class="w">                            </span><span class="n">pull_request_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">existing_match</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span>
 <span class="linenos">216</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span>
-<span class="linenos">217</span><span class="w">                            </span><span class="s2">&quot;&quot;&quot;Pull request updated: &lt;a href=&quot;${pull_request_url}&quot;&gt;${pull_request_url}&lt;/a&gt;&quot;&quot;&quot;</span>
+<span class="linenos">217</span><span class="w">                            </span><span class="s2">"""Pull request updated: &lt;a href="${pull_request_url}"&gt;${pull_request_url}&lt;/a&gt;"""</span>
 <span class="linenos">218</span><span class="w">                        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">219</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cannot determine pull request URL - check logs&quot;</span>
+<span class="linenos">219</span><span class="w">                            </span><span class="n">currentBuild</span><span class="o">.</span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cannot determine pull request URL - check logs"</span>
 <span class="linenos">220</span><span class="w">                        </span><span class="o">}</span>
 <span class="linenos">221</span><span class="w">                    </span><span class="o">}</span>
 <span class="linenos">222</span><span class="w">                </span><span class="o">}</span>
@@ -728,7 +728,7 @@ is marked as failure.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

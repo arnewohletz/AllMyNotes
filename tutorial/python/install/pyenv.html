@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -175,10 +175,10 @@ which also installs the <em>pyenv-virtualenv</em> extension.</p>
 <li><p>To make <code class="docutils literal notranslate"><span class="pre">pyenv</span></code> available append this content to <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>
 (also <code class="docutils literal notranslate"><span class="pre">~/.bash_login</span></code> if available):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyenv</span>
-<span class="n">export</span> <span class="n">PYENV_ROOT</span><span class="o">=</span><span class="s2">&quot;$HOME/.pyenv&quot;</span>
-<span class="n">command</span> <span class="o">-</span><span class="n">v</span> <span class="n">pyenv</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">||</span> <span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$PYENV_ROOT/bin:$PATH&quot;</span>
-<span class="nb">eval</span> <span class="s2">&quot;$(pyenv init --path)&quot;</span>
-<span class="nb">eval</span> <span class="s2">&quot;$(pyenv-virtualenv-init -)&quot;</span>
+<span class="n">export</span> <span class="n">PYENV_ROOT</span><span class="o">=</span><span class="s2">"$HOME/.pyenv"</span>
+<span class="n">command</span> <span class="o">-</span><span class="n">v</span> <span class="n">pyenv</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">||</span> <span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">"$PYENV_ROOT/bin:$PATH"</span>
+<span class="nb">eval</span> <span class="s2">"$(pyenv init --path)"</span>
+<span class="nb">eval</span> <span class="s2">"$(pyenv-virtualenv-init -)"</span>
 </pre></div>
 </div>
 </li>
@@ -225,8 +225,8 @@ liblzma-dev
 </div>
 <p>Same as on Linux, add the auto-initializing commands to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># pyenv
-eval &quot;$(pyenv init -)&quot;
-eval &quot;$(pyenv virtualenv-init -)&quot;
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 </pre></div>
 </div>
 <p>Afterwards, start a new shell.</p>
@@ -235,7 +235,7 @@ eval &quot;$(pyenv virtualenv-init -)&quot;
 <p>Upon activating a virtualenv using <code class="docutils literal notranslate"><span class="pre">pyenv</span> <span class="pre">activate</span> <span class="pre">...</span></code>, the following prompt
 may appear:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pyenv-virtualenv: prompt changing will be removed from future release.
-configure &#39;export PYENV_VIRTUALENV_DISABLE_PROMPT=1&#39; to simulate the behavior.
+configure 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior.
 </pre></div>
 </div>
 <p><em>pyenv-virtualenv</em> had plans to remove the prompts (e.g. <code class="docutils literal notranslate"><span class="pre">(venv)</span> <span class="pre">$</span> <span class="pre">...</span></code> from
@@ -249,15 +249,15 @@ value is set to <code class="docutils literal notranslate"><span class="pre">0</
 <span class="nb">export</span><span class="w"> </span><span class="nv">PYENV_VIRTUALENV_DISABLE_PROMPT</span><span class="o">=</span><span class="m">1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">BASE_PROMPT</span><span class="o">=</span><span class="nv">$PS1</span>
 <span class="k">function</span><span class="w"> </span>updatePrompt<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>pyenv<span class="w"> </span>version-name<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="k">$(</span>pyenv<span class="w"> </span>global<span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>pyenv<span class="w"> </span>version-name<span class="k">)</span><span class="s2">"</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="k">$(</span>pyenv<span class="w"> </span>global<span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span><span class="c1"># the next line should be double quote; single quote would not work for me</span>
-<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;(</span><span class="k">$(</span>pyenv<span class="w"> </span>version-name<span class="k">)</span><span class="s2">) &quot;</span><span class="nv">$BASE_PROMPT</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"(</span><span class="k">$(</span>pyenv<span class="w"> </span>version-name<span class="k">)</span><span class="s2">) "</span><span class="nv">$BASE_PROMPT</span>
 <span class="w">    </span><span class="k">else</span>
 <span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="nv">$BASE_PROMPT</span>
 <span class="w">    </span><span class="k">fi</span>
 <span class="o">}</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;updatePrompt&#39;</span>
-precmd<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="s1">&#39;$PROMPT_COMMAND&#39;</span><span class="w"> </span><span class="o">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">'updatePrompt'</span>
+precmd<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="s1">'$PROMPT_COMMAND'</span><span class="w"> </span><span class="o">}</span>
 </pre></div>
 </div>
 <p>This answer is a slightly modified version of
@@ -303,18 +303,18 @@ it uses the preinstalled version from the OS by default.</p>
 </pre></div>
 </div>
 <p>Find the line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CONFIGURE_OPTS ${!PACKAGE_CONFIGURE_OPTS} &quot;${!PACKAGE_CONFIGURE_OPTS_ARRAY}&quot; || return 1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CONFIGURE_OPTS ${!PACKAGE_CONFIGURE_OPTS} "${!PACKAGE_CONFIGURE_OPTS_ARRAY}" || return 1
 </pre></div>
 </div>
 <p>and replace it with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CONFIGURE_OPTS --with-tcltk-includes=&#39;-I/usr/local/opt/tcl-tk/include&#39; --with-tcltk-libs=&#39;-L/usr/local/opt/tcl-tk/lib -ltcl8.6 -ltk8.6&#39; ${!PACKAGE_CONFIGURE_OPTS} &quot;${!PACKAGE_CONFIGURE_OPTS_ARRAY}&quot; || return 1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$CONFIGURE_OPTS --with-tcltk-includes='-I/usr/local/opt/tcl-tk/include' --with-tcltk-libs='-L/usr/local/opt/tcl-tk/lib -ltcl8.6 -ltk8.6' ${!PACKAGE_CONFIGURE_OPTS} "${!PACKAGE_CONFIGURE_OPTS_ARRAY}" || return 1
 </pre></div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>The replacement string expects a Tcl/Tk version 8.6. Version 8.7 will be released in the future,
 so check your current installed version via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;puts [info tclversion]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tclsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"puts [info tclversion]"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tclsh
 </pre></div>
 </div>
 </div>
@@ -342,7 +342,7 @@ while navigating to the new &lt;version&gt; directory.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

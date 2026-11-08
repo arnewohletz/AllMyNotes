@@ -18,7 +18,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="../../../_static/nbsphinx-code-cells.css?v=2aa19091" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -32,7 +32,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -171,7 +171,7 @@
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">retry.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">retry_call</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">say_hi</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"hi"</span><span class="p">)</span>
     <span class="k">raise</span> <span class="ne">OSError</span>
 
 
@@ -180,10 +180,10 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="n">retry_call</span><span class="p">(</span><span class="n">say_hi</span><span class="p">,</span> <span class="n">tries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">exceptions</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That didn&#39;t go well&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"That didn't go well"</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">retry_say_hi</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -217,13 +217,13 @@ That didn&#39;t go well
 
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">RetryContextManager</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Context manager to *retry* calls.</span>
+<span class="w">    </span><span class="sd">"""Context manager to *retry* calls.</span>
 
 <span class="sd">    The class wraps the methods provided by the `retry` Python package</span>
 <span class="sd">    to simplify the retry of failing function calls. The class implements</span>
 <span class="sd">    a context manager that allows us to specify retry parameters once</span>
 <span class="sd">    at init time.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">exceptions</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="ne">Exception</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,)</span>
     <span class="n">tries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
@@ -269,7 +269,7 @@ That didn&#39;t go well
             <span class="n">tries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
             <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
             <span class="n">exceptions</span><span class="o">=</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span><span class="p">,),</span>
-            <span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;RobotFramework&quot;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"RobotFramework"</span><span class="p">)</span>
         <span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">get_audio_bytes_from_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
@@ -277,9 +277,9 @@ That didn&#39;t go well
                                                <span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">get_response</span><span class="p">:</span>
             <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That went well&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"That went well"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to receive content from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unable to receive content from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -302,7 +302,7 @@ That didn&#39;t go well
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

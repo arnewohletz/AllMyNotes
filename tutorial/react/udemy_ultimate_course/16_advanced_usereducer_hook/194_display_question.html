@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -165,7 +165,7 @@
 the <code class="docutils literal notranslate"><span class="pre">Question</span></code> component:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">questions</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"loading"</span><span class="p">,</span>
 <span class="w">  </span><span class="c1">// index of currently displayed question</span>
 <span class="hll"><span class="w">  </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
 </span><span class="p">};</span>
@@ -181,15 +181,15 @@ the <code class="docutils literal notranslate"><span class="pre">Question</span>
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Main</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Loader</span><span class="w"> </span><span class="p">/&gt;}</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Error</span><span class="w"> </span><span class="p">/&gt;}</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"loading"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Loader</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"error"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Error</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"ready"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">          </span><span class="p">&lt;</span><span class="nt">StartScreen</span><span class="w"> </span><span class="na">numQuestions</span><span class="o">=</span><span class="p">{</span><span class="nx">numQuestions</span><span class="p">}</span><span class="w"> </span><span class="na">dispatch</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">        </span><span class="p">)}</span>
-<span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Question</span><span class="w"> </span><span class="na">question</span><span class="o">=</span><span class="p">{</span><span class="nx">questions</span><span class="p">[</span><span class="nx">index</span><span class="p">]}</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"active"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Question</span><span class="w"> </span><span class="na">question</span><span class="o">=</span><span class="p">{</span><span class="nx">questions</span><span class="p">[</span><span class="nx">index</span><span class="p">]}</span><span class="w"> </span><span class="p">/&gt;}</span>
 </span><span class="w">      </span><span class="p">&lt;/</span><span class="nt">Main</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
@@ -201,9 +201,9 @@ the <code class="docutils literal notranslate"><span class="pre">Question</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;{</span><span class="nx">question</span><span class="p">.</span><span class="nx">question</span><span class="p">}&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
-</span><span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;options&quot;</span><span class="p">&gt;</span>
+</span><span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"options"</span><span class="p">&gt;</span>
 </span><span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">question</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
-</span><span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-option&quot;</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}&gt;</span>
+</span><span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"btn btn-option"</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}&gt;</span>
 </span><span class="hll"><span class="w">            </span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
 </span><span class="hll"><span class="w">          </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </span><span class="hll"><span class="w">        </span><span class="p">))}</span>
@@ -216,9 +216,9 @@ the <code class="docutils literal notranslate"><span class="pre">Question</span>
 <p>We can further move out the options as a separate component:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Options</span><span class="p">({</span><span class="w"> </span><span class="nx">question</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;options&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"options"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">{</span><span class="nx">question</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-option&quot;</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"btn btn-option"</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}&gt;</span>
 <span class="w">          </span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">))}</span>
@@ -230,7 +230,7 @@ the <code class="docutils literal notranslate"><span class="pre">Question</span>
 </pre></div>
 </div>
 <p>and import it into the <code class="docutils literal notranslate"><span class="pre">Question</span></code> component:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">Options</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Options&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">Options</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./Options"</span><span class="p">;</span>
 </span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">Question</span><span class="p">({</span><span class="w"> </span><span class="nx">question</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">question</span><span class="p">);</span>
@@ -260,7 +260,7 @@ the <code class="docutils literal notranslate"><span class="pre">Question</span>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

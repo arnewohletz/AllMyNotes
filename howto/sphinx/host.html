@@ -18,7 +18,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -32,7 +32,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -158,7 +158,7 @@
 <span class="linenos">3</span>    server_name             localhost;
 <span class="linenos">4</span>    charset                 utf-8;
 <span class="linenos">5</span>    client_max_body_size    75M;
-<span class="linenos">6</span>    root                    &quot;/path/to/project/_build&quot;;
+<span class="linenos">6</span>    root                    "/path/to/project/_build";
 <span class="linenos">7</span>    index                   index.html;
 <span class="linenos">8</span>}
 </pre></div>
@@ -211,7 +211,7 @@ the repository, containing the documentation, is publicly available).</p>
 named <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> and push it to the remote (here: <code class="docutils literal notranslate"><span class="pre">origin</span></code>):</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>--orphan<span class="w"> </span>gh-pages
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span><span class="s2">&quot;initial commit&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--allow-empty<span class="w"> </span><span class="s2">"initial commit"</span>
 $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages
 </pre></div>
 </div>
@@ -222,7 +222,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 in the editor. Change the name to a proper name, for example <code class="docutils literal notranslate"><span class="pre">build_publish_html.yml</span></code>.</p></li>
 <li><p>In the editor, enter the action’s workflow. This shows a working example:</p>
 <blockquote>
-<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Pull</span><span class="nv"> </span><span class="s">Request</span><span class="nv"> </span><span class="s">Docs</span><span class="nv"> </span><span class="s">Build&quot;</span>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"Pull</span><span class="nv"> </span><span class="s">Request</span><span class="nv"> </span><span class="s">Docs</span><span class="nv"> </span><span class="s">Build"</span>
 <span class="linenos"> 2</span><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pull_request</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">push</span><span class="p p-Indicator">]</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="nt">jobs</span><span class="p">:</span>
@@ -232,7 +232,7 @@ in the editor. Change the name to a proper name, for example <code class="docuti
 <span class="linenos"> 8</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
 <span class="linenos"> 9</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
 <span class="linenos">10</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span>
-<span class="linenos">11</span><span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.11&#39;</span>
+<span class="linenos">11</span><span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">'3.11'</span>
 <span class="linenos">12</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
 <span class="linenos">13</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="linenos">14</span><span class="w">        </span><span class="no">pip install -r requirements.txt</span>
@@ -249,10 +249,10 @@ in the editor. Change the name to a proper name, for example <code class="docuti
 <span class="linenos">25</span><span class="w">          </span><span class="no">cp -r ./build/* gh-pages/</span>
 <span class="linenos">26</span><span class="w">          </span><span class="no">cd gh-pages</span>
 <span class="linenos">27</span><span class="w">          </span><span class="no">touch .nojekyll</span>
-<span class="linenos">28</span><span class="w">          </span><span class="no">git config --local user.email &quot;action@github.com&quot;</span>
-<span class="linenos">29</span><span class="w">          </span><span class="no">git config --local user.name &quot;GitHub Action&quot;</span>
+<span class="linenos">28</span><span class="w">          </span><span class="no">git config --local user.email "action@github.com"</span>
+<span class="linenos">29</span><span class="w">          </span><span class="no">git config --local user.name "GitHub Action"</span>
 <span class="linenos">30</span><span class="w">          </span><span class="no">git add .</span>
-<span class="linenos">31</span><span class="w">          </span><span class="no">git commit -m &quot;Update documentation&quot; -a || true</span>
+<span class="linenos">31</span><span class="w">          </span><span class="no">git commit -m "Update documentation" -a || true</span>
 <span class="linenos">32</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Push changes</span>
 <span class="linenos">33</span><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ad-m/github-push-action@master</span>
 <span class="linenos">34</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span>
@@ -312,7 +312,7 @@ message <code class="docutils literal notranslate"><span class="pre">Your</span>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

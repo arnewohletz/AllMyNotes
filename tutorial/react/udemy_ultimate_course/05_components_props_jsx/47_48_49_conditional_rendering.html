@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -183,7 +183,7 @@ enable conditional rendering:</p>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">openHour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12</span><span class="p">;</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">closeHour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">22</span><span class="p">;</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isOpen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">openHour</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">closeHour</span><span class="p">;</span>
-<span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;{</span><span class="nx">isOpen</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Open</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}&lt;/</span><span class="nt">footer</span><span class="p">&gt;;</span>
+<span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"footer"</span><span class="p">&gt;{</span><span class="nx">isOpen</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Open</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}&lt;/</span><span class="nt">footer</span><span class="p">&gt;;</span>
 </span><span class="p">}</span>
 </pre></div>
 </div>
@@ -208,10 +208,10 @@ returns the <code class="code highlight html docutils literal highlight-html"><s
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">numPizzas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pizzas</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">{</span><span class="nx">numPizzas</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
-</span><span class="w">        </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizzas&quot;</span><span class="p">&gt;</span>
+</span><span class="w">        </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizzas"</span><span class="p">&gt;</span>
 <span class="w">          </span><span class="p">{</span><span class="nx">pizzaData</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">            </span><span class="p">&lt;</span><span class="nt">Pizza</span><span class="w"> </span><span class="na">pizzaObj</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">}</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">          </span><span class="p">))}</span>
@@ -225,10 +225,10 @@ returns the <code class="code highlight html docutils literal highlight-html"><s
 <p>If <em>truthy</em>, the JSX element is returned, otherwise <code class="docutils literal notranslate"><span class="pre">null</span></code> (is not rendered).</p>
 <p>The advantage also is, that alternatives can be returned:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">{</span><span class="nx">numPizzas</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizzas&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizzas"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">{</span><span class="nx">pizzaData</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">Pizza</span><span class="w"> </span><span class="na">pizzaObj</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">}</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">      </span><span class="p">))}</span>
@@ -241,7 +241,7 @@ returns the <code class="code highlight html docutils literal highlight-html"><s
 <p class="admonition-title">Important</p>
 <p>We <strong>cannot use</strong> <em>if/else</em> because it <strong>does not produce a value</strong>, so it
 cannot return a JSX element, which is needed here. For example</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nx">numPizzas</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizzas&quot;</span><span class="p">&gt;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nx">numPizzas</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizzas"</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">{</span><span class="nx">pizzaData</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">Pizza</span><span class="w"> </span><span class="na">pizzaObj</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">}</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">  </span><span class="p">))}</span>
@@ -262,7 +262,7 @@ cannot return a JSX element, which is needed here. For example</p>
 
 <span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">isOpen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;order&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"order"</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">          </span><span class="nx">We</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">happy</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="p">{</span><span class="nx">openHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">{</span><span class="nx">closeHour</span><span class="p">}</span><span class="o">:</span><span class="mo">00</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -271,7 +271,7 @@ cannot return a JSX element, which is needed here. For example</p>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="hll"><span class="w">    </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">    </span><span class="p">&lt;</span><span class="nt">footer</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"footer"</span><span class="p">&gt;</span>
 </span><span class="w">        </span><span class="p">{</span><span class="o">*</span><span class="sr">/ other JSX element, returned if upper condition is false */</span><span class="p">}</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">)</span>
@@ -287,7 +287,7 @@ in line 7 is fulfilled. Commonly, multiple returns are <strong>not used to retur
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">soldOut</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizza&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizza"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">photoName</span><span class="p">}</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
@@ -315,7 +315,7 @@ in line 7 is fulfilled. Commonly, multiple returns are <strong>not used to retur
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -157,7 +157,7 @@
 in the <em>code-block</em> directive.</p>
 <p>For very small snippets, code can also be written inline, utilizing syntax the
 same syntax highlighting as in regular code blocks, like here:</p>
-<p>Printing to console in Python is easy as <code class="code highlight python docutils literal highlight-python"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span></code>.</p>
+<p>Printing to console in Python is easy as <code class="code highlight python docutils literal highlight-python"><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">)</span></code>.</p>
 <p>Follow these steps:</p>
 <ol class="arabic">
 <li><p>Within root directory (where <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> is located) create a new file named
@@ -171,14 +171,14 @@ same syntax highlighting as in regular code blocks, like here:</p>
 </li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> define the Pygment theme used for the syntax highlighting, e.g.:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pygments_style</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pygments_style</span> <span class="o">=</span> <span class="s2">"default"</span>
 </pre></div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>To get a list of all available themes, execute:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pygments.styles</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_all_styles</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">get_all_styles</span><span class="p">(),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">get_all_styles</span><span class="p">(),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You may preview the styles at <a class="reference external" href="https://pygments.org/demo/">https://pygments.org/demo/</a>.</p>
@@ -216,12 +216,12 @@ for python:</p>
 </li>
 <li><p>Use the role to add code snippets into your text, e.g.:</p>
 <blockquote>
-<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Printing to console in Python is easy as <span class="na">:python:</span><span class="nv">`print(&quot;Hello World&quot;)`</span>.
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Printing to console in Python is easy as <span class="na">:python:</span><span class="nv">`print("Hello World")`</span>.
 </pre></div>
 </div>
 <p>which will output to:</p>
 <blockquote>
-<div><p>Printing to console in Python is easy as <code class="code highlight python docutils literal highlight-python"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span></code>.</p>
+<div><p>Printing to console in Python is easy as <code class="code highlight python docutils literal highlight-python"><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">)</span></code>.</p>
 </div></blockquote>
 </div></blockquote>
 </li>
@@ -241,7 +241,7 @@ for python:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -234,8 +234,8 @@
 <h2>DOM-Elemente erstellen &amp; einfügen<a class="headerlink" href="#dom-elemente-erstellen-einfugen" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">document.createElement()</span></code> lässt sich ein neues Element im Speicher erzeugen.
 Dieses kann im Speicher weiter definiert werden.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -252,7 +252,7 @@ hinzugefügt wird.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[node].appendChild()</span></code> in den DOM eingefügt werden. Die Funktion muss auf dem
 <strong>Elternelement</strong> angewandt werden und wird als <strong>letzter Kind-Knoten</strong> eingefügt.
 Das eingefügte Element wird als Rückgabewert zurückgegeben.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt &#39;item&#39; zurück</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span><span class="w">  </span><span class="c1">// gibt 'item' zurück</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -263,11 +263,11 @@ Das eingefügte Element wird als Rückgabewert zurückgegeben.</p>
 <code class="docutils literal notranslate"><span class="pre">[node].cloneNode()</span></code> eine Kopie eines Knotens duplizieren. Wird das <code class="docutils literal notranslate"><span class="pre">deep</span></code>
 Argument als <code class="docutils literal notranslate"><span class="pre">true</span></code> übergeben, wird der gesamte Inhalt des Knotens (inklusive
 Textinhalt und aller möglichen Child-Nodes) mit dupliziert.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">firstItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">firstItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firstItem</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;cloned&quot;</span><span class="p">);</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"cloned"</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -280,9 +280,9 @@ Textinhalt und aller möglichen Child-Nodes) mit dupliziert.</p>
 <h2>Knoten verschieben<a class="headerlink" href="#knoten-verschieben" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.appendChild()</span></code> kann ebenso ein bereits in der DOM vorhandenes Element
 als letzter Kind-Knoten eines Eltern-Knotens verschoben werden.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
 <span class="c1">// zweites Element (CSS zählt von 1)</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li:nth-of-type(2)&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li:nth-of-type(2)"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span><span class="w">  </span><span class="c1">// letztes Element</span>
 </pre></div>
@@ -293,15 +293,15 @@ als letzter Kind-Knoten eines Eltern-Knotens verschoben werden.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[node].remove()</span></code> wird ein Element aus dem DOM gelöscht und die Referenz
 auf das Element im Speicher zurückgegeben. Jedoch bleiben mögliche Referenzen
 im Speicher erhalten.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">delItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">delItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">delItem</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span><span class="w">  </span><span class="c1">// lösche aus DOM</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">delItem</span><span class="p">);</span><span class="w">   </span><span class="c1">// delItem is still here!</span>
 </pre></div>
 </div>
 <p>Früher wurde die <code class="docutils literal notranslate"><span class="pre">[parent_node].removeChild()</span></code> Methode angewandt (auch hier
 wird die Referenz auf das aus DOM gelöschte Element zurückgegeben):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">oldItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">oldItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">removedItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">oldItem</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -311,34 +311,34 @@ wird die Referenz auf das aus DOM gelöschte Element zurückgegeben):</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[parent_node].replaceChild(new,</span> <span class="pre">exists)</span></code> wird ein Kind-Knoten einer Node durch
 einen anderen Knoten ersetzt. Der Rückgabewert ist das Element, welches ersetzt
 wurde.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span><span class="p">;</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"replace"</span><span class="p">;</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">firstItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">firstItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">oldItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">replaceChild</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">firstItem</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">replaceChildren(new)</span></code> werden <strong>alle</strong> Kind-Knoten eines Eltern-Knoten durch
 neue Elemente oder Strings ersetzt.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">unorderedList</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="n">let</span> <span class="n">item_2</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="n">let</span> <span class="n">item_3</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">unorderedList</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="n">let</span> <span class="n">item_2</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="n">let</span> <span class="n">item_3</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="n">item_2</span><span class="o">.</span><span class="n">textContent</span> <span class="o">=</span> <span class="mi">55</span><span class="p">;</span>
 <span class="n">item_3</span><span class="o">.</span><span class="n">textContent</span> <span class="o">=</span> <span class="mi">66</span><span class="p">;</span>
-<span class="n">unorderedList</span><span class="o">.</span><span class="n">replaceChildren</span><span class="p">(</span><span class="n">item_2</span><span class="p">,</span> <span class="s2">&quot;Kleiner Text im Regen ...&quot;</span><span class="p">,</span> <span class="n">item_3</span><span class="p">);</span>
+<span class="n">unorderedList</span><span class="o">.</span><span class="n">replaceChildren</span><span class="p">(</span><span class="n">item_2</span><span class="p">,</span> <span class="s2">"Kleiner Text im Regen ..."</span><span class="p">,</span> <span class="n">item_3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Zuletzt kann über <code class="docutils literal notranslate"><span class="pre">replaceWith()</span></code> ein existierendes Element durch eine Vielzahl
 von Elementen ersetzt werden. Die Elemente werden als einzelne Argumente übergeben.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">item_2</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">111</span><span class="p">;</span>
 <span class="nx">item_3</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">222</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">firstItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="nx">firstItem</span><span class="p">.</span><span class="nx">replaceWith</span><span class="p">(</span><span class="nx">item_2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Kleiner Text im Schnee...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item_3</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">firstItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="nx">firstItem</span><span class="p">.</span><span class="nx">replaceWith</span><span class="p">(</span><span class="nx">item_2</span><span class="p">,</span><span class="w"> </span><span class="s2">"Kleiner Text im Schnee..."</span><span class="p">,</span><span class="w"> </span><span class="nx">item_3</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -346,12 +346,12 @@ von Elementen ersetzt werden. Die Elemente werden als einzelne Argumente überge
 <h2>Alle Elemente im DOM erreichen<a class="headerlink" href="#alle-elemente-im-dom-erreichen" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[parent_node].insertBefore(item,</span> <span class="pre">ref)</span></code> kann ein Knoten <strong>vor</strong> einem
 beliebigen Referenzknoten innerhalb eines Eltern-Knotens eingefügt werden</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;insert&quot;</span><span class="p">;</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"insert"</span><span class="p">;</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">refNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li:nth-of-type(3)&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">refNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">unorderedList</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li:nth-of-type(3)"</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">refNode</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -365,35 +365,35 @@ Templates beinhaltet und welcher sich beliebig weiterverarbeiten lässt (z.B. kl
 <p>Beispiel:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">CONTENTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">headline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Headline&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">subline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Subline&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">content_1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Content 1&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">content_2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;content 2&quot;</span>
+<span class="w">        </span><span class="nx">headline</span><span class="o">:</span><span class="w"> </span><span class="s2">"Headline"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">subline</span><span class="o">:</span><span class="w"> </span><span class="s2">"Subline"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">content_1</span><span class="o">:</span><span class="w"> </span><span class="s2">"Content 1"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">content_2</span><span class="o">:</span><span class="w"> </span><span class="s2">"content 2"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">headline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Headline 2&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">subline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Subline 2&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">content_1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Content 1-2&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">content_2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;content 2-2&quot;</span>
+<span class="w">        </span><span class="nx">headline</span><span class="o">:</span><span class="w"> </span><span class="s2">"Headline 2"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">subline</span><span class="o">:</span><span class="w"> </span><span class="s2">"Subline 2"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">content_1</span><span class="o">:</span><span class="w"> </span><span class="s2">"Content 1-2"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">content_2</span><span class="o">:</span><span class="w"> </span><span class="s2">"content 2-2"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">headline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Headline 3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">subline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Subline 3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">content_1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Content 1-3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">content_2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;content 2-3&quot;</span>
+<span class="w">        </span><span class="nx">headline</span><span class="o">:</span><span class="w"> </span><span class="s2">"Headline 3"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">subline</span><span class="o">:</span><span class="w"> </span><span class="s2">"Subline 3"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">content_1</span><span class="o">:</span><span class="w"> </span><span class="s2">"Content 1-3"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">content_2</span><span class="o">:</span><span class="w"> </span><span class="s2">"content 2-3"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#template&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#template"</span><span class="p">);</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">CONTENTS</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">actObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CONTENTS</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">clone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">template</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 
-<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">headline</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">subline</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.content_1&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">content_1</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.content_2&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">content_2</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">headline</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">subline</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".content_1"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">content_1</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".content_2"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">actObj</span><span class="p">.</span><span class="nx">content_2</span><span class="p">;</span>
 <span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">clone</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -414,16 +414,16 @@ Element also verschoben.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;beforeend&quot;</span></code>:Direkt innerhalb dem <code class="docutils literal notranslate"><span class="pre">[target_element]</span></code>, vor dessen ersten Kind</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;afterbegin&quot;</span></code>: Direkt innerhalb dem <code class="docutils literal notranslate"><span class="pre">[target_element]</span></code>, nach dessen letzten Kind</p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;adjacent&quot;</span><span class="p">;</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"adjacent"</span><span class="p">;</span>
 
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">&quot;beforebegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">&quot;afterbegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">&quot;beforeend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">&quot;afterend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">"beforebegin"</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">"afterbegin"</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">"beforeend"</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="s2">"afterend"</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -434,14 +434,14 @@ eingefügt.</p>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[elem].insertAdjacentHTML()</span></code> lässt sich ein <strong>DOM-String</strong> (mit HTML-Markup)
 an eine bestimmte Stelle innerhalb eines <em>target_element</em> einfügen:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">domString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;li class=\&quot;domString\&quot;&gt;8&lt;/li&gt;&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">domString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;li class=\"domString\"&gt;8&lt;/li&gt;"</span><span class="p">;</span>
 
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforebegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;afterbegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;beforeend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">&quot;afterend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">"beforebegin"</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">"afterbegin"</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">"beforeend"</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s2">"afterend"</span><span class="p">,</span><span class="w"> </span><span class="nx">domString</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -459,15 +459,15 @@ z.B. <code class="docutils literal notranslate"><span class="pre">insertAdjacent
 <p>Über <code class="docutils literal notranslate"><span class="pre">insertAdjacentText(&quot;position&quot;,</span> <span class="pre">string)</span></code> lässt sich ein <strong>Text</strong> (ohne Markup,
 wird nicht gerendert) an eine bestimmte Stelle innerhalb eines <em>target_elements</em>
 eingefügt:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
 
 <span class="c1">// Hint: &lt;b&gt; Tags werden NICHT gerendert</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Kleiner Text im &lt;b&gt;Schnee&lt;b&gt;&quot;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Kleiner Text im &lt;b&gt;Schnee&lt;b&gt;"</span>
 
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">&quot;beforebegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">&quot;afterbegin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">&quot;beforeend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
-<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">&quot;afterend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">"beforebegin"</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">"afterbegin"</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">"beforeend"</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
+<span class="nx">unorderedList</span><span class="p">.</span><span class="nx">insertAdjacentText</span><span class="p">(</span><span class="s2">"afterend"</span><span class="p">,</span><span class="w"> </span><span class="nx">myStr</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -485,19 +485,19 @@ of the <code class="docutils literal notranslate"><span class="pre">[node]</span
 <li><p><code class="docutils literal notranslate"><span class="pre">[node].append(1+</span> <span class="pre">elem/string)</span></code>: add node objects <strong>after the last child</strong>
 of the <code class="docutils literal notranslate"><span class="pre">[node]</span></code></p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;container&quot;</span><span class="p">;</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"container"</span><span class="p">;</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kleiner Text im Schnee...&quot;</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">para_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">para_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">para_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"kleiner Text im Schnee..."</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">para_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"p"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">para_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"p"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">para_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"p"</span><span class="p">);</span>
 <span class="nx">para_1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
-<span class="nx">para_2</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; langweilt sich...&quot;</span><span class="p">;</span>
-<span class="nx">para_3</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; und friert ...&quot;</span><span class="p">;</span>
+<span class="nx">para_2</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" langweilt sich..."</span><span class="p">;</span>
+<span class="nx">para_3</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" und friert ..."</span><span class="p">;</span>
 
-<span class="nx">item</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;Unterpunkt:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">para_1</span><span class="p">);</span>
+<span class="nx">item</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">"Unterpunkt:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">para_1</span><span class="p">);</span>
 <span class="nx">item</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">para_2</span><span class="p">,</span><span class="w"> </span><span class="nx">para_3</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -513,11 +513,11 @@ einem <em>target_element</em> platzieren.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">[target_element].before(1+</span> <span class="pre">elem/string)</span></code>: add elements to the same level <strong>before</strong> this element</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[target_element].after(1+</span> <span class="pre">elem/string)</span></code>: add elements to the same level <strong>after</strong> this element</p></li>
 </ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">targetElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">targetElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
 <span class="nx">targetElement</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">11</span><span class="p">;</span>
 <span class="nx">item_1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
@@ -529,7 +529,7 @@ einem <em>target_element</em> platzieren.</p>
 
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">targetElement</span><span class="p">);</span>
 <span class="nx">targetElement</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">item_1</span><span class="p">);</span>
-<span class="nx">targetElement</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="nx">item_2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Kleiner Text im Schnee...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item_3</span><span class="p">);</span>
+<span class="nx">targetElement</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="nx">item_2</span><span class="p">,</span><span class="w"> </span><span class="s2">"Kleiner Text im Schnee..."</span><span class="p">,</span><span class="w"> </span><span class="nx">item_3</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -539,11 +539,11 @@ einem <em>target_element</em> platzieren.</p>
 in welche Knoten und Strings hinzufügen lassen und anschließend in die DOM anhängen.
 In das Fragment lassen sich abermals Elemente oder Strings (keine DOM-Strings)
 einfügen.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">item_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">unorderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
 <span class="nx">item_1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">555</span><span class="p">;</span>
 <span class="nx">item_2</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">666</span><span class="p">;</span>
@@ -551,7 +551,7 @@ einfügen.</p>
 <span class="nx">item_4</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">888</span><span class="p">;</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">fragment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span>
-<span class="nx">fragment</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">item_1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Kleiner Text...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">item_2</span><span class="p">,</span><span class="w"> </span><span class="nx">item_3</span><span class="p">,</span><span class="w"> </span><span class="nx">item_4</span><span class="p">);</span>
+<span class="nx">fragment</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">item_1</span><span class="p">,</span><span class="w"> </span><span class="s2">"Kleiner Text..."</span><span class="p">,</span><span class="w"> </span><span class="nx">item_2</span><span class="p">,</span><span class="w"> </span><span class="nx">item_3</span><span class="p">,</span><span class="w"> </span><span class="nx">item_4</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">fragment</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -560,7 +560,7 @@ einfügen.</p>
 <h2>Text-Knoten erzeugen<a class="headerlink" href="#text-knoten-erzeugen" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">document.createTextNode(string)</span></code> lässt sich ein Text-Knoten erstellen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Text Knoten erstellen</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">textNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">&quot;Text im Schneeregen&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">textNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">"Text im Schneeregen"</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">textNode</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -575,7 +575,7 @@ einfügen.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">document.createComment(comment_string)</span></code> lässt sich ein Kommentar-Knoten
 erzeugen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Kommentar erzeugen</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">newComment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createComment</span><span class="p">(</span><span class="s2">&quot;Liste zu Testzwecken&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newComment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createComment</span><span class="p">(</span><span class="s2">"Liste zu Testzwecken"</span><span class="p">);</span>
 <span class="nx">unorderedList</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">newComment</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -600,7 +600,7 @@ erzeugen.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

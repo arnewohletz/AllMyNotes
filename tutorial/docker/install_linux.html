@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -180,7 +180,7 @@ $<span class="w"> </span>software-properties-common
 </li>
 <li><p>Add the Docker repository to your package index</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$UBUNTU_CODENAME</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$UBUNTU_CODENAME</span><span class="s2">"</span><span class="k">)</span><span class="s2"> stable"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -298,7 +298,7 @@ $<span class="w"> </span>pass<span class="w"> </span>insert<span class="w"> </sp
 <li><p>Erase all content (if any) and add:</p>
 <blockquote>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
-    &quot;credsStore&quot;: &quot;pass&quot;
+    "credsStore": "pass"
 }
 </pre></div>
 </div>
@@ -307,7 +307,7 @@ $<span class="w"> </span>pass<span class="w"> </span>insert<span class="w"> </sp
 </li>
 <li><p>Log into Docker Hub:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="o">=</span><span class="s2">&quot;&lt;YOUR_DOCKER_HUB_USERNAME&quot;</span><span class="w"> </span>docker.io
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="o">=</span><span class="s2">"&lt;YOUR_DOCKER_HUB_USERNAME"</span><span class="w"> </span>docker.io
 </pre></div>
 </div>
 <p>Enter your password (this should not be required once).</p>
@@ -319,7 +319,7 @@ $<span class="w"> </span>pass<span class="w"> </span>insert<span class="w"> </sp
 </pre></div>
 </div>
 <p>which should print something like this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;https://index.docker.io/v1/&quot;:&quot;&lt;YOUR_DOCKER_HUB_USERNAME&gt;&quot;}
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{"https://index.docker.io/v1/":"&lt;YOUR_DOCKER_HUB_USERNAME&gt;"}
 </pre></div>
 </div>
 </div></blockquote>
@@ -366,7 +366,7 @@ $<span class="w"> </span>pass<span class="w"> </span>insert<span class="w"> </sp
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

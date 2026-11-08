@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -164,20 +164,20 @@
 <h1>Navigate using useNavigate<a class="headerlink" href="#navigate-using-usenavigate" title="Link to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">useNavigate</span></code> allows to programmatically navigate to a URL. We want to navigate
 to a form, when clicking anywhere inside the <code class="docutils literal notranslate"><span class="pre">&lt;Map&gt;</span></code> component:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">,</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
-</span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Map.module.css&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">,</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-router-dom"</span><span class="p">;</span>
+</span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./Map.module.css"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
 </span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"lat"</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"lng"</span><span class="p">);</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span>
 <span class="w">      </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mapContainer</span><span class="p">}</span>
 <span class="hll"><span class="w">      </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">navigate</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">navigate</span><span class="p">(</span><span class="s2">"form"</span><span class="p">);</span>
 </span><span class="hll"><span class="w">      </span><span class="p">}}</span>
 </span><span class="w">    </span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
@@ -188,7 +188,7 @@ to a form, when clicking anywhere inside the <code class="docutils literal notra
 </div>
 <p>We can also implement a <em>Go back</em> button inside our form with this. First we create
 the component:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Button.module.css&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./Button.module.css"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Button</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="p">,</span><span class="w"> </span><span class="nx">onClick</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
@@ -202,12 +202,12 @@ the component:</p>
 </div>
 <p>The <em>Button</em> element accepts a <code class="docutils literal notranslate"><span class="pre">onClick</span></code> event function, and a <code class="docutils literal notranslate"><span class="pre">type</span></code> variabel.
 Next, we define the buttons</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span><span class="nx">Add</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;back&quot;</span><span class="p">&gt;</span><span class="o">&amp;</span><span class="nx">larr</span><span class="p">;</span><span class="w"> </span><span class="nx">Back</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">"primary"</span><span class="p">&gt;</span><span class="nx">Add</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">"back"</span><span class="p">&gt;</span><span class="o">&amp;</span><span class="nx">larr</span><span class="p">;</span><span class="w"> </span><span class="nx">Back</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>and use the <code class="docutils literal notranslate"><span class="pre">type</span></code> to select the style class in the Button component:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Button.module.css&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./Button.module.css"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Button</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="p">,</span><span class="w"> </span><span class="nx">onClick</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
@@ -222,9 +222,9 @@ Next, we define the buttons</p>
 <p>The we again use the <code class="docutils literal notranslate"><span class="pre">useNavigate</span></code> hook to navigate back to the previous page:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
 </span>
-<span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;primary&quot;</span><span class="p">&gt;</span><span class="nx">Add</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">Button</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">"primary"</span><span class="p">&gt;</span><span class="nx">Add</span><span class="p">&lt;/</span><span class="nt">Button</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">Button</span>
-<span class="w">  </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;back&quot;</span>
+<span class="w">  </span><span class="na">type</span><span class="o">=</span><span class="s">"back"</span>
 <span class="hll"><span class="w">  </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="nx">navigate</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
 </span><span class="hll"><span class="w">  </span><span class="p">}}</span>
@@ -238,7 +238,7 @@ Next, we define the buttons</p>
 <p>Note, as this <code class="docutils literal notranslate"><span class="pre">&lt;Button&gt;</span></code> element is inside a form, it triggers the form to be
 submitted. To prevent that, we must disable the default behavior:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">Button</span>
-<span class="w">  </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;back&quot;</span>
+<span class="w">  </span><span class="na">type</span><span class="o">=</span><span class="s">"back"</span>
 <span class="hll"><span class="w">  </span><span class="na">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 </span><span class="w">    </span><span class="nx">navigate</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
@@ -255,23 +255,23 @@ use case for it, which is inside nested routes.</p>
 <p>Problem: When we navigate to <code class="docutils literal notranslate"><span class="pre">/app</span></code>, we have access to our Cities, but those
 rely on the URL to be <code class="docutils literal notranslate"><span class="pre">/app/cities</span></code>. Both routes show the <code class="docutils literal notranslate"><span class="pre">&lt;CitiesList&gt;</span></code> element.</p>
 <p>To fix it, we change the</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BrowserRouter</span><span class="p">,</span><span class="w"> </span><span class="nx">Route</span><span class="p">,</span><span class="w"> </span><span class="nx">Routes</span><span class="p">,</span><span class="w"> </span><span class="nx">Navigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BrowserRouter</span><span class="p">,</span><span class="w"> </span><span class="nx">Route</span><span class="p">,</span><span class="w"> </span><span class="nx">Routes</span><span class="p">,</span><span class="w"> </span><span class="nx">Navigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-router-dom"</span><span class="p">;</span>
 </span>
 <span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
 
-<span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">AppLayout</span><span class="w"> </span><span class="p">/&gt;}&gt;</span>
-<span class="hll"><span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">index</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Navigate</span><span class="w"> </span><span class="na">replace</span><span class="w"> </span><span class="na">to</span><span class="o">=</span><span class="s">&quot;cities&quot;</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
-</span><span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;cities/:id&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">City</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">"app"</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">AppLayout</span><span class="w"> </span><span class="p">/&gt;}&gt;</span>
+<span class="hll"><span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">index</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Navigate</span><span class="w"> </span><span class="na">replace</span><span class="w"> </span><span class="na">to</span><span class="o">=</span><span class="s">"cities"</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">"cities/:id"</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">City</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span>
-<span class="w">    </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;cities&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="o">=</span><span class="s">"cities"</span>
 <span class="w">    </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">CityList</span><span class="w"> </span><span class="na">cities</span><span class="o">=</span><span class="p">{</span><span class="nx">cities</span><span class="p">}</span><span class="w"> </span><span class="na">isLoading</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoading</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;}</span>
 <span class="w">  </span><span class="p">/&gt;</span>
 <span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span>
-<span class="w">    </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;countries&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="o">=</span><span class="s">"countries"</span>
 <span class="w">    </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">CountryList</span><span class="w"> </span><span class="na">cities</span><span class="o">=</span><span class="p">{</span><span class="nx">cities</span><span class="p">}</span><span class="w"> </span><span class="na">isLoading</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoading</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;}</span>
 <span class="w">  </span><span class="p">/&gt;</span>
 <span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span>
-<span class="w">    </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;form&quot;</span>
+<span class="w">    </span><span class="na">path</span><span class="o">=</span><span class="s">"form"</span>
 <span class="w">    </span><span class="na">element</span><span class="o">=</span><span class="p">{</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">Form</span><span class="w"> </span><span class="p">/&gt;</span>
@@ -299,7 +299,7 @@ which enables to go back in the browser after this re-redirect.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

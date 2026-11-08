@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -166,7 +166,7 @@ installed on your system.</p>
 (add it to your shell’s profile, e.g. <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> for <em>bash</em> or <code class="docutils literal notranslate"><span class="pre">~/.zprofile</span></code> for <em>zsh</em>), e.g.:</p>
 <blockquote>
 <div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting PATH to Python scripts directory</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/your/scripts/directory:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/your/scripts/directory:</span><span class="nv">$PATH</span><span class="s2">"</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -199,10 +199,10 @@ $<span class="w"> </span>pyenv<span class="w"> </span><span class="nb">local</sp
 (replace existing shebang line, if applicable):</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/zsh</span>
-<span class="s2">&quot;true&quot;</span> <span class="s1">&#39;&#39;&#39;</span><span class="se">\&#39;</span>
-<span class="s1">pushd $(dirname &quot;$</span><span class="si">{0}</span><span class="s1">&quot;) &gt; /dev/null</span>
-<span class="s1">&quot;exec&quot; &quot;pyenv&quot; &quot;exec&quot; &quot;python&quot; &quot;$0&quot; &quot;$@&quot;</span>
-<span class="s1">&#39;&#39;&#39;</span>
+<span class="s2">"true"</span> <span class="s1">'''</span><span class="se">\'</span>
+<span class="s1">pushd $(dirname "$</span><span class="si">{0}</span><span class="s1">") &gt; /dev/null</span>
+<span class="s1">"exec" "pyenv" "exec" "python" "$0" "$@"</span>
+<span class="s1">'''</span>
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -235,7 +235,7 @@ first.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

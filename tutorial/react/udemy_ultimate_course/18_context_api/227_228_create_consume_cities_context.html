@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -164,10 +164,10 @@
 <p>Context files should be put into a separate <code class="docutils literal notranslate"><span class="pre">./contexts</span></code> folder (inside <code class="docutils literal notranslate"><span class="pre">src</span></code>).
 The new <code class="docutils literal notranslate"><span class="pre">CitiesContext.jsx</span></code> file will receive all state and state-updating logic
 from the <em>App</em> component (<code class="docutils literal notranslate"><span class="pre">App.jsx</span></code>):</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;react&quot;</span><span class="p">);</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">"react"</span><span class="p">);</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">CitiesContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">();</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">BASE_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://localhost:8000&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">BASE_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://localhost:8000"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">CitiesProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">cities</span><span class="p">,</span><span class="w"> </span><span class="nx">setCities</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
@@ -181,7 +181,7 @@ from the <em>App</em> component (<code class="docutils literal notranslate"><spa
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
 <span class="w">        </span><span class="nx">setCities</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;There was an error loading data&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"There was an error loading data"</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">setIsLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span>
@@ -228,7 +228,7 @@ instead of relying on the <code class="docutils literal notranslate"><span class
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">useCities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">CitiesContext</span><span class="p">);</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span>
-<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;CitiesContext was used outside the CitiesProvider&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"CitiesContext was used outside the CitiesProvider"</span><span class="p">);</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">context</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -238,7 +238,7 @@ instead of relying on the <code class="docutils literal notranslate"><span class
 <p>and use it in any component that relies on the <code class="docutils literal notranslate"><span class="pre">cities</span></code> state and/or the
 <code class="docutils literal notranslate"><span class="pre">isLoading</span></code> state-setting function, such as <code class="docutils literal notranslate"><span class="pre">CitiesList</span></code> and <code class="docutils literal notranslate"><span class="pre">CountryList</span></code>,
 removing the previously passed in props:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../../contexts/CitiesContext&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"../../contexts/CitiesContext"</span><span class="p">;</span>
 </span>
 <span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">CityList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cities</span><span class="p">,</span><span class="w"> </span><span class="nx">isLoading</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCities</span><span class="p">();</span>
@@ -248,7 +248,7 @@ removing the previously passed in props:</p>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cities</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Message</span><span class="w"> </span><span class="na">message</span><span class="o">=</span><span class="s">&quot;Add your first city by clicking on a city on the map&quot;</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Message</span><span class="w"> </span><span class="na">message</span><span class="o">=</span><span class="s">"Add your first city by clicking on a city on the map"</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">cityList</span><span class="p">}&gt;</span>
@@ -275,7 +275,7 @@ removing the previously passed in props:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -191,7 +191,7 @@ a Mock instance, which you can preconfigure using the techniques from <code clas
 
 <span class="k">def</span><span class="w"> </span><span class="nf">work_on</span><span class="p">():</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
@@ -210,7 +210,7 @@ statement ends.</p>
 <span class="k">class</span><span class="w"> </span><span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_using_context_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mocked_os</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'work.os'</span><span class="p">)</span> <span class="k">as</span> <span class="n">mocked_os</span><span class="p">:</span>
             <span class="n">work_on</span><span class="p">()</span>
             <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
 </pre></div>
@@ -239,8 +239,8 @@ function, that is called (<code class="docutils literal notranslate"><span class
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_using_return_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os.getcwd&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">):</span>
-            <span class="k">assert</span> <span class="n">work_on</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;testing&#39;</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'work.os.getcwd'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">'testing'</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="n">work_on</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'testing'</span>
 </pre></div>
 </div>
 </div>
@@ -255,7 +255,7 @@ The patch is available for the entire function.</p>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestWorkMockingModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
 
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;work.os&#39;</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'work.os'</span><span class="p">)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_using_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mocked_os</span><span class="p">):</span>
         <span class="n">work_on</span><span class="p">()</span>
         <span class="n">mocked_os</span><span class="o">.</span><span class="n">getcwd</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
@@ -293,11 +293,11 @@ two things:</p>
 <span class="k">class</span><span class="w"> </span><span class="nc">Worker</span><span class="p">:</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">Helper</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">Helper</span><span class="p">(</span><span class="s1">'db'</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
@@ -316,11 +316,11 @@ so that failures can be associated with the <code class="docutils literal notran
 <span class="k">class</span><span class="w"> </span><span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patching_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockHelper</span><span class="p">:</span>
-            <span class="n">MockHelper</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.Helper'</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockHelper</span><span class="p">:</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">'testing'</span>
             <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">'db'</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -340,22 +340,22 @@ and the other the <code class="docutils literal notranslate"><span class="pre">&
 <span class="k">class</span><span class="w"> </span><span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="n">mockHelperInstance</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
-    <span class="n">mockHelperInstance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+    <span class="n">mockHelperInstance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">'testing'</span>
 
     <span class="c1"># using patch context manager</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patch_class_context_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.Helper'</span><span class="p">,</span>
                         <span class="n">return_value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mockHelperInstance</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockHelper</span><span class="p">:</span>
             <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+            <span class="n">MockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">'db'</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
 
     <span class="c1"># using patch class decorator</span>
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">mockHelperInstance</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.Helper'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">mockHelperInstance</span><span class="p">)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patch_class_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_helper</span><span class="p">):</span>
         <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-        <span class="n">mock_helper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+        <span class="n">mock_helper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">'db'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -388,16 +388,16 @@ raises the call count</p></li>
         <span class="n">mockHelper</span><span class="o">.</span><span class="n">reset_mock</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span> <span class="o">=</span> <span class="n">mockHelper</span><span class="o">.</span><span class="n">return_value</span>
 
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.Helper'</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_initialization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">Worker</span><span class="p">()</span>
-        <span class="n">mockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+        <span class="n">mockHelper</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">'db'</span><span class="p">)</span>
 
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.Helper'</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">'testing'</span>
         <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -435,11 +435,11 @@ but the call is <strong>not</strong> changed in the <code class="docutils litera
 <span class="k">class</span><span class="w"> </span><span class="nc">Worker</span><span class="p">:</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">Helper</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">Helper</span><span class="p">(</span><span class="s1">'db'</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
@@ -449,15 +449,15 @@ as we mock the <code class="docutils literal notranslate"><span class="pre">get_
 class does not contain this method anymore.</p>
 <p>But with the <code class="docutils literal notranslate"><span class="pre">autospec=True</span></code> method, the Mock <code class="docutils literal notranslate"><span class="pre">get_path()</span></code> method, the Mock
 object checks for consistence with the original object. So</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.Helper&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.Helper'</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">mockHelper</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">test_get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">mock_helper_instance</span><span class="o">.</span><span class="n">get_path</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s1">'testing'</span>
     <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>will raise an <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AttributeError: Mock object has no attribute &#39;get_path&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AttributeError: Mock object has no attribute 'get_path'
 </pre></div>
 </div>
 </section>
@@ -475,16 +475,16 @@ one of its methods:</p>
 <span class="k">class</span><span class="w"> </span><span class="nc">TestWorkerModule</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_partial_patching_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Helper</span><span class="p">,</span> <span class="s1">&#39;get_path&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Helper</span><span class="p">,</span> <span class="s1">'get_path'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">'testing'</span><span class="p">):</span>
             <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;db&#39;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">'db'</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
 
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Helper</span><span class="p">,</span> <span class="s1">&#39;get_path&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Helper</span><span class="p">,</span> <span class="s1">'get_path'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">'testing'</span><span class="p">)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_partial_patching_decorator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mocked_helper_get_path</span><span class="p">):</span>
         <span class="n">worker</span> <span class="o">=</span> <span class="n">Worker</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;db&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s1">'db'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">worker</span><span class="o">.</span><span class="n">work</span><span class="p">(),</span> <span class="s1">'testing'</span><span class="p">)</span>
         <span class="n">mocked_helper_get_path</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -498,8 +498,8 @@ it might be important to test, if that call was made.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">work_on_env</span><span class="p">():</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MY_VAR&#39;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'MY_VAR'</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Working on </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
@@ -512,11 +512,11 @@ it might be important to test, if that call was made.</p>
 <span class="k">class</span><span class="w"> </span><span class="nc">TestBuiltin</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patch_dict_context_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.print&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_print</span><span class="p">:</span>
-            <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;os.getcwd&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;/home/&#39;</span><span class="p">):</span>
-                <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="s1">&#39;os.environ&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;MY_VAR&#39;</span><span class="p">:</span> <span class="s1">&#39;testing&#39;</span><span class="p">}):</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">work_on_env</span><span class="p">(),</span> <span class="s1">&#39;/home/testing&#39;</span><span class="p">)</span>
-                    <span class="n">mock_print</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;Working on /home/testing&#39;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.print'</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_print</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'os.getcwd'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">'/home/'</span><span class="p">):</span>
+                <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="s1">'os.environ'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'MY_VAR'</span><span class="p">:</span> <span class="s1">'testing'</span><span class="p">}):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">work_on_env</span><span class="p">(),</span> <span class="s1">'/home/testing'</span><span class="p">)</span>
+                    <span class="n">mock_print</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">'Working on /home/testing'</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -530,12 +530,12 @@ it might be important to test, if that call was made.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">work_on_env</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestBuiltin</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;os.getcwd&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;/home/&#39;</span><span class="p">)</span>
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;worker.print&#39;</span><span class="p">)</span>
-    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="s1">&#39;os.environ&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;MY_VAR&#39;</span><span class="p">:</span> <span class="s1">&#39;testing&#39;</span><span class="p">})</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'os.getcwd'</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">'/home/'</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">'worker.print'</span><span class="p">)</span>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="s1">'os.environ'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'MY_VAR'</span><span class="p">:</span> <span class="s1">'testing'</span><span class="p">})</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patch_builtin_dict_decorators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_print</span><span class="p">,</span> <span class="n">mock_getcwd</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">work_on_env</span><span class="p">(),</span> <span class="s1">&#39;/home/testing&#39;</span><span class="p">)</span>
-        <span class="n">mock_print</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">&#39;Working on /home/testing&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">work_on_env</span><span class="p">(),</span> <span class="s1">'/home/testing'</span><span class="p">)</span>
+        <span class="n">mock_print</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s1">'Working on /home/testing'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">mock_getcwd</span></code> must be passed into the test function, though it isn’t used.
@@ -577,12 +577,12 @@ mismatch.</p>
 
     <span class="nd">@expectedFailure</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patch_incorrect_class_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Pricer</span><span class="p">,</span> <span class="s1">&#39;PERCENTAGE&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Pricer</span><span class="p">,</span> <span class="s1">'PERCENTAGE'</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
             <span class="n">pricer</span> <span class="o">=</span> <span class="n">Pricer</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">pricer</span><span class="o">.</span><span class="n">get_discounted_price</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_patch_class_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Pricer</span><span class="p">,</span> <span class="s1">&#39;DISCOUNT&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Pricer</span><span class="p">,</span> <span class="s1">'DISCOUNT'</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
             <span class="n">pricer</span> <span class="o">=</span> <span class="n">Pricer</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">pricer</span><span class="o">.</span><span class="n">get_discounted_price</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 
@@ -618,7 +618,7 @@ for all later running tests</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

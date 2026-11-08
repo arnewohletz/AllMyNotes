@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -259,8 +259,8 @@ dependencies installation steps should be put before this one.</p>
 <p>can be used in multiple images without saving a copy for each image on the Docker Host system
 (decreases file size).</p>
 <p>Here, two metadata key-value pairs are added to the same label and layer:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LABEL maintainer=&quot;Arne Wohletz &lt;arnewohletz@gmx.de&gt;&quot; \
-      version=&quot;1.0&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LABEL maintainer="Arne Wohletz &lt;arnewohletz@gmx.de&gt;" \
+      version="1.0"
 </pre></div>
 </div>
 <p>Indentation isn’t required, but looks better.</p>
@@ -560,7 +560,7 @@ flask version info to the local terminal window</p>
 <p>All commands docker executes on the containers host OS are executed as root user.
 If new files are created by docker, they are owned by root (Linux only).</p>
 <p>To prevent this use the –user flag</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container exec -it --user &quot;$(id -u):$(id -g)&quot; web1 touch hi.txt
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker container exec -it --user "$(id -u):$(id -g)" web1 touch hi.txt
 </pre></div>
 </div>
 </div>
@@ -798,13 +798,13 @@ not existing already)</div>
 <div><ul class="simple">
 <li><p>within your entrypoint script, you can print terminal message by using <strong>echo</strong> (shell) e.g.</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo &quot;The Dockerfile ENTRYPOINT has been executed!&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo "The Dockerfile ENTRYPOINT has been executed!"
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>an environmental variable is set (with a default value)</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export WEB2_COUNTER_MSG=&quot;${WEB2_COUNTER_MSG:-some default value if not specified}
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export WEB2_COUNTER_MSG="${WEB2_COUNTER_MSG:-some default value if not specified}
 </pre></div>
 </div>
 <ul class="simple">
@@ -815,7 +815,7 @@ the docker command using the -e flag</p></li>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Python is able to access environmental variables by using:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>os.getenv(&lt;env_var_name&gt;) e.g os.getenv(&#39;WEB2_COUNTER_MSG, &#39;&#39;)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>os.getenv(&lt;env_var_name&gt;) e.g os.getenv('WEB2_COUNTER_MSG, '')
 </pre></div>
 </div>
 </div>
@@ -835,7 +835,7 @@ bin/sh -c "<span style="color:red;">$</span> && flask --host=0.0.0.0 --port=5000
 <ul class="simple">
 <li><p>the last command</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>exec &quot;$@&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>exec "$@"
 </pre></div>
 </div>
 <p>then does take every command given by you on the command line (e.g. docker container run …)
@@ -866,9 +866,9 @@ docker <span style="color:red;">system df</span>
 </div><p>Check docker images</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker image ls
 
-* images with name &lt;none&gt; are not used by anything -&gt; they&#39;re dangling
+* images with name &lt;none&gt; are not used by anything -&gt; they're dangling
 * these may be failed builds or builds that were replaced by a new image using the
-  same tag (or both using the &#39;latest&#39; tag)
+  same tag (or both using the 'latest' tag)
 * dangling images are declared as reclaimable
 </pre></div>
 </div>
@@ -924,7 +924,7 @@ to retrieve them)</div>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

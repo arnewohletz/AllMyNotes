@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -362,7 +362,7 @@ double which promises to have the same API as the real object (must stay in-sync
     <span class="c1"># GOOD: test against a mock, instead of a real out-of-scope interface</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_notifies_observers_when_cogs_changes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;unittest_magic_tricks.Observer&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockObserver</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">"unittest_magic_tricks.Observer"</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockObserver</span><span class="p">:</span>
             <span class="n">wheel</span> <span class="o">=</span> <span class="n">Wheel</span><span class="p">(</span><span class="n">rim</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">tire</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
             <span class="n">gear</span> <span class="o">=</span> <span class="n">Gear</span><span class="p">(</span><span class="n">chainring</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="n">cog</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">wheel</span><span class="o">=</span><span class="n">wheel</span><span class="p">,</span>
                         <span class="n">observer</span><span class="o">=</span><span class="n">MockObserver</span><span class="p">)</span>
@@ -406,7 +406,7 @@ which breaks subsequent tests from failing.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

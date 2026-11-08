@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -230,15 +230,15 @@
 <section id="timeout">
 <h2>timeout<a class="headerlink" href="#timeout" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">setTimeout()</span></code> lässt sich ein Timeout setzen</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#alert-on&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">alertOn</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#alert-off&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">alertOff</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#alert-on"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="nx">alertOn</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#alert-off"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="nx">alertOff</span><span class="p">);</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">timeoutId</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">alertOn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">timeoutId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">timeoutId</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Das hat 4 Sekunden gedauert&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Das hat 4 Sekunden gedauert"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">4000</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -261,19 +261,19 @@ Timeouts ausgeführt, das Skript setzt derweil fort.</p>
 <p>Über <code class="docutils literal notranslate"><span class="pre">setInterval()</span></code> wird ein Intervall gesetzt. Hier wird die aktuelle Zeit
 jede Sekunde aktualisiert:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">intervalId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;2 Sekunden später&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2 Sekunden später"</span><span class="p">);</span>
 <span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">timeFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">datum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">datum</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span>
-<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#zeit&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">time</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#zeit"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">time</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">timeIntervalId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">timeFunc</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">clearInterval()</span></code> wird ein Intervall abgebrochen:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#interval-off&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#interval-off"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">intervalId</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timeIntervalId</span><span class="p">);</span>
 <span class="p">});</span>
@@ -287,7 +287,7 @@ wird die Ausführung beim Render-Prozess getätigt.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">runCat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">cat</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;px&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">cat</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"px"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">counter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">animationId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">runCat</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
@@ -303,7 +303,7 @@ wird die Ausführung beim Render-Prozess getätigt.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">runCat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">cat</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;px&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">cat</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"px"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">counter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">animationId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">runCat</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
@@ -312,8 +312,8 @@ wird die Ausführung beim Render-Prozess getätigt.</p>
 </div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">cancelAnimationFrame()</span></code> wird die Animation gestoppt:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mouse</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;STOP&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mouse</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"STOP"</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">cancelAnimationFrame</span><span class="p">(</span><span class="nx">animationId</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
@@ -331,7 +331,7 @@ aktuellen Dokument.</p>
 <span class="w">    </span><span class="c1">// if current location is https://example.com</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span><span class="w">  </span><span class="c1">//&lt;empty string&gt;</span>
 <span class="w">    </span><span class="c1">// if current location is https://example.com?q=123</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;?q=123&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span><span class="w">  </span><span class="c1">// "?q=123"</span>
 
 <span class="c1">// hashTag (&lt;my_url&gt;#mytag -&gt; #mytag)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
@@ -346,25 +346,25 @@ aktuellen Dokument.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">);</span>
 
 <span class="c1">// Seite neu laden</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#interval-off&quot;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#interval-off"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span><span class="w">  </span><span class="c1">// evtl. mit Übergabe von true, um Cache zu leeren</span>
 <span class="p">})</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myBtn</span><span class="w"> </span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#alert-on&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myBtn</span><span class="w"> </span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#alert-on"</span><span class="p">);</span>
 
 <span class="c1">// JS Weiterleitung (auf eine andere Seite)</span>
 <span class="nx">myBtn</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="s2">&quot;https://duckduckgo.com&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="s2">"https://duckduckgo.com"</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// neuer History-Eintrag wird erstellt, dadurch kann Nutzer zurückkehren</span>
 <span class="p">};</span>
 <span class="nx">myBtn</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;https://duckduckgo.com&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"https://duckduckgo.com"</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// kein neuer History-Eintrag, daher keine Rücknavigation möglich</span>
 <span class="p">}</span>
 <span class="nx">myBtn</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// location.href = &quot;https://duckduckgo.com&quot;;</span>
-<span class="w">    </span><span class="c1">// genauso wie &#39;assign&#39;, mit History-Eintrag</span>
-<span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;#alfa&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// location.href = "https://duckduckgo.com";</span>
+<span class="w">    </span><span class="c1">// genauso wie 'assign', mit History-Eintrag</span>
+<span class="w">    </span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"#alfa"</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -374,12 +374,12 @@ aktuellen Dokument.</p>
 <p>Über Prototyping erhalten Kind-Objekte die Fähigkeiten des Eltern-Objekt. Das
 oberste Objekt aller Objekte ist das <code class="docutils literal notranslate"><span class="pre">Object</span></code> Objekt. Folgendes Objekt:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">      </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">       </span><span class="s2">"Jones"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">      </span><span class="s2">"Jessica"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">            </span><span class="mf">36</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;Dragonroad 66, Hell&#39;s Kitchen&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">        </span><span class="s2">"Dragonroad 66, Hell's Kitchen"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">getFullName</span><span class="o">:</span><span class="w">    </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
@@ -402,15 +402,15 @@ gewünschten Objekts als Array [key, value] zurückgegeben:</p>
 <section id="for-in-schleife">
 <h2>for-in Schleife<a class="headerlink" href="#for-in-schleife" title="Link to this heading"></a></h2>
 <p>Iteriert über <strong>Keys</strong> eines Objekts:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Odin&quot;</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">heroes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Jessica"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Luke"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Daredevil"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Elektra"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Odin"</span><span class="p">];</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">      </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w">       </span><span class="s2">"Jones"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w">      </span><span class="s2">"Jessica"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">            </span><span class="mf">36</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;Dragonroad 66, Hell&#39;s Kitchen&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">        </span><span class="s2">"Dragonroad 66, Hell's Kitchen"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">getFullName</span><span class="o">:</span><span class="w">    </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="p">};</span>
 
@@ -419,7 +419,7 @@ gewünschten Objekts als Array [key, value] zurückgegeben:</p>
 <span class="p">}</span>
 <span class="k">for</span><span class="w">  </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span><span class="w">   </span><span class="c1">// OK: lastName Jones -&gt; firstName Jessica -&gt; ...</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">      </span><span class="c1">// NOK: undefined  --&gt; es gibt kein Attribute &#39;key&#39;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">      </span><span class="c1">// NOK: undefined  --&gt; es gibt kein Attribute 'key'</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">key</span><span class="p">);</span><span class="w">    </span><span class="c1">// string</span>
 <span class="p">}</span>
 </pre></div>
@@ -436,7 +436,7 @@ wie z.B. das Array-Objekt dies hat:</p>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// lastName -&gt; firstName -&gt; ...</span>
 <span class="p">}</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">entry</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ &quot;lastName&quot;, &quot;Jones&quot; ] -&gt; [ &quot;firstName&quot;, &quot;Jessica&quot; ] -&gt; ...</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ "lastName", "Jones" ] -&gt; [ "firstName", "Jessica" ] -&gt; ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -449,16 +449,16 @@ Programmiersprachen z.B. mit Enums arbeiten).</p>
 <p>Wichtig ist, alle Referenzen zu dem eingefrorenen Objekt ebenfalls einzufrieren,
 da ansonsten Änderung über diese weiterhin möglich sind.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">marvelHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="s2">"Jessica Jones"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">    </span><span class="mf">36</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;angry&quot;</span>
+<span class="w">    </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"angry"</span>
 <span class="p">};</span>
 
 <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">);</span>
 
-<span class="c1">// marvelHero.name = &quot;Luke Cage&quot;; // TypeError: &quot;name&quot; is read-only</span>
-<span class="c1">// delete marvelHero.name; // TypeError: property &quot;name&quot; is non-configurable and can&#39;t be deleted</span>
-<span class="c1">// marvelHero.character = &quot;ComicHero&quot;;  // TypeError: can&#39;t define property &quot;character&quot;: Object is not extensible</span>
+<span class="c1">// marvelHero.name = "Luke Cage"; // TypeError: "name" is read-only</span>
+<span class="c1">// delete marvelHero.name; // TypeError: property "name" is non-configurable and can't be deleted</span>
+<span class="c1">// marvelHero.character = "ComicHero";  // TypeError: can't define property "character": Object is not extensible</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -471,13 +471,13 @@ da ansonsten Änderung über diese weiterhin möglich sind.</p>
 <p>Neue Methode von 2022. Über <code class="docutils literal notranslate"><span class="pre">structuredClone()</span></code> wird ein Objekt vollständig,
 jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">marvelHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="s2">"Jessica Jones"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w">    </span><span class="mf">36</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;angry&quot;</span>
+<span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"angry"</span>
 <span class="w">    </span><span class="p">};</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">clonedHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">structuredClone</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">);</span>
-<span class="nx">clonedHero</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Luke Cage&quot;</span>
+<span class="nx">clonedHero</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Luke Cage"</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clonedHero</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clonedHero</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Luke Cage</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">marvelHero</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Jessica Jones</span>
@@ -488,9 +488,9 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <section id="objekte-durch-variablen-erzeugen">
 <h2>Objekte durch Variablen erzeugen<a class="headerlink" href="#objekte-durch-variablen-erzeugen" title="Link to this heading"></a></h2>
 <p>Es gibt eine alte und neue Möglichkeit:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Lucy&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Momo&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Lucy"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Momo"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">;</span>
 
 <span class="c1">// ES5 (alte Variante)</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">myObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -500,8 +500,8 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="p">};</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">who</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// &#39;this&#39; referenziert das Objekt auf dem die &#39;output&#39;-Methode aufgerufen wird</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">who</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">[</span><span class="nx">who</span><span class="p">];</span>
+<span class="w">    </span><span class="c1">// 'this' referenziert das Objekt auf dem die 'output'-Methode aufgerufen wird</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">who</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" is "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">[</span><span class="nx">who</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="c1">// ES6 (neue Variante)</span>
@@ -513,8 +513,8 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="w">    </span><span class="nx">output</span><span class="w">  </span><span class="c1">// auch mit Funktionen möglich</span>
 <span class="p">};</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">&quot;hero&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// hero is Jessica</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">&quot;katze&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// katze is Lucy</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">"hero"</span><span class="p">));</span><span class="w">    </span><span class="c1">// hero is Jessica</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myNewObject</span><span class="p">.</span><span class="nx">output</span><span class="p">(</span><span class="s2">"katze"</span><span class="p">));</span><span class="w">   </span><span class="c1">// katze is Lucy</span>
 </pre></div>
 </div>
 </section>
@@ -526,9 +526,9 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="kd">let</span><span class="w"> </span><span class="nx">myFormDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
 
 <span class="c1">// Hinzufügen von Einträgen</span>
-<span class="nx">myFormDatas</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">);</span>
+<span class="nx">myFormDatas</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"firstName"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">);</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myForm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#myForm&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myForm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#myForm"</span><span class="p">);</span>
 
 <span class="c1">// Event-Handler damit Formular nicht abgesendet wird</span>
 <span class="nx">myForm</span><span class="p">.</span><span class="nx">onsubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -536,21 +536,21 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">allFormDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">(</span><span class="nx">myForm</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Eintrag erweitern/ergänzen oder hinzufügen (falls nicht vorhanden)</span>
-<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Username&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;jessica123&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;firstName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"Username"</span><span class="p">,</span><span class="w"> </span><span class="s2">"jessica123"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"firstName"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Eintrag ersetzen oder neu hinzufügen</span>
-<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;12345&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"password"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Eintrag prüfen</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;unsinn&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">"unsinn"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// Eintrag löschen</span>
-<span class="w">        </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;unsinn&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">"unsinn"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// löschen auch ohne vorherige Prüfung auf Vorhandenseins des Eintrags möglich</span>
 <span class="w">    </span><span class="c1">// wenn nicht vorhanden, wird Aufruf ignoriert</span>
-<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">&quot;unsinn&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">allFormDatas</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s2">"unsinn"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Iteratoren erstellen</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">keys</span><span class="p">());</span><span class="w">      </span><span class="c1">// FormData-Iterator</span>
@@ -567,11 +567,11 @@ jedoch ohne Methoden, dupliziert. Duplizierte Objekte sind nicht eingefroren:</p
 <span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="c1">// 1. Wert eines Keys ermitteln</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"username"</span><span class="p">));</span>
 
 <span class="w">    </span><span class="c1">// alle value-Werte eines Eintrags ermitteln</span>
 <span class="w">    </span><span class="c1">// Rückgabe = Array mit Werten einzelner Elemente</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">getAll</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allFormDatas</span><span class="p">.</span><span class="nx">getAll</span><span class="p">(</span><span class="s2">"username"</span><span class="p">));</span>
 
 <span class="w">    </span><span class="c1">// WICHTIG! Formular nicht absenden</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
@@ -585,12 +585,12 @@ Symbole sind <strong>immer einzigartig</strong> - gleichen sich nicht untereinan
 beim Erzeugen eine Beschreibung erhalten. Erzeugte Symbole werden im Symbolregister
 gespeichert.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">());</span><span class="w">      </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">"test"</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">"test"</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
 
 <span class="c1">// Methode Symbol.for()</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">sym1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&quot;hero.Jessy&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">sym2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&quot;hero.Jessy&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">sym3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&quot;hero.Jessica&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sym1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"hero.Jessy"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sym2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"hero.Jessy"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sym3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"hero.Jessica"</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sym1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">sym2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sym1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">sym3</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
@@ -598,27 +598,27 @@ gespeichert.</p>
 <span class="kd">let</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
 <span class="nx">object</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">99</span><span class="p">;</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">symbolId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">symbolId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
 <span class="nx">object</span><span class="p">[</span><span class="nx">symbolId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">111</span><span class="p">;</span><span class="w">     </span><span class="c1">// Property-Access -&gt; Variablenname als Key</span>
 <span class="nx">object</span><span class="p">.</span><span class="nx">symbolId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w">   </span><span class="c1">// Punktnotation: -&gt; Symbol-Objekt als Key</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span><span class="w">  </span><span class="c1">// 99</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">symbolId</span><span class="p">);</span><span class="w">  </span><span class="c1">// 42</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="s2">&quot;symbolId&quot;</span><span class="p">]);</span><span class="w">  </span><span class="c1">// 42  ---&gt; property Name muss bekannt sein</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="s2">"symbolId"</span><span class="p">]);</span><span class="w">  </span><span class="c1">// 42  ---&gt; property Name muss bekannt sein</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="nx">symbolId</span><span class="p">]);</span><span class="w">  </span><span class="c1">// 111</span>
 
 <span class="c1">// Properties, die als Symbol angelegt sind, sind nicht iterierbar</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">   </span><span class="c1">// Symbol(&quot;id&quot;) wird NICHT ausgegeben</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">   </span><span class="c1">// Symbol("id") wird NICHT ausgegeben</span>
 <span class="p">}</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">symbol_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">symbol_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
 <span class="nx">object</span><span class="p">[</span><span class="nx">symbol_2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">222</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; Es gibt nun ZWEI Symbol(&quot;id&quot;) keys</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span><span class="w">  </span><span class="c1">// --&gt; Es gibt nun ZWEI Symbol("id") keys</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">entry</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">object</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span><span class="w">   </span><span class="c1">// Beide Symbol(&quot;id&quot;) entries werden NICHT ausgegeben</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span><span class="w">   </span><span class="c1">// Beide Symbol("id") entries werden NICHT ausgegeben</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -627,7 +627,7 @@ gespeichert.</p>
 <h1>Template String<a class="headerlink" href="#template-string" title="Link to this heading"></a></h1>
 <p>Neu in ES6. Innerhalb von Backticks-Strings können Ausdrücke innerhalb von <code class="docutils literal notranslate"><span class="pre">${}</span></code>
 Ausdrücke eingefügt werden.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica"</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">inYears</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">36</span><span class="p">;</span>
 
@@ -638,7 +638,7 @@ Ausdrücke eingefügt werden.</p>
 
 <span class="c1">// ... dies gilt NICHT für Ausgabe in Elementen, aber berücksichtigt keine</span>
 <span class="c1">// Zeilenumbrüche (muss mit &lt;br&gt; Tags gemacht werden)</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#templStr&quot;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">templateString</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#templStr"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">templateString</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">templateString</span><span class="p">);</span>
 </pre></div>
@@ -658,7 +658,7 @@ Ausdrücke eingefügt werden.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

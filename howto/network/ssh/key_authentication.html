@@ -18,7 +18,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -32,7 +32,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -194,14 +194,14 @@ where it should already exist).</p></li>
 <p class="admonition-title">Hint</p>
 <p>To customize the key pair even further you may also run</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="k">$(</span>scutil<span class="w"> </span>--get<span class="w"> </span>LocalHostName<span class="k">)</span><span class="s2"> - `date +%Y%m%d`&quot;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-bWFjT1M=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-TGludXg=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="-1">Linux</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">@</span><span class="k">$(</span>scutil<span class="w"> </span>--get<span class="w"> </span>LocalHostName<span class="k">)</span><span class="s2"> - `date +%Y%m%d`"</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">@</span><span class="nv">$HOSTNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span>
+</div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">@</span><span class="nv">$HOSTNAME</span><span class="s2"> - `date +%Y%m%d`"</span>
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Run in git bash (comes with <a class="reference external" href="https://gitforwindows.org/">Git for Windows</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USERNAME</span><span class="s2">@</span><span class="nv">$COMPUTERNAME</span><span class="s2"> - `date +%Y%m%d`&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"</span><span class="nv">$USERNAME</span><span class="s2">@</span><span class="nv">$COMPUTERNAME</span><span class="s2"> - `date +%Y%m%d`"</span>
 </pre></div>
 </div>
 </div></div>
@@ -216,7 +216,7 @@ specify a custom path or filename.</p>
 <p class="admonition-title">Warning</p>
 <p>I experienced errors from the server upon connection, stating the clients private key
 contains an invalid format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">key</span> <span class="s2">&quot;/Users/arnewohletz/.ssh/imac_ed25519.pub&quot;</span><span class="p">:</span> <span class="n">invalid</span> <span class="nb">format</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Load</span> <span class="n">key</span> <span class="s2">"/Users/arnewohletz/.ssh/imac_ed25519.pub"</span><span class="p">:</span> <span class="n">invalid</span> <span class="nb">format</span>
 </pre></div>
 </div>
 <p>This issue was resolved by not defining a custom named key pair (like <code class="docutils literal notranslate"><span class="pre">imac_ed25519</span></code>
@@ -337,7 +337,7 @@ $<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span>
 <div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># auto-start ssh-agent
 if [ ! -S ~/.ssh/ssh_auth_dock ]; then
     eval `ssh-agent` &gt;/dev/null
-    ln -sf &quot;$SSH_AUTH_DOCK&quot; ~/.ssh/ssh_auth_sock
+    ln -sf "$SSH_AUTH_DOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l &gt;/dev/null || ssh-add
@@ -539,14 +539,14 @@ possible settings via:</p>
 <p class="admonition-title">Hint</p>
 <p>To list all configured hosts, specify this command under an alias in your
 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alias ssh-hosts=&quot;cat ~/.ssh/config | grep -E &#39;^\s*Host\s&#39; | awk &#39;{print $2}&#39;&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alias ssh-hosts="cat ~/.ssh/config | grep -E '^\s*Host\s' | awk '{print $2}'"
 </pre></div>
 </div>
 <p>When running <code class="docutils literal notranslate"><span class="pre">ssh-hosts</span></code> in a new shell, it will print all configured hosts.</p>
 <p>On Windows create a Batch script in a folder defined in your PATH variable,
 for example <code class="docutils literal notranslate"><span class="pre">ssh-hosts.bat</span></code> and insert the following content:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@echo off
-type %USERPROFILE%\.ssh\config | findstr /R &quot;^Host &quot;
+type %USERPROFILE%\.ssh\config | findstr /R "^Host "
 </pre></div>
 </div>
 </div>
@@ -565,7 +565,7 @@ type %USERPROFILE%\.ssh\config | findstr /R &quot;^Host &quot;
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

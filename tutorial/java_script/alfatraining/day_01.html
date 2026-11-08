@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -276,15 +276,15 @@ ES5 noch immer stark verbreitet (oft gemischt mit ES6)</p></li>
 <h3>JavaScript direkt ins HTML<a class="headerlink" href="#javascript-direkt-ins-html" title="Link to this heading"></a></h3>
 <p>-&gt; gilt nur für diese eine Seite</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">);</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="verweis-auf-externe-js-datei-in-html">
 <h3>Verweis auf externe JS Datei in HTML<a class="headerlink" href="#verweis-auf-externe-js-datei-in-html" title="Link to this heading"></a></h3>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">);</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -295,11 +295,11 @@ ES5 noch immer stark verbreitet (oft gemischt mit ES6)</p></li>
 <section id="asynchrones-laden">
 <h3>Asynchrones Laden<a class="headerlink" href="#asynchrones-laden" title="Link to this heading"></a></h3>
 <p>Interpreter wartet nicht auf vollständiges Laden des Skripts</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span> <span class="na">async</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">defer</span></code> Skripte dürfen erst ausgeführt wenn DOM fertig geladen ist:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span> <span class="na">async</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span> <span class="na">async</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -312,7 +312,7 @@ aus Versehen vergisst.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     // the entire body
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -322,9 +322,9 @@ aus Versehen vergisst.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     // the entire body
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script_1.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script_2.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script_3.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script_1.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script_2.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script_3.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -344,7 +344,7 @@ aus Versehen vergisst.</p>
 <li><p>jeder moderne Browser unterstützt diesem Modus</p></li>
 </ul>
 <p>über</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">'use strict'</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>zu Beginn eines Dokuments.</p>
@@ -401,21 +401,21 @@ diese oft andere Konventionen)</p></li>
 <section id="vordefinierte-funktionen">
 <h1>Vordefinierte Funktionen<a class="headerlink" href="#vordefinierte-funktionen" title="Link to this heading"></a></h1>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Basics</span>
-<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// pausiert das Skript, User muss Alert-Dialog bestätigen, um fortzusetzen</span>
-<span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Bist du sicher?&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// pausiert das Skript, User kann mit &#39;OK&#39; True zurückgeben oder mit &#39;Cancel&#39; False</span>
-<span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Wer bist du?&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Niemand&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Zeigt Eingabefenster (mit Standardwert) -&gt; gibt &#39;null&#39; (Cancel) oder String mit Eingabe zurück (OK, falls leere Eingabe -&gt; &lt;empty string&gt;)</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">);</span><span class="w"> </span><span class="c1">// pausiert das Skript, User muss Alert-Dialog bestätigen, um fortzusetzen</span>
+<span class="nx">confirm</span><span class="p">(</span><span class="s2">"Bist du sicher?"</span><span class="p">);</span><span class="w"> </span><span class="c1">// pausiert das Skript, User kann mit 'OK' True zurückgeben oder mit 'Cancel' False</span>
+<span class="nx">prompt</span><span class="p">(</span><span class="s2">"Wer bist du?"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Niemand"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Zeigt Eingabefenster (mit Standardwert) -&gt; gibt 'null' (Cancel) oder String mit Eingabe zurück (OK, falls leere Eingabe -&gt; &lt;empty string&gt;)</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Wie geht&#39;s?&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// String auf der Konsole darstellen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello World!"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Wie geht's?"</span><span class="p">);</span><span class="w"> </span><span class="c1">// String auf der Konsole darstellen</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// Logge Zahl -&gt; grün</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({});</span><span class="w"> </span><span class="c1">// Logge Objekt -&gt; blau</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">&quot;Warnung&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Logge Warnung -&gt; Symbol + gelber Hintergrund</span>
-<span class="nx">Alert</span><span class="p">(</span><span class="s2">&quot;Hilfe&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fehler, da &#39;Alert&#39; Funktion nicht verfügbar -&gt; Symbol + roter Hintergrund</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;d&quot;</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Zeigt Array tabellarisch an</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s2">"Warnung"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Logge Warnung -&gt; Symbol + gelber Hintergrund</span>
+<span class="nx">Alert</span><span class="p">(</span><span class="s2">"Hilfe"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fehler, da 'Alert' Funktion nicht verfügbar -&gt; Symbol + roter Hintergrund</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="s2">"d"</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Zeigt Array tabellarisch an</span>
 
 <span class="c1">// Zeitmessung</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="s2">&quot;Messung&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="s2">"Messung"</span><span class="p">);</span>
 <span class="c1">// ... do some other stuff</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="s2">&quot;Messung&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="s2">"Messung"</span><span class="p">);</span>
 
 <span class="c1">// Konsolenausgaben löschen</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
@@ -437,7 +437,7 @@ der Funktion bereits <strong>alle Deklarationen</strong> zu Beginn der Funktion 
 ist <code class="docutils literal notranslate"><span class="pre">undefined</span></code>), jedoch die Initialisierung erst in der entsprechenden Zeile.</p>
 </div>
 <p>Alter Weg (ES5): mit <code class="docutils literal notranslate"><span class="pre">var</span></code></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variablen unterliegen dem &quot;Hoisting&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variablen unterliegen dem "Hoisting"</span>
 <span class="c1">// https://de.wikipedia.org/wiki/Hoisting</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myVar</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined, da noch keine Zuweisung -&gt; Fehlerquelle!</span>
 
@@ -468,16 +468,16 @@ ist <code class="docutils literal notranslate"><span class="pre">undefined</span
 
 <span class="c1">// mehrere Variablen gleichzeitig erzeugen</span>
 <span class="c1">// myCat hat Zuweisung, andere undefined</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">myCat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fussel&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myDog</span><span class="p">,</span><span class="w"> </span><span class="nx">myHome</span><span class="p">,</span><span class="w"> </span><span class="nx">myHero</span><span class="p">,</span><span class="w"> </span><span class="nx">myGhost</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myCat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Fussel"</span><span class="p">,</span><span class="w"> </span><span class="nx">myDog</span><span class="p">,</span><span class="w"> </span><span class="nx">myHome</span><span class="p">,</span><span class="w"> </span><span class="nx">myHero</span><span class="p">,</span><span class="w"> </span><span class="nx">myGhost</span><span class="p">;</span>
 
-<span class="nx">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Moja&quot;</span><span class="p">;</span>
+<span class="nx">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Moja"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCat</span><span class="p">,</span><span class="w"> </span><span class="nx">myDog</span><span class="p">);</span>
 
 <span class="c1">// Rückgabewerte in Variable speichern</span>
-<span class="c1">// let confirmReturn = confirm(&quot;Korrekt?&quot;);</span>
+<span class="c1">// let confirmReturn = confirm("Korrekt?");</span>
 
 <span class="c1">// Nutzerinput als Variable speichern</span>
-<span class="c1">// let userName = prompt(&quot;Dein Name:&quot;);</span>
+<span class="c1">// let userName = prompt("Dein Name:");</span>
 </pre></div>
 </div>
 </section>
@@ -495,7 +495,7 @@ ist <code class="docutils literal notranslate"><span class="pre">undefined</span
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

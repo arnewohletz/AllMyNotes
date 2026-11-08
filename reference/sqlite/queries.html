@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -615,11 +615,11 @@ FROM tableA;
 </div><p>Insert multiple rows</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="p">(</span><span class="n">columnA</span><span class="p">,</span><span class="w"> </span><span class="n">columnB</span><span class="p">)</span>
 <span class="k">VALUES</span>
-<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
-<span class="w">    </span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
-<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Here&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
-<span class="w">    </span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span>
-<span class="w">    </span><span class="p">(</span><span class="s1">&#39;Am&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">'World'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">'Here'</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">'I'</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="s1">'Am'</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Insert default values (increment ID columns, add NULL to others)</p>
@@ -638,11 +638,11 @@ INSERT INTO tableA <span style="color:red;">DEFAULT</span> VALUES;
 <pre>
 <span style="color:red;">UPDATE</span> tableA <span style="color:red;">SET</span> columnA = 'some value' WHERE columnB = 10;
 </div><p>Update multiple columns</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;some value&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">columnX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">columnY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;valueA&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'some value'</span><span class="p">,</span><span class="w"> </span><span class="n">columnX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">columnY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'valueA'</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">columnB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Update using other column’s values</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">columnB</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ss">&quot;.&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">columnC</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ss">&quot;@example.com&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">tableA</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">columnB</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ss">"."</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">columnC</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="ss">"@example.com"</span><span class="p">)</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columnA</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -692,7 +692,7 @@ the deleted row.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

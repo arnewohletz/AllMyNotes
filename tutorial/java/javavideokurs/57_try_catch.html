@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -212,7 +212,7 @@ durch in die letzte Instanz, von der sie aufgerufen wurde</p></li>
 <span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
 <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">NullPointerException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fehler, aber ist nicht so schlimm&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fehler, aber ist nicht so schlimm"</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -221,7 +221,7 @@ durch in die letzte Instanz, von der sie aufgerufen wurde</p></li>
 dies optional), z.B.:</p>
 <blockquote>
 <div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">{</span>
-<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;C:/xxx&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="p">(</span><span class="s">"C:/xxx"</span><span class="p">));</span>
 <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">FileNotFoundException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
 <span class="p">}</span>
 </pre></div>
@@ -235,11 +235,11 @@ gefunden wurde, wird kein folgender catch-Block mehr ausgeführt</p></li>
 <li><p>Der <em>finally</em>-Block wird immer ausgeführt, auch wenn kein Ausnahmefehler auftritt</p>
 <blockquote>
 <div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">{</span>
-<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;C:/xxx&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">FileReader</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="p">(</span><span class="s">"C:/xxx"</span><span class="p">));</span>
 <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">FileNotFoundException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
 <span class="p">}</span>
 <span class="k">finally</span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;FINALLY!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"FINALLY!"</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -268,7 +268,7 @@ anderen Fällen ist es nicht nötig, jedoch auch nie falsch.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

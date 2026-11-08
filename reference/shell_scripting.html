@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../_static/thebelab-helper.js"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -188,7 +188,7 @@
 <div><p>Prints all arguments passed into the script (except <code class="docutils literal notranslate"><span class="pre">$0</span></code>), space separated.</p>
 <p>To change the separator (here: comma), define the <code class="docutils literal notranslate"><span class="pre">IFS</span></code> (Internal Field Separator):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">IFS</span><span class="o">=</span>,
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$*</span><span class="s2">"</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -202,12 +202,12 @@
 <p><code class="docutils literal notranslate"><span class="pre">local</span></code></p>
 <blockquote>
 <div><p>Define a variable as local. This will overwrite any equally named global variable.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">var1</span><span class="o">=</span><span class="s2">"hello"</span>
 
 <span class="k">function</span><span class="w"> </span>hi<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="nb">local</span><span class="w"> </span>var1
-<span class="w">    </span><span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;hi&quot;</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$var1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">var1</span><span class="o">=</span><span class="s2">"hi"</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$var1</span><span class="s2">"</span>
 <span class="o">}</span>
 
 hi<span class="o">()</span>
@@ -332,7 +332,7 @@ Only the first match is replaced.</p>
 All matches are replaced.</p>
 <p><strong>Example:</strong> Replace all colons with LINEFEED in PATH variable (print each
 entry in new line)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="si">${</span><span class="nv">PATH</span><span class="p">//:/</span><span class="s1">&#39;\n&#39;</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="si">${</span><span class="nv">PATH</span><span class="p">//:/</span><span class="s1">'\n'</span><span class="si">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -351,8 +351,8 @@ $<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><sp
 <h2>Command substitution<a class="headerlink" href="#command-substitution" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">command_A</span> <span class="pre">$(command_B)</span></code> means, to use the return value of a <code class="docutils literal notranslate"><span class="pre">command_B</span></code>
 as a variable for <code class="docutils literal notranslate"><span class="pre">command_A</span></code>. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># open all txt files in the current directory which contain &#39;hello&#39;</span>
-$<span class="w"> </span>vi<span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-l<span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span>*.txt<span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># open all txt files in the current directory which contain 'hello'</span>
+$<span class="w"> </span>vi<span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span>-l<span class="w"> </span><span class="s1">'hello'</span><span class="w"> </span>*.txt<span class="k">)</span>
 </pre></div>
 </div>
 </section>
@@ -614,9 +614,9 @@ $(pwd)      # directory where pushd was initially called from
 <p>Usage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># greater_10.sh</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-gt<span class="w">  </span><span class="m">10</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Your input is greater than 10&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Your input is greater than 10"</span>
 <span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Your input is smaller than or equals 10&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Your input is smaller than or equals 10"</span>
 <span class="k">fi</span>
 
 <span class="c1"># Running...</span>
@@ -652,8 +652,8 @@ but for readability, it should always be provided.</p>
 </pre></div>
 </div>
 <p><strong>Example</strong>: Print all positional arguments</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$filename</span><span class="s2">"</span>
 <span class="k">done</span>
 </pre></div>
 </div>
@@ -672,14 +672,14 @@ but for readability, it should always be provided.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">esac</span></code> statement end a <em>case</em> block (it actually <em>case</em> backwards).</p>
 <p><strong>Example:</strong> Case differentiates file suffix</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">    </span><span class="nv">pnmfile</span><span class="o">=</span><span class="si">${</span><span class="nv">filename</span><span class="p">%.*</span><span class="si">}</span>.ppm
 
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$filename</span><span class="w"> </span><span class="k">in</span>
 <span class="w">        </span>*.jpg<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">;;</span>
 <span class="w">        </span>*.tga<span class="w"> </span><span class="o">)</span><span class="w"> </span>tgatoppm<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$pnmfile</span><span class="w"> </span><span class="p">;;</span>
 <span class="w">        </span>*.gif<span class="w"> </span><span class="o">)</span><span class="w"> </span>giftopnm<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$pnmfile</span><span class="w"> </span><span class="p">;;</span>
-<span class="w">            </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;procfile: </span><span class="nv">$filename</span><span class="s2"> is an unknown graphic file.&quot;</span>
+<span class="w">            </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"procfile: </span><span class="nv">$filename</span><span class="s2"> is an unknown graphic file."</span>
 <span class="w">                </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">;;</span>
 <span class="w">    </span><span class="k">esac</span>
 <span class="w">    </span><span class="nv">outfile</span><span class="o">=</span><span class="si">${</span><span class="nv">pnmfile</span><span class="p">%.ppm</span><span class="si">}</span>.new.jpg
@@ -691,10 +691,10 @@ but for readability, it should always be provided.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">)</span></code> case matches everything, but is only executed, if no other case
 matched before.</p>
 <p><strong>Example:</strong> Checking the amount of arguments</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
-<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Zero or one argument ;;</span>
-<span class="s2">    2    )  echo &quot;</span>Two<span class="w"> </span>arguments<span class="s2">&quot; ;;</span>
-<span class="s2">    *    )  echo &quot;</span>More<span class="w"> </span>than<span class="w"> </span>two<span class="w"> </span>arguments<span class="s2">&quot; ;;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$#</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Zero or one argument ;;</span>
+<span class="s2">    2    )  echo "</span>Two<span class="w"> </span>arguments<span class="s2">" ;;</span>
+<span class="s2">    *    )  echo "</span>More<span class="w"> </span>than<span class="w"> </span>two<span class="w"> </span>arguments<span class="s2">" ;;</span>
 <span class="s2">esac</span>
 </pre></div>
 </div>
@@ -730,7 +730,7 @@ failing command until it succeeds:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">path</span><span class="o">=</span><span class="nv">$PATH</span><span class="w">  </span><span class="c1"># make copy of PATH and append colon at the end</span>
 <span class="w">            </span><span class="c1"># all entries are separated by colon</span>
 
-<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$path</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">        </span><span class="c1"># loop until path is empty (&quot;&quot;)</span>
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$path</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">        </span><span class="c1"># loop until path is empty ("")</span>
 <span class="w">    </span>ls<span class="w"> </span>-ld<span class="w"> </span><span class="si">${</span><span class="nv">path</span><span class="p">%%:*</span><span class="si">}</span><span class="w">     </span><span class="c1"># remove colon at the end of $path</span>
 <span class="w">    </span><span class="nv">path</span><span class="o">=</span><span class="si">${</span><span class="nv">path</span><span class="p">#*:</span><span class="si">}</span><span class="w">        </span><span class="c1"># remove current $path from path (colon-separated)</span>
 <span class="k">done</span>
@@ -738,7 +738,7 @@ failing command until it succeeds:</p>
 </div>
 <p><strong>Example</strong>: Copy file until succeeds</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">until</span><span class="w"> </span>cp<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nv">$2</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Attempt to copy failed. waiting...&#39;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'Attempt to copy failed. waiting...'</span>
 <span class="w">    </span>sleep<span class="w"> </span><span class="m">5</span>
 <span class="k">done</span>
 </pre></div>
@@ -762,25 +762,25 @@ It only allows for separate, uniform arguments (e.g. single dash).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_script.sh</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-o<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">shift</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We have an option: </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"We have an option: </span><span class="nv">$1</span><span class="s2">"</span>
 <span class="w">    </span><span class="c1"># process the -o option</span>
 <span class="k">fi</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;First positional argument: </span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"First positional argument: </span><span class="nv">$2</span><span class="s2">"</span>
 <span class="c1"># normal processing of arguments</span>
 
-<span class="c1"># ./my_script.sh -o &quot;foo&quot; &quot;bar&quot;</span>
+<span class="c1"># ./my_script.sh -o "foo" "bar"</span>
 <span class="c1"># We have an option: foo</span>
 <span class="c1"># First positional argument: bar</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">shift</span></code> without any integer number is a shift of 1 index position.</p>
 <p><strong>Example:</strong> Multiple options</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'-'</span><span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
 <span class="w">        </span>-a<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-a<span class="w"> </span><span class="p">;;</span>
 <span class="w">        </span>-b<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-b<span class="w"> </span><span class="p">;;</span>
 <span class="w">        </span>-c<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-c<span class="w"> </span><span class="p">;;</span>
-<span class="w">        </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Usage: alice [-a] [-b] [-c] args...&#39;</span>
+<span class="w">        </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'Usage: alice [-a] [-b] [-c] args...'</span>
 <span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">    </span><span class="k">esac</span>
 <span class="w">    </span><span class="nb">shift</span>
@@ -789,14 +789,14 @@ It only allows for separate, uniform arguments (e.g. single dash).</p>
 </pre></div>
 </div>
 <p><strong>Example</strong>: Multiple options + options with arguments</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">'-'</span><span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">in</span>
 <span class="w">        </span>-a<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-a<span class="w"> </span><span class="p">;;</span>
 <span class="w">        </span>-b<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-b<span class="w"> </span><span class="p">;;</span>
-<span class="w">            </span><span class="c1"># $2 is the option&#39;s argument</span>
+<span class="w">            </span><span class="c1"># $2 is the option's argument</span>
 <span class="w">            </span><span class="nb">shift</span><span class="w"> </span><span class="p">;;</span>
 <span class="w">        </span>-c<span class="o">)</span><span class="w"> </span>process<span class="w"> </span>option<span class="w"> </span>-c<span class="w"> </span><span class="p">;;</span>
-<span class="w">        </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Usage: alice [-a] [-b] [-c] args...&#39;</span>
+<span class="w">        </span>*<span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'Usage: alice [-a] [-b] [-c] args...'</span>
 <span class="w">            </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">    </span><span class="k">esac</span>
 <span class="w">    </span><span class="nb">shift</span>
@@ -821,27 +821,27 @@ a colon means, the preceding option requires an argument.</p></li>
 <li><p>the second is a variable name to which each option letter is assigned to (without the dash)</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w">    </span><span class="c1"># getopts_simple.sh</span>
-<span class="linenos"> 2</span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s2">&quot;:ab:c&quot;</span><span class="w"> </span>opt<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="nb">getopts</span><span class="w"> </span><span class="s2">":ab:c"</span><span class="w"> </span>opt<span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="linenos"> 3</span><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nv">$opt</span><span class="w"> </span><span class="k">in</span>
-<span class="linenos"> 4</span><span class="w">            </span>a<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;processing -a&quot;</span><span class="w"> </span><span class="p">;;</span>
-<span class="linenos"> 5</span><span class="w">            </span>b<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;processing -b&quot;</span>
-<span class="linenos"> 6</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPTIND</span><span class="s2"> is the option index&quot;</span>
-<span class="linenos"> 7</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$opt</span><span class="s2"> is the option&quot;</span>
-<span class="linenos"> 8</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPTARG</span><span class="s2"> is the option&#39;s argument&quot;</span><span class="w"> </span><span class="p">;;</span>
-<span class="linenos"> 9</span><span class="w">            </span>c<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;processing -c&quot;</span><span class="w"> </span><span class="p">;;</span>
-<span class="linenos">10</span><span class="w">            </span><span class="se">\?</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;usage: getopts_simple.sh [-a] [-b barg] [-c] args...&quot;</span>
+<span class="linenos"> 4</span><span class="w">            </span>a<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"processing -a"</span><span class="w"> </span><span class="p">;;</span>
+<span class="linenos"> 5</span><span class="w">            </span>b<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"processing -b"</span>
+<span class="linenos"> 6</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$OPTIND</span><span class="s2"> is the option index"</span>
+<span class="linenos"> 7</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$opt</span><span class="s2"> is the option"</span>
+<span class="linenos"> 8</span><span class="w">                 </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$OPTARG</span><span class="s2"> is the option's argument"</span><span class="w"> </span><span class="p">;;</span>
+<span class="linenos"> 9</span><span class="w">            </span>c<span class="w">  </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"processing -c"</span><span class="w"> </span><span class="p">;;</span>
+<span class="linenos">10</span><span class="w">            </span><span class="se">\?</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"usage: getopts_simple.sh [-a] [-b barg] [-c] args..."</span>
 <span class="linenos">11</span><span class="w">                 </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="linenos">12</span><span class="w">        </span><span class="k">esac</span>
 <span class="linenos">13</span><span class="w">    </span><span class="k">done</span>
 <span class="linenos">14</span><span class="w">    </span><span class="nb">shift</span><span class="w"> </span><span class="k">$((</span><span class="nv">$OPTIND</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
 <span class="linenos">15</span><span class="w">    </span><span class="c1"># normal processing of arguments...</span>
 <span class="linenos">16</span>
-<span class="linenos">17</span><span class="w">    </span><span class="c1"># ./getopts_simple.sh -a -b &quot;foo&quot; -c</span>
+<span class="linenos">17</span><span class="w">    </span><span class="c1"># ./getopts_simple.sh -a -b "foo" -c</span>
 <span class="linenos">18</span><span class="w">    </span><span class="c1"># 2: processing -a</span>
 <span class="linenos">19</span><span class="w">    </span><span class="c1"># 4: processing -b</span>
 <span class="linenos">20</span><span class="w">    </span><span class="c1"># 4 is the option index</span>
 <span class="linenos">21</span><span class="w">    </span><span class="c1"># b is the option</span>
-<span class="linenos">22</span><span class="w">    </span><span class="c1"># foo is the option&#39;s argument</span>
+<span class="linenos">22</span><span class="w">    </span><span class="c1"># foo is the option's argument</span>
 <span class="linenos">23</span><span class="w">    </span><span class="c1"># 5: processing -c</span>
 </pre></div>
 </div>
@@ -1078,7 +1078,7 @@ is <em>false</em> or the loop is exited via the <em>statements</em>.</p>
 <span class="k">do</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">j</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>j<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="p">;</span><span class="w"> </span>j++<span class="w"> </span><span class="o">))</span>
 <span class="w">    </span><span class="k">do</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span>–ne<span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="w"> </span><span class="nv">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="k">))</span><span class="s2">\t&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span>–ne<span class="w"> </span><span class="s2">"</span><span class="k">$((</span><span class="w"> </span><span class="nv">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="k">))</span><span class="s2">\t"</span>
 <span class="w">    </span><span class="k">done</span>
 
 <span class="w">    </span><span class="nb">echo</span>
@@ -1134,7 +1134,7 @@ enclosed in <code class="docutils literal notranslate"><span class="pre">{}</spa
 <p class="admonition-title">Hint</p>
 <p>To find out the length of a array value, use the <code class="docutils literal notranslate"><span class="pre">#</span></code> operator:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">names</span><span class="p">[2]</span><span class="si">}</span>
-<span class="c1"># 7 (for &#39;duchess&#39;)</span>
+<span class="c1"># 7 (for 'duchess')</span>
 </pre></div>
 </div>
 <p>To find out the amount of items in an array run:</p>
@@ -1300,7 +1300,7 @@ alice<span class="w"> </span>hatter<span class="w"> </span>duchess<span class="w
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

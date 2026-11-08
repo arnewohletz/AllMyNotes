@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -175,8 +175,8 @@
 <section id="add-user-configuration-to-repository">
 <h2>Add user configuration to repository<a class="headerlink" href="#add-user-configuration-to-repository" title="Link to this heading"></a></h2>
 <p>Add user information to allow commits</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;johndoe@company.com&quot;</span>
-$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;johndoe&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"johndoe@company.com"</span>
+$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"johndoe"</span>
 </pre></div>
 </div>
 </section>
@@ -249,11 +249,11 @@ from the local file system 🙂)</p>
 <section id="commits">
 <h2>Commits<a class="headerlink" href="#commits" title="Link to this heading"></a></h2>
 <p>Commit to current branch with a message</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Important changes&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Important changes"</span>
 </pre></div>
 </div>
 <p>Stage and commit all modified or deleted file (excluding new files)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Important changes</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Important changes</span>
 </pre></div>
 </div>
 <p>Change message on most recent commit (editor opens, edit message and close to confirm)</p>
@@ -261,7 +261,7 @@ from the local file system 🙂)</p>
 </pre></div>
 </div>
 <p>Change message on most recent, but already pushed, commit</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;&lt;new message&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span>-m<span class="w"> </span><span class="s2">"&lt;new message&gt;"</span>
 $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--force
 </pre></div>
 </div>
@@ -270,7 +270,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 <h2>Stashing<a class="headerlink" href="#stashing" title="Link to this heading"></a></h2>
 <p>In contrast to ‘staging’, a stash is a temporary storage of any recent changes made
 inside a directory and thereby cleaning it from those changes</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>stash<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Stashing potential implementation&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>stash<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Stashing potential implementation"</span>
 </pre></div>
 </div>
 <p>Apply changes from stash to current directory and remove them from the stash</p>
@@ -332,9 +332,9 @@ checked out and not <em>master</em> (the main branch).</p>
 <p>Copy those lines into <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code>:</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[alias]</span>
 <span class="w">    </span><span class="c1"># Delete all local branches but master and the current one, but only if they are fully merged with master</span>
-<span class="w">    </span><span class="na">br-delete-useless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){ git branch | grep -v \&quot;</span><span class="na">master\&quot; | grep -v ^* | xargs git branch -d; }; f&quot;</span>
+<span class="w">    </span><span class="na">br-delete-useless</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"!f(){ git branch | grep -v \"</span><span class="na">master\" | grep -v ^* | xargs git branch -d; }; f"</span>
 <span class="w">    </span><span class="c1"># Delete all local branches but master and the current one</span>
-<span class="w">    </span><span class="na">br-delete-useless-force</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!f(){ git branch | grep -v \&quot;</span><span class="na">master\&quot; | grep -v ^* | xargs git branch -D; }; f&quot;</span>
+<span class="w">    </span><span class="na">br-delete-useless-force</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"!f(){ git branch | grep -v \"</span><span class="na">master\" | grep -v ^* | xargs git branch -D; }; f"</span>
 </pre></div>
 </div>
 <p>This enables those two git aliases:</p>
@@ -351,7 +351,7 @@ yet been merged to master.</p>
 </pre></div>
 </div>
 <p>Rename currently checked out branch (local)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;New branch name&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span><span class="s2">"New branch name"</span>
 </pre></div>
 </div>
 <p>Rename remote branch</p>
@@ -371,7 +371,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 <p><strong>Merge the active branch with the branch &lt;branch_name&gt;</strong></p>
 <p>You will create a new commit for the active branch with the merged changes remain in the
 active branch (use <code class="docutils literal notranslate"><span class="pre">-m</span></code> to overwrite default commit message)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>&lt;branch_name&gt;<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;merge with &lt;branch_name&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>&lt;branch_name&gt;<span class="w"> </span>-m<span class="w"> </span><span class="s2">"merge with &lt;branch_name&gt;"</span>
 </pre></div>
 </div>
 <p><strong>Abort a merge</strong></p>
@@ -490,11 +490,11 @@ such as Gitkraken to get hash code of commits easily.</p>
 </pre></div>
 </div>
 <p>Get previous commits by a certain author</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span><span class="s2">&quot;&lt;name&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span><span class="s2">"&lt;name&gt;"</span>
 </pre></div>
 </div>
 <p>Get commits within a certain time frame (date format: YYYY-MM-DD)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--before<span class="o">=</span><span class="s2">&quot;&lt;date&gt;&quot;</span><span class="w"> </span>--after<span class="o">=</span><span class="s2">&quot;&lt;date&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--before<span class="o">=</span><span class="s2">"&lt;date&gt;"</span><span class="w"> </span>--after<span class="o">=</span><span class="s2">"&lt;date&gt;"</span>
 </pre></div>
 </div>
 <p><strong>Relative Refs</strong></p>
@@ -578,7 +578,7 @@ You can work here, but in order to merge your changes into HEAD, you must first 
 make your changes there, then checkout <em>master</em> and merge it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit_hash_sum&gt;
 $<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;new_branch_name&gt;
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;important changes&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"important changes"</span>
 $<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
 $<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>&lt;new_branch_name&gt;
 </pre></div>
@@ -684,7 +684,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 <dt class="field-even">Solution 3<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>Accept the remote version</strong> of a conflicted file, then push your commit.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--theirs<span class="w"> </span>&lt;conflicted_file_name&gt;
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;using theirs&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"using theirs"</span>
 $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;
 </pre></div>
 </div>
@@ -692,7 +692,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
 <dt class="field-odd">Solution 4<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>Override the remote version</strong> of a conflicted file, then push your commit.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--yours<span class="w"> </span>&lt;conflicted_file_name&gt;
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;using ours&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"using ours"</span>
 $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>&lt;remote_branch&gt;<span class="w"> </span>&lt;current_branch_name&gt;
 </pre></div>
 </div>
@@ -780,7 +780,7 @@ in upstream/master are replayed on top of that other branch:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

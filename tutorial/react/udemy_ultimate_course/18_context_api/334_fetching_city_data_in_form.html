@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -163,12 +163,12 @@
 <h1>Fetching city data in the form<a class="headerlink" href="#fetching-city-data-in-the-form" title="Link to this heading"></a></h1>
 <p>To fetch the form data from the URL to populate the <em>Form</em> component whenever we
 click on the <em>Map</em>, we will create a new custom hook:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-router-dom"</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useUrlPosition</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchParams</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchParams</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">();</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lat&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;lng&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"lat"</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"lng"</span><span class="p">);</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="p">];</span>
 <span class="p">}</span>
@@ -207,15 +207,15 @@ which are now moved to <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <p>In the <em>Form</em> component, we then define an effect function to fetch the data:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">BASE_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.bigdatacloud.net/data/reverse-geocode-client&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">BASE_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://api.bigdatacloud.net/data/reverse-geocode-client"</span><span class="p">;</span>
 </span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">Form</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useUrlPosition</span><span class="p">();</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">cityName</span><span class="p">,</span><span class="w"> </span><span class="nx">setCityName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">country</span><span class="p">,</span><span class="w"> </span><span class="nx">setCountry</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">cityName</span><span class="p">,</span><span class="w"> </span><span class="nx">setCityName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">country</span><span class="p">,</span><span class="w"> </span><span class="nx">setCountry</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">date</span><span class="p">,</span><span class="w"> </span><span class="nx">setDate</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">());</span>
-<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">notes</span><span class="p">,</span><span class="w"> </span><span class="nx">setNotes</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">notes</span><span class="p">,</span><span class="w"> </span><span class="nx">setNotes</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 </span><span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">isLoadingGeolocation</span><span class="p">,</span><span class="w"> </span><span class="nx">setIsLoadingGeolocation</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">();</span>
 </span><span class="hll"><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
 </span><span class="hll"><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -227,7 +227,7 @@ which are now moved to <code class="docutils literal notranslate"><span class="p
 </span><span class="hll"><span class="w">            </span><span class="sb">`</span><span class="si">${</span><span class="nx">BASE_URL</span><span class="si">}</span><span class="sb">?latitude=</span><span class="si">${</span><span class="nx">lat</span><span class="si">}</span><span class="sb">&amp;longitude=</span><span class="si">${</span><span class="nx">lng</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
 </span><span class="hll"><span class="w">          </span><span class="p">);</span>
 </span><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="w">          </span><span class="nx">setCityName</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">city</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">locality</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="nx">setCityName</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">city</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">locality</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">""</span><span class="p">);</span>
 <span class="w">          </span><span class="nx">setCountry</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">countryName</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
@@ -259,7 +259,7 @@ which are now moved to <code class="docutils literal notranslate"><span class="p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

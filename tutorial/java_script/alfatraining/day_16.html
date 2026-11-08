@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -225,21 +225,21 @@
 </pre></div>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Problem hier: taxRate kann keine Konstante sein</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;books&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">taxRate</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"books"</span><span class="p">,</span><span class="w"> </span><span class="nx">taxRate</span><span class="p">;</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;books&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.07</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"books"</span><span class="p">)</span><span class="w"> </span><span class="nx">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.07</span><span class="p">;</span>
 <span class="k">else</span><span class="w"> </span><span class="nx">taxRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.19</span><span class="p">;</span>
 
 <span class="c1">// Lösung</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">TAX_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;books&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.07</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1.19</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">TAX_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">cat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"books"</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.07</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1.19</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">TAX_RATE</span><span class="p">);</span>
 
 <span class="c1">// Andere Beispiele</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span><span class="w"> </span><span class="nx">userAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">33</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">userAge</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;verkauft&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;zu jung&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">userAge</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"verkauft"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"zu jung"</span><span class="p">);</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Mann = 0, Frau = 1</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hallo </span><span class="si">${</span><span class="nx">gender</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Frau&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Herr&quot;</span><span class="si">}</span><span class="sb"> Jones`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hallo </span><span class="si">${</span><span class="nx">gender</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"Frau"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"Herr"</span><span class="si">}</span><span class="sb"> Jones`</span><span class="p">);</span>
 
 <span class="c1">// Mehrere Variablen gleichzeitig ändern</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">jessyPromille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.52</span><span class="p">,</span><span class="w"> </span><span class="nx">panic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
@@ -249,17 +249,17 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jessyPromille</span><span class="p">,</span><span class="w"> </span><span class="nx">panic</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2.5 true</span>
 
 <span class="c1">// Mehrere Bedingungen</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Daredevil"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-<span class="w">    </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Luke&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Cool&quot;</span>
-<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Daredevil&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;OK&quot;</span>
-<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Jessy&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Einfach Jessy&quot;</span>
-<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Keine Ahnung&quot;</span>
-<span class="p">)</span><span class="w">   </span><span class="c1">// &quot;OK&quot;</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Luke"</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"Cool"</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Daredevil"</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"OK"</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Jessy"</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"Einfach Jessy"</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="s2">"Keine Ahnung"</span>
+<span class="p">)</span><span class="w">   </span><span class="c1">// "OK"</span>
 
 <span class="c1">// Variablen neuen Wert zuweisen, wenn nicht vorhanden</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">myVar</span><span class="p">;</span>
-<span class="nx">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">myVar</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">myVar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Neuer Wert&quot;</span>
+<span class="nx">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">myVar</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">myVar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"Neuer Wert"</span>
 </pre></div>
 </div>
 </section>
@@ -268,7 +268,7 @@
 <p>Es gibt zwei Möglichkeiten zum Erstellen einer Regex:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// über Konstruktor</span>
 <span class="c1">// nutzen wenn Regex erst zur Laufzeit erstellt wird</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">regExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">regExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">);</span>
 
 <span class="c1">// über Literal-Schreibweise (deutlich performanter)</span>
 <span class="c1">// wenn Zeichenkette feststeht und nicht zur Laufzeit erstellt werden muss</span>
@@ -291,7 +291,7 @@
 <span class="cm">    toString()  - gibt Zeichenmuster als String zurück</span>
 <span class="cm">*/</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica und Luke sind Helden des Marvel-Universums&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica und Luke sind Helden des Marvel-Universums"</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/essi/</span><span class="p">,</span><span class="w"> </span><span class="nx">regExp4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/uce/</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">myString</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">myString</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
@@ -315,16 +315,16 @@
 <span class="cm">                    - Rückgabe: alle Funde als Array</span>
 <span class="cm">*/</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Entdecke Sie bei Eduscho neben Kaffee und Reisen auch &quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="s2">&quot;Toilettenpapier, Öl und Mehl, Eduscho - den lob ich mir!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Entdecke Sie bei Eduscho neben Kaffee und Reisen auch "</span><span class="w"> </span><span class="o">+</span>
+<span class="s2">"Toilettenpapier, Öl und Mehl, Eduscho - den lob ich mir!"</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">oldBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/Eduscho/g</span><span class="p">;</span><span class="w">      </span><span class="c1">// g --&gt; alle Vorkommen werden ersetzt</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">newBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tchibo&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Tchibo"</span><span class="p">;</span>
 
 <span class="cm">/*</span>
 <span class="cm">    [string].replace(zeichenmuster, ersetzung)</span>
 <span class="cm">    arbeitet mit Strings und RegEx</span>
 <span class="cm">    String: ersetzt 1. Vorkommen und bricht ab</span>
-<span class="cm">    RegEx: ersetzt alle Vorkommen sofern Regex mit &#39;/g&#39; endet</span>
+<span class="cm">    RegEx: ersetzt alle Vorkommen sofern Regex mit '/g' endet</span>
 <span class="cm">    mit global flag (g) hinter RegExp alle Vorkommen ersetzen</span>
 <span class="cm">*/</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">oldBrand</span><span class="p">,</span><span class="w"> </span><span class="nx">newBrand</span><span class="p">));</span><span class="w">  </span><span class="c1">// Entdecke Sie bei Tchibo neben Kaffee und Reisen auch Toilettenpapier, Öl und Mehl, Tchibo - den lob ich mir!</span>
@@ -332,9 +332,9 @@
 <span class="cm">/*</span>
 <span class="cm">    [string].replaceAll(zeichenmuster, ersetzung)</span>
 <span class="cm">    bei Arbeit mit String-Übergabe werden alle Vorkommen ersetzt</span>
-<span class="cm">    bei Übergabe einer RegExp muss flag &#39;g&#39; gesetzt sein</span>
+<span class="cm">    bei Übergabe einer RegExp muss flag 'g' gesetzt sein</span>
 <span class="cm">*/</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">&quot;Eduscho&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tchibo&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">"Eduscho"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Tchibo"</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="nx">oldBrand</span><span class="p">,</span><span class="w"> </span><span class="nx">newBrand</span><span class="p">));</span>
 
 <span class="cm">/*</span>
@@ -344,9 +344,9 @@
 <span class="cm">    ohne Fund Rückgabe -1</span>
 <span class="cm">*/</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">oldBrand</span><span class="p">));</span><span class="w"> </span><span class="c1">// 17</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;Kaffee&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 31</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;Tee&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;Tchibo&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">"Kaffee"</span><span class="p">));</span><span class="w"> </span><span class="c1">// 31</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">"Tee"</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">"Tchibo"</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
 
 <span class="cm">/*</span>
 <span class="cm">    [string].match(zeichenmuster)</span>
@@ -356,7 +356,7 @@
 <span class="cm">    ohne Fund - Rückgabe null</span>
 <span class="cm">*/</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="s2">&quot;Eduscho&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="s2">"Eduscho"</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Eduscho/</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">desc</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Eduscho/g</span><span class="p">));</span><span class="w">   </span><span class="c1">// alle Matches</span>
 
@@ -373,28 +373,28 @@
 
 <span class="cm">    Ausdruck        Bedeutung</span>
 
-<span class="cm">    u               das Zeichen &quot;u&quot;</span>
-<span class="cm">    essi            die Zeichenfolge &quot;essi&quot;</span>
+<span class="cm">    u               das Zeichen "u"</span>
+<span class="cm">    essi            die Zeichenfolge "essi"</span>
 <span class="cm">    .               beliebiges Zeichen (kein Zeilenumbruch)</span>
-<span class="cm">    a|b             das Zeichen &quot;a&quot; oder &quot;b&quot;</span>
+<span class="cm">    a|b             das Zeichen "a" oder "b"</span>
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/J.../</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessi&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jo&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessi"</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jo"</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
 
 <span class="cm">/*</span>
 <span class="cm">    Zeichenklasse</span>
 
-<span class="cm">    einfache Klasse     [xyz]       &quot;x&quot; || &quot;y&quot; || &quot;z&quot;</span>
-<span class="cm">    Negation            [^xyz]      &quot;kein &quot;x&quot;, &quot;y&quot; oder &quot;z&quot;</span>
+<span class="cm">    einfache Klasse     [xyz]       "x" || "y" || "z"</span>
+<span class="cm">    Negation            [^xyz]      "kein "x", "y" oder "z"</span>
 <span class="cm">    Bereich             [a-zA-Z]    alle Zeichen im Bereich a-z und A-Z</span>
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/[0-9][0-9][0-9]/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica4567&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;1234567890&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica4567"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp2</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"1234567890"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
 
 <span class="cm">/*</span>
 <span class="cm">    vordefinierte Zeichenklassen</span>
@@ -408,8 +408,8 @@
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/[A-Z]\w\w\w\w\w\w\s[A-Z]\w\w/</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Luke Cage&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Luke Cage"</span><span class="p">));</span><span class="w">      </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp3</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica Jones"</span><span class="p">));</span><span class="w">      </span><span class="c1">// true</span>
 
 <span class="cm">/*</span>
 <span class="cm">    Position / Begrenzung</span>
@@ -423,30 +423,30 @@
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^J/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Luke Jones&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;  Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Luke Jones"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp4</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"  Jessica"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/[.]png$/</span><span class="p">;</span><span class="w">  </span><span class="c1">// oder /\.png$/</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp5</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.png&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp5</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.png.jpg&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp5</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"bild.png"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp5</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"bild.png.jpg"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^J\w\w\w\w$/</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessi&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jo&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessi"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp6</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jo"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\bess\b/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp7</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp7</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Ich ess Blumen&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp7</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp7</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Ich ess Blumen"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\bEs\B/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp8</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Er Sie Es&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp8</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Essig Essenz&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp8</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Er Sie Es"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp8</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Essig Essenz"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\Bess\B/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp9</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Ich ess Blumen&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp9</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp9</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Ich ess Blumen"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp9</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
 
 
 <span class="cm">/*</span>
@@ -466,20 +466,20 @@
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\.jpe?g$/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.jpeg&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.jpg&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;bild.jpdg&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"bild.jpeg"</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"bild.jpg"</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp10</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"bild.jpdg"</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/abc*d/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abcccccccccccd&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;abed&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"abcd"</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"abcccccccccccd"</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp11</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"abed"</span><span class="p">));</span><span class="w">    </span><span class="c1">// false</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp12</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\s+/</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Jessica                 Jones&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;JessicaJones&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica Jones"</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"Jessica                 Jones"</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp12</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"JessicaJones"</span><span class="p">));</span><span class="w">   </span><span class="c1">// false</span>
 
 
 <span class="cm">/*</span>
@@ -491,7 +491,7 @@
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp13</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^multi/m</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp13</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;single\nmulti&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">regExp13</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">"single\nmulti"</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
 
 <span class="cm">/*</span>
 <span class="cm">    [RegExp].exec()</span>
@@ -503,8 +503,8 @@
 <span class="cm">            3. input    durchsuchter String</span>
 <span class="cm">*/</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Entdecke Sie bei Eduscho neben Kaffee und Reisen auch &quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="s2">&quot;Toilettenpapier, Öl und Mehl, Eduscho - den lob ich mir!&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Entdecke Sie bei Eduscho neben Kaffee und Reisen auch "</span><span class="w"> </span><span class="o">+</span>
+<span class="s2">"Toilettenpapier, Öl und Mehl, Eduscho - den lob ich mir!"</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">oldBrand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/Eduscho/g</span><span class="p">;</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldBrand</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">desc</span><span class="p">);</span>
@@ -514,14 +514,14 @@
 <span class="c1">// durch das global-Flag (g) wird die aktuelle Position der Prüfung gemerkt</span>
 
 <span class="k">while</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">// output != null</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;an index-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">index</span><span class="p">);</span><span class="w">  </span><span class="c1">// 17 + 84</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">"an index-Position"</span><span class="p">,</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">index</span><span class="p">);</span><span class="w">  </span><span class="c1">// 17 + 84</span>
 <span class="w">    </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldBrand</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">desc</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// oder kürzer</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">newOutput</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">newOutput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oldBrand</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">desc</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newOutput</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;an Index-Position&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">newOutput</span><span class="p">.</span><span class="nx">index</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newOutput</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">"an Index-Position"</span><span class="p">,</span><span class="w"> </span><span class="nx">newOutput</span><span class="p">.</span><span class="nx">index</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="cm">/*</span>
@@ -537,7 +537,7 @@
 <span class="cm">*/</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">regExp14</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/^(\d{4})-(\d{2})-(\d{2})/</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2024-12-10 11:52:00&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2024-12-10 11:52:00"</span><span class="p">;</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regExp14</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
 
@@ -576,7 +576,7 @@
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

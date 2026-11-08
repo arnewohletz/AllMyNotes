@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -267,7 +267,7 @@ the variable from the <code class="docutils literal notranslate"><span class="pr
 <span class="w">      </span><span class="nx">year</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">poster</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">imdbRating</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">imdbRating</span><span class="p">),</span>
-<span class="w">      </span><span class="nx">runtime</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">).</span><span class="nx">at</span><span class="p">(</span><span class="mf">0</span><span class="p">)),</span>
+<span class="w">      </span><span class="nx">runtime</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nx">at</span><span class="p">(</span><span class="mf">0</span><span class="p">)),</span>
 <span class="w">      </span><span class="nx">userRating</span><span class="p">,</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">onAddWatched</span><span class="p">(</span><span class="nx">newWatchedMovie</span><span class="p">);</span>
@@ -291,7 +291,7 @@ state variable has been updated (due to asynchronous update and update batching)
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">userRating</span><span class="p">,</span><span class="w"> </span><span class="nx">setUserRating</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">userRating</span><span class="p">,</span><span class="w"> </span><span class="nx">setUserRating</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">avgRating</span><span class="p">,</span><span class="w"> </span><span class="nx">setAvgRating</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleAdd</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -301,7 +301,7 @@ state variable has been updated (due to asynchronous update and update batching)
 <span class="w">      </span><span class="nx">year</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">poster</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">imdbRating</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">imdbRating</span><span class="p">),</span>
-<span class="w">      </span><span class="nx">runtime</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">).</span><span class="nx">at</span><span class="p">(</span><span class="mf">0</span><span class="p">)),</span>
+<span class="w">      </span><span class="nx">runtime</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">runtime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nx">at</span><span class="p">(</span><span class="mf">0</span><span class="p">)),</span>
 <span class="w">      </span><span class="nx">userRating</span><span class="p">,</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="nx">onAddWatched</span><span class="p">(</span><span class="nx">newWatchedMovie</span><span class="p">);</span>
@@ -335,7 +335,7 @@ It is assumed by React, that this is the current value of that setter’s state 
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

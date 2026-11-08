@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -212,7 +212,7 @@ already preconfigured.</p>
 <p>Inside the project, delete <code class="docutils literal notranslate"><span class="pre">.eslintrc.cjs</span></code>, create the file <code class="docutils literal notranslate"><span class="pre">.eslintrc.cjs</span></code>
 and insert the following content:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;extends&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-app&quot;</span>
+<span class="w">  </span><span class="nt">"extends"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react-app"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -220,9 +220,9 @@ and insert the following content:</p>
 </li>
 <li><p>Add ESLint plugin inside <code class="docutils literal notranslate"><span class="pre">vite.config.js</span></code>:</p>
 <blockquote>
-<div><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;vite&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">react</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vitejs/plugin-react&quot;</span><span class="p">;</span>
-<span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">eslint</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;vite-plugin-eslint&quot;</span><span class="p">;</span>
+<div><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"vite"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">react</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@vitejs/plugin-react"</span><span class="p">;</span>
+<span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">eslint</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"vite-plugin-eslint"</span><span class="p">;</span>
 </span>
 <span class="c1">// https://vitejs.dev/config/</span>
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
@@ -234,9 +234,9 @@ and insert the following content:</p>
 <p class="admonition-title">Hint</p>
 <p>If things don’t work try installing <code class="docutils literal notranslate"><span class="pre">&#64;nabla/vite-plugin-eslint</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">vite-plugin-eslint</span></code> and use this config:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;vite&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">react</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vitejs/plugin-react&quot;</span><span class="p">;</span>
-<span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">eslintPlugin</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@nabla/vite-plugin-eslint&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"vite"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">react</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@vitejs/plugin-react"</span><span class="p">;</span>
+<span class="hll"><span class="k">import</span><span class="w"> </span><span class="nx">eslintPlugin</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@nabla/vite-plugin-eslint"</span><span class="p">;</span>
 </span>
 <span class="c1">// https://vitejs.dev/config/</span>
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
@@ -263,7 +263,7 @@ and insert the following content:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

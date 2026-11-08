@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -175,13 +175,13 @@ to <strong>child components</strong> (down the component tree)</p></li>
 <div class="code-block-caption"><span class="caption-text">Passing data as props</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Menu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Pizza</span>
-<span class="hll"><span class="w">        </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;Pizza Spinaci&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">ingredient</span><span class="o">=</span><span class="s">&quot;Tomato, mozarella, spinach, and ricotta cheese&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">photoName</span><span class="o">=</span><span class="s">&quot;pizzas/spinaci.jpg&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">price</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
+<span class="hll"><span class="w">        </span><span class="na">name</span><span class="o">=</span><span class="s">"Pizza Spinaci"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">ingredient</span><span class="o">=</span><span class="s">"Tomato, mozarella, spinach, and ricotta cheese"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">photoName</span><span class="o">=</span><span class="s">"pizzas/spinaci.jpg"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">price</span><span class="o">=</span><span class="s">"10"</span>
 </span><span class="w">      </span><span class="p">/&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
@@ -193,7 +193,7 @@ to <strong>child components</strong> (down the component tree)</p></li>
 <div class="code-block-caption"><span class="caption-text">Receive data</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">Pizza</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizza&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizza"</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">photoName</span><span class="p">}</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 </span><span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 </span><span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="nx">props</span><span class="p">.</span><span class="nx">ingredients</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -214,19 +214,19 @@ then be accessed via JavaScript.</p>
 <div class="code-block-caption"><span class="caption-text">Create component</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Menu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">Pizza</span>
-</span><span class="hll"><span class="w">        </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;Pizza Spinaci&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">ingredients</span><span class="o">=</span><span class="s">&quot;Tomato, mozarella, spinach, and ricotta cheese&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">photoName</span><span class="o">=</span><span class="s">&quot;pizzas/spinaci.jpg&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">price</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
+</span><span class="hll"><span class="w">        </span><span class="na">name</span><span class="o">=</span><span class="s">"Pizza Spinaci"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">ingredients</span><span class="o">=</span><span class="s">"Tomato, mozarella, spinach, and ricotta cheese"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">photoName</span><span class="o">=</span><span class="s">"pizzas/spinaci.jpg"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">price</span><span class="o">=</span><span class="s">"10"</span>
 </span><span class="hll"><span class="w">      </span><span class="p">/&gt;</span>
 </span><span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">Pizza</span>
-</span><span class="hll"><span class="w">        </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;Pizza Funghi&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">ingredients</span><span class="o">=</span><span class="s">&quot;Tomato, Mushrooms&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">price</span><span class="o">=</span><span class="s">&quot;12&quot;</span>
-</span><span class="hll"><span class="w">        </span><span class="na">photoName</span><span class="o">=</span><span class="s">&quot;pizzas/funghi.jpg&quot;</span>
+</span><span class="hll"><span class="w">        </span><span class="na">name</span><span class="o">=</span><span class="s">"Pizza Funghi"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">ingredients</span><span class="o">=</span><span class="s">"Tomato, Mushrooms"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">price</span><span class="o">=</span><span class="s">"12"</span>
+</span><span class="hll"><span class="w">        </span><span class="na">photoName</span><span class="o">=</span><span class="s">"pizzas/funghi.jpg"</span>
 </span><span class="hll"><span class="w">      </span><span class="p">/&gt;</span>
 </span><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
@@ -244,9 +244,9 @@ then be accessed via JavaScript.</p>
 curly braces to enable the JavaScript-Mode. Outside of it, only Strings are
 allowed.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">&lt;</span><span class="nt">Pizza</span>
-<span class="w">    </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;Pizza Spinaci&quot;</span>
-<span class="w">    </span><span class="na">ingredients</span><span class="o">=</span><span class="s">&quot;Tomato, mozarella, spinach, and ricotta cheese&quot;</span>
-<span class="w">    </span><span class="na">photoName</span><span class="o">=</span><span class="s">&quot;pizzas/spinaci.jpg&quot;</span>
+<span class="w">    </span><span class="na">name</span><span class="o">=</span><span class="s">"Pizza Spinaci"</span>
+<span class="w">    </span><span class="na">ingredients</span><span class="o">=</span><span class="s">"Tomato, mozarella, spinach, and ricotta cheese"</span>
+<span class="w">    </span><span class="na">photoName</span><span class="o">=</span><span class="s">"pizzas/spinaci.jpg"</span>
 <span class="hll"><span class="w">    </span><span class="na">price</span><span class="o">=</span><span class="p">{</span><span class="mf">10</span><span class="p">}</span>
 </span><span class="w">  </span><span class="p">/&gt;</span>
 </pre></div>
@@ -268,7 +268,7 @@ allowed.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

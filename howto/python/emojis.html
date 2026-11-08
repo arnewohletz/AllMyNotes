@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -147,22 +147,22 @@
 <p>As all emoji characters are defined within the UTF-8 standard, you can print emojis
 or any other UTF-8 character in Python natively.</p>
 <p>For instance</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="se">\U0001F600</span><span class="s1">&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">'</span><span class="se">\U0001F600</span><span class="s1">'</span>
 </pre></div>
 </div>
 <p>will print the emoji character 1F600 (GRINNING FACE).
 To get the unicode encoding for a specific emoji, refer to the <a class="reference external" href="https://unicode.org/emoji/charts/full-emoji-list.html">emoji list</a>.</p>
 <p>Alternatively, you may also refer to the emojis name, e.g.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="se">\N{GRINNING FACE}</span><span class="s1">&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">'</span><span class="se">\N{GRINNING FACE}</span><span class="s1">'</span>
 </pre></div>
 </div>
 <p>which will also print the same emoji as above.</p>
 <p>To get the name of an emoji as defined in Python, use the <code class="docutils literal notranslate"><span class="pre">unicodedata</span></code> module:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">unicodedata</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mh">0x1F600</span><span class="p">))</span>
-<span class="go">    &#39;GRINNING FACE&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">unicodedata</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001F600</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="go">    &#39;GRINNING FACE&#39;</span>
+<span class="go">    'GRINNING FACE'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">unicodedata</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">'</span><span class="se">\U0001F600</span><span class="s1">'</span><span class="p">)</span>
+<span class="go">    'GRINNING FACE'</span>
 </pre></div>
 </div>
 </section>
@@ -180,7 +180,7 @@ To get the unicode encoding for a specific emoji, refer to the <a class="referen
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

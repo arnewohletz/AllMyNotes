@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -207,8 +207,8 @@ it an expressive name (like: <em>documentation_search</em>).</p></li>
 <li><p>Add both extensions to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span>
-    <span class="s1">&#39;sphinx_sitemap&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;sphinx_docsearch&#39;</span><span class="p">,</span>
+    <span class="s1">'sphinx_sitemap'</span><span class="p">,</span>
+    <span class="s1">'sphinx_docsearch'</span><span class="p">,</span>
     <span class="o">...</span>
     <span class="p">]</span>
 </pre></div>
@@ -217,9 +217,9 @@ it an expressive name (like: <em>documentation_search</em>).</p></li>
 </li>
 <li><p>For <em>sphinx-sitemap</em>. also add these variables to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_baseurl</span> <span class="o">=</span> <span class="s1">&#39;&lt;HOST_ADDRESS_AND_PORT&gt;&#39;</span>
-<span class="n">sitemap_filename</span> <span class="o">=</span> <span class="s2">&quot;sitemap.xml&quot;</span>
-<span class="n">sitemap_url_scheme</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{link}</span><span class="s2">&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_baseurl</span> <span class="o">=</span> <span class="s1">'&lt;HOST_ADDRESS_AND_PORT&gt;'</span>
+<span class="n">sitemap_filename</span> <span class="o">=</span> <span class="s2">"sitemap.xml"</span>
+<span class="n">sitemap_url_scheme</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{link}</span><span class="s2">"</span>
 <span class="n">sitemap_locales</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -231,9 +231,9 @@ is the used port).</p>
 </li>
 <li><p>For <em>sphinx-docsearch</em>, also add these variables to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docsearch_app_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_APP_ID&gt;&quot;</span>
-<span class="n">docsearch_api_key</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_SEARCH_API_KEY&gt;&quot;</span>
-<span class="n">docsearch_index_name</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_INDEX_NAME&gt;&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docsearch_app_id</span> <span class="o">=</span> <span class="s2">"&lt;DOCSEARCH_APP_ID&gt;"</span>
+<span class="n">docsearch_api_key</span> <span class="o">=</span> <span class="s2">"&lt;DOCSEARCH_SEARCH_API_KEY&gt;"</span>
+<span class="n">docsearch_index_name</span> <span class="o">=</span> <span class="s2">"&lt;DOCSEARCH_INDEX_NAME&gt;"</span>
 </pre></div>
 </div>
 <p>where</p>
@@ -275,21 +275,21 @@ for instance <code class="docutils literal notranslate"><span class="pre">docsea
 for the crawler, for example:</p>
 <blockquote>
 <div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;index_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;documentation_search&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sitemap_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;http://trn-srvtts-gpu03.cerence.net:8321/sitemap.xml&quot;</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;sitemap_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;stop_urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">  </span><span class="nt">&quot;selectors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;lvl0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;lvl1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;selector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h2, .document li&quot;</span>
+<span class="w">  </span><span class="nt">"index_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documentation_search"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"sitemap_urls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://trn-srvtts-gpu03.cerence.net:8321/sitemap.xml"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"sitemap_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"stop_urls"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">"selectors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"lvl0"</span><span class="p">:</span><span class="w"> </span><span class="s2">".document h1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"lvl1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"selector"</span><span class="p">:</span><span class="w"> </span><span class="s2">".document h2, .document li"</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;lvl2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h3&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;lvl3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document h4&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.document p, .document li, .document pre, .document li&quot;</span>
+<span class="w">    </span><span class="nt">"lvl2"</span><span class="p">:</span><span class="w"> </span><span class="s2">".document h3"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"lvl3"</span><span class="p">:</span><span class="w"> </span><span class="s2">".document h4"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">".document p, .document li, .document pre, .document li"</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;selectors_exclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;.search-exclude&quot;</span>
+<span class="w">  </span><span class="nt">"selectors_exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">".search-exclude"</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
@@ -338,7 +338,7 @@ check that the <code class="docutils literal notranslate"><span class="pre">site
 <li><p>From the documentations sources root directory (where <code class="docutils literal notranslate"><span class="pre">.env</span></code> and
 <code class="docutils literal notranslate"><span class="pre">docsearch_crawler_settings.json</span></code> are located), run the Docker image like this:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--env-file<span class="o">=</span>.env<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;CONFIG=</span><span class="k">$(</span>cat<span class="w"> </span>docsearch_crawler_settings.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>tostring<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>algolia/docsearch-scraper
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--env-file<span class="o">=</span>.env<span class="w"> </span>-e<span class="w"> </span><span class="s2">"CONFIG=</span><span class="k">$(</span>cat<span class="w"> </span>docsearch_crawler_settings.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>tostring<span class="k">)</span><span class="s2">"</span><span class="w"> </span>algolia/docsearch-scraper
 </pre></div>
 </div>
 <div class="admonition important">
@@ -418,7 +418,7 @@ but without the need to create a <code class="docutils literal notranslate"><spa
 <li><p>Add the extensions to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span>
-    <span class="s1">&#39;sphinx_docsearch&#39;</span><span class="p">,</span>
+    <span class="s1">'sphinx_docsearch'</span><span class="p">,</span>
     <span class="o">...</span>
     <span class="p">]</span>
 </pre></div>
@@ -427,9 +427,9 @@ but without the need to create a <code class="docutils literal notranslate"><spa
 </li>
 <li><p>For <em>sphinx-docsearch</em>, also add these variables to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docsearch_app_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_APP_ID&gt;&quot;</span>
-<span class="n">docsearch_api_key</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_SEARCH_API_KEY&gt;&quot;</span>
-<span class="n">docsearch_index_name</span> <span class="o">=</span> <span class="s2">&quot;&lt;DOCSEARCH_INDEX_NAME&gt;&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">docsearch_app_id</span> <span class="o">=</span> <span class="s2">"&lt;DOCSEARCH_APP_ID&gt;"</span>
+<span class="n">docsearch_api_key</span> <span class="o">=</span> <span class="s2">"&lt;DOCSEARCH_SEARCH_API_KEY&gt;"</span>
+<span class="n">docsearch_index_name</span> <span class="o">=</span> <span class="s2">"&lt;DOCSEARCH_INDEX_NAME&gt;"</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_APP_ID&gt;</span></code> is the application ID and <code class="docutils literal notranslate"><span class="pre">&lt;DOCSEARCH_SEARCH_API_KEY&gt;</span></code>
@@ -475,17 +475,17 @@ which is located in a directory, that is listed in the systems PATH variable.</p
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">add_docsearch_js</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">templatename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">doctree</span><span class="p">):</span>
-    <span class="n">docsearch_script</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@docsearch/js@3&quot;&gt;&lt;/script&gt;</span>
-<span class="s2">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="s2">&quot;metatags&quot;</span> <span class="ow">in</span> <span class="n">context</span><span class="p">:</span>
-        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;metatags&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">docsearch_script</span>
+    <span class="n">docsearch_script</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"""</span>
+<span class="s2">    &lt;script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"&gt;&lt;/script&gt;</span>
+<span class="s2">    """</span>
+    <span class="k">if</span> <span class="s2">"metatags"</span> <span class="ow">in</span> <span class="n">context</span><span class="p">:</span>
+        <span class="n">context</span><span class="p">[</span><span class="s2">"metatags"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">docsearch_script</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;metatags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">docsearch_script</span>
+        <span class="n">context</span><span class="p">[</span><span class="s2">"metatags"</span><span class="p">]</span> <span class="o">=</span> <span class="n">docsearch_script</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Sphinx</span><span class="p">):</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;html-page-context&quot;</span><span class="p">,</span> <span class="n">add_docsearch_js</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"html-page-context"</span><span class="p">,</span> <span class="n">add_docsearch_js</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic">
@@ -495,7 +495,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/_ext&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/_ext'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -503,7 +503,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
 <li><p>Also in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, add the file to your Sphinx extensions:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span>
-    <span class="s1">&#39;fix_docsearch_jupyter&#39;</span><span class="p">,</span>
+    <span class="s1">'fix_docsearch_jupyter'</span><span class="p">,</span>
     <span class="o">...</span>
     <span class="p">]</span>
 </pre></div>
@@ -529,7 +529,7 @@ which is located in a directory, that is listed in the systems PATH variable.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

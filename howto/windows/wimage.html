@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -393,7 +393,7 @@ a file called <code class="docutils literal notranslate"><span class="pre">insta
 <li><p>Mount the file by running</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span><span class="w"> </span>mkdir<span class="w"> </span>C:<span class="se">\w</span>intemp
-C:<span class="se">\&gt;</span><span class="w"> </span>dism<span class="w"> </span>/Mount-Wim<span class="w"> </span>/WimFile:<span class="s2">&quot;C:\install.wim&quot;</span><span class="w"> </span>/index:1<span class="w"> </span>/MountDir:<span class="s2">&quot;C:\wintemp&quot;</span>
+C:<span class="se">\&gt;</span><span class="w"> </span>dism<span class="w"> </span>/Mount-Wim<span class="w"> </span>/WimFile:<span class="s2">"C:\install.wim"</span><span class="w"> </span>/index:1<span class="w"> </span>/MountDir:<span class="s2">"C:\wintemp"</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -426,11 +426,11 @@ them after the backup, if needed.</p>
 </div>
 <p>To resolve it open <code class="docutils literal notranslate"><span class="pre">ct-WIMage-x64.bat</span></code> on the root of your <code class="docutils literal notranslate"><span class="pre">CT-WIMAGE</span></code>
 partition and find the following line (at around line 234):</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for /f &quot;tokens=3&quot; %%a in (&#39;dir %systemdrive% /-c ^| findstr /i &quot;Verzeichnis(se)&quot;&#39;) do set frei=%%a
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for /f "tokens=3" %%a in ('dir %systemdrive% /-c ^| findstr /i "Verzeichnis(se)"') do set frei=%%a
 </pre></div>
 </div>
 <p>and replace it with:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for /f &quot;tokens=2&quot; %%a in (&#39;wmic volume get DriveLetter^,FreeSpace ^| findstr /i &quot;%systemdrive%&quot;&#39;) do set frei=%%a
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for /f "tokens=2" %%a in ('wmic volume get DriveLetter^,FreeSpace ^| findstr /i "%systemdrive%"') do set frei=%%a
 </pre></div>
 </div>
 <p>Save and close the file and start a new run.</p>
@@ -528,7 +528,7 @@ created one. Make sure to delete it from its original destination afterwards.</p
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -178,10 +178,10 @@ instead of doing it the “React way”.</p>
 <span class="w">    </span><span class="p">{</span><span class="cm">/* more here */</span><span class="p">}</span>
 
 <span class="hll"><span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Escape&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Escape"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">        </span><span class="nx">handleCloseMovie</span><span class="p">();</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Closing&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Closing"</span><span class="p">);</span>
 </span><span class="hll"><span class="w">      </span><span class="p">}</span>
 </span><span class="hll"><span class="w">    </span><span class="p">});</span>
 </span><span class="hll"><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
@@ -198,10 +198,10 @@ So, we <strong>move it</strong> into the <code class="docutils literal notransla
 <span class="w">    </span><span class="p">{</span><span class="cm">/* more here */</span><span class="p">}</span>
 
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Escape&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Escape"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">        </span><span class="nx">onCloseMovie</span><span class="p">();</span>
-</span><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Closing&quot;</span><span class="p">);</span>
+</span><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Closing"</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="hll"><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">onCloseMovie</span><span class="p">]);</span>
@@ -220,14 +220,14 @@ have one event handler at a time, from the movie, which is currently open.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">useEffect</span><span class="p">(</span>
 <span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Escape&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Escape"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">onCloseMovie</span><span class="p">();</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Closing&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Closing"</span><span class="p">);</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<span class="w">      </span><span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="p">[</span><span class="nx">onCloseMovie</span><span class="p">]</span>
@@ -252,7 +252,7 @@ function and use it for both the <code class="docutils literal notranslate"><spa
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

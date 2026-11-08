@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -165,22 +165,22 @@
 handle the selection of an answer and destructure it from <code class="docutils literal notranslate"><span class="pre">initialState</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">initialState</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">questions</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+  <span class="n">status</span><span class="p">:</span> <span class="s2">"loading"</span><span class="p">,</span>
   <span class="n">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 <span class="hll">  <span class="n">answer</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
 </span><span class="p">};</span>
 
 <span class="n">function</span> <span class="n">reducer</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">switch</span> <span class="p">(</span><span class="n">action</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">&quot;dataReceived&quot;</span><span class="p">:</span>
-      <span class="k">return</span> <span class="p">{</span> <span class="o">...</span><span class="n">state</span><span class="p">,</span> <span class="n">questions</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">payload</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;ready&quot;</span> <span class="p">};</span>
+    <span class="k">case</span> <span class="s2">"dataReceived"</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="o">...</span><span class="n">state</span><span class="p">,</span> <span class="n">questions</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">payload</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="s2">"ready"</span> <span class="p">};</span>
 
     <span class="p">{</span><span class="o">/*</span> <span class="n">more</span> <span class="n">stuff</span> <span class="o">*/</span><span class="p">}</span>
 
-<span class="hll">    <span class="k">case</span> <span class="s2">&quot;newAnswer&quot;</span><span class="p">:</span>
+<span class="hll">    <span class="k">case</span> <span class="s2">"newAnswer"</span><span class="p">:</span>
 </span><span class="hll">      <span class="k">return</span> <span class="p">{</span> <span class="o">...</span><span class="n">state</span><span class="p">,</span> <span class="n">answer</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">payload</span> <span class="p">};</span>
 </span>    <span class="n">default</span><span class="p">:</span>
-      <span class="n">throw</span> <span class="n">new</span> <span class="n">Error</span><span class="p">(</span><span class="s2">&quot;Action unknown&quot;</span><span class="p">);</span>
+      <span class="n">throw</span> <span class="n">new</span> <span class="n">Error</span><span class="p">(</span><span class="s2">"Action unknown"</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -199,15 +199,15 @@ the <code class="docutils literal notranslate"><span class="pre">dispatch</span>
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Main</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Loader</span><span class="w"> </span><span class="p">/&gt;}</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Error</span><span class="w"> </span><span class="p">/&gt;}</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"loading"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Loader</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"error"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Error</span><span class="w"> </span><span class="p">/&gt;}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"ready"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">          </span><span class="p">&lt;</span><span class="nt">StartScreen</span><span class="w"> </span><span class="na">numQuestions</span><span class="o">=</span><span class="p">{</span><span class="nx">numQuestions</span><span class="p">}</span><span class="w"> </span><span class="na">dispatch</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">        </span><span class="p">)}</span>
-<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;active&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"active"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
 <span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">Question</span>
 </span><span class="hll"><span class="w">            </span><span class="na">question</span><span class="o">=</span><span class="p">{</span><span class="nx">questions</span><span class="p">[</span><span class="nx">index</span><span class="p">]}</span>
 </span><span class="hll"><span class="w">            </span><span class="na">dispatch</span><span class="o">=</span><span class="p">{</span><span class="nx">dispatch</span><span class="p">}</span>
@@ -235,12 +235,12 @@ the <code class="docutils literal notranslate"><span class="pre">dispatch</span>
 <p>and here calling the <code class="docutils literal notranslate"><span class="pre">dispatch</span></code> function passing the index of each option:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Options</span><span class="p">({</span><span class="w"> </span><span class="nx">question</span><span class="p">,</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;options&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"options"</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">{</span><span class="nx">question</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 </span><span class="w">        </span><span class="p">&lt;</span><span class="nt">button</span>
-<span class="w">          </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-option&quot;</span>
+<span class="w">          </span><span class="na">className</span><span class="o">=</span><span class="s">"btn btn-option"</span>
 <span class="w">          </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
-<span class="hll"><span class="w">          </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;newAnswer&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="p">})}</span>
+<span class="hll"><span class="w">          </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"newAnswer"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="p">})}</span>
 </span><span class="w">        </span><span class="p">&gt;</span>
 <span class="w">          </span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -255,19 +255,19 @@ to the selected answer button:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Options</span><span class="p">({</span><span class="w"> </span><span class="nx">question</span><span class="p">,</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">hasAnswered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;options&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"options"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">{</span><span class="nx">question</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">button</span>
-<span class="hll"><span class="w">          </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`btn btn-option </span><span class="si">${</span><span class="nx">index</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;answer&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span>
+<span class="hll"><span class="w">          </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`btn btn-option </span><span class="si">${</span><span class="nx">index</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">answer</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"answer"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span>
 </span><span class="hll"><span class="w">            </span><span class="nx">hasAnswered</span>
 </span><span class="hll"><span class="w">              </span><span class="o">?</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">question</span><span class="p">.</span><span class="nx">correctOption</span>
-</span><span class="hll"><span class="w">                </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;correct&quot;</span>
-</span><span class="hll"><span class="w">                </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;wrong&quot;</span>
-</span><span class="hll"><span class="w">              </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span class="hll"><span class="w">                </span><span class="o">?</span><span class="w"> </span><span class="s2">"correct"</span>
+</span><span class="hll"><span class="w">                </span><span class="o">:</span><span class="w"> </span><span class="s2">"wrong"</span>
+</span><span class="hll"><span class="w">              </span><span class="o">:</span><span class="w"> </span><span class="s2">""</span>
 </span><span class="hll"><span class="w">          </span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
 </span><span class="w">          </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
 <span class="hll"><span class="w">          </span><span class="na">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">hasAnswered</span><span class="p">}</span>
-</span><span class="w">          </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;newAnswer&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="p">})}</span>
+</span><span class="w">          </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"newAnswer"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="p">})}</span>
 <span class="w">        </span><span class="p">&gt;</span>
 <span class="w">          </span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -286,7 +286,7 @@ and false answer options <strong>after</strong> an answer has been given</p></li
 <p>To display a progress score, we need another state variable:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">questions</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;loading&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"loading"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="hll"><span class="w">  </span><span class="nx">points</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
@@ -300,7 +300,7 @@ answer is correct only:</p>
 
 <span class="w">    </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;newAnswer&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"newAnswer"</span><span class="o">:</span>
 <span class="hll"><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">question</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">questions</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">index</span><span class="p">);</span>
 </span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span>
@@ -341,7 +341,7 @@ updating the state into the <code class="docutils literal notranslate"><span cla
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -210,7 +210,7 @@ verändern sie diese parallel.</p>
 <span class="w">	</span><span class="nd">@Override</span>
 <span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span>
 <span class="w">	</span><span class="p">{</span>
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Thread starts...&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Thread starts..."</span><span class="p">);</span>
 <span class="w">		</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">		</span><span class="n">alive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
@@ -225,7 +225,7 @@ verändern sie diese parallel.</p>
 <span class="w">				</span><span class="k">break</span><span class="p">;</span>
 <span class="w">			</span><span class="p">}</span>
 <span class="w">		</span><span class="p">}</span>
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Thread ends...&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Thread ends..."</span><span class="p">);</span>
 <span class="w">	</span><span class="p">}</span>
 
 <span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
@@ -251,11 +251,11 @@ verändern sie diese parallel.</p>
 <span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">iNow</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">LIMIT</span><span class="p">)</span>
 <span class="w">			</span><span class="p">{</span>
 <span class="w">				</span><span class="n">c</span><span class="p">.</span><span class="na">alive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;THREAD STOPPED! (alive = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">alive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">);</span>
+<span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"THREAD STOPPED! (alive = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">alive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span>
 <span class="w">			</span><span class="p">}</span>
 
 <span class="w">		</span><span class="p">}</span>
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Program exits...&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Program exits..."</span><span class="p">);</span>
 <span class="w">		</span><span class="cm">/*Das Programm endet nie (die if-Schleife wird nie verlassen)</span>
 <span class="cm">		 * Auch wenn alive = false ist und i bereits 1 Milliarde �berschritten hat l�uft das Programm ewig weiter</span>
 <span class="cm">		 */</span>
@@ -281,7 +281,7 @@ verändern sie diese parallel.</p>
 <span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
 <span class="w">			</span><span class="n">x</span><span class="o">++</span><span class="p">;</span>
 <span class="w">		</span><span class="p">}</span>
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; has finished after &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; loops&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" has finished after "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" loops"</span><span class="p">);</span>
 <span class="w">	</span><span class="p">}</span>
 
 <span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
@@ -302,7 +302,7 @@ verändern sie diese parallel.</p>
 <span class="w">			</span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
 <span class="w">		</span><span class="p">}</span>
 
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x is: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
 <span class="w">		</span><span class="cm">/*Ausgabe ist bei jeder Ausf�hrung unterschiedlich:</span>
 <span class="cm">		Thread-1 has finished after 2000 loops</span>
 <span class="cm">		Thread-0 has finished after 2000 loops</span>
@@ -336,7 +336,7 @@ verändern sie diese parallel.</p>
 <span class="w">				</span><span class="k">break</span><span class="p">;</span>
 <span class="w">			</span><span class="p">}</span>
 <span class="w">		</span><span class="p">}</span>
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; has finished after &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; loops&quot;</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" has finished after "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" loops"</span><span class="p">);</span>
 <span class="w">	</span><span class="p">}</span>
 
 
@@ -355,7 +355,7 @@ verändern sie diese parallel.</p>
 <span class="w">			</span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
 <span class="w">		</span><span class="p">}</span>
 
-<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
+<span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x is: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">x</span><span class="p">);</span>
 <span class="w">		</span><span class="cm">/*Ausgabe ist bei jeder Ausf�hrung unterschiedlich, da man nicht beeinflussen kann, welcher Thread wann startet (Scheduling):</span>
 <span class="cm">		Thread-1 has finished after 6305 loops</span>
 <span class="cm">		Thread-0 has finished after 8700 loops</span>
@@ -383,7 +383,7 @@ verändern sie diese parallel.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

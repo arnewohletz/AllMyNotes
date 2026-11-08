@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -201,8 +201,8 @@ $<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span
 <p>Tests are organized in Specfiles. It comprises of one or multiple test groups.
 It is advised to use the name of the function a group is supposed to test.</p>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">&quot;FunctionUnderTest&quot;</span>
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;BehaviourUnderTest&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">"FunctionUnderTest"</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"BehaviourUnderTest"</span>
 <span class="w">    </span><span class="c1"># test code</span>
 <span class="w">  </span>End
 End
@@ -210,23 +210,23 @@ End
 </div>
 <p>Here are the functions, that need to be tested:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>array_to_lines<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">array</span><span class="o">=(</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">array</span><span class="o">=(</span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="o">)</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="si">${#</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%s\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">"%s\n"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="o">}</span>
 
 array_sort<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">array</span><span class="o">=(</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
-<span class="w">  </span>array_to_lines<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-V
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">array</span><span class="o">=(</span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="o">)</span>
+<span class="w">  </span>array_to_lines<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-V
 <span class="o">}</span>
 
 array_contains<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">needle</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">haystack</span><span class="o">=(</span><span class="s2">&quot;</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">needle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">haystack</span><span class="o">=(</span><span class="s2">"</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">"</span><span class="o">)</span>
 <span class="w">  </span><span class="nb">local</span><span class="w"> </span>cur
-<span class="w">  </span><span class="k">for</span><span class="w"> </span>cur<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">haystack</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$needle</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cur</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span>cur<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">haystack</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$needle</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"</span><span class="nv">$cur</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
 <span class="w">    </span><span class="k">fi</span>
 <span class="w">  </span><span class="k">done</span>
@@ -257,42 +257,42 @@ of an array must be found</p></li>
 <li><p>if the passed in array is empty, the return value must not be 0</p></li>
 </ul>
 <p>This is the resulting <code class="docutils literal notranslate"><span class="pre">.specfile</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">&quot;array_to_lines()&quot;</span>
-<span class="w">  </span>Pending<span class="w"> </span><span class="s2">&quot;Not implemented&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">"array_to_lines()"</span>
+<span class="w">  </span>Pending<span class="w"> </span><span class="s2">"Not implemented"</span>
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;output each element of the input array&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"output each element of the input array"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;amount of output elements match input array element amount&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"amount of output elements match input array element amount"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;don&#39;t output anything if input array is empty&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"don't output anything if input array is empty"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;order of elements is not changed&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"order of elements is not changed"</span>
 <span class="w">  </span>End
 End
 
-Describe<span class="w"> </span><span class="s2">&quot;array_sort()&quot;</span>
-<span class="w">  </span>Pending<span class="w"> </span><span class="s2">&quot;Not implemented&quot;</span>
+Describe<span class="w"> </span><span class="s2">"array_sort()"</span>
+<span class="w">  </span>Pending<span class="w"> </span><span class="s2">"Not implemented"</span>
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;don&#39;t output anything if input array is empty&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"don't output anything if input array is empty"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;each input element is output&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"each input element is output"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;no digit-wise sorting&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"no digit-wise sorting"</span>
 <span class="w">  </span>End
 End
 
-Describe<span class="w"> </span><span class="s2">&quot;array_contains()&quot;</span>
-<span class="w">  </span>Pending<span class="w"> </span><span class="s2">&quot;Not implemented&quot;</span>
+Describe<span class="w"> </span><span class="s2">"array_contains()"</span>
+<span class="w">  </span>Pending<span class="w"> </span><span class="s2">"Not implemented"</span>
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element at the very beginning of array&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element at the very beginning of array"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element in the middle of the array&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element in the middle of the array"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element at the very end of the array&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element at the very end of the array"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;return 1 if element was not found&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"return 1 if element was not found"</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;return 1 if input array is empty&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"return 1 if input array is empty"</span>
 <span class="w">  </span>End
 End
 </pre></div>
@@ -314,24 +314,24 @@ End
 <p>The first test case for <code class="code highlight bash docutils literal highlight-bash">array_to_lines<span class="o">()</span></code> cannot be implemented with
 <em>ShellSpec</em> alone, but requires an additional shell helper function, which is
 then called by the framework:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>It<span class="w"> </span><span class="s2">&quot;output each element of the input array&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>It<span class="w"> </span><span class="s2">"output each element of the input array"</span>
 <span class="linenos"> 2</span><span class="w">  </span>_test_array_to_lines_output_complete<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos"> 3</span><span class="w">    </span><span class="nb">local</span><span class="w"> </span>input
 <span class="linenos"> 4</span><span class="w">    </span><span class="nb">local</span><span class="w"> </span>output
 <span class="linenos"> 5</span><span class="w">    </span><span class="nb">local</span><span class="w"> </span>input_element
 <span class="linenos"> 6</span><span class="w">    </span><span class="nv">input</span><span class="o">=(</span>
 <span class="linenos"> 7</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span>
-<span class="linenos"> 8</span><span class="w">      </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="s2">&quot;--&quot;</span>
-<span class="linenos"> 9</span><span class="w">      </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span><span class="s2">&quot;d&quot;</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="s2">""</span><span class="w"> </span><span class="s2">" "</span><span class="w"> </span><span class="s2">"-"</span><span class="w"> </span><span class="s2">"--"</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="s2">"a"</span><span class="w"> </span><span class="s2">"b"</span><span class="w"> </span><span class="s2">"c"</span><span class="w"> </span><span class="s2">"d"</span>
 <span class="linenos">10</span><span class="w">    </span><span class="o">)</span>
 <span class="linenos">11</span><span class="w">    </span><span class="nv">ausgabe</span><span class="o">=()</span>
-<span class="linenos">12</span><span class="w">    </span>readarray<span class="w"> </span>-t<span class="w"> </span>output<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>array_to_lines<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
-<span class="linenos">13</span><span class="w">    </span><span class="k">for</span><span class="w"> </span>input_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos">12</span><span class="w">    </span>readarray<span class="w"> </span>-t<span class="w"> </span>output<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>array_to_lines<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="o">)</span>
+<span class="linenos">13</span><span class="w">    </span><span class="k">for</span><span class="w"> </span>input_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="linenos">14</span><span class="w">      </span><span class="nb">local</span><span class="w"> </span>-i<span class="w"> </span>is_in_output
 <span class="linenos">15</span><span class="w">      </span><span class="nb">local</span><span class="w"> </span>output_element
 <span class="linenos">16</span><span class="w">      </span><span class="nv">is_in_output</span><span class="o">=</span><span class="m">0</span>
-<span class="linenos">17</span><span class="w">        </span><span class="k">for</span><span class="w"> </span>output_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="linenos">18</span><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$input_element</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_element</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">17</span><span class="w">        </span><span class="k">for</span><span class="w"> </span>output_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">output</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="linenos">18</span><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$input_element</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"</span><span class="nv">$output_element</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="linenos">19</span><span class="w">            </span><span class="nv">is_in_output</span><span class="o">=</span><span class="m">1</span>
 <span class="linenos">20</span><span class="w">            </span><span class="k">break</span>
 <span class="linenos">21</span><span class="w">          </span><span class="k">fi</span>
@@ -353,7 +353,7 @@ then called by the framework:</p>
 <dd class="field-odd"><p>Definition of helper function.</p>
 </dd>
 <dt class="field-even">line 12<span class="colon">:</span></dt>
-<dd class="field-even"><p>Calling <a class="reference external" href="https://helpmanual.io/builtin/readarray/">readarray</a> which takes the result of <code class="code highlight bash docutils literal highlight-bash">array_to_lines<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span></code>
+<dd class="field-even"><p>Calling <a class="reference external" href="https://helpmanual.io/builtin/readarray/">readarray</a> which takes the result of <code class="code highlight bash docutils literal highlight-bash">array_to_lines<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span></code>
 as input and saves the result into <code class="code highlight bash docutils literal highlight-bash">output</code>.</p>
 </dd>
 <dt class="field-odd">line 13 - 28<span class="colon">:</span></dt>
@@ -369,13 +369,13 @@ The <code class="code highlight bash docutils literal highlight-bash">When</code
 The <code class="code highlight bash docutils literal highlight-bash">The</code> directive marks the expectation.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>To compare the stdout with a string, use <code class="code highlight bash docutils literal highlight-bash">stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;my_string&quot;</span></code>.</p>
+<p>To compare the stdout with a string, use <code class="code highlight bash docutils literal highlight-bash">stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"my_string"</span></code>.</p>
 </div>
 </dd>
 </dl>
 <p>The next test case, comparing the amount of outputted lines with the amount of
 elements in the array, can be implemented without an additional helper method:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">&quot;amount of output elements match input array element amount&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">"amount of output elements match input array element amount"</span>
 <span class="w">  </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span>
 <span class="w">  </span>The<span class="w"> </span>lines<span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">5</span>
 End
@@ -383,7 +383,7 @@ End
 </div>
 <p>Checking for no output when passing an empty array. It suffices to check for the
 return code and skip the check on the non-existing stdout:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">&quot;don&#39;t output anything if input array is empty&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">"don't output anything if input array is empty"</span>
 <span class="w">  </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines
 <span class="w">  </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 End
@@ -391,11 +391,11 @@ End
 </div>
 <p>To test the order of the output lines, you may use the <code class="code highlight bash docutils literal highlight-bash">line</code> directive
 of Spell Check:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">&quot;order of elements is not changed&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">"order of elements is not changed"</span>
 <span class="w">  </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span>
-<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;1&quot;</span>
-<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;2&quot;</span>
-<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">3</span><span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"1"</span>
+<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"2"</span>
+<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">3</span><span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"3"</span>
 End
 </pre></div>
 </div>
@@ -403,35 +403,35 @@ End
 ‘output complete’ test requires another helper method like <code class="code highlight bash docutils literal highlight-bash">_test_array_sort_output_complete</code>,
 see below for implementation).
 The third one, checking for non-digit sorting is implemented as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">&quot;no digit-wise sorting&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>It<span class="w"> </span><span class="s2">"no digit-wise sorting"</span>
 <span class="w">  </span>When<span class="w"> </span>call<span class="w"> </span>array_sort<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span>
-<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;1&quot;</span>
-<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;3&quot;</span>
-<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;20&quot;</span>
+<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>equal<span class="w"> </span><span class="s2">"1"</span>
+<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>equal<span class="w"> </span><span class="s2">"3"</span>
+<span class="w">  </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>equal<span class="w"> </span><span class="s2">"20"</span>
 End
 </pre></div>
 </div>
 <p>Also all test cases needed for <code class="code highlight bash docutils literal highlight-bash">array_contains<span class="o">()</span></code> can be implemented
 without helper methods:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">&quot;array_contains()&quot;</span>
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element at the very beginning of array&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">"array_contains()"</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element at the very beginning of array"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element in the middle of the array&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element in the middle of the array"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element at the very end of the array&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element at the very end of the array"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"3"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;return 1 if element was not found&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"return 1 if element was not found"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">1</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;return 1 if input array is empty&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"return 1 if input array is empty"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"0"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">1</span>
 <span class="w">  </span>End
 End
@@ -446,31 +446,31 @@ regular shell expressions, an <code class="code highlight bash docutils literal 
 test group is sufficient. An error handling for that is not required as
 Shell-Check will report to us in case of errors:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="w"> </span>bms.sh
-include<span class="w"> </span><span class="s2">&quot;array&quot;</span>
+include<span class="w"> </span><span class="s2">"array"</span>
 
-Describe<span class="w"> </span><span class="s2">&quot;array_to_lines()&quot;</span>
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;output each element of the input array&quot;</span>
-<span class="w">    </span>It<span class="w"> </span><span class="s2">&quot;output each element of the input array&quot;</span>
+Describe<span class="w"> </span><span class="s2">"array_to_lines()"</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"output each element of the input array"</span>
+<span class="w">    </span>It<span class="w"> </span><span class="s2">"output each element of the input array"</span>
 <span class="w">        </span><span class="nb">local</span><span class="w"> </span>input
 <span class="w">        </span><span class="nb">local</span><span class="w"> </span>output
 <span class="w">        </span><span class="nb">local</span><span class="w"> </span>input_element
 
 <span class="w">        </span><span class="nv">input</span><span class="o">=(</span>
 <span class="w">            </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="s2">&quot;--&quot;</span>
-<span class="w">            </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span><span class="s2">&quot;d&quot;</span>
+<span class="w">            </span><span class="s2">""</span><span class="w"> </span><span class="s2">" "</span><span class="w"> </span><span class="s2">"-"</span><span class="w"> </span><span class="s2">"--"</span>
+<span class="w">            </span><span class="s2">"a"</span><span class="w"> </span><span class="s2">"b"</span><span class="w"> </span><span class="s2">"c"</span><span class="w"> </span><span class="s2">"d"</span>
 <span class="w">        </span><span class="o">)</span>
 <span class="w">        </span><span class="nv">output</span><span class="o">=()</span>
 
-<span class="w">        </span>readarray<span class="w"> </span>-t<span class="w"> </span>output<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>array_to_lines<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="w">        </span>readarray<span class="w"> </span>-t<span class="w"> </span>output<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>array_to_lines<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="o">)</span>
 
-<span class="w">        </span><span class="k">for</span><span class="w"> </span>input_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span>input_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">            </span><span class="nb">local</span><span class="w"> </span>-i<span class="w"> </span>is_in_output
 <span class="w">            </span><span class="nb">local</span><span class="w"> </span>output_element
 
 <span class="w">            </span><span class="nv">is_in_output</span><span class="o">=</span><span class="m">0</span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span>output_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$input_element</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_element</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span>output_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">output</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$input_element</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"</span><span class="nv">$output_element</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">                    </span><span class="nv">is_in_output</span><span class="o">=</span><span class="m">1</span>
 <span class="w">                    </span><span class="k">break</span>
 <span class="w">                </span><span class="k">fi</span>
@@ -488,31 +488,31 @@ Describe<span class="w"> </span><span class="s2">&quot;array_to_lines()&quot;</s
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;amount of output elements match input array element amount&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"amount of output elements match input array element amount"</span>
 <span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span>
 <span class="w">    </span>The<span class="w"> </span>lines<span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">5</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;don&#39;t output anything if input array is empty&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"don't output anything if input array is empty"</span>
 <span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;order of elements is not changed&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"order of elements is not changed"</span>
 <span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span>
-<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;1&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;2&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">3</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"1"</span>
+<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"2"</span>
+<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">3</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"3"</span>
 <span class="w">  </span>End
 End
 
-Describe<span class="w"> </span><span class="s2">&quot;array_sort()&quot;</span>
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;don&#39;t output anything if input array is empty&quot;</span>
+Describe<span class="w"> </span><span class="s2">"array_sort()"</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"don't output anything if input array is empty"</span>
 <span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_to_lines
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;each input element is output&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"each input element is output"</span>
 <span class="w">    </span>_test_array_sort_output_complete<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="nb">local</span><span class="w"> </span>input
 <span class="w">        </span><span class="nb">local</span><span class="w"> </span>output
@@ -520,20 +520,20 @@ Describe<span class="w"> </span><span class="s2">&quot;array_sort()&quot;</span>
 
 <span class="w">        </span><span class="nv">input</span><span class="o">=(</span>
 <span class="w">            </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">7</span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="s2">&quot;--&quot;</span>
-<span class="w">            </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span><span class="s2">&quot;d&quot;</span>
+<span class="w">            </span><span class="s2">""</span><span class="w"> </span><span class="s2">" "</span><span class="w"> </span><span class="s2">"-"</span><span class="w"> </span><span class="s2">"--"</span>
+<span class="w">            </span><span class="s2">"a"</span><span class="w"> </span><span class="s2">"b"</span><span class="w"> </span><span class="s2">"c"</span><span class="w"> </span><span class="s2">"d"</span>
 <span class="w">        </span><span class="o">)</span>
 <span class="w">        </span><span class="nv">output</span><span class="o">=()</span>
 
-<span class="w">        </span>readarray<span class="w"> </span>-t<span class="w"> </span>output<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>array_sort<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="w">        </span>readarray<span class="w"> </span>-t<span class="w"> </span>output<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>array_sort<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="o">)</span>
 
-<span class="w">        </span><span class="k">for</span><span class="w"> </span>input_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span>input_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">input</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">            </span><span class="nb">local</span><span class="w"> </span>-i<span class="w"> </span>is_in_output
 <span class="w">            </span><span class="nb">local</span><span class="w"> </span>output_element
 
 <span class="w">            </span><span class="nv">is_in_output</span><span class="o">=</span><span class="m">0</span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span>output_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$input_element</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_element</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span>output_element<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">output</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$input_element</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"</span><span class="nv">$output_element</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">                    </span><span class="nv">is_in_output</span><span class="o">=</span><span class="m">1</span>
 <span class="w">                    </span><span class="k">break</span>
 <span class="w">                </span><span class="k">fi</span>
@@ -551,37 +551,37 @@ Describe<span class="w"> </span><span class="s2">&quot;array_sort()&quot;</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;no digit-wise sorting&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"no digit-wise sorting"</span>
 <span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_sort<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span>
-<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;1&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;3&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">3</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;20&quot;</span>
+<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">1</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"1"</span>
+<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"3"</span>
+<span class="w">    </span>The<span class="w"> </span>line<span class="w"> </span><span class="m">3</span><span class="w"> </span>of<span class="w"> </span>stdout<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"20"</span>
 <span class="w">  </span>End
 End
 
-Describe<span class="w"> </span><span class="s2">&quot;array_contains()&quot;</span>
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element at the very beginning of array&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+Describe<span class="w"> </span><span class="s2">"array_contains()"</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element at the very beginning of array"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element in the middle of the array&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element in the middle of the array"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;find element at the very end of the array&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"find element at the very end of the array"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"3"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">0</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;return 1 if element was not found&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"return 1 if element was not found"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"0"</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="s2">"2"</span><span class="w"> </span><span class="s2">"3"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">1</span>
 <span class="w">  </span>End
 
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;return 1 if input array is empty&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"return 1 if input array is empty"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>array_contains<span class="w"> </span><span class="s2">"0"</span>
 <span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="m">1</span>
 <span class="w">  </span>End
 End
@@ -609,32 +609,32 @@ the <code class="docutils literal notranslate"><span class="pre">array_spec.sh</
 </ul>
 <p>Create a new file <code class="docutils literal notranslate"><span class="pre">/usr/local/share/bms/include/is.sh</span></code> and implements the methods:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>is_digit<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$str</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="linenos"> 4</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos"> 5</span><span class="w">  </span><span class="k">fi</span>
 <span class="linenos"> 6</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
 <span class="linenos"> 7</span><span class="o">}</span>
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span>is_upper<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">10</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="linenos">11</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span>A-Z<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">10</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="linenos">11</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$str</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span>A-Z<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="linenos">12</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos">13</span><span class="w">  </span><span class="k">fi</span>
 <span class="linenos">14</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
 <span class="linenos">15</span><span class="o">}</span>
 <span class="linenos">16</span>
 <span class="linenos">17</span>is_lower<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">18</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="linenos">19</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span>a-z<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">18</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="linenos">19</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$str</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span>a-z<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="linenos">20</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos">21</span><span class="w">  </span><span class="k">fi</span>
 <span class="linenos">22</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
 <span class="linenos">23</span><span class="o">}</span>
 <span class="linenos">24</span>
 <span class="linenos">25</span>is_alnum<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">26</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="linenos">27</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span>a-zA-Z0-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">26</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">str</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="linenos">27</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$str</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span>a-zA-Z0-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="linenos">28</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos">29</span><span class="w">  </span><span class="k">fi</span>
 <span class="linenos">30</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
@@ -663,31 +663,31 @@ must be set. Before the next, concluding <code class="code highlight bash docuti
 using the special method <code class="code highlight bash docutils literal highlight-bash">%data</code>. Those</p>
 <p>The tests are defined in <code class="docutils literal notranslate"><span class="pre">/usr/local/share/bms/include/test/is_spec.sh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>.<span class="w"> </span>bms.sh
-<span class="linenos"> 2</span>include<span class="w"> </span><span class="s2">&quot;is&quot;</span>
+<span class="linenos"> 2</span>include<span class="w"> </span><span class="s2">"is"</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span>Describe<span class="w"> </span><span class="s2">&quot;is_digits()&quot;</span>
+<span class="linenos"> 4</span>Describe<span class="w"> </span><span class="s2">"is_digits()"</span>
 <span class="linenos"> 5</span><span class="w">  </span>Parameters:dynamic
 <span class="linenos"> 6</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">127</span><span class="p">;</span><span class="w"> </span>i++<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="linenos"> 7</span><span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%02x&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%02x'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="k">)</span>
 <span class="linenos"> 8</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">48</span><span class="w"> </span><span class="o">))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">57</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="linenos"> 9</span><span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;accepts &#39;</span><span class="nv">$c</span><span class="s2">&#39;&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 9</span><span class="w">            </span>%data<span class="w"> </span><span class="s2">"accepts '</span><span class="nv">$c</span><span class="s2">'"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos">10</span><span class="w">        </span><span class="k">else</span>
-<span class="linenos">11</span><span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;accepts &#39;</span><span class="nv">$c</span><span class="s2">&#39; not&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>
+<span class="linenos">11</span><span class="w">            </span>%data<span class="w"> </span><span class="s2">"accepts '</span><span class="nv">$c</span><span class="s2">' not"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">1</span>
 <span class="linenos">12</span><span class="w">        </span><span class="k">fi</span>
 <span class="linenos">13</span><span class="w">    </span><span class="k">done</span>
 <span class="linenos">14</span><span class="w">  </span>End
-<span class="linenos">15</span><span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="linenos">16</span><span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_digits<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
-<span class="linenos">17</span><span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="linenos">15</span><span class="w">  </span>It<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="linenos">16</span><span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_digits<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="linenos">17</span><span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"</span><span class="nv">$3</span><span class="s2">"</span>
 <span class="linenos">18</span><span class="w">  </span>End
 <span class="linenos">19</span>End
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">line 7<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Calculates the hexadecimal value of a decimal input (<code class="code highlight bash docutils literal highlight-bash"><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%02x&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span></code>)
-and get the associated ASCII character (<code class="code highlight bash docutils literal highlight-bash"><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\x&lt;HEX_CODE&gt;&quot;</span>
-<span class="k">for</span><span class="w"> </span>example<span class="w"> </span>:bash:<span class="sb">`</span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\x21&quot;</span><span class="k">)</span><span class="o">)</span></code>).</p>
+<dd class="field-odd"><p>Calculates the hexadecimal value of a decimal input (<code class="code highlight bash docutils literal highlight-bash"><span class="nb">printf</span><span class="w"> </span><span class="s1">'%02x'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span></code>)
+and get the associated ASCII character (<code class="code highlight bash docutils literal highlight-bash"><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\x&lt;HEX_CODE&gt;"</span>
+<span class="k">for</span><span class="w"> </span>example<span class="w"> </span>:bash:<span class="sb">`</span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\x21"</span><span class="k">)</span><span class="o">)</span></code>).</p>
 </dd>
 <dt class="field-even">line 9 + 11<span class="colon">:</span></dt>
 <dd class="field-even"><p>Definition of test positional parameters using the <code class="code highlight bash docutils literal highlight-bash">%data</code> special
@@ -708,56 +708,56 @@ test case name (there is no $0).</p>
 </dd>
 </dl>
 <p>The other tests are similar:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">&quot;is_upper()&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Describe<span class="w"> </span><span class="s2">"is_upper()"</span>
 <span class="w">  </span>Parameters:dynamic
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">127</span><span class="p">;</span><span class="w"> </span>i++<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%02x&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%02x'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="k">)</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">65</span><span class="w"> </span><span class="o">))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;akzeptiert &#39;</span><span class="nv">$c</span><span class="s2">&#39;&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>%data<span class="w"> </span><span class="s2">"akzeptiert '</span><span class="nv">$c</span><span class="s2">'"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">0</span>
 <span class="w">        </span><span class="k">else</span>
-<span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;akzeptiert &#39;</span><span class="nv">$c</span><span class="s2">&#39; nicht&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span>%data<span class="w"> </span><span class="s2">"akzeptiert '</span><span class="nv">$c</span><span class="s2">' nicht"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">1</span>
 <span class="w">        </span><span class="k">fi</span>
 <span class="w">    </span><span class="k">done</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_upper<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_upper<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"</span><span class="nv">$3</span><span class="s2">"</span>
 <span class="w">  </span>End
 End
 
-Describe<span class="w"> </span><span class="s2">&quot;is_lower()&quot;</span>
+Describe<span class="w"> </span><span class="s2">"is_lower()"</span>
 <span class="w">  </span>Parameters:dynamic
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">127</span><span class="p">;</span><span class="w"> </span>i++<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%02x&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%02x'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="k">)</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="o">))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">122</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;akzeptiert &#39;</span><span class="nv">$c</span><span class="s2">&#39;&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>%data<span class="w"> </span><span class="s2">"akzeptiert '</span><span class="nv">$c</span><span class="s2">'"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">0</span>
 <span class="w">        </span><span class="k">else</span>
-<span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;akzeptiert &#39;</span><span class="nv">$c</span><span class="s2">&#39; nicht&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span>%data<span class="w"> </span><span class="s2">"akzeptiert '</span><span class="nv">$c</span><span class="s2">' nicht"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">1</span>
 <span class="w">        </span><span class="k">fi</span>
 <span class="w">    </span><span class="k">done</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_lower<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_lower<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"</span><span class="nv">$3</span><span class="s2">"</span>
 <span class="w">  </span>End
 End
 
-Describe<span class="w"> </span><span class="s2">&quot;is_alnum()&quot;</span>
+Describe<span class="w"> </span><span class="s2">"is_alnum()"</span>
 <span class="w">  </span>Parameters:dynamic
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">127</span><span class="p">;</span><span class="w"> </span>i++<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%02x&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="w">        </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\\x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%02x'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="k">)</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">48</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">57</span><span class="w"> </span><span class="o">))</span><span class="w"> </span><span class="o">||</span>
 <span class="w">           </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">65</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="o">))</span><span class="w"> </span><span class="o">||</span>
 <span class="w">           </span><span class="o">((</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">122</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;akzeptiert &#39;</span><span class="nv">$c</span><span class="s2">&#39;&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">0</span>
+<span class="w">            </span>%data<span class="w"> </span><span class="s2">"akzeptiert '</span><span class="nv">$c</span><span class="s2">'"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">0</span>
 <span class="w">        </span><span class="k">else</span>
-<span class="w">            </span>%data<span class="w"> </span><span class="s2">&quot;akzeptiert &#39;</span><span class="nv">$c</span><span class="s2">&#39; nicht&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$c</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>
+<span class="w">            </span>%data<span class="w"> </span><span class="s2">"akzeptiert '</span><span class="nv">$c</span><span class="s2">' nicht"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span><span class="w"> </span><span class="m">1</span>
 <span class="w">        </span><span class="k">fi</span>
 <span class="w">    </span><span class="k">done</span>
 <span class="w">  </span>End
-<span class="w">  </span>It<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_alnum<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
-<span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="w">  </span>It<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">    </span>When<span class="w"> </span>call<span class="w"> </span>is_alnum<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="w">    </span>The<span class="w"> </span>status<span class="w"> </span>should<span class="w"> </span>equal<span class="w"> </span><span class="s2">"</span><span class="nv">$3</span><span class="s2">"</span>
 <span class="w">  </span>End
 End
 </pre></div>
@@ -795,7 +795,7 @@ End
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

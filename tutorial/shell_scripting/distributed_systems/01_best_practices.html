@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -160,9 +160,9 @@
 This makes it impossible to change them at runtime. This example demonstrates
 a resulting problem:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/bin/bash</span>
-<span class="linenos">2</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This row is only printed once&quot;</span>
-<span class="linenos">3</span><span class="nv">padded</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%*s&#39;</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span>
-<span class="linenos">4</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$padded</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span>
+<span class="linenos">2</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"This row is only printed once"</span>
+<span class="linenos">3</span><span class="nv">padded</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%*s'</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="s1">' '</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-<span class="w"> </span><span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span><span class="k">)</span>
+<span class="linenos">4</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$padded</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -188,9 +188,9 @@ important scripts, for instance in order to gain access rights.</p>
 then read into the memory all at once:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/bin/bash</span>
 <span class="linenos">2</span><span class="o">{</span>
-<span class="linenos">3</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This row is only printed once&quot;</span>
-<span class="linenos">4</span><span class="w">  </span><span class="nv">padded</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%*s&#39;</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span>
-<span class="linenos">5</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$padded</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span>
+<span class="linenos">3</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"This row is only printed once"</span>
+<span class="linenos">4</span><span class="w">  </span><span class="nv">padded</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%*s'</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="s1">' '</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-<span class="w"> </span><span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span><span class="k">)</span>
+<span class="linenos">5</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$padded</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span>
 <span class="linenos">6</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos">7</span><span class="o">}</span>
 </pre></div>
@@ -213,14 +213,14 @@ which is called by a short command group. A basic structure:</p>
 <span class="linenos">3</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span>
 <span class="linenos">4</span><span class="o">}</span>
 <span class="linenos">5</span><span class="o">{</span>
-<span class="linenos">6</span><span class="w">  </span>main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<span class="linenos">7</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span>
+<span class="linenos">6</span><span class="w">  </span>main<span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<span class="linenos">7</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="s2">"</span><span class="nv">$?</span><span class="s2">"</span>
 <span class="linenos">8</span><span class="o">}</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">line 6<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The <em>main</em> function is called passing all script arguments (<code class="code highlight bash docutils literal highlight-bash"><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span></code>
+<dd class="field-odd"><p>The <em>main</em> function is called passing all script arguments (<code class="code highlight bash docutils literal highlight-bash"><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span></code>
 stands for “$1” “$2” … and so on). See <a class="reference external" href="https://tiswww.case.edu/php/chet/bash/bashref.html#Special-Parameters">bash manual</a> for more.</p>
 </dd>
 <dt class="field-even">line 7<span class="colon">:</span></dt>
@@ -249,47 +249,47 @@ was passed into, the variable of the callee is changed as well</p></li>
 <div class="sd-col sd-d-flex-column docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
 <span class="linenos"> 2</span>servus_local<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="nv">local_gruss</span><span class="o">=</span><span class="s2">&quot;Servus&quot;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nv">local_gruss</span><span class="o">=</span><span class="s2">"Servus"</span>
 <span class="linenos"> 4</span><span class="w">  </span>moin_local
-<span class="linenos"> 5</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos"> 6</span><span class="o">}</span>
 <span class="linenos"> 7</span>moin_local<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="nv">local_gruss</span><span class="o">=</span><span class="s2">&quot;Moin&quot;</span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nv">local_gruss</span><span class="o">=</span><span class="s2">"Moin"</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">10</span><span class="o">}</span>
 <span class="linenos">11</span>servus_dynamic<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">12</span><span class="w">  </span><span class="nv">local_gruss</span><span class="o">=</span><span class="s2">&quot;Servus&quot;</span>
+<span class="linenos">12</span><span class="w">  </span><span class="nv">local_gruss</span><span class="o">=</span><span class="s2">"Servus"</span>
 <span class="linenos">13</span><span class="w">  </span>moin_dynamic
-<span class="linenos">14</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">14</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">15</span><span class="o">}</span>
 <span class="linenos">16</span>moin_dynamic<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">17</span><span class="w">  </span><span class="nv">gruss</span><span class="o">=</span><span class="s2">&quot;Moin&quot;</span>
-<span class="linenos">18</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">17</span><span class="w">  </span><span class="nv">gruss</span><span class="o">=</span><span class="s2">"Moin"</span>
+<span class="linenos">18</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">19</span><span class="o">}</span>
 </pre></div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">20</span>servus_global<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">21</span><span class="w">  </span><span class="nv">gruss</span><span class="o">=</span><span class="s2">&quot;Servus&quot;</span>
+<span class="linenos">21</span><span class="w">  </span><span class="nv">gruss</span><span class="o">=</span><span class="s2">"Servus"</span>
 <span class="linenos">22</span><span class="w">  </span>moin_global
-<span class="linenos">23</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">23</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">24</span><span class="o">}</span>
 <span class="linenos">25</span>moin_global<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos">26</span><span class="w">  </span><span class="nv">gruss</span><span class="o">=</span><span class="s2">&quot;Moin&quot;</span>
-<span class="linenos">27</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">26</span><span class="w">  </span><span class="nv">gruss</span><span class="o">=</span><span class="s2">"Moin"</span>
+<span class="linenos">27</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">28</span><span class="o">}</span>
 <span class="linenos">29</span>main<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="linenos">30</span><span class="w">  </span>servus_local
-<span class="linenos">31</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">31</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">32</span><span class="w">  </span>servus_dynamic
-<span class="linenos">33</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">33</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">34</span><span class="w">  </span>servus_global
-<span class="linenos">35</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">35</span><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[</span><span class="nv">$FUNCNAME</span><span class="s2">] </span><span class="nv">$gruss</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">"</span>
 <span class="linenos">36</span><span class="o">}</span>
 <span class="linenos">37</span><span class="o">{</span>
-<span class="linenos">38</span><span class="w">  </span>main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
-<span class="linenos">39</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span>
+<span class="linenos">38</span><span class="w">  </span>main<span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<span class="linenos">39</span><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="s2">"</span><span class="nv">$?</span><span class="s2">"</span>
 <span class="linenos">40</span><span class="o">}</span>
 </pre></div>
 </div>
@@ -321,9 +321,9 @@ to keep track of the position for each of them.</p>
 <p>To overcome this issue, declare all positional parameter as local variable at the
 beginning of each function:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>send_email<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">title</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">message</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">address</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">title</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">message</span><span class="o">=</span><span class="s2">"</span><span class="nv">$3</span><span class="s2">"</span>
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -334,9 +334,9 @@ beginning of each function:</p>
 executed sequentially and not in a defined order. For direct assignments, this is
 not critical, but it is when the assigned value comes from a subshell:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>file_contains<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">file</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">search_pattern</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$search_patern</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">file</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">search_pattern</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="nb">local</span><span class="w"> </span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-F<span class="w"> </span><span class="s2">"</span><span class="nv">$search_patern</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span><span class="k">)</span>
 <span class="linenos"> 5</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="linenos"> 6</span><span class="w">    </span><span class="c1"># nothing found</span>
 <span class="linenos"> 7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
@@ -372,7 +372,7 @@ always 0 except if the command received illegal parameters.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

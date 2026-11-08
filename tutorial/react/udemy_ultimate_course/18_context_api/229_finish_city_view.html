@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -200,7 +200,7 @@ city data (very similar to the <code class="docutils literal notranslate"><span 
 </span><span class="hll">      const data = await res.json();
 </span><span class="hll">      setCurrentCity(data);
 </span><span class="hll">    } catch {
-</span><span class="hll">      alert(&quot;There was an error loading data&quot;);
+</span><span class="hll">      alert("There was an error loading data");
 </span><span class="hll">    } finally {
 </span><span class="hll">      setIsLoading(false);
 </span><span class="hll">    }
@@ -222,7 +222,7 @@ considered cleaner to have the state-updating logic at one place.</p>
 </div>
 <p>Next, we can use the getter-function and <code class="docutils literal notranslate"><span class="pre">currentCity</span></code> state variable inside the
 <em>City</em> component (replacing the placeholder data):</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../contexts/CitiesContext&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"../contexts/CitiesContext"</span><span class="p">;</span>
 </span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">City</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useParams</span><span class="p">();</span>
@@ -230,10 +230,10 @@ considered cleaner to have the state-updating logic at one place.</p>
 </span>
 <span class="w">  </span><span class="c1">// TEMP DATA</span>
 <span class="w">  </span><span class="c1">// const currentCity = {</span>
-<span class="w">  </span><span class="c1">//   cityName: &quot;Lisbon&quot;,</span>
-<span class="w">  </span><span class="c1">//   emoji: &quot;🇵🇹&quot;,</span>
-<span class="w">  </span><span class="c1">//   date: &quot;2027-10-31T15:59:59.138Z&quot;,</span>
-<span class="w">  </span><span class="c1">//   notes: &quot;My favorite city so far!&quot;,</span>
+<span class="w">  </span><span class="c1">//   cityName: "Lisbon",</span>
+<span class="w">  </span><span class="c1">//   emoji: "🇵🇹",</span>
+<span class="w">  </span><span class="c1">//   date: "2027-10-31T15:59:59.138Z",</span>
+<span class="w">  </span><span class="c1">//   notes: "My favorite city so far!",</span>
 <span class="w">  </span><span class="c1">// };</span>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* other stuff */</span><span class="p">}</span>
@@ -242,7 +242,7 @@ considered cleaner to have the state-updating logic at one place.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">getCity</span></code> function is then called inside an effect (the <code class="docutils literal notranslate"><span class="pre">id</span></code> comes from the URL),
 which runs when the component is initially rendered:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../contexts/CitiesContext&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"../contexts/CitiesContext"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">City</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useParams</span><span class="p">();</span>
@@ -293,7 +293,7 @@ matches <code class="docutils literal notranslate"><span class="pre">currentCity
 </span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Link</span>
-<span class="hll"><span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">styles</span><span class="p">.</span><span class="nx">cityItem</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">currentCity</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">styles</span><span class="p">[</span><span class="s2">&quot;cityItem--active&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
+<span class="hll"><span class="w">        </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">styles</span><span class="p">.</span><span class="nx">cityItem</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">currentCity</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">styles</span><span class="p">[</span><span class="s2">"cityItem--active"</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
 </span><span class="w">        </span><span class="na">to</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">?lat=</span><span class="si">${</span><span class="nx">position</span><span class="p">.</span><span class="nx">lat</span><span class="si">}</span><span class="sb">&amp;lng=</span><span class="si">${</span><span class="nx">position</span><span class="p">.</span><span class="nx">lng</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
 <span class="w">      </span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">emoji</span><span class="p">}&gt;{</span><span class="nx">emoji</span><span class="p">}&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
@@ -310,19 +310,19 @@ matches <code class="docutils literal notranslate"><span class="pre">currentCity
 <p class="admonition-title">Note</p>
 <p>Here we cannot use dot-notation (<code class="code highlight javascript docutils literal highlight-javascript"><span class="nx">$</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">cityItem</span><span class="o">--</span><span class="nx">active</span><span class="p">}</span></code>)
 due to the dashes (<code class="docutils literal notranslate"><span class="pre">--</span></code>), but we must refer to it via
-<code class="code highlight javascript docutils literal highlight-javascript"><span class="nx">styles</span><span class="p">[</span><span class="s2">&quot;cityItem--active&quot;</span><span class="p">]</span></code>.</p>
+<code class="code highlight javascript docutils literal highlight-javascript"><span class="nx">styles</span><span class="p">[</span><span class="s2">"cityItem--active"</span><span class="p">]</span></code>.</p>
 </div>
 <p>Lastly, we want to make a <em>BackButton</em> component (we already defined such a button
 inside <code class="docutils literal notranslate"><span class="pre">Form.jsx</span></code>, but we probably need it more often). The new <code class="docutils literal notranslate"><span class="pre">BackButton.jsx</span></code>:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useNavigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Button&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useNavigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-router-dom"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./Button"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">BackButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">Button</span>
-<span class="w">      </span><span class="na">type</span><span class="o">=</span><span class="s">&quot;back&quot;</span>
+<span class="w">      </span><span class="na">type</span><span class="o">=</span><span class="s">"back"</span>
 <span class="w">      </span><span class="na">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 <span class="w">        </span><span class="nx">navigate</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">);</span>
@@ -352,7 +352,7 @@ inside <code class="docutils literal notranslate"><span class="pre">Form.jsx</sp
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

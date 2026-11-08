@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -257,29 +257,29 @@ Bedingung erfüllt ist.</p>
 
 <span class="c1">// Verschachtelte Prüfung --&gt; nicht gut</span>
 <span class="c1">// if (a == b) {</span>
-<span class="c1">//     console.log(&quot;a == b&quot;);</span>
+<span class="c1">//     console.log("a == b");</span>
 <span class="c1">// } else {</span>
-<span class="c1">//     console.log(&quot;a != b&quot;);</span>
+<span class="c1">//     console.log("a != b");</span>
 <span class="c1">//     if (a &lt; b) {</span>
-<span class="c1">//         console.log(&quot;a &lt; b&quot;);</span>
+<span class="c1">//         console.log("a &lt; b");</span>
 <span class="c1">//     } else {</span>
-<span class="c1">//         console.log(&quot;a &gt; b&quot;);</span>
+<span class="c1">//         console.log("a &gt; b");</span>
 <span class="c1">//     }</span>
 <span class="c1">// }</span>
 
-<span class="c1">// Weniger Verschachtelung durch &#39;if else&#39;</span>
+<span class="c1">// Weniger Verschachtelung durch 'if else'</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a == b&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a == b"</span><span class="p">);</span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a &lt; b&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a &lt; b"</span><span class="p">);</span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a &gt; b&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a &gt; b"</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// Nochmal Kurzschreibweise</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a == b&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a &lt; b&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a &gt; b&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a == b"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a &lt; b"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a &gt; b"</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -289,13 +289,13 @@ Bedingung erfüllt ist.</p>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">14</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;n &lt; 10&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"n &lt; 10"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;n &lt; 100&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"n &lt; 100"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;n &lt; 1000&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"n &lt; 1000"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;n &gt; 1000&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"n &gt; 1000"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -305,27 +305,27 @@ ist beendet. Allerdings könnte die Antwort genauer sein.</p>
 </div>
 <p><strong>Einfache Prüfung</strong> (Sonderfälle abfangen): gilt für <code class="docutils literal notranslate"><span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>,
 <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">undefined</span></code>:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// hier: undefined wird als &#39;false&#39; interpretiert</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// hier: undefined wird als 'false' interpretiert</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">inputVar</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">inputVar</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Korrekt&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Inkorrekt&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">inputVar</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Korrekt"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Inkorrekt"</span><span class="p">);</span>
 
 <span class="cm">/*</span>
 <span class="cm">    if (null)       =&gt; false</span>
-<span class="cm">    if (&quot;&quot;)         =&gt; false</span>
+<span class="cm">    if ("")         =&gt; false</span>
 <span class="cm">    if (0)          =&gt; false</span>
 <span class="cm">    if (undefined)  =&gt; false</span>
 <span class="cm">    if (NaN)        =&gt; false</span>
 
 <span class="cm">    aber:</span>
-<span class="cm">    if (&quot; &quot;)        =&gt; true</span>
+<span class="cm">    if (" ")        =&gt; true</span>
 <span class="cm">    if (1)          =&gt; true</span>
 <span class="cm">*/</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Sag was:&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">"Sag was:"</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Danke für &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">userInput</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Oje&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Danke für "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">userInput</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Oje"</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -357,7 +357,7 @@ ist beendet. Allerdings könnte die Antwort genauer sein.</p>
 <p>Der <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> bewertet von links nach rechts. Es wird stets der Wert der ersten
 Bedingung welche ein <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a> ergibt zurückgegeben. Sofern alle Bedingungen
 ein <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">truthy</a> zurückgeben, wird der Wert der <strong>letzten Bedingung</strong> zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">100</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1000</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">&quot;z&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;All good&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">100</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1000</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">"a"</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">"z"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">"All good"</span><span class="p">);</span>
 <span class="nx">All</span><span class="w"> </span><span class="nx">good</span>
 </pre></div>
 </div>
@@ -375,20 +375,20 @@ ein <a class="reference external" href="https://developer.mozilla.org/en-US/docs
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;wahr&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;unwahr&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">20</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"wahr"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"unwahr"</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;wahr&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;unwahr&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"wahr"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"unwahr"</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">11</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;wahr&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;unwahr&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">11</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"wahr"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"unwahr"</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">9</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">9</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;wahr&quot;</span><span class="p">);</span>
-<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;unwahr&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">9</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">9</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"wahr"</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"unwahr"</span><span class="p">);</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;42&quot;</span><span class="p">;</span>
-<span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"42"</span><span class="p">;</span>
+<span class="nx">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Elektra"</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">userInput</span><span class="p">))</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">userInput</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -422,75 +422,75 @@ Ohne <code class="docutils literal notranslate"><span class="pre">break</span></
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Mehrfachverzweigung mit switch()</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2024-11-13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">monthName</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"2024-11-13"</span><span class="p">,</span><span class="w"> </span><span class="nx">monthName</span><span class="p">;</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myDate</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">separator2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myDate</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myDate</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"-"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">separator2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myDate</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"-"</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">myDate</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">separator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">separator2</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">month</span><span class="p">);</span>
 
 <span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">month</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">1</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Januar&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Januar"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">4</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;April&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"April"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">7</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Juli&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Juli"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">11</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;November&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"November"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">12</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Dezember&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Dezember"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hammwer nicht&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hammwer nicht"</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Ohne ``break`` würden noch kommende Fächer ohne Prüfung abgearbeitet.</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">monthName</span><span class="p">);</span>
 
-<span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nx">monthName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
 
 <span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">month</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">1</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;Januar&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"Januar"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">4</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;April&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"April"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">7</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;Juli&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"Juli"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">11</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;November&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"November"</span><span class="p">;</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mf">12</span><span class="o">:</span>
-<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;Dezember&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">monthName</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"Dezember"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">monthName</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;NovemberDezember&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">monthName</span><span class="p">);</span><span class="w">  </span><span class="c1">// "NovemberDezember"</span>
 
 <span class="c1">// Fach mit mehreren Werten, nur einer muss erfüllt sein</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Wähle eine Farbe: rot (r), geld (g), blau (b)&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">"Wähle eine Farbe: rot (r), geld (g), blau (b)"</span><span class="p">);</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">color</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">toLocaleLowerCase</span><span class="p">();</span>
 
 <span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Abarbeitung wenn &#39;rot&#39; oder &#39;r&#39;</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;rot&quot;</span><span class="o">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;r&quot;</span><span class="o">:</span>
-<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Rot&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Abarbeitung wenn 'rot' oder 'r'</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"rot"</span><span class="o">:</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"r"</span><span class="o">:</span>
+<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Rot"</span><span class="p">);</span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;geld&quot;</span><span class="o">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;g&quot;</span><span class="o">:</span>
-<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Gelb&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"geld"</span><span class="o">:</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"g"</span><span class="o">:</span>
+<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Gelb"</span><span class="p">);</span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;blau&quot;</span><span class="o">:</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="o">:</span>
-<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Blau&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"blau"</span><span class="o">:</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"b"</span><span class="o">:</span>
+<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Blau"</span><span class="p">);</span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span>
 <span class="w">        </span><span class="k">default</span><span class="o">:</span>
-<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ungültige Eingabe&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Ungültige Eingabe"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -502,31 +502,31 @@ Ohne <code class="docutils literal notranslate"><span class="pre">break</span></
 <section id="index-suche">
 <h2>Index-Suche<a class="headerlink" href="#index-suche" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.length</span></code> gibt uns die Anzahl der Zeichens eines Strings zurück.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 13</span>
-<span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Luke Cage&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 9</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica Jones"</span><span class="p">;</span><span class="w"> </span><span class="c1">// 13</span>
+<span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Luke Cage"</span><span class="p">;</span><span class="w">  </span><span class="c1">// 9</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.ìndexOf()</span></code> gibt uns die Indexposition einer (Sub-)Zeichenkette in einem String aus.
 Durchsucht von links nach rechts, bricht nach erstem Fund ab. Sonst wird <code class="docutils literal notranslate"><span class="pre">-1</span></code>
 zurückgegeben (“nichts gefunden”).</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Lena Jones&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica Lena Jones"</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 7</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Lena&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 8</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;lena&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1 (case-sensitive)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">));</span><span class="w"> </span><span class="c1">// 7</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"Lena"</span><span class="p">));</span><span class="w"> </span><span class="c1">// 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"lena"</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1 (case-sensitive)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.lastIndexOf()</span></code> arbeitet von hinten nach vorne.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Lena Jones&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 12</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica Lena Jones"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">));</span><span class="w"> </span><span class="c1">// 12</span>
 </pre></div>
 </div>
 <p>Beide erlauben auch die Angabe des Start-Index, ab welchem gesucht wird:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Lena Jones&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica Lena Jones"</span><span class="p">;</span>
 <span class="c1">// mit Start-Index</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">))</span><span class="w"> </span><span class="c1">// 12, da Start bei 8</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">11</span><span class="p">))</span><span class="w"> </span><span class="c1">// 7, da Start bei 11</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">))</span><span class="w"> </span><span class="c1">// 12, da Start bei 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="w"> </span><span class="mf">11</span><span class="p">))</span><span class="w"> </span><span class="c1">// 7, da Start bei 11</span>
 </pre></div>
 </div>
 </section>
@@ -534,7 +534,7 @@ zurückgegeben (“nichts gefunden”).</p>
 <h2>Umwandlung Klein-/Großkleinschreibung<a class="headerlink" href="#umwandlung-klein-groszkleinschreibung" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.toUpperCase()</span></code> wandelt einen String in Großbuchstaben, <code class="docutils literal notranslate"><span class="pre">.toLowerCase()</span></code>
 entsprechend in Kleinbuchstaben.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Lena Jones&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica Lena Jones"</span><span class="p">;</span>
 
 <span class="c1">// .toUpperCase() - Umwandlung in Großbuchstaben</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span><span class="w"> </span><span class="c1">// JESSICA LENA JONES</span>
@@ -543,7 +543,7 @@ entsprechend in Kleinbuchstaben.</p>
 
 <span class="c1">// .toLowerCase() - Umwandlung in Kleinbuchstaben</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span><span class="w"> </span><span class="c1">// jessica lena jones</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;lena&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"lena"</span><span class="p">));</span><span class="w">  </span><span class="c1">// 8</span>
 </pre></div>
 </div>
 </section>
@@ -556,7 +556,7 @@ Ende ausgegeben).</p>
 <span class="cm">    [string].slice(startIndex, endIndex)</span>
 <span class="cm">*/</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">obst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Apfel, Banane, Tomate&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">obst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Apfel, Banane, Tomate"</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst</span><span class="p">.</span><span class="nx">slice</span><span class="p">());</span><span class="w">  </span><span class="c1">// Apfel, Banane, Tomate  (gesamter String)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obst</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">7</span><span class="p">));</span><span class="w">  </span><span class="c1">// Banane, Tomate</span>
@@ -576,17 +576,17 @@ Ende ausgegeben).</p>
 <p><code class="docutils literal notranslate"><span class="pre">.substring()</span></code> funktioniert ähnlich wie <code class="docutils literal notranslate"><span class="pre">slice</span></code>, erlaubt jedoch den Start- und
 EndIndex zu vertauschen -&gt; es kann keine versehentliche Verwechslung passieren
 wie bei <code class="docutils literal notranslate"><span class="pre">slice</span></code>.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mozilla&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Mozilla"</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">browser</span><span class="p">.</span><span class="nx">substring</span><span class="p">());</span><span class="w">   </span><span class="c1">// Mozilla</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">browser</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">3</span><span class="p">));</span><span class="w">  </span><span class="c1">// Moz</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">browser</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// Moz  (vertauscht)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">browser</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// &lt;empty string&gt;</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">picSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bild.png&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">picSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bild.png"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">picSource</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">picSource</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// png</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">spacePos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myHero</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myHero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica Jones"</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">spacePos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myHero</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myHero</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">spacePos</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myHero</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">spacePos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
 </pre></div>
@@ -598,12 +598,12 @@ das Vertauschen der Indices ist gewünscht.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.trim()</span></code> entfernt alle Leerzeichen, die einen String umgeben (nur Anfang
 und Ende, nicht dazwischenliegende).</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;            JEssiCa        LeNa  JoNEs      &quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"            JEssiCa        LeNa  JoNEs      "</span><span class="p">;</span>
 <span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;JEssiCa        LeNa  JoNEs&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span><span class="w">  </span><span class="c1">// "JEssiCa        LeNa  JoNEs"</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">));</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">));</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="p">);</span><span class="w">  </span><span class="c1">// Leerzeichen zwischen Werten</span>
 </pre></div>
 </div>
@@ -626,33 +626,33 @@ und Ende, nicht dazwischenliegende).</p>
 <span class="nx">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lastName</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">lastName</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastName</span><span class="p">);</span>
 
-<span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">lastName</span><span class="p">;</span>
+<span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">lastName</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span><span class="w">  </span><span class="c1">// Jessica Jones</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.includes()</span></code> prüft ob ein Ausdruck in Zeichenkette vorhanden ist
 (gibt boolean zurück). Startposition kann als zweites Argument mitgegeben werden (optional).</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica und Luke sind Helden des MArvel-Universums&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica und Luke sind Helden des MArvel-Universums"</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">))</span><span class="w">  </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Jones&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"Jessica"</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">))</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"Jones"</span><span class="p">))</span><span class="w"> </span><span class="c1">// false</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.startsWith()</span></code> und <code class="docutils literal notranslate"><span class="pre">.endsWith()</span></code> prüft, ob ein String mit einem bestimmten
 Ausdruck beginnt oder endet. <code class="docutils literal notranslate"><span class="pre">.startsWith()</span></code> akzeptiert einen optional Start-Index
 als zweites Argument.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Jessica und Luke sind Helden des MArvel-Universums&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jessica und Luke sind Helden des MArvel-Universums"</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;Sinn&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;ums&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// ture</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">"Sinn"</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myStr</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">"ums"</span><span class="p">))</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// ture</span>
 </pre></div>
 </div>
 </section>
 <section id="strings-wiederholen">
 <h2>Strings wiederholen<a class="headerlink" href="#strings-wiederholen" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.repeat()</span></code> wiederholt den String um die Anzahl der gegebenen Wiederholungen</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Kohle &quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">1000</span><span class="p">));</span><span class="w">  </span><span class="c1">// Kohle Kohle Kohle ... x 1000</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Kohle "</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">1000</span><span class="p">));</span><span class="w">  </span><span class="c1">// Kohle Kohle Kohle ... x 1000</span>
 </pre></div>
 </div>
 </section>
@@ -664,15 +664,15 @@ wird. Ein String wird nicht gekürzt, nur verlängert.
 <code class="docutils literal notranslate"><span class="pre">padEnd(Länge[,</span> <span class="pre">Füllzeichen])</span></code> funktioniert identisch, fügt die Füllzeichenn jedoch am
 Ende des Strings an.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// padStart</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;      1234&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;0000001234&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;******1234&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;+ +&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;+ ++ +1234&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1234"</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span><span class="w">  </span><span class="c1">// "      1234"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"12345"</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1234"</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// "0000001234"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1234"</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"*"</span><span class="p">));</span><span class="w">  </span><span class="c1">// "******1234"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1234"</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"+ +"</span><span class="p">));</span><span class="w"> </span><span class="c1">// "+ ++ +1234"</span>
 
 <span class="c1">// padEnd</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;1234000000&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;~&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1234"</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// "1234000000"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"1234"</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"~"</span><span class="p">));</span>
 </pre></div>
 </div>
 </section>
@@ -684,14 +684,14 @@ vermeiden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">//  Ausdrücke in String konvertieren</span>
 
 <span class="c1">// implizierte Typenkonvertierung - arbeitet mit String()</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">42</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;42&quot; (nicht 42 als Nummer)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;42&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mf">42</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">69</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;111&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;true&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">42</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">""</span><span class="p">);</span><span class="w">  </span><span class="c1">// "42" (nicht 42 als Nummer)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// "42"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mf">42</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">69</span><span class="p">));</span><span class="w"> </span><span class="c1">// "111"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// "true"</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">42</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w">   </span><span class="c1">// &quot;42&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">42</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">69</span><span class="p">).</span><span class="nx">toString</span><span class="p">())</span><span class="w">  </span><span class="c1">// &quot;111&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="kc">true</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;true&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">42</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w">   </span><span class="c1">// "42"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mf">42</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">69</span><span class="p">).</span><span class="nx">toString</span><span class="p">())</span><span class="w">  </span><span class="c1">// "111"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="kc">true</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// "true"</span>
 
 <span class="cm">/*</span>
 <span class="cm">``.toString`` existiert in fast allen Datentypen, jedoch</span>
@@ -702,7 +702,7 @@ vermeiden.</p>
 <span class="c1">// myVar = null;</span>
 <span class="c1">// console.log(myVar.toString()); // error</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">myVar</span><span class="p">));</span><span class="w"> </span><span class="c1">// &quot;undefined&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">myVar</span><span class="p">));</span><span class="w"> </span><span class="c1">// "undefined"</span>
 </pre></div>
 </div>
 </section>
@@ -721,7 +721,7 @@ vermeiden.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -203,7 +203,7 @@ function:</p>
 <span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="p">{</span><span class="o">*</span><span class="sr">/ more stuff */</span><span class="p">}</span>
-<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;countdown&quot;</span><span class="o">:</span>
+<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"countdown"</span><span class="o">:</span>
 </span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">secondsRemaining</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">secondsRemaining</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
 </span><span class="w">  </span><span class="p">{</span><span class="o">*</span><span class="sr">/ more stuff */</span><span class="p">}</span>
 <span class="p">}</span>
@@ -232,17 +232,17 @@ function:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">dispatch</span></code> and <code class="docutils literal notranslate"><span class="pre">secondsRemaining</span></code> are accepted as props inside the <code class="docutils literal notranslate"><span class="pre">Timer</span></code>
 component and the <code class="docutils literal notranslate"><span class="pre">secondsRemaining</span></code> are reduced by 1 every second (1000 ms) using
 the <code class="docutils literal notranslate"><span class="pre">dispatch</span></code> function:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Timer</span><span class="p">({</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">secondsRemaining</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="c1">// runs function every second</span>
-<span class="w">      </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;countdown&quot;</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"countdown"</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">[</span><span class="nx">dispatch</span><span class="p">]</span>
 <span class="w">  </span><span class="p">);</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;timer&quot;</span><span class="p">&gt;{</span><span class="nx">secondsRemaining</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"timer"</span><span class="p">&gt;{</span><span class="nx">secondsRemaining</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Timer</span><span class="p">;</span>
@@ -260,11 +260,11 @@ to <code class="docutils literal notranslate"><span class="pre">&quot;finished&q
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="p">{</span><span class="o">*</span><span class="sr">/ more stuff */</span><span class="p">}</span>
-<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;countdown&quot;</span><span class="o">:</span>
+<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"countdown"</span><span class="o">:</span>
 </span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">        </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span>
 </span><span class="hll"><span class="w">        </span><span class="nx">secondsRemaining</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">secondsRemaining</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-</span><span class="hll"><span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">secondsRemaining</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;finished&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span>
+</span><span class="hll"><span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">secondsRemaining</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"finished"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span>
 </span><span class="hll"><span class="w">      </span><span class="p">};</span>
 </span><span class="w">  </span><span class="p">{</span><span class="o">*</span><span class="sr">/ more stuff */</span><span class="p">}</span>
 <span class="p">}</span>
@@ -276,11 +276,11 @@ to <code class="docutils literal notranslate"><span class="pre">&quot;finished&q
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="p">{</span><span class="o">*</span><span class="sr">/ more stuff */</span><span class="p">}</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;restart&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"restart"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">        </span><span class="p">...</span><span class="nx">initialState</span><span class="p">,</span>
 </span><span class="w">        </span><span class="nx">questions</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">questions</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"ready"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">highscore</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">highscore</span><span class="p">,</span>
 <span class="w">  </span><span class="p">};</span>
 <span class="w">  </span><span class="p">{</span><span class="o">*</span><span class="sr">/ more stuff */</span><span class="p">}</span>
@@ -300,18 +300,18 @@ function must return the cleanup function:</p>
 <p>Each <code class="docutils literal notranslate"><span class="pre">setIntervall()</span></code> call returns an id of the timer, which we can use to
 cancel the timer at any time using the <code class="docutils literal notranslate"><span class="pre">cancelInterval()</span></code> function.</p>
 </div>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Timer</span><span class="p">({</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">secondsRemaining</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(</span>
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="c1">// runs function every second</span>
-<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;countdown&quot;</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"countdown"</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 <span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
 </span><span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">[</span><span class="nx">dispatch</span><span class="p">]</span>
 <span class="w">  </span><span class="p">);</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;timer&quot;</span><span class="p">&gt;{</span><span class="nx">secondsRemaining</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"timer"</span><span class="p">&gt;{</span><span class="nx">secondsRemaining</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Timer</span><span class="p">;</span>
@@ -345,7 +345,7 @@ only the timer of the second rendered component remains.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

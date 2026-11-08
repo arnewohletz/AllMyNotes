@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -169,7 +169,7 @@
 <p>List can be iterated over via the <code class="docutils literal notranslate"><span class="pre">[list].map()</span></code> function, returning a JSX element:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Menu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">pizzaData</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
@@ -185,7 +185,7 @@
 down as a prop and the receiving component (here: <code class="docutils literal notranslate"><span class="pre">Pizza</span></code>) describes the output:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Menu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">        </span><span class="p">{</span><span class="nx">pizzaData</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
@@ -199,7 +199,7 @@ down as a prop and the receiving component (here: <code class="docutils literal 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Pizza</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizza&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizza"</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">      </span><span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">photoName</span><span class="p">}</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 </span><span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="hll"><span class="w">        </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">props</span><span class="p">.</span><span class="nx">pizzaObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
@@ -223,11 +223,11 @@ a unique value (here: <code class="docutils literal notranslate"><span class="pr
 elements of component <code class="docutils literal notranslate"><span class="pre">Pizza</span></code> type. It is the same as writing this:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Menu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"menu"</span><span class="p">&gt;</span>
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Our</span><span class="w"> </span><span class="nx">Menu</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizzas&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizzas"</span><span class="p">&gt;</span>
 <span class="w">        </span><span class="p">{</span><span class="nx">pizzaData</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">pizza</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
-<span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;pizza&quot;</span><span class="p">&gt;</span>
+<span class="hll"><span class="w">          </span><span class="p">&lt;</span><span class="nt">li</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">"pizza"</span><span class="p">&gt;</span>
 </span><span class="hll"><span class="w">            </span><span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">.</span><span class="nx">photoName</span><span class="p">}</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="p">{</span><span class="nx">pizza</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
 </span><span class="hll"><span class="w">            </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 </span><span class="hll"><span class="w">              </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">pizza</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
@@ -259,7 +259,7 @@ concern into a separate component.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

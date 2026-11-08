@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -193,11 +193,11 @@ But sometimes, you need more options, such as a colored font or background or un
 <p>If you like to have your role(s) available in every *.rst file without
 the need for an declaration in all files, you can add the respective roles
 to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-rst_prolog">rst_prolog</a> variable in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rst_prolog</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rst_prolog</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">.. role:: rbg</span>
 <span class="s2">.. role:: gfg</span>
 <span class="s2">.. role:: ulined</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">"""</span>
 </pre></div>
 </div>
 </div>
@@ -279,11 +279,11 @@ in case, it occurs. As an alternative, either</p>
 existing.</p></li>
 <li><p>Add the following content:</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">rst_prolog</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">rst_prolog</span><span class="o">=</span><span class="s2">"""</span>
 <span class="linenos">2</span><span class="s2">.. |br| raw:: html</span>
 <span class="linenos">3</span>
 <span class="linenos">4</span><span class="s2">    &lt;br /&gt;</span>
-<span class="linenos">5</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="linenos">5</span><span class="s2">"""</span>
 </pre></div>
 </div>
 <p>This makes the substitution available on every RST file within the documentation.</p>
@@ -337,7 +337,7 @@ or into the directive content directly. For example</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -18,7 +18,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
       <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -32,7 +32,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -177,7 +177,7 @@
     <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">print_age</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The age is: &#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'The age is: '</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
 
 <span class="n">Person</span><span class="o">.</span><span class="n">print_age</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">print_age</span><span class="p">)</span>
 <span class="n">Person</span><span class="o">.</span><span class="n">print_age</span><span class="p">()</span>
@@ -213,12 +213,12 @@ The age is:  25
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">birth_year</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&#39;s age is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">"'s age is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
 
-<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">'Adam'</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
 <span class="n">person</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">from_birth_year</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span>  <span class="mi">1985</span><span class="p">)</span>
+<span class="n">person1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">from_birth_year</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span>  <span class="mi">1985</span><span class="p">)</span>
 <span class="n">person1</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -258,15 +258,15 @@ John&#39;s age is: 41
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">birth_year</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&#39;s age is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">"'s age is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Man</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
-    <span class="n">sex</span> <span class="o">=</span> <span class="s1">&#39;Male&#39;</span>
+    <span class="n">sex</span> <span class="o">=</span> <span class="s1">'Male'</span>
 
-<span class="n">man</span> <span class="o">=</span> <span class="n">Man</span><span class="o">.</span><span class="n">from_birth_year</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">1985</span><span class="p">)</span>
+<span class="n">man</span> <span class="o">=</span> <span class="n">Man</span><span class="o">.</span><span class="n">from_birth_year</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="mi">1985</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">man</span><span class="p">,</span> <span class="n">Man</span><span class="p">))</span>
 
-<span class="n">man1</span> <span class="o">=</span> <span class="n">Man</span><span class="o">.</span><span class="n">from_fathers_age</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">man1</span> <span class="o">=</span> <span class="n">Man</span><span class="o">.</span><span class="n">from_fathers_age</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">man1</span><span class="p">,</span> <span class="n">Man</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -305,7 +305,7 @@ False
 <span class="c1"># create addNumbers static method</span>
 <span class="n">Mathematics</span><span class="o">.</span><span class="n">add_numbers</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">Mathematics</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is:&#39;</span><span class="p">,</span> <span class="n">Mathematics</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The sum is:'</span><span class="p">,</span> <span class="n">Mathematics</span><span class="o">.</span><span class="n">add_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -345,7 +345,7 @@ The sum is: 15
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

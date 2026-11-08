@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../_static/thebelab-helper.js"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -274,20 +274,20 @@ is a function (often: lambda), into which each iterable element is fed
 <li><p>platform.platform(): Returns a single string identifying the
 underlying platform</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">()</span>
-<span class="go">&#39;macOS-26.0-arm64-arm-64bit-Mach-O&#39;</span>
+<span class="go">'macOS-26.0-arm64-arm-64bit-Mach-O'</span>
 </pre></div>
 </div>
 </li>
 <li><p>platform.machine(): Returns the machine type, e.g. ‘AMD64’. An empty
 string is returned if the value cannot be determined.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">()</span>
-<span class="go">&#39;arm64&#39;</span>
+<span class="go">'arm64'</span>
 </pre></div>
 </div>
 </li>
 <li><p>platform.processor(): Returns the (real) processor name, e.g. ‘amdk6’.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">()</span>
-<span class="go">&#39;arm&#39;</span>
+<span class="go">'arm'</span>
 </pre></div>
 </div>
 </li>
@@ -295,14 +295,14 @@ string is returned if the value cannot be determined.</p>
 ‘Darwin’, ‘Java’, ‘Windows’. An empty string is returned if the value
 cannot be determined.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
-<span class="go">&#39;Darwin&#39;</span>
+<span class="go">'Darwin'</span>
 </pre></div>
 </div>
 </li>
 <li><p>platform.version(): Returns the system’s release version, e.g. ‘#3 on
 degas’. An empty string is returned if the value cannot be determined.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
-<span class="go">&#39;Darwin Kernel Version 25.0.0: Mon Aug 25 21:17:54 PDT 2025; root:xnu-12377.1.9~3/RELEASE_ARM64_T6041&#39;</span>
+<span class="go">'Darwin Kernel Version 25.0.0: Mon Aug 25 21:17:54 PDT 2025; root:xnu-12377.1.9~3/RELEASE_ARM64_T6041'</span>
 </pre></div>
 </div>
 </li>
@@ -310,14 +310,14 @@ degas’. An empty string is returned if the value cannot be determined.</p>
 Python implementation. Possible return values are: ‘CPython’,
 ‘IronPython’, ‘Jython’, ‘PyPy’.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">python_implementation</span><span class="p">()</span>
-<span class="go">&#39;CPython&#39;</span>
+<span class="go">'CPython'</span>
 </pre></div>
 </div>
 </li>
 <li><p>platform.python_version_tuple(): Returns the Python version as tuple
 (major, minor, patchlevel) of strings.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">platform</span><span class="o">.</span><span class="n">python_version_tuple</span><span class="p">()</span>
-<span class="go">(&#39;3&#39;, &#39;13&#39;, &#39;7&#39;)</span>
+<span class="go">('3', '13', '7')</span>
 </pre></div>
 </div>
 </li>
@@ -492,10 +492,10 @@ brackets (), not square brackets []:</p>
 <li><p>with braces: my_tuple = (1,2,3)</p></li>
 <li><p>without braces (ending with a comma): my_tuple = 1,</p></li>
 <li><p>with ‘tuple(iterable)’ method: tuple([1,2,3]):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">([</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;ABC&quot;</span><span class="p">])</span>   <span class="c1"># OK - use list</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">((</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;ABC&quot;</span><span class="p">))</span>   <span class="c1"># OK - use tuple</span>
-<span class="go">(&#39;12&#39;, 2, &#39;ABC&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ABC&#39;</span><span class="p">)</span>   <span class="c1"># NOK --&gt; ValueError, as tuple requires ITERABLE as SINGLE ARGUMENT</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">([</span><span class="s1">'12'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"ABC"</span><span class="p">])</span>   <span class="c1"># OK - use list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">((</span><span class="s1">'12'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"ABC"</span><span class="p">))</span>   <span class="c1"># OK - use tuple</span>
+<span class="go">('12', 2, 'ABC')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="s1">'12'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'ABC'</span><span class="p">)</span>   <span class="c1"># NOK --&gt; ValueError, as tuple requires ITERABLE as SINGLE ARGUMENT</span>
 </pre></div>
 </div>
 </li>
@@ -517,9 +517,9 @@ brackets (), not square brackets []:</p>
 <li><p>sets use curly braces <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>, e.g. {1,2,3}</p></li>
 <li><p>sets only contain unique items - if equal value are passed in, only
 one instance remains, e.g.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
-<span class="go">{&#39;a&#39;, &#39;b&#39;}</span>
+<span class="go">{'a', 'b'}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span>
 <span class="go">{1,2,3}</span>
@@ -549,9 +549,9 @@ one instance remains, e.g.</p>
 <li><p>dictionaries use curly braces ‘{’ and ‘}’ containing key-value pairs,
 separated by commas. The key value pair consists of a key and a value,
 separated by colon ‘:’</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
-<span class="go">{&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+<span class="go">{'a': 1, 'b': 2, 'c': 3}</span>
 </pre></div>
 </div>
 </li>
@@ -592,14 +592,14 @@ passing integer outside of range</p></li>
 </li>
 <li><p>Read binary data from file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file.bin'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bd</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
 <li><p>Alternative:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'file.bin'</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">bf</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -615,13 +615,13 @@ passing integer outside of range</p></li>
 <li><p>referencing an existing variable in the global scope</p></li>
 <li><p>making a local variable accessible outside of the local scope</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;R2D2&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="s1">'R2D2'</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">y</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
     <span class="k">return</span> <span class="n">y</span>
 
-<span class="n">my_func</span><span class="p">(</span><span class="s1">&#39;C3PO&#39;</span><span class="p">)</span>
+<span class="n">my_func</span><span class="p">(</span><span class="s1">'C3PO'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -644,7 +644,7 @@ subclass of A, so issubclass(C, A) returns True</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">=</span> <span class="pre">open(file,</span> <span class="pre">mode)</span></code> … create file input-output stream (file
 object), which is iterable (returning the file content line by line),
 e.g.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'text.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">):</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 <span class="go">This is a line</span>
 <span class="go">This is another line</span>
@@ -827,7 +827,7 @@ otherwise ValueError</p>
 format string</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2019-11-04&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">'2019-11-04'</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -849,13 +849,13 @@ format string</p>
 <p>Methods:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">ctime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  <span class="o">...</span> <span class="n">convert</span> <span class="n">time</span> <span class="n">epoch</span> <span class="n">to</span> <span class="n">string</span>
-<span class="go">&#39;Wed Oct 15 13:11:20 2025&#39;</span>
+<span class="go">'Wed Oct 15 13:11:20 2025'</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">...</span> <span class="n">returns</span> <span class="n">struct_time</span> <span class="nb">object</span> <span class="p">(</span><span class="n">contain</span> <span class="n">tm_</span><span class="o">*</span> <span class="n">attributes</span> <span class="k">for</span> <span class="n">time</span> <span class="n">values</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">...</span> <span class="n">retuns</span> <span class="n">struct_time</span> <span class="nb">object</span> <span class="p">(</span><span class="n">contain</span> <span class="n">tm_</span><span class="o">*</span> <span class="n">attributes</span> <span class="k">for</span> <span class="n">time</span> <span class="n">values</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>  <span class="o">...</span> <span class="n">convert</span> <span class="n">struct_time</span> <span class="n">to</span> <span class="n">string</span>
-<span class="go">&#39;Wed Oct 15 13:11:20 2025&#39;</span>
+<span class="go">'Wed Oct 15 13:11:20 2025'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="o">...</span> <span class="n">convert</span> <span class="n">struct_time</span> <span class="n">to</span> <span class="n">epoch</span> <span class="n">time</span> <span class="p">(</span><span class="k">as</span> <span class="nb">float</span><span class="p">)</span>
 <span class="go">1760523080.0</span>
 </pre></div>
@@ -885,12 +885,12 @@ returns string of ‘date’ in given ‘format’</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">date_1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1992</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">date_1</span><span class="p">,</span> <span class="s1">&#39;%y/%B/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="go">&#39;92/January/16&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">date_1</span><span class="p">,</span> <span class="s1">'%y/%B/</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
+<span class="go">'92/January/16'</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">datetime_1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">datetime_1</span><span class="p">,</span> <span class="s1">&#39;%y/%B/</span><span class="si">%d</span><span class="s1"> - %H:%M:%S&#39;</span><span class="p">)</span>
-<span class="go">&#39;19/November/27 - 11:27:22&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">datetime_1</span><span class="p">,</span> <span class="s1">'%y/%B/</span><span class="si">%d</span><span class="s1"> - %H:%M:%S'</span><span class="p">)</span>
+<span class="go">'19/November/27 - 11:27:22'</span>
 </pre></div>
 </div>
 </li>
@@ -899,8 +899,8 @@ returns string of ‘date’ in given ‘format’</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span>
-<span class="go">&#39;2025/10/15 11:56:27&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S'</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span>
+<span class="go">'2025/10/15 11:56:27'</span>
 </pre></div>
 </div>
 </li>
@@ -910,7 +910,7 @@ returns string of ‘date’ in given ‘format’</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">datetime.datetime.strptime(datetime:</span> <span class="pre">str,</span> <span class="pre">format:</span> <span class="pre">str)</span></code> … returns
 datetime object for ‘datetime’ string in given ‘format</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2019/11/04 14:53:00&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">"2019/11/04 14:53:00"</span><span class="p">,</span> <span class="s2">"%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">))</span>
 <span class="go">datetime.datetime(2019, 11, 4, 14, 53)</span>
 </pre></div>
 </div>
@@ -918,7 +918,7 @@ datetime object for ‘datetime’ string in given ‘format</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">time.strptime(datetime:</span> <span class="pre">str,</span> <span class="pre">format:</span> <span class="pre">str)</span></code> … returns struct_time
 object for ‘datetime’ string in given ‘format</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2019/11/04 14:53:00&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">"2019/11/04 14:53:00"</span><span class="p">,</span> <span class="s2">"%Y/%m/</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">)</span>
 <span class="go">time.struct_time(tm_year=2019, tm_mon=11, tm_mday=4, tm_hour=14, tm_min=53, tm_sec=0, tm_wday=0, tm_yday=308, tm_isdst=-1)</span>
 </pre></div>
 </div>
@@ -1100,7 +1100,7 @@ sunday</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">calendar.weekheader(width)</span></code> … prints the weekday names at a width
 of ‘width’</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calendar</span><span class="o">.</span><span class="n">weekheader</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="go">&#39;Mo Tu We Th Fr Sa Su&#39;</span>
+<span class="go">'Mo Tu We Th Fr Sa Su'</span>
 </pre></div>
 </div>
 </li>
@@ -1112,11 +1112,11 @@ between 2010 and 2020 ([end] is NOT included)</p></li>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="n">Calendar</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">SUNDAY</span><span class="p">)</span> <span class="o">...</span> <span class="n">create</span> <span class="n">calendar</span> <span class="k">with</span> <span class="n">first</span> <span class="n">week</span> <span class="n">day</span> <span class="ow">is</span> <span class="n">sunday</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">Monday</span><span class="p">)</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">weekday</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">iterweekdays</span><span class="p">():</span>        <span class="o">...</span> <span class="k">return</span> <span class="n">iterator</span> <span class="k">for</span> <span class="n">weekday</span> <span class="n">numbers</span> <span class="k">for</span> <span class="n">one</span> <span class="n">week</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">weekday</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">weekday</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span> <span class="s2">" "</span><span class="p">)</span>
 <span class="go">6 0 1 2 3 4 5</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">itermonthdates</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>   <span class="o">...</span> <span class="k">return</span> <span class="n">iterator</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">days</span> <span class="ow">in</span> <span class="s1">&#39;month&#39;</span> <span class="ow">in</span> <span class="s1">&#39;year&#39;</span> <span class="k">as</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span> <span class="n">objects</span>
-<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">itermonthdates</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>   <span class="o">...</span> <span class="k">return</span> <span class="n">iterator</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">days</span> <span class="ow">in</span> <span class="s1">'month'</span> <span class="ow">in</span> <span class="s1">'year'</span> <span class="k">as</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span> <span class="n">objects</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
 <span class="go">2019-10-28 2019-10-29 2019-10-30 2019-10-31 2019-11-01 ... 2019-11-30 2019-12-01</span>
 
 <span class="go">IMPORTANT: always returns entire weeks if it contains at least one day within given month</span>
@@ -1147,7 +1147,7 @@ loop ends with ‘break’)</p></li>
         <span class="k">continue</span>  <span class="o">//</span> <span class="nb">next</span> <span class="n">cycle</span>
     <span class="o">//</span> <span class="n">unreachable</span> <span class="n">code</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="o">//</span> <span class="n">code</span> <span class="n">executed</span> <span class="k">if</span> <span class="s1">&#39;break&#39;</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">happen</span>
+    <span class="o">//</span> <span class="n">code</span> <span class="n">executed</span> <span class="k">if</span> <span class="s1">'break'</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">happen</span>
     <span class="o">//</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">executed</span> <span class="k">if</span> <span class="k">while</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">entered</span>
 </pre></div>
 </div>
@@ -1160,7 +1160,7 @@ loop ends with ‘break’)</p></li>
         <span class="k">continue</span>  <span class="o">//</span> <span class="nb">next</span> <span class="n">cycle</span>
     <span class="o">//</span> <span class="n">unreachable</span> <span class="n">code</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="o">//</span> <span class="n">code</span> <span class="n">executed</span> <span class="k">if</span> <span class="s1">&#39;break&#39;</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">happen</span>
+    <span class="o">//</span> <span class="n">code</span> <span class="n">executed</span> <span class="k">if</span> <span class="s1">'break'</span> <span class="n">does</span> <span class="n">NOT</span> <span class="n">happen</span>
     <span class="o">//</span> <span class="n">code</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">executed</span> <span class="k">if</span> <span class="k">for</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">entered</span>
 </pre></div>
 </div>
@@ -1235,11 +1235,11 @@ loop ends with ‘break’)</p></li>
 <span class="k">try</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="k">except</span> <span class="ne">ArithmeticError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ArithmeticError&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ArithmeticError"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"ZeroDivisionError"</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Misc. Error&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Misc. Error"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>raises a SyntaxError for ‘func(x=1,4)’ (positional argument follows
@@ -1254,11 +1254,11 @@ SyntaxError:</p>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 1&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error 1"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 2&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error 2"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error 3&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error 3"</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="ne">SyntaxError</span>
 </pre></div>
@@ -1267,13 +1267,13 @@ SyntaxError:</p>
 <li><p>Exceptions save its constructor arguments in the ‘args’ attribute,
 which is a tuple:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;This is bad&quot;</span><span class="p">,</span> <span class="s2">&quot;very bad&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"This is bad"</span><span class="p">,</span> <span class="s2">"very bad"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
 
-<span class="go">&lt;class &#39;tuple&#39;&gt;</span>
-<span class="go">(&#39;This is bad&#39;, &#39;very bad&#39;)</span>
+<span class="go">&lt;class 'tuple'&gt;</span>
+<span class="go">('This is bad', 'very bad')</span>
 </pre></div>
 </div>
 <p>Important: The order in which the arguments are put into the
@@ -1298,7 +1298,7 @@ into try-except structure)</p></li>
 <li><p>optional second expression [, expression] is passed to raised
 exception:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;this is bad&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"this is bad"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 <span class="go">this is bad</span>
@@ -1480,13 +1480,13 @@ self.__hidden)</p>
 </li>
 <li><p>class only:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* CLASS VARIABLES (CAREFUL: class variables from parent classes are NOT listed here, though present from inheritance)
-* methods (e.g. &#39;mymethod&#39; : function MyClass.mymethod at ...)
+* methods (e.g. 'mymethod' : function MyClass.mymethod at ...)
 * special methods. e.g.
 
-    * ``__dict__`` (&#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;C&#39; objects&gt;)
-    * ``__doc__`` (e.g. &#39;__doc__&#39;: None)
-    * ``__module__`` (e.g. &#39;__module__&#39;: &#39;__main__&#39;)
-    * ``__init__`` (e.g. &#39;__init__&#39;: &lt;function C.__init__ at ...)
+    * ``__dict__`` ('__dict__': &lt;attribute '__dict__' of 'C' objects&gt;)
+    * ``__doc__`` (e.g. '__doc__': None)
+    * ``__module__`` (e.g. '__module__': '__main__')
+    * ``__init__`` (e.g. '__init__': &lt;function C.__init__ at ...)
 </pre></div>
 </div>
 </li>
@@ -1514,7 +1514,7 @@ DEFINITION (e.g. my_object.__new_attr = 0 –&gt; __new_attr)</p></li>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="n">Alpha</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># ParentClass.__init__(self) requires &#39;self&#39;</span>
+<span class="c1"># ParentClass.__init__(self) requires 'self'</span>
 </pre></div>
 </div>
 </li>
@@ -1552,17 +1552,17 @@ inheritance, so that it’s methods are resolved in a consistent way.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Top</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">m_top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"top"</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Middle</span><span class="p">(</span><span class="n">Top</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">m_middle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;middle&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"middle"</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Bottom</span><span class="p">(</span><span class="n">Top</span><span class="p">,</span> <span class="n">Middle</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">m_bottom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"bottom"</span><span class="p">)</span>
 
 
 <span class="nb">object</span> <span class="o">=</span> <span class="n">Bottom</span><span class="p">()</span>
@@ -1628,8 +1628,8 @@ state (here: value of <code class="docutils literal notranslate"><span class="pr
 <h2>Strings<a class="headerlink" href="#strings" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Strings are IMMUTABLE !!!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ABC&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">"ABC"</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"A"</span>
 <span class="go">TypeError</span>
 </pre></div>
 </div>
@@ -1650,8 +1650,8 @@ SyntaxError</p></li>
 <li><p>do not contain any whitespace, punctuation or most special
 characters</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s2">"foo"</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="s2">"foo"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
@@ -1671,7 +1671,7 @@ characters</p></li>
 (e.g IndexError).</p>
 <ul>
 <li><p>if end &gt; len(str) the end border is the LAST character</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">"hello"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
 <span class="go">hello</span>
 </pre></div>
@@ -1679,9 +1679,9 @@ characters</p></li>
 </li>
 <li><p>negative stepwidth: if -end &lt; -len(str), end border is the FIRST
 character (there no character left from the first character)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">"hello"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">&#39;olleh&#39;</span>
+<span class="go">'olleh'</span>
 </pre></div>
 </div>
 </li>
@@ -1689,17 +1689,17 @@ character (there no character left from the first character)</p>
 </li>
 <li><p>no matter which [stepwidth], the FIRST (if positive stepwidth) or
 the LAST (if negative stepwidth) is always included</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">"hello"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="mi">10000</span><span class="p">]</span>
-<span class="go">&#39;h&#39;</span>
+<span class="go">'h'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">10000</span><span class="p">]</span>
-<span class="go">&#39;o&#39;</span>
+<span class="go">'o'</span>
 </pre></div>
 </div>
 </li>
 <li><p>sliced string is built up character per character (for negative
 [stepwidth], the highest index comes first)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">"abcdef"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="go">fdb</span>
 </pre></div>
@@ -1716,11 +1716,11 @@ is positive (right direction) -&gt; <strong>empty string</strong> is returned</p
 <span class="o">&lt;-----------------</span>   <span class="o">----------&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">"hello"</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># range left direction &amp; stepwith right direction</span>
-<span class="go">&#39;&#39;</span>
+<span class="go">''</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># range right direction &amp; stepwidth left direction</span>
-<span class="go">&#39;&#39;</span>
+<span class="go">''</span>
 </pre></div>
 </div>
 </li>
@@ -1735,15 +1735,15 @@ is positive (right direction) -&gt; <strong>empty string</strong> is returned</p
 found).</p>
 <ul>
 <li><p>index range MUST completely contain searched term i.e.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;find&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;in&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">"find"</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"in"</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">-1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;find&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;in&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">"find"</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"in"</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">1</span>
 </pre></div>
 </div>
 </li>
 <li><p>index numbers can be negative but range must be from left to right:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; &quot;find&quot;.find(&quot;in&quot;,-4,-1)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; "find".find("in",-4,-1)
 1
 &gt;&gt;&gt; “find”.find(“in”,-1,-4)
 -1
@@ -1758,8 +1758,8 @@ found occurences index number</p></li>
 character is capitalized, all others lower case)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;.title()</span></code> returns “Hello World” (first letter of each
 word is capitalized, all others lower case)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;I know noTHING&quot;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
-<span class="go">&#39;I Know Nothing&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">"I know noTHING"</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="go">'I Know Nothing'</span>
 </pre></div>
 </div>
 </li>
@@ -1785,8 +1785,8 @@ characters from string (combines <code class="docutils literal notranslate"><spa
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;[separator_string]&quot;.join([iterable])</span></code> –&gt; generates single string
 out of list of strings ([iterable]), putting [separator_string]
 between each element</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
-<span class="go">&quot;a b c&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
+<span class="go">"a b c"</span>
 </pre></div>
 </div>
 </li>
@@ -1798,8 +1798,8 @@ character (<code class="docutils literal notranslate"><span class="pre">'</span>
 –&gt; [“foo”, “bar”, “foo”] –&gt; the split character itself is removed, for
 example “foobar”.split(“b”) returns [“foo”, “ar”]</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;.swapcase()</span></code> changes the case of each string character:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;I know nothing&quot;</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
-<span class="go">&#39;i KNOW NOTHING&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">"I know nothing"</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+<span class="go">'i KNOW NOTHING'</span>
 </pre></div>
 </div>
 </li>
@@ -1821,7 +1821,7 @@ example “foobar”.split(“b”) returns [“foo”, “ar”]</p></li>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

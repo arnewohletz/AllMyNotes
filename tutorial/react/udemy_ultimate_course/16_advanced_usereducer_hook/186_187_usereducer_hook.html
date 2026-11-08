@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../../_static/thebelab-helper.js"></script>
       <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -176,7 +176,7 @@ and must return the new state</p></li>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">step</span><span class="p">,</span><span class="w"> </span><span class="nx">setStep</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
 
 <span class="w">  </span><span class="c1">// This mutates the date object.</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;june 21 2027&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">"june 21 2027"</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">date</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">count</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -191,7 +191,7 @@ and must return the new state</p></li>
 </pre></div>
 </div>
 <p>We do:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 </span>
 <span class="hll"><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
@@ -203,7 +203,7 @@ and must return the new state</p></li>
 </span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">step</span><span class="p">,</span><span class="w"> </span><span class="nx">setStep</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
 
 <span class="w">  </span><span class="c1">// This mutates the date object.</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;june 21 2027&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s2">"june 21 2027"</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">date</span><span class="p">.</span><span class="nx">setDate</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">count</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -229,11 +229,11 @@ the <code class="docutils literal notranslate"><span class="pre">count</span></c
 <p>Although the <code class="docutils literal notranslate"><span class="pre">action</span></code> argument when calling <code class="docutils literal notranslate"><span class="pre">dispatch(action)</span></code> should be an
 object of this content:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="p">});</span>
+<span class="hll"><span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"dec"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="p">});</span>
 </span><span class="w">  </span><span class="p">};</span>
 
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">inc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">});</span>
+<span class="hll"><span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"inc"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">});</span>
 </span><span class="w">  </span><span class="p">};</span>
 </pre></div>
 </div>
@@ -243,13 +243,13 @@ and <code class="docutils literal notranslate"><span class="pre">payload</span><
 passed <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
-<span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"inc"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
 </span><span class="hll"><span class="w">  </span><span class="p">}</span>
-</span><span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"dec"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
 </span><span class="hll"><span class="w">  </span><span class="p">}</span>
-</span><span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"setCount"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
 </span><span class="hll"><span class="w">  </span><span class="p">}</span>
 </span><span class="p">}</span>
@@ -259,7 +259,7 @@ passed <code class="docutils literal notranslate"><span class="pre">type</span><
 <p class="admonition-title">Hint</p>
 <p><code class="docutils literal notranslate"><span class="pre">&quot;setCount&quot;</span></code> is a third type, which allows setting the value to a specific value:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">defineCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"setCount"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -268,13 +268,13 @@ passed <code class="docutils literal notranslate"><span class="pre">type</span><
 <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">-1</span></code> respectively:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"inc"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
 </span><span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"dec"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
 </span><span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"setCount"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -282,11 +282,11 @@ passed <code class="docutils literal notranslate"><span class="pre">type</span><
 </div>
 <p>so we can call it without <code class="docutils literal notranslate"><span class="pre">payload</span></code>:</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"dec"</span><span class="w"> </span><span class="p">});</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">inc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"inc"</span><span class="w"> </span><span class="p">});</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -322,14 +322,14 @@ and decreasing a value), like an object:</p>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
 
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"inc"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"dec"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setCount"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
 <span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Unknown action&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"Unknown action"</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -347,16 +347,16 @@ and also take the <code class="docutils literal notranslate"><span class="pre">s
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
 
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"inc"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">step</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"dec"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">step</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setCount"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
-<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setStep&quot;</span><span class="o">:</span>
+<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setStep"</span><span class="o">:</span>
 </span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
 </span><span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Unknown action&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"Unknown action"</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
@@ -365,7 +365,7 @@ and also take the <code class="docutils literal notranslate"><span class="pre">s
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">defineStep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;setStep&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+<span class="hll"><span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"setStep"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
 </span><span class="w">  </span><span class="p">};</span>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
@@ -376,18 +376,18 @@ and also take the <code class="docutils literal notranslate"><span class="pre">s
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"inc"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">step</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"dec"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">step</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setCount"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setStep&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setStep"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
-<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;reset&quot;</span><span class="o">:</span>
+<span class="hll"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"reset"</span><span class="o">:</span>
 </span><span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
 </span><span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Unknown action&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"Unknown action"</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
@@ -396,7 +396,7 @@ and also take the <code class="docutils literal notranslate"><span class="pre">s
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
 
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;reset&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"reset"</span><span class="w"> </span><span class="p">});</span>
 <span class="w">  </span><span class="p">};</span>
 
 <span class="w">  </span><span class="p">{</span><span class="cm">/* more stuff */</span><span class="p">}</span>
@@ -410,18 +410,18 @@ and also take the <code class="docutils literal notranslate"><span class="pre">s
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">const</span><span class="w"> </span><span class="nx">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
 </span>
 <span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;inc&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"inc"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">step</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;dec&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"dec"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">step</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setCount&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setCount"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;setStep&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"setStep"</span><span class="o">:</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="w"> </span><span class="p">};</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;reset&quot;</span><span class="o">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"reset"</span><span class="o">:</span>
 <span class="hll"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">initialState</span><span class="p">;</span>
 </span><span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Unknown action&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">"Unknown action"</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -446,7 +446,7 @@ happen right inside the JSX.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

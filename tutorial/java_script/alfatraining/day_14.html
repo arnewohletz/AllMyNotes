@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -234,49 +234,49 @@ stets auf <strong>alle</strong> diese Elemente angewandt und <strong>alle</stron
 Objekte zurückgegeben.</p>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].children()</span></code> wird ein Objekt mit allen Kindelementen geliefert:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">children</span><span class="p">());</span><span class="w">        </span><span class="c1">// alle Kind-Elemente</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// 1. Link im Article</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">children</span><span class="p">());</span><span class="w">        </span><span class="c1">// alle Kind-Elemente</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"article"</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">"a"</span><span class="p">));</span><span class="w">    </span><span class="c1">// 1. Link im Article</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].parent()</span></code> wird das direkte Elternelement <strong>aller</strong>
 Kind-Elemente im <em>object</em> zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parent</span><span class="p">());</span><span class="w">          </span><span class="c1">// direktes Elternelement</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">parent</span><span class="p">());</span><span class="w">          </span><span class="c1">// direktes Elternelement</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].parents()</span></code> werden alle Elternelemente <strong>aller</strong>
 Kind-Elemente im <em>object</em> zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parents</span><span class="p">());</span><span class="w">          </span><span class="c1">// alle Elternelemente (bis einschl. &lt;html&gt;)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">parents</span><span class="p">());</span><span class="w">          </span><span class="c1">// alle Elternelemente (bis einschl. &lt;html&gt;)</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].parentsUntil(selector)</span></code> werden alle Elternelemente <strong>aller</strong>
 Kind-Elemente bis zum <em>selector</em> (exclusive) im <em>object</em> zurückgegeben:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// alle Elternelemente bis EXCLUSIVE dem übergebenen Selektor (hier: &lt;body&gt;)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s2">"body"</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">[object].closest(selector)</span></code> wird das 1. Elternelemente welches die
 Bedingung erfüllt im <em>object</em> zurückgegeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// 1. Elternelement, dass übergebenen Bedingung erfüllt</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s2">"article"</span><span class="p">));</span><span class="w">    </span><span class="c1">// 1. Elternelement, dass übergebenen Bedingung erfüllt</span>
 </pre></div>
 </div>
 <p>Für Geschisterelemente:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Geschwisterelemente</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">siblings</span><span class="p">());</span><span class="w">    </span><span class="c1">// alle Geschwisterelemente</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">());</span><span class="w">        </span><span class="c1">// direkt folgendes Geschwisterelement</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// direkt folgendes Geschwisterelement, sofern es Bedingung erfüllt</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">());</span><span class="w">     </span><span class="c1">// alle folgenden Geschwisterelemente</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle folgenden Geschwisterelemente, welche Bedingung erfüllen</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">nextUntil</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle folgenden Geschwisterelemente bis excl. übergebenen Selektor</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">siblings</span><span class="p">());</span><span class="w">    </span><span class="c1">// alle Geschwisterelemente</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">next</span><span class="p">());</span><span class="w">        </span><span class="c1">// direkt folgendes Geschwisterelement</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s2">"a"</span><span class="p">));</span><span class="w">     </span><span class="c1">// direkt folgendes Geschwisterelement, sofern es Bedingung erfüllt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">());</span><span class="w">     </span><span class="c1">// alle folgenden Geschwisterelemente</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">(</span><span class="s2">"a"</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle folgenden Geschwisterelemente, welche Bedingung erfüllen</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">nextUntil</span><span class="p">(</span><span class="s2">"a"</span><span class="p">));</span><span class="w">  </span><span class="c1">// alle folgenden Geschwisterelemente bis excl. übergebenen Selektor</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prev</span><span class="p">());</span><span class="w">        </span><span class="c1">// direkt vorhergehendes Geschwisterelement</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// direkt vorhergehendes Geschwisterelement, sofern es Bedingung erfüllt</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">).</span><span class="nx">prevAll</span><span class="p">())</span><span class="w">      </span><span class="c1">// alle vorhergehenden Geschwisterelemente</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">prev</span><span class="p">());</span><span class="w">        </span><span class="c1">// direkt vorhergehendes Geschwisterelement</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">));</span><span class="w">    </span><span class="c1">// direkt vorhergehendes Geschwisterelement, sofern es Bedingung erfüllt</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"ul"</span><span class="p">).</span><span class="nx">prevAll</span><span class="p">())</span><span class="w">      </span><span class="c1">// alle vorhergehenden Geschwisterelemente</span>
 </pre></div>
 </div>
 <p>Beispiel:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Beispiel: Event-Handler registrieren</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">"slow"</span><span class="p">)</span>
 <span class="p">}).</span><span class="nx">next</span><span class="p">().</span><span class="nx">hide</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -292,9 +292,9 @@ Bedingung erfüllt im <em>object</em> zurückgegeben:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$.ajax()</span></code> erwartet, dass ein Konfigurations-Objekt übergeben wird:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">loadContent</span><span class="p">(</span><span class="nx">link</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w">        </span><span class="nx">link</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.html&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">dataType</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w">       </span><span class="s2">"GET"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w">        </span><span class="nx">link</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">".html"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">dataType</span><span class="o">:</span><span class="w">   </span><span class="s2">"html"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">success</span><span class="o">:</span><span class="w">    </span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                        </span><span class="nx">output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="w">                    </span><span class="p">},</span>
@@ -317,8 +317,8 @@ durchgeführt werden soll</p></li>
 <p><strong>2. Möglichkeit</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">done()</span></code> und <code class="docutils literal notranslate"><span class="pre">fail()</span></code></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w">        </span><span class="nx">link</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.html&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">dataType</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w">        </span><span class="nx">link</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">".html"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">dataType</span><span class="o">:</span><span class="w">   </span><span class="s2">"html"</span><span class="p">,</span>
 <span class="p">}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nx">output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">dxhrObj</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">errorMsg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -333,9 +333,9 @@ durchgeführt werden soll</p></li>
 <p>Analog zu GET Requests, gibt es zwei Möglichkeiten:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w">        </span><span class="s2">&quot;pfad zum verarbeiten&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">dataType</span><span class="o">:</span><span class="w">   </span><span class="s2">&quot;html&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;xml&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;zu sendende Daten&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w">        </span><span class="s2">"pfad zum verarbeiten"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">dataType</span><span class="o">:</span><span class="w">   </span><span class="s2">"html"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">"xml"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w">       </span><span class="s2">"zu sendende Daten"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">success</span><span class="o">:</span><span class="w">    </span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">        </span><span class="nx">error</span><span class="o">:</span><span class="w">      </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 <span class="w">    </span><span class="p">});</span>
@@ -374,7 +374,7 @@ umgegangen wird.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

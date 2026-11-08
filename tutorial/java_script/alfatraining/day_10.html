@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -340,29 +340,29 @@ ohne funktionale Einschränkungen benutzt werden</p></li>
 <p>Das XML Format wird in JavaScript hauptsächlich für Ajax angewandt.</p>
 <p>XML-Dokument hat strikte Regeln für Aufbau, dadurch sehr einfach, DOM (Document
 Object Model) zu nutzen. Auch hier in Knoten denken und in Hierarchie navigieren.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">xmlString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;&lt;artists&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;&lt;artist name=&quot;Kyuss&quot;&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;&lt;albums&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39; &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39; &lt;title&gt;Wretch&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39; &lt;year&gt;1991&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39; &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39; &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;   &lt;title&gt;Blues for the Red Sun&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;    &lt;year&gt;1992&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;   &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;   &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;    &lt;title&gt;Welcome to Sky Valley&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;    &lt;year&gt;1994&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;  &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;  &lt;album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;   &lt;title&gt;...And the Circus Leaves Town&lt;/title&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;  &lt;year&gt;1995&lt;/year&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;  &lt;/album&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;  &lt;/albums&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;&lt;/artist&gt;&#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="s1">&#39;&lt;/artists&gt;&#39;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">xmlString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'&lt;?xml version="1.0" encoding="UTF-8"?&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'&lt;artists&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'&lt;artist name="Kyuss"&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'&lt;albums&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">' &lt;album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">' &lt;title&gt;Wretch&lt;/title&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">' &lt;year&gt;1991&lt;/year&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">' &lt;/album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">' &lt;album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'   &lt;title&gt;Blues for the Red Sun&lt;/title&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'    &lt;year&gt;1992&lt;/year&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'   &lt;/album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'   &lt;album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'    &lt;title&gt;Welcome to Sky Valley&lt;/title&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'    &lt;year&gt;1994&lt;/year&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'  &lt;/album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'  &lt;album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'   &lt;title&gt;...And the Circus Leaves Town&lt;/title&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'  &lt;year&gt;1995&lt;/year&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'  &lt;/album&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'  &lt;/albums&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'&lt;/artist&gt;'</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="s1">'&lt;/artists&gt;'</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xmlString</span><span class="p">);</span>
 </pre></div>
@@ -375,14 +375,14 @@ dem von HTML und die DOM-API für HTML lässt sich ebenfalls auf XML anwenden.</
 <p>Über das <code class="docutils literal notranslate"><span class="pre">DOMParser</span></code> Objekt lässt sich mit der <code class="docutils literal notranslate"><span class="pre">.parseFromString()</span></code> Methode
 ein XML-String in ein XML-DOM Objekt umwandeln.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">parserObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DOMParser</span><span class="p">();</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">xmlDoc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parserObj</span><span class="p">.</span><span class="nx">parseFromString</span><span class="p">(</span><span class="nx">xmlString</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">xmlDoc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parserObj</span><span class="p">.</span><span class="nx">parseFromString</span><span class="p">(</span><span class="nx">xmlString</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/xml"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xmlDoc</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Hierauf lassen sich sämtliche DOM-Methoden des <code class="docutils literal notranslate"><span class="pre">Documents</span></code> (HTML-DOM) ebenfalls
 nutzen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Methoden vom DOM-Zugriff integriert/nutzbar</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">myArtist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xmlDoc</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;artist&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myArtist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xmlDoc</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"artist"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -392,7 +392,7 @@ nutzen:</p>
 (herkömmlichen) DOM befindet:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// kein IDL-Zugriff, da document nicht im DOM</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">                 </span><span class="c1">// undefined</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Kyuss</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArtist</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"name"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Kyuss</span>
 </pre></div>
 </div>
 </div>
@@ -426,7 +426,7 @@ zurückgegeben werden, müssen jedoch nicht.</p>
 <span class="w">    </span><span class="c1">// feuert, wenn Server-Antwort vollständig eingetroffen</span>
 <span class="w">    </span><span class="c1">// response muss nicht zwingend angefragte Daten enthalten</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<span class="w">    </span><span class="c1">// Server hat mit &quot;OK&quot; (Status 200) geantwortet</span>
+<span class="w">    </span><span class="c1">// Server hat mit "OK" (Status 200) geantwortet</span>
 <span class="w">    </span><span class="c1">// https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</span>
 <span class="w">    </span><span class="c1">// https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</span>
 <span class="w">    </span><span class="c1">// Daten wurden ordnungsgemäß übermittelt und können jetzt verarbeitet werden</span>
@@ -443,8 +443,8 @@ Server-Antwort ausgelöst.</p>
 </div>
 <p>Als nächstes muss über <code class="docutils literal notranslate"><span class="pre">.open()</span></code> die HTTP-Anfrage formuliert werden.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 3. HTTP-Anfrage formulieren</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;./artists.xml&quot;</span><span class="p">);</span>
-<span class="c1">// xhr.open(&quot;POST&quot;, &quot;./script.php&quot;);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"./artists.xml"</span><span class="p">);</span>
+<span class="c1">// xhr.open("POST", "./script.php");</span>
 </pre></div>
 </div>
 <div class="admonition hint">
@@ -461,12 +461,12 @@ also einen XML String, akzeptiert. Wird er nicht definiert, werden die Antwortda
 als String gespeichert.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 4. Anfrage konfigurieren</span>
 <span class="c1">// Wie sollen Antwort-Daten vorliegen?</span>
-<span class="c1">// xhr.responseType = &quot;&quot;;  // Antwort als String (default)</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;document&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// geparstes Document (HTML || XML)</span>
-<span class="c1">// xhr.responseType = &quot;json&quot;;      // geparste JSON-Daten, wenn Browser es kann</span>
+<span class="c1">// xhr.responseType = "";  // Antwort als String (default)</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"document"</span><span class="p">;</span><span class="w">  </span><span class="c1">// geparstes Document (HTML || XML)</span>
+<span class="c1">// xhr.responseType = "json";      // geparste JSON-Daten, wenn Browser es kann</span>
 
 <span class="c1">// Request-Header konfigurieren</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&quot;Accept&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Accept"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text/xml"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Die Anfrage wird zuletzt mit <code class="docutils literal notranslate"><span class="pre">.send()</span></code> ausgeführt.</p>
@@ -479,20 +479,20 @@ als String gespeichert.</p>
 </div>
 <p>Zusätzlich lassen sich weitere Event-Listener dem XMLHTTPRequest anhängen, z.B.
 um wie hier, den aktuellen Status des Requests anzuzeigen:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Laden der Daten vom Server abgeschlossen!&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"load"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Laden der Daten vom Server abgeschlossen!"</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;progress&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fortschritt beim Laden der Daten vom Server!&quot;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Fortschritt beim Laden der Daten vom Server!"</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fehler beim Laden der Daten vom Server!&quot;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"error"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Fehler beim Laden der Daten vom Server!"</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Timeout beim Laden der Daten vom Server!&quot;</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"timeout"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Timeout beim Laden der Daten vom Server!"</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -501,17 +501,17 @@ um wie hier, den aktuellen Status des Requests anzuzeigen:</p>
 <h2>Antwort weiterverarbeiten<a class="headerlink" href="#antwort-weiterverarbeiten" title="Link to this heading"></a></h2>
 <p>Hat man über einen <code class="docutils literal notranslate"><span class="pre">XMLHTTPRequest</span></code> ein Antwort-Objekt mit vom Server erhalten, lässt
 sich der HTML oder XML Inhalt über das <code class="docutils literal notranslate"><span class="pre">.responseXML</span></code> Attribut auslesen.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#browser&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#browser"</span><span class="p">);</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">xhr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ooops&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Ooops"</span><span class="p">;</span>
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">xml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">allBrowser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xml</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;browser&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">allBrowser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xml</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"browser"</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allBrowser</span><span class="p">);</span>
 
 <span class="w">    </span><span class="nx">outputFunc</span><span class="p">(</span><span class="nx">allBrowser</span><span class="p">);</span>
@@ -536,7 +536,7 @@ sich weiterarbeiten, wie mit dem DOM.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

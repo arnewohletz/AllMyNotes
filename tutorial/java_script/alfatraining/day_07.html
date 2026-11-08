@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -257,10 +257,10 @@ zum Dokument und zahlreiche Methoden um das Dokument zu bearbeiten.</p></li>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span><span class="w"> </span><span class="c1">// body Element des Dokuments</span>
 
 <span class="c1">// Zugriff auf beliebige Elemente (sind JS Objekte)</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; Element</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementByTagName</span><span class="p">(</span><span class="s2">&quot;tagname&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; HTML-Collection</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementByClassName</span><span class="p">(</span><span class="s2">&quot;classname&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; HTML-Collection</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; HTML-Collection</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; Element</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementByTagName</span><span class="p">(</span><span class="s2">"tagname"</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; HTML-Collection</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementByClassName</span><span class="p">(</span><span class="s2">"classname"</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; HTML-Collection</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"name"</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; HTML-Collection</span>
 </pre></div>
 </div>
 <p>Die Methoden können auf alle Elemente angewendet werden und werden dann auf alle
@@ -270,13 +270,13 @@ hinzu, die wiederum die Anwendung von JQuery nicht mehr nötig machen.</p>
 <section id="query-selector">
 <h2>Query-Selector<a class="headerlink" href="#query-selector" title="Link to this heading"></a></h2>
 <p>Neu seit ES6 (von JQuery inspiriert):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;css-syntax&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; Element</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;css-syntax&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; NodeList (moderne Version von HTML-Collection)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"css-syntax"</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; Element</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"css-syntax"</span><span class="p">);</span><span class="w">  </span><span class="c1">// =&gt; NodeList (moderne Version von HTML-Collection)</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Element: erstes Match wird zurückgegeben</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// NodeList: alle Matches werden zurückgegeben</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Element an index 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">));</span><span class="w">  </span><span class="c1">// Element: erstes Match wird zurückgegeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">));</span><span class="w">  </span><span class="c1">// NodeList: alle Matches werden zurückgegeben</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">)[</span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Element an index 1</span>
 </pre></div>
 </div>
 </section>
@@ -293,13 +293,13 @@ auf das DOM möglichst minimal gehalten werden, d.h.</p>
 </ul>
 </div>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">.innerHTML</span></code> wird der Content inklusive aller Markups (Element-Tags) geliefert.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">headLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">headLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">);</span>
 
 <span class="c1">// [element].innerHTML =&gt; liefert den Content Text inklusive Markups</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
 
 <span class="c1">// überschreiben vom Text Content</span>
-<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;em&gt;Hallo&lt;/em&gt; Welt&quot;</span><span class="p">;</span>
+<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;em&gt;Hallo&lt;/em&gt; Welt"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -309,24 +309,24 @@ auf das DOM möglichst minimal gehalten werden, d.h.</p>
 erfährt nur das DOM.</p>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// hinzufügen von Text</span>
-<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Achtung: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">;</span>
-<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;!!!&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// hinten anfügen</span>
+<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Achtung: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">;</span>
+<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">"!!!"</span><span class="p">;</span><span class="w">  </span><span class="c1">// hinten anfügen</span>
 
 <span class="c1">// gesamter Content wird geschrieben</span>
-<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w">  </span><span class="s2">&quot; mit             Zusatz &lt;span style=\&quot;display:none\&quot;&gt;unsichtbar&lt;/span&gt;&quot;</span><span class="p">;</span>
+<span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w">  </span><span class="s2">" mit             Zusatz &lt;span style=\"display:none\"&gt;unsichtbar&lt;/span&gt;"</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Den gerenderten Content (so wie User es sieht -&gt; Ohne Markups, ohne doppelte Leerzeichen
 oder ausgeblendete Inhalte) wird über <code class="docutils literal notranslate"><span class="pre">.innerText</span></code> sichtbar:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w">  </span><span class="s2">&quot; mit             Zusatz &lt;span style=\&quot;display:none\&quot;&gt;unsichtbar&lt;/span&gt;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w">  </span><span class="s2">" mit             Zusatz &lt;span style=\"display:none\"&gt;unsichtbar&lt;/span&gt;"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
-<span class="c1">// Achtung: &lt;em&gt;Hallo&lt;/em&gt; Welt!!! mit             Zusatz &lt;span style=&quot;display:none&quot;&gt;unsichtbar&lt;/span&gt;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Achtung: Hallo Welt!!! mit Zusatz&quot;</span>
+<span class="c1">// Achtung: &lt;em&gt;Hallo&lt;/em&gt; Welt!!! mit             Zusatz &lt;span style="display:none"&gt;unsichtbar&lt;/span&gt;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerText</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Achtung: Hallo Welt!!! mit Zusatz"</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.textContent</span></code> werden doppelte Leerzeichen ausgegeben, aber keine Markups
 oder ausgeblendete Inhalte.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w">  </span><span class="s2">&quot; mit             Zusatz &lt;span style=\&quot;display:none\&quot;&gt;unsichtbar&lt;/span&gt;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">headLine</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w">  </span><span class="s2">" mit             Zusatz &lt;span style=\"display:none\"&gt;unsichtbar&lt;/span&gt;"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headLine</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span><span class="w"> </span><span class="c1">// Achtung: Hallo Welt!!! mit             Zusatz unsichtbar</span>
 </pre></div>
 </div>
@@ -342,7 +342,7 @@ welches Property ausgelesen werden soll.</p>
 <p>Im Gegensatz zu JQuery, welche die Ergebnis-Elemente als Liste von Objekten zurückgibt,
 sind auf eine NodeList diese Methoden nicht direkt verfügbar. Die NodeList enthält
 wiederum diese Objekte.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">listItems</span><span class="p">);</span>
 
 <span class="c1">// Anzahl der selektierten Elemente</span>
@@ -359,7 +359,7 @@ wiederum diese Objekte.</p>
 <p>Bei nicht vorhandenen Elementen wird <code class="docutils literal notranslate"><span class="pre">null</span></code> zurückgegeben bzw. ein leeres
 <code class="docutils literal notranslate"><span class="pre">NodeList</span></code> Element. Hier mit einer einfachen Prüfung arbeiten:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Element nicht vorhanden</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">orderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;ol&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">orderedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"ol"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">orderedList</span><span class="p">);</span><span class="w">  </span><span class="c1">// null</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">orderedList</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span><span class="w">  </span><span class="c1">// TypeError</span>
 
@@ -369,7 +369,7 @@ wiederum diese Objekte.</p>
 <span class="p">}</span>
 
 <span class="c1">// Bei querySelectorAll</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">orderedLists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;ol&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">orderedLists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"ol"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">orderedLists</span><span class="p">);</span><span class="w">  </span><span class="c1">// empty NodeList</span>
 
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">orderedList</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -385,14 +385,14 @@ wiederum diese Objekte.</p>
 <li><p>Lokal: über ein <em>Element</em> (innerhalb aller eingeschlossenen Elemente)</p></li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// global selektieren (über document)</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#secondList&quot;</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#secondList"</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myList</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">listItems</span><span class="p">);</span>
 
 <span class="c1">// lokales selektieren (innerhalb eines Elements)</span>
-<span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myList</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myList</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">listItems</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -408,10 +408,10 @@ weitere Methoden liefert.</p>
 <span class="cm">    [element].className =&gt; speichert Strings</span>
 <span class="cm">    Manipulation über Zeichenkettenverarbeitung</span>
 <span class="cm">*/</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.absatz&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".absatz"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
-<span class="nx">para</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wichtig&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// className überschreiben</span>
-<span class="nx">para</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot; absatz texte&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Klassen hinzufügen</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"wichtig"</span><span class="p">;</span><span class="w">  </span><span class="c1">// className überschreiben</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">" absatz texte"</span><span class="p">;</span><span class="w">  </span><span class="c1">// Klassen hinzufügen</span>
 
 <span class="cm">/*</span>
 <span class="cm">    Variante 2:</span>
@@ -424,7 +424,7 @@ weitere Methoden liefert.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
 
 <span class="c1">// Zugriff über Property Access</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// &quot;absatz&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// "absatz"</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -440,26 +440,26 @@ diese entfernt</p></li>
 über Property Access)</p></li>
 </ul>
 </div></blockquote>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;hinweis&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Klasse hinzufügen</span>
-<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;hinweis&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Versuch doppeltes Hinzufügen wird ignoriert</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"hinweis"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Klasse hinzufügen</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"hinweis"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Versuch doppeltes Hinzufügen wird ignoriert</span>
 
-<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;texte&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Klasse entfernen</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">"texte"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Klasse entfernen</span>
 
-<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;absatz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;new-absatz&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Klasse ersetzen</span>
-<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;fehlt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fehlt-immer-noch&quot;</span><span class="p">);</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"absatz"</span><span class="p">,</span><span class="w"> </span><span class="s2">"new-absatz"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Klasse ersetzen</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"fehlt"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fehlt-immer-noch"</span><span class="p">);</span>
 
 <span class="cm">/*</span>
 <span class="cm">toggle:</span>
 <span class="cm">    wenn Klasse vorhanden -&gt; wird entfernt</span>
 <span class="cm">    wenn Klasse nicht vorhanden -&gt; wird hinzugefügt</span>
 <span class="cm">*/</span>
-<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">&quot;wichtig&quot;</span><span class="p">);</span>
+<span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">"wichtig"</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">);</span>
 
 <span class="c1">// auf Klasse prüfen</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;hinweis&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;hinweis&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">"hinweis"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">"hinweis"</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
 <span class="p">}</span>
 
 <span class="c1">// durch classList iterieren über Property Access</span>
@@ -475,37 +475,37 @@ diese entfernt</p></li>
 <h3>Content-Zugriff<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.getAttribute()</span></code> wird Inhalt eines Attributs geliefert (oder <code class="docutils literal notranslate"><span class="pre">null</span></code>,
 falls Attribut nicht existiert):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;progress&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">);</span>
 
 
 <span class="c1">// Attribute auslesen</span>
 <span class="c1">// [element].getAttribute(attr_name);</span>
 <span class="c1">// Rückgabe ist immer ein String</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;10&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;1&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// null</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"max"</span><span class="p">));</span><span class="w">  </span><span class="c1">// "10"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">));</span><span class="w">  </span><span class="c1">// "1"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"title"</span><span class="p">));</span><span class="w">  </span><span class="c1">// null</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.setAttribute()</span></code> den Wert eines Attributs ändern oder neue Attribute
 hinzufügen:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Attribute setzen</span>
-<span class="nx">myProgress</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
-<span class="nx">myProgress</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
-<span class="nx">myProgress</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;progress-bar&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// neues Attribut</span>
+<span class="nx">myProgress</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"max"</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="nx">myProgress</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+<span class="nx">myProgress</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"progress-bar"</span><span class="p">);</span><span class="w">   </span><span class="c1">// neues Attribut</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.removeAttribute()</span></code> ein vorhandenes Attribut entfernen. Ist das Attribut
 nicht vorhanden, wird der Befehl ignoriert (kein Fehler):</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Attribut entfernen</span>
-<span class="nx">myProgress</span><span class="p">.</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// null</span>
+<span class="nx">myProgress</span><span class="p">.</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"id"</span><span class="p">));</span><span class="w"> </span><span class="c1">// null</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.hasAttribute()</span></code> prüfen ob ein Element ein bestimmtes Attribut hat:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// prüfen ob eine Attribut anliegt</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">hasAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">hasAttribute</span><span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">hasAttribute</span><span class="p">(</span><span class="s2">"id"</span><span class="p">));</span><span class="w">   </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">hasAttribute</span><span class="p">(</span><span class="s2">"max"</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
 </pre></div>
 </div>
 <p>Über <code class="docutils literal notranslate"><span class="pre">.attributes</span></code> alle Attribute eines Elements in einer <code class="docutils literal notranslate"><span class="pre">NamedNodeMap</span></code>
@@ -513,8 +513,8 @@ erhalten:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">attributes</span><span class="p">);</span><span class="w">   </span><span class="c1">// NamedNodeMap</span>
 
 <span class="c1">// etwas umständlich, aber möglich</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">max</span><span class="p">);</span><span class="w">   </span><span class="c1">// max=&quot;100&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">nodeValue</span><span class="p">);</span><span class="w">   </span><span class="c1">// &quot;100&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">max</span><span class="p">);</span><span class="w">   </span><span class="c1">// max="100"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myProgress</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">nodeValue</span><span class="p">);</span><span class="w">   </span><span class="c1">// "100"</span>
 </pre></div>
 </div>
 </section>
@@ -533,7 +533,7 @@ das Element als Interface definiert ist.</p>
 <li><p>Funktioniert nur über ein Interface</p></li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// IDL-Zugriff</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">myProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;progress&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">);</span>
 
 <span class="c1">// Attribut auslesen</span>
 <span class="c1">// (direkter Zugriff über Punktnotation anstelle Weg über Methoden)</span>
@@ -553,24 +553,24 @@ das Element als Interface definiert ist.</p>
 <p>Attribute, welche ohne Wert das Verhalten eines Elements beeinflussen</p>
 <p>Beispiele: <code class="docutils literal notranslate"><span class="pre">async</span></code>, <code class="docutils literal notranslate"><span class="pre">defer</span></code>, <code class="docutils literal notranslate"><span class="pre">disabled</span></code>, <code class="docutils literal notranslate"><span class="pre">required</span></code></p>
 <p>Über Content-Zugriff:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"button"</span><span class="p">);</span>
 
 <span class="c1">// mit Content-Zugriff</span>
 
 <span class="c1">// boolesches Attribut setzen</span>
 <span class="c1">// doppelte Übergabe nötig (Wert des 2. Arguments jedoch egal)</span>
-<span class="nx">myBtn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;disabled&quot;</span><span class="p">);</span>
+<span class="nx">myBtn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">,</span><span class="w"> </span><span class="s2">"disabled"</span><span class="p">);</span>
 
 <span class="c1">// boolesches Attribut entfernen</span>
-<span class="nx">myBtn</span><span class="p">.</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">);</span>
+<span class="nx">myBtn</span><span class="p">.</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">);</span>
 
 <span class="c1">// boolesches Attribut toggeln</span>
-<span class="nx">myBtn</span><span class="p">.</span><span class="nx">toggleAttribute</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// hinzufügen</span>
-<span class="nx">myBtn</span><span class="p">.</span><span class="nx">toggleAttribute</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// entfernen</span>
+<span class="nx">myBtn</span><span class="p">.</span><span class="nx">toggleAttribute</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">);</span><span class="w">  </span><span class="c1">// hinzufügen</span>
+<span class="nx">myBtn</span><span class="p">.</span><span class="nx">toggleAttribute</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">);</span><span class="w">  </span><span class="c1">// entfernen</span>
 </pre></div>
 </div>
 <p>Über IDL-Zugriff (wieder einfacher):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"button"</span><span class="p">);</span>
 
 <span class="c1">// mit IDL-Zugriff</span>
 <span class="nx">myBtn</span><span class="p">.</span><span class="nx">disabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
@@ -582,24 +582,24 @@ das Element als Interface definiert ist.</p>
 <h3>Interface Zugriff<a class="headerlink" href="#interface-zugriff" title="Link to this heading"></a></h3>
 <p>Der Content-Zugriff kann <strong>nicht</strong> auf Interfaces zugreifen, dies ist nur über
 den IDL-Zugriff möglich.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">eingabeFeld</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#eingabe&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">eingabeFeld</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#eingabe"</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// &quot;Hey&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Hey&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">));</span><span class="w">   </span><span class="c1">// "Hey"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Hey"</span>
 
 <span class="c1">// Änderung über Content</span>
-<span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hey, du da&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// &quot;Hey, du da&quot;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Hey, du da&quot;</span>
+<span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hey, du da"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">));</span><span class="w">   </span><span class="c1">// "Hey, du da"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Hey, du da"</span>
 
 <span class="c1">// Änderung über IDL</span>
-<span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hoppla&quot;</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// &quot;Hey, du da&quot;  (hat nicht geklappt)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Hoppla&quot;  (OK)</span>
+<span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Hoppla"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">));</span><span class="w">   </span><span class="c1">// "Hey, du da"  (hat nicht geklappt)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Hoppla"  (OK)</span>
 
 <span class="c1">// Änderung bei Nutzer-Eingabe</span>
 <span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">onchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// NOK -&gt; alter Wert</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">"value"</span><span class="p">));</span><span class="w">   </span><span class="c1">// NOK -&gt; alter Wert</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eingabeFeld</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w">   </span><span class="c1">// OK -&gt; neuer Wert</span>
 <span class="p">};</span>
 </pre></div>
@@ -631,44 +631,44 @@ arbeiten, nicht mit dem Event-Listener.</p>
 Ereignis erfährt, registriert. Tritt das Ereignis ein, wird die Funktion ausgeführt.
 Es können <strong>mehrere Funktionen für das selbe Event</strong> für ein Element definiert
 werden, wobei die Funktionen <strong>hintereinander ausgeführt</strong> werden.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">inputField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#eingabe&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">inputField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#eingabe"</span><span class="p">);</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">log_msg</span><span class="w"> </span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// anonyme Funktion als ersten Event-Listener für &#39;blur&#39; event registrieren</span>
+<span class="c1">// anonyme Funktion als ersten Event-Listener für 'blur' event registrieren</span>
 <span class="c1">// NACHTEIL: Kann nicht de-registriert werden, da anonyme Funktion</span>
-<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ich bin nicht mehr selektiert&quot;</span><span class="p">);</span>
+<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"blur"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Ich bin nicht mehr selektiert"</span><span class="p">);</span>
 <span class="p">});</span>
-<span class="c1">// anonyme Funktion zweiter Event-Lister für &#39;blur&#39; event registrieren</span>
+<span class="c1">// anonyme Funktion zweiter Event-Lister für 'blur' event registrieren</span>
 <span class="c1">// beide Funktionen werden nun ausgeführt beim Eintritt des Events</span>
 <span class="c1">// NACHTEIL: Kann nicht de-registriert werden, da anonyme Funktion</span>
-<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">log_msg</span><span class="p">(</span><span class="s2">&quot;Selektiere mich bitte erneut&quot;</span><span class="p">);</span>
+<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"blur"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log_msg</span><span class="p">(</span><span class="s2">"Selektiere mich bitte erneut"</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">onBlurHandler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ich mach das ...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Ich mach das ..."</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">onBlurHandlerWithArgs</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// benannte Funktion als dritten Event-Listener für &#39;blur&#39; event registrieren</span>
-<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onBlurHandler</span><span class="p">);</span>
+<span class="c1">// benannte Funktion als dritten Event-Listener für 'blur' event registrieren</span>
+<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"blur"</span><span class="p">,</span><span class="w"> </span><span class="nx">onBlurHandler</span><span class="p">);</span>
 
 <span class="c1">// de-registrieren von drittem Event-Listener</span>
 <span class="c1">// GEHT NUR BEI BENANNTEN FUNKTIONEN!</span>
-<span class="nx">inputField</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onBlurHandler</span><span class="p">);</span>
+<span class="nx">inputField</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">"blur"</span><span class="p">,</span><span class="w"> </span><span class="nx">onBlurHandler</span><span class="p">);</span>
 
-<span class="c1">// benannte Funktion mit Argument als Event-Listener für &#39;blur&#39; registrieren</span>
-<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">onBlurHandlerWithArgs</span><span class="p">(</span><span class="nx">event</span><span class="p">));</span>
+<span class="c1">// benannte Funktion mit Argument als Event-Listener für 'blur' registrieren</span>
+<span class="nx">inputField</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"blur"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">onBlurHandlerWithArgs</span><span class="p">(</span><span class="nx">event</span><span class="p">));</span>
 
 <span class="c1">// de-registriere Funktion mit Argumenten als Event-Listener</span>
-<span class="nx">inputField</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;blur&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onBlurHandlerWithArgs</span><span class="p">);</span>
+<span class="nx">inputField</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">"blur"</span><span class="p">,</span><span class="w"> </span><span class="nx">onBlurHandlerWithArgs</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -693,24 +693,24 @@ Funktion zugewiesen wird, wird die bisherige Zuweisung überschrieben.</p>
 Elementen nachgeschaut werden. Event-Handler Properties sind alle im lower-Case,
 ohne Trennzeichen, geschrieben (z.B. <code class="docutils literal notranslate"><span class="pre">onclick</span></code>).</p>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">inputField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#eingabe&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">inputField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#eingabe"</span><span class="p">);</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">log_msg</span><span class="w"> </span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// Event-Handler für &#39;blur&#39; event zuweisen</span>
+<span class="c1">// Event-Handler für 'blur' event zuweisen</span>
 <span class="nx">inputField</span><span class="p">.</span><span class="nx">onblur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">log_msg</span><span class="p">(</span><span class="s2">&quot;Ich handle das allein&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">log_msg</span><span class="p">(</span><span class="s2">"Ich handle das allein"</span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="c1">// Event-Handler für &#39;blur&#39; event wird überschrieben</span>
+<span class="c1">// Event-Handler für 'blur' event wird überschrieben</span>
 <span class="nx">inputField</span><span class="p">.</span><span class="nx">onblur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">log_msg</span><span class="p">(</span><span class="s2">&quot;Denkste! Ich bin jetzt der Chef! Hinfort!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">log_msg</span><span class="p">(</span><span class="s2">"Denkste! Ich bin jetzt der Chef! Hinfort!"</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">gibMeldungDazu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Das Event ist wirklich eingetreten&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Das Event ist wirklich eingetreten"</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// Ausgelagerte Funktion als Event-Handler registrieren (OHNE Klammern übergeben)</span>
@@ -718,7 +718,7 @@ ohne Trennzeichen, geschrieben (z.B. <code class="docutils literal notranslate">
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gibMeldungDazu</span><span class="p">);</span><span class="w">  </span><span class="c1">// function</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gibMeldungDazu</span><span class="p">());</span><span class="w">  </span><span class="c1">// undefined (da kein Return-value)</span>
 
-<span class="c1">// Event-Handler de-registrieren (auf &#39;null&#39; setzen)</span>
+<span class="c1">// Event-Handler de-registrieren (auf 'null' setzen)</span>
 <span class="nx">inputField</span><span class="p">.</span><span class="nx">onfocus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -726,11 +726,11 @@ ohne Trennzeichen, geschrieben (z.B. <code class="docutils literal notranslate">
 <h3>DOM-Event-Handler<a class="headerlink" href="#dom-event-handler" title="Link to this heading"></a></h3>
 <p>Der <code class="docutils literal notranslate"><span class="pre">onload</span></code> Event-Handler wird erst nach abgeschlossenen Laden des DOMs und allen
 verknüpften Resources (CSS, Bilder, usw.) aufgerufen.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">inputField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#eingabe&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">inputField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#eingabe"</span><span class="p">);</span>
 
 <span class="c1">// DOM-Event-Handler</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;DOM und alle verknüpften Ressourcen fertig geladen&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"DOM und alle verknüpften Ressourcen fertig geladen"</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -751,7 +751,7 @@ verknüpften Resources (CSS, Bilder, usw.) aufgerufen.</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>

@@ -17,7 +17,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
       <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=065cca34" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/docsearch.css?v=48afb9a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=ba2aac58" />
       <link rel="stylesheet" type="text/css" href="../../../_static/rtd-docsearch-custom.css?v=726ab6ef" />
 
@@ -31,7 +31,7 @@
       <script src="../../../_static/thebelab-helper.js"></script>
       <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../../_static/copybutton.js?v=f0731925"></script>
-      <script defer="defer" src="../../../_static/docsearch.js?v=97306bf9"></script>
+      <script defer="defer" src="../../../_static/docsearch.js?v=54ee8836"></script>
       <script defer="defer" src="../../../_static/docsearch_config.js?v=a08cdb4b"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -227,8 +227,8 @@
 
 <span class="c1">// Prototyp</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">whiskey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">cat</span><span class="o">:</span><span class="w">        </span><span class="p">[</span><span class="s2">&quot;Whiskey&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cat</span><span class="o">:</span><span class="w">        </span><span class="p">[</span><span class="s2">"Whiskey"</span><span class="p">],</span>
 <span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w">      </span><span class="mf">0</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">quantity</span><span class="o">:</span><span class="w">   </span><span class="mf">500</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">shortPrint</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -243,15 +243,15 @@
 <span class="nx">whiskey</span><span class="p">.</span><span class="nx">shortPrint</span><span class="p">();</span>
 
 <span class="c1">// Objekt auf Grundlage des Prototypen erstellen</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">newProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">whiskey</span><span class="p">);</span><span class="w">  </span><span class="c1">// alle vererbten Eigenschaften unter &#39;prototype&#39;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">whiskey</span><span class="p">);</span><span class="w">  </span><span class="c1">// alle vererbten Eigenschaften unter 'prototype'</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span>
 <span class="c1">// eigene Daten definieren</span>
 <span class="c1">//    wird direkt im Objekt hinzugefügt</span>
-<span class="nx">newProd</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Shivas Regal&quot;</span><span class="p">;</span>
+<span class="nx">newProd</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Shivas Regal"</span><span class="p">;</span>
 <span class="nx">newProd</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">29.99</span><span class="p">;</span>
-<span class="c1">//    Referenz-Objekt, daher wird Wert unter &#39;prototype&#39; verändert</span>
-<span class="nx">newProd</span><span class="p">.</span><span class="nx">cat</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="s2">&quot;Office Drinks&quot;</span><span class="p">);</span>
+<span class="c1">//    Referenz-Objekt, daher wird Wert unter 'prototype' verändert</span>
+<span class="nx">newProd</span><span class="p">.</span><span class="nx">cat</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="s2">"Office Drinks"</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span>
@@ -303,7 +303,7 @@ nicht gesetzt werden, gilt der Default.</p>
 <span class="kd">let</span><span class="w"> </span><span class="nx">hero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">heroActions</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">   </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// initialer Wert der Eigenschaft (propertiesObject)</span>
-<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;Jessica&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w">          </span><span class="s2">"Jessica"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">writable</span><span class="o">:</span><span class="w">       </span><span class="kc">true</span><span class="p">,</span><span class="w">   </span><span class="c1">// Eigenschaft ist überschreibbar</span>
 <span class="w">        </span><span class="nx">enumerable</span><span class="o">:</span><span class="w">     </span><span class="kc">true</span><span class="p">,</span><span class="w">   </span><span class="c1">// Eigenschaft ist iterierbar</span>
 <span class="w">        </span><span class="nx">configurable</span><span class="o">:</span><span class="w">   </span><span class="kc">true</span><span class="w">    </span><span class="c1">// Eigenschaft ist konfigurierbar</span>
@@ -312,25 +312,25 @@ nicht gesetzt werden, gilt der Default.</p>
 <span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w">          </span><span class="mf">36</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w">          </span><span class="s2">&quot;Dragonroad&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w">          </span><span class="s2">"Dragonroad"</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">writable</span><span class="o">:</span><span class="w">       </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">hero</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Elektra&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// OK</span>
-<span class="c1">// hero.age = 29;   // TypeError: &quot;age&quot; is read-only</span>
-<span class="c1">// delete hero.age;   // TypeError: property &quot;age&quot; is non-configurable and can&#39;t be deleted</span>
-<span class="c1">// delete hero.address;  // TypeError: property &quot;address&quot; is non-configurable and can&#39;t be deleted</span>
-<span class="nx">hero</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alexanderplatz 111, Berlin&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// OK</span>
+<span class="nx">hero</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Elektra"</span><span class="p">;</span><span class="w">  </span><span class="c1">// OK</span>
+<span class="c1">// hero.age = 29;   // TypeError: "age" is read-only</span>
+<span class="c1">// delete hero.age;   // TypeError: property "age" is non-configurable and can't be deleted</span>
+<span class="c1">// delete hero.address;  // TypeError: property "address" is non-configurable and can't be deleted</span>
+<span class="nx">hero</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Alexanderplatz 111, Berlin"</span><span class="p">;</span><span class="w">  </span><span class="c1">// OK</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hero</span><span class="p">);</span><span class="w">  </span><span class="c1">// object</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">hero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// nur &#39;name&#39; und &#39;getHeroDatas&#39; (Rest nicht iterierbar)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">  </span><span class="c1">// nur 'name' und 'getHeroDatas' (Rest nicht iterierbar)</span>
 <span class="w">    </span><span class="c1">// prototype-Einträge werden standardmäßig ebenfalls berücksichtigt</span>
 
 <span class="w">    </span><span class="c1">// nur EIGENE Eigenschaften berücksichtigen</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hero</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">   </span><span class="c1">// nur &#39;name&#39;</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w">   </span><span class="c1">// nur 'name'</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -350,18 +350,18 @@ eines Objekts aufgerufen wird, wird entlang der Prototype-Kette nach diesem
 Property gesucht und das erste gefundene Match verwendet.</p>
 </div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;print-function&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"print-function"</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// hero Objekt von oben</span>
 <span class="nx">hero</span><span class="p">.</span><span class="nx">print</span><span class="p">();</span>
 
 <span class="nx">NodeList</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">giveBack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;giveBack hello&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"giveBack hello"</span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">giveBack</span><span class="p">();</span><span class="w">  </span><span class="c1">// OK, da NodeList diese Methode hat</span>
-<span class="c1">// document.querySelector(&quot;li&quot;).giveBack();   // NOK, da Node diese Methode nicht hat</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">giveBack</span><span class="p">();</span><span class="w">  </span><span class="c1">// OK, da NodeList diese Methode hat</span>
+<span class="c1">// document.querySelector("li").giveBack();   // NOK, da Node diese Methode nicht hat</span>
 
 <span class="c1">// Event mit on() registrieren</span>
 <span class="nx">Node</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -376,10 +376,10 @@ Property gesucht und das erste gefundene Match verwendet.</p>
 <span class="p">};</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">giveAlert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Es hat Klick gemacht&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Es hat Klick gemacht"</span><span class="p">);</span>
 <span class="p">};</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">giveAlert</span><span class="p">);</span><span class="w">    </span><span class="c1">// Event-Listener registrieren</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">giveAlert</span><span class="p">);</span><span class="w">   </span><span class="c1">// Event-Listener de-registrieren</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="nx">giveAlert</span><span class="p">);</span><span class="w">    </span><span class="c1">// Event-Listener registrieren</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="nx">giveAlert</span><span class="p">);</span><span class="w">   </span><span class="c1">// Event-Listener de-registrieren</span>
 </pre></div>
 </div>
 </section>
@@ -399,13 +399,13 @@ Objekt zuzuweisen.</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">heroDatas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">&quot;Jessica Jones&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w">       </span><span class="s2">"Jessica Jones"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w">        </span><span class="mf">36</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;Dragonraod 66&quot;</span>
+<span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w">    </span><span class="s2">"Dragonraod 66"</span>
 <span class="p">};</span>
 
 <span class="c1">// Object.setPrototypeOf(object, prototype);</span>
-<span class="c1">// Füge &#39;heroActions&#39; unter Prototypenn von &#39;heroDatas&#39; hinzu</span>
+<span class="c1">// Füge 'heroActions' unter Prototypenn von 'heroDatas' hinzu</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">heroDatas</span><span class="p">,</span><span class="w"> </span><span class="nx">heroActions</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heroDatas</span><span class="p">.</span><span class="nx">getHeroDatas</span><span class="p">());</span><span class="w">  </span><span class="c1">// Jessica Jones (36 wohnt in Dragonraod 66)</span>
@@ -421,12 +421,12 @@ Objekt zuzuweisen.</p>
 <span class="w">    </span><span class="c1">// wird beim Instanziieren zuerst ausgeführt</span>
 <span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">prodName</span><span class="p">,</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">,</span><span class="w"> </span><span class="nx">prodCat</span><span class="p">,</span><span class="w"> </span><span class="nx">prodQty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodName</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;_&#39; um Property nicht mit Setter zu verwechseln</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodPrice</span><span class="p">;</span><span class="w">  </span><span class="c1">// '_' um Property nicht mit Setter zu verwechseln</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodCat</span><span class="p">;</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prodQty</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="c1">// über &#39;get&#39; wird Funktion als Getter gekennzeichnet und ist nun eine Eigenschaft</span>
+<span class="w">    </span><span class="c1">// über 'get' wird Funktion als Getter gekennzeichnet und ist nun eine Eigenschaft</span>
 <span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">shortPrint</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="si">}</span><span class="sb"> EUR (</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="si">}</span><span class="sb"> Stück auf Lager)`</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -434,14 +434,14 @@ Objekt zuzuweisen.</p>
 <span class="w">    </span><span class="c1">// Funktion wird im Objekt selbst verankert</span>
 <span class="w">    </span><span class="nx">logThis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// über &#39;set&#39; wird Funktion als Setter gekennzeichnet und ist nun eine Eigenschaft</span>
-<span class="w">    </span><span class="c1">// Eigenschaft/Funktion wird im &#39;prototype&#39; verankert</span>
+<span class="w">    </span><span class="c1">// über 'set' wird Funktion als Setter gekennzeichnet und ist nun eine Eigenschaft</span>
+<span class="w">    </span><span class="c1">// Eigenschaft/Funktion wird im 'prototype' verankert</span>
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">addQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">qty</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">subQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">qty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;unzureichender Lagerbestand&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">qty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"unzureichender Lagerbestand"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">checkQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -458,11 +458,11 @@ Objekt zuzuweisen.</p>
 
 <span class="p">};</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">newProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">&quot;Talisker&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">49.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Whiskey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">"Talisker"</span><span class="p">,</span><span class="w"> </span><span class="mf">49.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"Whiskey"</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
 <span class="nx">newProd</span><span class="p">.</span><span class="nx">logThis</span><span class="p">();</span>
 
-<span class="c1">// geht nicht mehr wegen &#39;set&#39; Bezeichner ...</span>
+<span class="c1">// geht nicht mehr wegen 'set' Bezeichner ...</span>
 <span class="c1">// newProd.subQty(250);</span>
 <span class="c1">// newProd.addQty(100);</span>
 <span class="c1">// newProd.subQty(500);</span>
@@ -479,7 +479,7 @@ Objekt zuzuweisen.</p>
 <span class="cm">    Programmabsturz kommt</span>
 
 <span class="cm">    oft werden Eigenschaften, auf die nicht direkt zugegriffen werden soll,</span>
-<span class="cm">    mit &#39;_&#39; geprefixt - dann sind Zugriffsmethoden vorhanden!</span>
+<span class="cm">    mit '_' geprefixt - dann sind Zugriffsmethoden vorhanden!</span>
 
 <span class="cm">    Jede Klasse in eigenem Skript verorten!</span>
 <span class="cm">*/</span>
@@ -492,24 +492,24 @@ Objekt zuzuweisen.</p>
 
 <span class="c1">//     im Objekt sind alle schon vorhandenen Attribute standardmäßig überschreibbar,</span>
 <span class="c1">//     sofern die Eigenschaftattribute nicht anders gesetzt wurden</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">writable</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">);</span>
-<span class="c1">//    bei Erzeugung von Objekten werden Eigenschaftsattribute auf &#39;true&#39; gesetzt,</span>
+<span class="c1">//    bei Erzeugung von Objekten werden Eigenschaftsattribute auf 'true' gesetzt,</span>
 <span class="c1">//    wenn sie ohne Konfiguration der Eigenschaftsattribute erzeugt wurden</span>
 
-<span class="c1">// newProd.name = &quot;whatever&quot;;  // TypeError: &quot;name&quot; is read-only</span>
+<span class="c1">// newProd.name = "whatever";  // TypeError: "name" is read-only</span>
 
 <span class="c1">// Neue Property</span>
 <span class="c1">// -------------</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;desc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Best Quality Whiskey&quot;</span><span class="p">,</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">"Best Quality Whiskey"</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">enumerable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="c1">// defineProperty: writable standardmäßig auf false -&gt; read-only</span>
 <span class="p">});</span>
 
-<span class="c1">// newProd.desc = &quot;BliBlaBlub&quot;;  // TypeError: &quot;desc&quot; is read-only</span>
+<span class="c1">// newProd.desc = "BliBlaBlub";  // TypeError: "desc" is read-only</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">newProd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
@@ -521,8 +521,8 @@ Objekt zuzuweisen.</p>
 <h2>Arbeit mit Settern und Gettern der Eigenschaftsattribute<a class="headerlink" href="#arbeit-mit-settern-und-gettern-der-eigenschaftsattribute" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">Object.defineProperty()</span></code> wird eine neue Property an ein bereits vorhandene
 Instanz eines Objekts hinzugefügt:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">qualityVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fine Best Strong...&quot;</span><span class="p">;</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;quality&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">qualityVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Fine Best Strong..."</span><span class="p">;</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">newProd</span><span class="p">,</span><span class="w"> </span><span class="s2">"quality"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">qualityVal</span><span class="p">;</span>
 <span class="w">    </span><span class="p">},</span>
@@ -533,7 +533,7 @@ Instanz eines Objekts hinzugefügt:</p>
 <span class="p">});</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
-<span class="nx">newProd</span><span class="p">.</span><span class="nx">quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Finest&quot;</span><span class="p">;</span>
+<span class="nx">newProd</span><span class="p">.</span><span class="nx">quality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Finest"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">.</span><span class="nx">quality</span><span class="p">);</span><span class="w">   </span><span class="c1">// Finest</span>
 </pre></div>
 </div>
@@ -551,7 +551,7 @@ Instanz eines Objekts hinzugefügt:</p>
 <span class="w">    </span><span class="c1">// könnt diese nutzen, ändern oder überschreiben</span>
 
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">addQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkLimit</span><span class="p">(</span><span class="nx">qty</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">addQty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">qty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Limit überschritten&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkLimit</span><span class="p">(</span><span class="nx">qty</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">addQty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">qty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Limit überschritten"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">checkLimit</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -559,8 +559,8 @@ Instanz eines Objekts hinzugefügt:</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">ltdProduct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LtdProduct</span><span class="p">(</span><span class="s2">&quot;Talisker Limited Edition&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Home Drinks&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">399.50</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">ltdProduct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LtdProduct</span><span class="p">(</span><span class="s2">"Talisker Limited Edition"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Home Drinks"</span><span class="p">,</span><span class="w"> </span><span class="mf">399.50</span><span class="p">,</span><span class="w"> </span><span class="mf">250</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ltdProduct</span><span class="p">);</span>
 <span class="nx">ltdProduct</span><span class="p">.</span><span class="nx">subQty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">59</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ltdProduct</span><span class="p">.</span><span class="nx">shortPrint</span><span class="p">);</span>
@@ -596,7 +596,7 @@ werden, nicht auf der Instanz dieser Klasse.</p>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">subQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">qty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;unzureichender Lagerbestand&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">qty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"unzureichender Lagerbestand"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">checkQty</span><span class="p">(</span><span class="nx">qty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -614,32 +614,32 @@ werden, nicht auf der Instanz dieser Klasse.</p>
 <span class="w">    </span><span class="c1">// Statische Methode</span>
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">getWhiskey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nx">SL</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Scotch&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">BB</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Bourbon&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">IRE</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;Irish&quot;</span>
+<span class="w">            </span><span class="nx">SL</span><span class="o">:</span><span class="w">     </span><span class="s2">"Scotch"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">BB</span><span class="o">:</span><span class="w">     </span><span class="s2">"Bourbon"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">IRE</span><span class="o">:</span><span class="w">    </span><span class="s2">"Irish"</span>
 <span class="w">        </span><span class="p">};</span>
 <span class="w">    </span><span class="p">};</span>
 
 <span class="w">    </span><span class="c1">// Statische Eigenschaft innerhalb der Klasse definieren</span>
 <span class="w">    </span><span class="c1">// Achtung: stets im SCREAMING_SNAKE_CASE schreiben</span>
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">artObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">SL</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Scotch&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">BB</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Bourbon&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">IRE</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;Irish&quot;</span>
+<span class="w">        </span><span class="nx">SL</span><span class="o">:</span><span class="w">     </span><span class="s2">"Scotch"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">BB</span><span class="o">:</span><span class="w">     </span><span class="s2">"Bourbon"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">IRE</span><span class="o">:</span><span class="w">    </span><span class="s2">"Irish"</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="p">};</span>
 
 <span class="c1">// Statische Eigenschaft außerhalb eines Objekts definieren  -&gt; VERALTET!!</span>
 <span class="nx">Product</span><span class="p">.</span><span class="nx">WHISKEY_ART</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">SL</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Scotch&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">BB</span><span class="o">:</span><span class="w">     </span><span class="s2">&quot;Bourbon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">IRE</span><span class="o">:</span><span class="w">    </span><span class="s2">&quot;Irish&quot;</span>
+<span class="w">    </span><span class="nx">SL</span><span class="o">:</span><span class="w">     </span><span class="s2">"Scotch"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">BB</span><span class="o">:</span><span class="w">     </span><span class="s2">"Bourbon"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">IRE</span><span class="o">:</span><span class="w">    </span><span class="s2">"Irish"</span>
 <span class="p">}</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">newProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">&quot;Glennfiddich&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">39.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Whiskey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="nx">Product</span><span class="p">.</span><span class="nx">getWhiskey</span><span class="p">().</span><span class="nx">IRE</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">newProd2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">&quot;Glennfiddich&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">39.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Whiskey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="nx">Product</span><span class="p">.</span><span class="nx">artObj</span><span class="p">.</span><span class="nx">IRE</span><span class="p">);</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">newProd3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">&quot;Glennfiddich&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">39.99</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Whiskey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="nx">Product</span><span class="p">.</span><span class="nx">WHISKEY_ART</span><span class="p">.</span><span class="nx">IRE</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newProd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">"Glennfiddich"</span><span class="p">,</span><span class="w"> </span><span class="mf">39.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"Whiskey"</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="nx">Product</span><span class="p">.</span><span class="nx">getWhiskey</span><span class="p">().</span><span class="nx">IRE</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newProd2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">"Glennfiddich"</span><span class="p">,</span><span class="w"> </span><span class="mf">39.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"Whiskey"</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="nx">Product</span><span class="p">.</span><span class="nx">artObj</span><span class="p">.</span><span class="nx">IRE</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">newProd3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Product</span><span class="p">(</span><span class="s2">"Glennfiddich"</span><span class="p">,</span><span class="w"> </span><span class="mf">39.99</span><span class="p">,</span><span class="w"> </span><span class="s2">"Whiskey"</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="nx">Product</span><span class="p">.</span><span class="nx">WHISKEY_ART</span><span class="p">.</span><span class="nx">IRE</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newProd2</span><span class="p">);</span>
@@ -660,7 +660,7 @@ werden, nicht auf der Instanz dieser Klasse.</p>
 <h2>Symbole in Klassen<a class="headerlink" href="#symbole-in-klassen" title="Link to this heading"></a></h2>
 <p>Über <code class="docutils literal notranslate"><span class="pre">Object.getOwnPropertySymbols()</span></code> lassen sich alle Symbole eines Objekts
 zurückgeben:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">DOG_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;dogname&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">DOG_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">"dogname"</span><span class="p">);</span>
 
 <span class="kd">class</span><span class="w"> </span><span class="nx">Dog</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kr">constructor</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -676,17 +676,17 @@ zurückgeben:</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s2">&quot;Snoopy&quot;</span><span class="p">);</span>
-<span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Leika&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dog</span><span class="p">(</span><span class="s2">"Snoopy"</span><span class="p">);</span>
+<span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Leika"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">    </span><span class="c1">// Leika</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">));</span><span class="w">   </span><span class="c1">// [ Symbol(&quot;dogname&quot;) ]</span>
-<span class="nx">myDog</span><span class="p">[</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">)[</span><span class="mf">0</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Moja&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">));</span><span class="w">   </span><span class="c1">// [ Symbol("dogname") ]</span>
+<span class="nx">myDog</span><span class="p">[</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">myDog</span><span class="p">)[</span><span class="mf">0</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Moja"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myDog</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">    </span><span class="c1">// Moja</span>
 </pre></div>
 </div>
 <p>Seit ES10 ist es möglich mit <code class="docutils literal notranslate"><span class="pre">#</span></code> eine private Eigenschaft zu definieren:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// private Eigenschaften (beginnt mit &#39;#&#39;)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// private Eigenschaften (beginnt mit '#')</span>
 <span class="c1">// erst seit ES10 möglich</span>
 <span class="c1">// -&gt; Zugriff nur innerhalb der Klasse, nicht von außerhalb</span>
 <span class="kd">class</span><span class="w"> </span><span class="nx">HomeAnimals</span><span class="w"> </span><span class="p">{</span>
@@ -725,8 +725,8 @@ zurückgeben:</p>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">.</span><span class="nx">actCount</span><span class="p">);</span><span class="w">    </span><span class="c1">// 1</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">[</span><span class="s2">&quot;#anzahl&quot;</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined --&gt; da private Eigenschaft</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">HomeAnimals</span><span class="p">[</span><span class="s2">&quot;#anzahl&quot;</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined --&gt; da private Eigenschaft</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myAnimals</span><span class="p">[</span><span class="s2">"#anzahl"</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined --&gt; da private Eigenschaft</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">HomeAnimals</span><span class="p">[</span><span class="s2">"#anzahl"</span><span class="p">]);</span><span class="w">    </span><span class="c1">// undefined --&gt; da private Eigenschaft</span>
 </pre></div>
 </div>
 </section>
@@ -745,7 +745,7 @@ zurückgeben:</p>
   <div role="contentinfo">
       <div class="lastupdate">
         This page was last updated on
-        <span class="update_date">Oct 08, 2026</span>.
+        <span class="update_date">Nov 08, 2026</span>.
       </div>
     
     <p>&#169; Copyright 2021-2026, Arne Wohletz.</p>
